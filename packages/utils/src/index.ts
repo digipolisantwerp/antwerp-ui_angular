@@ -1,0 +1,1 @@
+export { toUpperCase } from "./utils/to-uppercase";
