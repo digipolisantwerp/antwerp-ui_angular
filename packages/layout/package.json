@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "ngPackage": {
@@ -15,6 +15,9 @@
     "build": "ng-packagr -p package.json",
     "postversion": "npm run build && npm publish dist",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "@acpaas-ui/ngx-utils": "0.0.1"
   },
   "publishConfig": {
     "registry": "http://localhost:8081/repository/npm-private/"
