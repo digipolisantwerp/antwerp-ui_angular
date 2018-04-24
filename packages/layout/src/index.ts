@@ -1,0 +1,1 @@
+export { HeaderModule, HeaderComponent } from "./header";

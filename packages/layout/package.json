@@ -1,0 +1,21 @@
+{
+  "name": "@acpaas-ui/ngx-layout",
+  "version": "1.0.0",
+  "description": "",
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "ng-packagr -p package.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:8081/repository/npm-private/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
