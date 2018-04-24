@@ -1,12 +1,15 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "ngPackage": {
     "lib": {
       "entryFile": "./src/index.ts"
-    }
+    },
+    "whitelistedNonPeerDependencies": [
+      "ramda"
+    ]
   },
   "files": [
     "dist"
