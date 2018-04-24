@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "ngPackage": {
@@ -13,6 +13,8 @@
   ],
   "scripts": {
     "build": "ng-packagr -p package.json",
+    "preversion": "npm run build",
+    "postversion": "npm publish dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
