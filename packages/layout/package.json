@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "ngPackage": {
@@ -11,9 +11,6 @@
       "ramda"
     ]
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "setup": "rimraf node_modules && npm install",
     "build": "ng-packagr -p package.json",
@@ -24,7 +21,7 @@
     "@acpaas-ui/ngx-utils": "0.0.1"
   },
   "devDependencies": {
-    "@acpaas-ui/ngx-utils": "0.0.1"
+    "@acpaas-ui/ngx-utils": "^0.0.2"
   },
   "publishConfig": {
     "registry": "http://localhost:8081/repository/npm-private/"
