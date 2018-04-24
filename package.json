@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lerna": "./node_modules/.bin/lerna",
+    "setup": "./node_modules/.bin/lerna run setup",
     "build": "./node_modules/.bin/lerna run build",
     "publish": "./node_modules/.bin/lerna publish --skip-npm",
     "test": "./node_modules/.bin/lerna run test"
@@ -28,6 +29,7 @@
     "@angular/router": "^5.2.10",
     "lerna": "^2.10.2",
     "ng-packagr": "^2.4.2",
+    "rimraf": "^2.6.2",
     "typescript": "^2.8.3"
   }
 }
