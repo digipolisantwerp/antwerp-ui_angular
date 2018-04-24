@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lerna": "./node_modules/.bin/lerna"
+    "lerna": "./node_modules/.bin/lerna",
+    "build": "./node_modules/.bin/lerna run build",
+    "publish": "./node_modules/.bin/lerna publish",
+    "test": "./node_modules/.bin/lerna run test"
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,17 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/FabianMeul/acpaas-ui-react#readme",
   "devDependencies": {
-    "lerna": "^2.10.2"
+    "@angular/common": "^5.2.10",
+    "@angular/compiler": "^5.2.10",
+    "@angular/compiler-cli": "^5.2.10",
+    "@angular/core": "^5.2.10",
+    "@angular/forms": "^5.2.10",
+    "@angular/platform-browser": "^5.2.10",
+    "@angular/platform-browser-dynamic": "^5.2.10",
+    "@angular/platform-server": "^5.2.10",
+    "@angular/router": "^5.2.10",
+    "lerna": "^2.10.2",
+    "ng-packagr": "^2.4.2",
+    "typescript": "^2.8.3"
   }
 }
