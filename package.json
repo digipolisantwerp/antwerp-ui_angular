@@ -1,0 +1,20 @@
+{
+  "name": "acpaas-ui-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lerna": "./node_modules/.bin/lerna"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://FabianMeul@bitbucket.org/FabianMeul/acpaas-ui-react.git"
+  },
+  "author": "Fabian Meul <fabian.meul@studiohyperdrive.be>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/FabianMeul/acpaas-ui-react#readme",
+  "devDependencies": {
+    "lerna": "^2.10.2"
+  }
+}
