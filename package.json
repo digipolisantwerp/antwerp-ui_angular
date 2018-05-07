@@ -1,5 +1,5 @@
 {
-  "name": "acpaas-ui-react",
+  "name": "acpaas-ui-ngx",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://FabianMeul@bitbucket.org/FabianMeul/acpaas-ui-react.git"
+    "url": "git+https://FabianMeul@bitbucket.org/FabianMeul/acpaas-ui-ngx.git"
   },
   "author": "Fabian Meul <fabian.meul@studiohyperdrive.be>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/FabianMeul/acpaas-ui-react#readme",
+  "homepage": "https://bitbucket.org/FabianMeul/acpaas-ui-ngx#readme",
   "devDependencies": {
     "@angular/common": "^5.2.10",
     "@angular/compiler": "^5.2.10",

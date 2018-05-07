@@ -1,2 +1,2 @@
-export { HeaderComponent } from "./components/header/header.component";
+export { HeaderComponent } from "./components/header.component";
 export { HeaderModule } from "./header.module";
