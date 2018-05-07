@@ -13,8 +13,7 @@
     ],
     "scripts": {
         "build": "ng-packagr -p package.json",
-        "postversion": "npm run build && npm publish dist",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "postversion": "npm run build && npm publish dist"
     },
     "publishConfig": {
         "registry": "http://localhost:8081/repository/npm-private/"
