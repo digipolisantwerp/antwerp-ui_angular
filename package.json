@@ -9,7 +9,7 @@
     "setup": "./node_modules/.bin/lerna bootstrap && ./node_modules/.bin/lerna run setup",
     "build": "./node_modules/.bin/lerna run build",
     "publish": "./node_modules/.bin/lerna publish --skip-npm",
-    "test": "./node_modules/.bin/jest --config=testing/jest.config.js --collectCoverage",
+    "test": "./node_modules/.bin/jest --config=config/jest.config.js --collectCoverage",
     "test:watch": "npm run test -- --watch",
     "test:ci": "./node_modules/.bin/lerna run lint && npm run test -- --runInBand"
   },

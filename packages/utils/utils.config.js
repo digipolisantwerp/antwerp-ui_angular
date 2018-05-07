@@ -1,4 +1,6 @@
-module.exports = {
+const baseConfig = require("../../config/base.config");
+
+module.exports = Object.assign({}, baseConfig, {
     "name": "utils",
     "displayName": "utils",
     "rootDir": "./src",
@@ -12,4 +14,4 @@ module.exports = {
         },
         "__TRANSFORM_HTML__": true,
     },
-};
+});
