@@ -1,5 +1,8 @@
-import * as cloneDeep from 'lodash.clonedeep';
-import * as get from 'lodash.get';
+// Unusual import explained here: https://github.com/rollup/rollup/issues/670
+import * as cloneDeep_ from 'lodash.clonedeep';
+import * as get_ from 'lodash.get';
+const get = get_;
+const cloneDeep = cloneDeep_;
 
 import { SIDEBAR_LOAD_ITEMS, SIDEBAR_TOGGLE } from './sidebar.actiontypes';
 import { SIDEBAR_INITIAL_STATE } from './sidebar.initial-state';

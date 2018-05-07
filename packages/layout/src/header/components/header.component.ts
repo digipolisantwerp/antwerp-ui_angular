@@ -1,6 +1,5 @@
 import {
     Component,
-    Input,
     OnInit,
     ChangeDetectionStrategy,
     ContentChild,
@@ -12,12 +11,10 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-import { Headroom } from '@jsprds/headroom';
+import { Headroom } from '@jsprds/headroom.ts';
 
-import HEADROOMOPTIONS from './headroom-options';
-
-import { HeaderLogoDirective } from '../../directives/logo.directive';
-import { HeaderContentDirective } from '../../directives/content.directive';
+import { HeaderLogoDirective } from '../directives/logo.directive';
+import { HeaderContentDirective } from '../directives/content.directive';
 
 @Component({
     selector: 'aui-header',
@@ -42,6 +39,8 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
     public setupHeadroom() {
         const element = this.elementRef.nativeElement.querySelector('.aui-header');
         const head = new Headroom(element);
+
+        return head;
     }
 
     public ngOnInit() {

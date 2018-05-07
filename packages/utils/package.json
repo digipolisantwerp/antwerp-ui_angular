@@ -6,7 +6,14 @@
     "ngPackage": {
         "lib": {
             "entryFile": "./src/index.ts"
-        }
+        },
+        "whitelistedNonPeerDependencies": [
+            "@angular-redux/store",
+            "@angular/core",
+            "@jsprds/headroom.ts",
+            "lodash.get",
+            "lodash.last"
+        ]
     },
     "files": [
         "dist"

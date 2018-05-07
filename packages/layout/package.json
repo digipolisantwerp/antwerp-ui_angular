@@ -8,7 +8,15 @@
       "entryFile": "./src/index.ts"
     },
     "whitelistedNonPeerDependencies": [
-      "ramda"
+      "@acpaas-ui/ngx-utils",
+      "@angular-redux/store",
+      "@angular/core",
+      "@jsprds/headroom.ts",
+      "lodash.get",
+      "lodash.last",
+      "ramda",
+      "deepmerge",
+      "cookieconsent"
     ]
   },
   "scripts": {
@@ -33,6 +41,8 @@
     "@angular-redux/store": "^7.1.1",
     "@angular/core": "^6.0.0",
     "@jsprds/headroom.ts": "^0.0.2",
+    "cookieconsent": "^3.0.6",
+    "deepmerge": "^2.1.0",
     "lodash.get": "^4.4.2",
     "lodash.last": "^3.0.0",
     "ramda": "^0.25.0"
