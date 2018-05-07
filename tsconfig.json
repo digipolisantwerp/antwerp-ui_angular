@@ -11,6 +11,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "paths": {
+        "@acpaas-ui/ngx-layout": [ "packages/layout/src" ],
+        "@acpaas-ui/ngx-utils": [ "packages/utils/src" ],
+        "@acpaas-ui/ngx-pagination": [ "packages/pagination/src" ],
+    },
     "typeRoots": [
       "node_modules/@types"
     ],
