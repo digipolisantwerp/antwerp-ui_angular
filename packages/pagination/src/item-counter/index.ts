@@ -1,3 +1,3 @@
 export * from './item-counter.module';
-export * from './item-counter/item-counter.component';
-export * from './items-per-page/items-per-page.component';
+export * from './components/item-counter.component';
+export * from './components/items-per-page.component';

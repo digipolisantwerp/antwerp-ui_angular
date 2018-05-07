@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { LabelsModule, Label } from '@acpaas-ui/labels';
+import { LabelsModule, Label } from '@acpaas-ui/ngx-utils';
 
 import { ItemCounterComponent } from './components/item-counter.component';
 import { ItemsPerPageComponent } from './components/items-per-page.component';
