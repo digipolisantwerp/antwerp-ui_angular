@@ -11,7 +11,8 @@
     "publish": "./node_modules/.bin/lerna publish --skip-npm",
     "test": "./node_modules/.bin/jest --config=config/jest.config.js --collectCoverage",
     "test:watch": "npm run test -- --watch",
-    "test:ci": "./node_modules/.bin/lerna run lint && npm run test -- --runInBand"
+    "test:ci": "./node_modules/.bin/lerna run lint && npm run test -- --runInBand",
+    "test:coverage": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "jest-junit": "^3.7.0",
     "jest-preset-angular": "^5.2.2",
     "lerna": "^2.10.2",
+    "live-server": "^1.2.0",
     "ng-packagr": "^2.4.2",
     "rimraf": "^2.6.2",
     "typescript": "^2.8.3",
