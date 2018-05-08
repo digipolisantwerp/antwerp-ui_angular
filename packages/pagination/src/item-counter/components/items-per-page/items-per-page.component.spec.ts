@@ -3,7 +3,6 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-import { LabelsModule } from '@acpaas-ui/labels';
 
 import { ITEMS_PER_PAGE_LABEL } from '../item-counter.const';
 
@@ -20,7 +19,6 @@ describe('The ItemsPerPageComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 FormsModule,
-                LabelsModule,
             ],
             declarations: [
                 ItemsPerPageComponent,

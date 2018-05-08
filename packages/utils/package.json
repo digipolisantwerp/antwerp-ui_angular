@@ -6,15 +6,21 @@
     "ngPackage": {
         "lib": {
             "entryFile": "./src/index.ts"
-        }
+        },
+        "whitelistedNonPeerDependencies": [
+            "@angular-redux/store",
+            "@angular/core",
+            "@jsprds/headroom.ts",
+            "lodash.get",
+            "lodash.last"
+        ]
     },
     "files": [
         "dist"
     ],
     "scripts": {
         "build": "ng-packagr -p package.json",
-        "postversion": "npm run build && npm publish dist",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "postversion": "npm run build && npm publish dist"
     },
     "publishConfig": {
         "registry": "http://localhost:8081/repository/npm-private/"

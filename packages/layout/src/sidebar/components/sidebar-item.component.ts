@@ -3,7 +3,9 @@ import {
     Input,
     HostBinding,
 } from '@angular/core';
-import * as get from 'lodash.get';
+// Unusual import explained here: https://github.com/rollup/rollup/issues/670
+import * as get_ from 'lodash.get';
+const get = get_;
 
 import { SidebarItem } from '../store/sidebar.types';
 

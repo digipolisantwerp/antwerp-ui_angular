@@ -265,3 +265,7 @@ jspm_packages
 # Build folder
 dist
 **/node_modules
+
+# Coverage
+coverage
+junit.xml

@@ -2,14 +2,11 @@ import {
     Component,
     Inject,
     Input,
-    EventEmitter,
     OnInit,
     OnChanges,
     ChangeDetectionStrategy,
     HostBinding
 } from '@angular/core';
-
-import { Label } from '@acpaas-ui/labels';
 
 import { ITEM_COUNTER_LABEL } from '../item-counter.const';
 
@@ -27,12 +24,12 @@ export class ItemCounterComponent implements OnInit, OnChanges {
     @Input() currentPage: number;
     @Input() totalAmount: number;
     @Input() amountPerPage: number;
-    @Input() label: Label;
+    @Input() label: any;
 
     public currentFrom = 1;
     public currentTo = this.amountPerPage;
 
-    constructor(@Inject(ITEM_COUNTER_LABEL) label: Label) {
+    constructor(@Inject(ITEM_COUNTER_LABEL) label: any) {
         if (label && !this.label) {
             this.label = label;
         } else if (!this.label) {
