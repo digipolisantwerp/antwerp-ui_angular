@@ -27,5 +27,4 @@ import { FlyoutService } from './services/flyout.service';
         FlyoutService
     ]
 })
-export class FlyoutModule {
-}
+export class FlyoutModule {}

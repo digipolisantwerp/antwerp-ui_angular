@@ -6,8 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Digipolis Antwerpen",
   "license": "ISC",
+  "peerDependencies": {
+    "@acpaas-ui/ngx-flyout": "^1.0.0"
+  },
+  "devDependencies": {
+    "@acpaas-ui/ngx-flyout": "^1.0.0"
+  },
   "dependencies": {
     "inputmask": "^3.3.11",
     "lodash.debounce": "^4.0.8",

@@ -25,18 +25,18 @@
     "build": "ng-packagr -p package.json",
     "postversion": "npm run build && npm publish dist"
   },
-  "peerDependencies": {
-    "@acpaas-ui/ngx-utils": "0.0.1"
-  },
-  "devDependencies": {
-    "@acpaas-ui/ngx-utils": "^0.0.2"
-  },
   "publishConfig": {
     "registry": "http://localhost:8081/repository/npm-private/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "peerDependencies": {
+    "@acpaas-ui/ngx-utils": "^0.0.1"
+  },
+  "devDependencies": {
+    "@acpaas-ui/ngx-utils": "^0.0.2"
+  },
   "dependencies": {
     "@acpaas-ui/ngx-utils": "^0.0.2",
     "@angular-redux/store": "^7.1.1",
