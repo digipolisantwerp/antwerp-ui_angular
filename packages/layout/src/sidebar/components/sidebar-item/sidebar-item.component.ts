@@ -7,7 +7,7 @@ import {
 import * as get_ from 'lodash.get';
 const get = get_;
 
-import { SidebarItem } from '../store/sidebar.types';
+import { SidebarItem } from '../../store/sidebar.types';
 
 @Component({
     selector: 'sidebar-item',

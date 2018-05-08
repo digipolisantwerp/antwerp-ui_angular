@@ -2,8 +2,8 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import { Subscription } from 'rxjs/Subscription';
 
-import { SidebarActionCreator } from '../store/sidebar.actioncreator';
-import { SidebarItem, SidebarState } from '../store/sidebar.types';
+import { SidebarActionCreator } from '../../store/sidebar.actioncreator';
+import { SidebarItem, SidebarState } from '../../store/sidebar.types';
 
 @Component({
     selector: 'sup-sidebar',

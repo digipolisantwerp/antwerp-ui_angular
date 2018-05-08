@@ -2,8 +2,8 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 
-import { ModalService } from '../services/modal.service';
-import { ApproveModalComponent } from '../components/approve-modal.component';
+import { ModalService } from '../../services/modal.service';
+import { ApproveModalComponent } from './approve-modal.component';
 
 const modalServiceMock = {
     closeModal: () => null

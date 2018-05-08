@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 
 import { ModalAbstract } from '../classes/modal.abstract';
-import { ModalOverlayComponent } from '../components/modal-overlay.component';
-import { ModalService } from '../services/modal.service';
+import { ModalOverlayComponent } from '../components/modal-overlay/modal-overlay.component';
+import { ModalService } from './modal.service';
 
 @Component({
     selector: 'aui-test-modal',

@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 import { NgReduxModule } from '@angular-redux/store';
 
 import { SidebarActionCreator } from './store/sidebar.actioncreator';
-import { SidebarComponent } from './components/sidebar.component';
-import { SidebarItemComponent } from './components/sidebar-item.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SidebarItemComponent } from './components/sidebar-item/sidebar-item.component';
 import { SidebarFooterDirective } from './directives/sidebar-footer.directive';
 
 @NgModule({

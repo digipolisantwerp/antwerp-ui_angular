@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement, Component } from '@angular/core';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
-import { ModalOverlayComponent } from '../components/modal-overlay.component';
+import { ModalOverlayComponent } from './modal-overlay.component';
 
 const getByCSSQuery = (query, elm, all?) => {
     return all ? elm.querySelectorAll(query) : elm.querySelector(query);

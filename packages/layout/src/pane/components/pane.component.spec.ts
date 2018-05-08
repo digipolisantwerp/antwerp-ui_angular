@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PaneComponent } from '../components/pane.component';
+import { PaneComponent } from './pane.component';
 
 describe('The Pane Component', () => {
     let comp: PaneComponent;
