@@ -1,8 +1,10 @@
 import 'jest-preset-angular';
-// import './app/rxjs';
 
 // Polyfills
 // import 'raf/polyfill';
+
+// Rxjs pipable operators
+// import './app/rxjs';
 
 Object.defineProperty(window, 'getComputedStyle', {
   value: () => ['-webkit-appearance'],
