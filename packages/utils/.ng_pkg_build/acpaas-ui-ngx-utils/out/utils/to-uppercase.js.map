@@ -1,1 +1,0 @@
-{"version":3,"file":"to-uppercase.js","sourceRoot":"","sources":["to-uppercase.ts"],"names":[],"mappings":";;;;AAAA,MAAM,CAAC,uBAAM,WAAW,GAAG,CAAC,KAAU,EAAE,EAAE,CAAC,KAAK,CAAC,QAAQ,EAAE,CAAC,WAAW,EAAE,CAAC","sourcesContent":["export const toUpperCase = (value: any) => value.toString().toUpperCase();"]}

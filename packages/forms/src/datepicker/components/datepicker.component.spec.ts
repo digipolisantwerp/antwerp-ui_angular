@@ -9,7 +9,7 @@ import {
     FormControl
 } from '@angular/forms';
 import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
-import { MaskModule } from '@acpaas-ui/mask';
+import { MaskModule } from '../../mask';
 import { DateRange } from '@acpaas-ui/datehelper';
 import { CalendarModule } from '@acpaas-ui/calendar';
 

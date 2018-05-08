@@ -20,8 +20,7 @@ const get = get_;
 import * as isequal_ from 'lodash.isequal';
 const isequal = isequal_;
 
-import { FlyoutDirective } from '@acpaas-ui/ngx-flyout';
-import { FlyoutZoneDirective } from '@acpaas-ui/ngx-flyout';
+import { FlyoutDirective, FlyoutZoneDirective } from '@acpaas-ui/ngx-flyout';
 
 import { SearchService } from '../../shared/services/search.service';
 

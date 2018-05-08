@@ -1,1 +1,0 @@
-{"version":3,"file":"labels.types.js","sourceRoot":"","sources":["labels.types.ts"],"names":[],"mappings":"","sourcesContent":["export interface Label {\n    singular: string;\n    plural: string;\n}\n\nexport interface Labels {\n    [key: string]: Label;\n}\n\nexport interface ReplaceData {\n    [key: string]: string|number;\n}\n"]}

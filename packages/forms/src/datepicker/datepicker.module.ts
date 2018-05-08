@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
-import { MaskModule } from '@acpaas-ui/mask';
+import { MaskModule } from '../mask';
 
 import {
     CalendarModule,

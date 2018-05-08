@@ -13,8 +13,8 @@ import { isPlatformBrowser } from '@angular/common';
 
 import { Headroom } from '@jsprds/headroom.ts';
 
-import { HeaderLogoDirective } from '../directives/logo.directive';
-import { HeaderContentDirective } from '../directives/content.directive';
+import { HeaderLogoDirective } from '../../directives/logo.directive';
+import { HeaderContentDirective } from '../../directives/content.directive';
 
 @Component({
     selector: 'aui-header',

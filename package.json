@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://FabianMeul@bitbucket.org/FabianMeul/acpaas-ui-ngx.git"
   },
-  "author": "Fabian Meul <fabian.meul@studiohyperdrive.be>",
+  "author": "Digipolis Antwerpen",
   "license": "ISC",
   "homepage": "https://bitbucket.org/FabianMeul/acpaas-ui-ngx#readme",
   "devDependencies": {

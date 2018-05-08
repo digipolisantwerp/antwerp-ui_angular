@@ -1,12 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
 import { FormsModule } from '@angular/forms';
 
-import { ITEMS_PER_PAGE_LABEL } from '../item-counter.const';
-
-import { ItemsPerPageComponent, sizes } from '../components/items-per-page.component';
+import { ITEMS_PER_PAGE_LABEL } from '../item-counter/item-counter.const';
+import { ItemsPerPageComponent, sizes } from './items-per-page.component';
 
 describe('The ItemsPerPageComponent', () => {
     let comp: ItemsPerPageComponent;

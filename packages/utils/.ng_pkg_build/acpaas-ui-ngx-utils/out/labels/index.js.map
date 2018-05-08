@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;;;AAAA,6BAAc,iBAAiB,CAAC;AAEhC,yDAAc,eAAe,CAAC","sourcesContent":["export * from './labels.module';\nexport * from './labels.types';\nexport * from './labels.pipe';\n"]}

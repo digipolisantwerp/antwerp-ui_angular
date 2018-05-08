@@ -4,11 +4,11 @@ import { DebugElement } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 
-import { ITEM_COUNTER_LABEL } from '../item-counter.const';
+import { ITEM_COUNTER_LABEL } from './item-counter.const';
 
 import {
     ItemCounterComponent
-} from '../components/item-counter.component';
+} from './item-counter.component';
 
 describe('The ItemCounterComponent', () => {
     let comp: ItemCounterComponent;

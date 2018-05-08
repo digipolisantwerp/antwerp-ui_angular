@@ -1,0 +1,107 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LeafletComponent } from './leaflet.component';
+import { LeafletMap } from './leaflet-map';
+import { Component } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import * as controls from './controls';
+import { LeafletModule } from '../leaflet.module';
+
+@Component({
+    template: `
+        <aui-leaflet [leafletMap]="leafletMap" [hasSidebar]="shouldHaveContent">
+            <p>Test</p>
+            <div controls top left>
+                <aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
+            </div>
+            <div controls top right>
+                <aui-leaflet-drag-control></aui-leaflet-drag-control>
+                <aui-leaflet-draw-control></aui-leaflet-draw-control>
+            </div>
+            <div controls bottom left>
+                <aui-leaflet-zoom-control></aui-leaflet-zoom-control>
+            </div>
+            <div controls bottom right>
+                <aui-leaflet-locate-control></aui-leaflet-locate-control>
+            </div>
+        </aui-leaflet>
+    `
+})
+class TestLeafletComponent {
+    shouldHaveContent = false;
+    leafletMap = new LeafletMap({
+        zoom: 13,
+        center: [51.215, 4.425]
+    });
+}
+
+// Mock timeout
+window.setTimeout = (cb, tm): number => {
+  cb();
+  return 0;
+};
+
+describe('The leaflet component', () => {
+    let fixture: ComponentFixture<TestLeafletComponent>;
+    let comp: LeafletComponent;
+    let wrapperComp: TestLeafletComponent;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [
+                LeafletModule
+            ],
+            declarations: [
+                TestLeafletComponent
+            ]
+        })
+        .compileComponents();
+        fixture = TestBed.createComponent(TestLeafletComponent);
+        wrapperComp = fixture.componentInstance;
+        comp = fixture.debugElement.query(By.directive(LeafletComponent)).injector.get(LeafletComponent);
+    });
+
+    it('should initialize the map', () => {
+        const spy = spyOn(wrapperComp.leafletMap, 'init');
+        fixture.detectChanges(false);
+        expect(spy).toHaveBeenCalledWith(comp.map.nativeElement);
+    });
+
+    it('should hide the content when no content is passed', () => {
+        fixture.detectChanges(false);
+        expect(comp.hasSidebar).toBe(false);
+    });
+
+    it('should show the content when content is passed', () => {
+        wrapperComp.shouldHaveContent = true;
+        fixture.detectChanges(false);
+        expect(comp.hasSidebar).toBe(true);
+    });
+
+    it('should display the controls at the correct position', () => {
+        fixture.detectChanges(false);
+        expect(
+            fixture.debugElement.query(By.directive(controls.LeafletFullscreenControlComponent)).parent.nativeElement.parentNode.classList
+        ).toContain('aui-leaflet__controls--top-left');
+        expect(
+            fixture.debugElement.query(By.directive(controls.LeafletDragControlComponent)).parent.nativeElement.parentNode.classList
+        ).toContain('aui-leaflet__controls--top-right');
+        expect(
+            fixture.debugElement.query(By.directive(controls.LeafletDrawControlComponent)).parent.nativeElement.parentNode.classList
+        ).toContain('aui-leaflet__controls--top-right');
+        expect(
+            fixture.debugElement.query(By.directive(controls.LeafletZoomControlComponent)).parent.nativeElement.parentNode.classList
+        ).toContain('aui-leaflet__controls--bottom-left');
+        expect(
+            fixture.debugElement.query(By.directive(controls.LeafletLocateControlComponent)).parent.nativeElement.parentNode.classList
+        ).toContain('aui-leaflet__controls--bottom-right');
+    });
+
+    it('should pass the map to each control', () => {
+        fixture.detectChanges(false);
+        expect(comp.fullScreenControl.map).toEqual(comp.leafletMap);
+        expect(comp.dragControl.map).toEqual(comp.leafletMap);
+        expect(comp.drawControl.map).toEqual(comp.leafletMap);
+        expect(comp.locateControl.map).toEqual(comp.leafletMap);
+        expect(comp.zoomControl.map).toEqual(comp.leafletMap);
+    });
+});

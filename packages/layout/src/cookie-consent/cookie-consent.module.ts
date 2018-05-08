@@ -10,7 +10,7 @@ const deepmerge = deepmerge_;
 import { WindowRef } from './services/window.service';
 import { CookieconsentService } from './services/cookie-consent.service';
 import { COOKIE_CONSENT_CONFIG_ROOT, COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG } from './cookie-consent.conf';
-import { CookieConsentConfig } from './cookie-consent.types';
+import { CookieConsentConfig } from './types/cookie-consent.types';
 
 export function setConfig(cookieConsentConfig: CookieConsentConfig): CookieConsentConfig {
     return deepmerge(DEFAULT_CONSENT_CONFIG, cookieConsentConfig);

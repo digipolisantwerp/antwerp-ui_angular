@@ -8,12 +8,12 @@ import {
     HostBinding
 } from '@angular/core';
 
-import { ITEMS_PER_PAGE_LABEL } from '../item-counter.const';
+import { ITEMS_PER_PAGE_LABEL } from '../item-counter/item-counter.const';
 
 export enum sizes {
     S = <any>'S',
     R = <any>'R',
-    L = <any>'L'
+    L = <any>'L',
 }
 
 @Component({

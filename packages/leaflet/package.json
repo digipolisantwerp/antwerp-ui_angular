@@ -1,0 +1,36 @@
+{
+  "name": "@acpaas-ui/ngx-leaflet",
+  "version": "1.0.0",
+  "description": "ACPaaS UI - Angular Leaflet module",
+  "keywords": [
+    "acpaas-ui",
+    "a-ui",
+    "angular",
+    "typescript"
+  ],
+  "author": "Digipolis Antwerpen",
+  "contributors": [
+    "Bjorn Rombaut <bjorn.rombaut@digipolis.be>"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+    "peerDependencies": {
+      "@angular/common": "^5.2.0",
+      "@angular/compiler": "^5.2.0",
+      "@angular/core": "^5.2.0",
+      "@angular/forms": "^5.2.0",
+      "@angular/http": "^5.2.0",
+      "@angular/platform-browser": "^5.2.0",
+      "@angular/platform-browser-dynamic": "^5.2.0",
+      "@angular/platform-server": "^5.2.0"
+    },
+    "dependencies": {
+      "@acpaas-ui/ngx-flyout": "^1.0.0",
+      "esri-leaflet": "^2.1.1",
+      "leaflet": "^1.2.0",
+      "leaflet-draw": "^0.4.13"
+    }
+}

@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG } from '../cookie-consent.conf';
-import { CookieConsentConfig } from '../cookie-consent.types';
+import { CookieConsentConfig } from '../types/cookie-consent.types';
 import { WindowRef } from './window.service';
 
 // Unusual import explained here: https://github.com/rollup/rollup/issues/670

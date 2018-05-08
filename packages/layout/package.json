@@ -12,6 +12,7 @@
       "@angular-redux/store",
       "@angular/core",
       "@jsprds/headroom.ts",
+      "deepmerge",
       "lodash.get",
       "lodash.last",
       "ramda",
@@ -43,6 +44,7 @@
     "@jsprds/headroom.ts": "^0.0.2",
     "cookieconsent": "^3.0.6",
     "deepmerge": "^2.1.0",
+    "esri-leaflet": "^2.1.4",
     "lodash.get": "^4.4.2",
     "lodash.last": "^3.0.0",
     "ramda": "^0.25.0"
