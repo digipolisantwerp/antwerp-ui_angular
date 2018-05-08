@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "ng generate package --collection=@acpaas-ui/schematics",
     "lerna": "./node_modules/.bin/lerna",
-    "setup": "npm i && ./node_modules/.bin/lerna bootstrap && ./node_modules/.bin/lerna run setup",
+    "setup": "npm i && ./node_modules/.bin/lerna bootstrap",
     "build": "./node_modules/.bin/lerna run build",
     "publish": "./node_modules/.bin/lerna publish --skip-npm",
     "test": "./node_modules/.bin/jest --config=config/jest.config.js --collectCoverage",
