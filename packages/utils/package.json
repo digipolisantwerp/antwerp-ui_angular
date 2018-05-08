@@ -26,7 +26,11 @@
         "@angular-redux/store": "^7.1.1",
         "@angular/core": "^6.0.0",
         "@jsprds/headroom.ts": "^0.0.2",
+        "inputmask": "^3.3.11",
+        "lodash.debounce": "^4.0.8",
         "lodash.get": "^4.4.2",
-        "lodash.last": "^3.0.0"
+        "lodash.isequal": "^4.5.0",
+        "lodash.last": "^3.0.0",
+        "ng2-ckeditor": "^1.2.0"
     }
 }

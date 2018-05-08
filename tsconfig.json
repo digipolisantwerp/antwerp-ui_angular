@@ -10,9 +10,12 @@
         "experimentalDecorators": true,
         "target": "es5",
         "paths": {
+            "@acpaas-ui/ngx-forms": [ "packages/forms/src" ],
+            "@acpaas-ui/ngx-flyout": [ "packages/flyout/src" ],
             "@acpaas-ui/ngx-layout": [ "packages/layout/src" ],
-            "@acpaas-ui/ngx-utils": [ "packages/utils/src" ],
             "@acpaas-ui/ngx-pagination": [ "packages/pagination/src" ],
+            "@acpaas-ui/ngx-progress-bar": [ "packages/progress-bar/src" ],
+            "@acpaas-ui/ngx-utils": [ "packages/utils/src" ],
         },
         "typeRoots": [
             "node_modules/@types"

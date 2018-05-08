@@ -1,0 +1,1 @@
+{"__symbolic":"module","version":4,"exports":[{"from":"./labels"}],"metadata":{"toUpperCase":{"__symbolic":"error","message":"Lambda not supported","line":0,"character":27,"module":"./utils/to-uppercase"}},"origins":{"toUpperCase":"./utils/to-uppercase"},"importAs":"@acpaas-ui/ngx-utils"}

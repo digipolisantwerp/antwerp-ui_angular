@@ -1,0 +1,18 @@
+{
+  "version": 3,
+  "file": "acpaas-ui-ngx-utils.js",
+  "sources": [
+    "ng://@acpaas-ui/ngx-utils/out/labels/labels.module.ts",
+    "ng://@acpaas-ui/ngx-utils/out/labels/labels.pipe.ts",
+    "ng://@acpaas-ui/ngx-utils/out/labels/labels.interpolation.ts",
+    "ng://@acpaas-ui/ngx-utils/out/utils/to-uppercase.ts"
+  ],
+  "sourcesContent": [
+    "import { NgModule } from '@angular/core';\n\nimport { InterpolateLabelPipe, PluralizeLabelPipe } from './labels.pipe';\n\n@NgModule({\n    declarations: [\n        InterpolateLabelPipe,\n        PluralizeLabelPipe\n    ],\n    exports: [\n        InterpolateLabelPipe,\n        PluralizeLabelPipe\n    ]\n})\nexport class LabelsModule {\n}\n",
+    "import { Pipe, PipeTransform } from '@angular/core';\n\nimport { interpolate } from './labels.interpolation';\nimport { ReplaceData, Label } from './labels.types';\n\n@Pipe({\n    name: 'interpolateLabel'\n})\nexport class InterpolateLabelPipe implements PipeTransform {\n    transform(label: string, replaceData: ReplaceData): string {\n        if (!replaceData || !label) {\n            return label;\n        }\n\n        return interpolate(label, replaceData);\n    }\n}\n\n@Pipe({\n    name: 'pluralizeLabel'\n})\nexport class PluralizeLabelPipe implements PipeTransform {\n    transform(label: Label|string, count: number): string {\n        if (!label || typeof label === 'string') {\n            return label as string;\n        }\n\n        return count === 1 ? label.singular : label.plural;\n    }\n}\n",
+    "import { ReplaceData } from './labels.types';\n\nexport const interpolate = (label: string, replaceData?: ReplaceData): string => {\n    if (!replaceData) {\n        return label;\n    }\n\n    const escapeStringRegExp = prop => prop.replace(/[|\\\\{}()[\\]^$+*?.]/g, '\\\\$&');\n    const pattern = new RegExp(`\\%{(${Object.keys(replaceData).map(escapeStringRegExp).join('|')})\\}`, 'g');\n\n    return label.replace(pattern, (match, prop) => replaceData[prop] ? String(replaceData[prop]) : '');\n};\n",
+    "export const toUpperCase = (value: any) => value.toString().toUpperCase();"
+  ],
+  "names": [],
+  "mappings": ";;;;;;AGAA,AAAO,MAAM,WAAW,GAAG,CAAC,KAAU,KAAK,KAAK,CAAC,QAAQ,EAAE,CAAC,WAAW,EAAE;;;;;;ADEzE,AAAO,MAAM,WAAW,GAAG,CAAC,KAAa,EAAE,WAAyB,KAApE;IACI,IAAI,CAAC,WAAW,EAAE;QACd,OAAO,KAAK,CAAC;KAChB;IAED,uBAAM,kBAAkB,GAAG,IAAI,IAAI,IAAI,CAAC,OAAO,CAAC,qBAAqB,EAAE,MAAM,CAAC,CAAC;IAC/E,uBAAM,OAAO,GAAG,IAAI,MAAM,CAAC,CAA/B,IAAA,EAAsC,MAAM,CAAC,IAAI,CAAC,WAAW,CAAC,CAAC,GAAG,CAAC,kBAAkB,CAAC,CAAC,IAAI,CAAC,GAAG,CAAC,CAAhG,GAAA,CAAqG,EAAE,GAAG,CAAC,CAAC;IAExG,OAAO,KAAK,CAAC,OAAO,CAAC,OAAO,EAAE,CAAC,KAAK,EAAE,IAAI,KAAK,WAAW,CAAC,IAAI,CAAC,GAAG,MAAM,CAAC,WAAW,CAAC,IAAI,CAAC,CAAC,GAAG,EAAE,CAAC,CAAC;CACtG;;;;;;ADXD,AAQA,MAAA,oBAAA,CAAA;;;;;;IACI,SAAS,CAAC,KAAa,EAAE,WAAwB,EAArD;QACQ,IAAI,CAAC,WAAW,IAAI,CAAC,KAAK,EAAE;YACxB,OAAO,KAAK,CAAC;SAChB;QAED,OAAO,WAAW,CAAC,KAAK,EAAE,WAAW,CAAC,CAAC;KAC1C;;;IAVL,EAAA,IAAA,EAAC,IAAI,EAAL,IAAA,EAAA,CAAM;gBACF,IAAI,EAAE,kBAAkB;aAC3B,EAAD,EAAA;;AAcA,MAAA,kBAAA,CAAA;;;;;;IACI,SAAS,CAAC,KAAmB,EAAE,KAAa,EAAhD;QACQ,IAAI,CAAC,KAAK,IAAI,OAAO,KAAK,KAAK,QAAQ,EAAE;YACrC,yBAAO,KAAe,EAAC;SAC1B;QAED,OAAO,KAAK,KAAK,CAAC,GAAG,KAAK,CAAC,QAAQ,GAAG,KAAK,CAAC,MAAM,CAAC;KACtD;;;IAVL,EAAA,IAAA,EAAC,IAAI,EAAL,IAAA,EAAA,CAAM;gBACF,IAAI,EAAE,gBAAgB;aACzB,EAAD,EAAA;;;;;;;ADpBA,AAcA,MAAA,YAAA,CAAA;;;IAVA,EAAA,IAAA,EAAC,QAAQ,EAAT,IAAA,EAAA,CAAU;gBACN,YAAY,EAAE;oBACV,oBAAoB;oBACpB,kBAAkB;iBACrB;gBACD,OAAO,EAAE;oBACL,oBAAoB;oBACpB,kBAAkB;iBACrB;aACJ,EAAD,EAAA;;;;;;;;;;;;;;;;;;;;;;;"
+}
