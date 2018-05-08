@@ -3,7 +3,6 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-import { LabelsModule } from '@acpaas-ui/labels';
 
 import { ITEM_COUNTER_LABEL } from '../item-counter.const';
 
@@ -22,7 +21,6 @@ describe('The ItemCounterComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 FormsModule,
-                LabelsModule,
             ],
             declarations: [
                 ItemCounterComponent,

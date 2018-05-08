@@ -7,7 +7,6 @@ import {
     ChangeDetectionStrategy,
     HostBinding
 } from '@angular/core';
-import { Label } from '@acpaas-ui/labels';
 
 import { ITEMS_PER_PAGE_LABEL } from '../item-counter.const';
 
@@ -32,7 +31,7 @@ export class ItemsPerPageComponent {
 
     @HostBinding('class.aui-items-per-page') setClass = true;
 
-    @Input() label: Label;
+    @Input() label: any;
     @Input() size: sizes = sizes.R;
     @Input() selectOptions: number[];
     @Input() amountPerPage: number;
