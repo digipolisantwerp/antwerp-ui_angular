@@ -8,12 +8,6 @@
     "angular",
     "typescript"
   ],
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "./src/index.ts"
-    }
-  },
   "author": "Digipolis Antwerpen",
   "contributors": [
     "Tom Opdebeeck <tom.opdebeeck@district01.be>",
@@ -22,6 +16,12 @@
     "Lieven Van Gestel <lieven.vangestel@digipolis.be>",
     "Tom Van Den Broeck <tom.vandenbroeck@digipolis.be>"
   ],
+  "$schema": "./node_modules/ng-packagr/package.schema.json",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "./src/index.ts"
+    }
+  },
   "homepage": "https://bitbucket.antwerpen.be/projects/AUI/repos/logo_component_angular",
   "license": "UNLICENSED",
   "scripts": {
@@ -40,6 +40,14 @@
     "link": "npm run build && cd ./dist && npm link --only=production"
   },
   "peerDependencies": {
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/platform-server": "^5.2.0"
+  },
+  "devDependencies": {
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",

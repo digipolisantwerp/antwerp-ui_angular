@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { LabelsModule, Label } from '@acpaas-ui/ngx-utils';
 
-import { ItemCounterComponent } from './components/item-counter.component';
-import { ItemsPerPageComponent } from './components/items-per-page.component';
+import { ItemCounterComponent } from './components/item-counter/item-counter.component';
+import { ItemsPerPageComponent } from './components/items-per-page/items-per-page.component';
 
-import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './item-counter.const';
+import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './components/item-counter/item-counter.const';
 
 @NgModule({
     imports: [
