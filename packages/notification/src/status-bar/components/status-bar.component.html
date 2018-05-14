@@ -1,0 +1,14 @@
+<div class="aui-statusbar" *ngIf="activeNotification" [ngClass]="typeClasses[activeNotification.type]">
+    <span class="status-icon" [ngClass]="iconMap[activeNotification.type]"></span>
+
+    <div class="notification">
+        <p>
+            <span [innerHTML]="activeNotification.message"></span>
+            <span *ngIf="notifications.length > 1">(<span [innerHTML]="remainingMessage | pluralizeLabel:replaceMap.remaining | interpolateLabel:replaceMap"></span>)</span>
+        </p>
+    </div>
+
+    <button class="a-button has-icon" (click)="onClearNotification()">
+        <span class="fa fa-times"></span>
+    </button>
+</div>

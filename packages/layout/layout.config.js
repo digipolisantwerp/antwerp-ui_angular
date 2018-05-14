@@ -6,7 +6,7 @@ module.exports = Object.assign({}, baseConfig, {
     "rootDir": "./src",
     "globals": {
         "ts-jest": {
-            "tsConfigFile": "../tsconfig.spec.json",
+            "tsConfigFile": "../../config/tsconfig.spec.json",
         },
         "__TRANSFORM_HTML__": true,
     },

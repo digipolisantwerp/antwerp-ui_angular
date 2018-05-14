@@ -1,0 +1,44 @@
+{
+  "name": "@acpaas-ui/ngx-flyout",
+  "version": "1.0.0",
+  "description": "ACPaaS UI - Angular Flyout Module",
+  "keywords": [
+    "acpaas-ui",
+    "a-ui",
+    "angular",
+    "typescript"
+  ],
+  "author": "Digipolis Antwerpen",
+  "contributors": [
+    "Tom Opdebeeck <tom.opdebeeck@district01.be>",
+    "Jasper De Smet <jasper.desmet@district01.be>",
+    "Jasper Van Proeyen <jasper.vanproeyen@digipolis.be>",
+    "Lieven Van Gestel <lieven.vangestel@digipolis.be>",
+    "Tom Van Den Broeck <tom.vandenbroeck@digipolis.be>"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/platform-server": "^5.2.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/platform-server": "^5.2.0"
+  },
+  "engines": {
+    "node": ">= 8.9.4",
+    "npm": ">= 5.6.0"
+  }
+}

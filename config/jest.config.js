@@ -13,7 +13,7 @@ module.exports = Object.assign({}, baseConfig, {
     // ],
     "globals": {
         "ts-jest": {
-            "tsConfigFile": "./config/tsconfig.spec.json",
+            "tsConfigFile": "config/tsconfig.spec.json",
         },
         "__TRANSFORM_HTML__": true,
     },

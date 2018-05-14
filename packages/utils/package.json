@@ -1,12 +1,13 @@
 {
     "name": "@acpaas-ui/ngx-utils",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "description": "",
     "$schema": "../../node_modules/ng-packagr/package.schema.json",
     "ngPackage": {
         "lib": {
             "entryFile": "./src/index.ts"
-        }
+        },
+        "whitelistedNonPeerDependencies": []
     },
     "files": [
         "dist"
@@ -20,5 +21,6 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {}
 }
