@@ -478,5 +478,10 @@
       }
     }
   },
-  "defaultProject": "styleguide"
+  "defaultProject": "styleguide",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  }
 }
