@@ -1,79 +1,27 @@
 {
-  "name": "@acpaas-ui/ngx-layout",
-  "version": "1.0.0",
-  "description": "ACPaaS UI - Angular Layout Module",
-  "keywords": [
-    "acpaas-ui",
-    "a-ui",
-    "angular",
-    "typescript"
-  ],
-  "author": "Digipolis Antwerpen",
-  "contributors": [
-    "Tom Opdebeeck <tom.opdebeeck@district01.be>",
-    "Jasper De Smet <jasper.desmet@district01.be>",
-    "Jasper Van Proeyen <jasper.vanproeyen@digipolis.be>",
-    "Lieven Van Gestel <lieven.vangestel@digipolis.be>",
-    "Tom Van Den Broeck <tom.vandenbroeck@digipolis.be>"
-  ],
-  "$schema": "../../node_modules/ng-packagr/package.schema.json",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "./src/index.ts"
-    },
-    "whitelistedNonPeerDependencies": [
-      "@acpaas-ui/ngx-utils",
-      "@angular-redux/store",
-      "@angular/core",
-      "@jsprds/headroom.ts",
-      "deepmerge",
-      "lodash.get",
-      "lodash.last",
-      "ramda",
-      "deepmerge",
-      "cookieconsent"
+  "name": "layout",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular-redux/store": "^7.1.1",
+    "@angular/common": "~5.2.0",
+    "@angular/core": "~5.2.0"
+  },
+  "acpaas-ui": {
+    "dependencies": [
+      "utils"
     ]
   },
-  "scripts": {
-    "setup": "rimraf node_modules && npm install",
-    "build": "ng-packagr -p package.json",
-    "postversion": "npm run build && npm publish dist"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:8081/repository/npm-private/"
-  },
-  "license": "ISC",
-  "peerDependencies": {
-    "@acpaas-ui/ngx-utils": "^1.0.0",
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/platform-server": "^5.2.0"
-  },
   "devDependencies": {
-    "@acpaas-ui/ngx-utils": "^1.0.0",
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/platform-server": "^5.2.0"
+    "@angular-redux/store": "^7.1.1",
+    "rxjs-compat": "^6.1.0"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-utils": "^1.0.0",
-    "@angular-redux/store": "^7.1.1",
     "@jsprds/headroom.ts": "0.0.2",
-    "cookieconsent": "~3.0.4",
-    "deepmerge": "^1.5.1",
+    "cookieconsent": "^3.0.6",
     "lodash.clonedeep": "^4.5.0",
     "lodash.get": "^4.4.2",
     "lodash.last": "^3.0.0",
-    "redux": "^3.7.2"
-  },
-  "engines": {
-    "node": ">= 8.9.4",
-    "npm": ">= 5.6.0"
+    "lodash.merge": "^4.6.1",
+    "redux": "^4.0.0"
   }
 }
