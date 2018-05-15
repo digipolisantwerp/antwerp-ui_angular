@@ -1,8 +1,4 @@
-export interface LeafletLayer {
-    name: string;
-    url: string;
-    options?: any;
-}
+import { LeafletLayer } from "./types/leaflet.types";
 
 export const baseMapWorldGray: LeafletLayer = {
     name: 'Base world gray',

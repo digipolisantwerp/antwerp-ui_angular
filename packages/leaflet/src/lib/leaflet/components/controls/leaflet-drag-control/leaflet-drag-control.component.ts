@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { LeafletMap } from '../leaflet-map';
+
+import { LeafletMap } from '../../../classes/leaflet-map';
 
 @Component({
     selector: 'aui-leaflet-drag-control',
-    template: `<aui-leaflet-control (click)="map?.switchToDragging()" icon="hand-paper-o"></aui-leaflet-control>`
+    templateUrl: './leaflet-drag-control.component.html'
 })
 export class LeafletDragControlComponent {
     map: LeafletMap;

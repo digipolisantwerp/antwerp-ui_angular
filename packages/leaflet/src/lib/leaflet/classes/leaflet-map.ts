@@ -1,20 +1,9 @@
-import 'leaflet/dist/leaflet.css';
-import 'leaflet-draw/dist/leaflet.draw.css';
+import { EventEmitter } from '@angular/core';
+
 import * as L from 'leaflet';
 import 'leaflet-draw';
 import * as esri from 'esri-leaflet';
-import { EventEmitter } from '@angular/core';
-import { LeafletLayer } from './leaflet-layer';
-
-export interface LeafletMapOptions {
-    center: L.LatLngExpression;
-    zoom: number;
-    lineColor?: string;
-    onAddLine?: Function;
-    polygonColor?: string;
-    onAddPolygon?: Function;
-    onEditFeature?: Function;
-}
+import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
 
 export class LeafletMap {
     private initialized = false;
