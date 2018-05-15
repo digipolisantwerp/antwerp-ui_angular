@@ -8,7 +8,7 @@ import {
     HostBinding
 } from '@angular/core';
 
-import { ITEMS_PER_PAGE_LABEL } from '../item-counter/item-counter.const';
+import { ITEMS_PER_PAGE_LABEL } from '../../item-counter.const';
 
 export enum sizes {
     S = <any>'S',
@@ -20,7 +20,7 @@ export enum sizes {
     selector: 'aui-items-per-page',
     templateUrl: './items-per-page.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    styleUrls: ['./items-per-page.component.css']
+    styleUrls: ['./items-per-page.component.scss']
 })
 export class ItemsPerPageComponent {
     public inputSizes = {

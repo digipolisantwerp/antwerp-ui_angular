@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
-// Unique instance id
-let id = 0;
+import { PaginationDisplay } from '../../types/pagination.types';
 
 @Component({
     selector: 'aui-pagination',
@@ -12,7 +11,7 @@ export class PaginationComponent implements OnChanges {
     @Input() public ariaPreviousLabel = 'Ga naar de vorige pagina';
     @Input() public ariaNextLabel = 'Ga naar de volgende pagina';
     @Input() public currentPage: number;
-    @Input() public display = 'basic';
+    @Input() public display: PaginationDisplay = 'basic';
     @Input() public itemsPerPage: number;
     @Input() public styling = 'outlined';
     @Input() public totalValues: number;
@@ -20,12 +19,7 @@ export class PaginationComponent implements OnChanges {
 
     public totalPages = 0;
     public numbers: string[] = [];
-    public instanceId;
-
-    constructor() {
-        id += 1; // Use this to have unique ids with multiple pagination instances on one page.
-        this.instanceId = id;
-    }
+	public instanceId: string = Math.random().toString(36).substr(2, 9); // Use this to have unique ids with multiple pagination instances on one page.
 
     public ngOnChanges() {
         this.setValues();

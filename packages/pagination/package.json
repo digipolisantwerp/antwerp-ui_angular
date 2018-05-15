@@ -1,56 +1,14 @@
 {
-  "name": "@acpaas-ui/ngx-pagination",
-  "version": "1.0.0",
-  "description": "ACPaaS UI - Angular Pagination Module",
-  "keywords": [
-    "acpaas-ui",
-    "a-ui",
-    "angular",
-    "typescript"
-  ],
-  "author": "Digipolis Antwerpen",
-  "contributors": [
-    "Tom Opdebeeck <tom.opdebeeck@district01.be>",
-    "Jasper De Smet <jasper.desmet@district01.be>",
-    "Jasper Van Proeyen <jasper.vanproeyen@digipolis.be>",
-    "Lieven Van Gestel <lieven.vangestel@digipolis.be>",
-    "Tom Van Den Broeck <tom.vandenbroeck@digipolis.be>"
-  ],
-  "license": "ISC",
-  "$schema": "../../node_modules/ng-packagr/package.schema.json",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "./src/index.ts"
-    },
-    "whitelistedNonPeerDependencies": [
-      "@acpaas-ui/ngx-utils"
-    ]
-  },
-  "scripts": {
-    "setup": "rimraf node_modules && npm install",
-    "build": "ng-packagr -p package.json",
-    "postversion": "npm run build && npm publish dist"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:8081/repository/npm-private/"
-  },
+  "name": "pagination",
+  "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/platform-server": "^5.2.0"
+    "@angular/common": "~5.2.0",
+    "@angular/core": "~5.2.0"
+  },
+  "acpaas-ui": {
+    "dependencies": []
   },
   "devDependencies": {
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/platform-server": "^5.2.0"
-  },
-  "dependencies": {
-    "@acpaas-ui/ngx-utils": "^1.0.0"
+    "rxjs-compat": "^6.1.0"
   }
 }

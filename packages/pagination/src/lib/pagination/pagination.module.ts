@@ -1,22 +1,22 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PaginationComponent } from './components/pagination.component';
+import { Components } from './components';
 import { PaginationLabels } from './types/pagination.types';
-import { PAGINATION_LABELS, DEFAULT_TRANSLATIONS } from './pagination.conf';
+import { PAGINATION_LABELS, PAGINATION_LABELS_DEFAULT } from './pagination.conf';
 
 @NgModule({
     imports: [
         CommonModule
     ],
     declarations: [
-        PaginationComponent
+        ...Components,
     ],
     exports: [
-        PaginationComponent
+        ...Components,
     ],
     providers: [
-        { provide: PAGINATION_LABELS, useValue: DEFAULT_TRANSLATIONS }
+        { provide: PAGINATION_LABELS, useValue: PAGINATION_LABELS_DEFAULT }
     ]
 })
 export class PaginationModule {

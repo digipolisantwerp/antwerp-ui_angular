@@ -8,7 +8,7 @@ import {
     HostBinding
 } from '@angular/core';
 
-import { ITEM_COUNTER_LABEL } from './item-counter.const';
+import { ITEM_COUNTER_LABEL } from '../../item-counter.const';
 
 @Component({
     selector: 'aui-item-counter',

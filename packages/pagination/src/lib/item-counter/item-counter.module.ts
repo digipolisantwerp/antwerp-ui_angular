@@ -2,12 +2,11 @@ import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { LabelsModule, Label } from '@acpaas-ui/ngx-utils';
+import { LabelsModule, Label } from '@acpaas-ui/ngx-components/utils';
 
-import { ItemCounterComponent } from './components/item-counter/item-counter.component';
-import { ItemsPerPageComponent } from './components/items-per-page/items-per-page.component';
+import { Components } from './components';
 
-import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './components/item-counter/item-counter.const';
+import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './item-counter.const';
 
 @NgModule({
     imports: [
@@ -16,12 +15,10 @@ import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './components/item-coun
         LabelsModule
     ],
     declarations: [
-        ItemCounterComponent,
-        ItemsPerPageComponent
+		...Components,
     ],
     exports: [
-        ItemCounterComponent,
-        ItemsPerPageComponent
+		...Components,
     ],
     providers: [
         { provide: ITEM_COUNTER_LABEL, useValue: undefined },
@@ -29,12 +26,15 @@ import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './components/item-coun
     ]
 })
 export class ItemCounterModule {
-    static forChild(itemCounterLabel: Label, itmesPerPageLabel: Label) {
+    static forChild(
+		itemCounterLabel: Label,
+		itemsPerPageLabel: Label
+	) {
         return {
             ngModule: ItemCounterModule,
             providers: [
                 { provide: ITEM_COUNTER_LABEL, useValue: itemCounterLabel },
-                { provide: ITEMS_PER_PAGE_LABEL, useValue: itmesPerPageLabel }
+                { provide: ITEMS_PER_PAGE_LABEL, useValue: itemsPerPageLabel }
             ]
         };
     }

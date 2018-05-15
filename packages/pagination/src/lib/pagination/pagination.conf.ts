@@ -4,6 +4,6 @@ import { PaginationLabels } from './types/pagination.types';
 
 export const PAGINATION_LABELS = new InjectionToken<PaginationLabels>('paginationLabels');
 
-export const DEFAULT_TRANSLATIONS: PaginationLabels = {
+export const PAGINATION_LABELS_DEFAULT: PaginationLabels = {
     PAGINATION_LABEL: '%{currentPage} of %{total}'
 };
