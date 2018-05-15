@@ -1,4 +1,4 @@
-export enum ButtonSize {
+export enum FlyoutButtonSize {
     Auto = 'auto',
     Tiny = 'tiny',
     Small = 'small',

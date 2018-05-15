@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { ButtonSize } from './flyout-button.interfaces';
+import { FlyoutButtonSize } from '../../types/flyout-button.types';
 
 @Component({
     selector: 'aui-flyout-button',
@@ -18,7 +18,7 @@ export class FlyoutButtonComponent {
     @Input() label: string;
     @Input() icon: string;
     @Input() align: string;
-    @Input() buttonSize: ButtonSize = ButtonSize.Auto;
+    @Input() buttonSize: FlyoutButtonSize = FlyoutButtonSize.Auto;
     @Input() flyoutSize: string;
     @Input() outline = false;
 

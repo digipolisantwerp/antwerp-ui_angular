@@ -8,11 +8,13 @@ import {
     HostBinding,
     OnDestroy,
 } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 import { FlyoutZoneDirective } from './flyout-zone.directive';
 import { FlyoutService } from '../services/flyout.service';
-import { FlyoutSize } from './flyout.interfaces';
+import { FlyoutSize } from '../types/flyout.types';
 
-import { Subscription } from 'rxjs/Subscription';
 
 @Directive({
     selector: '[auiFlyout]',
@@ -52,18 +54,20 @@ export class FlyoutDirective implements OnDestroy {
     private element: HTMLElement;
     private flyoutOpened = false;
 
-    private triggerClose: Subscription;
+    private destroyed$: Subject<boolean> = new Subject<boolean>();
 
     constructor(private elementRef: ElementRef, private flyoutService: FlyoutService) {
         this.element = this.elementRef.nativeElement;
 
-        this.triggerClose = this.flyoutService.subject.subscribe((res) => {
-            this.close();
-        });
+		this.flyoutService.subject
+			.pipe(takeUntil(this.destroyed$))
+			.subscribe((res) => {
+				this.close();
+			});
     }
 
     public ngOnDestroy() {
-        this.triggerClose.unsubscribe();
+        this.destroyed$.next(true);
     }
 
     public open(): void {

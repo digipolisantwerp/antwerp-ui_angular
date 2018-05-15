@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FlyoutModule } from '../flyout';
 
-import { FlyoutButtonComponent } from './components/flyout-button.component';
+import { Components } from './components';
 
 @NgModule({
     imports: [
@@ -11,10 +11,10 @@ import { FlyoutButtonComponent } from './components/flyout-button.component';
         FlyoutModule
     ],
     declarations: [
-        FlyoutButtonComponent
+        ...Components,
     ],
     exports: [
-        FlyoutButtonComponent
+        ...Components,
     ]
 })
 export class FlyoutButtonModule {

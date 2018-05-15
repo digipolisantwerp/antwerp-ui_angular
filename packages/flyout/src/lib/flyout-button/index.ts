@@ -1,3 +1,3 @@
-export * from './flyout-button.module';
-export * from './components/flyout-button.interfaces';
-export * from './components/flyout-button.component';
+export { FlyoutButtonModule } from './flyout-button.module';
+export { FlyoutButtonComponent } from './components/flyout-button/flyout-button.component';
+export { FlyoutButtonSize } from './types/flyout-button.types';

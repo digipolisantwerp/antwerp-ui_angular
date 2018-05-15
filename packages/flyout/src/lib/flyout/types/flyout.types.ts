@@ -5,3 +5,7 @@ export enum FlyoutSize {
     Large = 'large',
     Full = 'full',
 }
+
+export interface FlyoutState {
+	close: boolean;
+};

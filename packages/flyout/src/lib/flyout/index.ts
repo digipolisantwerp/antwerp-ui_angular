@@ -1,7 +1,7 @@
-export * from './flyout.module';
-export * from './directives/flyout-action.directive';
-export * from './directives/flyout-close.directive';
-export * from './directives/flyout-zone.directive';
-export * from './directives/flyout.interfaces';
-export * from './directives/flyout.directive';
-export * from './services/flyout.service';
+export { FlyoutModule } from './flyout.module';
+export { FlyoutActionDirective } from './directives/flyout-action.directive';
+export { FlyoutCloseDirective } from './directives/flyout-close.directive';
+export { FlyoutZoneDirective } from './directives/flyout-zone.directive';
+export { FlyoutDirective } from './directives/flyout.directive';
+export { FlyoutService } from './services/flyout.service';
+export { FlyoutSize, FlyoutState } from './types/flyout.types';
