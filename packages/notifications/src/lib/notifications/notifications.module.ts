@@ -4,7 +4,7 @@ import {
     NgModule,
     ModuleWithProviders,
 } from '@angular/core';
-import { NotificationStore } from '@acpaas-ui/notification-store'; // @todo: fix import path once package is published
+import { NotificationStore } from '@acpaas-ui/notification-store'; // TODO: fix import path once package is published
 
 import { NotificationsService } from './services/notifications.service';
 import {
