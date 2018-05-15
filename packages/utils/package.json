@@ -1,26 +1,14 @@
 {
-    "name": "@acpaas-ui/ngx-utils",
-    "version": "1.0.0",
-    "description": "",
-    "$schema": "../../node_modules/ng-packagr/package.schema.json",
-    "ngPackage": {
-        "lib": {
-            "entryFile": "./src/index.ts"
-        },
-        "whitelistedNonPeerDependencies": []
-    },
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "ng-packagr -p package.json",
-        "postversion": "npm run build && npm publish dist"
-    },
-    "publishConfig": {
-        "registry": "http://localhost:8081/repository/npm-private/"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {}
+  "name": "utils",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "~5.2.0",
+    "@angular/core": "~5.2.0"
+  },
+  "acpaas-ui": {
+    "dependencies": []
+  },
+  "devDependencies": {
+    "rxjs-compat": "^6.1.0"
+  }
 }
