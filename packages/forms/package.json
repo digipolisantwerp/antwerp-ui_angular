@@ -1,57 +1,25 @@
 {
-  "name": "@acpaas-ui/ngx-forms",
-  "version": "1.0.0",
-  "description": "ACPaaS UI - Angular Forms module",
-  "keywords": [
-    "acpaas-ui",
-    "a-ui",
-    "angular",
-    "typescript"
-  ],
-  "author": "Digipolis Antwerpen",
-  "contributors": [
-    "Tom Opdebeeck <tom.opdebeeck@district01.be>",
-    "Jasper De Smet <jasper.desmet@district01.be>",
-    "Jasper Van Proeyen <jasper.vanproeyen@digipolis.be>",
-    "Lieven Van Gestel <lieven.vangestel@digipolis.be>",
-    "Tom Van Den Broeck <tom.vandenbroeck@digipolis.be>"
-  ],
-  "license": "ISC",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "forms",
+  "version": "0.0.1",
   "peerDependencies": {
-    "@acpaas-ui/ngx-flyout": "^1.0.0",
-    "@angular/animations": "5.2.0",
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/forms": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/platform-server": "^5.2.0"
+    "@angular/common": "~5.2.0",
+    "@angular/core": "~5.2.0",
+    "@angular/forms": "~5.2.0"
+  },
+  "acpaas-ui": {
+    "dependencies": [
+      "flyout",
+      "progress-bar"
+    ]
   },
   "devDependencies": {
-    "@acpaas-ui/ngx-flyout": "^1.0.0",
-    "@angular/animations": "5.2.0",
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/forms": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/platform-server": "^5.2.0"
+    "rxjs-compat": "^6.1.0"
   },
   "dependencies": {
     "inputmask": "^3.3.11",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
     "lodash.isequal": "^4.5.0",
-    "ng2-ckeditor": "1.1.9"
-  },
-  "engines": {
-    "node": ">= 8.9.4",
-    "npm": ">= 5.6.0"
+    "ng2-ckeditor": "^1.2.0"
   }
 }
