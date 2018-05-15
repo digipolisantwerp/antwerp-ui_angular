@@ -1,2 +1,2 @@
-export * from "./flyout";
-export * from "./flyout-button";
+export * from "./lib/flyout";
+export * from "./lib/flyout-button";
