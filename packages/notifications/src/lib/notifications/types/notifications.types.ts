@@ -1,7 +1,3 @@
-export interface NotificationsState {
-    notifications: Notifications;
-}
-
 export interface Notification {
     handle: string;
     type: string;

@@ -9,16 +9,17 @@ import {
 } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import 'rxjs/add/operator/filter';
-import { Label } from '@acpaas-ui/ngx-utils';
+
+import { Label } from '@acpaas-ui/ngx-components/utils';
 
 import {
     STATUSBAR_AVAILABLE_TYPES,
     STATUSBAR_DEFAULT_TYPES,
-} from './status-bar.conf';
+} from '../../status-bar.conf';
 import {
     StatusbarNotification,
     StatusbarAvailableTypes,
-} from '../types/status-bar.types';
+} from '../../types/status-bar.types';
 
 @Component({
     selector: 'aui-statusbar',

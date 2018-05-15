@@ -6,7 +6,7 @@ import * as actionTypes from './notifications.actiontypes';
 import { Notification, Notifications } from './notifications.types';
 import { NotificationsActionCreator } from './notifications.actioncreator';
 
-describe('The NotificationsActionCreator', () => {
+describe('Notifications actions', () => {
     class NgReduxMock {
         public dispatch() {}
     }

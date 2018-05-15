@@ -1,6 +1,6 @@
 import { InjectionToken } from '@angular/core';
 
-import { StatusbarAvailableTypes } from '../types/status-bar.types';
+import { StatusbarAvailableTypes } from './types/status-bar.types';
 
 export const STATUSBAR_AVAILABLE_TYPES = new InjectionToken<StatusbarAvailableTypes>('availableTypes');
 

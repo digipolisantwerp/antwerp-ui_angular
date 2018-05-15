@@ -8,13 +8,11 @@ import {
     NOTIFICATION_TRIGGER,
     NOTIFICATIONS_LOAD,
 } from './notifications.actiontypes';
-import {
-    NotificationsState,
-    Notifications,
-} from './notifications.types';
+import { Notifications } from '../../types/notifications.types';
+import { NotificationsState } from '../store.types';
 
 @Injectable()
-export class NotificationsActionCreator {
+export class NotificationsActions {
     private store = new NotificationStore();
     private actionQueue: string[] = [];
 

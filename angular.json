@@ -317,38 +317,38 @@
         }
       }
     },
-    "notification": {
-      "root": "packages/notification",
-      "sourceRoot": "packages/notification/src",
+    "notifications": {
+      "root": "packages/notifications",
+      "sourceRoot": "packages/notifications/src",
       "projectType": "library",
       "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "packages/notification/tsconfig.lib.json",
-            "project": "packages/notification/ng-package.json"
+            "tsConfig": "packages/notifications/tsconfig.lib.json",
+            "project": "packages/notifications/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "packages/notification/ng-package.prod.json"
+              "project": "packages/notifications/ng-package.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "packages/notification/src/test.ts",
-            "tsConfig": "packages/notification/tsconfig.spec.json",
-            "karmaConfig": "packages/notification/karma.conf.js"
+            "main": "packages/notifications/src/test.ts",
+            "tsConfig": "packages/notifications/tsconfig.spec.json",
+            "karmaConfig": "packages/notifications/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "packages/notification/tsconfig.lib.json",
-              "packages/notification/tsconfig.spec.json"
+              "packages/notifications/tsconfig.lib.json",
+              "packages/notifications/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

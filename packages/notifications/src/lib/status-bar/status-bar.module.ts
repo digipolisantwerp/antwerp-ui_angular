@@ -1,11 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LabelsModule } from '@acpaas-ui/labels';
 
-import { StatusbarComponent } from './components/status-bar.component';
-import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from './components/status-bar.conf';
+import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
+
+import { Components } from './components';
 import { StatusbarAvailableTypes } from './types/status-bar.types';
+import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from './status-bar.conf';
 
 @NgModule({
     imports: [
@@ -15,10 +16,10 @@ import { StatusbarAvailableTypes } from './types/status-bar.types';
         LabelsModule,
     ],
     declarations: [
-        StatusbarComponent
+        ...Components,
     ],
     exports: [
-        StatusbarComponent
+		...Components,
     ],
     providers: [
         { provide: STATUSBAR_AVAILABLE_TYPES, useValue: STATUSBAR_DEFAULT_TYPES }
