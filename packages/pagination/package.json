@@ -6,7 +6,9 @@
     "@angular/core": "~5.2.0"
   },
   "acpaas-ui": {
-    "dependencies": []
+    "dependencies": [
+      "utils"
+    ]
   },
   "devDependencies": {
     "rxjs-compat": "^6.1.0"
