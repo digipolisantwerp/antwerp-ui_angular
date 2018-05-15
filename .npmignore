@@ -1,0 +1,8 @@
+src
+dist/ngx-components
+.*
+angular.json
+tsconfig.json
+tslint.json
+e2e
+packages

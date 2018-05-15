@@ -1,30 +1,25 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./out-tsc",
-    "allowJs": true,
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
-    "noUnusedLocals": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "baseUrl": "./packages",
-    "paths": {
-      "@acpaas-ui/ngx-flyout": [ "flyout/src" ],
-      "@acpaas-ui/ngx-forms": [ "forms/src" ],
-      "@acpaas-ui/ngx-layout": [ "layout/src" ],
-      "@acpaas-ui/ngx-pagination": [ "pagination/src" ],
-      "@acpaas-ui/ngx-progress-bar": [ "progress-bar/src" ],
-      "@acpaas-ui/ngx-utils": [ "utils/src" ]
-    },
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2016",
+      "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@acpaas-ui/ngx-components/*": [
+        "dist/*"
+      ]
+    }
   }
 }

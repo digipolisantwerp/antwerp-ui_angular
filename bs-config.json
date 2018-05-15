@@ -1,6 +1,0 @@
-{
-    "port": 3060,
-    "server": {
-        "baseDir": "./coverage"
-    }
-}
