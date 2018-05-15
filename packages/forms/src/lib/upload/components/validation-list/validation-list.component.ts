@@ -1,7 +1,8 @@
 import { Component, Input, Inject } from '@angular/core';
-import { InvalidFile } from '../upload/upload.const';
 
-import { ValidationMessagesService } from '../validation-messages/validation-messages.service';
+import { InvalidFile } from '../../types/upload.types';
+
+import { ValidationMessagesService } from '../../services/validation-messages.service';
 
 @Component({
     selector: 'aui-validation-list',
