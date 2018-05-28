@@ -12,9 +12,10 @@
     "postdeploy:major": "npm publish dist",
     "postdeploy:minor": "npm publish dist",
     "postdeploy:patch": "npm publish dist",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "./node_modules/.bin/ng test",
+    "lint": "./node_modules/.bin/ng lint",
+    "e2e": "./node_modules/.bin/ng e2e",
+    "ng": "./node_modules/.bin/ng"
   },
   "dependencies": {
     "@angular/common": "~6.0.1",
