@@ -4,38 +4,38 @@ import { FormsModule } from '@angular/forms';
 
 import { LabelsModule, Label } from '@acpaas-ui/ngx-components/utils';
 
-import { Components } from './components';
+import { Components } from './components/index';
 
-import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './item-counter.const';
+import { ITEM_COUNTER_LABEL, ITEMS_PER_PAGE_LABEL } from './item-counter.conf';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        LabelsModule
-    ],
-    declarations: [
+	imports: [
+		CommonModule,
+		FormsModule,
+		LabelsModule,
+	],
+	declarations: [
 		...Components,
-    ],
-    exports: [
+	],
+	exports: [
 		...Components,
-    ],
-    providers: [
-        { provide: ITEM_COUNTER_LABEL, useValue: undefined },
-        { provide: ITEMS_PER_PAGE_LABEL, useValue: undefined }
-    ]
+	],
+	providers: [
+		{ provide: ITEM_COUNTER_LABEL, useValue: undefined },
+		{ provide: ITEMS_PER_PAGE_LABEL, useValue: undefined },
+	],
 })
 export class ItemCounterModule {
-    static forChild(
+	static forChild(
 		itemCounterLabel: Label,
 		itemsPerPageLabel: Label
 	) {
-        return {
-            ngModule: ItemCounterModule,
-            providers: [
-                { provide: ITEM_COUNTER_LABEL, useValue: itemCounterLabel },
-                { provide: ITEMS_PER_PAGE_LABEL, useValue: itemsPerPageLabel }
-            ]
-        };
-    }
+		return {
+			ngModule: ItemCounterModule,
+			providers: [
+				{ provide: ITEM_COUNTER_LABEL, useValue: itemCounterLabel },
+				{ provide: ITEMS_PER_PAGE_LABEL, useValue: itemsPerPageLabel },
+			],
+		};
+	}
 }
