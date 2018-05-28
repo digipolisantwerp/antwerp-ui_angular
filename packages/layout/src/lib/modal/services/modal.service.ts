@@ -6,14 +6,9 @@ import {
     Type,
     ComponentRef
 } from '@angular/core';
-
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as get_ from 'lodash.get';
-const get = get_;
-import * as last_ from 'lodash.last';
-const last = last_;
-import * as clonedeep_ from 'lodash.clonedeep';
-const clonedeep = clonedeep_;
+import get from 'lodash.get';
+import last from 'lodash.last';
+import cloneDeep from 'lodash.clonedeep';
 
 import { ModalAbstract } from '../classes/modal.abstract';
 import { ModalRef, ModalComponentRef, ModalActions, ModalOptions } from '../modal.types';
@@ -32,7 +27,7 @@ export class ModalService {
     public openModal(template: Type<ModalAbstract>, modalData?: any, actions?: ModalActions, options: ModalOptions = {}): any {
         const modal = this.createRef(template);
         modal.instance.ref = modal;
-        modal.instance.modalData = clonedeep(modalData);
+        modal.instance.modalData = cloneDeep(modalData);
         modal.instance.modalActions = actions;
 
         const overlay = this.createRef(ModalOverlayComponent, [

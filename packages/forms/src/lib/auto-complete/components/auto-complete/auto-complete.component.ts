@@ -13,12 +13,8 @@ import {
     forwardRef
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as get_ from 'lodash.get';
-const get = get_;
-import * as isequal_ from 'lodash.isequal';
-const isequal = isequal_;
+import get from 'lodash.get';
+import isEqual from 'lodash.isequal';
 
 import { FlyoutDirective, FlyoutZoneDirective } from '@acpaas-ui/ngx-components/flyout';
 
@@ -118,7 +114,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
         }
 
         const newData = get(changes, 'data.currentValue', []);
-        if (!isequal(newData, get(changes, 'data.previousValue', []))) {
+        if (!isEqual(newData, get(changes, 'data.previousValue', []))) {
             if (this.remote) {
                 this.remoteSearch();
             } else {

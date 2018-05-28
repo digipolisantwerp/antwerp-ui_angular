@@ -12,14 +12,10 @@ import {
     NG_VALUE_ACCESSOR,
     ControlValueAccessor,
 } from '@angular/forms';
+import get from 'lodash.get';
+import debounce from 'lodash.debounce';
 
 import { FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
-
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as get_ from 'lodash.get';
-const get = get_;
-import * as debounce_ from 'lodash.debounce';
-const debounce = debounce_;
 
 import { SearchFilterChoice } from '../../types/search-filter.types';
 

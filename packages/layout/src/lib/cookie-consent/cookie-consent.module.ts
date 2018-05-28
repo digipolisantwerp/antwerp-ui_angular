@@ -1,11 +1,7 @@
 import { NgModule, ModuleWithProviders, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import merge from 'lodash.merge';
 import 'cookieconsent';
-
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as merge_ from 'lodash.merge';
-const merge = merge_;
-
 
 import { WindowRef } from './services/window.service';
 import { CookieconsentService } from './services/cookie-consent.service';
