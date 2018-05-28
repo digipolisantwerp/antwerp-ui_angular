@@ -1,4 +1,5 @@
 # ACPaaS UI **&lt;component&gt;**
+
 > **&lt;short component description&gt;**
 
 [![npm version](https://badge.fury.io/js/%40angular%2Fcore.svg)](https://badge.fury.io/js/%40angular%2Fcore)
@@ -8,13 +9,14 @@
 [Documentation](link/to/documentation)
 [Discussion](link/to/discussion)
 
+## Table of Contents
 
-# Table of Contents
 1. [Installation](#installation)
 2. [Components](#components)
-2. [Roadmap](#roadmap)
-3. [Contribution](#contribution)
-4. [License](#license)
+3. [Documentation](#documentation)
+4. [Roadmap](#roadmap)
+5. [Contribution](#contribution)
+6. [License](#license)
 
 ---
 
@@ -32,7 +34,7 @@ yarn add <package-name> --save
 
 You need to include **&lt;external requirements&gt;** in your page.
 
-```
+```html
 <script src="link/to/external/script"></script>
 ```
 
@@ -44,6 +46,10 @@ You need to include **&lt;external requirements&gt;** in your page.
 | Component 2 | Component | [Link to component](link)|
 | Service 1 | Service | [Link to component](link)|
 | Store 1 | Store | [Link to component](link)|
+
+## [Documentation](#documentation)
+
+Visit our [documentation site](link-to-module-docs) for usage examples and full API documentation.
 
 ## [Roadmap](#roadmap)
 
@@ -60,12 +66,11 @@ Please use the [Issue Queue](link-to-issues) to request new features or report b
 
 ## [Contribution](#contribution)
 
-Please make sure to read the [Contributing Guide](link/to/contributingguide) before making a pull request.
+Please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request.
 
 Thank you to all the people who already contributed to ACPaaS UI!
 
 **List of contributors here**
-
 
 ## [License](#license)
 
