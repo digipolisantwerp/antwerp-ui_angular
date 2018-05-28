@@ -1,5 +1,31 @@
 # ACPaaS UI dev guide
 
+## Available commands
+
+Since the ACPaaS UI library was created using the `angular-cli`, all the cli commands are available to use during development. You can use a global install (make sure to check the supported version in the root `package.json` file) or the local copy installed in the dev dependencies:
+
+```bash
+ng
+```
+or
+```bash
+npm run ng
+```
+
+Some useful commands:
+
+* `ng lint`: run the linter on the entire library
+* `ng lint <package>`: run the linter on a specific package
+* `ng test`: run the unit tests for the entire library
+* `ng test <package>`: run the unit tests for a specific package
+* `npm run build`: build the entire library (see below)
+* `ng build <package>`: build a specific package
+* `npm run bump -- --major|minor|patch`: bump the library version
+* `npm run deploy[:major|minor|patch]`: bump the library version and deploy a new build
+* `ng generate library <package>`: generate a new package
+
+For now, only the library generation is used, custom schematics might be added in the future to make the generation of other components possible as well.
+
 ## Creating a new package
 
 We use the built-in tools provided by the angular-cli to set up a new package:
@@ -12,8 +38,14 @@ When the cli is done generating files, a new folder will be added to the `packag
 
 For now, you need to change a few files and some config after the cli is done to be able to build your module (in the future, we plan to replace this with schematics):
 
+#### Update the entry file
+
 * rename `public_api.ts` to `index.ts`
-* update the `entryFile` property in `ng-package.json` & `ng-package.prod.json` to point to the renamed `index.ts` (e.g.: `src/index.ts`)
+* update the `entryFile` property in `ng-package.json`
+* update the `entryFile` property in `ng-package.prod.json`
+
+#### Update the build destination
+
 * update the `dest` property in `ng-package.prod.json` to point to your package folder (e.g. `../../dist/my-new-package`)
 * remove the auto generated path from the `tsconfig.json` in the root to avoid conflicts when importing
 
@@ -22,8 +54,8 @@ For now, you need to change a few files and some config after the cli is done to
     "@acpaas-ui/ngx-components/*": [
         "dist/*"
     ],
-    "dev": [        <- remove this
-        "dist/dev"
+    "my-new-package": [        <- remove this
+        "dist/my-new-package"
     ]
 ```
 
@@ -33,25 +65,25 @@ To make contributing as smooth as possible and treeshaking as flexible as possib
 
 You can build a single package while developing:
 
-```shell
+```bash
 ng build my-new-package
 ```
 
 Or the entire library:
 
-```shell
+```bash
 npm run build
 ```
 
 You can run tests on a single package:
 
-```shell
+```bash
 ng test my-new-package
 ```
 
 Or on the entire library:
 
-```shell
+```bash
 npm test
 ```
 
@@ -84,7 +116,9 @@ This means:
 
 When building the entire library, we need to make sure packages are built in the correct order. In our example, the `flyout` package needs to be built before the `leaflet` package.
 
-You can specify these dependencies in the `package.json` of your package:
+When using the `ng build` command, the build will most likely fail, since packages are handled by alphabetical order and dependencies might not yet exist.
+
+To ensure dependencies are built in the correct order, you can specify dependencies in the `package.json` of your package:
 
 ```json
 {
@@ -98,4 +132,4 @@ You can specify these dependencies in the `package.json` of your package:
 }
 ```
 
-When you run a build now, the `flyout` package will always be built before the `leaflet` package, regardless the alphabetical order.
+An using the `npm run build` command, dependencies will be resolved properly: the `flyout` package will always be built before the `leaflet` package, regardless the alphabetical order.
