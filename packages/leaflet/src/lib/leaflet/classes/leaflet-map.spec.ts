@@ -1,5 +1,5 @@
-import { LeafletMap, LeafletMapOptions } from './leaflet-map';
-import { LeafletLayer } from './leaflet-layer';
+import { LeafletMap } from './leaflet-map';
+import { LeafletMapOptions, LeafletLayer } from '../types/leaflet.types';
 import * as L from 'leaflet';
 import * as esri from 'esri-leaflet';
 import { fakeAsync, tick } from '@angular/core/testing';
@@ -51,6 +51,7 @@ describe('The leaflet map', () => {
 					zoom: options.zoom,
 					attributionControl: false,
 					zoomControl: false,
+					scrollWheelZoom: false,
 				}
 			);
 		});

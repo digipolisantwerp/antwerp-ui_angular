@@ -1,17 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LeafletComponent } from './leaflet.component';
-import { LeafletMap } from './leaflet-map';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-	LeafletFullscreenControlComponent,
-	LeafletDragControlComponent,
-	LeafletDrawControlComponent,
-	LeafletZoomControlComponent,
-	LeafletLocateControlComponent,
-} from './controls';
-import { LeafletModule } from '../leaflet.module';
+import { LeafletComponent } from './leaflet.component';
+import { LeafletMap } from '../../classes/leaflet-map';
+
+import { LeafletFullscreenControlComponent } from '../controls/leaflet-fullscreen-control/leaflet-fullscreen-control.component';
+import { LeafletDragControlComponent } from '../controls/leaflet-drag-control/leaflet-drag-control.component';
+import { LeafletDrawControlComponent } from '../controls/leaflet-draw-control/leaflet-draw-control.component';
+import { LeafletZoomControlComponent } from '../controls/leaflet-zoom-control/leaflet-zoom-control.component';
+import { LeafletLocateControlComponent } from '../controls/leaflet-locate-control/leaflet-locate-control.component';
+
+import { LeafletModule } from '../../leaflet.module';
 
 @Component({
 	template: `
@@ -67,10 +67,14 @@ describe('The leaflet component', () => {
 		comp = fixture.debugElement.query(By.directive(LeafletComponent)).injector.get(LeafletComponent);
 	});
 
-	it('should initialize the map', () => {
+	it('should initialize the map', (done) => {
 		const spy = spyOn(wrapperComp.leafletMap, 'init');
 		fixture.detectChanges(false);
-		expect(spy).toHaveBeenCalledWith(comp.map.nativeElement);
+
+		setTimeout(() => {
+			expect(spy).toHaveBeenCalledWith(comp.map.nativeElement);
+			done();
+		}, 100);
 	});
 
 	it('should hide the content when no content is passed', () => {

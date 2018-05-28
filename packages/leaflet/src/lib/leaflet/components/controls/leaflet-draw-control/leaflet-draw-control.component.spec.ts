@@ -1,8 +1,10 @@
 import { LeafletDrawControlComponent } from './leaflet-draw-control.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LeafletMap } from '../leaflet-map';
 import { By } from '@angular/platform-browser';
-import { FlyoutModule } from '@acpaas-ui/flyout';
+
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
+
+import { LeafletMap } from '../../../classes/leaflet-map';
 
 describe('The leaflet draw control component', () => {
 	let fixture: ComponentFixture<LeafletDrawControlComponent>;

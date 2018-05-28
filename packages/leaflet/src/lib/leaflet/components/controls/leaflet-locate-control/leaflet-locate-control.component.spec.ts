@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LeafletMap } from '../leaflet-map';
-import { LeafletControlComponent } from './leaflet-control.component';
 import { By } from '@angular/platform-browser';
+
+import { LeafletMap } from '../../../classes/leaflet-map';
+import { LeafletControlComponent } from '../leaflet-control/leaflet-control.component';
 import { LeafletLocateControlComponent } from './leaflet-locate-control.component';
 
 describe('The leaflet locate control component', () => {

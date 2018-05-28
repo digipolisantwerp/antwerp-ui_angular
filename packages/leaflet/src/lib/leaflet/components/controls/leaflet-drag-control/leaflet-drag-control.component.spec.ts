@@ -1,8 +1,9 @@
 import { LeafletDragControlComponent } from './leaflet-drag-control.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LeafletMap } from '../leaflet-map';
-import { LeafletControlComponent } from './leaflet-control.component';
 import { By } from '@angular/platform-browser';
+
+import { LeafletMap } from '../../../classes/leaflet-map';
+import { LeafletControlComponent } from '../leaflet-control/leaflet-control.component';
 
 describe('The leaflet drag control component', () => {
 	let fixture: ComponentFixture<LeafletDragControlComponent>;

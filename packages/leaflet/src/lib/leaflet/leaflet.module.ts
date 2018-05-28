@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
@@ -13,7 +12,6 @@ import { Components } from './components/index';
 @NgModule({
 	imports: [
 		CommonModule,
-		HttpModule,
 		FormsModule,
 		ReactiveFormsModule,
 		FlyoutModule,
