@@ -1,5 +1,5 @@
 import { async, inject } from '@angular/core/testing';
-import { interpolate } from '../labels.interpolation';
+import { interpolate } from './interpolation';
 
 describe('The interpolate pipe', () => {
 	it('returns the original label if no replaceData was provided', () => {
