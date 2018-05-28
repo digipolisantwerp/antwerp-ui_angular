@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-components",
+            "outputPath": "dist/styleguide",
             "index": "styleguide/index.html",
             "main": "styleguide/main.ts",
             "polyfills": "styleguide/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-components:build"
+            "browserTarget": "styleguide:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-components:build:production"
+              "browserTarget": "styleguide:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-components:build"
+            "browserTarget": "styleguide:build"
           }
         },
         "test": {
