@@ -1,1 +1,1 @@
-export * from './lib/leaflet';
+export * from './lib/leaflet/index';
