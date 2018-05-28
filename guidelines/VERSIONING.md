@@ -3,7 +3,6 @@
 This package is supplied as a library.
 For now, we will not release separate components on NPM.
 
-
 ## Release branches
 
 All the work for preparing a release should be done on separate `release`-branches. The final step in versioning/publishing should be a merge from the release branch to `master`.

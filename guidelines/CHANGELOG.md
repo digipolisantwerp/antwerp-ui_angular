@@ -10,5 +10,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Guidelines
 
 ### Pull Requests
-Every PR must include a relevant entry in the unreleased section of the changelog if targeting master (if an entry is needed for the code). This helps us ensure the person most familiar with the changes is helping to write the changelog while it's still fresh instead of trying to go back in time later. It also shortens our release process and helps us decide when it makes sense to do a release. Finally, it gives our users and team members a chance to see what we've been working on between releases without having to check the commit logs which are written specifically with the maintainers in mind.
 
+Every PR must include a relevant entry in the unreleased section of the changelog if targeting master (if an entry is needed for the code). This helps us ensure the person most familiar with the changes is helping to write the changelog while it's still fresh instead of trying to go back in time later. It also shortens our release process and helps us decide when it makes sense to do a release. Finally, it gives our users and team members a chance to see what we've been working on between releases without having to check the commit logs which are written specifically with the maintainers in mind.
