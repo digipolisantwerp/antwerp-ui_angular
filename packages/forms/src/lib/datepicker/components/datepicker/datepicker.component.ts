@@ -1,6 +1,6 @@
 import { Component, Input, Inject, forwardRef, ChangeDetectionStrategy, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/takeUntil'; // TODO: pipable operators
+import { takeUntil } from 'rxjs/operators';
 import {
     ControlValueAccessor,
     FormControl,
@@ -74,7 +74,9 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
     public ngOnInit(): void {
         this.formControl = this.formBuilder.control('');
         this.formControl.valueChanges
-            .takeUntil(this.componentDestroyed$)
+            .pipe(
+				takeUntil(this.componentDestroyed$)
+			)
             .subscribe((value) => {
                 if (value) {
                     const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
