@@ -1,1 +1,1 @@
-export * from "./lib/labels";
+export * from './lib/labels/index';

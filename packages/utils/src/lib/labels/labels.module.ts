@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 
-import { InterpolateLabelPipe, PluralizeLabelPipe } from './labels.pipe';
+import { Pipes } from './pipes/index';
 
 @NgModule({
-    declarations: [
-        InterpolateLabelPipe,
-        PluralizeLabelPipe
-    ],
-    exports: [
-        InterpolateLabelPipe,
-        PluralizeLabelPipe
-    ]
+	declarations: [
+		Pipes,
+	],
+	exports: [
+		Pipes,
+	],
 })
 export class LabelsModule {
 }
