@@ -2,7 +2,10 @@ import { async, inject, TestBed } from '@angular/core/testing';
 import { NgRedux } from '@angular-redux/store';
 import { NotificationStore } from '@acpaas-ui/notification-store';
 
-import * as actionTypes from './notifications.actiontypes';
+import {
+	NOTIFICATION_CLEAR_TARGET,
+	NOTIFICATIONS_LOAD,
+} from './notifications.actiontypes';
 import { Notification, Notifications } from './notifications.types';
 import { NotificationsActionCreator } from './notifications.actioncreator';
 
@@ -60,7 +63,7 @@ describe('Notifications actions', () => {
         });
 
         expect(notificationsActions.loadNotifications(notifications, undefined)).toEqual({
-            type: actionTypes.NOTIFICATIONS_LOAD,
+            type: NOTIFICATIONS_LOAD,
             notifications
         });
     }));
@@ -96,7 +99,7 @@ describe('Notifications actions', () => {
         notificationsActions.clearTarget('test');
 
         expect(notificationsActions.ngRedux.dispatch).toHaveBeenCalledWith({
-            type: actionTypes.NOTIFICATION_CLEAR_TARGET,
+            type: NOTIFICATION_CLEAR_TARGET,
             notifications: {}
         });
     }));

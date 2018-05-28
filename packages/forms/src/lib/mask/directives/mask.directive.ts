@@ -1,8 +1,5 @@
 import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
-
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as Inputmask_ from 'inputmask';
-const Inputmask = Inputmask_;
+import Inputmask from 'inputmask';
 
 @Directive({
     selector: '[auiMask]',

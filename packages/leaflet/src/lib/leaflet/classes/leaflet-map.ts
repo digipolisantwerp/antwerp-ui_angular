@@ -1,8 +1,8 @@
 import { EventEmitter } from '@angular/core';
-
 import * as L from 'leaflet';
-import 'leaflet-draw';
 import * as esri from 'esri-leaflet';
+import 'leaflet-draw';
+
 import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
 
 export class LeafletMap {

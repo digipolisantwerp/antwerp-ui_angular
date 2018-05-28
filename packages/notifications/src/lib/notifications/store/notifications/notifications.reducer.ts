@@ -1,6 +1,4 @@
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as deepEqual_ from 'deep-equal';
-const deepEqual = deepEqual_;
+import deepEqual from 'deep-equal';
 
 import { Notifications, Notification } from './notifications.types';
 import {

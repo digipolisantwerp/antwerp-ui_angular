@@ -3,7 +3,14 @@ import { LeafletComponent } from './leaflet.component';
 import { LeafletMap } from './leaflet-map';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import * as controls from './controls';
+
+import {
+	LeafletFullscreenControlComponent,
+	LeafletDragControlComponent,
+	LeafletDrawControlComponent,
+	LeafletZoomControlComponent,
+	LeafletLocateControlComponent,
+} from './controls';
 import { LeafletModule } from '../leaflet.module';
 
 @Component({
@@ -80,19 +87,19 @@ describe('The leaflet component', () => {
     it('should display the controls at the correct position', () => {
         fixture.detectChanges(false);
         expect(
-            fixture.debugElement.query(By.directive(controls.LeafletFullscreenControlComponent)).parent.nativeElement.parentNode.classList
+            fixture.debugElement.query(By.directive(LeafletFullscreenControlComponent)).parent.nativeElement.parentNode.classList
         ).toContain('aui-leaflet__controls--top-left');
         expect(
-            fixture.debugElement.query(By.directive(controls.LeafletDragControlComponent)).parent.nativeElement.parentNode.classList
+            fixture.debugElement.query(By.directive(LeafletDragControlComponent)).parent.nativeElement.parentNode.classList
         ).toContain('aui-leaflet__controls--top-right');
         expect(
-            fixture.debugElement.query(By.directive(controls.LeafletDrawControlComponent)).parent.nativeElement.parentNode.classList
+            fixture.debugElement.query(By.directive(LeafletDrawControlComponent)).parent.nativeElement.parentNode.classList
         ).toContain('aui-leaflet__controls--top-right');
         expect(
-            fixture.debugElement.query(By.directive(controls.LeafletZoomControlComponent)).parent.nativeElement.parentNode.classList
+            fixture.debugElement.query(By.directive(LeafletZoomControlComponent)).parent.nativeElement.parentNode.classList
         ).toContain('aui-leaflet__controls--bottom-left');
         expect(
-            fixture.debugElement.query(By.directive(controls.LeafletLocateControlComponent)).parent.nativeElement.parentNode.classList
+            fixture.debugElement.query(By.directive(LeafletLocateControlComponent)).parent.nativeElement.parentNode.classList
         ).toContain('aui-leaflet__controls--bottom-right');
     });
 
