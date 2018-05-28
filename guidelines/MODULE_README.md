@@ -13,9 +13,10 @@
 
 1. [Installation](#installation)
 2. [Components](#components)
-3. [Roadmap](#roadmap)
-4. [Contribution](#contribution)
-5. [License](#license)
+3. [Documentation](#documentation)
+4. [Roadmap](#roadmap)
+5. [Contribution](#contribution)
+6. [License](#license)
 
 ---
 
@@ -46,6 +47,10 @@ You need to include **&lt;external requirements&gt;** in your page.
 | Service 1 | Service | [Link to component](link)|
 | Store 1 | Store | [Link to component](link)|
 
+## [Documentation](#documentation)
+
+Visit our [documentation site](link-to-module-docs) for usage examples and full API documentation.
+
 ## [Roadmap](#roadmap)
 
 Please use the [Issue Queue](link-to-issues) to request new features or report bugs.
@@ -66,7 +71,6 @@ Please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before maki
 Thank you to all the people who already contributed to ACPaaS UI!
 
 **List of contributors here**
-
 
 ## [License](#license)
 
