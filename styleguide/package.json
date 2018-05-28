@@ -1,5 +1,5 @@
 {
-  "name": "@acpaas-ui/styleguide",
+  "name": "@acpaas-ui/ngx-styleguide",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
