@@ -1,4 +1,4 @@
-import { LogoComponent } from "./logo/logo.component";
+import { LogoComponent } from './logo/logo.component';
 
 export const Components = [
 	LogoComponent,

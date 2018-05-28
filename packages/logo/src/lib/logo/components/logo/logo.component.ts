@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aui-logo',
-  templateUrl: './logo.component.html'
+  templateUrl: './logo.component.html',
 })
 export class LogoComponent {
   @Input()
@@ -12,7 +12,7 @@ export class LogoComponent {
   src = 'https://place-hold.it/170x170';
 
   @Input()
-  link? = '/';
+  link ? = '/';
 
   @Input()
   onClick?: Function;

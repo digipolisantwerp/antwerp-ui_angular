@@ -5,15 +5,15 @@ import { Components } from './components/index';
 
 
 @NgModule({
-    imports: [
-        CommonModule,
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
-        ...Components,
-    ]
+	imports: [
+		CommonModule,
+	],
+	declarations: [
+		...Components,
+	],
+	exports: [
+		...Components,
+	],
 })
 export class LogoModule {
 }
