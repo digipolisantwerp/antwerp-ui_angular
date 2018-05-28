@@ -1,4 +1,4 @@
-import { StatusbarComponent } from "./status-bar/status-bar.component";
+import { StatusbarComponent } from './status-bar/status-bar.component';
 
 export const Components = [
 	StatusbarComponent,

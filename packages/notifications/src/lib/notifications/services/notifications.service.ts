@@ -3,7 +3,7 @@ import { NotificationStore } from '@acpaas-ui/notification-store'; // TODO: fix 
 
 @Injectable()
 export class NotificationsService {
-    constructor() {
-        return new NotificationStore();
-    }
+	constructor() {
+		return new NotificationStore();
+	}
 }

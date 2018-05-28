@@ -9,31 +9,31 @@ import { StatusbarAvailableTypes } from './types/status-bar.types';
 import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from './status-bar.conf';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule,
+	imports: [
+		CommonModule,
+		RouterModule,
 
-        LabelsModule,
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
+		LabelsModule,
+	],
+	declarations: [
 		...Components,
-    ],
-    providers: [
-        { provide: STATUSBAR_AVAILABLE_TYPES, useValue: STATUSBAR_DEFAULT_TYPES }
-    ]
+	],
+	exports: [
+		...Components,
+	],
+	providers: [
+		{ provide: STATUSBAR_AVAILABLE_TYPES, useValue: STATUSBAR_DEFAULT_TYPES },
+	],
 })
 export class StatusbarModule {
-    static forChild(
-        availableTypes: StatusbarAvailableTypes
-    ): ModuleWithProviders {
-        return {
-            ngModule: StatusbarModule,
-            providers: [
-                { provide: STATUSBAR_AVAILABLE_TYPES, useValue: availableTypes }
-            ]
-        };
-    }
+	static forChild(
+		availableTypes: StatusbarAvailableTypes
+	): ModuleWithProviders {
+		return {
+			ngModule: StatusbarModule,
+			providers: [
+				{ provide: STATUSBAR_AVAILABLE_TYPES, useValue: availableTypes },
+			],
+		};
+	}
 }
