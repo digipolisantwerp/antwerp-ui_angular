@@ -4,7 +4,7 @@
 
 We use the built-in tools provided by the angular-cli to set up a new package:
 
-```
+```bash
 ng generate library my-new-package
 ```
 
@@ -16,6 +16,7 @@ For now, you need to change a few files and some config after the cli is done to
 * update the `entryFile` property in `ng-package.json` & `ng-package.prod.json` to point to the renamed `index.ts` (e.g.: `src/index.ts`)
 * update the `dest` property in `ng-package.prod.json` to point to your package folder (e.g. `../../dist/my-new-package`)
 * remove the auto generated path from the `tsconfig.json` in the root to avoid conflicts when importing
+
 ```json
 "paths": {
     "@acpaas-ui/ngx-components/*": [
@@ -63,7 +64,8 @@ import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 ## Dependencies
 
 If you have a dependency between 2 packages, you can use the same import paths as you would in your app:
-```
+
+```typescript
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 ```
 

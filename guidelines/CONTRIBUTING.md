@@ -1,6 +1,6 @@
 # ACPaaS UI Contributing Guide
 
-Hi! We'reI’m really excited that you are interested in contributing to ACPaaS UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
+Hi! We're really excited that you are interested in contributing to ACPaaS UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Issue Reporting Guidelines](#issue-reporting-guidelines)
@@ -10,7 +10,7 @@ Hi! We'reI’m really excited that you are interested in contributing to ACPaaS 
 
 ## Issue Reporting Guidelines
 
-- Always use []() to create new issues.
+- Always use [GitHub Issues]() to create new issues.
 
 ## Pull Request Guidelines
 
@@ -39,7 +39,7 @@ You will need [Node.js](http://nodejs.org) **version 6+** and [Java Runtime Envi
 
 After cloning the repo, run:
 
-``` bash
+```bash
 $ npm install # or yarn
 ```
 
@@ -75,9 +75,3 @@ Explain project structure
 ## Credits
 
 Thank you to all the people who have already contributed to ACPaaS UI!
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzY4MDQ2OThdfQ==
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0OTAyMDg5OV19
--->
