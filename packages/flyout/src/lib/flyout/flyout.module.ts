@@ -5,17 +5,17 @@ import { Directives } from './directives/index';
 import { Services } from './services/index';
 
 @NgModule({
-    imports: [
-        CommonModule,
-    ],
-    declarations: [
-        ...Directives,
-    ],
-    exports: [
-        ...Directives,
-    ],
-    providers: [
-        ...Services,
-    ]
+	imports: [
+		CommonModule,
+	],
+	declarations: [
+		Directives,
+	],
+	exports: [
+		Directives,
+	],
+	providers: [
+		Services,
+	],
 })
 export class FlyoutModule {}

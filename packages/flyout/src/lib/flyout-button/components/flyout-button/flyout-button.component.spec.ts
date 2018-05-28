@@ -6,16 +6,16 @@ import { FlyoutButtonComponent } from './flyout-button.component';
 import { ButtonSize } from './flyout-button.interfaces';
 
 @Directive({
-    selector: '[auiFlyout]',
-    exportAs: 'auiFlyout'
+	selector: '[auiFlyout]',
+	exportAs: 'auiFlyout'
 })
 class MockFlyoutDirective {
-    @Input() public size;
+	@Input() public size;
 }
 
 @Component({
-    selector: 'aui-test-component',
-    template: `
+	selector: 'aui-test-component',
+	template: `
         <aui-flyout-button>
             <div id="test-projection"></div>
         </aui-flyout-button>
@@ -24,96 +24,96 @@ class MockFlyoutDirective {
 class TestComponent {}
 
 describe('The FlyoutButton Component', () => {
-    let testComp: TestComponent;
-    let testFixture: ComponentFixture<TestComponent>;
-    let testDe: DebugElement;
-    let testEl: HTMLElement;
-    let comp: FlyoutButtonComponent;
-    let fixture: ComponentFixture<FlyoutButtonComponent>;
-    let de: DebugElement;
-    let el: HTMLElement;
+	let testComp: TestComponent;
+	let testFixture: ComponentFixture<TestComponent>;
+	let testDe: DebugElement;
+	let testEl: HTMLElement;
+	let comp: FlyoutButtonComponent;
+	let fixture: ComponentFixture<FlyoutButtonComponent>;
+	let de: DebugElement;
+	let el: HTMLElement;
 
-    // async beforeEach
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            declarations: [
-                TestComponent,
-                MockFlyoutDirective,
-                FlyoutButtonComponent,
-            ],
-        })
-        .compileComponents();  // compile template and css
-    }));
+	// async beforeEach
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [
+				TestComponent,
+				MockFlyoutDirective,
+				FlyoutButtonComponent,
+			],
+		})
+		.compileComponents();  // compile template and css
+	}));
 
-    // synchronous beforeEach
-    beforeEach(() => {
-        testFixture = TestBed.createComponent(TestComponent);
-        testComp = testFixture.componentInstance;
-        testDe = testFixture.debugElement;
-        testEl = testDe.nativeElement;
+	// synchronous beforeEach
+	beforeEach(() => {
+		testFixture = TestBed.createComponent(TestComponent);
+		testComp = testFixture.componentInstance;
+		testDe = testFixture.debugElement;
+		testEl = testDe.nativeElement;
 
-        fixture = TestBed.createComponent(FlyoutButtonComponent);
-        comp = fixture.componentInstance;
-        de = fixture.debugElement.query(By.directive(MockFlyoutDirective));
-        el = de.nativeElement;
-    });
+		fixture = TestBed.createComponent(FlyoutButtonComponent);
+		comp = fixture.componentInstance;
+		de = fixture.debugElement.query(By.directive(MockFlyoutDirective));
+		el = de.nativeElement;
+	});
 
-    it('should exist', () => {
-        fixture.detectChanges();
-        expect(el).not.toBeUndefined();
-    });
+	it('should exist', () => {
+		fixture.detectChanges();
+		expect(el).not.toBeUndefined();
+	});
 
-    it('should render at different sizes', () => {
-        comp.buttonSize = ButtonSize.Small;
+	it('should render at different sizes', () => {
+		comp.buttonSize = ButtonSize.Small;
 
-        fixture.detectChanges();
-        expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--small');
-    });
+		fixture.detectChanges();
+		expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--small');
+	});
 
-    it('should have an outline option', () => {
-        comp.outline = true;
+	it('should have an outline option', () => {
+		comp.outline = true;
 
-        fixture.detectChanges();
-        expect(el.getElementsByTagName('button')[0].getAttribute('class')).toContain('a-button-outline');
-    });
+		fixture.detectChanges();
+		expect(el.getElementsByTagName('button')[0].getAttribute('class')).toContain('a-button-outline');
+	});
 
-    it('should apply the `has-icon` class when no label is present', () => {
-        comp.icon = 'fa-trash';
+	it('should apply the `has-icon` class when no label is present', () => {
+		comp.icon = 'fa-trash';
 
-        fixture.detectChanges();
-        expect(el.querySelector('.a-button').getAttribute('class')).toContain('has-icon');
-    });
+		fixture.detectChanges();
+		expect(el.querySelector('.a-button').getAttribute('class')).toContain('has-icon');
+	});
 
-    it('should apply the `has-icon-left` class when a label is present', () => {
-        comp.icon = 'fa-trash';
-        comp.label = 'Hello';
+	it('should apply the `has-icon-left` class when a label is present', () => {
+		comp.icon = 'fa-trash';
+		comp.label = 'Hello';
 
-        fixture.detectChanges();
-        expect(el.querySelector('.a-button').getAttribute('class')).toContain('has-icon-left');
-    });
+		fixture.detectChanges();
+		expect(el.querySelector('.a-button').getAttribute('class')).toContain('has-icon-left');
+	});
 
-    it('should toggle the flyoutOpen if handleFlyoutChanged is called', () => {
-        comp.handleFlyoutChanged(true);
+	it('should toggle the flyoutOpen if handleFlyoutChanged is called', () => {
+		comp.handleFlyoutChanged(true);
 
-        expect(comp.flyoutOpen).toBeTruthy();
+		expect(comp.flyoutOpen).toBeTruthy();
 
-        comp.handleFlyoutChanged(false);
+		comp.handleFlyoutChanged(false);
 
-        expect(comp.flyoutOpen).toBeFalsy();
-    });
+		expect(comp.flyoutOpen).toBeFalsy();
+	});
 
-    it('should not render the transcluded content if flyoutOpen is false', () => {
-        testFixture.detectChanges();
+	it('should not render the transcluded content if flyoutOpen is false', () => {
+		testFixture.detectChanges();
 
-        expect(testEl.querySelector('#test-projection')).toBeNull();
+		expect(testEl.querySelector('#test-projection')).toBeNull();
 
-        const btn = testEl.querySelector('button');
+		const btn = testEl.querySelector('button');
 
-        const flyout = testDe.children[0];
+		const flyout = testDe.children[0];
 
-        flyout.componentInstance.flyoutOpen = true;
-        testFixture.detectChanges();
+		flyout.componentInstance.flyoutOpen = true;
+		testFixture.detectChanges();
 
-        expect(testEl.querySelector('#test-projection')).not.toBeNull();
-    });
+		expect(testEl.querySelector('#test-projection')).not.toBeNull();
+	});
 });

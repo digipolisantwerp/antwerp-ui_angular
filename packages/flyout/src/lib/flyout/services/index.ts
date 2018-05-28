@@ -1,4 +1,4 @@
-import { FlyoutService } from "./flyout.service";
+import { FlyoutService } from './flyout.service';
 
 export const Services = [
 	FlyoutService,

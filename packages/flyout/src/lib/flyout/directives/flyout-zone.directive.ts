@@ -1,26 +1,26 @@
 import { Directive, ElementRef, Input, HostBinding } from '@angular/core';
 
 @Directive({
-    selector: '[auiFlyoutZone]',
-    exportAs: 'auiFlyoutZone'
+	selector: '[auiFlyoutZone]',
+	exportAs: 'auiFlyoutZone'
 })
 export class FlyoutZoneDirective {
 
-    @HostBinding('class.m-flyout__content') class = true;
+	@HostBinding('class.m-flyout__content') class = true;
 
-    @Input() public auiFlyoutZone: boolean;
+	@Input() public auiFlyoutZone: boolean;
 
-    public element: HTMLElement;
+	public element: HTMLElement;
 
-    constructor(private elementRef: ElementRef) {
-        this.element = this.elementRef.nativeElement;
-    }
+	constructor(private elementRef: ElementRef) {
+		this.element = this.elementRef.nativeElement;
+	}
 
-    public contains(element: HTMLElement) {
-        if (this.auiFlyoutZone === false) {
-            return false;
-        }
+	public contains(element: HTMLElement) {
+		if (this.auiFlyoutZone === false) {
+			return false;
+		}
 
-        return this.element.contains(element);
-    }
+		return this.element.contains(element);
+	}
 }
