@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, Directive, Input, Component } from '@angular/core';
 
 import { FlyoutButtonComponent } from './flyout-button.component';
-import { ButtonSize } from './flyout-button.interfaces';
+import { FlyoutButtonSize } from '../../types/flyout-button.types';
 
 @Directive({
 	selector: '[auiFlyout]',
@@ -64,7 +64,7 @@ describe('The FlyoutButton Component', () => {
 	});
 
 	it('should render at different sizes', () => {
-		comp.buttonSize = ButtonSize.Small;
+		comp.buttonSize = FlyoutButtonSize.Small;
 
 		fixture.detectChanges();
 		expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--small');
