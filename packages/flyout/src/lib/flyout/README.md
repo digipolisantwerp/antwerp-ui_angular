@@ -7,11 +7,11 @@
 | Name         | Description |
 | -----------  | ------ |
 | `FlyoutModule` | TODO
-| `FlyoutActionDirective` | TODO
-| `FlyoutCloseDirective` | TODO
-| `FlyoutDirective` | TODO
-| `FlyoutZoneDirective` | TODO
-| `FlyoutService` | TODO
+| `FlyoutActionDirective` | [FlyoutActionDirective](#flyoutactiondirective)
+| `FlyoutCloseDirective` | [FlyoutCloseDirective](#flyoutclosedirective)
+| `FlyoutDirective` | [FlyoutDirective](#flyoutdirective)
+| `FlyoutZoneDirective` | [FlyoutZoneDirective](#flyoutzonedirective)
+| `FlyoutService` | [FlyoutService](#flyoutservice)
 
 ## Usage
 
@@ -45,6 +45,10 @@ The content inside the html element or component with this directive will be dis
 | ---------- | -------- | ------- | -------------------------------- |
 | align      | `string` | `left`  | The alignment of the flyout-zone |
 | size       | [FlyoutSize](./types/flyout.types.ts) | `auto` | Flyout fixed width |
+
+### FlyoutDirective
+
+This directive is the wrapper around the `FlyoutAction` and `FlyoutZone`. Use this directive on a wrapper html element, mostly a div.
 
 ### FlyoutService
 
