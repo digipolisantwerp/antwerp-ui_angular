@@ -8,7 +8,7 @@ import {
 	ChangeDetectionStrategy
 } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-import 'rxjs/add/operator/filter';
+import { filter } from 'rxjs/operators';
 
 import { Label } from '@acpaas-ui/ngx-components/utils';
 
@@ -72,9 +72,11 @@ export class StatusbarComponent implements OnChanges {
 
 		if (this.activeNotification.scope === 'page') {
 			this.scopeListener = this.router.events
-				.filter(updatedRoute => {
-					return updatedRoute instanceof NavigationStart;
-				})
+				.pipe(
+					filter(updatedRoute => {
+						return updatedRoute instanceof NavigationStart;
+					})
+				)
 				.subscribe((updatedRoute => {
 					if (updatedRoute.url !== this.router.url) {
 						this.onClearNotification();
