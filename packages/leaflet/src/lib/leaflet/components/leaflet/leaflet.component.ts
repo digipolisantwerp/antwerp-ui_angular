@@ -17,36 +17,36 @@ import { LeafletDragControlComponent } from '../controls/leaflet-drag-control/le
 import { LeafletDrawControlComponent } from '../controls/leaflet-draw-control/leaflet-draw-control.component';
 
 @Component({
-    selector: 'aui-leaflet',
-    templateUrl: './leaflet.component.html',
-    styleUrls: ['./leaflet.component.scss'], // @todo: move this to aui-kit/core branding? check with styleguide team
-    encapsulation: ViewEncapsulation.None
+	selector: 'aui-leaflet',
+	templateUrl: './leaflet.component.html',
+	styleUrls: ['./leaflet.component.scss'], // @todo: move this to aui-kit/core branding? check with styleguide team
+	encapsulation: ViewEncapsulation.None,
 })
 export class LeafletComponent implements AfterViewInit, AfterContentInit {
-    @ViewChild('map') map: ElementRef;
-    @ViewChild('content') content: ElementRef;
-    @ContentChild(LeafletFullscreenControlComponent) fullScreenControl: LeafletFullscreenControlComponent;
-    @ContentChild(LeafletZoomControlComponent) zoomControl: LeafletZoomControlComponent;
-    @ContentChild(LeafletLocateControlComponent) locateControl: LeafletLocateControlComponent;
-    @ContentChild(LeafletDragControlComponent) dragControl: LeafletDragControlComponent;
-    @ContentChild(LeafletDrawControlComponent) drawControl: LeafletDrawControlComponent;
-    @Input() leafletMap: LeafletMap;
-    @Input() hasSidebar;
+	@ViewChild('map') map: ElementRef;
+	@ViewChild('content') content: ElementRef;
+	@ContentChild(LeafletFullscreenControlComponent) fullScreenControl: LeafletFullscreenControlComponent;
+	@ContentChild(LeafletZoomControlComponent) zoomControl: LeafletZoomControlComponent;
+	@ContentChild(LeafletLocateControlComponent) locateControl: LeafletLocateControlComponent;
+	@ContentChild(LeafletDragControlComponent) dragControl: LeafletDragControlComponent;
+	@ContentChild(LeafletDrawControlComponent) drawControl: LeafletDrawControlComponent;
+	@Input() leafletMap: LeafletMap;
+	@Input() hasSidebar;
 
-    ngAfterViewInit() {
-        // Make sure the map is properly rendered before initializing it
-        setTimeout(() => {
-            this.leafletMap.init(this.map.nativeElement);
-        });
-    }
+	ngAfterViewInit() {
+		// Make sure the map is properly rendered before initializing it
+		setTimeout(() => {
+			this.leafletMap.init(this.map.nativeElement);
+		});
+	}
 
-    ngAfterContentInit() {
-        [
-            this.fullScreenControl,
-            this.zoomControl,
-            this.locateControl,
-            this.dragControl,
-            this.drawControl
-        ].forEach(control => control ? control.map = this.leafletMap : null);
-    }
+	ngAfterContentInit() {
+		[
+			this.fullScreenControl,
+			this.zoomControl,
+			this.locateControl,
+			this.dragControl,
+			this.drawControl,
+		].forEach(control => control ? control.map = this.leafletMap : null);
+	}
 }

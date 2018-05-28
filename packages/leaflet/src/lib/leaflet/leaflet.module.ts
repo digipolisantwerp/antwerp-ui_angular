@@ -11,17 +11,17 @@ import 'leaflet-draw/dist/leaflet.draw.css';
 import { Components } from './components/index';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        HttpModule,
-        FormsModule,
-        ReactiveFormsModule,
-        FlyoutModule
-    ],
-    declarations: [
+	imports: [
+		CommonModule,
+		HttpModule,
+		FormsModule,
+		ReactiveFormsModule,
+		FlyoutModule,
+	],
+	declarations: [
 		...Components,
 	],
-    exports: [
+	exports: [
 		...Components,
 	],
 })
