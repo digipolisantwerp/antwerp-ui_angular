@@ -8,82 +8,82 @@ const cookieconsentConfig: any = {};
 const windowStub: any = {};
 
 const injectService = (cb) => {
-    return inject(
-        [CookieconsentService],
-        (cookieconsentService: CookieconsentService) => cb(cookieconsentService)
-    );
+	return inject(
+		[CookieconsentService],
+		(cookieconsentService: CookieconsentService) => cb(cookieconsentService)
+	);
 };
 
 describe('The Cookieconsent Service', () => {
-    // async beforeEach
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            providers: [
-                { provide: COOKIE_CONSENT_CONFIG, useValue: cookieconsentConfig },
-                { provide: WindowRef, useValue: windowStub },
-                CookieconsentService
-            ]
-        });
-    }));
+	// async beforeEach
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			providers: [
+				{ provide: COOKIE_CONSENT_CONFIG, useValue: cookieconsentConfig },
+				{ provide: WindowRef, useValue: windowStub },
+				CookieconsentService,
+			],
+		});
+	}));
 
-    describe('Initializing the cookieconsent plugin', () => {
-        beforeEach(() => {
-            spyOn(window.console, 'warn').and.stub();
-            CookieconsentService['initialized'] = false;
-        });
+	describe('Initializing the cookieconsent plugin', () => {
+		beforeEach(() => {
+			spyOn(window.console, 'warn').and.stub();
+			CookieconsentService['initialized'] = false;
+		});
 
-        it('should throw a warning if the CookieconsentService is already initialized', injectService(cookieconsentService => {
-            CookieconsentService['initialized'] = true;
+		it('should throw a warning if the CookieconsentService is already initialized', injectService(cookieconsentService => {
+			CookieconsentService['initialized'] = true;
 
-            cookieconsentService.init();
+			cookieconsentService.init();
 
-            expect(window.console.warn).toHaveBeenCalledWith('Cookie consent is already initialized!');
-        }));
+			expect(window.console.warn).toHaveBeenCalledWith('Cookie consent is already initialized!');
+		}));
 
-        it('should throw a warning if the cookieconsent plugin is not loaded', injectService(cookieconsentService => {
-            cookieconsentService.init();
+		it('should throw a warning if the cookieconsent plugin is not loaded', injectService(cookieconsentService => {
+			cookieconsentService.init();
 
-            expect(window.console.warn).toHaveBeenCalledWith('Cookie consent is not loaded!');
-        }));
+			expect(window.console.warn).toHaveBeenCalledWith('Cookie consent is not loaded!');
+		}));
 
-        describe('Cookieconsent loaded', () => {
-            beforeAll(() => {
-                windowStub.cookieconsent = {
-                    initialise: () => {}
-                };
+		describe('Cookieconsent loaded', () => {
+			beforeAll(() => {
+				windowStub.cookieconsent = {
+					initialise: () => {},
+				};
 
-                spyOn(windowStub.cookieconsent, 'initialise');
-            });
+				spyOn(windowStub.cookieconsent, 'initialise');
+			});
 
-            describe('without config', () => {
-                it(
-                    'should initialise the cookieconsent with the default config if no config was provided',
-                    injectService(cookieconsentService => {
-                        cookieconsentService.init();
+			describe('without config', () => {
+				it(
+					'should initialise the cookieconsent with the default config if no config was provided',
+					injectService(cookieconsentService => {
+						cookieconsentService.init();
 
-                        expect(windowStub.cookieconsent.initialise).toHaveBeenCalledWith(DEFAULT_CONSENT_CONFIG);
-                    })
-                );
-            });
+						expect(windowStub.cookieconsent.initialise).toHaveBeenCalledWith(DEFAULT_CONSENT_CONFIG);
+					})
+				);
+			});
 
-            describe('with config', () => {
-                beforeAll(() => {
-                    cookieconsentConfig.message = 'We use cookies. Deal with it.';
-                    cookieconsentConfig.dismiss = 'Got it';
-                });
+			describe('with config', () => {
+				beforeAll(() => {
+					cookieconsentConfig.message = 'We use cookies. Deal with it.';
+					cookieconsentConfig.dismiss = 'Got it';
+				});
 
-                it(
-                    'should initiliase the cookieconsent with the provided config, falling back on the default config',
-                    injectService(cookieconsentService => {
-                        cookieconsentService.init();
+				it(
+					'should initiliase the cookieconsent with the provided config, falling back on the default config',
+					injectService(cookieconsentService => {
+						cookieconsentService.init();
 
-                        expect(windowStub.cookieconsent.initialise).toHaveBeenCalledWith({
-                            message: 'We use cookies. Deal with it.',
-                            dismiss: 'Got it'
-                        });
-                    })
-                );
-            });
-        });
-    });
+						expect(windowStub.cookieconsent.initialise).toHaveBeenCalledWith({
+							message: 'We use cookies. Deal with it.',
+							dismiss: 'Got it',
+						});
+					})
+				);
+			});
+		});
+	});
 });

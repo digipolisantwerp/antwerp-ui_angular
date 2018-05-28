@@ -5,92 +5,92 @@ import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/t
 import { ModalOverlayComponent } from './modal-overlay.component';
 
 const getByCSSQuery = (query, elm, all?) => {
-    return all ? elm.querySelectorAll(query) : elm.querySelector(query);
+	return all ? elm.querySelectorAll(query) : elm.querySelector(query);
 };
 
 @Component({
-    selector: 'aui-test',
-    template: `
+	selector: 'aui-test',
+	template: `
         <aui-modal-overlay>
             <div class="m-modal">
                 <span id="insideModal"></span>
             </div>
             <span id="outsideModal"></span>
         </aui-modal-overlay>
-    `
+    `,
 })
 class TestComponent {}
 
 const modalMock = {
-    instance: {
-        closeModal: () => null
-    }
+	instance: {
+		closeModal: () => null,
+	},
 };
 
 describe('Modal - ModalOverlayComponent', () => {
-    let comp: TestComponent;
-    let fixture: ComponentFixture<TestComponent>;
-    let de: DebugElement;
-    let overlay: ModalOverlayComponent;
+	let comp: TestComponent;
+	let fixture: ComponentFixture<TestComponent>;
+	let de: DebugElement;
+	let overlay: ModalOverlayComponent;
 
-    // async beforeEach
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            declarations: [
-                ModalOverlayComponent,
-                TestComponent
-            ]
-        })
-        .compileComponents();
-    }));
+	// async beforeEach
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [
+				ModalOverlayComponent,
+				TestComponent,
+			],
+		})
+		.compileComponents();
+	}));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(TestComponent);
+	beforeEach(() => {
+		fixture = TestBed.createComponent(TestComponent);
 
-        comp = fixture.componentInstance;
+		comp = fixture.componentInstance;
 
-        de = fixture.debugElement;
+		de = fixture.debugElement;
 
-        overlay = de.children[0].componentInstance;
+		overlay = de.children[0].componentInstance;
 
-        fixture.detectChanges();
+		fixture.detectChanges();
 
-        (overlay as any).modal = modalMock;
+		(overlay as any).modal = modalMock;
 
-        spyOn(modalMock.instance, 'closeModal');
-    });
+		spyOn(modalMock.instance, 'closeModal');
+	});
 
-    it('should set the overlay classes on the host element', () => {
-        expect(getByCSSQuery('.m-overlay.is-active', de.nativeElement)).toBeDefined();
-    });
+	it('should set the overlay classes on the host element', () => {
+		expect(getByCSSQuery('.m-overlay.is-active', de.nativeElement)).toBeDefined();
+	});
 
-    it('should do nothing if the modal inside the overlay is clicked', () => {
-        const insideModal = getByCSSQuery('#insideModal', de.nativeElement);
+	it('should do nothing if the modal inside the overlay is clicked', () => {
+		const insideModal = getByCSSQuery('#insideModal', de.nativeElement);
 
-        insideModal.click();
+		insideModal.click();
 
-        fixture.detectChanges();
+		fixture.detectChanges();
 
-        expect(modalMock.instance.closeModal).not.toHaveBeenCalled();
-    });
+		expect(modalMock.instance.closeModal).not.toHaveBeenCalled();
+	});
 
-    it('should close the modal if the overlay is clicked', () => {
-        const overlayEl = getByCSSQuery('.m-overlay', de.nativeElement);
+	it('should close the modal if the overlay is clicked', () => {
+		const overlayEl = getByCSSQuery('.m-overlay', de.nativeElement);
 
-        overlayEl.click();
+		overlayEl.click();
 
-        fixture.detectChanges();
+		fixture.detectChanges();
 
-        expect(modalMock.instance.closeModal).toHaveBeenCalled();
-    });
+		expect(modalMock.instance.closeModal).toHaveBeenCalled();
+	});
 
-    it('should close the modal if an element inside the overlay, but outside the modal is clicked', () => {
-        const outsideModal = getByCSSQuery('#outsideModal', de.nativeElement);
+	it('should close the modal if an element inside the overlay, but outside the modal is clicked', () => {
+		const outsideModal = getByCSSQuery('#outsideModal', de.nativeElement);
 
-        outsideModal.click();
+		outsideModal.click();
 
-        fixture.detectChanges();
+		fixture.detectChanges();
 
-        expect(modalMock.instance.closeModal).toHaveBeenCalled();
-    });
+		expect(modalMock.instance.closeModal).toHaveBeenCalled();
+	});
 });

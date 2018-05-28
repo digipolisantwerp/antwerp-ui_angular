@@ -1,8 +1,8 @@
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-    selector: '[auiHeroCard]'
+	selector: '[auiHeroCard]',
 })
 export class HeroCardDirective {
-    @HostBinding() class = 'aui-hero-card';
+	@HostBinding() class = 'aui-hero-card';
 }

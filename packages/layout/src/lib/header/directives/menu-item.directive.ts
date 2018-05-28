@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[auiHeaderMenuItem]'
+  selector: '[auiHeaderMenuItem]',
 })
 export class HeaderMenuItemDirective {}

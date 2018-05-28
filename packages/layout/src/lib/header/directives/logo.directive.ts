@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[auiHeaderLogo]'
+  selector: '[auiHeaderLogo]',
 })
 export class HeaderLogoDirective {}

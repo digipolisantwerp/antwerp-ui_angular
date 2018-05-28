@@ -1,8 +1,8 @@
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-    selector: '[auiHeroCta]'
+	selector: '[auiHeroCta]',
 })
 export class HeroCtaDirective {
-    @HostBinding() class = 'aui-hero-cta';
+	@HostBinding() class = 'aui-hero-cta';
 }

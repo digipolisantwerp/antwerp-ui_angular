@@ -18,10 +18,7 @@
   "dependencies": {
     "@jsprds/headroom.ts": "0.0.2",
     "cookieconsent": "^3.0.6",
-    "lodash.clonedeep": "^4.5.0",
-    "lodash.get": "^4.4.2",
-    "lodash.last": "^3.0.0",
-    "lodash.merge": "^4.6.1",
+    "lodash-es": "^4.17.10",
     "redux": "^4.0.0"
   }
 }

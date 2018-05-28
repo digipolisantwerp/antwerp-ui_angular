@@ -1,4 +1,4 @@
-import { ModalService } from "..";
+import { ModalService } from '..';
 
 export const Services = [
 	ModalService,

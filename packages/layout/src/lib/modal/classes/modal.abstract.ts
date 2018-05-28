@@ -1,20 +1,20 @@
 import {
-    Component,
-    ComponentRef,
-    HostBinding
+	Component,
+	ComponentRef,
+	HostBinding
 } from '@angular/core';
 
 import { ModalService } from '../services/modal.service';
 import { ModalInstance } from '../types/modal.types';
 
 export abstract class ModalAbstract implements ModalInstance {
-    public ref: ComponentRef<ModalAbstract> = null;
+	public ref: ComponentRef<ModalAbstract> = null;
 
-    constructor(
-        protected modalService: ModalService
-    ) {}
+	constructor(
+		protected modalService: ModalService
+	) {}
 
-    public closeModal() {
-        this.modalService.closeModal(this.ref);
-    }
+	public closeModal() {
+		this.modalService.closeModal(this.ref);
+	}
 }

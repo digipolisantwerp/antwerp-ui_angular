@@ -6,18 +6,18 @@ import { Components } from './components';
 import { Directives } from './directives';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        CommonModule
-    ],
-    declarations: [
+	imports: [
+		BrowserModule,
+		CommonModule,
+	],
+	declarations: [
 		...Components,
 		...Directives,
-    ],
-    exports: [
+	],
+	exports: [
 		...Components,
 		...Directives,
-    ]
+	],
 })
 export class HeroModule {
 }

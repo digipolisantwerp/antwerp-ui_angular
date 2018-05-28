@@ -9,7 +9,7 @@
     "@angular-redux/store",
     "@jsprds/headroom.ts",
     "cookieconsent",
-    "lodash",
+    "lodash-es",
     "redux"
   ]
 }

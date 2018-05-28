@@ -1,4 +1,4 @@
-import { ModalAbstract } from "..";
+import { ModalAbstract } from '..';
 
 export const Classes = [
 	ModalAbstract,

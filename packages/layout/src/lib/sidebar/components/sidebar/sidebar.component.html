@@ -6,9 +6,9 @@
 		<h1 class="h6">{{ title | uppercase }}</h1>
 	</div>
 	<div class="o-sidebar__items">
-		<sidebar-item *ngFor="let item of items" [item]="item" (click)="itemClicked()"></sidebar-item>
+		<aui-sidebar-item *ngFor="let item of items" [item]="item" (click)="itemClicked()"></aui-sidebar-item>
 	</div>
-	<ng-content select="sup-sidebar-footer"></ng-content>
+	<ng-content select=".o-sidebar__footer"></ng-content>
 </div>
 
 <div class="m-overlay"

@@ -5,19 +5,19 @@ import { Directives } from './directives';
 import { Services } from './services';
 
 @NgModule({
-    providers: [
+	providers: [
 		...Services,
-    ],
-    declarations: [
+	],
+	declarations: [
 		...Components,
 		...Directives,
-    ],
-    exports: [
+	],
+	exports: [
 		...Components,
 		...Directives,
-    ],
-    entryComponents: [
-        ...EntryComponents,
-    ]
+	],
+	entryComponents: [
+		...EntryComponents,
+	],
 })
 export class ModalModule {}
