@@ -22,42 +22,9 @@ Some useful commands:
 * `ng build <package>`: build a specific package
 * `npm run bump -- --major|minor|patch`: bump the library version
 * `npm run deploy[:major|minor|patch]`: bump the library version and deploy a new build
-* `ng generate library <package>`: generate a new package
+* `npm run package -- --name=<package>`: generate a new package
 
 For now, only the library generation is used, custom schematics might be added in the future to make the generation of other components possible as well.
-
-## Creating a new package
-
-We use the built-in tools provided by the angular-cli to set up a new package:
-
-```bash
-ng generate library my-new-package
-```
-
-When the cli is done generating files, a new folder will be added to the `packages` folder, containing a dummy module and the required config files to build and test your package.
-
-For now, you need to change a few files and some config after the cli is done to be able to build your module (in the future, we plan to replace this with schematics):
-
-#### Update the entry file
-
-* rename `public_api.ts` to `index.ts`
-* update the `entryFile` property in `ng-package.json`
-* update the `entryFile` property in `ng-package.prod.json`
-
-#### Update the build destination
-
-* update the `dest` property in `ng-package.prod.json` to point to your package folder (e.g. `../../dist/my-new-package`)
-* remove the auto generated path from the `tsconfig.json` in the root to avoid conflicts when importing
-
-```json
-"paths": {
-    "@acpaas-ui/ngx-components/*": [
-        "dist/*"
-    ],
-    "my-new-package": [        <- remove this
-        "dist/my-new-package"
-    ]
-```
 
 ## Package vs Library
 
