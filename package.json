@@ -15,7 +15,8 @@
     "test": "./node_modules/.bin/ng test",
     "lint": "./node_modules/.bin/ng lint",
     "e2e": "./node_modules/.bin/ng e2e",
-    "ng": "./node_modules/.bin/ng"
+    "ng": "./node_modules/.bin/ng",
+    "styleguide": "./node_modules/.bin/ng serve styleguide"
   },
   "dependencies": {
     "@angular/common": "~6.0.1",
