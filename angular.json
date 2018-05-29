@@ -415,6 +415,46 @@
         }
       }
     },
+    "localstorage": {
+      "root": "packages/localstorage",
+      "sourceRoot": "packages/localstorage/src",
+      "projectType": "library",
+      "prefix": "aui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/localstorage/tsconfig.lib.json",
+            "project": "packages/localstorage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "packages/localstorage/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/localstorage/src/test.ts",
+            "tsConfig": "packages/localstorage/tsconfig.spec.json",
+            "karmaConfig": "packages/localstorage/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/localstorage/tsconfig.lib.json",
+              "packages/localstorage/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "logo": {
       "root": "packages/logo",
       "sourceRoot": "packages/logo/src",
