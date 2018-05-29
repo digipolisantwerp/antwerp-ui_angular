@@ -95,6 +95,86 @@
         }
       }
     },
+    "calendar": {
+      "root": "packages/calendar",
+      "sourceRoot": "packages/calendar/src",
+      "projectType": "library",
+      "prefix": "aui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/calendar/tsconfig.lib.json",
+            "project": "packages/calendar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "packages/calendar/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/calendar/src/test.ts",
+            "tsConfig": "packages/calendar/tsconfig.spec.json",
+            "karmaConfig": "packages/calendar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/calendar/tsconfig.lib.json",
+              "packages/calendar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "code-snippet": {
+      "root": "packages/code-snippet",
+      "sourceRoot": "packages/code-snippet/src",
+      "projectType": "library",
+      "prefix": "aui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/code-snippet/tsconfig.lib.json",
+            "project": "packages/code-snippet/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "packages/code-snippet/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/code-snippet/src/test.ts",
+            "tsConfig": "packages/code-snippet/tsconfig.spec.json",
+            "karmaConfig": "packages/code-snippet/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/code-snippet/tsconfig.lib.json",
+              "packages/code-snippet/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "flyout": {
       "root": "packages/flyout",
       "sourceRoot": "packages/flyout/src",
