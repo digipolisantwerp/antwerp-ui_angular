@@ -1,10 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
+import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 import { merge } from 'lodash-es';
 
 import { COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG } from '../cookie-consent.conf';
 import { CookieConsentConfig } from '../types/cookie-consent.types';
 
-import { WindowRef } from './window.service';
 
 @Injectable()
 export class CookieconsentService {
@@ -12,7 +12,7 @@ export class CookieconsentService {
 
 	constructor(
 		@Inject(COOKIE_CONSENT_CONFIG) private cookieConsentConfig,
-		@Inject(WindowRef) private $window
+		@Inject(WINDOW) private $window
 	) {}
 
 	init(config: CookieConsentConfig = this.cookieConsentConfig): void {

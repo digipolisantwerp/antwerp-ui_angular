@@ -1,9 +1,9 @@
 import { NgModule, ModuleWithProviders, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 import { merge } from 'lodash-es';
 import 'cookieconsent';
 
-import { WindowRef } from './services/window.service';
 import { CookieconsentService } from './services/cookie-consent.service';
 import { COOKIE_CONSENT_CONFIG_ROOT, COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG } from './cookie-consent.conf';
 import { CookieConsentConfig } from './types/cookie-consent.types';
@@ -17,7 +17,7 @@ export function setConfig(cookieConsentConfig: CookieConsentConfig): CookieConse
 		CommonModule,
 	],
 	providers: [
-		WindowRef,
+		WINDOW,
 		CookieconsentService,
 		{ provide: COOKIE_CONSENT_CONFIG, useValue: DEFAULT_CONSENT_CONFIG },
 	],
@@ -36,7 +36,7 @@ export class CookieconsentModule {
 					deps: [COOKIE_CONSENT_CONFIG_ROOT],
 				},
 
-				WindowRef,
+				WINDOW,
 				CookieconsentService,
 			],
 		};
