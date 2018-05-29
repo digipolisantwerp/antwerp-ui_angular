@@ -42,7 +42,7 @@ describe('The Calendar Year Component', () => {
 				TitleCasePipe,
 			],
 			providers: [
-				{ provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS }
+				{ provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS },
 			],
 		})
 		.compileComponents();
@@ -66,7 +66,7 @@ describe('The Calendar Year Component', () => {
 		expect(comp.months).toEqual([
 			CALENDAR_DEFAULT_MONTH_LABELS.slice(0, 4),
 			CALENDAR_DEFAULT_MONTH_LABELS.slice(4, 8),
-			CALENDAR_DEFAULT_MONTH_LABELS.slice(8, 12)
+			CALENDAR_DEFAULT_MONTH_LABELS.slice(8, 12),
 		]);
 	});
 

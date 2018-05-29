@@ -56,7 +56,7 @@ export class CalendarService {
 		return {
 			before: DateGenerator.generateRange(before, range, rangeOptions),
 			current: DateGenerator.generateRange(date, range, rangeOptions),
-			after: DateGenerator.generateRange(after, range, rangeOptions)
+			after: DateGenerator.generateRange(after, range, rangeOptions),
 		};
 	}
 

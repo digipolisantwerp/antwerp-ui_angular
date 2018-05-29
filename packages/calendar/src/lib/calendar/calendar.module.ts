@@ -2,8 +2,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Components } from './components/index';
-import { CalendarService } from './services/calendar.service';
-import { TitleCasePipe } from './pipes/title-case.pipe';
+import { Services } from './services/index';
+import { Pipes } from './pipes/index';
+
 import {
 	CALENDAR_WEEKDAY_LABELS,
 	CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -11,21 +12,22 @@ import {
 	CALENDAR_DEFAULT_MONTH_LABELS
 } from './calendar.conf';
 import { WeekdayLabelsConfig, MonthLabelsConfig } from './types/calendar.types';
+import { CalendarService } from './services/calendar.service';
 
 @NgModule({
 	imports: [
 		CommonModule,
 	],
 	declarations: [
-		...Components,
-		TitleCasePipe,
+		Components,
+		Pipes,
 	],
 	exports: [
-		...Components,
-		TitleCasePipe,
+		Components,
+		Pipes,
 	],
 	providers: [
-		CalendarService,
+		Services,
 		{ provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS },
 		{ provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS },
 	],

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
-import { DateRange } from '@acpaas-ui/js-date-utils';
+import { DateRange } from '@acpaas-ui/js-date-utils'; // TODO: add dependency once package is published
 
 import { CalendarModule } from '../../calendar.module';
 import { CalendarComponent } from './calendar.component';
@@ -16,7 +16,7 @@ import { CALENDAR_DEFAULT_MONTH_LABELS } from '../../calendar.conf';
 			[range]="range"
 			(selectDate)="selectDate($event)"
 		></aui-calendar>
-	`
+	`,
 })
 class TestComponent {
 	public selectedDate: Date;
@@ -239,7 +239,7 @@ describe('The Calendar Component', () => {
 
 			expect(calendar.selectDate.emit).toHaveBeenCalledWith({
 				date: date,
-				complete: true
+				complete: true,
 			});
 			expect(calendar.switchView).not.toHaveBeenCalled();
 		});

@@ -16,7 +16,7 @@ import { TitleCasePipe } from '../../pipes/title-case.pipe';
 			[range]="range"
 			(selectDate)="selectDate($event)"
 		></aui-calendar-month>
-	`
+	`,
 })
 class TestComponent {
 	public selectedDate: Date;
@@ -35,7 +35,7 @@ class CalendarMock {
 			[ { date: 7 }, { date: 8 }, { date: 9 }, { date: 10 }, { date: 11 }, { date: 12 }, { date: 13 } ],
 			[ {date: 14 }, { date: 15 }, { date: 16 }, { date: 17 }, { date: 18 }, { date: 19 }, { date: 20 } ],
 			[ { date: 21 }, { date: 22 }, { date: 23 }, { date: 24 }, { date: 25 }, { date: 26 }, { date: 27 } ],
-			[ { date: 28 }, { date: 29 }, { date: 30 }, { date: 1, padding: true }, { date: 2, padding: true } ]
+			[ { date: 28 }, { date: 29 }, { date: 30 }, { date: 1, padding: true }, { date: 2, padding: true } ],
 		];
 	}
 
@@ -47,7 +47,7 @@ class CalendarMock {
 		return {
 			before: [],
 			current: [2, 3],
-			after: []
+			after: [],
 		};
 	}
 }
@@ -71,7 +71,7 @@ describe('The Calendar Month Component', () => {
 			],
 			providers: [
 				{ provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS },
-				{ provide: CalendarService, useClass: CalendarMock }
+				{ provide: CalendarService, useClass: CalendarMock },
 			],
 		})
 		.compileComponents();
