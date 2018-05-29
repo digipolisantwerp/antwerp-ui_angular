@@ -125,8 +125,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "packages/calendar/tsconfig.lib.json",
-              "packages/calendar/tsconfig.spec.json"
+              "packages/agenda/tsconfig.lib.json",
+              "packages/agenda/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
