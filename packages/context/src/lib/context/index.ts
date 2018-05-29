@@ -1,3 +1,3 @@
-export * from './context.module';
-export * from './services/index';
-export * from './store/index';
+export { ContextModule } from './context.module';
+export { ContextService, ContextWriterService } from './services/index';
+export { ContextActionCreator, ContextStoreModule, contextReducer, CONTEXT_LOAD, IContext, IRootState } from './store/index';

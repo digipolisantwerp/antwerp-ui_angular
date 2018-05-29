@@ -1,2 +1,2 @@
-export * from './context/index';
-export * from './store.module';
+export { CONTEXT_LOAD, ContextActionCreator, contextReducer, IContext, IRootState } from './context/index';
+export { ContextStoreModule } from './store.module';
