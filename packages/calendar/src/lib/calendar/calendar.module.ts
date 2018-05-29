@@ -1,12 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CalendarComponent } from './components/calendar/calendar.component';
-import { CalendarMonthComponent } from './components/month/month.component';
-import { CalendarYearComponent } from './components/year/year.component';
-import { CalendarDecenniaComponent } from './components/decennia/decennia.component';
+import { Components } from './components/index';
 import { CalendarService } from './services/calendar.service';
-import { TitleCasePipe } from './pipes/titlecase.pipe';
+import { TitleCasePipe } from './pipes/title-case.pipe';
 import {
 	CALENDAR_WEEKDAY_LABELS,
 	CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -20,17 +17,11 @@ import { WeekdayLabelsConfig, MonthLabelsConfig } from './types/calendar.types';
 		CommonModule,
 	],
 	declarations: [
-		CalendarComponent,
-		CalendarMonthComponent,
-		CalendarYearComponent,
-		CalendarDecenniaComponent,
+		...Components,
 		TitleCasePipe,
 	],
 	exports: [
-		CalendarComponent,
-		CalendarMonthComponent,
-		CalendarYearComponent,
-		CalendarDecenniaComponent,
+		...Components,
 		TitleCasePipe,
 	],
 	providers: [
