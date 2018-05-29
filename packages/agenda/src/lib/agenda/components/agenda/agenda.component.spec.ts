@@ -3,7 +3,6 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { DateHelperService } from '../../services/date-helper.service';
-import '../rxjs';
 
 import { AgendaComponent } from './agenda.component';
 

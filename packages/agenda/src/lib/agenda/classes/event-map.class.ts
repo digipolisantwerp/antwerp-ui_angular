@@ -1,4 +1,4 @@
-import { SlotMapInterface, SlotInterface, EventInterface, WeekdayInterface } from '../interfaces';
+import { SlotMapInterface, SlotInterface, EventInterface, WeekdayInterface } from '../types/agenda.types';
 
 export class EventMap {
 	public slotMap: SlotMapInterface;
@@ -82,7 +82,7 @@ export class EventMap {
 					left: 'calc(' + dayWidth * slot.meta.day + '% + 4px)',
 					top: heightOffset + (weekHeight * slot.meta.week) + (slot.meta.slot * eventHeight) + 'px',
 					width: 'calc(' + dayWidth * slot.meta.span + '% - 8px)',
-				}
+				},
 			};
 		});
 	}

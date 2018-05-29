@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { EventInterface, SlotInterface, WeekdayInterface } from '../interfaces';
+import { EventInterface, SlotInterface, WeekdayInterface } from '../types/agenda.types';
 import { DateHelperService } from './date-helper.service';
-import { EventMap } from './event-map.class';
+import { EventMap } from '../classes/event-map.class';
 import { SortingService } from './sorting.service';
 
 @Injectable()
@@ -11,7 +11,7 @@ export class MonthViewSlotsService {
 
 	constructor(
 		private dateHelperService: DateHelperService,
-		private sortingService: SortingService,
+		private sortingService: SortingService
 	) {}
 
 	public generateEventMap(events: EventInterface[], weeks: WeekdayInterface[][], availableSlots: number): EventMap {

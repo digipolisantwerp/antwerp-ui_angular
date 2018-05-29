@@ -1,9 +1,21 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, TemplateRef, OnInit, OnChanges, OnDestroy, ElementRef } from '@angular/core'; // tslint:disable-line
+import {
+	Component,
+	Input,
+	Output,
+	EventEmitter,
+	ChangeDetectionStrategy,
+	TemplateRef,
+	OnInit,
+	OnChanges,
+	OnDestroy,
+	ElementRef,
+} from '@angular/core';
 import { timer } from 'rxjs/observable/timer';
 import { Subject } from 'rxjs/Subject';
-import { DateHelperService } from '../../services/date-helper.service';
+import { takeUntil, map, distinctUntilChanged } from 'rxjs/operators';
 
-import { VIEWS, DAYS, DateRangeInterface, EventInterface, HighLightInterface } from '../../interfaces';
+import { DateHelperService } from '../../services/date-helper.service';
+import { VIEWS, DAYS, DateRangeInterface, EventInterface, HighLightInterface } from '../../types/agenda.types';
 
 @Component({
 	selector: 'aui-agenda',
@@ -35,7 +47,7 @@ export class AgendaComponent implements OnInit, OnChanges, OnDestroy {
 
 	constructor(
 		private elementRef: ElementRef,
-		private dateHelperService: DateHelperService,
+		private dateHelperService: DateHelperService
 	) {}
 
 	public ngOnInit() {
@@ -113,17 +125,21 @@ export class AgendaComponent implements OnInit, OnChanges, OnDestroy {
 
 	private watchAgendaSize(): void {
 		this.agendaSize$ = timer(0, 250)
-			.takeUntil(this.componentDestroyed$)
-			.map(() => {
-				return this.elementRef.nativeElement.offsetWidth;
-			})
-			.distinctUntilChanged()
-			.map((width) => {
-				if (width > 800) {
-					return 'o-agenda--big';
-				} else {
-					return 'o-agenda--small';
-				}
-			});
+			.pipe(
+				takeUntil(this.componentDestroyed$),
+				map(() => {
+					return this.elementRef.nativeElement.offsetWidth;
+				}),
+				distinctUntilChanged()
+			)
+			.pipe(
+				map((width) => {
+					if (width > 800) {
+						return 'o-agenda--big';
+					} else {
+						return 'o-agenda--small';
+					}
+				})
+			);
 	}
 }

@@ -1,6 +1,6 @@
 import { DateHelperService } from './date-helper.service';
 
-import { DAYS } from '../interfaces';
+import { DAYS } from '../types/agenda.types';
 
 describe('DateHelper Service', () => {
 	let dateHelper;
@@ -93,7 +93,7 @@ describe('DateHelper Service', () => {
 			const range = {
 				'test': [
 					[DAYS.SATURDAY, DAYS.SUNDAY],
-				]
+				],
 			};
 
 			// Monday 26/02/2018
@@ -111,7 +111,7 @@ describe('DateHelper Service', () => {
 			const range = {
 				'test': [
 					new Date(2018, 1, 26),
-				]
+				],
 			};
 
 			// 26/02/2018

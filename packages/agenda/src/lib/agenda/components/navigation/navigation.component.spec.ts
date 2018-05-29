@@ -2,9 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MonthPipe } from '../../pipes/month.pipe';
-import '../rxjs';
 
-import { VIEWS } from '../../interfaces';
+import { VIEWS } from '../../types/agenda.types';
 import { NavigationComponent } from './navigation.component';
 import { DateHelperService } from '../../services/date-helper.service';
 import { MONTH_LABELS, DEFAULT_MONTH_LABELS } from '../../agenda.conf';

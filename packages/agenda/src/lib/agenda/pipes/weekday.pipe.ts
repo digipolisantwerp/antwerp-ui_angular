@@ -7,7 +7,7 @@ import { WEEKDAY_LABELS, DEFAULT_WEEKDAY_LABELS } from '../agenda.conf';
 })
 export class WeekdayPipe implements PipeTransform {
 	constructor(
-		@Inject(WEEKDAY_LABELS) private weekdayLabels = DEFAULT_WEEKDAY_LABELS,
+		@Inject(WEEKDAY_LABELS) private weekdayLabels = DEFAULT_WEEKDAY_LABELS
 	) {}
 
 	public transform(value: number): string {

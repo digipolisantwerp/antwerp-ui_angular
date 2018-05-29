@@ -1,4 +1,5 @@
 export { AgendaModule } from './agenda.module';
+export { EventMap } from './classes/event-map.class';
 export { AgendaComponent } from './components/agenda/agenda.component';
 export { MonthViewComponent } from './components/month-view/month-view.component';
 export { MonthViewEventSlotComponent } from './components/month-view-event-slot/month-view-event-slot.component';
@@ -22,5 +23,5 @@ export {
 	SlotMetaInterface,
 	VIEWS,
 	WeekdayInterface,
- } from './interfaces';
+ } from './types/agenda.types';
 

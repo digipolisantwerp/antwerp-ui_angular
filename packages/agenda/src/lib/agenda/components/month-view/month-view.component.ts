@@ -1,10 +1,25 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, TemplateRef, HostBinding, OnChanges } from '@angular/core'; // tslint:disable-line
+import {
+	Component,
+	Input,
+	Output,
+	EventEmitter,
+	ChangeDetectionStrategy,
+	TemplateRef,
+	HostBinding,
+	OnChanges,
+} from '@angular/core';
 
-import { EventInterface, WeekdayInterface, DAYS, HighLightInterface, DateRangeInterface, SlotInterface } from '../../interfaces';
+import {
+	EventInterface,
+	WeekdayInterface,
+	DAYS,
+	HighLightInterface,
+	DateRangeInterface,
+	SlotInterface,
+} from '../../types/agenda.types';
 
 import { MonthViewSlotsService } from '../../services/month-view-slots.service';
 import { DateHelperService } from '../../services/date-helper.service';
-
 
 @Component({
 	selector: 'aui-agenda-month-view',
@@ -44,7 +59,7 @@ export class MonthViewComponent implements OnChanges {
 
 	constructor(
 		private monthViewSlotsService: MonthViewSlotsService,
-		private dateHelperService: DateHelperService,
+		private dateHelperService: DateHelperService
 	) {}
 
 	public ngOnChanges(changes) {
@@ -89,7 +104,7 @@ export class MonthViewComponent implements OnChanges {
 			const eventMap = this.monthViewSlotsService.generateEventMap(
 				this.events,
 				this.weeks,
-				this.availableSlots,
+				this.availableSlots
 			);
 
 			this.slots = eventMap.getSlots(this.eventHeight, this.weekHeight, this.heightOffset);

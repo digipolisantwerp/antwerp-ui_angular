@@ -1,5 +1,5 @@
 import { EventMap } from './event-map.class';
-import { DateHelperService } from './date-helper.service';
+import { DateHelperService } from '../services/date-helper.service';
 
 const dateHelperService = new DateHelperService();
 
@@ -107,7 +107,7 @@ describe('EventMap Class', () => {
 					 slots: [
 						{
 							meta: { week: 1, day: 3, slot: 0, span: 2 },
-							event: { title: 'test 1', startDate: new Date('Wed Jan 10 2018 00:00:00 GMT+0100 (CET)'), endDate: new Date('Thu Jan 11 2018 00:00:00 GMT+0100 (CET)') }
+							event: { title: 'test 1', startDate: new Date('Wed Jan 10 2018 00:00:00 GMT+0100 (CET)'), endDate: new Date('Thu Jan 11 2018 00:00:00 GMT+0100 (CET)') },
 						},
 						null,
 						null,
@@ -125,7 +125,7 @@ describe('EventMap Class', () => {
 						true,
 						{
 							meta: { week: 1, day: 4, slot: 1, span: 1 },
-							event: { title: 'test 2', startDate: new Date('Wed Jan 10 2018 00:00:00 GMT+0100 (CET)'), endDate: new Date('Thu Jan 11 2018 00:00:00 GMT+0100 (CET)') }
+							event: { title: 'test 2', startDate: new Date('Wed Jan 10 2018 00:00:00 GMT+0100 (CET)'), endDate: new Date('Thu Jan 11 2018 00:00:00 GMT+0100 (CET)') },
 						},
 						null,
 						null,

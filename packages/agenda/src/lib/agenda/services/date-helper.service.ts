@@ -1,7 +1,12 @@
 // TODO: Move this to @acpaas-ui/js-date-utils
 import { Injectable } from '@angular/core';
 
-import { WeekdayInterface, HighLightInterface, RangeInterface, DAYS } from '../interfaces';
+import {
+	WeekdayInterface,
+	HighLightInterface,
+	RangeInterface,
+	DAYS,
+} from '../types/agenda.types';
 
 @Injectable()
 export class DateHelperService {

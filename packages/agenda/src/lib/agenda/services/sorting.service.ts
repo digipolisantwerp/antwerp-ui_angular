@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 
-import { EventInterface } from '../interfaces';
+import { EventInterface } from '../types/agenda.types';
 import { DateHelperService } from './date-helper.service';
-import { EventMap } from './event-map.class';
+import { EventMap } from '../classes/event-map.class';
 
 @Injectable()
 export class SortingService {
 
 	constructor(
-		private dateHelperService: DateHelperService,
+		private dateHelperService: DateHelperService
 	) {}
 
 	public sortEvents(events: EventInterface[]): EventInterface[] {

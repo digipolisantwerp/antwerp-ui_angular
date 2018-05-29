@@ -5,7 +5,7 @@ import { MonthPipe } from './month.pipe';
 import { WEEKDAY_LABELS, DEFAULT_WEEKDAY_LABELS } from '../agenda.conf';
 
 const defaultMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  // tslint:disable-line
-const customMonths = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+const customMonths = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december']; // tslint:disable-line
 
 describe('TitleCasePipe', () => {
 	it('Should transform month number (1 - 12) to default month strings', () => {

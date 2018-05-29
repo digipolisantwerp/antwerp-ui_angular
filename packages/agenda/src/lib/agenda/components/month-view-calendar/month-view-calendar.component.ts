@@ -1,10 +1,29 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, OnInit, OnDestroy, TemplateRef, HostBinding } from '@angular/core'; // tslint:disable-line
+import {
+	Component,
+	Input,
+	Output,
+	EventEmitter,
+	ChangeDetectionStrategy,
+	ElementRef,
+	OnInit,
+	OnDestroy,
+	TemplateRef,
+	HostBinding,
+} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { timer } from 'rxjs/observable/timer';
+import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
+
 import { DateHelper } from '@acpaas-ui/js-date-utils';
 
-import { EventInterface, WeekdayInterface, SlotInterface, DateRangeInterface, DayRangeInterface } from '../../interfaces';
+import {
+	EventInterface,
+	WeekdayInterface,
+	SlotInterface,
+	DateRangeInterface,
+	DayRangeInterface,
+} from '../../types/agenda.types';
 
 @Component({
 	selector: 'aui-agenda-month-view-calendar',
@@ -43,19 +62,25 @@ export class MonthViewCalendarComponent implements OnInit, OnDestroy {
 		this.currentDay = DateHelper.formatDate(new Date(), 'YYYY-MM-DD');
 
 		this.watchRowHeigth()
-			.takeUntil(this.componentDestroyed$)
-			.subscribe((height) => {
+			.pipe(
+				takeUntil(this.componentDestroyed$)
+			)
+			.subscribe((height: number) => {
 				this.rowHeight.emit(height);
 			});
 
 		this.watchDragOver()
-			.takeUntil(this.componentDestroyed$)
+			.pipe(
+				takeUntil(this.componentDestroyed$)
+			)
 			.subscribe((range) => {
 				this.emitDragRange(range);
 			});
 
 		this.watchDrop()
-			.takeUntil(this.componentDestroyed$)
+			.pipe(
+				takeUntil(this.componentDestroyed$)
+			)
 			.subscribe(() => {
 				this.emitSelectRange(this.range);
 			});
@@ -88,7 +113,7 @@ export class MonthViewCalendarComponent implements OnInit, OnDestroy {
 		this.componentDestroyed$.complete();
 	}
 
-	public isCurrentMonth(day: string, date: string) {
+	public isCurrentMonth(day: string, date: Date) {
 		const dayDate = new Date(day);
 		const current = new Date(date);
 
@@ -126,19 +151,24 @@ export class MonthViewCalendarComponent implements OnInit, OnDestroy {
 	}
 
 	private watchRowHeigth(): Observable<number> {
-		const weekHeight = new Subject<number>();
+		const weekHeight$ = new Subject<number>();
 
 		timer(0, 250)
-			.takeUntil(this.componentDestroyed$)
+			.pipe(
+				takeUntil(this.componentDestroyed$)
+			)
 			.subscribe(() => {
 				const row = this.elementRef.nativeElement.querySelector('.o-agenda__table-row');
 
 				if (row) {
-					weekHeight.next(row.offsetHeight);
+					weekHeight$.next(row.offsetHeight);
 				}
 			});
 
-		return weekHeight.distinctUntilChanged();
+		return weekHeight$
+			.pipe(
+				distinctUntilChanged()
+			);
 	}
 
 	private watchDragOver() {
@@ -178,9 +208,12 @@ export class MonthViewCalendarComponent implements OnInit, OnDestroy {
 			}
 		}, false);
 
-		return target$.distinctUntilChanged((x, y) => {
-			return x.from === y.from && x.to === y.to;
-		});
+		return target$
+			.pipe(
+				distinctUntilChanged((x, y) => {
+					return x.from === y.from && x.to === y.to;
+				})
+			);
 	}
 
 	private watchDrop() {

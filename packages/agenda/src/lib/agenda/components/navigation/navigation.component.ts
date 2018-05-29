@@ -1,7 +1,17 @@
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, HostBinding, OnInit, OnDestroy } from '@angular/core';
+import {
+	Component,
+	ChangeDetectionStrategy,
+	Input,
+	Output,
+	EventEmitter,
+	HostBinding,
+	OnInit,
+	OnDestroy,
+} from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { takeUntil, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
-import { VIEWS } from '../../interfaces';
+import { VIEWS } from '../../types/agenda.types';
 
 @Component({
 	selector: 'aui-agenda-navigation',
@@ -20,9 +30,11 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
 	public ngOnInit() {
 		this.navigate$
-			.takeUntil(this.componentDestroyed$)
-			.distinctUntilChanged()
-			.debounceTime(200)
+			.pipe(
+				takeUntil(this.componentDestroyed$),
+				distinctUntilChanged(),
+				debounceTime(200)
+			)
 			.subscribe((value: Date) => {
 				this.navigate.emit(value);
 			});

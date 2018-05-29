@@ -7,7 +7,7 @@ import { MonthViewEventSlotsComponent } from './month-view-event-slots/month-vie
 import { MoreButtonComponent } from './more-button/more-button.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
-const Components = [
+export const Components = [
 	AgendaComponent,
 	MonthViewComponent,
 	MonthViewCalendarComponent,
@@ -17,17 +17,3 @@ const Components = [
 	MoreButtonComponent,
 	NavigationComponent,
 ];
-
-
-export {
-	Components,
-
-	AgendaComponent,
-	MonthViewComponent,
-	MonthViewCalendarComponent,
-	MonthViewDotsComponent,
-	MonthViewEventSlotComponent,
-	MonthViewEventSlotsComponent,
-	MoreButtonComponent,
-	NavigationComponent,
-};
