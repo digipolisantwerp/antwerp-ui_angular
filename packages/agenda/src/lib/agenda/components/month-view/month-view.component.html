@@ -1,0 +1,17 @@
+<div class="o-agenda__table-head">
+	<div *ngFor="let weekday of weekdays" class="o-agenda__table-head-cell">{{ weekday | weekdayPipe }}</div>
+</div>
+
+<aui-agenda-month-view-calendar
+	[weeks]="weeks"
+	[slots]="slots"
+	[selectedDay]="selectedDay"
+	[range]="selectedRange"
+	[eventItemTemplate]="eventItemTemplate"
+	(rowHeight)="onChangeRowHeight($event)"
+	(selectEvent)="onSelectEvent($event)"
+	(selectDay)="onSelectDay($event)"
+	(selectRange)="onSelectRange($event)"
+	(clickMore)="onClickMore($event)"
+	(dragRange)="onDragRange($event)"
+></aui-agenda-month-view-calendar>
