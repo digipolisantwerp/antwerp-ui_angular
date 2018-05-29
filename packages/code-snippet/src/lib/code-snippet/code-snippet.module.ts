@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
-import { CodeSnippetComponent } from './components/code-snippet.component';
+import { Components } from './components/index';
 
 @NgModule({
 	imports: [
@@ -10,13 +10,13 @@ import { CodeSnippetComponent } from './components/code-snippet.component';
 		HighlightJsModule,
 	],
 	declarations: [
-		CodeSnippetComponent,
+		...Components,
 	],
 	providers: [
 		HighlightJsService,
 	],
 	exports: [
-		CodeSnippetComponent,
+		...Components,
 	],
 })
 export class CodeSnippetModule {
