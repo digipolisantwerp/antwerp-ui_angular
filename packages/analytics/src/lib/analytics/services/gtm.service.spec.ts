@@ -2,10 +2,11 @@ import { Component, NgModule } from '@angular/core';
 import { async, TestBed, inject } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 
 import { GTMService } from './gtm.service';
-import { GTM_CONFIG, defaultGTMConfig } from './config.conf';
+import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from '../analytics.conf';
 
 const mockWindow = {
 	dataLayer: [],
@@ -17,7 +18,7 @@ describe('The GTM Service', () => {
 		TestBed.configureTestingModule({
 			providers: [
 				{ provide: WINDOW, useValue: mockWindow },
-				{ provide: GTM_CONFIG, useValue: defaultGTMConfig },
+				{ provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT },
 				GTMService,
 			],
 		}).compileComponents();

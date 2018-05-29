@@ -1,10 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { WINDOW } from '@acpaas-ui/ngx-components/utils';
+import { filter, map } from 'rxjs/operators';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
+import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 
 @Injectable()
 export class GAService {
@@ -56,13 +55,15 @@ export class GAService {
 
 	private autoTriggerPageView(location: Location, router: Router) {
 		router.events
-		.filter(event => event instanceof NavigationEnd)
-		.map(() => this.findLastChild(this.activatedRoute))
-		.subscribe((route: any) => {
-			if (!route.data || !route.data.doNotTrack) {
-				this.triggerPageView(this.windowService.document.title, this.windowService.location.href, location.path());
-			}
-		});
+			.pipe(
+				filter(event => event instanceof NavigationEnd),
+				map(() => this.findLastChild(this.activatedRoute))
+			)
+			.subscribe((route: any) => {
+				if (!route.data || !route.data.doNotTrack) {
+					this.triggerPageView(this.windowService.document.title, this.windowService.location.href, location.path());
+				}
+			});
 	}
 
 	private findLastChild(activatedRoute: ActivatedRoute) {

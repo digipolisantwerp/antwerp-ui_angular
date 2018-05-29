@@ -135,6 +135,46 @@
         }
       }
     },
+    "analytics": {
+      "root": "packages/analytics",
+      "sourceRoot": "packages/analytics/src",
+      "projectType": "library",
+      "prefix": "aui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/analytics/tsconfig.lib.json",
+            "project": "packages/analytics/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "packages/analytics/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/analytics/src/test.ts",
+            "tsConfig": "packages/analytics/tsconfig.spec.json",
+            "karmaConfig": "packages/analytics/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/analytics/tsconfig.lib.json",
+              "packages/analytics/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "calendar": {
       "root": "packages/calendar",
       "sourceRoot": "packages/calendar/src",

@@ -1,20 +1,21 @@
 import { Directive, ElementRef, Input, HostListener } from '@angular/core';
-import { GAService } from '../../ga';
 
-@Directive({ selector: '[gaEvent]' })
+import { GAService } from '../services/ga.service';
+
+@Directive({ selector: '[auiGaEvent]' })
 export class GaEventDirective {
-    @Input() gaEvent: number;
+	@Input() gaEvent: number;
 
-    constructor(private el: ElementRef, private gaService: GAService) {}
+	constructor(private el: ElementRef, private gaService: GAService) {}
 
-    @HostListener('click', ['$event'])
-    onClick(e) {
-        const nativeEl = this.el.nativeElement;
+	@HostListener('click', ['$event'])
+	onClick(e) {
+		const nativeEl = this.el.nativeElement;
 
-        if (this.gaEvent) {
-            this.gaService.triggerEvent(nativeEl.tagName.toLowerCase(), 'click', nativeEl.innerText, this.gaEvent);
-        } else {
-            this.gaService.triggerEvent(nativeEl.tagName.toLowerCase(), 'click', nativeEl.innerText);
-        }
-    }
+		if (this.gaEvent) {
+			this.gaService.triggerEvent(nativeEl.tagName.toLowerCase(), 'click', nativeEl.innerText, this.gaEvent);
+		} else {
+			this.gaService.triggerEvent(nativeEl.tagName.toLowerCase(), 'click', nativeEl.innerText);
+		}
+	}
 }

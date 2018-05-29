@@ -1,32 +1,33 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
+
 import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 
-import { GAService } from './services/ga/ga.service';
-import { GTMService } from './services/gtm/gtm.service';
-import { GTM_CONFIG, GTMConfig, defaultGTMConfig } from './services/gtm/config.conf';
+import { Services } from './services/index';
+import { Directives } from './directives/index';
 
-import { GaEventDirective } from './directives/event.directive';
+import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from './analytics.conf';
+import { GTMConfig } from './types/analytics.types';
+
 
 @NgModule({
 	imports: [
 	],
 	providers: [
 		{ provide: WINDOW, useValue: window },
-		{ provide: GTM_CONFIG, useValue: defaultGTMConfig },
-		GAService,
-		GTMService,
+		{ provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT },
+		Services,
 	],
 	declarations: [
-		GaEventDirective,
+		Directives,
 	],
 	exports: [
-		GaEventDirective,
+		Directives,
 	],
 })
 export class AnalyticsModule {
 	static forChild(config = {}): ModuleWithProviders {
 		config = {
-			...defaultGTMConfig,
+			...GTM_CONFIG_DEFAULT,
 			...config,
 		};
 
