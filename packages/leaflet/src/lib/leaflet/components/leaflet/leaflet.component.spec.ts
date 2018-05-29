@@ -15,23 +15,23 @@ import { LeafletModule } from '../../leaflet.module';
 
 @Component({
 	template: `
-        <aui-leaflet [leafletMap]="leafletMap" [hasSidebar]="shouldHaveContent">
-            <p>Test</p>
-            <div controls top left>
-                <aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
-            </div>
-            <div controls top right>
-                <aui-leaflet-drag-control></aui-leaflet-drag-control>
-                <aui-leaflet-draw-control></aui-leaflet-draw-control>
-            </div>
-            <div controls bottom left>
-                <aui-leaflet-zoom-control></aui-leaflet-zoom-control>
-            </div>
-            <div controls bottom right>
-                <aui-leaflet-locate-control></aui-leaflet-locate-control>
-            </div>
-        </aui-leaflet>
-    `,
+		<aui-leaflet [leafletMap]="leafletMap" [hasSidebar]="shouldHaveContent">
+			<p>Test</p>
+			<div controls top left>
+				<aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
+			</div>
+			<div controls top right>
+				<aui-leaflet-drag-control></aui-leaflet-drag-control>
+				<aui-leaflet-draw-control></aui-leaflet-draw-control>
+			</div>
+			<div controls bottom left>
+				<aui-leaflet-zoom-control></aui-leaflet-zoom-control>
+			</div>
+			<div controls bottom right>
+				<aui-leaflet-locate-control></aui-leaflet-locate-control>
+			</div>
+		</aui-leaflet>
+	`,
 })
 class TestLeafletComponent {
 	shouldHaveContent = false;

@@ -1,5 +1,5 @@
 {
-  "name": "ngx-leaflet",
+  "name": "leaflet",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "~5.2.0",
