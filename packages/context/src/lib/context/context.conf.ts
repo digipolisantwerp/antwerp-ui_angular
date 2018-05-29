@@ -1,36 +1,10 @@
-import { IContext } from './types/context.types';
+import { InjectionToken } from '@angular/core';
 
-export interface ContextConfig {
-	/**
-	 * Flag to append an optional title suffix to the title.
-	 * Default value: false
-	 */
-	useTitleSuffix?: boolean;
+import { ContextConfig } from './types/context.types';
 
-	/**
-	 * Flag to append the title of parent pages to the page title.
-	 * Default value: false
-	 */
-	extendTitle: boolean;
+export const CONTEXT_CONFIG: InjectionToken<ContextConfig> = new InjectionToken<ContextConfig>('contextConfig');
 
-	/**
-	 * A delimter when using extendTitle.
-	 * Default value: | (pipe)
-	 */
-	titleDelimiter: string;
-
-	/**
-	 * A dictionary of default meta tags and their values
-	 */
-	defaults?: IContext;
-
-	/**
-	 * Enable route listener
-	 */
-	routerContext?: boolean;
-}
-
-export const CONTEXT_DEFAULT_VALUE: ContextConfig = {
+export const CONTEXT_CONFIG_DEFAULT: ContextConfig = {
 	useTitleSuffix: false,
 	extendTitle: false,
 	titleDelimiter: ' | ',

@@ -1,12 +1,12 @@
-import { IContext } from './context.types';
-import * as actionTypes from './context.actiontypes';
+import { Context } from '../../types/context.types';
+import { CONTEXT_LOAD } from './context.actiontypes';
 
 export const contextReducer = (
-	state: IContext = null,
+	state: Context = null,
 	action
-) => {
+): Context => {
 	switch (action.type) {
-		case actionTypes.CONTEXT_LOAD:
+		case CONTEXT_LOAD:
 			return { ...action.context };
 		default:
 			return state;

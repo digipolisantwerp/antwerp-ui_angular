@@ -3,9 +3,11 @@ import { NgRedux } from '@angular-redux/store';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
-import { IRootState, IContext } from './context.types';
-import * as actionTypes from './context.actiontypes';
-import { ContextService, ContextWriterService } from '../../services/index';
+import { Context } from '../../types/context.types';
+import { ContextState } from '../store.types';
+import { CONTEXT_LOAD } from './context.actiontypes';
+import { ContextService } from '../../services/context.service';
+import { ContextWriterService } from '../../services/context-writer.service';
 
 @Injectable()
 export class ContextActionCreator {
@@ -15,18 +17,18 @@ export class ContextActionCreator {
 	constructor(
 		private contextService: ContextService,
 		private contextWriter: ContextWriterService,
-		private ngRedux: NgRedux<IRootState>
+		private ngRedux: NgRedux<ContextState>
 	) {
 		contextService.context$.subscribe(context => this.loadContext(context, true));
 	}
 
-	loadContext(context: IContext, fromRoute?: Boolean) {
+	loadContext(context: Context, fromRoute?: Boolean) {
 		if (!this.ngRedux['_store']) {
 			return this.subscribeToStore(() => this.loadContext(context, fromRoute));
 		}
 
 		this.ngRedux.dispatch({
-			type: actionTypes.CONTEXT_LOAD,
+			type: CONTEXT_LOAD,
 			context,
 		});
 

@@ -2,10 +2,11 @@ import { async, inject, TestBed } from '@angular/core/testing';
 import { NgRedux } from '@angular-redux/store';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { ContextService, ContextWriterService } from '../../services/index';
+import { ContextService } from '../../services/context.service';
+import { ContextWriterService } from '../../services/context-writer.service';
 import { ContextActionCreator } from './context.actioncreator';
-import * as actionTypes from './context.actiontypes';
-import { IContext } from './context.types';
+import { CONTEXT_LOAD } from './context.actiontypes';
+import { Context } from '../../types/context.types';
 
 const injectService = cb => inject(
 	[ContextActionCreator],
@@ -18,7 +19,7 @@ describe('The ContextActionCreator', () => {
 	class NgReduxMock {
 		public _store = null;
 		public _store$ = new BehaviorSubject(null);
-		public dispatch() {};
+		public dispatch() {}
 	}
 
 	class ContextServiceMock {
@@ -36,8 +37,8 @@ describe('The ContextActionCreator', () => {
 				ContextActionCreator,
 				{ provide: NgRedux, useClass: NgReduxMock },
 				{ provide: ContextService, useClass: ContextServiceMock },
-				{ provide: ContextWriterService, useClass: ContextWriterServiceMock }
-			]
+				{ provide: ContextWriterService, useClass: ContextWriterServiceMock },
+			],
 		});
 	}));
 
@@ -68,8 +69,8 @@ describe('The ContextActionCreator', () => {
 		contextActions.loadContext({test: 'data'});
 
 		expect(contextActions.ngRedux.dispatch).toHaveBeenCalledWith({
-			type: actionTypes.CONTEXT_LOAD,
-			context: { test: 'data' }
+			type: CONTEXT_LOAD,
+			context: { test: 'data' },
 		});
 	}));
 

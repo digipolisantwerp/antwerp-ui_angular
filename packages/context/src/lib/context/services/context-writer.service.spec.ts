@@ -7,9 +7,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Title, DOCUMENT } from '@angular/platform-browser';
 
 import { ContextWriterService } from './context-writer.service';
-import { ContextConfig } from '../context.conf';
+import { ContextConfig } from '../types/context.types';
 
-import { CONTEXT_CONFIG } from '../context.const';
+import { CONTEXT_CONFIG } from '../context.conf';
 
 const injectService = cb => inject([ContextWriterService], (contextService: ContextWriterService) => cb(contextService));
 
@@ -96,7 +96,7 @@ describe('The Context Writer Service', () => {
 			const testMeta = {
 				title: 'test meta',
 				description: 'test the meta tags',
-				'twitter:card': 'meta summary'
+				'twitter:card': 'meta summary',
 			};
 
 			contextService.updateMetaTags(testMeta);

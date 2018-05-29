@@ -1,13 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
-import { Title, DOCUMENT } from '@angular/platform-browser';
-import { Router, NavigationEnd, Event as NavigationEvent, ActivatedRoute } from '@angular/router';
-import { select } from '@angular-redux/store';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
+import { Title } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
-import { CONTEXT_CONFIG } from '../context.const';
-import { ContextConfig, CONTEXT_DEFAULT_VALUE } from '../context.conf';
+import { CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT } from '../context.conf';
+import { ContextConfig } from '../types/context.types';
 
 @Injectable()
 export class ContextWriterService {
@@ -17,7 +13,7 @@ export class ContextWriterService {
 		private titleService: Title
 	) {
 		this.metaConfig = {
-			...CONTEXT_DEFAULT_VALUE,
+			...CONTEXT_CONFIG_DEFAULT,
 			...metaConfig,
 		};
 	}

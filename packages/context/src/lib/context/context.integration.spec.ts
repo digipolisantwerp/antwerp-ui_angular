@@ -8,11 +8,11 @@ import { combineReducers, Store, createStore } from 'redux';
 import { NgZone } from '@angular/core';
 
 import { ContextModule } from './context.module';
-import { ContextService } from './services/index';
-import { ContextConfig } from './context.conf';
+import { ContextService } from './services/context.service';
+import { ContextConfig } from './types/context.types';
 import { ContextActionCreator } from './store/context/context.actioncreator';
 import { contextReducer } from './store/context/context.reducer';
-import { CONTEXT_CONFIG } from './context.const';
+import { CONTEXT_CONFIG } from './context.conf';
 
 @Component({
 	template: '<router-outlet></router-outlet>',
@@ -53,19 +53,20 @@ const routes = [
 	},
 ];
 
-export interface IAppState {};
-
-export const store: Store<IAppState> = createStore(
-	combineReducers<IAppState>({
+export const store: Store<any> = createStore(
+	combineReducers<any>({
 		context: contextReducer,
 	})
 );
 
 @NgModule({
-	imports: [NgReduxModule],
+	imports: [
+		NgReduxModule,
+		ContextModule,
+	],
 })
 class AppModule {
-	constructor(ngRedux: NgRedux<IAppState>) {
+	constructor(ngRedux: NgRedux<any>) {
 		ngRedux.provideStore(store);
 	}
 }

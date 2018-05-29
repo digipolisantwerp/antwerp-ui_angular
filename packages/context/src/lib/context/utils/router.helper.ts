@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-@Injectable()
 export class RouterHelper {
-	public getParentTitle(route, titles: string[] = []): string[] {
+	public static getParentTitle(route, titles: string[] = []): string[] {
 		if (!route) {
 			return titles;
 		}
@@ -14,7 +12,7 @@ export class RouterHelper {
 		return route.parent ? this.getParentTitle(route.parent, newTitles) : newTitles;
 	}
 
-	public verifyPath(data: any, path: string): any {
+	public static verifyPath(data: any, path: string): any {
 		let curr = data;
 		const namespace = path.split('.');
 
@@ -30,7 +28,7 @@ export class RouterHelper {
 		return curr;
 	}
 
-	public findLastChild(activatedRoute: ActivatedRoute): any {
+	public static findLastChild(activatedRoute: ActivatedRoute): any {
 		const snapshot = activatedRoute.snapshot;
 
 		let child = snapshot.firstChild;

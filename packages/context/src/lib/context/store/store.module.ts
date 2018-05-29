@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { NgReduxModule } from '@angular-redux/store';
 
-import { ContextActionCreator } from './context';
+import { ContextActionCreator } from './context/context.actioncreator';
 
 @NgModule({
-	imports: [ NgReduxModule ],
-	providers: [ ContextActionCreator ],
+	imports: [
+		NgReduxModule,
+	],
+	providers: [
+		ContextActionCreator,
+	],
 })
 export class ContextStoreModule {
 	constructor(
