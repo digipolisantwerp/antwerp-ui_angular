@@ -2,6 +2,12 @@
   "name": "@acpaas-ui/ngx-components",
   "version": "1.0.5",
   "scripts": {
+    "package": "node scripts/package.js",
+    "styleguide": "./node_modules/.bin/ng serve styleguide",
+    "ng": "./node_modules/.bin/ng",
+    "lint": "./node_modules/.bin/ng lint",
+    "test": "./node_modules/.bin/ng test",
+    "e2e": "./node_modules/.bin/ng e2e",
     "build": "node scripts/build.js",
     "postbuild": "node scripts/prepublish.js",
     "bump": "node scripts/version.js",
@@ -11,12 +17,7 @@
     "deploy:patch": "npm run bump -- --patch && npm run build",
     "postdeploy:major": "npm publish dist",
     "postdeploy:minor": "npm publish dist",
-    "postdeploy:patch": "npm publish dist",
-    "test": "./node_modules/.bin/ng test",
-    "lint": "./node_modules/.bin/ng lint",
-    "e2e": "./node_modules/.bin/ng e2e",
-    "ng": "./node_modules/.bin/ng",
-    "styleguide": "./node_modules/.bin/ng serve styleguide"
+    "postdeploy:patch": "npm publish dist"
   },
   "dependencies": {
     "@angular/common": "~6.0.1",
@@ -35,9 +36,12 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.1",
     "@angular-devkit/build-ng-packagr": "~0.6.1",
+    "@angular-devkit/core": "^0.6.5",
+    "@angular-devkit/schematics": "^0.6.5",
     "@angular/cli": "~6.0.1",
     "@angular/compiler-cli": "~6.0.1",
     "@angular/language-service": "~6.0.1",
+    "@schematics/angular": "^0.6.5",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
