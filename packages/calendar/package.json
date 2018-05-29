@@ -1,5 +1,5 @@
 {
-  "name": "@acpaas-ui/ngx-calendar",
+  "name": "calendar",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "~5.2.0",

@@ -1,10 +1,14 @@
-export * from './types/calendar.types';
-export * from './services/calendar.service';
-export * from './components/calendar/calendar.component';
-export * from './components/month/month.component';
-export * from './components/year/year.component';
-export * from './components/decennia/decennia.component';
-export * from './calendar.conf';
-export * from './calendar.module';
-export * from './pipes/titlecase.pipe';
-export * from './calendar.module';
+export { CALENDAR_VIEW_DECENNIA, CALENDAR_VIEW_MONTH, CALENDAR_VIEW_YEAR } from './types/calendar.types';
+export { CalendarService } from './services/calendar.service';
+export { CalendarComponent } from './components/calendar/calendar.component';
+export { CalendarMonthComponent } from './components/month/month.component';
+export { CalendarYearComponent } from './components/year/year.component';
+export { CalendarDecenniaComponent } from './components/decennia/decennia.component';
+export {
+	CALENDAR_DEFAULT_MONTH_LABELS,
+	CALENDAR_DEFAULT_WEEKDAY_LABELS,
+	CALENDAR_MONTH_LABELS,
+	CALENDAR_WEEKDAY_LABELS
+} from './calendar.conf';
+export { CalendarModule } from './calendar.module';
+export { TitleCasePipe } from './pipes/titlecase.pipe';
