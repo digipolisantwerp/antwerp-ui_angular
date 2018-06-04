@@ -18,7 +18,7 @@ import { FlyoutSize } from '../types/flyout.types';
 
 @Directive({
 	selector: '[auiFlyout]',
-	exportAs: 'auiFlyout'
+	exportAs: 'auiFlyout',
 })
 export class FlyoutDirective implements OnDestroy {
 	@HostBinding('class.m-flyout') flyoutClass = true;

@@ -15,14 +15,14 @@ class MockFlyoutService {
 
 	public close() {
 		this.subject.next({
-			close: true
+			close: true,
 		});
 	}
 }
 
 @Component({
 	selector: 'aui-app',
-	template: `<div class="dummyElement"></div><div auiFlyout #auiFlyout="auiFlyout"></div>`
+	template: `<div class="dummyElement"></div><div auiFlyout #auiFlyout="auiFlyout"></div>`,
 })
 class FlyoutComponent {
 	// Access directive
@@ -34,7 +34,7 @@ class FlyoutComponent {
 	template: `<div class="dummyElement"></div>
                <div auiFlyout #auiFlyout="auiFlyout">
                     <div auiFlyoutZone><div class="inZone"></div></div>
-                </div>`
+                </div>`,
 })
 class FlyoutWithZoneComponent {
 	// Access directive
@@ -54,7 +54,7 @@ describe('Flyout directive with flyout zone', () => {
 			],
 			providers: [
 				{ provide: FlyoutService, useClass: MockFlyoutService },
-			]
+			],
 		});
 
 		TestBed.compileComponents();
@@ -84,11 +84,11 @@ describe('Flyout directive without flyout zone', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				FlyoutDirective,
-				FlyoutComponent
+				FlyoutComponent,
 			],
 			providers: [
 				{ provide: FlyoutService, useClass: MockFlyoutService },
-			]
+			],
 		});
 
 		TestBed.compileComponents();

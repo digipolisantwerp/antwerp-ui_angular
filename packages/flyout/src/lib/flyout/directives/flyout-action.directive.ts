@@ -5,7 +5,7 @@ import { FlyoutDirective } from './flyout.directive';
 
 @Directive({
 	selector: '[auiFlyoutAction]',
-	exportAs: 'auiFlyoutAction'
+	exportAs: 'auiFlyoutAction',
 })
 export class FlyoutActionDirective implements OnDestroy {
 
@@ -21,7 +21,7 @@ export class FlyoutActionDirective implements OnDestroy {
 	constructor(
 		@Host() public flyout: FlyoutDirective,
 		@Inject(PLATFORM_ID) private platformId: Object,
-		private elementRef: ElementRef,
+		private elementRef: ElementRef
 	) {
 		// Define this method in the constructor so "this" points to "this class"
 		this.closeDropdownOnOutsideClick = (event: Event) => {

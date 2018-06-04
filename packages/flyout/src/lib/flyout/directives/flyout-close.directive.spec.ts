@@ -15,14 +15,14 @@ class MockFlyoutService {
 
 	public close() {
 		this.subject.next({
-			close: true
+			close: true,
 		});
 	}
 }
 
 @Component({
 	selector: 'aui-app',
-	template: `<div auiFlyout><button class="button danger" auiFlyoutClose #auiFlyoutClose="auiFlyoutClose">Close</button></div>`
+	template: `<div auiFlyout><button class="button danger" auiFlyoutClose #auiFlyoutClose="auiFlyoutClose">Close</button></div>`,
 })
 class FlyoutComponent {
 	// Access directive
@@ -42,7 +42,7 @@ describe('Flyout close directive', () => {
 			],
 			providers: [
 				{ provide: FlyoutService, useClass: MockFlyoutService },
-			]
+			],
 		});
 
 		TestBed.compileComponents();

@@ -16,7 +16,7 @@ class MockFlyoutService {
 
 	public close() {
 		this.subject.next({
-			close: true
+			close: true,
 		});
 	}
 }
@@ -29,7 +29,7 @@ class MockFlyoutService {
                     <div auiFlyoutZone>
                         <button class="dummyButtonInside">dummyButtonInside</button>
                     </div>
-               </div>`
+               </div>`,
 })
 class FlyoutComponent {
 	// Access directive
@@ -52,7 +52,7 @@ describe('Flyout action directive without flyout zone', () => {
 			],
 			providers: [
 				{ provide: FlyoutService, useClass: MockFlyoutService },
-			]
+			],
 		});
 
 		TestBed.compileComponents();
@@ -106,7 +106,7 @@ describe('Flyout action directive without flyout zone', () => {
 	it('should close on blur if relatedTarget is outside closable zone', () => {
 		spyOn(comp.element.flyout, 'close');
 		componentDebugElement.triggerEventHandler('blur', {
-			relatedTarget: fixture.debugElement.query(By.css('.dummyButton')).nativeElement
+			relatedTarget: fixture.debugElement.query(By.css('.dummyButton')).nativeElement,
 		});
 		expect(comp.element.openedByFocus).toBeFalsy();
 		expect(comp.element.flyout.close).toHaveBeenCalled();
@@ -115,7 +115,7 @@ describe('Flyout action directive without flyout zone', () => {
 	it('should not close on blur if relatedTarget is inside closable zone', () => {
 		spyOn(comp.element.flyout, 'close');
 		componentDebugElement.triggerEventHandler('blur', {
-			relatedTarget: fixture.debugElement.query(By.css('.dummyButtonInside')).nativeElement
+			relatedTarget: fixture.debugElement.query(By.css('.dummyButtonInside')).nativeElement,
 		});
 	});
 
