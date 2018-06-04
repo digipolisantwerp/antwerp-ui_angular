@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 import {
-    CalendarModule,
-    CALENDAR_WEEKDAY_LABELS,
-    CALENDAR_DEFAULT_WEEKDAY_LABELS,
-    CALENDAR_MONTH_LABELS,
-    CALENDAR_DEFAULT_MONTH_LABELS
+	CalendarModule,
+	CALENDAR_WEEKDAY_LABELS,
+	CALENDAR_DEFAULT_WEEKDAY_LABELS,
+	CALENDAR_MONTH_LABELS,
+	CALENDAR_DEFAULT_MONTH_LABELS
 } from '@acpaas-ui/ngx-components/date';
 
 import { MaskModule } from '../mask';
@@ -18,39 +18,39 @@ import { DATEPICKER_ERROR_LABELS, DATEPICKER_DEFAULT_ERROR_LABELS } from './date
 import { DatepickerErrorLabels } from './types/datepicker.types';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CalendarModule,
-        FlyoutModule,
-        MaskModule,
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
-        ...Components,
-    ],
-    providers: [
-        { provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS },
-        { provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS },
-        { provide: DATEPICKER_ERROR_LABELS, useValue: DATEPICKER_DEFAULT_ERROR_LABELS }
-    ]
+	imports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		CalendarModule,
+		FlyoutModule,
+		MaskModule,
+	],
+	declarations: [
+		...Components,
+	],
+	exports: [
+		...Components,
+	],
+	providers: [
+		{ provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS },
+		{ provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS },
+		{ provide: DATEPICKER_ERROR_LABELS, useValue: DATEPICKER_DEFAULT_ERROR_LABELS },
+	],
 })
 export class DatepickerModule {
-    static forChild(
-        weekdayLabels: string[],
-        monthLabels: string[],
-        errorLabels: DatepickerErrorLabels,
-    ): ModuleWithProviders {
-        return {
-            ngModule: DatepickerModule,
-            providers: [
-                { provide: CALENDAR_WEEKDAY_LABELS, useValue: weekdayLabels },
-                { provide: CALENDAR_MONTH_LABELS, useValue: monthLabels },
-                { provide: DATEPICKER_ERROR_LABELS, useValue: errorLabels}
-            ]
-        };
-    }
+	static forChild(
+		weekdayLabels: string[],
+		monthLabels: string[],
+		errorLabels: DatepickerErrorLabels
+	): ModuleWithProviders {
+		return {
+			ngModule: DatepickerModule,
+			providers: [
+				{ provide: CALENDAR_WEEKDAY_LABELS, useValue: weekdayLabels },
+				{ provide: CALENDAR_MONTH_LABELS, useValue: monthLabels },
+				{ provide: DATEPICKER_ERROR_LABELS, useValue: errorLabels },
+			],
+		};
+	}
 }

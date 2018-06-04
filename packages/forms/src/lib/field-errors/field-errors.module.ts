@@ -6,16 +6,16 @@ import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
 import { Components } from './components';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        LabelsModule
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
-        ...Components,
-    ]
+	imports: [
+		CommonModule,
+		LabelsModule,
+	],
+	declarations: [
+		...Components,
+	],
+	exports: [
+		...Components,
+	],
 })
 export class FieldErrorsModule {
 }

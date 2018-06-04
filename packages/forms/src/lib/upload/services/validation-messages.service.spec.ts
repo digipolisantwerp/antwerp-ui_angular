@@ -5,47 +5,47 @@ import { INIT_VALIDATION_MESSAGES } from './validation-messages.const';
 
 describe('The Validation messages Service', () => {
 
-    describe('Default values', () => {
-        // async beforeEach
-        beforeEach(async(() => {
-            const messages = {};
+	describe('Default values', () => {
+		// async beforeEach
+		beforeEach(async(() => {
+			const messages = {};
 
-            TestBed.configureTestingModule({
-                providers: [
-                    { provide: INIT_VALIDATION_MESSAGES, useValue: messages },
-                    ValidationMessagesService
-                ]
-            }).compileComponents();
-        }));
+			TestBed.configureTestingModule({
+				providers: [
+					{ provide: INIT_VALIDATION_MESSAGES, useValue: messages },
+					ValidationMessagesService,
+				],
+			}).compileComponents();
+		}));
 
-        it('should display the default values', async(inject([ValidationMessagesService], (messagesService: ValidationMessagesService) => {
-            expect(messagesService.INVALID_FILE_TYPE).toEqual('INVALID_FILE_TYPE');
-            expect(messagesService.INVALID_FILE_SIZE).toEqual('INVALID_FILE_SIZE');
-            expect(messagesService.INVALID_MIME_TYPE).toEqual('INVALID_MIME_TYPE');
-        })));
-    });
+		it('should display the default values', async(inject([ValidationMessagesService], (messagesService: ValidationMessagesService) => {
+			expect(messagesService.INVALID_FILE_TYPE).toEqual('INVALID_FILE_TYPE');
+			expect(messagesService.INVALID_FILE_SIZE).toEqual('INVALID_FILE_SIZE');
+			expect(messagesService.INVALID_MIME_TYPE).toEqual('INVALID_MIME_TYPE');
+		})));
+	});
 
-    describe('Override values', () => {
-        // async beforeEach
-        beforeEach(async(() => {
-            const messages = {
-                INVALID_FILE_TYPE: 'test1',
-                INVALID_FILE_SIZE: 'test2',
-                INVALID_MIME_TYPE: 'test3',
-            };
+	describe('Override values', () => {
+		// async beforeEach
+		beforeEach(async(() => {
+			const messages = {
+				INVALID_FILE_TYPE: 'test1',
+				INVALID_FILE_SIZE: 'test2',
+				INVALID_MIME_TYPE: 'test3',
+			};
 
-            TestBed.configureTestingModule({
-                providers: [
-                    { provide: INIT_VALIDATION_MESSAGES, useValue: messages },
-                    ValidationMessagesService
-                ]
-            }).compileComponents();
-        }));
+			TestBed.configureTestingModule({
+				providers: [
+					{ provide: INIT_VALIDATION_MESSAGES, useValue: messages },
+					ValidationMessagesService,
+				],
+			}).compileComponents();
+		}));
 
-        it('should override the default values', async(inject([ValidationMessagesService], (messagesService: ValidationMessagesService) => {
-            expect(messagesService.INVALID_FILE_TYPE).toEqual('test1');
-            expect(messagesService.INVALID_FILE_SIZE).toEqual('test2');
-            expect(messagesService.INVALID_MIME_TYPE).toEqual('test3');
-        })));
-    });
+		it('should override the default values', async(inject([ValidationMessagesService], (messagesService: ValidationMessagesService) => {
+			expect(messagesService.INVALID_FILE_TYPE).toEqual('test1');
+			expect(messagesService.INVALID_FILE_SIZE).toEqual('test2');
+			expect(messagesService.INVALID_MIME_TYPE).toEqual('test3');
+		})));
+	});
 });
