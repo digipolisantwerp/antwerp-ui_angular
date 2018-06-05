@@ -1,8 +1,6 @@
 module.exports = {
-	"husky": {
-		"hooks": {
-			"pre-commit": "lerna run test",
-			"commit-msg": "commitlint -E $HUSKY_GIT_PARAMS"
-		}
-	}
-}
+	"hooks": {
+		// "pre-commit": "lerna run test",
+		"commit-msg": "./node_modules/.bin/commitlint ---edit $HUSKY_GIT_PARAMS",
+	},
+};

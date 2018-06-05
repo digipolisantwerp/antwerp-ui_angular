@@ -52,7 +52,7 @@
     "@userfrosting/merge-package-dependencies": "^1.2.0-rc.2",
     "codelyzer": "~4.2.1",
     "command-line-args": "^5.0.2",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.8",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
