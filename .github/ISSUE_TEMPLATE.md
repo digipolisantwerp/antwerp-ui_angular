@@ -1,20 +1,52 @@
-* **I'm submitting a ...**
-  * [ ] bug report
-  * [ ] feature request
-  * [ ] support request
+<!--
+  PLEASE HELP US PROCESS GITHUB ISSUES FASTER BY PROVIDING THE FOLLOWING INFORMATION.
 
-* **What is the current behavior?**
+  ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
+-->
+## I'm submitting a...
 
-* **If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem** via https://plnkr.co or similar (you can use this template as a starting point: http://plnkr.co/edit/tpl:AvJOMERrnz94ekVua0u5).
+<!-- Check one of the following options with "x" -->
+<pre><code>
+  [ ] Regression (a behavior that used to work and stopped working in a new release)
+  [ ] Bug report  <!-- Please search GitHub for a similar issue or PR before submitting -->
+  [ ] Performance issue
+  [ ] Feature request
+  [ ] Documentation issue or request
+  [ ] Support request
+  [ ] Other... Please describe:
+</code></pre>
 
-* **What is the expected behavior?**
+## Current behavior
+<!-- Describe how the issue manifests. -->
 
-* **What is the motivation / use case for changing the behavior?**
+## Expected behavior
+<!-- Describe what the desired behavior would be. -->
 
-* **Please tell us about your environment:**
+## Minimal reproduction of the problem with instructions
+<!--
+For bug reports please provide the *STEPS TO REPRODUCE* and if possible a *MINIMAL DEMO* of the problem via
+https://stackblitz.com or similar (you can use this template as a starting point: https://stackblitz.com/fork/angular-gitter).
+-->
 
-  * Version: 2.0.0-beta.X
-  * Browser: [all | Chrome XX | Firefox XX | IE XX | Safari XX | Mobile Chrome XX | Android X.X Web Browser | iOS XX Safari | iOS XX UIWebView | iOS XX WKWebView ]
-  * Language: [all | TypeScript X.X | ES6/7 | ES5]
+## What is the motivation / use case for changing the behavior?
+<!-- Describe the motivation or the concrete use case. -->
 
-* **Other information** (e.g. detailed explanation, stacktraces, related issues, suggestions how to fix, links for us to have context, eg. stackoverflow, gitter, etc)
+## Environment
+
+<pre><code>
+ACPaaS UI-NGX Version: X.Y.Z
+<!-- Check whether this is still an issue in the most recent Angular version -->
+
+Browser:
+- [ ] Chrome (desktop) version XX
+- [ ] Chrome (Android) version XX
+- [ ] Chrome (iOS) version XX
+- [ ] Firefox version XX
+- [ ] Safari (desktop) version XX
+- [ ] Safari (iOS) version XX
+- [ ] IE version XX
+- [ ] Edge version XX
+
+Others:
+<!-- Anything else relevant?  Operating system version, IDE, package manager, HTTP server, ... -->
+</code></pre>
