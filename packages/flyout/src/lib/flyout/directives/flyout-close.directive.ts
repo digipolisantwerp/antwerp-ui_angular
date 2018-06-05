@@ -3,7 +3,7 @@ import { FlyoutService } from '../services/flyout.service';
 
 @Directive({
 	selector: '[auiFlyoutClose]',
-	exportAs: 'auiFlyoutClose'
+	exportAs: 'auiFlyoutClose',
 })
 export class FlyoutCloseDirective {
 

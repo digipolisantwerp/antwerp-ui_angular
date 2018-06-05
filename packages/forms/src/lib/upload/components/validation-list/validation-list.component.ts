@@ -5,23 +5,23 @@ import { InvalidFile } from '../../types/upload.types';
 import { ValidationMessagesService } from '../../services/validation-messages.service';
 
 @Component({
-    selector: 'aui-validation-list',
-    templateUrl: './validation-list.component.html'
+	selector: 'aui-validation-list',
+	templateUrl: './validation-list.component.html',
 })
 export class ValidationListComponent {
-    @Input() public invalidFiles: InvalidFile[] = [];
+	@Input() public invalidFiles: InvalidFile[] = [];
 
-    constructor(private messagesService: ValidationMessagesService) {}
+	constructor(private messagesService: ValidationMessagesService) {}
 
-    public remove(index) {
-        this.invalidFiles.splice(index, 1);
-    }
+	public remove(index) {
+		this.invalidFiles.splice(index, 1);
+	}
 
-    public formatReasons(reasons: string[]): string {
-        const result = [];
-        for  (const reason of reasons) {
-            result.push(this.messagesService[reason]);
-        }
-        return result.join(', ');
-    }
+	public formatReasons(reasons: string[]): string {
+		const result = [];
+		for  (const reason of reasons) {
+			result.push(this.messagesService[reason]);
+		}
+		return result.join(', ');
+	}
 }

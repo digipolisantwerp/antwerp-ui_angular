@@ -5,16 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { Components } from './components';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
-        ...Components,
-    ]
+	imports: [
+		CommonModule,
+		FormsModule,
+	],
+	declarations: [
+		...Components,
+	],
+	exports: [
+		...Components,
+	],
 })
 export class RangeSliderModule {
 }

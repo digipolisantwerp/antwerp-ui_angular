@@ -11,32 +11,32 @@ import { UPLOAD_VALIDATION_MESSAGES } from './upload.const';
 import { ValidationMessages } from './types/upload.types';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        CommonModule,
-        ProgressBarModule,
-        FormsModule,
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
-        ...Components,
-    ],
-    providers: [
-        ...Services,
-        { provide: UPLOAD_VALIDATION_MESSAGES, useValue: {} }
-    ]
+	imports: [
+		BrowserModule,
+		CommonModule,
+		ProgressBarModule,
+		FormsModule,
+	],
+	declarations: [
+		...Components,
+	],
+	exports: [
+		...Components,
+	],
+	providers: [
+		...Services,
+		{ provide: UPLOAD_VALIDATION_MESSAGES, useValue: {} },
+	],
 })
 export class UploadModule {
-    static forChild(
+	static forChild(
 		validationMessages: ValidationMessages = {}
 	): ModuleWithProviders {
-        return {
-            ngModule: UploadModule,
-            providers: [
-                { provide: UPLOAD_VALIDATION_MESSAGES, useValue: validationMessages }
-            ]
-        };
-    }
+		return {
+			ngModule: UploadModule,
+			providers: [
+				{ provide: UPLOAD_VALIDATION_MESSAGES, useValue: validationMessages },
+			],
+		};
+	}
 }

@@ -1,91 +1,91 @@
 import {
-    Component,
-    Input,
-    Output,
-    EventEmitter,
-    HostBinding,
-    OnInit,
-    forwardRef
+	Component,
+	Input,
+	Output,
+	EventEmitter,
+	HostBinding,
+	OnInit,
+	forwardRef
 } from '@angular/core';
 import {
-    ControlValueAccessor,
-    FormControl,
-    NG_VALUE_ACCESSOR,
-    NG_VALIDATORS
+	ControlValueAccessor,
+	FormControl,
+	NG_VALUE_ACCESSOR,
+	NG_VALIDATORS
 } from '@angular/forms';
 
 import {
-    WYSIWYG_DEFAULT_CONFIG
+	WYSIWYG_DEFAULT_CONFIG
 } from '../../wysiwyg.conf';
 
 @Component({
-    selector: 'aui-wysiwyg',
-    templateUrl: './wysiwyg.component.html',
-    providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => WysiwygComponent), // tslint:disable-line:no-forward-ref
-        multi: true
-    }]
+	selector: 'aui-wysiwyg',
+	templateUrl: './wysiwyg.component.html',
+	providers: [{
+		provide: NG_VALUE_ACCESSOR,
+		useExisting: forwardRef(() => WysiwygComponent), // tslint:disable-line:no-forward-ref
+		multi: true,
+	}],
 })
 export class WysiwygComponent implements OnInit, ControlValueAccessor {
-    @HostBinding('class.aui-wysiwyg') setClass = true;
+	@HostBinding('class.aui-wysiwyg') setClass = true;
 
-    @Input() additionalStyling: string[];
-    @Input() availableTags: string;
-    @Input() basic = false;
-    @Input() placeholder: string;
-    @Input() uiColour: string;
-    @Input() debounce: number;
+	@Input() additionalStyling: string[];
+	@Input() availableTags: string;
+	@Input() basic = false;
+	@Input() placeholder: string;
+	@Input() uiColour: string;
+	@Input() debounce: number;
 
-    @Input() customConfig: any;
+	@Input() customConfig: any;
 
-    @Output() emitContent: EventEmitter<string> = new EventEmitter();
+	@Output() emitContent: EventEmitter<string> = new EventEmitter();
 
-    public ckeditorContent: string;
-    public ckeditorConfig = DEFAULT_CONFIG;
+	public ckeditorContent: string;
+	public ckeditorConfig = DEFAULT_CONFIG;
 
-    private updateModel: Function = () => {};
+	private updateModel: Function = () => {};
 
-    // NG_VALUE_ACCESSOR_INTERFACE
-    writeValue(value: string): void {
-        this.ckeditorContent = value;
-        this.updateModel(value);
-        this.emitContent.emit(this.ckeditorContent);
-    }
+	// NG_VALUE_ACCESSOR_INTERFACE
+	writeValue(value: string): void {
+		this.ckeditorContent = value;
+		this.updateModel(value);
+		this.emitContent.emit(this.ckeditorContent);
+	}
 
-    registerOnChange(onChange: Function): void {
-        this.updateModel = onChange;
-    }
+	registerOnChange(onChange: Function): void {
+		this.updateModel = onChange;
+	}
 
-    registerOnTouched(): void {}
+	registerOnTouched(): void {}
 
-    public ngOnInit() {
-        this.setConfig();
+	public ngOnInit() {
+		this.setConfig();
 
-        if (!this.ckeditorContent) {
-            this.ckeditorContent = this.placeholder;
-        }
-    }
+		if (!this.ckeditorContent) {
+			this.ckeditorContent = this.placeholder;
+		}
+	}
 
-    private setConfig(): void {
-        if (this.customConfig) {
-            this.ckeditorConfig = this.customConfig;
-        } else {
-            if (this.basic) {
-                this.ckeditorConfig.toolbar = 'Basic';
-            }
+	private setConfig(): void {
+		if (this.customConfig) {
+			this.ckeditorConfig = this.customConfig;
+		} else {
+			if (this.basic) {
+				this.ckeditorConfig.toolbar = 'Basic';
+			}
 
-            if (this.availableTags) {
-                this.ckeditorConfig.format_tags = this.availableTags;
-            }
+			if (this.availableTags) {
+				this.ckeditorConfig.format_tags = this.availableTags;
+			}
 
-            if (this.uiColour) {
-                this.ckeditorConfig.uiColor = this.uiColour;
-            }
+			if (this.uiColour) {
+				this.ckeditorConfig.uiColor = this.uiColour;
+			}
 
-            if (this.additionalStyling) {
-                this.ckeditorConfig.contentsCss.concat(this.additionalStyling);
-            }
-        }
-    }
+			if (this.additionalStyling) {
+				this.ckeditorConfig.contentsCss.concat(this.additionalStyling);
+			}
+		}
+	}
 }

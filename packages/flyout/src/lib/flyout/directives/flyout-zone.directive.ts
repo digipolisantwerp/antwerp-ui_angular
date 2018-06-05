@@ -2,7 +2,7 @@ import { Directive, ElementRef, Input, HostBinding } from '@angular/core';
 
 @Directive({
 	selector: '[auiFlyoutZone]',
-	exportAs: 'auiFlyoutZone'
+	exportAs: 'auiFlyoutZone',
 })
 export class FlyoutZoneDirective {
 

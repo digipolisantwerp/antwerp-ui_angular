@@ -330,7 +330,7 @@ describe('The Localstorage Service', () => {
 			it('only updates the subscriber if the value has changed', injectService(localstorageService => {
 				const subscriber = localstorageService.select(['test', 'user', 'username']);
 				const mockSubscription = {
-					cb: (nextValue) => {}
+					cb: (nextValue) => {},
 				};
 
 				spyOn(mockSubscription, 'cb').and.callThrough();

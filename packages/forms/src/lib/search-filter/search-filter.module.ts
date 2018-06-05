@@ -7,17 +7,17 @@ import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 import { Components } from './components';
 
 @NgModule({
-    imports: [
-        FormsModule,
-        CommonModule,
-        FlyoutModule,
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
-        ...Components,
-    ]
+	imports: [
+		FormsModule,
+		CommonModule,
+		FlyoutModule,
+	],
+	declarations: [
+		...Components,
+	],
+	exports: [
+		...Components,
+	],
 })
 export class SearchFilterModule {
 }

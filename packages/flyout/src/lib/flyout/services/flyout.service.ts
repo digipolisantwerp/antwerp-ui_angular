@@ -10,7 +10,7 @@ export class FlyoutService {
 
 	public close() {
 		this.subject.next({
-			close: true
+			close: true,
 		});
 	}
 }

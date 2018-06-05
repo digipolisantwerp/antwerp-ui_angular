@@ -11,22 +11,22 @@ import { SearchService } from '../shared/services/search.service';
 import { Components } from './components';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        FlyoutModule,
-        SelectableListModule,
-        MaskModule
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
-        ...Components,
-    ],
-    providers: [
-        SearchService
-    ]
+	imports: [
+		CommonModule,
+		FormsModule,
+		FlyoutModule,
+		SelectableListModule,
+		MaskModule,
+	],
+	declarations: [
+		...Components,
+	],
+	exports: [
+		...Components,
+	],
+	providers: [
+		SearchService,
+	],
 })
 export class AutoCompleteModule {
 }

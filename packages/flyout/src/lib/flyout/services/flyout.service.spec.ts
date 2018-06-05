@@ -6,8 +6,8 @@ describe('The Context Writer Service', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			providers: [
-				FlyoutService
-			]
+				FlyoutService,
+			],
 		}).compileComponents();
 	}));
 

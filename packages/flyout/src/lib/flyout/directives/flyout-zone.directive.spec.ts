@@ -6,7 +6,7 @@ import { FlyoutZoneDirective } from './flyout-zone.directive';
 
 @Component({
 	selector: 'aui-app',
-	template: `<div class="dummyElement"></div><div auiFlyoutZone #auiFlyoutZone=auiFlyoutZone></div>`
+	template: `<div class="dummyElement"></div><div auiFlyoutZone #auiFlyoutZone=auiFlyoutZone></div>`,
 })
 class TestComponent {
 	// Access directive
@@ -15,7 +15,7 @@ class TestComponent {
 
 @Component({
 	selector: 'aui-app',
-	template: `<div [auiFlyoutZone]="false" #auiFlyoutZone=auiFlyoutZone><div class="dummyElement"></div></div>`
+	template: `<div [auiFlyoutZone]="false" #auiFlyoutZone=auiFlyoutZone><div class="dummyElement"></div></div>`,
 })
 class TestIsFalseComponent {
 	// Access directive
@@ -32,8 +32,8 @@ describe('Flyout zone directive', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				FlyoutZoneDirective,
-				TestComponent
-			]
+				TestComponent,
+			],
 		});
 
 		TestBed.compileComponents();
@@ -60,8 +60,8 @@ describe('Flyout zone directive with false zone', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				FlyoutZoneDirective,
-				TestIsFalseComponent
-			]
+				TestIsFalseComponent,
+			],
 		});
 
 		TestBed.compileComponents();

@@ -7,18 +7,18 @@ import { Components } from './components';
 import { CKEditorModule } from 'ng2-ckeditor';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CKEditorModule,
-    ],
-    declarations: [
-        ...Components,
-    ],
-    exports: [
+	imports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		CKEditorModule,
+	],
+	declarations: [
 		...Components,
-    ]
+	],
+	exports: [
+		...Components,
+	],
 })
 export class WysiwygModule {
 }

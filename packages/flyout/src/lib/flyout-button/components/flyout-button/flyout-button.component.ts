@@ -11,7 +11,7 @@ export class FlyoutButtonComponent {
 		tiny: 'a-button--tiny',
 		small: 'a-button--small',
 		auto: '',
-		large: 'a-button--large'
+		large: 'a-button--large',
 	};
 
 	@Input() title: string;

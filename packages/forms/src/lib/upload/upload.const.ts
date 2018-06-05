@@ -9,7 +9,7 @@ export const UPLOAD_OPTIONS_DEFAULT: UploadOptions = {
 	maxFileSize: 0, // 0 is infinite
 	queueLimit: 0, // 0 is infinite
 	type: 'drop',
-	url: ''
+	url: '',
 };
 
 export const UPLOAD_VALIDATION_MESSAGES = new InjectionToken<ValidationMessages>('uploadValidationMessages');

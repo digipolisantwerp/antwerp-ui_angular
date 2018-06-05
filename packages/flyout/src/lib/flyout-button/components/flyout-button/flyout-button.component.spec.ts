@@ -7,7 +7,7 @@ import { FlyoutButtonSize } from '../../types/flyout-button.types';
 
 @Directive({
 	selector: '[auiFlyout]',
-	exportAs: 'auiFlyout'
+	exportAs: 'auiFlyout',
 })
 class MockFlyoutDirective {
 	@Input() public size;

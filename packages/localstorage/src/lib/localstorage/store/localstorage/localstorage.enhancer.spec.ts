@@ -36,8 +36,8 @@ describe('The Localstorage Redux Plugin', () => {
 			providers: [
 				LocalstorageReduxPlugin,
 				{ provide: NgRedux, useValue: ngReduxStub },
-				{ provide: LocalstorageService, useValue: localstorageServiceStub }
-			]
+				{ provide: LocalstorageService, useValue: localstorageServiceStub },
+			],
 		});
 	}));
 
@@ -59,7 +59,7 @@ describe('The Localstorage Redux Plugin', () => {
 				expect(localstorageReduxPlugin.subscribe).toHaveBeenCalledWith(['users']);
 
 				const reduxStub = {
-					createStore: <StoreCreator>() => {}
+					createStore: <StoreCreator>() => {},
 				};
 
 				spyOn(reduxStub, 'createStore');
