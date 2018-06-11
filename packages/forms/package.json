@@ -8,8 +8,10 @@
   },
   "acpaas-ui": {
     "dependencies": [
+      "calendar",
       "flyout",
-      "progress-bar"
+      "progress-bar",
+      "selectable-list"
     ]
   },
   "devDependencies": {
