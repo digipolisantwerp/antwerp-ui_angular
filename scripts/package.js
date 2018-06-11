@@ -1,17 +1,19 @@
 const commandLineArgs = require('command-line-args');
 const exec = require('./helpers/bash');
 
-const definitions = [
-  { name: 'name', alias: 'n', type: String },
-];
-const options = commandLineArgs(definitions);
+const cmd = commandLineArgs([{
+	name: 'name',
+	defaultOption: true
+}], {
+	stopAtFirstUnknown: true
+});
 
-if (!options.name) {
+if (!cmd.name) {
     console.error("Package name is required.");
     process.exit(1);
 }
 
-exec(`npm run ng -- generate @acpaas-ui/schematics:package --name=${options.name}`)
+exec(`npm run ng -- generate @acpaas-ui/schematics:package --name=${cmd.name}`)
   .then(() => {
     process.exit();
   })

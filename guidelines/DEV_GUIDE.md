@@ -22,7 +22,7 @@ Some useful commands:
 * `ng build <package>`: build a specific package
 * `npm run bump -- --major|minor|patch`: bump the library version
 * `npm run deploy[:major|minor|patch]`: bump the library version and deploy a new build
-* `npm run package -- --name=<package>`: generate a new package
+* `npm run package <package>`: generate a new package
 
 For now, only the library generation is used, custom schematics might be added in the future to make the generation of other components possible as well.
 
