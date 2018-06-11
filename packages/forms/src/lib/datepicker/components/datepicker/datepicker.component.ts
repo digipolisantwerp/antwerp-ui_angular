@@ -9,7 +9,7 @@ import {
 	FormBuilder,
 } from '@angular/forms';
 
-import { DateHelper, DateRange } from '@acpaas-ui/datehelper'; // TODO: fix import path once package is published
+import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
 
 import { FlyoutDirective } from '@acpaas-ui/ngx-components/flyout';
 
@@ -21,7 +21,7 @@ import {
 	CALENDAR_DEFAULT_WEEKDAY_LABELS,
 	DatepickerResult,
 	CalendarService,
-} from '@acpaas-ui/ngx-components/date'; // TODO: fix import path once package is published
+} from '@acpaas-ui/ngx-components/calendar';
 
 import {
 	DATEPICKER_ERROR_LABELS,

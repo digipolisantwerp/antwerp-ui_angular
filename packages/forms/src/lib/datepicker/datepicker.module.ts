@@ -9,7 +9,7 @@ import {
 	CALENDAR_DEFAULT_WEEKDAY_LABELS,
 	CALENDAR_MONTH_LABELS,
 	CALENDAR_DEFAULT_MONTH_LABELS
-} from '@acpaas-ui/ngx-components/date';
+} from '@acpaas-ui/ngx-components/calendar';
 
 import { MaskModule } from '../mask';
 
