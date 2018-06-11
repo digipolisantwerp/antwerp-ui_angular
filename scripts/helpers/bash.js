@@ -1,13 +1,20 @@
-const exec = require('child_process').exec;
+const { spawn } = require('child_process');
 
-module.exports = (cmd, ...args) => new Promise((resolve, reject) => {
-  exec(cmd, (err, stdout) => {
-    if (err) {
-      return reject(err);
-    }
+module.exports = (cmdString, cmdOptions) => new Promise((resolve, reject) => {
+	const cmd = {
+		name: cmdString.split(' ')[0],
+		args: cmdString.split(' ').slice(1),
+	};
+	const options = Object.assign({}, cmdOptions, {
+		stdio: 'inherit',
+		shell: true,
+	});
 
-    console.log(stdout);
+	const child = spawn(cmd.name, cmd.args, options);
 
-    resolve();
-  });
+	child.on('close', resolve);
+	child.on('error', () => {
+		console.log('REJECTED');
+		reject();
+	});
 });

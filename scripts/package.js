@@ -16,6 +16,5 @@ exec(`npm run ng -- generate @acpaas-ui/schematics:package --name=${options.name
     process.exit();
   })
   .catch(err => {
-    console.error(err);
     process.exit(1);
   });

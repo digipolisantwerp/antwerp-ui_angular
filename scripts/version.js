@@ -16,6 +16,5 @@ exec(`npm version ${bump}`)
     process.exit();
   })
   .catch(err => {
-    console.error(err);
     process.exit(1);
   });

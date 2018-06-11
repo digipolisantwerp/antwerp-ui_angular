@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+const colors = require('colors');
 const exec = require('./helpers/bash');
 const { getDirectories } = require('./helpers/dir');
 const promiseQueue = require('./helpers/queue');
@@ -9,11 +10,10 @@ promiseQueue(directories.map(directory => {
     return () => exec(`cd ${directory} && npm install`);
 }))
     .then(() => {
-        console.log('Bootstrap completed.');
+        console.log(colors.green('Bootstrap completed.'));
         process.exit();
     })
     .catch(err => {
-        console.log('Bootstrap failed.');
-        console.error(err);
+        console.log(colors.red('Bootstrap failed.'));
         process.exit(1);
     });

@@ -1,9 +1,6 @@
-const {
-  readFileSync
-} = require('fs');
-const {
-  resolve
-} = require('path');
+const { readFileSync } = require('fs');
+const { resolve } = require('path');
+const colors = require('colors');
 
 const { getDirectories } = require('./helpers/dir');
 const resolveDependencies = require('./helpers/dep');
@@ -25,12 +22,12 @@ const dependencies = resolveDependencies(configs.reduce((acc, curr) => {
 
 const queue = promiseQueue(dependencies.map(package => buildPackage(package)))
   .then(() => {
-    console.log("Build completed.");
+    console.log(colors.green('Build completed.'));
     process.exit();
   })
   .catch(err => {
-    console.log("Build failed.");
-    console.error(err);
+		console.log(colors.red('Build failed.'));
+		console.log(err);
 
     process.exit(1);
   });
