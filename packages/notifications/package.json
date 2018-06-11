@@ -1,5 +1,5 @@
 {
-  "name": "notification",
+  "name": "notifications",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular-redux/store": "^7.1.1",
@@ -11,6 +11,9 @@
     "dependencies": [
       "utils"
     ]
+  },
+  "dependencies": {
+    "@acpaas-ui/js-notification-store": "1.0.1-alpha.3"
   },
   "devDependencies": {
     "@angular-redux/store": "^7.1.1",
