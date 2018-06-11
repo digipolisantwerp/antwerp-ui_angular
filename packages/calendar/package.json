@@ -9,8 +9,7 @@
     "dependencies": []
   },
   "dependencies": {
-    "@acpaas-ui/js-date-utils": "0.0.1"
+    "@acpaas-ui/js-date-utils": "1.0.1-alpha.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
