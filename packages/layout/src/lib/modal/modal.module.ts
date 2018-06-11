@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
-import { Components, EntryComponents } from './components';
-import { Directives } from './directives';
-import { Services } from './services';
+import { Components, EntryComponents } from './components/index';
+import { Directives } from './directives/index';
+import { Services } from './services/index';
 
 @NgModule({
 	providers: [

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Components } from './components';
-import { Directives } from './directives';
+import { Components } from './components/index';
+import { Directives } from './directives/index';
 
 @NgModule({
 	imports: [
