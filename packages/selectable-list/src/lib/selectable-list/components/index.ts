@@ -3,7 +3,3 @@ import { SelectableListComponent } from './selectable-list/selectable-list.compo
 export const Components = [
 	SelectableListComponent,
 ];
-
-export const EntryComponents = [
-
-];
