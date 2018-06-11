@@ -59,7 +59,7 @@ describe('The Localstorage Redux Plugin', () => {
 				expect(localstorageReduxPlugin.subscribe).toHaveBeenCalledWith(['users']);
 
 				const reduxStub = {
-					createStore: <StoreCreator>() => {},
+					createStore: () => {},
 				};
 
 				spyOn(reduxStub, 'createStore');
