@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { UploadOptions, InvalidFile } from '../../types/upload.types';
-import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.const';
+import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.conf';
 import { Uploader } from '../../classes/uploader.class';
 
 @Component({

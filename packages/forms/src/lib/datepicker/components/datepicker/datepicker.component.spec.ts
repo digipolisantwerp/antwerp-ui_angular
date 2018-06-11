@@ -8,12 +8,12 @@ import {
 	FormBuilder,
 	FormControl
 } from '@angular/forms';
-import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
-import { MaskModule } from '../../mask';
-import { DateRange } from '@acpaas-ui/datehelper';
-import { CalendarModule } from '@acpaas-ui/calendar';
+import { DateRange } from '@acpaas-ui/js-date-utils';
+import { CalendarModule } from '@acpaas-ui/ngx-components/calendar';
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
+import { MaskModule } from '../../../mask';
 
-import { DATEPICKER_ERROR_LABELS, DATEPICKER_DEFAULT_ERROR_LABELS } from './datepicker.conf';
+import { DATEPICKER_ERROR_LABELS, DATEPICKER_DEFAULT_ERROR_LABELS } from '../../datepicker.conf';
 import { DatepickerComponent } from './datepicker.component';
 
 @Component({

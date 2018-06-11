@@ -2,10 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
 import { SearchFilterComponent } from './search-filter.component';
-import { lchmod } from 'fs';
 
 describe('The SearchFilter Component', () => {
 	let comp: SearchFilterComponent;

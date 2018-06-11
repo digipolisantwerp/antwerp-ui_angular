@@ -3,15 +3,16 @@ import { DebugElement, SimpleChange, SimpleChanges, Component } from '@angular/c
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 
+import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.conf';
+
 import { UploadQueueComponent } from './upload-queue.component';
-import { UploadOptions, defaultOptions } from '../upload/upload.const';
 
 const mockFile1 = new File(['file1'], 'filename1.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
 const mockFile2 = new File(['file2'], 'filename2.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
 const mockFileList = [mockFile1, mockFile2];
 
 class MockUploader {
-	public options = defaultOptions;
+	public options = UPLOAD_OPTIONS_DEFAULT;
 
 	constructor(options = {}) {
 		this.options = Object.assign({}, this.options, options);

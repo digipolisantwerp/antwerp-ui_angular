@@ -6,8 +6,9 @@
     "entryFile": "src/index.ts"
   },
   "whitelistedNonPeerDependencies": [
+    "@acpaas-ui/js-date-utils",
     "inputmask",
-    "lodash",
+    "lodash-es",
     "ng2-ckeditor"
   ]
 }

@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 
 import { UploadInputComponent } from './upload-input.component';
-import { UploadOptions, defaultOptions } from '../upload/upload.const';
 
 @Component({
 	template: '<div>Upload</div>',

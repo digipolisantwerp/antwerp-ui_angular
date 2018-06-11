@@ -13,8 +13,7 @@ import {
 	forwardRef
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import get from 'lodash.get';
-import isEqual from 'lodash.isequal';
+import { get, isEqual } from 'lodash-es';
 
 import { FlyoutDirective, FlyoutZoneDirective } from '@acpaas-ui/ngx-components/flyout';
 

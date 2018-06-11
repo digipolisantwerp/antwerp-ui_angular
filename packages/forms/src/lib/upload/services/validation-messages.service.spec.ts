@@ -1,7 +1,7 @@
 import { async, TestBed, inject } from '@angular/core/testing';
 
 import { ValidationMessagesService } from './validation-messages.service';
-import { INIT_VALIDATION_MESSAGES } from './validation-messages.const';
+import { UPLOAD_VALIDATION_MESSAGES } from '../upload.conf';
 
 describe('The Validation messages Service', () => {
 
@@ -12,7 +12,7 @@ describe('The Validation messages Service', () => {
 
 			TestBed.configureTestingModule({
 				providers: [
-					{ provide: INIT_VALIDATION_MESSAGES, useValue: messages },
+					{ provide: UPLOAD_VALIDATION_MESSAGES, useValue: messages },
 					ValidationMessagesService,
 				],
 			}).compileComponents();
@@ -36,7 +36,7 @@ describe('The Validation messages Service', () => {
 
 			TestBed.configureTestingModule({
 				providers: [
-					{ provide: INIT_VALIDATION_MESSAGES, useValue: messages },
+					{ provide: UPLOAD_VALIDATION_MESSAGES, useValue: messages },
 					ValidationMessagesService,
 				],
 			}).compileComponents();

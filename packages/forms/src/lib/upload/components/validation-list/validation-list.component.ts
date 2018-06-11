@@ -13,7 +13,7 @@ export class ValidationListComponent {
 
 	constructor(private messagesService: ValidationMessagesService) {}
 
-	public remove(index) {
+	public remove(index: number): void {
 		this.invalidFiles.splice(index, 1);
 	}
 

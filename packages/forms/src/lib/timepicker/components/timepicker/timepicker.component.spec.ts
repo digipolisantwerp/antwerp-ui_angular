@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { TimepickerComponent } from './timepicker.component';
 
-fdescribe('The Timepicker Component', () => {
+describe('The Timepicker Component', () => {
 	let comp: TimepickerComponent;
 	let fixture: ComponentFixture<TimepickerComponent>;
 

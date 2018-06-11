@@ -4,8 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ValidationListComponent } from './validation-list.component';
-import { InvalidFile } from '../upload/upload.const';
-import { ValidationMessagesService } from '../validation-messages/validation-messages.service';
+import { ValidationMessagesService } from '../../services/validation-messages.service';
 
 class MockValidationMessagesService {
 	public INVALID_FILE_TYPE = 'INVALID_FILE_TYPE_test';

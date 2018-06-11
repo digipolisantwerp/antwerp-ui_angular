@@ -1,5 +1,7 @@
+import { UPLOAD_OPTIONS_DEFAULT } from '../upload.conf';
+import { UploadOptions } from '../types/upload.types';
+
 import { Uploader } from './uploader.class';
-import { defaultOptions, UploadOptions } from '../upload/upload.const';
 
 describe('Uploader', () => {
 
@@ -14,7 +16,7 @@ describe('Uploader', () => {
 
 	it('should have default options', () => {
 		const uploader = new Uploader();
-		expect(uploader.options).toEqual(defaultOptions);
+		expect(uploader.options).toEqual(UPLOAD_OPTIONS_DEFAULT);
 	});
 
 	it('should merge custom options with default options', () => {
@@ -24,7 +26,7 @@ describe('Uploader', () => {
 		};
 
 		const uploader = new Uploader(options);
-		const result = Object.assign({}, defaultOptions, options);
+		const result = Object.assign({}, UPLOAD_OPTIONS_DEFAULT, options);
 		expect(uploader.options).toEqual(result);
 	});
 

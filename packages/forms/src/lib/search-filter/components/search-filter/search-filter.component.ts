@@ -12,8 +12,7 @@ import {
 	NG_VALUE_ACCESSOR,
 	ControlValueAccessor,
 } from '@angular/forms';
-import get from 'lodash.get';
-import debounce from 'lodash.debounce';
+import { get, debounce } from 'lodash-es';
 
 import { FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
 

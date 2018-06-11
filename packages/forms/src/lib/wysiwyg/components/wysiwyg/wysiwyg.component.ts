@@ -42,7 +42,7 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
 	@Output() emitContent: EventEmitter<string> = new EventEmitter();
 
 	public ckeditorContent: string;
-	public ckeditorConfig = DEFAULT_CONFIG;
+	public ckeditorConfig = WYSIWYG_DEFAULT_CONFIG;
 
 	private updateModel: Function = () => {};
 

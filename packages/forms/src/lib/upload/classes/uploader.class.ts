@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { UploadOptions, defaultOptions, InvalidFile } from '../upload.const';
+import { UPLOAD_OPTIONS_DEFAULT } from '../upload.conf';
+import { UploadOptions, InvalidFile } from '../types/upload.types';
 
 export class Uploader {
-	public options: UploadOptions = defaultOptions;
+	public options: UploadOptions = UPLOAD_OPTIONS_DEFAULT;
 
 	constructor(options?: UploadOptions) {
 		this.setOptions(options);

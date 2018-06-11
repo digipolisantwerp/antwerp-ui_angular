@@ -7,7 +7,7 @@ import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 
 import { Components } from './components';
 import { Services } from './services';
-import { UPLOAD_VALIDATION_MESSAGES } from './upload.const';
+import { UPLOAD_VALIDATION_MESSAGES } from './upload.conf';
 import { ValidationMessages } from './types/upload.types';
 
 @NgModule({

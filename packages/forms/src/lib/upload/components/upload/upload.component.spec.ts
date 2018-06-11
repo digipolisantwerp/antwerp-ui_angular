@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { UploadComponent } from './upload.component';
-import { InvalidFile } from './upload.const';
+import { InvalidFile } from '../../types/upload.types';
 
 const mockUploadFiles = [{
 	url: 'http://localhost/myfile.jpg',

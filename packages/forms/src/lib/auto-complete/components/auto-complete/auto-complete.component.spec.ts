@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MaskModule } from '../../../mask/mask.module';
 
 import { AutoCompleteComponent } from './auto-complete.component';
-import { SearchService } from '../../shared/services/search.service';
+import { SearchService } from '../../../shared/services/search.service';
 
 const searchMock = {
 	search: () => null,

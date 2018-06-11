@@ -3,7 +3,7 @@ import { FormGroup, FormControl, FormBuilder, ControlValueAccessor, NG_VALUE_ACC
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
 
-import { DateHelper } from '@acpaas-ui/datehelper'; // TODO: fix import path once package is published
+import { DateHelper } from '@acpaas-ui/js-date-utils';
 
 import { TimepickerInputSize } from '../../types/timepicker.types';
 

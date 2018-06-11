@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 
-import { UPLOAD_VALIDATION_MESSAGES } from '../../upload.const';
+import { UPLOAD_VALIDATION_MESSAGES } from '../upload.conf';
 
 @Injectable()
 export class ValidationMessagesService {
@@ -8,7 +8,9 @@ export class ValidationMessagesService {
 	public INVALID_FILE_SIZE = 'INVALID_FILE_SIZE';
 	public INVALID_MIME_TYPE = 'INVALID_MIME_TYPE';
 
-	constructor(@Inject(UPLOAD_VALIDATION_MESSAGES) private initValues) {
+	constructor(
+        @Inject(UPLOAD_VALIDATION_MESSAGES) private initValues
+    ) {
 		if (initValues.INVALID_FILE_TYPE) {
 			this.INVALID_FILE_TYPE = initValues.INVALID_FILE_TYPE;
 		}

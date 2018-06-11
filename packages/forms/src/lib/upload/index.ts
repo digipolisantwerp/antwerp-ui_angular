@@ -7,5 +7,5 @@ export { UploadedListComponent } from './components/uploaded-list/uploaded-list.
 export { ValidationListComponent } from './components/validation-list/validation-list.component';
 export { ValidationMessagesService } from './services/validation-messages.service';
 export { ValidationMessages, InvalidFile, UploadOptions } from './types/upload.types';
-export { UPLOAD_OPTIONS_DEFAULT, UPLOAD_VALIDATION_MESSAGES } from './upload.const';
+export { UPLOAD_OPTIONS_DEFAULT, UPLOAD_VALIDATION_MESSAGES } from './upload.conf';
 export { UploadModule } from './upload.module';
