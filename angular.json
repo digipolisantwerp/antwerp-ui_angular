@@ -29,10 +29,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "styleguide/environments/environment.ts",
-                "with": "styleguide/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "styleguide/environments/environment.ts",
+                  "with": "styleguide/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -213,7 +215,6 @@
         }
       }
     },
-
     "calendar": {
       "root": "packages/calendar",
       "sourceRoot": "packages/calendar/src",
@@ -726,6 +727,46 @@
             "tsConfig": [
               "packages/utils/tsconfig.lib.json",
               "packages/utils/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "selectable-list": {
+      "root": "packages/selectable-list",
+      "sourceRoot": "packages/selectable-list/src",
+      "projectType": "library",
+      "prefix": "aui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/selectable-list/tsconfig.lib.json",
+            "project": "packages/selectable-list/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "packages/selectable-list/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/selectable-list/src/test.ts",
+            "tsConfig": "packages/selectable-list/tsconfig.spec.json",
+            "karmaConfig": "packages/selectable-list/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/selectable-list/tsconfig.lib.json",
+              "packages/selectable-list/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
