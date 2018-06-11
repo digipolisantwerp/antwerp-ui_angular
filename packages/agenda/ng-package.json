@@ -6,7 +6,7 @@
     "entryFile": "src/index.ts"
   },
   "whitelistedNonPeerDependencies": [
-    "@acpaas-ui/datehelper",
+    "@acpaas-ui/js-date-utils",
     "hammerjs"
   ]
 }
