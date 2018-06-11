@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { WINDOW } from '@acpaas-ui/ngx-components/utils';
+import { WindowModule } from '@acpaas-ui/ngx-components/utils';
 
 import { Services } from './services/index';
 import { Directives } from './directives/index';
@@ -11,9 +11,9 @@ import { GTMConfig } from './types/analytics.types';
 
 @NgModule({
 	imports: [
+        WindowModule,
 	],
 	providers: [
-		{ provide: WINDOW, useValue: window },
 		{ provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT },
 		Services,
 	],
@@ -34,7 +34,8 @@ export class AnalyticsModule {
 		return {
 			ngModule: AnalyticsModule,
 			providers: [
-				{ provide: GTM_CONFIG, useValue: config },
+                { provide: GTM_CONFIG, useValue: config },
+                Services,
 			],
 		};
 	}
