@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
-import { DateRange } from '@acpaas-ui/js-date-utils'; // TODO: add dependency once package is published
+import { DateRange } from '@acpaas-ui/js-date-utils';
 
 import { CalendarModule } from '../../calendar.module';
 import { CalendarComponent } from './calendar.component';

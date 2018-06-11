@@ -9,7 +9,8 @@
     "dependencies": []
   },
   "dependencies": {
-    "@acpaas-ui/js-date-utils": "1.0.1-alpha.2"
+    "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",
+    "lodash-es": "~4.17.10"
   },
   "devDependencies": {}
 }

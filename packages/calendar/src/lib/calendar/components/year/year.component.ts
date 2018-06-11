@@ -8,7 +8,7 @@ import {
 	OnChanges,
 	SimpleChanges
 } from '@angular/core';
-import { get, chunk } from 'lodash';
+import { get, chunk } from 'lodash-es';
 
 import { DateHelper } from '@acpaas-ui/js-date-utils';
 

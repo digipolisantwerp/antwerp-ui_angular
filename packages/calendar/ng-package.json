@@ -6,6 +6,7 @@
     "entryFile": "src/index.ts"
   },
   "whitelistedNonPeerDependencies": [
-    "@acpaas-ui/js-date-utils"
+    "@acpaas-ui/js-date-utils",
+    "lodash-es"
   ]
 }

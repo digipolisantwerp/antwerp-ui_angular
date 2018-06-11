@@ -9,7 +9,7 @@ import {
 	OnChanges,
 	SimpleChanges
 } from '@angular/core';
-import { get } from 'lodash';
+import { get } from 'lodash-es';
 import { Day, Month, DateRange, DateHelper } from '@acpaas-ui/js-date-utils';
 
 import { CALENDAR_WEEKDAY_LABELS, CALENDAR_DEFAULT_WEEKDAY_LABELS } from '../../calendar.conf';
