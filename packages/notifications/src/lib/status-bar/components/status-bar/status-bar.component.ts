@@ -23,7 +23,7 @@ import {
 
 @Component({
 	selector: 'aui-statusbar',
-	templateUrl: './statusbar.component.html',
+	templateUrl: './status-bar.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StatusbarComponent implements OnChanges {
