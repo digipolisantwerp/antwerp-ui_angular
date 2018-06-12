@@ -263,6 +263,7 @@ jspm_packages
 .cache
 
 # Build folder
+examples
 dist
 **/node_modules
 .ng_pkg_build
