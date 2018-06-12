@@ -115,6 +115,9 @@
           "configurations": {
             "production": {
               "project": "packages/agenda/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -155,6 +158,9 @@
           "configurations": {
             "production": {
               "project": "packages/analytics/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -195,6 +201,9 @@
           "configurations": {
             "production": {
               "project": "packages/avatar/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -235,6 +244,9 @@
           "configurations": {
             "production": {
               "project": "packages/calendar/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -275,6 +287,9 @@
           "configurations": {
             "production": {
               "project": "packages/code-snippet/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -315,6 +330,9 @@
           "configurations": {
             "production": {
               "project": "packages/context/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -355,6 +373,9 @@
           "configurations": {
             "production": {
               "project": "packages/flyout/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -395,6 +416,9 @@
           "configurations": {
             "production": {
               "project": "packages/forms/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -435,6 +459,9 @@
           "configurations": {
             "production": {
               "project": "packages/layout/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -475,6 +502,9 @@
           "configurations": {
             "production": {
               "project": "packages/map/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -515,6 +545,9 @@
           "configurations": {
             "production": {
               "project": "packages/localstorage/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -555,6 +588,9 @@
           "configurations": {
             "production": {
               "project": "packages/logo/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -595,6 +631,9 @@
           "configurations": {
             "production": {
               "project": "packages/notifications/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -635,6 +674,9 @@
           "configurations": {
             "production": {
               "project": "packages/pagination/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -675,6 +717,9 @@
           "configurations": {
             "production": {
               "project": "packages/progress-bar/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -715,6 +760,9 @@
           "configurations": {
             "production": {
               "project": "packages/utils/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
@@ -755,6 +803,9 @@
           "configurations": {
             "production": {
               "project": "packages/selectable-list/ng-package.prod.json"
+            },
+            "examples": {
+              "project": "packages/avatar/ng-package.examples.json"
             }
           }
         },
