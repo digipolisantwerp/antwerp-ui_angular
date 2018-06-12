@@ -49,7 +49,7 @@ class MockUploader implements Partial<Uploader> {
 				});
 			}, 500);
 		});
-    }
+	}
 }
 
 const mockDragEvent = {

@@ -1,7 +1,7 @@
 <div class="m-search-filter" auiFlyout [size]="flyoutSize" [align]="flyoutAlign">
 	<div class="m-search-filter__label has-icon-right" [ngClass]="{'m-search-filter__label--active': selectedItems.length > 0}" auiFlyoutAction>
-        {{ label }}
-        <span *ngIf="selectedItems.length">({{ selectedItems.length }})</span>
+		{{ label }}
+		<span *ngIf="selectedItems.length">({{ selectedItems.length }})</span>
 		<span class="fa fa-angle-down"></span>
 	</div>
 
@@ -20,8 +20,8 @@
 			</button>
 		</div>
 
-        <h6 class="m-search-filter__results__title">{{ labelResults }}</h6>
-        <div class="u-text-center u-padding a-spinner" *ngIf="loading"></div>
+		<h6 class="m-search-filter__results__title">{{ labelResults }}</h6>
+		<div class="u-text-center u-padding a-spinner" *ngIf="loading"></div>
 		<ul class="a-list a-list--lined a-list--unstyled" *ngIf="!loading">
 			<li class="m-search-filter__results__item a-list__item" *ngIf="!filteredChoices.length">
 				<p class="u-padding-xs">{{ labelNoResults }}</p>
