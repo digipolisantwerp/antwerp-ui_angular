@@ -8,24 +8,24 @@ $sidebar-width: 15 * $spacer;
  */
 
 .m-sidebar {
-    height: 100%;
-    overflow: hidden;
-    width: 0;
-    background-color: $white;
-    transition: width 300ms cubic-bezier(.4, 0, .2, 1);
+	height: 100%;
+	overflow: hidden;
+	width: 0;
+	background-color: $white;
+	transition: width 300ms cubic-bezier(.4, 0, .2, 1);
 }
 
 .m-sidebar--open {
-    width: $sidebar-width;
+	width: $sidebar-width;
 }
 
 .m-sidebar__content {
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: $sidebar-width;
-    height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	width: $sidebar-width;
+	height: 100%;
 }
 
 .m-sidebar__content--padding {
-    padding: 2 * $spacer;
+	padding: 2 * $spacer;
 }

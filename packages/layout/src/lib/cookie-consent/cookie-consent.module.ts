@@ -14,8 +14,8 @@ export function setConfig(cookieConsentConfig: CookieConsentConfig): CookieConse
 
 @NgModule({
 	imports: [
-        CommonModule,
-        WindowModule,
+		CommonModule,
+		WindowModule,
 	],
 	providers: [
 		CookieconsentService,
@@ -34,7 +34,7 @@ export class CookieconsentModule {
 					provide: COOKIE_CONSENT_CONFIG,
 					useFactory: setConfig,
 					deps: [COOKIE_CONSENT_CONFIG_ROOT],
-                },
+				},
 
 				CookieconsentService,
 			],
