@@ -6,12 +6,14 @@ root = true
 [*.{js,scss}]
 charset = utf-8
 indent_style = tab
+indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.{ts,html}]
 charset = utf-8
-indent_style = tab=
+indent_style = tab
+indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
