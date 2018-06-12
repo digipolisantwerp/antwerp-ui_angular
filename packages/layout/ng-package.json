@@ -6,6 +6,7 @@
     "entryFile": "src/index.ts"
   },
   "whitelistedNonPeerDependencies": [
+    "@a-ui/core",
     "@angular-redux/store",
     "@jsprds/headroom.ts",
     "cookieconsent",

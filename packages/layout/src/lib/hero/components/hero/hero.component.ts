@@ -3,7 +3,10 @@ import { HeroCtaDirective } from '../../directives/hero-cta.directive';
 
 @Component({
 	selector: 'aui-hero',
-	templateUrl: './hero.component.html',
+    templateUrl: './hero.component.html',
+    styleUrls: [
+        './hero.component.scss',
+    ],
 })
 export class HeroComponent {
 	@ContentChild(HeroCtaDirective) hasCta: HeroCtaDirective;

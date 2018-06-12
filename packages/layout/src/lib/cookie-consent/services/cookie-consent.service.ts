@@ -5,7 +5,6 @@ import { merge } from 'lodash-es';
 import { COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG } from '../cookie-consent.conf';
 import { CookieConsentConfig } from '../types/cookie-consent.types';
 
-
 @Injectable()
 export class CookieconsentService {
 	private static initialized: Boolean = false;
