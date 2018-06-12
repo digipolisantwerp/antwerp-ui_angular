@@ -23,8 +23,13 @@
               "styleguide/assets"
             ],
             "styles": [
-              "styleguide/styles.css"
+              "styleguide/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "styleguide/node_modules"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

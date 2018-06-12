@@ -10,10 +10,15 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
-    "@angular/common": "^6.0.0",
-    "@angular/core": "^6.0.0",
-    "@angular/compiler": "^6.0.0",
+    "@a-ui/acpaas": "2.0.0",
+    "@a-ui/core": "2.1.1",
+    "@a-ui/flexboxgrid": "1.0.0"
+  },
+  "peerDependencies": {
     "@angular/animations": "^6.0.0",
+    "@angular/common": "^6.0.0",
+    "@angular/compiler": "^6.0.0",
+    "@angular/core": "^6.0.0",
     "@angular/forms": "^6.0.0",
     "@angular/http": "^6.0.0",
     "@angular/platform-browser": "^6.0.0",
@@ -47,8 +52,5 @@
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:8081/repository/npm-private/"
   }
 }
