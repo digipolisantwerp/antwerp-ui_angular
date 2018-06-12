@@ -455,38 +455,38 @@
         }
       }
     },
-    "leaflet": {
-      "root": "packages/leaflet",
-      "sourceRoot": "packages/leaflet/src",
+    "map": {
+      "root": "packages/map",
+      "sourceRoot": "packages/map/src",
       "projectType": "library",
       "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "packages/leaflet/tsconfig.lib.json",
-            "project": "packages/leaflet/ng-package.json"
+            "tsConfig": "packages/map/tsconfig.lib.json",
+            "project": "packages/map/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "packages/leaflet/ng-package.prod.json"
+              "project": "packages/map/ng-package.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "packages/leaflet/src/test.ts",
-            "tsConfig": "packages/leaflet/tsconfig.spec.json",
-            "karmaConfig": "packages/leaflet/karma.conf.js"
+            "main": "packages/map/src/test.ts",
+            "tsConfig": "packages/map/tsconfig.spec.json",
+            "karmaConfig": "packages/map/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "packages/leaflet/tsconfig.lib.json",
-              "packages/leaflet/tsconfig.spec.json"
+              "packages/map/tsconfig.lib.json",
+              "packages/map/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
