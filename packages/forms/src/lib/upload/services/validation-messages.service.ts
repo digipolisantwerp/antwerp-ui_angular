@@ -9,8 +9,8 @@ export class ValidationMessagesService {
 	public INVALID_MIME_TYPE = 'INVALID_MIME_TYPE';
 
 	constructor(
-        @Inject(UPLOAD_VALIDATION_MESSAGES) private initValues
-    ) {
+		@Inject(UPLOAD_VALIDATION_MESSAGES) private initValues
+	) {
 		if (initValues.INVALID_FILE_TYPE) {
 			this.INVALID_FILE_TYPE = initValues.INVALID_FILE_TYPE;
 		}

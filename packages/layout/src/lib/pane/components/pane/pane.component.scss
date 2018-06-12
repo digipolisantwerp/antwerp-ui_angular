@@ -8,33 +8,33 @@ $pane-width: 15 * $spacer;
  */
 
 .m-pane {
-    background-color: $white;
-    width: $pane-width;
-    height: 100%;
-    z-index: 100;
+	background-color: $white;
+	width: $pane-width;
+	height: 100%;
+	z-index: 100;
 }
 
 .m-pane__content {
-    height: 100%;
-    overflow-y: scroll;
+	height: 100%;
+	overflow-y: scroll;
 }
 
 .m-pane--left {
-    position: absolute;
-    left: -$pane-width;
-    transition: left 300ms cubic-bezier(.4, 0, .2, 1);
+	position: absolute;
+	left: -$pane-width;
+	transition: left 300ms cubic-bezier(.4, 0, .2, 1);
 
-    &.m-pane--open {
-        left: 0;
-    }
+	&.m-pane--open {
+		left: 0;
+	}
 }
 
 .m-pane--right {
-    position: absolute;
-    right: -$pane-width;
-    transition: right 300ms cubic-bezier(.4, 0, .2, 1);
+	position: absolute;
+	right: -$pane-width;
+	transition: right 300ms cubic-bezier(.4, 0, .2, 1);
 
-    &.m-pane--open {
-        right: 0;
-    }
+	&.m-pane--open {
+		right: 0;
+	}
 }
