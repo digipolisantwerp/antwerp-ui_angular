@@ -264,6 +264,7 @@ jspm_packages
 
 # Build folder
 examples
+!packages/**/examples
 dist
 **/node_modules
 .ng_pkg_build
