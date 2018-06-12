@@ -115,7 +115,7 @@ describe('The Column Selector Component', () => {
 		comp.columns = [
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname'] }
+			{ value: 'email', parent: ['firstname'] },
 		];
 		fixture.detectChanges();
 
@@ -123,7 +123,7 @@ describe('The Column Selector Component', () => {
 		expect(comp.columns).toEqual([
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname'], disabled: true, hidden: true }
+			{ value: 'email', parent: ['firstname'], disabled: true, hidden: true },
 		]);
 	});
 
@@ -131,7 +131,7 @@ describe('The Column Selector Component', () => {
 		comp.columns = [
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname'], disabled: true, hidden: true }
+			{ value: 'email', parent: ['firstname'], disabled: true, hidden: true },
 		];
 		fixture.detectChanges();
 
@@ -139,7 +139,7 @@ describe('The Column Selector Component', () => {
 		expect(comp.columns).toEqual([
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname'], disabled: false, hidden: true }
+			{ value: 'email', parent: ['firstname'], disabled: false, hidden: true },
 		]);
 	});
 
@@ -147,7 +147,7 @@ describe('The Column Selector Component', () => {
 		comp.columns = [
 			{ value: 'firstname' },
 			{ value: 'lastname', parent: ['firstname'] },
-			{ value: 'email', parent: ['lastname'] }
+			{ value: 'email', parent: ['lastname'] },
 		];
 		fixture.detectChanges();
 
@@ -155,13 +155,13 @@ describe('The Column Selector Component', () => {
 		expect(comp.columns).toEqual([
 			{ value: 'firstname' },
 			{ value: 'lastname', parent: ['firstname'] },
-			{ value: 'email', parent: ['lastname'], disabled: true, hidden: true }
+			{ value: 'email', parent: ['lastname'], disabled: true, hidden: true },
 		]);
 
 		comp.columns = [
 			{ value: 'firstname' },
 			{ value: 'lastname', parent: ['firstname'] },
-			{ value: 'email', parent: ['lastname'] }
+			{ value: 'email', parent: ['lastname'] },
 		];
 		fixture.detectChanges();
 
@@ -169,7 +169,7 @@ describe('The Column Selector Component', () => {
 		expect(comp.columns).toEqual([
 			{ value: 'firstname' },
 			{ value: 'lastname', parent: ['firstname'], disabled: true, hidden: true },
-			{ value: 'email', parent: ['lastname'], disabled: true, hidden: true }
+			{ value: 'email', parent: ['lastname'], disabled: true, hidden: true },
 		]);
 	});
 
@@ -177,7 +177,7 @@ describe('The Column Selector Component', () => {
 		comp.columns = [
 			{ value: 'firstname' },
 			{ value: 'lastname', parent: ['firstname'], disabled: true, hidden: true },
-			{ value: 'email', parent: ['lastname'], disabled: true, hidden: true }
+			{ value: 'email', parent: ['lastname'], disabled: true, hidden: true },
 		];
 		fixture.detectChanges();
 
@@ -185,7 +185,7 @@ describe('The Column Selector Component', () => {
 		expect(comp.columns).toEqual([
 			{ value: 'firstname' },
 			{ value: 'lastname', parent: ['firstname'], disabled: false, hidden: true },
-			{ value: 'email', parent: ['lastname'], disabled: false, hidden: true }
+			{ value: 'email', parent: ['lastname'], disabled: false, hidden: true },
 		]);
 	});
 
@@ -193,7 +193,7 @@ describe('The Column Selector Component', () => {
 		comp.columns = [
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname', 'lastname'] }
+			{ value: 'email', parent: ['firstname', 'lastname'] },
 		];
 		fixture.detectChanges();
 
@@ -201,13 +201,13 @@ describe('The Column Selector Component', () => {
 		expect(comp.columns).toEqual([
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname', 'lastname'], disabled: true, hidden: true }
+			{ value: 'email', parent: ['firstname', 'lastname'], disabled: true, hidden: true },
 		]);
 
 		 comp.columns = [
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname', 'lastname'] }
+			{ value: 'email', parent: ['firstname', 'lastname'] },
 		];
 		fixture.detectChanges();
 
@@ -215,7 +215,7 @@ describe('The Column Selector Component', () => {
 		expect(comp.columns).toEqual([
 			{ value: 'firstname' },
 			{ value: 'lastname' },
-			{ value: 'email', parent: ['firstname', 'lastname'], disabled: true, hidden: true }
+			{ value: 'email', parent: ['firstname', 'lastname'], disabled: true, hidden: true },
 		]);
 	});
 });

@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { Filter } from "@acpaas-ui/filter";
+import { Filter } from '@acpaas-ui/filter';
 
 import { TableBarComponent } from './table-bar.component';
 

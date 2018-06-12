@@ -32,7 +32,7 @@ describe('The Table Component', () => {
 				TableComponent, // declare the test component
 			],
 			providers: [
-				{ provide: TableHelperService, useClass: DummyTableHelperService }
+				{ provide: TableHelperService, useClass: DummyTableHelperService },
 			],
 			schemas: [
 				NO_ERRORS_SCHEMA,
