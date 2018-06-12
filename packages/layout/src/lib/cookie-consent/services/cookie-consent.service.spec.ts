@@ -1,7 +1,7 @@
 import { async, inject, TestBed } from '@angular/core/testing';
 
 import { COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG } from '../cookie-consent.conf';
-import { WindowRef } from '../services/window.service';
+import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 import { CookieconsentService } from '../services/cookie-consent.service';
 
 const cookieconsentConfig: any = {};
@@ -20,7 +20,7 @@ describe('The Cookieconsent Service', () => {
 		TestBed.configureTestingModule({
 			providers: [
 				{ provide: COOKIE_CONSENT_CONFIG, useValue: cookieconsentConfig },
-				{ provide: WindowRef, useValue: windowStub },
+				{ provide: WINDOW, useValue: windowStub },
 				CookieconsentService,
 			],
 		});
