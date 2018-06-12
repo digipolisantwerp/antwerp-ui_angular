@@ -13,7 +13,7 @@
     ]
   },
   "dependencies": {
-    "@acpaas-ui/js-notification-store": "1.0.1-alpha.3"
+    "@acpaas-ui/js-notification-store": "1.0.1-alpha.5"
   },
   "devDependencies": {
     "@angular-redux/store": "^7.1.1",

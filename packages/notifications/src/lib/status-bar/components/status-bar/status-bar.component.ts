@@ -10,16 +10,14 @@ import {
 import { Router, NavigationStart } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
+import { Notification } from '@acpaas-ui/js-notification-store';
 import { Label } from '@acpaas-ui/ngx-components/utils';
 
 import {
 	STATUSBAR_AVAILABLE_TYPES,
 	STATUSBAR_DEFAULT_TYPES,
 } from '../../status-bar.conf';
-import {
-	StatusbarNotification,
-	StatusbarAvailableTypes,
-} from '../../types/status-bar.types';
+import { StatusbarAvailableTypes } from '../../types/status-bar.types';
 
 @Component({
 	selector: 'aui-statusbar',
@@ -27,14 +25,14 @@ import {
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StatusbarComponent implements OnChanges {
-	@Input() notifications: StatusbarNotification[] = [];
+	@Input() notifications: Notification[] = [];
 	@Input() remainingMessage: Label = {
 		singular: '%{remaining} more',
 		plural: '%{remaining} more',
 	};
 	@Output() clearNotification = new EventEmitter();
 
-	public activeNotification: StatusbarNotification = null;
+	public activeNotification: Notification = null;
 	public typeClasses: any = {};
 	public iconMap: any = {};
 	public replaceMap = {
