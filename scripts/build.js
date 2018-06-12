@@ -3,7 +3,7 @@ const { resolve } = require('path');
 const colors = require('colors');
 
 const { getDirectories } = require('./helpers/dir');
-const resolveDependencies = require('./helpers/dep');
+const { getAUIDependencies } = require('./helpers/deps');
 const promiseQueue = require('./helpers/queue');
 const buildPackage = require('./helpers/build');
 
@@ -12,7 +12,7 @@ const packages = directories.map(directory => directory.split('/').pop());
 const configs = directories.map(directory => readFileSync(resolve(directory, 'package.json'), {
   encoding: 'UTF-8'
 }));
-const dependencies = resolveDependencies(configs.reduce((acc, curr) => {
+const localDependencies = getAUIDependencies(configs.reduce((acc, curr) => {
   const config = JSON.parse(curr);
 
   return Object.assign({}, acc, {
@@ -20,14 +20,14 @@ const dependencies = resolveDependencies(configs.reduce((acc, curr) => {
   });
 }, {}));
 
-const queue = promiseQueue(dependencies.map(package => buildPackage(package)))
-  .then(() => {
-    console.log(colors.green('Build completed.'));
-    process.exit();
-  })
-  .catch(err => {
+const queue = promiseQueue(localDependencies.map(package => buildPackage(package)))
+	.then(() => {
+		console.log(colors.green('Build completed.'));
+		process.exit();
+	})
+	.catch(err => {
 		console.log(colors.red('Build failed.'));
 		console.log(err);
 
-    process.exit(1);
-  });
+		process.exit(1);
+	});
