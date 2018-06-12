@@ -49,7 +49,3 @@ Thank you to all the people who already contributed to ACPaaS UI!
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2016-present, Digipolis
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMDI1Mjc3NywtODMzNTkzODEzLDEwNj
-YwMDcyODRdfQ==
--->
