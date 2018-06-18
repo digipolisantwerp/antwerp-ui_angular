@@ -21,6 +21,8 @@
     "postdeploy:patch": "npm publish dist"
   },
   "devDependencies": {
+    "@a-ui/core": "2.1.1",
+    "@a-ui/flexboxgrid": "1.0.0",
     "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",
     "@acpaas-ui/js-notification-store": "1.0.1-alpha.5",
     "@acpaas-ui/schematics": "0.0.1",
