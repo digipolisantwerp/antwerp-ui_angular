@@ -1,11 +1,11 @@
 export {
-    CALENDAR_VIEW_DECENNIA,
-    CALENDAR_VIEW_MONTH,
-    CALENDAR_VIEW_YEAR,
-    WeekdayLabelsConfig,
-    MonthLabelsConfig,
-    DatepickerResult,
-    DateRangeMap,
+	CALENDAR_VIEW_DECENNIA,
+	CALENDAR_VIEW_MONTH,
+	CALENDAR_VIEW_YEAR,
+	WeekdayLabelsConfig,
+	MonthLabelsConfig,
+	DatepickerResult,
+	DateRangeMap,
 } from './types/calendar.types';
 export { CalendarService } from './services/calendar.service';
 export {
