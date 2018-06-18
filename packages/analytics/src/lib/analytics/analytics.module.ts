@@ -11,7 +11,7 @@ import { GTMConfig } from './types/analytics.types';
 
 @NgModule({
 	imports: [
-        WindowModule,
+		WindowModule,
 	],
 	providers: [
 		{ provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT },
@@ -34,8 +34,8 @@ export class AnalyticsModule {
 		return {
 			ngModule: AnalyticsModule,
 			providers: [
-                { provide: GTM_CONFIG, useValue: config },
-                Services,
+				{ provide: GTM_CONFIG, useValue: config },
+				Services,
 			],
 		};
 	}
