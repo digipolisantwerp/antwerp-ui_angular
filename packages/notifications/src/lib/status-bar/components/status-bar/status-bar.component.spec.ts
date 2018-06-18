@@ -5,9 +5,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Router, NavigationStart } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 
-import { StatusbarComponent } from './statusbar.component';
-import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from './statusbar.conf';
-import { Label, InterpolateLabelPipe, PluralizeLabelPipe } from '@acpaas-ui/labels';
+import { StatusbarComponent } from './status-bar.component';
+import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from '../../status-bar.conf';
+import { Label, InterpolateLabelPipe, PluralizeLabelPipe } from '@acpaas-ui/ngx-components/utils';
 
 
 describe('The Statusbar Component', () => {
@@ -73,9 +73,9 @@ describe('The Statusbar Component', () => {
 			comp.notifications = notifications;
 
 			/**
-             * Since the timer and scope listeners are private, we can only check if the
-             * clearNotification callback gets called when they are triggered.
-             */
+			 * Since the timer and scope listeners are private, we can only check if the
+			 * clearNotification callback gets called when they are triggered.
+			 */
 			clearSpy = spyOn(comp, 'clearListeners');
 			setSpy = spyOn(comp, 'setListeners');
 			emitSpy = spyOn(comp.clearNotification, 'emit').and.stub();
@@ -97,7 +97,15 @@ describe('The Statusbar Component', () => {
 
 		it('should clear the active notification if there are no notifications left', () => {
 			comp.notifications.length = 0;
-			comp.activeNotification = {message: 'test'};
+			comp.activeNotification = {
+				message: 'test',
+				handle: '',
+				target: '',
+				type: '',
+				timer: 200,
+				scope: '',
+				clear: () => {},
+			};
 
 			comp.ngOnChanges();
 			fixture.detectChanges();
@@ -107,7 +115,15 @@ describe('The Statusbar Component', () => {
 
 		it('should clear the active notification if there are no notifications', () => {
 			comp.notifications = undefined;
-			comp.activeNotification = {message: 'test'};
+			comp.activeNotification = {
+				message: 'test',
+				handle: '',
+				target: '',
+				type: '',
+				timer: 200,
+				scope: '',
+				clear: () => { },
+			};
 
 			comp.ngOnChanges();
 			fixture.detectChanges();
@@ -171,7 +187,17 @@ describe('The Statusbar Component', () => {
 		}));
 
 		it('should cancel the timer if the notifications are updated', fakeAsync(() => {
-			comp.notifications.push({message: 'new notification'});
+			const newNotification = {
+				message: 'test',
+				handle: '',
+				target: '',
+				type: '',
+				timer: 200,
+				scope: '',
+				clear: () => { },
+			};
+
+			comp.notifications.push(newNotification);
 			comp.ngOnChanges();
 			fixture.detectChanges();
 
@@ -194,6 +220,12 @@ describe('The Statusbar Component', () => {
 			spyOn(router.events, 'subscribe');
 			comp.notifications = [{
 				message: 'not found',
+				handle: '',
+				target: '',
+				type: '',
+				timer: 200,
+				scope: '',
+				clear: () => { },
 			}];
 			comp.ngOnChanges();
 			fixture.detectChanges();
@@ -206,7 +238,12 @@ describe('The Statusbar Component', () => {
 
 			comp.notifications = [{
 				message: 'not found',
+				handle: '',
+				target: '',
+				type: '',
+				timer: 200,
 				scope: 'page',
+				clear: () => { },
 			}];
 			comp.ngOnChanges();
 			fixture.detectChanges();
@@ -218,7 +255,12 @@ describe('The Statusbar Component', () => {
 			spyOn(comp.clearNotification, 'emit');
 			comp.notifications = [{
 				message: 'not found',
+				handle: '',
+				target: '',
+				type: '',
+				timer: 200,
 				scope: 'page',
+				clear: () => { },
 			}];
 			comp.ngOnChanges();
 			fixture.detectChanges();
@@ -239,7 +281,12 @@ describe('The Statusbar Component', () => {
 				spyOn(comp.clearNotification, 'emit');
 				comp.notifications = [{
 					message: 'not found',
+					handle: '',
+					target: '',
+					type: '',
+					timer: 200,
 					scope: 'page',
+					clear: () => { },
 				}];
 				comp.ngOnChanges();
 				fixture.detectChanges();
