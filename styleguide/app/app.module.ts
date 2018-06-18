@@ -12,13 +12,13 @@ import { Pages } from './pages/index';
 	declarations: [
 		AppComponent,
 		Components,
-        Pages,
+		Pages,
 	],
 	imports: [
-        BrowserModule,
-        AUIModules,
+		BrowserModule,
+		AUIModules,
 		AppRoutingModule,
-    ],
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })
