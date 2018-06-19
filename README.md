@@ -23,34 +23,30 @@ This library is part of [ACPaaS UI][acpaas-ui].
 
 ## Documentation
 
-To check out [live examples]() and docs, visit [acpaas-ui.digipolis.be/ui-components](https://acpaas-ui.digipolis.be/ui-components).
+To check out [live examples]() and docs, visit [acpaas-ui.digipolis.be/ui-components][acpaas-ui-components].
 
 ## Library Contents
 
-| Name           | Description                              | URL                                                      |
+| Name           | Description                              | URL                                                       |
 | -------------- | ---------------------------------------- | --------------------------------------------------------- |
-| agenda         | TODO                                     | [Documentation](./packages/agenda/README.md)  |
-| analytics      | TODO                                     | [Documentation](./packages/analytics/README.md)  |
-| avatar         | TODO                                     | [Documentation](./packages/avatar/README.md)  |
-| calendar       | TODO                                     | [Documentation](./packages/calendar/README.md)  |
-| code-snippet   | TODO                                     | [Documentation](./packages/code-snippet/README.md)  |
-| context        | TODO                                     | [Documentation](./packages/context/README.md)  |
-| flyout         | TODO                                     | [Documentation](./packages/flyout/README.md)  |
-| forms          | TODO                                     | [Documentation](./packages/forms/README.md)  |
-| layout         | TODO                                     | [Documentation](./packages/layout/README.md)  |
-| localstorage   | TODO                                     | [Documentation](./packages/localstorage/README.md)  |
-| logo           | TODO                                     | [Documentation](./packages/logo/README.md)  |
-| map            | TODO                                     | [Documentation](./packages/map/README.md)  |
-| notifications  | TODO                                     | [Documentation](./packages/notifications/README.md)  |
-| pagination     | TODO                                     | [Documentation](./packages/pagination/README.md)  |
-| progress-bar   | TODO                                     | [Documentation](./packages/progress-bar/README.md)  |
-| selectable-list| TODO                                     | [Documentation](./packages/selectable-list/README.md)  |
-| table          | TODO                                     | [Documentation](./packages/table/README.md)  |
-| utils          | TODO                                     | [Documentation](./packages/utils/README.md)  |
-
-## Documentation
-
-To check out [live examples]() and docs, visit [acpaas-ui.digipolis.be/ui-components](https://acpaas-ui.digipolis.be/ui-components).
+| agenda         | TODO                                     | [Documentation](./packages/agenda/README.md)              |
+| analytics      | TODO                                     | [Documentation](./packages/analytics/README.md)           |
+| avatar         | TODO                                     | [Documentation](./packages/avatar/README.md)              |
+| calendar       | TODO                                     | [Documentation](./packages/calendar/README.md)            |
+| code-snippet   | TODO                                     | [Documentation](./packages/code-snippet/README.md)        |
+| context        | TODO                                     | [Documentation](./packages/context/README.md)             |
+| flyout         | TODO                                     | [Documentation](./packages/flyout/README.md)              |
+| forms          | TODO                                     | [Documentation](./packages/forms/README.md)               |
+| layout         | TODO                                     | [Documentation](./packages/layout/README.md)              |
+| localstorage   | TODO                                     | [Documentation](./packages/localstorage/README.md)        |
+| logo           | TODO                                     | [Documentation](./packages/logo/README.md)                |
+| map            | TODO                                     | [Documentation](./packages/map/README.md)                 |
+| notifications  | TODO                                     | [Documentation](./packages/notifications/README.md)       |
+| pagination     | TODO                                     | [Documentation](./packages/pagination/README.md)          |
+| progress-bar   | TODO                                     | [Documentation](./packages/progress-bar/README.md)        |
+| selectable-list| TODO                                     | [Documentation](./packages/selectable-list/README.md)     |
+| table          | TODO                                     | [Documentation](./packages/table/README.md)               |
+| utils          | TODO                                     | [Documentation](./packages/utils/README.md)               |
 
 ## Questions
 
@@ -58,15 +54,15 @@ For questions and support please use the [the official forum]() or [community ch
 
 ## Issues
 
-Please make sure to read the [Issue Reporting Checklist]() before opening an issue. Issues not conforming to the guidelines may be closed immediately.
+Please make sure fill in the issue template when opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
 ## Changelog
 
-Detailed changes for each release are documented in the [release notes]().
+Detailed changes for each release are documented in the [changelog](./CHANGELOG.md).
 
 ## Contributing
 
-Please make sure to read the [Contributing Guide](./CONRTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request.
 
 Thank you to all the people who already contributed to ACPaaS UI!
 
@@ -86,6 +82,7 @@ Copyright (c) 2016-present, Digipolis
 
 <!-- Generic Links -->
 [acpaas-ui]: https://acpaas-ui.digipolis.be
+[acpaas-ui-components]: https://acpaas-ui.digipolis.be/ui-components
 
 <!-- Travis -->
 [acpaas-ui-angular-build]: https://img.shields.io/travis/digipolisantwerp/acpaas-ui-ngx.svg
