@@ -1,4 +1,4 @@
-import deepEqual from 'deep-equal';
+const deepEqual = require('deep-equal');
 
 import { Notifications, Notification } from '../../types/notifications.types';
 import {

@@ -84,13 +84,13 @@ describe('The Statusbar Component', () => {
 
 			fixture.detectChanges();
 
-			de = fixture.debugElement.query(By.css('.aui-statusbar'));
+			de = fixture.debugElement.query(By.css('.o-statusbar'));
 			el = de.nativeElement;
 		});
 
 		it('should update the listeners and active notification on change', () => {
 			expect(el).toBeDefined();
-			expect(el.querySelector('.notification').textContent).toContain('not found');
+			expect(el.querySelector('.o-statusbar__notification').textContent).toContain('not found');
 			expect(clearSpy.calls.count()).toEqual(1);
 			expect(setSpy.calls.count()).toEqual(1);
 		});
@@ -204,7 +204,7 @@ describe('The Statusbar Component', () => {
 			tick(500);
 			fixture.detectChanges();
 			fixture.whenStable().then(() => {
-				expect(emitSpy.calls.count()).toEqual(0);
+				expect(emitSpy.calls.count()).toEqual(1);
 			});
 		}));
 	});
