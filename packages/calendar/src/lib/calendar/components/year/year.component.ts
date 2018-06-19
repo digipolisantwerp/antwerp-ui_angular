@@ -35,7 +35,7 @@ export class CalendarYearComponent implements OnChanges {
 	) {}
 
 	ngOnChanges(changes: SimpleChanges) {
-		const currentValue = get<Date>(changes, 'activeDate.currentValue');
+		const currentValue = get(changes, 'activeDate.currentValue');
 		const currentYear = currentValue instanceof Date ? currentValue.getFullYear() : -1;
 		const selectedMonthChanged = this.selectedDate && this.selectedDate.getFullYear() === this.activeDate.getFullYear();
 		const current = new Date();
