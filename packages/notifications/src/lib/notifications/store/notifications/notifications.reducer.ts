@@ -1,6 +1,6 @@
 import deepEqual from 'deep-equal';
 
-import { Notifications, Notification } from './notifications.types';
+import { Notifications, Notification } from '../../types/notifications.types';
 import {
 	NOTIFICATIONS_LOAD,
 	NOTIFICATION_TRIGGER,

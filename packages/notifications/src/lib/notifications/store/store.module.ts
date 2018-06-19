@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { NotificationsActionCreator } from './notifications/notifications.actioncreator';
+import { NotificationsActions } from './notifications/notifications.actions';
 
 @NgModule({
-	providers: [ NotificationsActionCreator ],
+	providers: [ NotificationsActions ],
 })
 export class NotificationStoreModule {}

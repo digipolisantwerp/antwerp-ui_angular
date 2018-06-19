@@ -1,13 +1,13 @@
 import { async, inject, TestBed } from '@angular/core/testing';
 import { NgRedux } from '@angular-redux/store';
-import { NotificationStore } from '@acpaas-ui/notification-store';
+import { NotificationStore } from '@acpaas-ui/js-notification-store';
 
 import {
 	NOTIFICATION_CLEAR_TARGET,
 	NOTIFICATIONS_LOAD,
 } from './notifications.actiontypes';
-import { Notification, Notifications } from './notifications.types';
-import { NotificationsActionCreator } from './notifications.actioncreator';
+import { Notification, Notifications } from '../../types/notifications.types';
+import { NotificationsActions } from './notifications.actions';
 
 describe('Notifications actions', () => {
 	class NgReduxMock {
@@ -16,8 +16,8 @@ describe('Notifications actions', () => {
 
 	const injectService = (cb) => {
 		return inject(
-			[NotificationsActionCreator],
-			(notificationsActions: NotificationsActionCreator) => cb(notificationsActions)
+			[NotificationsActions],
+			(notificationsActions: NotificationsActions) => cb(notificationsActions)
 		);
 	};
 
@@ -27,7 +27,7 @@ describe('Notifications actions', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			providers: [
-				NotificationsActionCreator,
+				NotificationsActions,
 				{ provide: NgRedux, useClass: NgReduxMock },
 			],
 		});
