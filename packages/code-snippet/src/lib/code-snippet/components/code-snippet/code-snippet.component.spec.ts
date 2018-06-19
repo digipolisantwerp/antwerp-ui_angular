@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import * as marked from 'marked';
+const marked = require('marked');
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 import { CodeSnippetComponent } from './code-snippet.component';
