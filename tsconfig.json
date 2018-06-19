@@ -20,6 +20,9 @@
     "paths": {
       "@acpaas-ui/ngx-components/*": [
         "dist/*"
+      ],
+      "@acpaas-ui/ngx-examples/*": [
+        "examples/*"
       ]
     }
   }

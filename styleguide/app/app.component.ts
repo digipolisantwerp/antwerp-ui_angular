@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Routes } from '@angular/router';
+
+import { EXAMPLES_ROUTES } from './examples.routes';
 
 @Component({
 	selector: 'app-styleguide-root',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-	title = 'app';
+	public packages: Routes = EXAMPLES_ROUTES;
 }

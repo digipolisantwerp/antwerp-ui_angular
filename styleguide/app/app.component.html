@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div auiHeaderMenuItem>
+    <!-- <div auiHeaderMenuItem>
         <a [routerLink]="['/ui-components']" [routerLinkActive]="['is-active']" class="a-button a-button--navigation u-hide-on-mobile">
             <span>UI components</span>
         </a>
@@ -26,7 +26,7 @@
         <a [routerLink]="['/contact']" [routerLinkActive]="['is-active']" class="a-button a-button--navigation u-hide-on-mobile">
             <span>Contact</span>
         </a>
-    </div>
+    </div> -->
 </aui-header>
 
 <aui-pane #pane [side]="'left'" [opened]="false" [backdrop]="true" class="t-pane">
@@ -36,7 +36,7 @@
                 <span>Home</span>
             </a>
         </li>
-        <li [routerLinkActive]="['is-active']">
+        <!-- <li [routerLinkActive]="['is-active']">
             <a (click)="pane.closePane()" [routerLink]="['/ui-components']">
                 <span>UI components</span>
             </a>
@@ -50,13 +50,17 @@
             <a (click)="pane.closePane()" [routerLink]="['/contact']">
                 <span>Contact</span>
             </a>
-        </li>
+        </li> -->
     </ul>
     <p class="u-margin-lg"><button class="a-button a-button--small" (click)="pane.togglePane()">Hide menu</button></p>
 </aui-pane>
 
+<styleguide-registry [items]="packages"></styleguide-registry>
+
 <main>
-    <router-outlet></router-outlet>
+	<div class="u-container u-margin-bottom-lg u-margin-top-lg">
+		<router-outlet></router-outlet>
+	</div>
 </main>
 
 <aui-footer>
