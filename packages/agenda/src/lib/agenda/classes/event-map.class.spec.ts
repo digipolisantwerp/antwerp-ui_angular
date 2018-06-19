@@ -79,7 +79,7 @@ describe('EventMap Class', () => {
 		]);
 	});
 
-	it('should return an events map', () => {
+	fit('should return an events map', () => {
 		const availableSlots = 4;
 		const eventMap = new EventMap(weeks, availableSlots);
 		eventMap.fillSlot(1, 3, 0, 2, { title: 'test 1', startDate: new Date(2018, 0, 10), endDate: new Date(2018, 0, 11) });
@@ -88,26 +88,26 @@ describe('EventMap Class', () => {
 		// tslint:disable:max-line-length
 		expect(eventMap.getEventsMap(availableSlots)).toEqual([
 			[
-				{ date: new Date('Mon Jan 01 2018 00:00:00 GMT+0100 (CET)'), highlights: '', slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Tue Jan 02 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Wed Jan 03 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Thu Jan 04 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Fri Jan 05 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sat Jan 06 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sun Jan 07 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ date: new Date('Mon Jan 01 2018 00:00:00'), highlights: '', slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Tue Jan 02 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Wed Jan 03 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Thu Jan 04 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Fri Jan 05 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sat Jan 06 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sun Jan 07 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
 			],
 			[
 
-				{ highlights: '', date: new Date('Mon Jan 08 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Tue Jan 09 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Wed Jan 10 2018 00:00:00 GMT+0100 (CET)'), slots: [null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Mon Jan 08 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Tue Jan 09 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Wed Jan 10 2018 00:00:00'), slots: [null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
 				{
 					highlights: '',
-					date: new Date('Thu Jan 11 2018 00:00:00 GMT+0100 (CET)'),
+					date: new Date('Thu Jan 11 2018 00:00:00'),
 					 slots: [
 						{
 							meta: { week: 1, day: 3, slot: 0, span: 2 },
-							event: { title: 'test 1', startDate: new Date('Wed Jan 10 2018 00:00:00 GMT+0100 (CET)'), endDate: new Date('Thu Jan 11 2018 00:00:00 GMT+0100 (CET)') },
+							event: { title: 'test 1', startDate: new Date('Wed Jan 10 2018 00:00:00'), endDate: new Date('Thu Jan 11 2018 00:00:00') },
 						},
 						null,
 						null,
@@ -120,12 +120,12 @@ describe('EventMap Class', () => {
 				},
 				{
 					highlights: '',
-					date: new Date('Fri Jan 12 2018 00:00:00 GMT+0100 (CET)'),
+					date: new Date('Fri Jan 12 2018 00:00:00'),
 					slots: [
 						true,
 						{
 							meta: { week: 1, day: 4, slot: 1, span: 1 },
-							event: { title: 'test 2', startDate: new Date('Wed Jan 10 2018 00:00:00 GMT+0100 (CET)'), endDate: new Date('Thu Jan 11 2018 00:00:00 GMT+0100 (CET)') },
+							event: { title: 'test 2', startDate: new Date('Wed Jan 10 2018 00:00:00'), endDate: new Date('Thu Jan 11 2018 00:00:00') },
 						},
 						null,
 						null,
@@ -135,32 +135,32 @@ describe('EventMap Class', () => {
 					more: -4,
 					dots: [],
 				},
-				{ highlights: '', date: new Date('Sat Jan 13 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sun Jan 14 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sat Jan 13 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sun Jan 14 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
 			], [
-				{ highlights: '', date: new Date('Mon Jan 15 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Tue Jan 16 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Wed Jan 17 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Thu Jan 18 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Fri Jan 19 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sat Jan 20 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sun Jan 21 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Mon Jan 15 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Tue Jan 16 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Wed Jan 17 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Thu Jan 18 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Fri Jan 19 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sat Jan 20 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sun Jan 21 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
 			], [
-				{ highlights: '', date: new Date('Mon Jan 22 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Tue Jan 23 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Wed Jan 24 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Thu Jan 25 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Fri Jan 26 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sat Jan 27 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sun Jan 28 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Mon Jan 22 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Tue Jan 23 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Wed Jan 24 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Thu Jan 25 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Fri Jan 26 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sat Jan 27 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sun Jan 28 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
 			], [
-				{ highlights: '', date: new Date('Mon Jan 29 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Tue Jan 30 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Wed Jan 31 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Thu Feb 01 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Fri Feb 02 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sat Feb 03 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
-				{ highlights: '', date: new Date('Sun Feb 04 2018 00:00:00 GMT+0100 (CET)'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Mon Jan 29 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Tue Jan 30 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Wed Jan 31 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Thu Feb 01 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Fri Feb 02 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sat Feb 03 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
+				{ highlights: '', date: new Date('Sun Feb 04 2018 00:00:00'), slots: [ null, null, null, null ], events: [  ], total: 0, more: -4, dots: [  ] },
 			],
 		]);
 	});
