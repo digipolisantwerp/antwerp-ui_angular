@@ -1,0 +1,8 @@
+<div class="a-input has-icon-right aui-input-filter">
+	<ng-container *ngIf="filter">
+		<div class="a-input__wrapper">
+			<input type="text" [placeholder]="filter.name" [(ngModel)]="value" (ngModelChange)="onFilter(value)">
+			<span class="fa fa-search"></span>
+		</div>
+	</ng-container>
+</div>

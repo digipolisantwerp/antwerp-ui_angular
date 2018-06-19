@@ -1,5 +1,4 @@
 import { contextReducer } from './context.reducer';
-import { IContext } from './context.types';
 import * as actionTypes from './context.actiontypes';
 
 describe('Context Reducer', () => {

@@ -9,14 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
 	declarations: [
-        AppComponent,
-        Pages,
+		AppComponent,
+		Pages,
 	],
 	imports: [
-        BrowserModule,
-        AUIModules,
-        AppRoutingModule,
-    ],
+		BrowserModule,
+		AUIModules,
+		AppRoutingModule,
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })

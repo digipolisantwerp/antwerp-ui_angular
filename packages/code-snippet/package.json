@@ -8,7 +8,9 @@
   "acpaas-ui": {
     "dependencies": []
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/marked": "0.4.0"
+  },
   "dependencies": {
     "angular2-highlight-js": "~5.0.0",
     "marked": "~0.3.6"
