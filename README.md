@@ -54,7 +54,7 @@ For questions and support please use [StackOverflow Issues][stackoverflow-issues
 
 ## Issues
 
-Please make sure fill in the issue template when opening an issue. Issues not conforming to the guidelines may be closed immediately.
+Please make sure to fill in the issue template when opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
 ## Changelog
 
