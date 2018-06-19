@@ -50,7 +50,7 @@ To check out [live examples]() and docs, visit [acpaas-ui.digipolis.be/ui-compon
 
 ## Questions
 
-For questions and support please use the [the official forum]() or [community chat](). The issue list of this repo is **exclusively** for bug reports and feature requests.
+For questions and support please use [StackOverflow Issues][stackoverflow-issues]. The issue list of this repo is **exclusively** for bug reports and feature requests.
 
 ## Issues
 
@@ -83,6 +83,9 @@ Copyright (c) 2016-present, Digipolis
 <!-- Generic Links -->
 [acpaas-ui]: https://acpaas-ui.digipolis.be
 [acpaas-ui-components]: https://acpaas-ui.digipolis.be/ui-components
+
+<!-- StackOverflow -->
+[stackoverflow-issues]: https://stackoverflow.com/questions/tagged/acpaas-ui
 
 <!-- Travis -->
 [acpaas-ui-angular-build]: https://img.shields.io/travis/digipolisantwerp/acpaas-ui-ngx.svg
