@@ -26,7 +26,7 @@ class TestComponent implements OnInit {
 	}
 }
 
-fdescribe('The Mask Directive', () => {
+describe('The Mask Directive', () => {
 	let fixture: ComponentFixture<TestComponent>;
 	let comp: TestComponent;
 	let inputEl: DebugElement;

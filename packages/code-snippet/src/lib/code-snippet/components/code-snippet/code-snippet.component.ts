@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-import marked from 'marked';
+import * as marked from 'marked';
 import { HighlightJsService } from 'angular2-highlight-js';
 
 @Component({
