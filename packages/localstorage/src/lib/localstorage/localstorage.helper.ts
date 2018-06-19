@@ -1,11 +1,8 @@
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as deepEqual_ from 'deep-equal';
-const deepEqual = deepEqual_;
-
-import { PropertySelector, PathSelector, Selector } from './types/localstorage.types';
+import { isEqual } from 'lodash-es';
+import { PathSelector, Selector } from './types/localstorage.types';
 
 export class LocalstorageHelper {
-	static comparator = deepEqual;
+	static comparator = isEqual;
 
 	// select data from the storage for the provided selector
 	static select(storage: any, selector: Selector): any {

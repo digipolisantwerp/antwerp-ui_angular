@@ -6,7 +6,6 @@ import { Services } from './services/index';
 import { Directives } from './directives/index';
 
 import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from './analytics.conf';
-import { GTMConfig } from './types/analytics.types';
 
 
 @NgModule({

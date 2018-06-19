@@ -5,7 +5,9 @@ import { FieldErrorDefinition, FieldError } from '../../types/field-errors.types
 @Component({
 	selector: 'aui-field-errors',
 	templateUrl: './field-errors.component.html',
-	styleUrls: ['./field-errors.component.scss'],
+	styleUrls: [
+		'./field-errors.component.scss',
+	],
 })
 export class FieldErrorsComponent implements OnChanges {
 	@Input() public errors: FieldError[];

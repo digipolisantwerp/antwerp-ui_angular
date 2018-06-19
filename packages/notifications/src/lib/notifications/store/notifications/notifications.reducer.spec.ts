@@ -1,5 +1,5 @@
 import { notificationsReducer } from './notifications.reducer';
-import { Notification, Notifications } from './notifications.types';
+import { Notification, Notifications } from '../../types/notifications.types';
 import { NOTIFICATIONS_LOAD } from './notifications.actiontypes';
 
 describe('Notification Reducer', () => {
