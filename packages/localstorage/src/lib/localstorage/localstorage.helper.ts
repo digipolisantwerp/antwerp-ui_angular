@@ -1,8 +1,8 @@
-import deepEqual from 'deep-equal';
+import { isEqual } from 'lodash-es';
 import { PathSelector, Selector } from './types/localstorage.types';
 
 export class LocalstorageHelper {
-	static comparator = deepEqual;
+	static comparator = isEqual;
 
 	// select data from the storage for the provided selector
 	static select(storage: any, selector: Selector): any {

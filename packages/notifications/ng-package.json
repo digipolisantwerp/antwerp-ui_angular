@@ -8,6 +8,7 @@
   "whitelistedNonPeerDependencies": [
     "@a-ui/core",
     "@angular-redux/store",
-    "@acpaas-ui/js-notification-store"
+    "@acpaas-ui/js-notification-store",
+    "lodash-es"
   ]
 }
