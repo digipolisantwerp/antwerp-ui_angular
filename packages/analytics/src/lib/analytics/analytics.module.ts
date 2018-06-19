@@ -6,12 +6,11 @@ import { Services } from './services/index';
 import { Directives } from './directives/index';
 
 import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from './analytics.conf';
-import { GTMConfig } from './types/analytics.types';
 
 
 @NgModule({
 	imports: [
-        WindowModule,
+		WindowModule,
 	],
 	providers: [
 		{ provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT },
@@ -34,8 +33,8 @@ export class AnalyticsModule {
 		return {
 			ngModule: AnalyticsModule,
 			providers: [
-                { provide: GTM_CONFIG, useValue: config },
-                Services,
+				{ provide: GTM_CONFIG, useValue: config },
+				Services,
 			],
 		};
 	}
