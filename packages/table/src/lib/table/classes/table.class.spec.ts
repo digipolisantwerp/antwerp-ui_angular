@@ -1,5 +1,5 @@
 import { Table } from './table.class';
-import { Filter } from '@acpaas-ui/filter';
+// import { Filter } from '@acpaas-ui/filter';
 
 describe('The Table Class', () => {
 	const dummyData = [{
@@ -59,60 +59,60 @@ describe('The Table Class', () => {
 		expect(table.columns.getValue()).toEqual(res);
 	});
 
-	it('should set filters', () => {
-		const table = new Table();
-		table.setRawData(dummyData);
+	// it('should set filters', () => {
+	// 	const table = new Table();
+	// 	table.setRawData(dummyData);
 
-		const genderFilter = new Filter();
-		genderFilter.name = 'Gender';
-		genderFilter.options = ['all', 'm', 'f'];
-		genderFilter.value = 'all';
-		genderFilter.parse = (data, option) => {
-			if (option === 'all') {
-				return data;
-			}
+	// 	const genderFilter = new Filter();
+	// 	genderFilter.name = 'Gender';
+	// 	genderFilter.options = ['all', 'm', 'f'];
+	// 	genderFilter.value = 'all';
+	// 	genderFilter.parse = (data, option) => {
+	// 		if (option === 'all') {
+	// 			return data;
+	// 		}
 
-			return data.filter((o) => {
-				return o.gender === option;
-			});
-		};
+	// 		return data.filter((o) => {
+	// 			return o.gender === option;
+	// 		});
+	// 	};
 
-		table.setFilters([genderFilter]);
-		expect(table.filteredData.getValue()).toEqual(dummyData);
-		expect(table.rows.getValue()).toEqual(dummyData);
+	// 	table.setFilters([genderFilter]);
+	// 	expect(table.filteredData.getValue()).toEqual(dummyData);
+	// 	expect(table.rows.getValue()).toEqual(dummyData);
 
-		genderFilter.value = 'f';
-		table.setFilters([genderFilter]);
-		const res = genderFilter.parse(dummyData, 'f');
+	// 	genderFilter.value = 'f';
+	// 	table.setFilters([genderFilter]);
+	// 	const res = genderFilter.parse(dummyData, 'f');
 
-		expect(table.filteredData.getValue()).toEqual(res);
-		expect(table.rows.getValue()).toEqual(res);
-	});
+	// 	expect(table.filteredData.getValue()).toEqual(res);
+	// 	expect(table.rows.getValue()).toEqual(res);
+	// });
 
-	it('should add filter', () => {
-		const table = new Table();
-		table.setRawData(dummyData);
+	// it('should add filter', () => {
+	// 	const table = new Table();
+	// 	table.setRawData(dummyData);
 
-		const genderFilter = new Filter();
-		genderFilter.name = 'Gender';
-		genderFilter.options = ['all', 'm', 'f'];
-		genderFilter.value = 'f';
-		genderFilter.parse = (data, option) => {
-			if (option === 'all') {
-				return data;
-			}
+	// 	const genderFilter = new Filter();
+	// 	genderFilter.name = 'Gender';
+	// 	genderFilter.options = ['all', 'm', 'f'];
+	// 	genderFilter.value = 'f';
+	// 	genderFilter.parse = (data, option) => {
+	// 		if (option === 'all') {
+	// 			return data;
+	// 		}
 
-			return data.filter((o) => {
-				return o.gender === option;
-			});
-		};
+	// 		return data.filter((o) => {
+	// 			return o.gender === option;
+	// 		});
+	// 	};
 
-		table.addFilter(genderFilter);
-		const res = genderFilter.parse(dummyData, 'f');
+	// 	table.addFilter(genderFilter);
+	// 	const res = genderFilter.parse(dummyData, 'f');
 
-		expect(table.filteredData.getValue()).toEqual(res);
-		expect(table.rows.getValue()).toEqual(res);
-	});
+	// 	expect(table.filteredData.getValue()).toEqual(res);
+	// 	expect(table.rows.getValue()).toEqual(res);
+	// });
 
 	it('should paginatie', () => {
 		const table = new Table();
