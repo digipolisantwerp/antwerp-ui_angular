@@ -1,65 +1,98 @@
-# FlyoutModule (@acpaas-ui/ngx-flyout)
+# @acpaas-ui/flyout
+This module contains one service and four directives that extend your component with a dropdown / flyout functionality. 
 
-**Flyout** provides additional visual elements on top of the interface, without changing the DOM-structure.
+## Installation
 
-## Contents
-
-| Name         | Description |
-| -----------  | ------ |
-| `FlyoutModule` | TODO
-| `FlyoutActionDirective` | [FlyoutActionDirective](#flyoutactiondirective)
-| `FlyoutCloseDirective` | [FlyoutCloseDirective](#flyoutclosedirective)
-| `FlyoutDirective` | [FlyoutDirective](#flyoutdirective)
-| `FlyoutZoneDirective` | [FlyoutZoneDirective](#flyoutzonedirective)
-| `FlyoutService` | [FlyoutService](#flyoutservice)
-
-## Usage
-
-```javascript
-import {
-    FlyoutModule,
-    FlyoutActionDirective,
-    FlyoutCloseDirective,
-    FlyoutDirective,
-    FlyoutDirective,
-    FlyoutZoneDirective,
-    FlyoutService,
-} from '@acpaas-ui/ngx-flyout';
+```
+npm install @acpaas-ui/flyout --save
 ```
 
-## Documentation
+Import component in **app.module.ts**
 
-Visit our [documentation site](http://www.google.be) for full how-to docs and guidelines
+```
+import { FlyoutModule } from '@acpaas-ui/flyout';
 
-### FlyoutActionDirective
+@NgModule({
+    imports: [
+        FlyoutModule
+    ]
+})
 
+export class AppModule {}
+```
+
+## Usage
+There are three directives necessary to get the flyout functionality: `auiFlyout`, `auiFlyoutZone` and `auiFlyoutAction`. The `auiFlyoutClose` directive is optional, you can use that directive to add a close action or button to your flyout.
+
+```
+<div auiFlyout>
+
+    <button class="button" auiFlyoutAction>My Heroes</button>
+
+    <div auiFlyoutZone>
+        <h1>This is the flyout!</h1>
+        
+        <button auiFlyoutClose>Close the flyout</button>
+
+    </div>
+    
+</div>
+```
+
+## auiFlyout
+This directive is the wrapper around the `auiFlyoutAction` and `auiFlyoutZone`. Without the wrapper, the flyout will not work. Use this directive on a wrapper html element, mostly a div.
+
+## auiFlyoutAction
 Use this directive on a focusable element, like a button or an input field. This directive handles the flyout actions open and close.
 
-### FlyoutZoneDirective
+## auiFlyoutZone
+The content inside the html element or component with this directive will be displayed as a flyout. You can use a standard html element or you can use a custom component. 
 
-The content inside the html element or component with this directive will be displayed as a flyout. You can use a standard html element or you can use a custom component.
+```
+<!-- Custom component example -->
+<div auiFlyout size="sm" align"right">
+    <button class="button" auiFlyoutAction>Welcome Jasper</button>
+    <user-card auiFlyoutZone></user-card>
+</div>
+```
 
-#### Options
+### Options
 
-| Option     | Type     | Default | Description                      |
-| ---------- | -------- | ------- | -------------------------------- |
-| align      | `string` | `left`  | The alignment of the flyout-zone |
-| size       | [FlyoutSize](./types/flyout.types.ts) | `auto` | Flyout fixed width |
+#### align
+`string: left | right`: the alignment of the flyout-zone. By default left.
 
-### FlyoutDirective
+#### size
+`FlyoutSize` : By default a flyout doesn't have a fixed width and will wrap around its content. However, you can set an optional size (via string or FlyoutSize enum). Available options are `auto`, `small`, `medium`, `large` and `full`. Default is `auto`.
 
-This directive is the wrapper around the `FlyoutAction` and `FlyoutZone`. Use this directive on a wrapper html element, mostly a div.
+```
+E.g.
 
-### FlyoutService
+// Controller
+import { FlyoutSize } from '@acpaas-ui/flyout';
+public sizes = FlyoutSize;
 
-Broadcast a close event to the available flyouts.
+// Template
+<div auiFlyout [size]="sizes.Small">...</div>
+or
+<div auiFlyout size="small">...</div>
+```
 
-#### Public Methods
+## FlyoutService
+Use the `FlyoutService` to broadcast a close event to the available flyouts. 
 
-| Name    | Params | Description                |
-| ------- | ------ | -------------------------- |
-| `close` | None   | Send a close event to the available flyouts |
+```
+import { FlyoutService } from '@acpaas-ui/flyout';
+```
 
-## Contributing
+```
+class demoComponent {
+    constructor(private flyoutService: FlyoutService) {}
 
-Visit our [Contribution Guidelines](./contribute.md) for more information on how to contribute.
+    public doSomething() {
+        // Do something
+        ...
+        // Close flyout
+        this.flyoutService.close(); // The flyout will close.
+    }
+}
+```

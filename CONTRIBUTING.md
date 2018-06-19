@@ -10,7 +10,7 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
 
 ## Issue Reporting Guidelines
 
-- Always use [GitHub Issues]() to create new issues.
+- Always use [GitHub Issues][github-issues] to create new issues.
 
 ## Pull Request Guidelines
 
@@ -35,7 +35,7 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
 
 ## Development Setup
 
-You will need [Node.js](http://nodejs.org) **version 6+** and [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (needed for running Selenium server during e2e tests).
+You will need [Node.js](http://nodejs.org) **version 8+**.
 
 After cloning the repo, run:
 
@@ -71,7 +71,9 @@ The default test script will do the following: lint with ESLint -> unit tests wi
 
 Explain project structure
 
-
 ## Credits
 
 Thank you to all the people who have already contributed to ACPaaS UI!
+
+
+[github-issues]: https://github.com/digipolisantwerp/acpaas-ui_angular/issues
