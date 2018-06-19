@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, HostBinding, ViewChild, DoCheck } from '@angular/core';
-import { Filter } from '@acpaas-ui/filter';
+import { Filter } from '@acpaas-ui/ngx-components/utils';
 
 @Component({
 	selector: 'aui-table-bar',

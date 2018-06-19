@@ -15,9 +15,7 @@ import { Label } from '@acpaas-ui/ngx-components/utils';
 
 import {
 	STATUSBAR_AVAILABLE_TYPES,
-	STATUSBAR_DEFAULT_TYPES,
 } from '../../status-bar.conf';
-import { StatusbarAvailableTypes } from '../../types/status-bar.types';
 
 @Component({
 	selector: 'aui-statusbar',

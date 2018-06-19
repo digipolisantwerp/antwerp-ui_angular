@@ -11,7 +11,7 @@ import {
 import { DateRange } from '@acpaas-ui/js-date-utils';
 import { CalendarModule } from '@acpaas-ui/ngx-components/calendar';
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
-import { MaskModule } from '../../../mask';
+import { MaskModule } from '@acpaas-ui/ngx-components/forms';
 
 import { DATEPICKER_ERROR_LABELS, DATEPICKER_DEFAULT_ERROR_LABELS } from '../../datepicker.conf';
 import { DatepickerComponent } from './datepicker.component';

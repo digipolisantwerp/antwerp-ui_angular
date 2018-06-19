@@ -30,8 +30,8 @@ export class CalendarDecenniaComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		const currentValue = get<Date>(changes, 'activeDate.currentValue');
-		const previousValue = get<Date>(changes, 'activeDate.previousValue');
+		const currentValue = get(changes, 'activeDate.currentValue');
+		const previousValue = get(changes, 'activeDate.previousValue');
 		const currentYear = currentValue instanceof Date ? currentValue.getFullYear() : -1;
 		const previousYear = previousValue instanceof Date ? previousValue.getFullYear() : -1;
 		const outOfRange = previousYear > currentYear || previousYear + 11 < currentYear;
