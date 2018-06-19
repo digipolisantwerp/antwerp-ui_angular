@@ -1,13 +1,11 @@
 import { Reducer, StoreCreator, StoreEnhancer, Store, StoreEnhancerStoreCreator } from 'redux';
 import { NgRedux } from '@angular-redux/store';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
-// Unusual import explained here: https://github.com/rollup/rollup/issues/670
-import * as deepEqual_ from 'deep-equal';
-const deepEqual = deepEqual_;
+
+const deepEqual = require('deep-equal');
 
 import { LocalstorageHelper } from '../../localstorage.helper';
 import { LocalstorageService } from '../../services/localstorage.service';
