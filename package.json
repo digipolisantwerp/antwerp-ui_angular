@@ -30,7 +30,7 @@
     "@angular-devkit/build-ng-packagr": "~0.6.1",
     "@angular-devkit/core": "~0.6.5",
     "@angular-devkit/schematics": "~0.6.5",
-    "@angular-redux/store": "9.0.0",
+    "@angular-redux/store": "7.1.1",
     "@angular/animations": "~6.0.1",
     "@angular/cli": "~6.0.8",
     "@angular/common": "~6.0.1",
