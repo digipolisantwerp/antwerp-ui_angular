@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 
-const deepEqual = require('deep-equal');
+import { isEqual } from 'lodash-es';
 
 import { LocalstorageHelper } from '../../localstorage.helper';
 import { LocalstorageService } from '../../services/localstorage.service';
@@ -68,7 +68,7 @@ export class LocalstorageReduxPlugin {
 			const newValues = selector === 'reduxState' ? this.ngRedux.getState() :
 				LocalstorageHelper.select(this.ngRedux.getState(), selector);
 
-			if (deepEqual(stored, newValues)) {
+			if (isEqual(stored, newValues)) {
 				return;
 			}
 

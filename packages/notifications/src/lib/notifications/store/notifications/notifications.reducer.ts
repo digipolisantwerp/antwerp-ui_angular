@@ -1,4 +1,4 @@
-const deepEqual = require('deep-equal');
+import { isEqual } from 'lodash-es';
 
 import { Notifications, Notification } from '../../types/notifications.types';
 import {
@@ -17,13 +17,13 @@ const actionTypes = [
 ];
 
 function parseNotifications(notifications: Notifications = {}, state: Notifications = {}): Notifications {
-	if (deepEqual(notifications, state)) {
+	if (isEqual(notifications, state)) {
 		return state;
 	}
 
 	return Object.keys(notifications)
 		.map(target => {
-			const targetData = deepEqual(state[target], notifications[target]) ? state[target] : notifications[target];
+			const targetData = isEqual(state[target], notifications[target]) ? state[target] : notifications[target];
 			return [target, targetData];
 		})
 		.reduce((newState: Notifications, data: [string, Notification[]]) => {
