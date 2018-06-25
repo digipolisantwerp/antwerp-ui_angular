@@ -27,15 +27,6 @@ const updateRoutes = () => {
 	const srcModules = resolve(process.cwd(), 'styleguide', 'app', 'examples.modules.ts');
 	const srcRoutes = resolve(process.cwd(), 'styleguide', 'app', 'examples.routes.ts');
 
-	// import { AvatarExamplesModule } from '@acpaas-ui/ngx-examples/avatar';
-	// import { LogoExamplesModule } from '@acpaas-ui/ngx-examples/logo';
-
-	// export const ExamplesModules = [
-	// 	AvatarExamplesModule,
-	// 	LogoExamplesModule,
-	// ];
-
-
 	let importConfigModules = '';
 	let moduleConfig = '';
 	let importConfigRoutes = '';
