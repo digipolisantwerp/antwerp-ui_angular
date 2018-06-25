@@ -1,9 +1,5 @@
+import { AVATAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/avatar';
+
 export const EXAMPLES_ROUTES = [
-  {
-	'path': 'avatar',
-	'loadChildren': '@acpaas-ui/ngx-examples/avatar/esm2015/avatar#AvatarExamplesModule',
-	'data': {
-		'title': 'Avatar',
-	},
-  },
+	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES },
 ];

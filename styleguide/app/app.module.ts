@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { Components } from './components/index';
 import { Pages } from './pages/index';
 
+import { AvatarExamplesModule } from '@acpaas-ui/ngx-examples/avatar';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -18,6 +20,7 @@ import { Pages } from './pages/index';
 		BrowserModule,
 		AUIModules,
 		AppRoutingModule,
+		AvatarExamplesModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
