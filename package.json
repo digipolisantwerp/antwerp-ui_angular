@@ -19,7 +19,9 @@
     "deploy:patch": "npm run bump -- --patch && npm run build",
     "postdeploy:major": "npm publish dist",
     "postdeploy:minor": "npm publish dist",
-    "postdeploy:patch": "npm publish dist"
+    "postdeploy:patch": "npm publish dist",
+    "styleguide:analyse": "ng build styleguide --stats-json && npm run styleguide:explore",
+    "styleguide:explore": "webpack-bundle-analyzer dist/styleguide/stats.json"
   },
   "devDependencies": {
     "@a-ui/core": "2.1.1",
@@ -90,6 +92,7 @@
     "tslib": "~1.7.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2",
+    "webpack-bundle-analyzer": "2.13.1",
     "zone.js": "~0.8.26"
   }
 }
