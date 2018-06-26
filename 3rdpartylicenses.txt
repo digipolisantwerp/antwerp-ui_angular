@@ -1,4 +1,4 @@
-core-js@2.5.6
+core-js@2.5.7
 MIT
 Copyright (c) 2014-2018 Denis Pushkarev
 
@@ -435,7 +435,7 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 
 END OF TERMS AND CONDITIONS
 
-webpack@4.8.3
+webpack@4.6.0
 MIT
 Copyright JS Foundation and other contributors
 
