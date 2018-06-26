@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { AUIModules } from './aui.modules';
+import { ExamplesModules } from './examples.modules';
 import { AppRoutingModule } from './app-routing.module';
 import { Components } from './components/index';
 import { Pages } from './pages/index';
+
 
 @NgModule({
 	declarations: [
@@ -17,6 +19,7 @@ import { Pages } from './pages/index';
 	imports: [
 		BrowserModule,
 		AUIModules,
+		ExamplesModules,
 		AppRoutingModule,
 	],
 	providers: [],

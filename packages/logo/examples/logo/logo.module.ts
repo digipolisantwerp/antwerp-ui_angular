@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AvatarModule } from '@acpaas-ui/ngx-components/avatar';
+import { LogoModule } from '@acpaas-ui/ngx-components/logo';
 
 import { Pages } from './pages/index';
 
 @NgModule({
 	imports: [
 		CommonModule,
-		AvatarModule,
+		LogoModule,
 	],
 	declarations: [
 		Pages,
 	],
 })
-export class AvatarExamplesModule {}
+export class LogoExamplesModule {}
