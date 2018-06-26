@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jasper/projects/aui/acpaas-ui_angular/styleguide/styles.scss */"./styleguide/styles.scss");
+module.exports = __webpack_require__(/*! /home/travis/build/digipolisantwerp/acpaas-ui_angular/styleguide/styles.scss */"./styleguide/styles.scss");
 
 
 /***/ })
