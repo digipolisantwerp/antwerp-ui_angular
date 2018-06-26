@@ -2,7 +2,7 @@
     <div auiHeaderContent>
         <div auiHeaderLogo class="o-header__wrapper">
             <aui-logo title="ACPaaS UI" src="/assets/digipolis-logo.svg"></aui-logo>
-            <a class="u-hide-on-tablet o-header__link" [routerLink]="['/']">ACPaaS UI</a>
+            <a class="u-hide-on-tablet o-header__link" [routerLink]="['/']">ACPaaS UI - Angular module library</a>
             <span class="u-show-on-mobile">
                 <button (click)="pane.togglePane()" class="a-button a-button--navigation has-icon">
                     <i class="fa fa-bars"><span class="u-screen-reader-only">Show menu</span></i>
@@ -12,19 +12,8 @@
     </div>
 
     <div auiHeaderMenuItem>
-        <a [routerLink]="['/ui-components']" [routerLinkActive]="['is-active']" class="a-button a-button--navigation u-hide-on-mobile">
-            <span>UI components</span>
-        </a>
-    </div>
-    <div auiHeaderMenuItem>
-        <a [routerLink]="['/docs']" [routerLinkActive]="['is-active']" class="a-button a-button--navigation u-hide-on-mobile">
-            <span>How-to guide</span>
-        </a>
-    </div>
-
-    <div auiHeaderMenuItem>
-        <a [routerLink]="['/contact']" [routerLinkActive]="['is-active']" class="a-button a-button--navigation u-hide-on-mobile">
-            <span>Contact</span>
+        <a [routerLink]="['/modules']" [routerLinkActive]="['is-active']" class="a-button a-button--navigation u-hide-on-mobile">
+            <span>Modules</span>
         </a>
     </div>
 </aui-header>

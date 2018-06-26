@@ -1,7 +1,5 @@
 <ul class="m-nav-list">
-	<li [routerLinkActive]="['is-active']" *ngFor="let item of items">
-		<a [routerLink]="[item.path]">
-			<span> {{ item.path }} </span>
-		</a>
+	<li *ngFor="let item of items">
+		<a [routerLink]="[item.path]" [routerLinkActive]="['is-active']"> {{ item.path }}</a>
 	</li>
 </ul>
