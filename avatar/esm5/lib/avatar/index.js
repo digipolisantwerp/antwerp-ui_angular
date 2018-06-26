@@ -1,8 +1,0 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-export { AvatarModule } from './avatar.module';
-export { AvatarComponent } from './components/avatar/avatar.component';
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9hdmF0YXIvIiwic291cmNlcyI6WyJsaWIvYXZhdGFyL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0saUJBQWlCLENBQUM7QUFDL0MsT0FBTyxFQUFFLGVBQWUsRUFBRSxNQUFNLHNDQUFzQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IHsgQXZhdGFyTW9kdWxlIH0gZnJvbSAnLi9hdmF0YXIubW9kdWxlJztcbmV4cG9ydCB7IEF2YXRhckNvbXBvbmVudCB9IGZyb20gJy4vY29tcG9uZW50cy9hdmF0YXIvYXZhdGFyLmNvbXBvbmVudCc7XG4iXX0=

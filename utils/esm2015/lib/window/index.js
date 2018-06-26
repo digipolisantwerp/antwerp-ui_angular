@@ -1,8 +1,0 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-export { WINDOW_PROVIDERS, WINDOW } from './services/window.service';
-export { WindowModule } from './window.module';
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly91dGlscy8iLCJzb3VyY2VzIjpbImxpYi93aW5kb3cvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLEVBQUUsTUFBTSwyQkFBMkIsQ0FBQztBQUNyRSxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0saUJBQWlCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgeyBXSU5ET1dfUFJPVklERVJTLCBXSU5ET1cgfSBmcm9tICcuL3NlcnZpY2VzL3dpbmRvdy5zZXJ2aWNlJztcbmV4cG9ydCB7IFdpbmRvd01vZHVsZSB9IGZyb20gJy4vd2luZG93Lm1vZHVsZSc7XG4iXX0=

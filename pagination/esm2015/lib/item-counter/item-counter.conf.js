@@ -1,9 +1,0 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-import { InjectionToken } from '@angular/core';
-export const /** @type {?} */ ITEM_COUNTER_LABEL = new InjectionToken('itemCounterLabels');
-export const /** @type {?} */ ITEMS_PER_PAGE_LABEL = new InjectionToken('itemsPerPageLabels');
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaXRlbS1jb3VudGVyLmNvbmYuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9wYWdpbmF0aW9uLyIsInNvdXJjZXMiOlsibGliL2l0ZW0tY291bnRlci9pdGVtLWNvdW50ZXIuY29uZi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLGNBQWMsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUkvQyxNQUFNLENBQUMsdUJBQU0sa0JBQWtCLEdBQUcsSUFBSSxjQUFjLENBQVEsbUJBQW1CLENBQUMsQ0FBQztBQUNqRixNQUFNLENBQUMsdUJBQU0sb0JBQW9CLEdBQUcsSUFBSSxjQUFjLENBQVEsb0JBQW9CLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluamVjdGlvblRva2VuIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmltcG9ydCB7IExhYmVsIH0gZnJvbSAnQGFjcGFhcy11aS9uZ3gtY29tcG9uZW50cy91dGlscyc7XG5cbmV4cG9ydCBjb25zdCBJVEVNX0NPVU5URVJfTEFCRUwgPSBuZXcgSW5qZWN0aW9uVG9rZW48TGFiZWw+KCdpdGVtQ291bnRlckxhYmVscycpO1xuZXhwb3J0IGNvbnN0IElURU1TX1BFUl9QQUdFX0xBQkVMID0gbmV3IEluamVjdGlvblRva2VuPExhYmVsPignaXRlbXNQZXJQYWdlTGFiZWxzJyk7XG4iXX0=
