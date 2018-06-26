@@ -1,13 +1,7 @@
-<aui-pane #pane [side]="'right'" [opened]="false" [backdrop]="false" class="t-pane">
-	<button class="a-button has-icon" [class.a-button--danger]="pane.opened" (click)="togglePane(pane)">
-		<span *ngIf="!pane.opened" class="fa fa-bars"></span>
-		<span *ngIf="pane.opened" class="fa fa-times"></span>
-	</button>
-	<ul class="m-nav-list">
-		<li [routerLinkActive]="['is-active']" *ngFor="let item of items">
-			<a (click)="pane.closePane()" [routerLink]="[item.path]">
-				<span>{{item?.data?.title}}</span>
-			</a>
-		</li>
-	</ul>
-</aui-pane>
+<ul class="m-nav-list">
+	<li [routerLinkActive]="['is-active']" *ngFor="let item of items">
+		<a [routerLink]="[item.path]">
+			<span> {{ item.path }} </span>
+		</a>
+	</li>
+</ul>

@@ -1,0 +1,42 @@
+@import '~@a-ui/core/dist/assets/styles/quarks';
+
+.o-hero {
+    align-items: center;
+    background-color: $brand-primary;
+    background-image: url('/assets/hero.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    display: flex;
+    justify-content: flex-start;
+    min-height: $spacer * 8;
+    padding-top: 50px;
+    width: 100%;
+
+    &.is-large {
+        min-height: $spacer * 12;
+
+        @include at($screen-sm) {
+            min-height: $spacer * 16;
+        }
+    }
+
+    h1 {
+        text-shadow: 0 0 8px rgba($white, .32);
+    }
+}
+
+.u-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        margin-bottom: $spacer-xs;
+
+        @include at($screen-sm) {
+            margin-top: -$spacer;
+        }
+    }
+}

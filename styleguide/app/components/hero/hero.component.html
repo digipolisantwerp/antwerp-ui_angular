@@ -1,0 +1,9 @@
+<div class="o-hero" [ngClass]="{'is-large': description}">
+	<div class="u-container u-text-center u-margin-bottom u-margin-top u-text-readable">
+		<img src="/assets/acpaas-ui.svg" alt="ACPaaS UI logo" width="128" height="128">
+		<div>
+			<h1>{{title}}</h1>
+			<p class="u-margin-top" *ngIf="description">{{description}}</p>
+		</div>
+	</div>
+</div>
