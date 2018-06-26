@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+export { SearchFilterComponent } from './components/search-filter/search-filter.component';
+export { SearchFilterModule } from './search-filter.module';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9mb3Jtcy8iLCJzb3VyY2VzIjpbImxpYi9zZWFyY2gtZmlsdGVyL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUscUJBQXFCLEVBQUUsTUFBTSxvREFBb0QsQ0FBQztBQUUzRixPQUFPLEVBQUUsa0JBQWtCLEVBQUUsTUFBTSx3QkFBd0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCB7IFNlYXJjaEZpbHRlckNvbXBvbmVudCB9IGZyb20gJy4vY29tcG9uZW50cy9zZWFyY2gtZmlsdGVyL3NlYXJjaC1maWx0ZXIuY29tcG9uZW50JztcbmV4cG9ydCB7IFNlYXJjaEZpbHRlckNob2ljZSB9IGZyb20gJy4vdHlwZXMvc2VhcmNoLWZpbHRlci50eXBlcyc7XG5leHBvcnQgeyBTZWFyY2hGaWx0ZXJNb2R1bGUgfSBmcm9tICcuL3NlYXJjaC1maWx0ZXIubW9kdWxlJztcbiJdfQ==

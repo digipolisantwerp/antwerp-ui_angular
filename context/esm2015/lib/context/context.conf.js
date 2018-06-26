@@ -1,0 +1,15 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+import { InjectionToken } from '@angular/core';
+export const /** @type {?} */ CONTEXT_CONFIG = new InjectionToken('contextConfig');
+export const /** @type {?} */ CONTEXT_CONFIG_DEFAULT = {
+    useTitleSuffix: false,
+    extendTitle: false,
+    titleDelimiter: ' | ',
+    defaults: {},
+    routerContext: true,
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29udGV4dC5jb25mLmpzIiwic291cmNlUm9vdCI6Im5nOi8vY29udGV4dC8iLCJzb3VyY2VzIjpbImxpYi9jb250ZXh0L2NvbnRleHQuY29uZi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLGNBQWMsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUkvQyxNQUFNLENBQUMsdUJBQU0sY0FBYyxHQUFrQyxJQUFJLGNBQWMsQ0FBZ0IsZUFBZSxDQUFDLENBQUM7QUFFaEgsTUFBTSxDQUFDLHVCQUFNLHNCQUFzQixHQUFrQjtJQUNwRCxjQUFjLEVBQUUsS0FBSztJQUNyQixXQUFXLEVBQUUsS0FBSztJQUNsQixjQUFjLEVBQUUsS0FBSztJQUNyQixRQUFRLEVBQUUsRUFBRTtJQUNaLGFBQWEsRUFBRSxJQUFJO0NBQ25CLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3Rpb25Ub2tlbiB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5pbXBvcnQgeyBDb250ZXh0Q29uZmlnIH0gZnJvbSAnLi90eXBlcy9jb250ZXh0LnR5cGVzJztcblxuZXhwb3J0IGNvbnN0IENPTlRFWFRfQ09ORklHOiBJbmplY3Rpb25Ub2tlbjxDb250ZXh0Q29uZmlnPiA9IG5ldyBJbmplY3Rpb25Ub2tlbjxDb250ZXh0Q29uZmlnPignY29udGV4dENvbmZpZycpO1xuXG5leHBvcnQgY29uc3QgQ09OVEVYVF9DT05GSUdfREVGQVVMVDogQ29udGV4dENvbmZpZyA9IHtcblx0dXNlVGl0bGVTdWZmaXg6IGZhbHNlLFxuXHRleHRlbmRUaXRsZTogZmFsc2UsXG5cdHRpdGxlRGVsaW1pdGVyOiAnIHwgJyxcblx0ZGVmYXVsdHM6IHt9LFxuXHRyb3V0ZXJDb250ZXh0OiB0cnVlLFxufTtcbiJdfQ==

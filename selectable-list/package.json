@@ -1,0 +1,24 @@
+{
+  "name": "selectable-list",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "acpaas-ui": {
+    "dependencies": []
+  },
+  "main": "bundles/selectable-list.umd.js",
+  "module": "fesm5/selectable-list.js",
+  "es2015": "fesm2015/selectable-list.js",
+  "esm5": "esm5/selectable-list.js",
+  "esm2015": "esm2015/selectable-list.js",
+  "fesm5": "fesm5/selectable-list.js",
+  "fesm2015": "fesm2015/selectable-list.js",
+  "typings": "selectable-list.d.ts",
+  "metadata": "selectable-list.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+export { PaneModule } from './pane.module';
+export { PaneComponent } from './components/pane/pane.component';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9sYXlvdXQvIiwic291cmNlcyI6WyJsaWIvcGFuZS9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUMzQyxPQUFPLEVBQUUsYUFBYSxFQUFFLE1BQU0sa0NBQWtDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgeyBQYW5lTW9kdWxlIH0gZnJvbSAnLi9wYW5lLm1vZHVsZSc7XG5leHBvcnQgeyBQYW5lQ29tcG9uZW50IH0gZnJvbSAnLi9jb21wb25lbnRzL3BhbmUvcGFuZS5jb21wb25lbnQnO1xuXG4iXX0=

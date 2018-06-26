@@ -1,0 +1,27 @@
+{
+  "name": "utils",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "~5.2.0",
+    "@angular/core": "~5.2.0"
+  },
+  "acpaas-ui": {
+    "dependencies": []
+  },
+  "devDependencies": {
+    "rxjs-compat": "^6.1.0"
+  },
+  "main": "bundles/utils.umd.js",
+  "module": "fesm5/utils.js",
+  "es2015": "fesm2015/utils.js",
+  "esm5": "esm5/utils.js",
+  "esm2015": "esm2015/utils.js",
+  "fesm5": "fesm5/utils.js",
+  "fesm2015": "fesm2015/utils.js",
+  "typings": "utils.d.ts",
+  "metadata": "utils.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

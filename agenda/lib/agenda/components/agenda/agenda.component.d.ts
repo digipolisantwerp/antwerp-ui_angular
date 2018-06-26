@@ -1,0 +1,38 @@
+import { EventEmitter, TemplateRef, OnInit, OnChanges, OnDestroy, ElementRef } from '@angular/core';
+import { DateHelperService } from '../../services/date-helper.service';
+import { VIEWS, DAYS, DateRangeInterface, EventInterface, HighLightInterface } from '../../types/agenda.types';
+export declare class AgendaComponent implements OnInit, OnChanges, OnDestroy {
+    private elementRef;
+    private dateHelperService;
+    events: EventInterface[];
+    view: VIEWS;
+    views: typeof VIEWS;
+    startDayOfWeek: DAYS;
+    activeDate: Date;
+    highlights: HighLightInterface;
+    monthEventItemTemplate: TemplateRef<any>;
+    navigate: EventEmitter<DateRangeInterface>;
+    selectRange: EventEmitter<DateRangeInterface>;
+    selectDay: EventEmitter<Date>;
+    selectEvent: EventEmitter<EventInterface>;
+    clickMore: EventEmitter<{}>;
+    agendaSize$: any;
+    weekdays: DAYS[];
+    today: Date;
+    private componentDestroyed$;
+    constructor(elementRef: ElementRef, dateHelperService: DateHelperService);
+    ngOnInit(): void;
+    ngOnChanges(changes: any): void;
+    swipe(e: any): void;
+    ngOnDestroy(): void;
+    onNavigate(date: Date): void;
+    onDisplayRange(range: DateRangeInterface): void;
+    onSelectDay(date: Date): void;
+    onSelectEvent(event: EventInterface): void;
+    onClickMore(date: Date): void;
+    private getToday();
+    prevMonth(): void;
+    nextMonth(): void;
+    onSelectRange(range: DateRangeInterface): void;
+    private watchAgendaSize();
+}

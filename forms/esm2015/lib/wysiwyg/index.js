@@ -1,0 +1,9 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+export { WysiwygComponent } from './components/wysiwyg/wysiwyg.component';
+export { WYSIWYG_DEFAULT_CONFIG } from './wysiwyg.conf';
+export { WysiwygModule } from './wysiwyg.module';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9mb3Jtcy8iLCJzb3VyY2VzIjpbImxpYi93eXNpd3lnL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsZ0JBQWdCLEVBQUUsTUFBTSx3Q0FBd0MsQ0FBQztBQUMxRSxPQUFPLEVBQUUsc0JBQXNCLEVBQUUsTUFBTSxnQkFBZ0IsQ0FBQztBQUN4RCxPQUFPLEVBQUUsYUFBYSxFQUFFLE1BQU0sa0JBQWtCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgeyBXeXNpd3lnQ29tcG9uZW50IH0gZnJvbSAnLi9jb21wb25lbnRzL3d5c2l3eWcvd3lzaXd5Zy5jb21wb25lbnQnO1xuZXhwb3J0IHsgV1lTSVdZR19ERUZBVUxUX0NPTkZJRyB9IGZyb20gJy4vd3lzaXd5Zy5jb25mJztcbmV4cG9ydCB7IFd5c2l3eWdNb2R1bGUgfSBmcm9tICcuL3d5c2l3eWcubW9kdWxlJztcbiJdfQ==

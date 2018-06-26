@@ -1,0 +1,40 @@
+import { EventEmitter, ElementRef, OnInit, OnDestroy, TemplateRef } from '@angular/core';
+import { EventInterface, WeekdayInterface, SlotInterface, DateRangeInterface, DayRangeInterface } from '../../types/agenda.types';
+export declare class MonthViewCalendarComponent implements OnInit, OnDestroy {
+    private elementRef;
+    cssClass: boolean;
+    weeks: WeekdayInterface[][];
+    slots: SlotInterface[];
+    eventItemTemplate: TemplateRef<any>;
+    selectedDay: string;
+    range: {
+        from: any;
+        to: any;
+    };
+    rowHeight: EventEmitter<number>;
+    selectDay: EventEmitter<string>;
+    selectRange: EventEmitter<DayRangeInterface>;
+    selectEvent: EventEmitter<EventInterface>;
+    clickMore: EventEmitter<{}>;
+    dragRange: EventEmitter<{}>;
+    pressedDay: string;
+    currentDay: string;
+    private componentDestroyed$;
+    constructor(elementRef: ElementRef);
+    ngOnInit(): void;
+    isToday(date: Date): boolean;
+    isSelected(day: Date, range: DateRangeInterface): boolean;
+    resetRange(): void;
+    ngOnDestroy(): void;
+    isCurrentMonth(day: string, date: Date): boolean;
+    emitSelectDay(day: Date): void;
+    emitDragRange(range: any): void;
+    onSelectEvent(event: EventInterface): void;
+    onClickMore(day: Date): void;
+    dragStart(date: Date): void;
+    touchStart(date: Date): void;
+    private watchRowHeigth();
+    private watchDragOver();
+    private watchDrop();
+    private emitSelectRange(range);
+}

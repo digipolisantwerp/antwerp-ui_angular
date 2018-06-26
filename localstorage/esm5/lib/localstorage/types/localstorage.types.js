@@ -1,0 +1,16 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @record
+ */
+export function LocalstorageConfig() { }
+function LocalstorageConfig_tsickle_Closure_declarations() {
+    /** @type {?|undefined} */
+    LocalstorageConfig.prototype.storageType;
+    /** @type {?|undefined} */
+    LocalstorageConfig.prototype.identifier;
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9jYWxzdG9yYWdlLnR5cGVzLmpzIiwic291cmNlUm9vdCI6Im5nOi8vbG9jYWxzdG9yYWdlLyIsInNvdXJjZXMiOlsibGliL2xvY2Fsc3RvcmFnZS90eXBlcy9sb2NhbHN0b3JhZ2UudHlwZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBpbnRlcmZhY2UgTG9jYWxzdG9yYWdlQ29uZmlnIHtcblx0c3RvcmFnZVR5cGU/OiBzdHJpbmc7XG5cdGlkZW50aWZpZXI/OiBzdHJpbmc7XG59XG5cbmV4cG9ydCB0eXBlIFByb3BlcnR5U2VsZWN0b3IgPSBzdHJpbmcgfCBudW1iZXI7XG5leHBvcnQgdHlwZSBQYXRoU2VsZWN0b3IgPSBBcnJheTxzdHJpbmd8IG51bWJlcj47XG5leHBvcnQgdHlwZSBGdW5jdGlvblNlbGVjdG9yID0gKHN0b3JhZ2U6IGFueSkgPT4gYm9vbGVhbjtcbmV4cG9ydCB0eXBlIENvbXBhcmF0b3IgPSAoeDogYW55LCB5OiBhbnkpID0+IGJvb2xlYW47XG5leHBvcnQgdHlwZSBTZWxlY3RvciA9IFByb3BlcnR5U2VsZWN0b3IgfCBQYXRoU2VsZWN0b3IgfCBGdW5jdGlvblNlbGVjdG9yO1xuZXhwb3J0IHR5cGUgUHJvcGVydHlEZWNvcmF0b3IgPSAodGFyZ2V0OiBhbnksIHByb3BlcnR5S2V5OiBzdHJpbmcpID0+IHZvaWQ7XG4iXX0=

@@ -1,0 +1,14 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+import { HeaderContentDirective } from './content.directive';
+import { HeaderLogoDirective } from './logo.directive';
+import { HeaderMenuItemDirective } from './menu-item.directive';
+export var /** @type {?} */ Directives = [
+    HeaderContentDirective,
+    HeaderLogoDirective,
+    HeaderMenuItemDirective,
+];
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9sYXlvdXQvIiwic291cmNlcyI6WyJsaWIvaGVhZGVyL2RpcmVjdGl2ZXMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxzQkFBc0IsRUFBRSxNQUFNLHFCQUFxQixDQUFDO0FBQzdELE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLGtCQUFrQixDQUFDO0FBQ3ZELE9BQU8sRUFBRSx1QkFBdUIsRUFBRSxNQUFNLHVCQUF1QixDQUFDO0FBRWhFLE1BQU0sQ0FBQyxxQkFBTSxVQUFVLEdBQUc7SUFDekIsc0JBQXNCO0lBQ3RCLG1CQUFtQjtJQUNuQix1QkFBdUI7Q0FDdkIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEhlYWRlckNvbnRlbnREaXJlY3RpdmUgfSBmcm9tICcuL2NvbnRlbnQuZGlyZWN0aXZlJztcbmltcG9ydCB7IEhlYWRlckxvZ29EaXJlY3RpdmUgfSBmcm9tICcuL2xvZ28uZGlyZWN0aXZlJztcbmltcG9ydCB7IEhlYWRlck1lbnVJdGVtRGlyZWN0aXZlIH0gZnJvbSAnLi9tZW51LWl0ZW0uZGlyZWN0aXZlJztcblxuZXhwb3J0IGNvbnN0IERpcmVjdGl2ZXMgPSBbXG5cdEhlYWRlckNvbnRlbnREaXJlY3RpdmUsXG5cdEhlYWRlckxvZ29EaXJlY3RpdmUsXG5cdEhlYWRlck1lbnVJdGVtRGlyZWN0aXZlLFxuXTtcbiJdfQ==

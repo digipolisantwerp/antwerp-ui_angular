@@ -1,0 +1,9 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+import { InjectionToken } from '@angular/core';
+export var /** @type {?} */ NOTIFICATIONS_INITIAL_MESSAGES = new InjectionToken('initialMessages');
+export var /** @type {?} */ NOTIFICATIONS_INITIAL_OPTIONS = new InjectionToken('initialOptions');
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibm90aWZpY2F0aW9ucy5jb25mLmpzIiwic291cmNlUm9vdCI6Im5nOi8vbm90aWZpY2F0aW9ucy8iLCJzb3VyY2VzIjpbImxpYi9ub3RpZmljYXRpb25zL25vdGlmaWNhdGlvbnMuY29uZi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLGNBQWMsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUUvQyxNQUFNLENBQUMscUJBQU0sOEJBQThCLEdBQUcsSUFBSSxjQUFjLENBQUMsaUJBQWlCLENBQUMsQ0FBQztBQUNwRixNQUFNLENBQUMscUJBQU0sNkJBQTZCLEdBQUcsSUFBSSxjQUFjLENBQUMsZ0JBQWdCLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluamVjdGlvblRva2VuIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmV4cG9ydCBjb25zdCBOT1RJRklDQVRJT05TX0lOSVRJQUxfTUVTU0FHRVMgPSBuZXcgSW5qZWN0aW9uVG9rZW4oJ2luaXRpYWxNZXNzYWdlcycpO1xuZXhwb3J0IGNvbnN0IE5PVElGSUNBVElPTlNfSU5JVElBTF9PUFRJT05TID0gbmV3IEluamVjdGlvblRva2VuKCdpbml0aWFsT3B0aW9ucycpO1xuIl19

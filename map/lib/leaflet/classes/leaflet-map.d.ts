@@ -1,0 +1,45 @@
+import { EventEmitter } from '@angular/core';
+import * as L from 'leaflet';
+import 'leaflet-draw';
+import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
+export declare class LeafletMap {
+    options: LeafletMapOptions;
+    private initialized;
+    private polygonDrawer;
+    private lineDrawer;
+    private editingLayer;
+    map: L.Map;
+    locating: boolean;
+    fullScreen: boolean;
+    onInit: EventEmitter<{}>;
+    modes: {
+        DRAGGING: number;
+        DRAWING_POLYGON: number;
+        DRAWING_LINE: number;
+    };
+    mode: number;
+    constructor(options: LeafletMapOptions);
+    init(element: any): void;
+    addTileLayer(layer: LeafletLayer): any;
+    addFeatureLayer(config: any): any;
+    addGeoJSON(geoJSON: any, config: any): any;
+    fitFeatureLayers(featureLayers: any[]): void;
+    removeLayer(layer: any): void;
+    toggleFullScreen(): void;
+    update(): void;
+    zoomIn(): void;
+    zoomInDisabled(): boolean;
+    zoomOut(): void;
+    zoomOutDisabled(): boolean;
+    locate(): void;
+    setView(center: L.LatLngExpression, zoom: number): void;
+    switchToDragging: () => void;
+    switchToPolygon(): void;
+    handleDrawPolygon: (e: any) => void;
+    switchToLine(): void;
+    handleDrawLine: (e: any) => void;
+    startEditLayer(layer: any): void;
+    stopEditLayer: () => void;
+    addMarker(position: L.LatLngExpression, options?: any): any;
+    addHtmlMarker(position: L.LatLngExpression, html: string): any;
+}

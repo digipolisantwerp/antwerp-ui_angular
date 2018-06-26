@@ -1,0 +1,27 @@
+{
+  "name": "logo",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "~5.2.0",
+    "@angular/core": "~5.2.0"
+  },
+  "acpaas-ui": {
+    "dependencies": []
+  },
+  "devDependencies": {
+    "rxjs-compat": "^6.1.0"
+  },
+  "main": "bundles/logo.umd.js",
+  "module": "fesm5/logo.js",
+  "es2015": "fesm2015/logo.js",
+  "esm5": "esm5/logo.js",
+  "esm2015": "esm2015/logo.js",
+  "fesm5": "fesm5/logo.js",
+  "fesm2015": "fesm2015/logo.js",
+  "typings": "logo.d.ts",
+  "metadata": "logo.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

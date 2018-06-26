@@ -1,0 +1,38 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+import { RangeSliderRange } from '../../types/range-slider.types';
+export declare class RangeSliderComponent implements OnInit, ControlValueAccessor {
+    private elRef;
+    core_branding: boolean;
+    min: number;
+    max: number;
+    minimalDistance: number;
+    step: number;
+    labelBefore: string;
+    labelAfter: string;
+    start: number;
+    end: (number | boolean);
+    steps: any[];
+    startPercentage: any;
+    endPercentage: any;
+    active: any;
+    constructor(elRef: ElementRef);
+    propagateChange: (value: number | RangeSliderRange) => void;
+    ngOnInit(): void;
+    writeValue(value: any): void;
+    registerOnTouched(): void;
+    registerOnChange(fn: any): void;
+    onMouseDown(handle: any): void;
+    onMouseUp(event: any): void;
+    onMouseMove(event: MouseEvent | TouchEvent): void;
+    updateHandle(newPercentage: any): void;
+    setStart(value: any): void;
+    setEnd(value: any): void;
+    round(number: any, increment: any, offset: any): any;
+    startToPercentage(): number;
+    percentageToStart(): number;
+    endToPercentage(): number;
+    percentageToEnd(): number;
+    minimalDistanceNotRespected(): boolean;
+    calcPercentage(mouseX: any, width: any, offsetLeft: any): number;
+}

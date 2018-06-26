@@ -1,0 +1,14 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+import { CopyrightComponent } from './copyright/copyright.component';
+import { FooterComponent } from './footer/footer.component';
+import { SubFooterComponent } from './subfooter/subfooter.component';
+export var /** @type {?} */ Components = [
+    CopyrightComponent,
+    FooterComponent,
+    SubFooterComponent,
+];
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9sYXlvdXQvIiwic291cmNlcyI6WyJsaWIvZm9vdGVyL2NvbXBvbmVudHMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxrQkFBa0IsRUFBRSxNQUFNLGlDQUFpQyxDQUFDO0FBQ3JFLE9BQU8sRUFBRSxlQUFlLEVBQUUsTUFBTSwyQkFBMkIsQ0FBQztBQUM1RCxPQUFPLEVBQUUsa0JBQWtCLEVBQUUsTUFBTSxpQ0FBaUMsQ0FBQztBQUVyRSxNQUFNLENBQUMscUJBQU0sVUFBVSxHQUFHO0lBQ3pCLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2Ysa0JBQWtCO0NBQ2xCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb3B5cmlnaHRDb21wb25lbnQgfSBmcm9tICcuL2NvcHlyaWdodC9jb3B5cmlnaHQuY29tcG9uZW50JztcbmltcG9ydCB7IEZvb3RlckNvbXBvbmVudCB9IGZyb20gJy4vZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQnO1xuaW1wb3J0IHsgU3ViRm9vdGVyQ29tcG9uZW50IH0gZnJvbSAnLi9zdWJmb290ZXIvc3ViZm9vdGVyLmNvbXBvbmVudCc7XG5cbmV4cG9ydCBjb25zdCBDb21wb25lbnRzID0gW1xuXHRDb3B5cmlnaHRDb21wb25lbnQsXG5cdEZvb3RlckNvbXBvbmVudCxcblx0U3ViRm9vdGVyQ29tcG9uZW50LFxuXTtcbiJdfQ==

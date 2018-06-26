@@ -1,0 +1,32 @@
+import { ElementRef, EventEmitter, OnDestroy } from '@angular/core';
+import { FlyoutZoneDirective } from './flyout-zone.directive';
+import { FlyoutService } from '../services/flyout.service';
+import { FlyoutSize } from '../types/flyout.types';
+export declare class FlyoutDirective implements OnDestroy {
+    private elementRef;
+    private flyoutService;
+    flyoutClass: boolean;
+    readonly flyoutAlignRight: boolean;
+    readonly flyoutSmall: boolean;
+    readonly flyoutMedium: boolean;
+    readonly flyoutLarge: boolean;
+    readonly flyoutFull: boolean;
+    readonly flyoutOpen: boolean;
+    class: string;
+    size: FlyoutSize;
+    align: string;
+    toggleClick: boolean;
+    activateOnFocus: boolean;
+    opened: EventEmitter<{}>;
+    closed: EventEmitter<{}>;
+    flyoutZone: FlyoutZoneDirective;
+    private element;
+    private flyoutOpened;
+    private destroyed$;
+    constructor(elementRef: ElementRef, flyoutService: FlyoutService);
+    ngOnDestroy(): void;
+    open(): void;
+    close(): void;
+    isInClosableZone(element: HTMLElement): boolean;
+    isOpened(): boolean;
+}

@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+export { RangeSliderComponent } from './components/range-slider/range-slider.component';
+export { RangeSliderModule } from './range-slider.module';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9mb3Jtcy8iLCJzb3VyY2VzIjpbImxpYi9yYW5nZS1zbGlkZXIvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxvQkFBb0IsRUFBRSxNQUFNLGtEQUFrRCxDQUFDO0FBRXhGLE9BQU8sRUFBRSxpQkFBaUIsRUFBRSxNQUFNLHVCQUF1QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IHsgUmFuZ2VTbGlkZXJDb21wb25lbnQgfSBmcm9tICcuL2NvbXBvbmVudHMvcmFuZ2Utc2xpZGVyL3JhbmdlLXNsaWRlci5jb21wb25lbnQnO1xuZXhwb3J0IHsgUmFuZ2VTbGlkZXJSYW5nZSB9IGZyb20gJy4vdHlwZXMvcmFuZ2Utc2xpZGVyLnR5cGVzJztcbmV4cG9ydCB7IFJhbmdlU2xpZGVyTW9kdWxlIH0gZnJvbSAnLi9yYW5nZS1zbGlkZXIubW9kdWxlJztcbiJdfQ==

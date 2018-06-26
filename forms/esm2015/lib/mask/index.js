@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+export { MaskDirective } from './directives/mask.directive';
+export { MaskModule } from './mask.module';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9mb3Jtcy8iLCJzb3VyY2VzIjpbImxpYi9tYXNrL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsYUFBYSxFQUFFLE1BQU0sNkJBQTZCLENBQUM7QUFDNUQsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLGVBQWUsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCB7IE1hc2tEaXJlY3RpdmUgfSBmcm9tICcuL2RpcmVjdGl2ZXMvbWFzay5kaXJlY3RpdmUnO1xuZXhwb3J0IHsgTWFza01vZHVsZSB9IGZyb20gJy4vbWFzay5tb2R1bGUnO1xuIl19

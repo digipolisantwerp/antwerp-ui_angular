@@ -1,0 +1,9 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+export { FlyoutButtonModule } from './flyout-button.module';
+export { FlyoutButtonComponent } from './components/flyout-button/flyout-button.component';
+export { FlyoutButtonSize } from './types/flyout-button.types';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9mbHlvdXQvIiwic291cmNlcyI6WyJsaWIvZmx5b3V0LWJ1dHRvbi9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLGtCQUFrQixFQUFFLE1BQU0sd0JBQXdCLENBQUM7QUFDNUQsT0FBTyxFQUFFLHFCQUFxQixFQUFFLE1BQU0sb0RBQW9ELENBQUM7QUFDM0YsT0FBTyxFQUFFLGdCQUFnQixFQUFFLE1BQU0sNkJBQTZCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgeyBGbHlvdXRCdXR0b25Nb2R1bGUgfSBmcm9tICcuL2ZseW91dC1idXR0b24ubW9kdWxlJztcbmV4cG9ydCB7IEZseW91dEJ1dHRvbkNvbXBvbmVudCB9IGZyb20gJy4vY29tcG9uZW50cy9mbHlvdXQtYnV0dG9uL2ZseW91dC1idXR0b24uY29tcG9uZW50JztcbmV4cG9ydCB7IEZseW91dEJ1dHRvblNpemUgfSBmcm9tICcuL3R5cGVzL2ZseW91dC1idXR0b24udHlwZXMnO1xuIl19

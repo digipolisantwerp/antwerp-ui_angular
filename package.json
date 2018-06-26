@@ -1,0 +1,21 @@
+{
+  "name": "@acpaas-ui/ngx-components",
+  "version": "1.0.5",
+  "dependencies": {
+    "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",
+    "hammerjs": "~2.0.8",
+    "lodash-es": "~4.17.10",
+    "angular2-highlight-js": "~5.0.0",
+    "marked": "~0.3.6",
+    "@a-ui/core": "2.1.1",
+    "inputmask": "~3.3.11",
+    "ng2-ckeditor": "~1.2.0",
+    "@jsprds/headroom.ts": "0.0.2",
+    "cookieconsent": "~3.0.6",
+    "redux": "~3.7.2",
+    "esri-leaflet": "^2.1.4",
+    "leaflet": "^1.3.1",
+    "leaflet-draw": "^1.0.2",
+    "@acpaas-ui/js-notification-store": "1.0.1-alpha.5"
+  }
+}
