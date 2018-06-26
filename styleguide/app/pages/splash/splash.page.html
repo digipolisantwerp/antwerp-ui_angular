@@ -1,17 +1,34 @@
-<aui-hero>
-    <div auiHeroCard>
-        <div class="aui-hero-inner">
-            <h1 class="h4">ACPaaS UI</h1>
-        </div>
-    </div>
-    <div auiHeroCta>
-        <ul class="m-nav-tabs center-tabs">
-            <li routerLinkActive="is-active"><a routerLink="/ui-components"><span class="fa fa-cube"></span>UI Components</a></li>
-            <li routerLinkActive="is-active"><a routerLink="/docs"><span class="fa fa-book"></span>How-to guide</a></li>
-        </ul>
-    </div>
-</aui-hero>
+<guide-hero
+	image="/gfx/hero-assignments.jpg"
+	[title]="'ACPaaS UI'"
+	description="ACPaaS UI is an innovative solution to easily build a consistent front-end for responsive web apps."
+></guide-hero>
 
-<div class="u-container u-margin-bottom-lg u-margin-top-lg u-text-center">
-	<h1 class="h3 u-margin-top-lg u-margin-bottom">Welcome!</h1>
+<div class="u-container u-margin-bottom-lg u-margin-top-lg">
+	<div class="row">
+		<div class="col-xs-12 col-md-4">
+			<div class="m-card u-margin-bottom-xs u-margin-top-xs">
+				<div class="m-card__body">
+					<h2 class="h4">
+						<i class="fa fa-lg fa-cube u-margin-right-xs u-mobile-block"></i> @acpaas-ui modules
+					</h2>
+					<p class="u-margin-bottom u-margin-top">A collection of Angular building blocks for your application.</p>
+					<p><i class="fa fa-book u-margin-right-xs"></i><a routerLink="/modules">View documentation</a></p>
+					<p class="u-margin-top-xs"><i class="fa fa-bitbucket u-margin-right-xs"></i><a href="https://github.com/digipolisantwerp/acpaas-ui_angular" class="has-icon-right" target="_blank">View on Github<i class="fa fa-external-link"></i></a></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-4">
+			<div class="m-card u-margin-bottom-xs u-margin-top-xs">
+				<div class="m-card__body">
+					<h2 class="h4">
+						<i class="fa fa-lg fa-css3 u-margin-right-xs u-mobile-block"></i> Sass styling
+					</h2>
+					<p class="u-margin-bottom u-margin-top">The digital version of Antwerp's corporate identity styleguide.</p>
+					<p><i class="fa fa-book u-margin-right-xs"></i><a href="https://a-ui.github.io/core_branding_scss" class="has-icon-right" target="_blank">View documentation<i class="fa fa-external-link"></i></a></p>
+					<p class="u-margin-top-xs"><i class="fa fa-github u-margin-right-xs"></i><a href="https://github.com/a-ui" class="has-icon-right" target="_blank">View on Github<i class="fa fa-external-link"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
