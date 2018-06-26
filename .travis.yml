@@ -9,8 +9,22 @@ node_js:
 before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
+branches:
+  only: 
+    - master
+
 script:
   - npm run lint
   - npm run build
   - npm run examples
   - npm test
+  - ng build --base-href "https://digipolisantwerp.github.io/acpaas-ui_angular/"
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: ./dist/styleguide
+  on:
+    branch: master
