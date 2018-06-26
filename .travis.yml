@@ -9,6 +9,10 @@ node_js:
 before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
+branches:
+  only: 
+    - master
+
 script:
   - npm run lint
   - npm run build
