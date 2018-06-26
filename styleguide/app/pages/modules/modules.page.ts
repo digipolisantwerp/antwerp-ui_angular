@@ -12,7 +12,7 @@ export class ModulesPageComponent implements OnInit {
 
 	constructor(
 		private router: Router,
-		private activatedRoute: ActivatedRoute,
+		private activatedRoute: ActivatedRoute
 	) {}
 
 	public ngOnInit() {
