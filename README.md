@@ -88,8 +88,8 @@ Copyright (c) 2016-present, Digipolis
 [stackoverflow-issues]: https://stackoverflow.com/questions/tagged/acpaas-ui
 
 <!-- Travis -->
-[acpaas-ui-angular-build]: https://img.shields.io/travis/digipolisantwerp/acpaas-ui-ngx.svg
-[acpaas-ui-angular-travis]: https://travis-ci.org/digipolisantwerp/acpaas-ui-ngx
+[acpaas-ui-angular-build]: https://img.shields.io/travis/digipolisantwerp/acpaas-ui_angular.svg
+[acpaas-ui-angular-travis]: https://travis-ci.org/digipolisantwerp/acpaas-ui_angular
 
 <!-- Github links -->
 
