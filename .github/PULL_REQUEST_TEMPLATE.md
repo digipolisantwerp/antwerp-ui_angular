@@ -38,3 +38,13 @@ Issue Number: N/A
 <!-- If this PR contains a breaking change, please describe the impact and migration path for existing applications below. -->
 
 ## Other information
+
+
+## Resolved issues
+
+<!--
+See https://help.github.com/articles/closing-issues-using-keywords/ for more info
+Closes: #123
+Fixes: #123
+Resolves: #123
+-->
