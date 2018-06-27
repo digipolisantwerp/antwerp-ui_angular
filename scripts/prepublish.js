@@ -1,4 +1,5 @@
 const cpx = require('cpx');
+const resolve = require('path');
 const { writeFileSync } = require('fs');
 const { getNPMDependencies } = require('./helpers/deps');
 
@@ -13,6 +14,6 @@ delete packageJson['private'];
 delete packageJson['devDependencies'];
 delete packageJson['publishConfig'];
 
-writeFileSync('dist/package.json', JSON.stringify(packageJson, undefined, 2));
+writeFileSync(resolve('dist', 'package.json'), JSON.stringify(packageJson, undefined, 2));
 
 process.exit();

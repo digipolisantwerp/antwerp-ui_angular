@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+const { resolve, sep } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
 const colors = require('colors');
 const camelCase = require('lodash.camelcase');
@@ -12,12 +12,12 @@ const exec = require('./helpers/bash');
 const directories = getDirectories(resolve(process.cwd(), 'packages'), {
 	nestedPath: 'examples',
 });
-const packages = directories.map(d => d.split('/').pop());
+const packages = directories.map(d => d.split(sep).pop());
 
 const buildExample = package => () => {
 	console.log(colors.yellow(`Building examples for ${package}...`));
 
-	return exec(`./node_modules/.bin/ng build ${package} -c examples`);
+	return exec(`ng build ${package} -c examples`);
 };
 
 const updateRoutes = () => {
