@@ -2,9 +2,9 @@ const cpx = require('cpx');
 const { writeFileSync } = require('fs');
 const { getNPMDependencies } = require('./helpers/deps');
 
-cpx.copy('LICENSE', 'dist');
-cpx.copy('README.md', 'dist');
-cpx.copy('CHANGELOG.md', 'dist');
+cpx.copySync('LICENSE.md', 'dist');
+cpx.copySync('README.md', 'dist');
+cpx.copySync('CHANGELOG.md', 'dist');
 
 const packageJson = getNPMDependencies({ preserve: true });
 
