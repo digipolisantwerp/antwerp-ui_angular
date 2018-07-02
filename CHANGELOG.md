@@ -6,17 +6,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.1] - 2018-05-22
+## [1.0.1] - 2018-07-02
+### Changed
+- `postbuild` script, fix for copy meta files.
+
+## [1.0.0] - 2018-07-02
 ### Added
+- `agenda`
+- `analytics`
+- `avatar`
+- `calendar`
+- `code-snippet`
+- `context`
 - `flyout`
 - `forms`
-- `layout`
-- `leaflet`
+- `flyout`
+- `localstorage`
 - `logo`
+- `map`
 - `notifications`
 - `pagination`
 - `progress-bar`
+- `selectable-list`
+- `table`
 - `utils`
+- `styleguide`
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...v0.0.2
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0
