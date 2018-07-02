@@ -1,5 +1,5 @@
 const { readFileSync } = require('fs');
-const { resolve } = require('path');
+const { resolve, sep } = require('path');
 const colors = require('colors');
 
 const { getDirectories } = require('./helpers/dir');
@@ -8,7 +8,7 @@ const promiseQueue = require('./helpers/queue');
 const buildPackage = require('./helpers/build');
 
 const directories = getDirectories(resolve(process.cwd(), 'packages'));
-const packages = directories.map(directory => directory.split('/').pop());
+const packages = directories.map(directory => directory.split(sep).pop());
 const configs = directories.map(directory => readFileSync(resolve(directory, 'package.json'), {
   encoding: 'UTF-8'
 }));
