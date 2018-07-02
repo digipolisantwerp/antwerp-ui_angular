@@ -99,7 +99,7 @@ describe('The Calendar Month Component', () => {
 
 	it('should set the current date to -1 if the activeDate is in another month', () => {
 		const now = new Date();
-		now.setMonth(12 - now.getMonth());
+		now.setMonth(now.getMonth() - 2);
 		wrapper.activeDate = now;
 		fixture.detectChanges();
 
@@ -120,7 +120,7 @@ describe('The Calendar Month Component', () => {
 
 	it('should set the selectedDay to -1 if the selectedDate is out of range', () => {
 		const selected = new Date();
-		selected.setMonth(12 - selected.getMonth());
+		selected.setMonth(selected.getMonth() - 2);
 		wrapper.selectedDate = selected;
 		fixture.detectChanges();
 
@@ -138,7 +138,7 @@ describe('The Calendar Month Component', () => {
 
 	it('should get the month for the activeDate if the selectedDate is out of range', () => {
 		const selected = new Date();
-		selected.setMonth(12 - selected.getMonth());
+		selected.setMonth(selected.getMonth() - 2);
 		wrapper.selectedDate = selected;
 		fixture.detectChanges();
 
