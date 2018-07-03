@@ -1,5 +1,5 @@
 const cpx = require('cpx');
-const resolve = require('path');
+const { resolve } = require('path');
 const { writeFileSync } = require('fs');
 const { getNPMDependencies } = require('./helpers/deps');
 
