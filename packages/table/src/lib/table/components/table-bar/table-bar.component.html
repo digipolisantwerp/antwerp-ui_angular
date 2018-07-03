@@ -1,11 +1,11 @@
-<div class="aui-table-bar">
-	<div class="filters" #ref [ngClass]="{open: open}">
+<div class="a-table-bar">
+	<div class="a-table-bar__filters" #ref [ngClass]="{'a-table-bar__filters--open': open}">
 		<ng-content select="[auiTableBarItem]"></ng-content>
-		<div class="aui-table-bar-item" *ngIf="open">
+		<div class="a-table-bar__item" *ngIf="open">
 			<button class="a-button a-button--transparent" (click)="toggle()">Show less...</button>
 		</div>
 	</div>
-	<div class="show-more" *ngIf="!open && invisibleItems">
+	<div class="a-table-bar__filters-show-more" *ngIf="!open && invisibleItems">
 		<button class="a-button a-button--transparent" (click)="toggle()">Show more...</button>
 	</div>
 

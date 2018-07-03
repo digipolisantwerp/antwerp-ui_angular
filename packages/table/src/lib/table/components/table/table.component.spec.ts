@@ -48,7 +48,7 @@ describe('The Table Component', () => {
 		comp = fixture.componentInstance; // BannerComponent test instance
 
 		// query for the title <h1> by CSS element selector
-		de = fixture.debugElement.query(By.css('.aui-table'));
+		de = fixture.debugElement.query(By.css('.a-table'));
 		el = de.nativeElement;
 	});
 

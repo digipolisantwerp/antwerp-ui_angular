@@ -110,7 +110,7 @@ describe('The Table Bar Component', () => {
 		fixture.detectChanges();
 
 		// query for the title <h1> by CSS element selector
-		de = fixture.debugElement.query(By.css('.aui-table-bar'));
+		de = fixture.debugElement.query(By.css('.a-table-bar'));
 		el = de.nativeElement;
 	});
 

@@ -42,7 +42,7 @@ describe('The Hero Component', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(HeroComponent);
 		comp = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css('.inner'));
+		de = fixture.debugElement.query(By.css('.o-hero'));
 		el = de.nativeElement;
 
 		fixture.detectChanges();
@@ -53,8 +53,8 @@ describe('The Hero Component', () => {
 	});
 
 	it('should render the card and cta sections', () => {
-		expect(fixture.debugElement.query(By.css('aui-hero-card h1'))).not.toBeUndefined();
-		expect(fixture.debugElement.query(By.css('aui-hero-cta a'))).not.toBeUndefined();
+		expect(fixture.debugElement.query(By.css('o-hero-card h1'))).not.toBeUndefined();
+		expect(fixture.debugElement.query(By.css('o-hero-cta a'))).not.toBeUndefined();
 	});
 
 	// it('should have the "cta" class if there is a call to action section', () => {

@@ -99,7 +99,7 @@
 			flex: 1;
 			align-self: flex-end;
 
-			&.has-cta ::ng-deep .aui-hero-card {
+			&.has-cta ::ng-deep .o-hero-card {
 				&::before,
 				&::after {
 					content: "";
@@ -130,19 +130,19 @@
 		}
 
 		::ng-deep {
-			.aui-hero-inner {
+			.o-hero-inner {
 				padding: $spacer;
 			}
 
-			.aui-hero-wrapper {
+			.o-hero-wrapper {
 				display: block;
 				margin: 0 auto;
 				width: 100%;
 				max-width: $spacer * 24;
 			}
 
-			.aui-hero-card {
-				@extend .aui-hero-wrapper;
+			.o-hero-card {
+				@extend .o-hero-wrapper;
 
 				background-color: #FFF;
 				position: relative;
@@ -150,7 +150,7 @@
 				padding: $spacer $spacer $spacer / 2;
 			}
 
-			.aui-hero-cta {
+			.o-hero-cta {
 				background-color: $white;
 				width: 100%;
 				text-align: center;
