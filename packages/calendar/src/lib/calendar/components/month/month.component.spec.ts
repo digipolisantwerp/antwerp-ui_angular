@@ -5,7 +5,6 @@ import { Component, DebugElement } from '@angular/core';
 import { CalendarMonthComponent } from './month.component';
 import { CALENDAR_WEEKDAY_LABELS, CALENDAR_DEFAULT_WEEKDAY_LABELS } from '../../calendar.conf';
 import { CalendarService } from '../../services/calendar.service';
-import { TitleCasePipe } from '../../pipes/title-case.pipe';
 
 @Component({
 	selector: 'aui-test',
@@ -67,7 +66,6 @@ describe('The Calendar Month Component', () => {
 			declarations: [
 				TestComponent,
 				CalendarMonthComponent,
-				TitleCasePipe,
 			],
 			providers: [
 				{ provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS },
