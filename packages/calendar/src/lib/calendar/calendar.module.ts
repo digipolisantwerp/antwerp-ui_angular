@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { Components } from './components/index';
 import { Services } from './services/index';
-import { Pipes } from './pipes/index';
 
 import {
 	CALENDAR_WEEKDAY_LABELS,
@@ -20,11 +19,9 @@ import { CalendarService } from './services/calendar.service';
 	],
 	declarations: [
 		Components,
-		Pipes,
 	],
 	exports: [
 		Components,
-		Pipes,
 	],
 	providers: [
 		Services,
