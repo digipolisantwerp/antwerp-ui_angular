@@ -62,13 +62,13 @@ describe('The Header Component', () => {
 
 			logoFixture.detectChanges();
 
-			const header = getByCSSQuery('.aui-header', logoDe.nativeElement);
+			const header = getByCSSQuery('.o-header', logoDe.nativeElement);
 
 			expect(header.classList).toContain('has-logo');
 		});
 
 		it('Should not show the content section if no content is provided', () => {
-			expect(fixture.nativeElement.querySelector('.aui-header-content') === null).toBe(true);
+			expect(fixture.nativeElement.querySelector('.o-header__content').children.length === 0).toBe(true);
 		});
 	});
 });

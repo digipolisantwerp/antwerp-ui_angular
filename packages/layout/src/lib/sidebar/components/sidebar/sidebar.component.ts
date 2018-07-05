@@ -5,9 +5,6 @@ import { SidebarItem, SidebarState } from '../../types/sidebar.types';
 @Component({
 	selector: 'aui-sidebar',
 	templateUrl: './sidebar.component.html',
-	styleUrls: [
-		'./sidebar.component.scss',
-	],
 })
 export class SidebarComponent {
 	@Input() public closeOnSelected = true;

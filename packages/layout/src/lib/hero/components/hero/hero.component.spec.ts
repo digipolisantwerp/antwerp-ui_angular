@@ -53,8 +53,8 @@ describe('The Hero Component', () => {
 	});
 
 	it('should render the card and cta sections', () => {
-		expect(fixture.debugElement.query(By.css('o-hero-card h1'))).not.toBeUndefined();
-		expect(fixture.debugElement.query(By.css('o-hero-cta a'))).not.toBeUndefined();
+		expect(fixture.debugElement.query(By.css('o-hero__card h1'))).not.toBeUndefined();
+		expect(fixture.debugElement.query(By.css('o-hero__cta a'))).not.toBeUndefined();
 	});
 
 	// it('should have the "cta" class if there is a call to action section', () => {
