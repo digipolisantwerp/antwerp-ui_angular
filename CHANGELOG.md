@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Changed
+- `package.json` added meta data
 
 ## [1.0.1] - 2018-07-02
 ### Changed
