@@ -1,11 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 
 import { CalendarYearComponent } from './year.component';
 import { CALENDAR_MONTH_LABELS, CALENDAR_DEFAULT_MONTH_LABELS } from '../../calendar.conf';
-import { CalendarService } from '../../services/calendar.service';
-import { TitleCasePipe } from '../../pipes/title-case.pipe';
 
 @Component({
 	selector: 'aui-test',
@@ -39,7 +36,6 @@ describe('The Calendar Year Component', () => {
 			declarations: [
 				TestComponent,
 				CalendarYearComponent,
-				TitleCasePipe,
 			],
 			providers: [
 				{ provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS },
