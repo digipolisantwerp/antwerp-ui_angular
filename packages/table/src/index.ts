@@ -1,1 +1,1 @@
-export * from './lib/table/index';
+export * from './lib/table';
