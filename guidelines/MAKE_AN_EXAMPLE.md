@@ -14,7 +14,7 @@
 
 ## [Examples folder](#examples)
 
-Copy the entire `examples` folder situated under `packages/avatar`.
+Copy the entire `examples` folder situated under `examples_folder`.
 
 ## [Change example](#change)
 
