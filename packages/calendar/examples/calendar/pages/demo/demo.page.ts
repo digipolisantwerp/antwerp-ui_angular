@@ -27,9 +27,9 @@ export class AppModule {}`;
 public selectedDate: Date = new Date();
 public range: DateRange = [1, 6];
 
-selectDate(result) {
-    if (result.complete) {
-        this.dateService.SendDate(result.date);
+selectDate(event) {
+    if (event.complete) {
+        this.selectedDate = event.date;
     }
 }`;
 	public html = `<aui-calendar
