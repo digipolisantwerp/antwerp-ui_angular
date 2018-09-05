@@ -5,7 +5,7 @@ import { DateRange } from '@acpaas-ui/js-date-utils';
 	templateUrl: './demo.page.html',
 })
 export class DemoPageComponent {
-	public selectedDate: Date = new Date();
+	public clickedDate: Date = new Date();
 	public range: DateRange = [1, 6];
 
 	public javascript1 = `import { CalendarModule } from '@acpaas-ui/ngx-components/calendar'
@@ -24,12 +24,12 @@ export class AppModule {}`;
 
 	public javascript2 = `import { DateRange } from '@acpaas-ui/js-date-utils';
 
-public selectedDate: Date = new Date();
+public clickedDate: Date = new Date();
 public range: DateRange = [1, 6];
 
 selectDate(event) {
     if (event.complete) {
-        this.selectedDate = event.date;
+        this.clickedDate = event.date;
     }
 }`;
 	public html = `<aui-calendar
@@ -38,9 +38,9 @@ selectDate(event) {
 	(selectDate)="selectDate($event)">
 </aui-calendar>`;
 
-	public selectDate(event) {
+	public changeDate(event) {
 		if (event.complete) {
-			this.selectedDate = event.date;
+			this.clickedDate = event.date;
 		}
 	}
 }

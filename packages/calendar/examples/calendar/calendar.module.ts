@@ -9,10 +9,10 @@ import { Pages } from './pages/index';
 	imports: [
 		CommonModule,
 		CalendarModule.forChild([
-            'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'
-        ], [
-            'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
-        ]),
+			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
+			], [
+			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
+		]),
 		CodeSnippetModule,
 	],
 	declarations: [
