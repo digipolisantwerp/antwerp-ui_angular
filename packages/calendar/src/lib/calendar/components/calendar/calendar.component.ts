@@ -136,6 +136,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 		});
 
 		if (!complete) {
+			this.activeDate = new Date(date);
 			this.switchView(-1);
 		}
 	}
