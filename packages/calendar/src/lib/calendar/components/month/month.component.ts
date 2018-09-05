@@ -55,9 +55,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 
 		let newDates = [];
 
-		if (selectedDateChanged) {
-			newDates = this.calendarService.getMonthForDate(this.selectedDate);
-		} else if (activeDateChanged && monthChanged) {
+		if (selectedDateChanged || (activeDateChanged && monthChanged)) {
 			newDates = this.calendarService.getMonthForDate(this.activeDate);
 		} else {
 			return;
