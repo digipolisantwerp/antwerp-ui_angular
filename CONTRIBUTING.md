@@ -2,36 +2,48 @@
 
 Hi! We're really excited that you are interested in contributing to ACPaaS UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [Issue Reporting Guidelines](#issue-reporting-guidelines)
-- [Pull Request Guidelines](#pull-request-guidelines)
-- [Development Setup](#development-setup)
-- [Project Structure](#project-structure)
+- [ACPaaS UI Contributing Guide](#acpaas-ui-contributing-guide)
+  - [Issue Reporting Guidelines](#issue-reporting-guidelines)
+  - [Pull Request Guidelines](#pull-request-guidelines)
+  - [Development Setup](#development-setup)
+  - [Project Structure](#project-structure)
+  - [Releases](#releases)
 
 ## Issue Reporting Guidelines
 
-- Always use [GitHub Issues][github-issues] to create new issues.
+- Use the [#acpaas-ui channel](https://dgpls.slack.com/messages/C4M60PQJF) on slack to ask questions about using ACPaaS UI.
+- Use the [#acpaas-ui-dev channel](https://dgpls.slack.com/messages/C4S2D7KTK) on slack to discuss changes to the ACPaaS UI code itself.
+- Use [GitHub Issues][github-issues] to report bugs, request features, ask policy questions or propose policy changes.
+
+  > Note: policy questions are about the way ACPaaS UI is developed and released, or about its architecture. We use github issues to have a public archive of these discussions.
+  >
+  > Maintainers: check the [issue handling guidelines](./guidelines/ISSUES.md) for how to handle reported issues.
 
 ## Pull Request Guidelines
 
-- The `master` branch is basically just a snapshot of the latest stable release. All development should be done in dedicated branches. **Do not submit PRs against the `master` branch.**
+- The `master` branch is where we ship releases from. Always send PR's to `master`.
 
-- Checkout a topic branch from the relevant branch, e.g. `dev`, and merge back against that branch.
+- Commit your changes to a topic branch with a name matching these examples:
+  - `feature/more-cowbell`
+  - `fix/broken-cowbell`
+  - `docs/document-cowbell`
+  - For a list of suggested keywords, check the [commit message convention](./guidelines/COMMITS.md).
 
-- Work in the `src` folder and **DO NOT** check in `dist` in the commits.
+- Work in the `packages` folder and **DO NOT** check in `dist` or `examples` in the commits.
 
-- It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash it before merging.
+- Commits must follow the [commit message convention](./guidelines/COMMITS.md). It's OK to have multiple small commits as you work on the PR - we can let GitHub automatically squash it before merging.
 
-- Make sure `npm test` passes. (see [development setup](#development-setup))
+- Make sure `npm test` passes.
 
-- If adding new feature:
-  - Add accompanying test case.
-  - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
+- If adding a new feature:
+  - Add an accompanying test case.
+  - Provide a convincing reason to add this feature. Ideally you should open a [feature request issue](https://github.com/digipolisantwerp/acpaas-ui_angular/issues/new?template=feature_request.md) first and have it greenlighted before working on it.
 
 - If fixing a bug:
-  - If you are resolving a special issue, add `(fix #xxxx[,#xxx])` (#xxxx is the issue id) in your PR title for a better release log, e.g. `update entities encoding/decoding (fix #3899)`.
-  - Provide detailed description of the bug in the PR. Live demo preferred.
+  - Provide a detailed description of the bug in the PR or an accompanying [bug report issue](https://github.com/digipolisantwerp/acpaas-ui_angular/issues/new?template=bug_report.md) linked from the PR (recommended).
   - Add appropriate test coverage if applicable.
+
+- For additional guidance while developing, check the [dev guide](./guidelines/DEV_GUIDE.md).
 
 ## Development Setup
 
@@ -40,40 +52,47 @@ You will need [Node.js](http://nodejs.org) **version 8+**.
 After cloning the repo, run:
 
 ```bash
+# install dependencies needed for the bootstrap command
 $ npm install # or yarn
-```
-
-### Committing Changes
-
-Commit messages should follow the [commit message convention](./COMMIT_CONVENTION.md) so that changelogs can be automatically generated. Commit messages will be automatically validated upon commit. If you are not familiar with the commit message convention, you can use `npm run commit` instead of `git commit`, which provides an interactive CLI for generating proper commit messages.
-
-### Commonly used NPM scripts
-
-``` bash
-# watch and auto re-build dist/vue.js
-$ npm run dev
-
-# watch and auto re-run unit tests in Chrome
-$ npm run dev:test
-
-# build all dist files, including npm packages
+# install nested package.json dependencies
+$ npm run bootstrap
+# build into dist folder
 $ npm run build
-
-# run the full test suite, include linting / type checking
-$ npm test
 ```
 
-There are some other scripts available in the `scripts` section of the `package.json` file.
+Additionally, to run the examples locally:
 
-The default test script will do the following: lint with ESLint -> unit tests with coverage -> e2e tests. **Please make sure to have this pass successfully before submitting a PR.** Although the same tests will be run against your PR on the CI server, it is better to have it working locally beforehand.
+```bash
+# update the styleguide from the individual components
+$ npm run examples
+# run the styleguide examples application
+$ npm run styleguide
+```
 
 ## Project Structure
 
-Explain project structure
-
-## Credits
-
-Thank you to all the people who have already contributed to ACPaaS UI!
-
+- `dist`: contains the build output for the components
+- `examples`: contains the build output for the examples
+- `packages`: the component sources
+  - `some-package/`: sources for a component package (one or more components)
+    - Use `npm run package your-package` to create a new package folder
+    - `src/lib/some-component/`: sources for a component
+    - `examples/`: examples (documentation) as shown in the styleguide app
+    - `package.json`: dependencies needed by this package
+    - `README.md`: documentation for this package, linked from the main [README.md](README.md)
+- `scripts`: helper shell scripts used by the npm tasks
+- `styleguide`: sources for the examples web app (but not the actual examples)
 
 [github-issues]: https://github.com/digipolisantwerp/acpaas-ui_angular/issues
+
+## Releases
+
+ACPaaS UI is supplied as a single library on NPM [@acpaas-ui/ngx-components](https://www.npmjs.com/package/@acpaas-ui/ngx-components), although related components (e.g. the [smart widgets](https://github.com/digipolisantwerp/smart-widgets)) may be packaged independently.
+
+It is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-dev channel](https://dgpls.slack.com/messages/C4S2D7KTK) to ask for an out of band release. (Before you do so, check the [dev guide](./guidelines/DEV_GUIDE.md#development-snapshots) for ways to use it without an official release.)
+
+The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
+
+A [changelog](CHANGELOG.md) is provided for your convenience.
+
+> Maintainers: see the [release guide](./guidelines/RELEASE.md) for guidance on releases and versioning.

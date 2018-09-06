@@ -7,7 +7,7 @@ For now, we will not release separate components on NPM.
 
 ---
 
-This project is published *weekly* on {INSERT WEEKDAY}.
+This project is published *monthly*.
 
 Exceptions:
 
@@ -18,7 +18,7 @@ Exceptions:
 
 ---
 
-### Weekly releases
+### Monthly releases
 
 1. **List Changes**
 
@@ -34,7 +34,7 @@ Exceptions:
 
 ### Hotfixes
 
-When hotfixes need to be applied, the flow is identical to the weekly releases, except for the specific release date.
+When hotfixes need to be applied, the flow is identical to normal releases, except for the out of band release date. To minimize risk for emergency hotfixes a [hotfix branch](./VERSIONING.md#hotfixes) can be used.
 
 ## Versioning
 
