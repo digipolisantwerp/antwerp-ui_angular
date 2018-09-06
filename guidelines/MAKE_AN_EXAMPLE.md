@@ -8,7 +8,8 @@
 2. [Change example](#change)
 3. [Angular.json](#angularjson)
 4. [Ng-package.examples.json](#ngpackageexamplejson)
-5. [Npm](#npm)
+5. [whitelistedNonPeerDependencies](#whitelistedNonPeerDependencies)
+6. [Npm](#npm)
 
 ---
 
@@ -40,6 +41,10 @@ Make following change to `ng-package.examples.json` situated in `acpaas-ui_angul
 * change the text `avatar` to your components name
 * save the file
 ```
+
+## [whitelistedNonPeerDependencies](#whitelistedNonPeerDependencies)
+
+If you find a `whitelistedNonPeerDependencies` section in `ng-package.json`, make sure to copy that section to `ng-package.examples.json`.
 
 ## [Npm](#npm)
 
