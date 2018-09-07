@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
 })
 export class ProgressBarDemoPageComponent {
 
+	public codeExampleHTML =
+	`
+	<aui-progress-bar
+    [value]="uploadProgress"
+		max="100">
+	</aui-progress-bar>
+	`;
+
 }
