@@ -34,7 +34,7 @@ Exceptions:
 
 ### Hotfixes
 
-When hotfixes need to be applied, the flow is identical to normal releases, except for the out of band release date. To minimize risk for emergency hotfixes a [hotfix branch](./VERSIONING.md#hotfixes) can be used.
+When hotfixes need to be applied, the flow is identical to normal releases, except for the out-of-band release date. To minimize risk for emergency hotfixes a [hotfix branch](./VERSIONING.md#hotfixes) can be used.
 
 ## Versioning
 

@@ -29,7 +29,7 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
   - `docs/document-cowbell`
   - For a list of suggested keywords, check the [commit message convention](./guidelines/COMMITS.md).
 
-- Work in the `packages` folder and **DO NOT** check in `dist` or `examples` in the commits.
+- Work in the `packages` folder and **DO NOT** check in the top-level `dist` and `examples` folders in the commits.
 
 - Commits must follow the [commit message convention](./guidelines/COMMITS.md). It's OK to have multiple small commits as you work on the PR - we can let GitHub automatically squash it before merging.
 
@@ -75,7 +75,7 @@ $ npm run styleguide
 - `examples`: contains the build output for the examples
 - `packages`: the component sources
   - `some-package/`: sources for a component package (one or more components)
-    - Use `npm run package your-package` to create a new package folder
+    - Use `npm run package some-other-package` to create a new package folder
     - `src/lib/some-component/`: sources for a component
     - `examples/`: examples (documentation) as shown in the styleguide app
     - `package.json`: dependencies needed by this package
@@ -89,7 +89,7 @@ $ npm run styleguide
 
 ACPaaS UI is supplied as a single library on NPM [@acpaas-ui/ngx-components](https://www.npmjs.com/package/@acpaas-ui/ngx-components), although related components (e.g. the [smart widgets](https://github.com/digipolisantwerp/smart-widgets)) may be packaged independently.
 
-It is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-dev channel](https://dgpls.slack.com/messages/C4S2D7KTK) to ask for an out of band release. (Before you do so, check the [dev guide](./guidelines/DEV_GUIDE.md#development-snapshots) for ways to use it without an official release.)
+It is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-dev channel](https://dgpls.slack.com/messages/C4S2D7KTK) to ask for an out-of-band release. (Before you do so, check the [dev guide](./guidelines/DEV_GUIDE.md#development-snapshots) for ways to use it without an official release.)
 
 The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
 

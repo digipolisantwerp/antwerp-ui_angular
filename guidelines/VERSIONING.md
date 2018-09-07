@@ -33,11 +33,11 @@ The maintainers will edit the `CHANGELOG.md` according to the guidelines on [Kee
 
 Previous major versions are supported with fixes for 12 months after the release of the next major version. Fixes are not automatically backported, only where necessary. Features are only added on the latest major version.
 
-When older major versions are still supported, a release branch `vX-dev` is maintained for them separate from `master`, on which the older major version is maintained.
+When older major versions are still supported, a release branch `vX-dev` is maintained for them separate from `master`, on which that older major version is maintained.
 
 > e.g. Our library is at v4 on `master`, but v3 on `v3-dev` is still supported.
 
-The same Semantic Versioning guidelines should be followed in this case.
+The same Semantic Versioning guidelines should be followed in this case. A breaking change is never implemented on an older major version, only on the `master` branch, although new non-breaking features on old major versions remain possible through a minor version release. New features are *not* automatically backported to older versions.
 
 A `vY-dev` branch can be used as a staging ground for the next major release. It is merged into master upon release, and the dev branch is then closed.
 
