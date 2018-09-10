@@ -130,7 +130,7 @@ describe('The Calendar Month Component', () => {
 		wrapper.selectedDate = selected;
 		fixture.detectChanges();
 
-		expect(monthSpy).toHaveBeenCalledWith(selected);
+		expect(monthSpy).toHaveBeenCalledWith(comp.activeDate);
 		expect(rangeSpy).toHaveBeenCalled();
 	});
 
