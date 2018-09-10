@@ -1,6 +1,7 @@
 # Making an example
 
-> **&lt;short component description&gt;**
+> **When generating a new package use the following command: `npm run package <package>`**<br />
+> **When adding an example to an existing package follow the steps down below**
 
 ## Table of Contents
 
