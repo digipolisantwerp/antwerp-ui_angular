@@ -1,6 +1,7 @@
 # @acpaas-ui/ngx-components/selectable-list
 
-**SelectableList** description.
+This module contains a component and a directive. The component lets the user select an item from a list, the item can be selected with a click.
+The functionality can be extended by adding the `auiSelectableActions` directive to a focusable element. This directive let the user select an item with the arrow keys and complete the selection with the enter key or cancel with the escape key.
 
 ## Usage
 
@@ -15,8 +16,53 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ## API
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() items: any[];` | `null` | Array of objects or flat array of strings (see label) to fill the selectable list |
-| `@Output() selected: EventEmitter<any>` | - | Emits an event when the user has selected an item in the selectable list. The parameter of the function is the selected item. |
+| `@Input() items: any[];` | `null` | Array of objects or flat array of strings (see `label`) to fill the selectable list. |
+| `@Input() index` | `0` | The index of the active item in the list (note that the selectable list is not responsible for toggling through the list). |
+| `@Input() search: string;` | `''` | String to highlight in all selectable list items. |
+| `@Input() label: string;` | `''` | The selector when data is an array of objects (see `items`). |
+| `@Input() itemTemplate: TemplateRef<any>;` | - | Pass in a template to give the list items of the selectable list a custom look. |
+| `@Output() selected: EventEmitter<any>;` | - | Emits an event when the user has selected an item in the selectable list. The parameter of the function is the selected item. |
+
+## Example
+
+```
+import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
+
+@NgModule({
+	imports: [
+		SelectableListModule
+	]
+});
+
+export class AppModule {};`
+```
+
+```
+public index = 0;
+
+public heroes = [
+    { name: 'Spiderman' },
+    { name: 'Wolverine' },
+    { name: 'Iron man' }
+];
+
+public activeHero = this.heroes[this.index];
+
+public onSelect(item) {
+	this.index = this.heroes.findIndex(hero => hero.name === item.name);
+	this.activeHero = item;
+}
+```
+
+```
+<h4>Select your hero</h4>
+<aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)">
+   <ng-template let-item="item">
+       Template for: <b>{{ item.name }}</b>
+   </ng-template>
+</aui-selectable-list>
+<p><strong>Active hero</strong>: {{ activeHero.name }}</p>
+```
 
 ## Contributing
 

@@ -1,5 +1,5 @@
 <h1 class="h3 u-margin-bottom">Selectable list</h1>
-<!-- <div class="u-margin-bottom">
+<div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="javascript1"></aui-code-snippet>
 </div>
 
@@ -12,12 +12,12 @@
 </div>
 
 <div class="u-margin-bottom">
-	<div class="m-datepicker is-open">
-		<aui-calendar
-			[range]="range"
-			[selectedDate]="clickedDate"
-			(selectDate)="changeDate($event)">
-		</aui-calendar>
-	</div>
+	<h4 class="u-margin-bottom">Select your hero</h4>
+	<aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)">
+		<ng-template let-item="item">
+			Template for: <b>{{ item.name }}</b>
+		</ng-template>
+	</aui-selectable-list>
+	<p class="u-margin-top">Active hero: {{ activeHero.name }}</p>
 </div>
- -->
+

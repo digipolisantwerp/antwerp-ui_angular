@@ -50,7 +50,9 @@ const updateRoutes = () => {
 };
 
 promiseQueue([
-	...packages.map(buildExample),
+	...packages.filter(package => {
+		return (!process.env.example || (process.env.example && package === process.env.example))
+	}).map(buildExample),
 	updateRoutes,
 ])
 	.then(() => {
