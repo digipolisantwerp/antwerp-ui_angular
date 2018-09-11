@@ -1,14 +1,7 @@
 {
   "name": "flyout",
   "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "~5.2.0",
-    "@angular/core": "~5.2.0"
-  },
   "acpaas-ui": {
     "dependencies": []
-  },
-  "devDependencies": {
-    "rxjs-compat": "^6.1.0"
   }
 }
