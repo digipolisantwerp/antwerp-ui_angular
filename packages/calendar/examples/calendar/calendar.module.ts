@@ -8,7 +8,11 @@ import { Pages } from './pages/index';
 @NgModule({
 	imports: [
 		CommonModule,
-		CalendarModule,
+		CalendarModule.forChild([
+			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
+			], [
+			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
+		]),
 		CodeSnippetModule,
 	],
 	declarations: [
