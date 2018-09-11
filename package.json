@@ -34,6 +34,22 @@
     "styleguide:analyse": "ng build styleguide --stats-json && npm run styleguide:explore",
     "styleguide:explore": "webpack-bundle-analyzer dist/styleguide/stats.json"
   },
+  "peerDependencies": {
+    "@a-ui/core": "2.1.1",
+    "@a-ui/flexboxgrid": "1.0.0",
+    "@angular/animations": "~6.0.1",
+    "@angular/common": "~6.0.1",
+    "@angular/core": "~6.0.1",
+    "@angular/forms": "~6.0.1",
+    "@angular/http": "~6.0.1",
+    "@angular/language-service": "~6.0.1",
+    "@angular/platform-browser": "~6.0.1",
+    "@angular/platform-browser-dynamic": "~6.0.1",
+    "@angular/router": "~6.0.1",
+    "rxjs": "~6.1.0",
+    "rxjs-compat": "~6.1.0",
+    "typescript": "~2.7.2"
+  },
   "devDependencies": {
     "@a-ui/core": "2.1.1",
     "@a-ui/flexboxgrid": "1.0.0",
@@ -98,6 +114,7 @@
     "rimraf": "2.6.2",
     "rxjs": "~6.1.0",
     "rxjs-compat": "~6.1.0",
+    "short-unique-id": "1.1.1",
     "sort-object-keys": "1.1.2",
     "ts-node": "~5.0.1",
     "tsickle": ">=0.25.5",
