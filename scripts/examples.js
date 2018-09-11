@@ -38,7 +38,7 @@ const updateRoutes = () => {
 		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		moduleConfig += `	${moduleName},\n`;
-		routeConfig += `	{ path: '${package}', children: ${route} },\n`;
+		routeConfig += `	{ path: '${package}', children: ${route}, title: '${upperFirst(package.replace(/-/g, ' '))}', },\n`;
 	});
 
 	writeFileSync(srcModules, `${importConfigModules}\nexport const ExamplesModules = [\n${moduleConfig}];\n`, { encoding: 'utf-8' });

@@ -11,13 +11,13 @@ export class DemoPageComponent {
 	public javascript1 = `import { CalendarModule } from '@acpaas-ui/ngx-components/calendar'
 
 @NgModule({
-    imports: [
-        CalendarModule.forChild([
-            'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'
-        ], [
-            'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
-        ])
-    ]
+	imports: [
+		CalendarModule.forChild([
+			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'
+		], [
+			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
+		])
+	]
 })
 
 export class AppModule {}`;
@@ -28,9 +28,9 @@ public clickedDate: Date = new Date();
 public range: DateRange = [1, 6];
 
 selectDate(event) {
-    if (event.complete) {
-        this.clickedDate = event.date;
-    }
+	if (event.complete) {
+		this.clickedDate = event.date;
+	}
 }`;
 	public html = `<aui-calendar
 	[range]="range"
