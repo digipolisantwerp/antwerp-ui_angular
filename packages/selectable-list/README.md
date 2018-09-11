@@ -5,18 +5,18 @@
 ## Usage
 
 ```javascript
-import `SelectableListModule` from '@acpaas-ui/ngx-components/selectable-list'`;
+import 'SelectableListModule' from '@acpaas-ui/ngx-components/selectable-list'`;
 ```
 
 ## Documentation
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-## Modules
-
-| Name         | Description | Documentations |
+## API
+| Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `SelectableListModule` | TODO | [Documentation](./src/lib/selectable-list/README.md)
+| `@Input() items: any[];` | `null` | Array of objects or flat array of strings (see label) to fill the selectable list |
+| `@Output() selected: EventEmitter<any>` | - | Emits an event when the user has selected an item in the selectable list. The parameter of the function is the selected item. |
 
 ## Contributing
 
