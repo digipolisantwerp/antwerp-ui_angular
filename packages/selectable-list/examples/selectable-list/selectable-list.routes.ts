@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { DemoPageComponent } from './pages/demo/demo.page';
+import { SelectableListDemoPageComponent } from './pages/demo/demo.page';
 
 export const SELECTABLE_LIST_EXAMPLES_ROUTES: Routes = [
 	{
 		path: '',
-		component: DemoPageComponent,
+		component: SelectableListDemoPageComponent,
 		pathMatch: 'full',
 	},
 ];

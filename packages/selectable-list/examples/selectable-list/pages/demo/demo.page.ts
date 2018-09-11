@@ -3,6 +3,5 @@ import { Component } from '@angular/core';
 @Component({
 	templateUrl: './demo.page.html',
 })
-export class DemoPageComponent {
-	public hello = 'Hello selectable-list';
+export class SelectableListDemoPageComponent {
 }

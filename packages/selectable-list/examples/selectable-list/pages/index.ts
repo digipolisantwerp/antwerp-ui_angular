@@ -1,5 +1,5 @@
-import { DemoPageComponent } from './demo/demo.page';
+import { SelectableListDemoPageComponent } from './demo/demo.page';
 
 export const Pages = [
-	DemoPageComponent,
+	SelectableListDemoPageComponent,
 ];
