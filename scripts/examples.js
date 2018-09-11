@@ -2,8 +2,8 @@ const { resolve, sep } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
 const colors = require('colors');
 const camelCase = require('lodash.camelcase');
-const capitalize = require('lodash.capitalize');
-
+const upperFirst = require('lodash.upperfirst');
+const snakeCase = require('lodash.snakecase');
 
 const { getDirectories } = require('./helpers/dir');
 const promiseQueue = require('./helpers/queue');
@@ -32,8 +32,8 @@ const updateRoutes = () => {
 	let importConfigRoutes = '';
 	let routeConfig = '';
 	packages.forEach(package => {
-		const route = `${package.toUpperCase()}_EXAMPLES_ROUTES`;
-		const moduleName = `${capitalize(camelCase(package))}ExamplesModule`;
+		const route = `${snakeCase(package).toUpperCase()}_EXAMPLES_ROUTES`;
+		const moduleName = `${upperFirst(camelCase(package))}ExamplesModule`;
 
 		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}';\n`;
