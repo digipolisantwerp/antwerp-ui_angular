@@ -2,8 +2,8 @@ const { resolve, sep } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
 const colors = require('colors');
 const camelCase = require('lodash.camelcase');
-const upperFirst = require('lodash.upperFirst');
-const snakeCase = require('lodash.snakeCase');
+const upperFirst = require('lodash.upperfirst');
+const snakeCase = require('lodash.snakecase');
 
 const { getDirectories } = require('./helpers/dir');
 const promiseQueue = require('./helpers/queue');
