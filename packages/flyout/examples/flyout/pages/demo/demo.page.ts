@@ -7,8 +7,7 @@ export class DemoPageComponent {
 
   public codeExampleJS1 = `import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout'`;
   public codeExampleHTML1 =
-	`
-<div auiFlyout size="small" align="left">
+`<div auiFlyout size="small" align="left">
   <button class="a-button" auiFlyoutAction>Open flyout</button>
   <div auiFlyoutZone class="has-padding u-text-center">
     <div class="u-margin-bottom">
@@ -18,20 +17,20 @@ export class DemoPageComponent {
       <button class="a-button" auiFlyoutClose>Close flyout</button>
     </div>
   </div>
-</div>
-	`;
+</div>`;
 
   public codeExampleJS2 = `import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout'`;
   public codeExampleHTML2 =
-	`
-<aui-flyout-buttonicon="fa fa-user"
+`<aui-flyout-button
+  icon="fa fa-user"
   label="Open flyout"
   direction="left"
   title="Click to open!"
-  size="small">
+  outline=true
+  flyoutSize="small"
+  buttonSize="large">
   <div class="u-margin">
     <p>Hello world!</p>
   </div>
-</aui-flyout-button>
-	`;
+</aui-flyout-button>`;
 }

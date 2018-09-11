@@ -5,14 +5,10 @@
 
 ## Installation
 
-```
-$ npm install @acpaas-ui/flyout-button --save
-```
-
 Import component in **app.module.ts**
 
 ```
-import { FlyoutButtonModule } from '@acpaas-ui/flyout-button';
+import `FlyoutButtonModule` from '@acpaas-ui/ngx-components/flyout'`;
 
 @NgModule({
   imports: [
@@ -30,8 +26,8 @@ export class AppModule {
 ## Usage
 
 ```
-<aui-flyout-button icon="fa fa-user" label="Hello flyout button label" direction="left" title="Hello flyout button title">
-  <p>Hello flyout button content</p>
+<aui-flyout-button icon="fa fa-user" label="Open flyout" direction="left" title="Click to open!" outline=true flyoutSize="small" buttonSize="large">
+  <p>Hello world!</p>
 </aui-flyout-button>
 ```
 
@@ -68,7 +64,7 @@ export class AppModule {
 
 #### flyoutSize
 
-`string` : Defines the size of the flyout.
+`FlyoutSize` : By default a flyout doesn't have a fixed width and will wrap around its content. However, you can set an optional size (via string or FlyoutSize enum). Available options are `auto`, `small`, `medium`, `large` and `full`. Default is `auto`.
 
 #### buttonSize
 
@@ -78,7 +74,7 @@ export class AppModule {
 e.g.
 
 // Controller
-import { ButtonSize } from '@acpaas-ui/flyout-button';
+import { ButtonSize } from '@acpaas-ui/ngx-components/flyout';
 public sizes = ButtonSize;
 
 // Template

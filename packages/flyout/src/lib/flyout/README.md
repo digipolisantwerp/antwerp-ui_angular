@@ -3,14 +3,10 @@ This module contains one service and four directives that extend your component 
 
 ## Installation
 
-```
-npm install @acpaas-ui/flyout --save
-```
-
 Import component in **app.module.ts**
 
 ```
-import { FlyoutModule } from '@acpaas-ui/flyout';
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout'`;
 
 @NgModule({
     imports: [
@@ -25,17 +21,12 @@ export class AppModule {}
 There are three directives necessary to get the flyout functionality: `auiFlyout`, `auiFlyoutZone` and `auiFlyoutAction`. The `auiFlyoutClose` directive is optional, you can use that directive to add a close action or button to your flyout.
 
 ```
-<div auiFlyout>
-
-    <button class="button" auiFlyoutAction>My Heroes</button>
-
+<div auiFlyout size="small" align="left">
+    <button auiFlyoutAction>Open flyout</button>
     <div auiFlyoutZone>
-        <h1>This is the flyout!</h1>
-        
-        <button auiFlyoutClose>Close the flyout</button>
-
+        <p>Hello world!</p>
+        <button auiFlyoutClose>Close flyout</button>
     </div>
-    
 </div>
 ```
 
@@ -50,7 +41,7 @@ The content inside the html element or component with this directive will be dis
 
 ```
 <!-- Custom component example -->
-<div auiFlyout size="sm" align"right">
+<div auiFlyout size="small" align"right">
     <button class="button" auiFlyoutAction>Welcome Jasper</button>
     <user-card auiFlyoutZone></user-card>
 </div>
@@ -68,7 +59,7 @@ The content inside the html element or component with this directive will be dis
 E.g.
 
 // Controller
-import { FlyoutSize } from '@acpaas-ui/flyout';
+import { FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
 public sizes = FlyoutSize;
 
 // Template
@@ -81,7 +72,7 @@ or
 Use the `FlyoutService` to broadcast a close event to the available flyouts. 
 
 ```
-import { FlyoutService } from '@acpaas-ui/flyout';
+import { FlyoutService } from '@acpaas-ui/ngx-components/flyout';
 ```
 
 ```
