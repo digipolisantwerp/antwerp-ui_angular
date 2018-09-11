@@ -1,10 +1,16 @@
 <h3 class="u-margin-bottom">Flyout demo</h3>
 
-<h5 class="u-margin-bottom">Usage</h5>
+<h5 class="u-margin-bottom">Usage Flyout</h5>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="codeExampleHTML"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
 </div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+</div>
+
+<h5 class="u-margin-bottom">Example</h5>
 
 <div class="u-margin-bottom">
 	<div auiFlyout size="small" align="left">
@@ -13,9 +19,27 @@
 			<div class="u-margin-bottom">
 				<p>Hello world!</p>
 			</div>
-			<div class="u-margin-bottom">
+			<div>
 				<button class="a-button" auiFlyoutClose>Close flyout</button>
 			</div>
 		</div>
 	</div>
 </div>
+
+<h5 class="u-margin-bottom">Usage Flyout Button</h5>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleHTML2"></aui-code-snippet>
+</div>
+
+<h5 class="u-margin-bottom">Example</h5>
+
+<aui-flyout-button icon="fa fa-user" label="Open flyout" direction="left" title="Click to open!" size="small">
+	<div class="u-margin">
+		<p class="u-margin">Hello world!</p>
+	</div>
+</aui-flyout-button>

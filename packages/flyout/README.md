@@ -1,23 +1,25 @@
 # @acpaas-ui/ngx-flyout
 
 **Flyout** provides additional visual elements on top of the interface, without changing the DOM-structure.
+You can use `FlyoutModule` to extend a component or use the `FlyoutButtonModule` which contains the `FlyoutModule` as well.
 
 ## Usage
 
 ```javascript
-import `FlyoutModule` from '@acpaas-ui/ngx-flyout'`;
+import `FlyoutModule` from '@acpaas-ui/ngx-components/flyout'`;
+import `FlyoutButtonModule` from '@acpaas-ui/ngx-components/flyout'`;
 ```
 
 ## Documentation
 
-Visit our [documentation site](http://www.google.be) for full how-to docs and guidelines
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
 ## Modules
 
 | Name         | Description | Documentations |
 | -----------  | ------ | -------------------------- |
-| `FlyoutModule` | TODO | [Documentation](./src/lib/flyout/README.md)
-| `FlyoutButtonModule` | TODO | [Documentation](./src/lib/flyout-button/README.md)
+| `FlyoutModule` | Extend your component with a dropdown / flyout functionality | [Documentation](./src/lib/flyout/README.md)
+| `FlyoutButtonModule` | Custom button to toggle dropdown / flyout  | [Documentation](./src/lib/flyout-button/README.md)
 
 ## Contributing
 
