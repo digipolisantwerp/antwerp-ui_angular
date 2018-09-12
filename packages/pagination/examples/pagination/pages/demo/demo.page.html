@@ -1,6 +1,5 @@
-<h3 class="u-margin-bottom">Pagination demo</h3>
-<p>{{ hello }}!</p>
-<!-- <div class="u-margin-bottom">
+<h1 class="h3 u-margin-bottom">Pagination</h1>
+<div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="javascript1"></aui-code-snippet>
 </div>
 
@@ -13,12 +12,16 @@
 </div>
 
 <div class="u-margin-bottom">
-	<div class="m-datepicker is-open">
-		<aui-calendar
-			[range]="range"
-			[selectedDate]="clickedDate"
-			(selectDate)="changeDate($event)">
-		</aui-calendar>
-	</div>
+	<h2 class="h4">Heroes</h2>
+	<ul>
+		<li *ngFor="let hero of visibleHeroes">{{ hero.name }}</li>
+	</ul>
+	<aui-pagination
+        [currentPage]="currentPage"
+        [itemsPerPage]="itemsPerPage"
+        [totalValues]="totalValues"
+        styling="basic"
+        display="numbers"
+        (update)="onUpdatePage($event)">
+    </aui-pagination>
 </div>
- -->
