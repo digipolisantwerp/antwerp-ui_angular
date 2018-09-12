@@ -41,11 +41,11 @@ public onSelect(item) {
 
 	public html = `<h4>Select your hero</h4>
 <aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)">
-   <template let-item="item">
+   <ng-template let-item="item">
 	   Template for: <b>{{ item.name }}</b>
-   </template>
+   </ng-template>
 </aui-selectable-list>
-<p><strong>Active hero</strong>: {{ activeHero }}</p>`;
+<p><strong>Active hero</strong>: {{ activeHero.name }}</p>`;
 
 	public onSelect(item) {
 		this.index = this.heroes.findIndex(hero => hero.name === item.name);

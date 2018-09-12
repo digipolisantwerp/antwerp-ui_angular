@@ -13,7 +13,9 @@ import 'SelectableListModule' from '@acpaas-ui/ngx-components/selectable-list'`;
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-## API
+### Selectable list module
+
+#### API
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
@@ -24,7 +26,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() itemTemplate: TemplateRef<any>;` | - | Pass in a template to give the list items of the selectable list a custom look. |
 | `@Output() selected: EventEmitter<any>;` | - | Emits an event when the user has selected an item in the selectable list. The parameter of the function is the selected item. |
 
-## Example
+#### Example
 
 ```
 import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
@@ -67,6 +69,8 @@ public onSelect(item) {
 
 ### auiSelectableActions directive
 
+#### API
+
 Bind this directive to a focusable element.
 
 | Name         | Default value | Description |
@@ -76,9 +80,25 @@ Bind this directive to a focusable element.
 | `@Output() keyEnter: EventEmitter<any>;` | - | Callback for enter key |
 | `@Output() keyEscape: EventEmitter<any>;` | - | Callback for escape key |
 
+#### Example
+
 In the following example we bind the `auiSelectableActions` directive to a button (the focusable element). The callbacks of `keyArrowDown` and `keyArrowUp` let us manipulate the value of `index` so we can navigate with our arrow keys through the selectable list. With `keyEnter` we define the selected value and `keyEscape` makes sure the action can also be cancelled.
 
-> For this example to work you'll need to know how to work with the Flyout module. [View Flyout documentation](./packages/flyout/README.md)
+> For this example to work you'll need to know how to work with the [ACPaaS UI Flyout](./packages/flyout/README.md). Also see the [ACPaaS UI Auto-complete](./packages/forms/src/lib/auto-complete/README.md).
+
+```
+import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
+
+@NgModule({
+	imports: [
+		SelectableListModule,
+		FlyoutModule
+	]
+});
+
+export class AppModule {};
+```
 
 ```
 public onKeyArrowUp() {
@@ -102,7 +122,7 @@ public onKeyEscape() {
 <div auiFlyout>
     <button class="button" auiFlyoutAction auiSelectableActions (keyArrowUp)="onKeyArrowUp()" (keyArrowDown)="onKeyArrowDown()" (keyEnter)="onKeyEnter()" (keyEscape)="onKeyEscape()">Heroes</button>
     <div auiFlyoutZone>
-        <aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)"></aui-selectable-list>
+        <aui-selectable-list [items]="heroes" [index]="index" label="name" (selected)="onSelect($event)"></aui-selectable-list>
     </div>
 </div>
 ```
