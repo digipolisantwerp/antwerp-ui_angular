@@ -15,6 +15,7 @@ export class PaginationDemoPageComponent implements OnInit {
 		{ name: 'Deadpool' },
 	];
 	public visibleHeroes = null;
+	public itemsPerPageOptions = [1, 2, 4];
 	public totalValues = this.heroes.length;
 
 	public javascript1 = `import { PaginationModule } from '@acpaas-ui/ngx-components/pagination';
@@ -53,7 +54,7 @@ private selectData(data) {
 	return data.slice((this.currentPage * this.itemsPerPage) - this.itemsPerPage, (this.currentPage * this.itemsPerPage));
 }`;
 
-	public html = `<aui-pagination
+	public html1 = `<aui-pagination
     [currentPage]="currentPage"
     [itemsPerPage]="itemsPerPage"
     [totalValues]="totalValues"
@@ -62,6 +63,20 @@ private selectData(data) {
     (update)="onUpdatePage($event)">
 </aui-pagination>`;
 
+	public javascript3 = `import { ItemCounterModule } from '@acpaas-ui/ngx-components/pagination';
+
+@NgModule({
+	imports: [
+		ItemCounterModule
+	]
+});
+
+export class AppModule {};`;
+
+	public javascript4 = ``;
+
+	public html2 = ``;
+
 	public ngOnInit() {
 		this.visibleHeroes = this.selectData(this.heroes);
 	}
@@ -69,6 +84,10 @@ private selectData(data) {
 	public onUpdatePage(page) {
 		this.currentPage = page;
 		this.visibleHeroes = this.selectData(this.heroes);
+	}
+
+	public onUpdateItems(count) {
+		this.itemsPerPage = count;
 	}
 
 	private selectData(data) {
