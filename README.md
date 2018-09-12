@@ -26,21 +26,18 @@ Start a new Angular app.
 npm install -g @angular/cli
 ng new my-app --style=scss
 cd my-app
-npm install @a-ui/core @acpaas-ui/ngx-components
+npm install @acpaas-ui/ngx-components
 ```
 
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-/* core branding, https://a-ui.github.io/core_branding_scss/ */
-@import '@a-ui/core/dist/main.css';
-/* variables from core branding */
-@import '@a-ui/core/dist/assets/styles/_quarks.scss';
+@import url("https://cdn.antwerpen.be/core_branding_scss/2.3.0/main.min.css");
 ```
 
-Then start using the components in your pages. Look at the component documentation below for how to use each component.
+Then start using the components in your pages. Look at the component documentation below to learn how to use each component.
 
-> Note: [@a-ui/core][branding-core] contains the Antwerp logo and fonts, which are subject to a usage restriction. For use outside of apps for the city of Antwerp you can use [@a-ui/acpaas][branding-acpaas] instead.
+> Note: [@a-ui/core][branding-core] contains the Antwerp logo and fonts, which are subject to a usage restriction. For use outside of apps for the city of Antwerp you can use [@a-ui/acpaas][branding-acpaas] instead. To learn more about using the branding look & feel, check the [core branding guide][branding-core-guide].
 
 ## Documentation
 
@@ -110,6 +107,7 @@ Copyright (c) 2016-present, Digipolis
 [acpaas-ui-angular-contributors]: https://github.com/digipolisantwerp/acpaas-ui_angular/graphs/contributors
 [acpaas-ui-react]: https://github.com/digipolisantwerp/acpaas-ui_react
 [branding-core]: https://github.com/a-ui/core_branding_scss
+[branding-core-guide]: https://a-ui.github.io/core_branding_scss/
 [branding-acpaas]: https://github.com/a-ui/acpaas_branding_scss
 
 <!-- Github Version Badge -->
