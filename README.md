@@ -37,7 +37,7 @@ Edit styles.scss to import the branding look & feel.
 
 Then start using the components in your pages. Look at the component documentation below to learn how to use each component.
 
-> Note: [@a-ui/core][branding-core] contains the Antwerp logo and fonts, which are subject to a usage restriction. For use outside of apps for the city of Antwerp you can use [@a-ui/acpaas][branding-acpaas] instead. To learn more about using the branding look & feel, check the [core branding guide][branding-core-guide].
+> To learn more about using the branding look & feel, check the [core branding guide][branding-core-guide]. Note that the [core branding][branding-core] contains the Antwerp logo and fonts, which are subject to a usage restriction. For use outside of apps for the city of Antwerp you can use [acpaas branding][branding-acpaas] instead.
 
 ## Documentation
 
