@@ -1,11 +1,11 @@
 import { AVATAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/avatar';
 import { CALENDAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/calendar';
-import { LOCALSTORAGE_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/localstorage';
 import { LOGO_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/logo';
+import { SELECTABLE_LIST_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/selectable-list';
 
 export const EXAMPLES_ROUTES = [
-	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES },
-	{ path: 'calendar', children: CALENDAR_EXAMPLES_ROUTES },
-	{ path: 'localstorage', children: LOCALSTORAGE_EXAMPLES_ROUTES },
-	{ path: 'logo', children: LOGO_EXAMPLES_ROUTES },
+	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES, title: 'Avatar', },
+	{ path: 'calendar', children: CALENDAR_EXAMPLES_ROUTES, title: 'Calendar', },
+	{ path: 'logo', children: LOGO_EXAMPLES_ROUTES, title: 'Logo', },
+	{ path: 'selectable-list', children: SELECTABLE_LIST_EXAMPLES_ROUTES, title: 'Selectable list', },
 ];
