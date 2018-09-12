@@ -30,7 +30,8 @@
                 "styleguide/node_modules"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
