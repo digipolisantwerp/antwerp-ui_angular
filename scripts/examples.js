@@ -38,7 +38,7 @@ const updateRoutes = () => {
 		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		moduleConfig += `	${moduleName},\n`;
-		routeConfig += `	{ path: '${package}', children: ${route} },\n`;
+		routeConfig += `	{ path: '${package}', children: ${route}, title: '${upperFirst(package.replace(/-/g, ' '))}', },\n`;
 	});
 
 	writeFileSync(srcModules, `${importConfigModules}\nexport const ExamplesModules = [\n${moduleConfig}];\n`, { encoding: 'utf-8' });
@@ -50,7 +50,9 @@ const updateRoutes = () => {
 };
 
 promiseQueue([
-	...packages.map(buildExample),
+	...packages.filter(package => {
+		return (!process.env.example || (process.env.example && package === process.env.example))
+	}).map(buildExample),
 	updateRoutes,
 ])
 	.then(() => {
