@@ -14,6 +14,7 @@ import 'SelectableListModule' from '@acpaas-ui/ngx-components/selectable-list'`;
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
 ## API
+
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
 | `@Input() items: any[];` | `null` | Array of objects or flat array of strings (see `label`) to fill the selectable list. |
@@ -62,6 +63,48 @@ public onSelect(item) {
    </ng-template>
 </aui-selectable-list>
 <p><strong>Active hero</strong>: {{ activeHero.name }}</p>
+```
+
+### auiSelectableActions directive
+
+Bind this directive to a focusable element.
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Output() keyArrowUp: EventEmitter<any>;` | - | Callback for arrow up key |
+| `@Output() keyArrowDown: EventEmitter<any>;` | - | Callback for arrow down key |
+| `@Output() keyEnter: EventEmitter<any>;` | - | Callback for enter key |
+| `@Output() keyEscape: EventEmitter<any>;` | - | Callback for escape key |
+
+In the following example we bind the `auiSelectableActions` directive to a button (the focusable element). The callbacks of `keyArrowDown` and `keyArrowUp` let us manipulate the value of `index` so we can navigate with our arrow keys through the selectable list. With `keyEnter` we define the selected value and `keyEscape` makes sure the action can also be cancelled.
+
+> For this example to work you'll need to know how to work with the Flyout module. [View Flyout documentation](./packages/flyout/README.md)
+
+```
+public onKeyArrowUp() {
+    this.index += -1; // Don't forget to check the minimum value (probably 0 or -1)
+}
+
+public onKeyArrowDown() {
+    this.index += 1; // Don't forget to check the maximum value (probably the length of the heroes array - 1)
+}
+
+public onKeyEnter() {
+	this.onSelect(this.heroes[this.index]);
+}
+
+public onKeyEscape() {
+    console.log('Cancelled');
+}
+```
+
+```
+<div auiFlyout>
+    <button class="button" auiFlyoutAction auiSelectableActions (keyArrowUp)="onKeyArrowUp()" (keyArrowDown)="onKeyArrowDown()" (keyEnter)="onKeyEnter()" (keyEscape)="onKeyEscape()">Heroes</button>
+    <div auiFlyoutZone>
+        <aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)"></aui-selectable-list>
+    </div>
+</div>
 ```
 
 ## Contributing
