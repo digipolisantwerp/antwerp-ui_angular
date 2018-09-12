@@ -1,7 +1,6 @@
 # Making an example
 
-> **When generating a new package use the following command: `npm run package <package>`,**<br />
-> **when adding an example to an existing package follow the steps down below.**
+> **When generating a new package use the following command: `npm run package <package>`, when adding an example to an existing package follow the steps down below.**
 
 ## Table of Contents
 
