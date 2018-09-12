@@ -6,151 +6,155 @@ $screen-xs-max: 44.9375rem;
 $screen-sm-max: 61.9375rem;
 
 body {
-    display: flex;
-    min-height: 100vh;
+	display: flex;
+	min-height: 100vh;
 }
 
 guide-root {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    max-width: 100%;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	max-width: 100%;
 }
 
 main {
-    flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 
 .u-container {
-    width: 100%;
+	width: 100%;
 }
 
 .o-header {
-    display: flex;
-    justify-content: space-between;
-    z-index: 20;
+	display: flex;
+	justify-content: space-between;
+	z-index: 20;
 
-    @include to($screen-xs-max) {
-        border-bottom-color: $border-color;
-    }
+	@include to($screen-xs-max) {
+		border-bottom-color: $border-color;
+	}
 }
 
 .o-header__wrapper {
-    display: flex;
+	display: flex;
 }
 
 .o-header__logo {
-    position: static;
+	position: static;
 
-    img {
-        height: $spacer * 2;
-    }
+	img {
+		height: $spacer * 2;
+	}
 }
 
 .o-header__link {
-    align-self: center;
-    display: inline-block;
-    font-weight: 700;
-    padding: $spacer / 2;
+	align-self: center;
+	display: inline-block;
+	font-weight: 700;
+	padding: $spacer / 2;
 
-    &,
-    &:link,
-    &:hover,
-    &:active,
-    &:visited,
-    &:focus {
-        color: $white;
-        text-decoration: none;
-    }
+	&,
+	&:link,
+	&:hover,
+	&:active,
+	&:visited,
+	&:focus {
+		color: $white;
+		text-decoration: none;
+	}
 
-    @include to($screen-sm) {
-        display: none;
-    }
+	@include to($screen-sm) {
+		display: none;
+	}
 }
 
 .aui-header__content-wrapper {
-    margin: 0 auto;
-    max-width: $screen-lg;
-    width: 100%;
+	margin: 0 auto;
+	max-width: $screen-lg;
+	width: 100%;
 
-    @include at($screen-sm) {
-        padding: 0 $spacer;
-    }
+	@include at($screen-sm) {
+		padding: 0 $spacer;
+	}
 }
 
 .o-header .a-input input:not([class*=a-button]):not([type=checkbox]):not([type=radio]) {
-    border: none;
+	border: none;
 }
 
 .o-header .a-input input:not([class*=a-button]):not([type=checkbox]):not([type=radio]):focus {
-    box-shadow: 0 0 0 2px $brand-primary;
+	box-shadow: 0 0 0 2px $brand-primary;
 }
 
 .a-button--navigation {
-    background-color: transparent;
-    font-weight: normal;
+	background-color: transparent;
+	font-weight: normal;
 }
 
 .m-pane {
-    width: 20rem;
+	width: 20rem;
 
-    &--left {
-        position: fixed;
-    }
+	&--left {
+		position: fixed;
+	}
 }
 
 .m-button-group--inline {
-    display: inline-flex;
+	display: inline-flex;
 }
 
 .m-sidebar {
-    @include to($screen-xs-max) {
-        background-color: $background-color-light;
-        margin-bottom: $spacer;
-        max-height: 15.75rem;
-        overflow: auto;
-        padding-left: $spacer;
-        padding-right: $spacer;
-        width: auto;
-    }
+	@include to($screen-xs-max) {
+		background-color: $background-color-light;
+		margin-bottom: $spacer;
+		max-height: 15.75rem;
+		overflow: auto;
+		padding-left: $spacer;
+		padding-right: $spacer;
+		width: auto;
+	}
 }
 
 .u-show-on-mobile {
-    @include at($screen-sm) {
-        display: none;
-    }
+	@include at($screen-sm) {
+		display: none;
+	}
 }
 
 .u-hide-on-mobile {
-    @include to($screen-xs-max) {
-        display: none;
-    }
+	@include to($screen-xs-max) {
+		display: none;
+	}
 }
 
 .u-hide-on-tablet {
-    @include to($screen-sm-max) {
-        display: none;
-    }
+	@include to($screen-sm-max) {
+		display: none;
+	}
+}
+
+pre {
+	tab-size: 2;
 }
 
 .u-text-readable {
-    max-width: 28rem;
+	max-width: 28rem;
 }
 
 .aui-footer {
-    background: $black-pearl;
+	background: $black-pearl;
 
-    .u-container {
-        padding-top: $spacer-lg;
-        padding-bottom: $spacer-md;
-    }
+	.u-container {
+		padding-top: $spacer-lg;
+		padding-bottom: $spacer-md;
+	}
 
-    &,
-    a {
-        color: $white;
-    }
+	&,
+	a {
+		color: $white;
+	}
 
-    h3.h5 {
-        color: $grey-lighter;
-    }
+	h3.h5 {
+		color: $grey-lighter;
+	}
 }
