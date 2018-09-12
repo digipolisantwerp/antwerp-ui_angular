@@ -845,6 +845,9 @@
             "project": "packages/table/ng-package.json"
           },
           "configurations": {
+            "examples": {
+              "project": "packages/table/ng-package.examples.json"
+            },
             "production": {
               "project": "packages/table/ng-package.prod.json"
             }
