@@ -8,6 +8,6 @@ export const EXAMPLES_ROUTES = [
 	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES, title: 'Avatar', },
 	{ path: 'calendar', children: CALENDAR_EXAMPLES_ROUTES, title: 'Calendar', },
 	{ path: 'logo', children: LOGO_EXAMPLES_ROUTES, title: 'Logo', },
-	{ path: 'pagination', children: PAGINATION_EXAMPLES_ROUTES, title: 'Pagination' },
+	{ path: 'pagination', children: PAGINATION_EXAMPLES_ROUTES, title: 'Pagination', },
 	{ path: 'selectable-list', children: SELECTABLE_LIST_EXAMPLES_ROUTES, title: 'Selectable list', },
 ];
