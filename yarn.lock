@@ -590,7 +590,7 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular2-highlight-js@~5.0.0:
+angular2-highlight-js@~5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/angular2-highlight-js/-/angular2-highlight-js-5.0.2.tgz#3a83eea47e51cf20532888cc5059ca802758ce96"
 
@@ -6285,6 +6285,10 @@ shell-quote@^1.6.1:
     array-map "~0.0.0"
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
+
+short-unique-id@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/short-unique-id/-/short-unique-id-1.1.1.tgz#3fd92081cfef21e8cdcdfc3fe3bf35c88b5d97f9"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
