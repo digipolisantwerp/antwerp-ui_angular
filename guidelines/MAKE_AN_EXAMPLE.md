@@ -1,6 +1,8 @@
 # Making an example
 
-> When generating a new package use the following command: `npm run package <package>`,  when adding an example to an existing package follow the steps down below.
+> When creating a new package, an `examples` folder will be automatically generated for you, so you can stop reading.
+
+If you want to add an example to an existing package follow the steps down below.
 
 ## Table of Contents
 
