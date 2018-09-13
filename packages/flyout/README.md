@@ -6,8 +6,10 @@ You can use `FlyoutModule` to extend a component or use the `FlyoutButtonModule`
 ## Usage
 
 ```javascript
-import `FlyoutModule` from '@acpaas-ui/ngx-components/flyout'`;
-import `FlyoutButtonModule` from '@acpaas-ui/ngx-components/flyout'`;
+import {
+    FlyoutModule,
+    FlyoutButtonModule
+} from '@acpaas-ui/ngx-components/flyout'`;
 ```
 
 ## Documentation
