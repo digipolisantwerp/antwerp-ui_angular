@@ -24,12 +24,12 @@ export class DemoPageComponent {
 `<aui-flyout-button
   icon="fa fa-user"
   label="Open flyout"
-  align="left"
+  align="right"
   title="Click to open!"
   outline=true
   flyoutSize="small"
   buttonSize="large">
-  <div class="u-margin">
+  <div class="u-margin u-text-center">
     <p>Hello world!</p>
   </div>
 </aui-flyout-button>`;
