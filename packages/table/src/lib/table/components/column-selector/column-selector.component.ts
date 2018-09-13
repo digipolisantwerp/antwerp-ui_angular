@@ -13,10 +13,10 @@ export class ColumnSelectorComponent {
 	public id: number;
 	public currentTarget;
 
-	private nextId = new ShortUniqueId();
+	private uid = new ShortUniqueId();
 
 	constructor(public tableHelper: TableHelperService) {
-		this.id = this.nextId(8);
+		this.id = this.uid.randomUUID(8);
 	}
 
 	public updateDisplay(e, index) {
