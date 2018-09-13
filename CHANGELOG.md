@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - `package.json` added meta data
 
+## [1.0.2] - 2018-09-03
+### Changed
+- 'Table Cell regenerates component on value changes'
+
 ## [1.0.1] - 2018-07-02
 ### Changed
 - `postbuild` script, fix for copy meta files.
