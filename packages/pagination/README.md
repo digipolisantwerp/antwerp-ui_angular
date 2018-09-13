@@ -1,88 +1,159 @@
-# @acpaas-ui/pagination
-*This module adds pagination where needed. It can be used with the table component or any other place.*
+# @acpaas-ui/ngx-components/pagination
 
-## Dependencies
-`@acpaas-ui/labels`
+The pagination component contains two modules: the pagination itself and the item counter. Both can be used separately or give an enhanced user experience when used together.
 
-## Installation
+## Usage
+
+```typescript
+import {
+    SelectableListModule,
+    ItemCounterModule
+} from '@acpaas-ui/ngx-components/pagination'`;
 ```
-npm install @acpaas-ui/pagination
-```
 
-Import the `PaginationModule` in **app.module.ts**
+## Documentation
 
-``` typescript
-import { PaginationModule } from '@acpaas-ui/pagination';
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Pagination
+
+#### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() ariaNavigationLabel: string;` | `'Paginering'` | ARIA label for the component. |
+| `@Input() ariaPreviousLabel: string;` | `'Ga naar de vorige pagina'` | ARIA label for the previous button. |
+| `@Input() ariaNextLabel: string;` | `'Ga naar de volgende pagina'` | ARIA label for the next button. |
+| `@Input() currentPage: number;` | - | The current page. |
+| `@Input() display: string;` | `'basic'` | How the pagination should be displayed: `'basic'` (only arrows), `'text'` (text-based) or `'numbers'` (numbers-based). |
+| `@Input() itemsPerPage: number;` | - | The amount of values per page. |
+| `@Input() styling: string;` | `'outlined'` | Whether the pagination should be displayed in outlines or not. |
+| `@Input() totalValues: number;` | - | The total amount of values in all pages combined. |
+| `@Output() update: EventEmitter<string>;` | - | Emits the page whenever the user clicks on an item. Note that the currentPage is not affected by this, so you have to update `currentPage` by yourself. |
+
+#### Example
+
+```typescript
+import { PaginationModule } from '@acpaas-ui/ngx-components/pagination';
 
 @NgModule({
     imports: [
         PaginationModule
     ]
-})
+});
 
-export class AppModule {}
+export class AppModule {};
 ```
-
-## Usage
-
-``` html
-<aui-pagination 
-    display="numbers" 
-    [itemsPerPage]="itemsPerPage" 
-    [totalValues]="totalValues" 
-    [currentPage]="currentPage" 
-    (update)="updatePage($event)">
-</aui-pagination>
-```
-
-The component needs you to give the page you are currently on and the last page possible. If a user uses the pagination, the component will return the newly set pagenumber.
-
-Now add the following to your component to process the new page number:
 
 ```typescript
-public currentPage(page) {
+public currentPage = 1;
+public itemsPerPage = 2;
+private heroes = [
+    { name: 'Batman' },
+    { name: 'Superman' },
+    { name: 'Iron man' },
+    { name: 'Wolverine' },
+    { name: 'The Hulk' },
+    { name: 'Deadpool' }
+];
+public visibleHeroes: any[];
+public totalValues = this.heroes.length;
+
+public ngOnInit() {
+    this.selectHeroes();
+}
+
+public onUpdatePage(page) {
     this.currentPage = page;
-    ...
+    this.selectHeroes();
+}
+
+private selectHeroes() {
+    this.visibleHeroes = this.heroes.slice((this.currentPage * this.itemsPerPage)
+        - this.itemsPerPage, (this.currentPage * this.itemsPerPage));
 }
 ```
 
-### Options
+```html
+<aui-pagination
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalValues]="totalValues"
+    styling="basic"
+    display="numbers"
+    (update)="onUpdatePage($event)">
+</aui-pagination>
+```
 
-#### display (string)
-The `[display]` attribute is optional and will fallback to `'basic'` if it is not provided.
+### Item counter
 
-The options are:
+#### API
 
-- `[display]="'basic'"`: this is the default pagination with arrows only.
-- `[display]="'text'"`: this is the text-based pagination.
-- `[display]="'numbers'"`: this is the numbers-based pagination.
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() amountPerPage: number;` | - | The amount of values per page. |
+| `@Input() currentPage: number;` | - | The current page |
+| `@Input() label: any;` | - | The label that goes with the item counter. This can make use of pluralization (see example). |
+| `@Input() totalAmount: number;` | - | The total amount of values in all pages combined. |
 
-#### styling (string)
-The `[styling]` attribute is optional and will fallback to `'outlined'` if it is not provided.
+### Items per page
 
-The options are:
+#### API
 
-- `[display]="'outlined'"`: this is the default pagination styling.
-- `[display]="'filled'"`: this is the pagination styling with filled buttons.
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() amountPerPage: number;` | - | The amount of values per page. |
+| `@Input() label: any;` | - | The label that goes with the item counter. This can make use of pluralization (see example). |
+| `@Input() selectOptions: number[];` | - | The amounts per page that can be selected. Ideally `amountPerPage` is one of the values. |
+| `@Input() size: sizes;` | `sizes.R` | The size of the select component. This can be `sizes.R`) (regular, default, `sizes.S` (small) or `sizes.L` (large). |
+| `@Output() returnAmount: EventEmitter<number>;` | - | Emits the new amount when selected from the select component. |
 
-#### ariaLabels (string)
-Provide a descriptive aria-label to reflect the purpose of an element.
-- `[ariaNavigationLabel]` will fallback to `'Paginering'` if it is not provided.
-- `[ariaPreviousLabel]` will fallback to `'Ga naar de vorige pagina'` if it is not provided.
-- `[ariaNextLabel]` will fallback to `'Ga naar de volgende pagina'` if it is not provided.
+#### Example
 
-#### currentPage (number)
+> Note that the following code is an extension of the code above.
 
-The current page
+```typescript
+import { ItemCounterModule } from '@acpaas-ui/ngx-components/pagination';
 
-#### totalValues (number)
+@NgModule({
+    imports: [
+        ItemCounterModule.forChild({
+            singular: '%{currentFrom} - %{currentTo} of %{totalAmount} item',
+            plural: '%{currentFrom} - %{currentTo} of %{totalAmount} items',
+        },
+        {
+            singular: 'item per page',
+            plural: 'items per page',
+        })
+    ]
+});
 
-The total amount of values / rows. (used to calculate the pages)
+export class AppModule {};
+```
 
-#### itemsPerPage (number)
+```typescript
+public itemsPerPageOptions = [1, 2, 4];
 
-Amount of values per page.  (used to calculate the pages)
+public onUpdateItems(count) {
+    this.itemsPerPage = count;
+    this.selectHeroes();
+}
+```
 
-#### update (EventEmitter)
+```html
+<aui-items-per-page
+    [selectOptions]="itemsPerPageOptions"
+    [amountPerPage]="itemsPerPage"
+    (returnAmount)="onUpdateItems($event)">
+</aui-items-per-page>
 
-Will emit the new page whenever the page is switched. The currentPage is not affected by this, so you have to update the currentPage by yourself.
+<aui-item-counter
+    [currentPage]="currentPage"
+    [totalAmount]="totalValues"
+    [amountPerPage]="itemsPerPage">
+</aui-item-counter>
+```
+
+## Contributing
+
+Visit our [Contribution Guidelines](./contribute.md) for more information on how to contribute.

@@ -1,5 +1,4 @@
 <h1 class="h3 u-margin-bottom">Pagination</h1>
-<h2 class="h4">Pagination</h2>
 <div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="javascript1"></aui-code-snippet>
 </div>
@@ -27,7 +26,10 @@
 	</aui-pagination>
 </div>
 
-<h2 class="h4">Item counter &amp; Items per page</h2>
+<h2 class="h4 u-margin-bottom u-margin-top-lg">Item counter &amp; items per page</h2>
+<div class="m-alert u-margin-bottom">
+	<p>Note that the following code is an extension of the code above.</p>
+</div>
 <div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="javascript3"></aui-code-snippet>
 </div>
@@ -40,15 +42,17 @@
 	<aui-code-snippet [codeSnippet]="html2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom">
-
+<div class="u-margin-bottom-x">
 	<aui-items-per-page
 		[selectOptions]="itemsPerPageOptions"
 		[amountPerPage]="itemsPerPage"
-		(returnAmount)="onUpdateItems($event)"></aui-items-per-page>
-
+		(returnAmount)="onUpdateItems($event)">
+	</aui-items-per-page>
+</div>
+<div class="u-margin-bottom">
 	<aui-item-counter
 		[currentPage]="currentPage"
 		[totalAmount]="totalValues"
-		[amountPerPage]="itemsPerPage"></aui-item-counter>
+		[amountPerPage]="itemsPerPage">
+	</aui-item-counter>
 </div>

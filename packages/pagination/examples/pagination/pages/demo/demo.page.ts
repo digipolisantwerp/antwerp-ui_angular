@@ -14,7 +14,7 @@ export class PaginationDemoPageComponent implements OnInit {
 		{ name: 'The Hulk' },
 		{ name: 'Deadpool' },
 	];
-	public visibleHeroes = null;
+	public visibleHeroes: any[];
 	public itemsPerPageOptions = [1, 2, 4];
 	public totalValues = this.heroes.length;
 
@@ -36,22 +36,23 @@ private heroes = [
 	{ name: 'Iron man' },
 	{ name: 'Wolverine' },
 	{ name: 'The Hulk' },
-	{ name: 'Deadpool' },
+	{ name: 'Deadpool' }
 ];
-public visibleHeroes = null;
+public visibleHeroes: any[];
 public totalValues = this.heroes.length;
 
 public ngOnInit() {
-	this.visibleHeroes = this.selectData(this.heroes);
+	this.selectHeroes();
 }
 
 public onUpdatePage(page) {
 	this.currentPage = page;
-	this.visibleHeroes = this.selectData(this.heroes);
+	this.selectHeroes();
 }
 
-private selectData(data) {
-	return data.slice((this.currentPage * this.itemsPerPage) - this.itemsPerPage, (this.currentPage * this.itemsPerPage));
+private selectHeroes() {
+	this.visibleHeroes = this.heroes.slice((this.currentPage * this.itemsPerPage)
+		- this.itemsPerPage, (this.currentPage * this.itemsPerPage));
 }`;
 
 	public html1 = `<aui-pagination
@@ -67,30 +68,54 @@ private selectData(data) {
 
 @NgModule({
 	imports: [
-		ItemCounterModule
+		ItemCounterModule.forChild({
+			singular: '%{currentFrom} - %{currentTo} of %{totalAmount} item',
+			plural: '%{currentFrom} - %{currentTo} of %{totalAmount} items',
+		},
+		{
+			singular: 'item per page',
+			plural: 'items per page',
+		})
 	]
 });
 
 export class AppModule {};`;
 
-	public javascript4 = ``;
+	public javascript4 = `public itemsPerPageOptions = [1, 2, 4];
 
-	public html2 = ``;
+public onUpdateItems(count) {
+	this.itemsPerPage = count;
+	this.selectHeroes();
+}`;
+
+	public html2 = `<aui-items-per-page
+	[selectOptions]="itemsPerPageOptions"
+	[amountPerPage]="itemsPerPage"
+	(returnAmount)="onUpdateItems($event)">
+</aui-items-per-page>
+
+<aui-item-counter
+	[currentPage]="currentPage"
+	[totalAmount]="totalValues"
+	[amountPerPage]="itemsPerPage">
+</aui-item-counter>`;
 
 	public ngOnInit() {
-		this.visibleHeroes = this.selectData(this.heroes);
+		this.selectHeroes();
 	}
 
 	public onUpdatePage(page) {
 		this.currentPage = page;
-		this.visibleHeroes = this.selectData(this.heroes);
+		this.selectHeroes();
 	}
 
 	public onUpdateItems(count) {
 		this.itemsPerPage = count;
+		this.selectHeroes();
 	}
 
-	private selectData(data) {
-		return data.slice((this.currentPage * this.itemsPerPage) - this.itemsPerPage, (this.currentPage * this.itemsPerPage));
+	private selectHeroes() {
+		this.visibleHeroes = this.heroes.slice((this.currentPage * this.itemsPerPage)
+			- this.itemsPerPage, (this.currentPage * this.itemsPerPage));
 	}
 }

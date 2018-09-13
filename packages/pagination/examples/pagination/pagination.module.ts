@@ -9,12 +9,12 @@ import { Pages } from './pages/index';
 	imports: [
 		CommonModule,
 		ItemCounterModule.forChild({
-			singular: '%{currentFrom} - %{currentTo} van %{totalAmount} item',
-			plural: '%{currentFrom} - %{currentTo} van de %{totalAmount} items',
+			singular: '%{currentFrom} - %{currentTo} of %{totalAmount} item',
+			plural: '%{currentFrom} - %{currentTo} of %{totalAmount} items',
 		},
 		{
-			singular: 'item per pagina',
-			plural: 'items per pagina',
+			singular: 'item per page',
+			plural: 'items per page',
 		}),
 		PaginationModule,
 		CodeSnippetModule,
