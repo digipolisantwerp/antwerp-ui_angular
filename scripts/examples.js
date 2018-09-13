@@ -35,6 +35,7 @@ const updateRoutes = () => {
 		const route = `${snakeCase(package).toUpperCase()}_EXAMPLES_ROUTES`;
 		const moduleName = `${upperFirst(camelCase(package))}ExamplesModule`;
 
+		// TODO: investigate this further, importing from the fesm module seems to solve the path resolving issue but should not be required to make this work
 		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}/fesm2015/${package}';\n`;
 		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}/fesm2015/${package}';\n`;
 		moduleConfig += `	${moduleName},\n`;
