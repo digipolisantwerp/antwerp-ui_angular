@@ -18,12 +18,12 @@
   version "1.0.1-alpha.5"
   resolved "https://registry.yarnpkg.com/@acpaas-ui/js-notification-store/-/js-notification-store-1.0.1-alpha.5.tgz#3c4ed175c9b9c9623e55878cf61b8775f072c5f9"
 
-"@acpaas-ui/schematics@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@acpaas-ui/schematics/-/schematics-0.0.3.tgz#e2ec93d05d67570db449da9a85bf6659fa597a2e"
+"@acpaas-ui/schematics@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@acpaas-ui/schematics/-/schematics-0.0.4.tgz#cc58a8b0248d9e3b9c9b5c15e5b5fc44b6f6e5f1"
   dependencies:
-    "@angular-devkit/core" "^0.6.5"
-    "@angular-devkit/schematics" "^0.6.5"
+    "@angular-devkit/core" "~0.8.1"
+    "@angular-devkit/schematics" "~0.8.1"
     "@types/jasmine" "^2.6.0"
     "@types/node" "^8.0.31"
     jasmine "^2.8.0"
@@ -126,7 +126,7 @@
     rxjs "^6.0.0"
     source-map "^0.5.6"
 
-"@angular-devkit/core@0.6.8", "@angular-devkit/core@^0.6.5", "@angular-devkit/core@~0.6.5":
+"@angular-devkit/core@0.6.8", "@angular-devkit/core@~0.6.5":
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.6.8.tgz#3b09d97bd2588f0091df11921f7ed772431806aa"
   dependencies:
@@ -135,12 +135,28 @@
     rxjs "^6.0.0"
     source-map "^0.5.6"
 
-"@angular-devkit/schematics@0.6.8", "@angular-devkit/schematics@^0.6.5", "@angular-devkit/schematics@~0.6.5":
+"@angular-devkit/core@0.8.1", "@angular-devkit/core@~0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.8.1.tgz#b664d9965894a471686d74f92c55128ab74b8c09"
+  dependencies:
+    ajv "~6.4.0"
+    chokidar "^2.0.3"
+    rxjs "~6.2.0"
+    source-map "^0.5.6"
+
+"@angular-devkit/schematics@0.6.8", "@angular-devkit/schematics@~0.6.5":
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.6.8.tgz#6360a0271f1f422862bf932a03b3741e76ac5ff0"
   dependencies:
     "@angular-devkit/core" "0.6.8"
     rxjs "^6.0.0"
+
+"@angular-devkit/schematics@~0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.8.1.tgz#114c53cdbb0b5da7e10da3505d12f351114d24b7"
+  dependencies:
+    "@angular-devkit/core" "0.8.1"
+    rxjs "~6.2.0"
 
 "@angular-redux/store@7.1.1":
   version "7.1.1"
@@ -6028,6 +6044,12 @@ rxjs-compat@~6.1.0:
 rxjs@^6.0.0, rxjs@~6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.1.0.tgz#833447de4e4f6427b9cec3e5eb9f56415cd28315"
+  dependencies:
+    tslib "^1.9.0"
+
+rxjs@~6.2.0:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.2.2.tgz#eb75fa3c186ff5289907d06483a77884586e1cf9"
   dependencies:
     tslib "^1.9.0"
 
