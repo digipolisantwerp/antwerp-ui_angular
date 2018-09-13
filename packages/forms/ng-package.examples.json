@@ -1,8 +1,15 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../examples/avatar",
+  "dest": "../../examples/forms",
   "deleteDestPath": false,
   "lib": {
     "entryFile": "examples/index.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@a-ui/core",
+    "@acpaas-ui/js-date-utils",
+    "inputmask",
+    "lodash-es",
+    "ng2-ckeditor"
+  ]
 }

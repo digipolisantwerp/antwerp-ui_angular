@@ -5,7 +5,8 @@ import {
 	OnChanges,
 	Type,
 	ViewContainerRef,
-	ChangeDetectorRef
+	ChangeDetectorRef,
+	SimpleChanges
 } from '@angular/core';
 import { Cell } from '../../types/table.types';
 
@@ -23,8 +24,12 @@ export class TableCellComponent implements OnChanges {
 		private changeDetectionRef: ChangeDetectorRef
 	) { }
 
-	public ngOnChanges() {
-		if (this.component) {
+	public ngOnChanges(changes: SimpleChanges) {
+		if (!changes.component) {
+			return;
+		}
+
+		if (changes.component.currentValue !== changes.component.previousValue) {
 			this.loadComponent();
 		}
 	}
