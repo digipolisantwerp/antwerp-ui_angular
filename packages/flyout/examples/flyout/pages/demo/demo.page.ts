@@ -24,7 +24,7 @@ export class DemoPageComponent {
 `<aui-flyout-button
   icon="fa fa-user"
   label="Open flyout"
-  direction="left"
+  align="left"
   title="Click to open!"
   outline=true
   flyoutSize="small"

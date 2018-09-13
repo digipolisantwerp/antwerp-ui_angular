@@ -1,24 +1,40 @@
-# @acpaas-ui/flyout
-This module contains one service and four directives that extend your component with a dropdown / flyout functionality. 
+# @acpaas-ui/ngx-components/flyout
 
-## Installation
-
-Import component in **app.module.ts**
-
-```
-import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout'`;
-
-@NgModule({
-    imports: [
-        FlyoutModule
-    ]
-})
-
-export class AppModule {}
-```
+This module contains one service and four directives that extend your component with a dropdown / flyout functionality.
+There are three directives necessary to get the flyout functionality: `auiFlyout`, `auiFlyoutZone` and `auiFlyoutAction`. The `auiFlyoutClose` directive is optional, you can use that directive to add a close action or button to your flyout.
 
 ## Usage
-There are three directives necessary to get the flyout functionality: `auiFlyout`, `auiFlyoutZone` and `auiFlyoutAction`. The `auiFlyoutClose` directive is optional, you can use that directive to add a close action or button to your flyout.
+
+```javascript
+import 'FlyoutModule' from '@acpaas-ui/ngx-components/flyout'`;
+```
+
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Flyout module
+
+#### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() align: string;` | `left` | The alignment of the flyout-zone. This can be `left` or `right` |
+| `@Input() size: FlyoutSize;` | `auto` | By default a flyout doesn't have a fixed width and will wrap around its content. However, you can set an optional size (via string or FlyoutSize enum). Available options are `auto`, `small`, `medium`, `large` and `full`. |
+
+#### Example
+
+```
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
+
+@NgModule({
+	imports: [
+		FlyoutModule
+	]
+});
+
+export class AppModule {};`
+```
 
 ```
 <div auiFlyout size="small" align="left">
@@ -30,46 +46,61 @@ There are three directives necessary to get the flyout functionality: `auiFlyout
 </div>
 ```
 
-## auiFlyout
+### auiFlyout directive
+
+#### API
+
 This directive is the wrapper around the `auiFlyoutAction` and `auiFlyoutZone`. Without the wrapper, the flyout will not work. Use this directive on a wrapper html element, mostly a div.
 
-## auiFlyoutAction
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() align: string;` | `left` | The alignment of the flyout-zone. This can be `left` or `right` |
+| `@Input() size: FlyoutSize;` | `auto` | By default a flyout doesn't have a fixed width and will wrap around its content. However, you can set an optional size (via string or FlyoutSize enum). Available options are `auto`, `small`, `medium`, `large` and `full`. |
+| `@Input() toggleClick: boolean;` | `true` | Open/close the flyout by clicking on its host component. |
+| `@Input() activateOnFocus: boolean;` | `false` | Open the flyout by focusing on its host component. |
+| `@Output() opened: EventEmitter<any>;` | - | Callback for opened flyout |
+| `@Output() closed: EventEmitter<any>;` | - | Callback for closed flyout |
+
+#### Example
+
+```
+<!-- FlyoutSize enum example -->
+import { FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
+
+public sizes = FlyoutSize;
+```
+
+```
+<div auiFlyout [size]="sizes.Small" align="right" [toggleClick]="false" [activateOnFocus]="false">
+    <input type="text" auiFlyoutAction>Open flyout/>
+    <div auiFlyoutZone>
+        <p>Hello world!</p>
+    </div>
+</div>
+```
+
+### auiFlyoutAction directive
+
 Use this directive on a focusable element, like a button or an input field. This directive handles the flyout actions open and close.
 
-## auiFlyoutZone
-The content inside the html element or component with this directive will be displayed as a flyout. You can use a standard html element or you can use a custom component. 
+### auiFlyoutZone directive
+
+The content inside the html element or component with this directive will be displayed as a flyout. You can use a standard html element or you can use a custom component.
+
+#### Example
 
 ```
 <!-- Custom component example -->
-<div auiFlyout size="small" align"right">
+<div auiFlyout size="small" align="right">
     <button class="button" auiFlyoutAction>Welcome Jasper</button>
     <user-card auiFlyoutZone></user-card>
 </div>
 ```
 
-### Options
-
-#### align
-`string: left | right`: the alignment of the flyout-zone. By default left.
-
-#### size
-`FlyoutSize` : By default a flyout doesn't have a fixed width and will wrap around its content. However, you can set an optional size (via string or FlyoutSize enum). Available options are `auto`, `small`, `medium`, `large` and `full`. Default is `auto`.
-
-```
-E.g.
-
-// Controller
-import { FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
-public sizes = FlyoutSize;
-
-// Template
-<div auiFlyout [size]="sizes.Small">...</div>
-or
-<div auiFlyout size="small">...</div>
-```
-
 ## FlyoutService
-Use the `FlyoutService` to broadcast a close event to the available flyouts. 
+Use the `FlyoutService` to broadcast a close event to the available flyouts.
+
+#### Example
 
 ```
 import { FlyoutService } from '@acpaas-ui/ngx-components/flyout';
@@ -87,3 +118,7 @@ class demoComponent {
     }
 }
 ```
+
+## Contributing
+
+Visit our [Contribution Guidelines](./contribute.md) for more information on how to contribute.
