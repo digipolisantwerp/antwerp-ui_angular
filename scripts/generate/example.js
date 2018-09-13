@@ -1,5 +1,5 @@
 const commandLineArgs = require('command-line-args');
-const exec = require('./helpers/bash');
+const exec = require('../helpers/bash');
 
 const cmd = commandLineArgs([{
 	name: 'name',
@@ -13,7 +13,7 @@ if (!cmd.name) {
     process.exit(1);
 }
 
-exec(`npm run ng -- generate @acpaas-ui/schematics:package --name=${cmd.name}`)
+exec(`npm run ng -- generate @acpaas-ui/schematics:example --name=${cmd.name}`)
   .then(() => {
     process.exit();
   })

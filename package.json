@@ -14,7 +14,7 @@
   },
   "scripts": {
     "bootstrap": "node scripts/bootstrap.js",
-    "package": "node scripts/package.js",
+    "package": "node scripts/generate/package.js",
     "styleguide": "./node_modules/.bin/ng serve styleguide",
     "ng": "./node_modules/.bin/ng",
     "lint": "./node_modules/.bin/ng lint",
@@ -23,7 +23,7 @@
     "build": "node scripts/build.js",
     "postbuild": "node scripts/prepublish.js",
     "examples": "rimraf examples && node scripts/examples.js",
-    "example": "node scripts/examples.js",
+    "example": "node scripts/generate/example.js",
     "bump": "node scripts/version.js",
     "deploy": "npm run deploy:patch",
     "deploy:major": "npm run bump -- --major && npm run build",
