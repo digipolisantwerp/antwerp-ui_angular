@@ -139,7 +139,7 @@ cookieconsent@3.0.6
 MIT
 MIT
 
-lodash-es@4.17.10
+lodash-es@4.17.11
 MIT
 Copyright JS Foundation and other contributors <https://js.foundation/>
 
