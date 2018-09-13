@@ -35,15 +35,15 @@ import 'CodeSnippetModule' from '@acpaas-ui/ngx-components/code-snippet'`;
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-### Code-snippet list modules
+### Code snippet list modules
 
-### API
+#### API
 
 | Name         | Description | Documentations |
 | -----------  | ------ | -------------------------- |
-| `@Input() codeSnippet: string;` | `''` | Add your code-snippet here. |
-| `@Input() processMarkdown: boolean;` | `false` | When having some Markdown that contains code snippets. |
-| `@Input() scrollable: boolean;` | `true` | Boolean for when code-snippet should not have a horizontal scrollbar when the code-snippet is not wide enough. |
+| `@Input() codeSnippet: string;` | `''` | Add your code snippet here. |
+| `@Input() processMarkdown: boolean;` | `false` | When having some markdown that contains code snippets. |
+| `@Input() scrollable: boolean;` | `true` | Boolean for when code snippet should not have a horizontal scrollbar when the code snippet is not wide enough. |
 
 #### Example
 
@@ -97,8 +97,8 @@ public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
 ></aui-code-snippet>
 ```
 
-### Process Markdown with code snippets
-If you have some Markdown that contains code snippets, the component can also deal with that.
+### Process markdown with code snippets
+If you have some markdown that contains code snippets, the component can also deal with that.
 
 *Create a service to get the markdown (this is just an example of getting a local markdown file):*
 
@@ -137,16 +137,6 @@ constructor(
 ></aui-code-snippet>
 
 ```
-
-## Options
-
-#### processMarkdown
-
-`boolean`: `false` by default but if you need to include some Markdown containing a code snippet, you can set it to `true` and just add the content of the markdown file to `[codeSnippet]`.
-
-#### scrollable
-
-`boolean`: `true` by default. Change to option to false if the code-snippet should not have a horizontal scrollbar when the code-snippet is not wide enough.
 
 ## Contributing
 
