@@ -13,7 +13,8 @@ if (!cmd.name) {
     process.exit(1);
 }
 
-exec(`npm run ng -- generate @acpaas-ui/schematics:example --name=${cmd.name}`)
+// TODO: remove force flag once https://github.com/angular/angular-cli/issues/11337 is fixed
+exec(`npm run ng -- generate @acpaas-ui/schematics:example --name=${cmd.name} --force`)
   .then(() => {
     process.exit();
   })
