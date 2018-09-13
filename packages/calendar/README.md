@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/calendar
 
-A simple calendar component with a month, year and dececia view where you can easily navigate to a specific date.
+A simple calendar component with a month, year and decennia view where you can easily navigate to a specific date.
 
 ## Usage
 
