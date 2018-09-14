@@ -75,10 +75,10 @@ Bind this directive to a focusable element.
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Output() keyArrowUp: EventEmitter<any>;` | - | Callback for arrow up key |
-| `@Output() keyArrowDown: EventEmitter<any>;` | - | Callback for arrow down key |
-| `@Output() keyEnter: EventEmitter<any>;` | - | Callback for enter key |
-| `@Output() keyEscape: EventEmitter<any>;` | - | Callback for escape key |
+| `@Output() keyArrowUp: EventEmitter<any>;` | - | Callback for the arrow up key |
+| `@Output() keyArrowDown: EventEmitter<any>;` | - | Callback for the arrow down key |
+| `@Output() keyEnter: EventEmitter<any>;` | - | Callback for the enter key |
+| `@Output() keyEscape: EventEmitter<any>;` | - | Callback for the escape key |
 
 #### Example
 

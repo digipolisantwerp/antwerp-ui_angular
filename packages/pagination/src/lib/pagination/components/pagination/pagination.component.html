@@ -2,13 +2,13 @@
     <!-- Basic -->
     <ul class="m-pagination" [ngClass]="{'m-pagination--outline': styling === 'outlined' }" *ngIf="display === 'basic'">
         <li class="m-pagination__prev">
-            <a [ngClass]="{'is-disabled': currentPage <= 1 }" [attr.href]="currentPage > 1 ? '#' : null" id="pagination-{{ instanceId }}-prev-page" (click)="prev()" [attr.aria-label]= ariaPreviousLabel>
+            <a [ngClass]="{'is-disabled': currentPage <= 1 }" [href]="currentPage > 1 ? '#' : null" id="pagination-{{ instanceId }}-prev-page" (click)="prev()" [attr.aria-label]= ariaPreviousLabel>
                 <i aria-hidden="true" class="fa fa-angle-left"></i>
                 <span class="u-screen-reader-only">Previous</span>
             </a>
         </li>
         <li class="m-pagination__next">
-            <a [ngClass]="{'is-disabled': currentPage >= totalPages }" [attr.href]="currentPage < totalPages ? '#' : null" id="pagination-{{ instanceId }}-next-page" (click)="next()" [attr.aria-label]= ariaNextLabel>
+            <a [ngClass]="{'is-disabled': currentPage >= totalPages }" [href]="currentPage < totalPages ? '#' : null" id="pagination-{{ instanceId }}-next-page" (click)="next()" [attr.aria-label]= ariaNextLabel>
                 <i aria-hidden="true" class="fa fa-angle-right"></i>
                 <span class="u-screen-reader-only">Next</span>
             </a>
@@ -18,14 +18,14 @@
     <!-- Text -->
     <ul class="m-pagination" [ngClass]="{'m-pagination--outline': styling === 'outlined' }" *ngIf="display === 'text'">
         <li class="m-pagination__prev">
-            <a [ngClass]="{'is-disabled': currentPage <= 1 }" [attr.href]="currentPage > 1 ? '#' : null" id="pagination-{{ instanceId }}-prev-page" (click)="prev()" [attr.aria-label]= ariaPreviousLabel>
+            <a [ngClass]="{'is-disabled': currentPage <= 1 }" [href]="currentPage > 1 ? '#' : null" id="pagination-{{ instanceId }}-prev-page" (click)="prev()" [attr.aria-label]= ariaPreviousLabel>
                 <i aria-hidden="true" class="fa fa-angle-left"></i>
                 <span class="u-screen-reader-only">Previous</span>
             </a>
         </li>
         <li class="m-pagination__label">{{ currentPage }} - {{ totalPages }}</li>
         <li class="m-pagination__next">
-            <a [ngClass]="{'is-disabled': currentPage >= totalPages }" [attr.href]="currentPage < totalPages ? '#' : null" id="pagination-{{ instanceId }}-next-page" (click)="next()" [attr.aria-label]= ariaNextLabel>
+            <a [ngClass]="{'is-disabled': currentPage >= totalPages }" [href]="currentPage < totalPages ? '#' : null" id="pagination-{{ instanceId }}-next-page" (click)="next()" [attr.aria-label]= ariaNextLabel>
                 <i aria-hidden="true" class="fa fa-angle-right"></i>
                 <span class="u-screen-reader-only">Next</span>
             </a>
@@ -35,7 +35,7 @@
     <!-- Numbers -->
     <ul class="m-pagination" [ngClass]="{'m-pagination--outline': styling === 'outlined' }" *ngIf="display === 'numbers'">
         <li class="m-pagination__prev">
-            <a [ngClass]="{'is-disabled': currentPage <= 1 }" [attr.href]="currentPage > 1 ? '#' : null" id="pagination-{{ instanceId }}-prev-page" (click)="prev()" [attr.aria-label]= ariaPreviousLabel>
+            <a [ngClass]="{'is-disabled': currentPage <= 1 }" [href]="currentPage > 1 ? '#' : null" id="pagination-{{ instanceId }}-prev-page" (click)="prev()" [attr.aria-label]= ariaPreviousLabel>
                 <i aria-hidden="true" class="fa fa-angle-left"></i>
                 <span class="u-screen-reader-only">Previous</span>
             </a>
@@ -44,7 +44,7 @@
             <a [ngClass]="{'is-active': number === currentPage + '' }" href="#" id="pagination-{{ instanceId }}-button-{{ i }}" (click)="onUpdate(number)" [attr.aria-label]="'Pagina ' + number" [attr.aria-current]="number === currentPage + '' ? 'page' : null">{{ number }}</a>
         </li>
         <li class="m-pagination__next">
-            <a [ngClass]="{'is-disabled': currentPage >= totalPages }" [attr.href]="currentPage < totalPages ? '#' : null" id="pagination-{{ instanceId }}-next-page" (click)="next()" [attr.aria-label]= ariaNextLabel>
+            <a [ngClass]="{'is-disabled': currentPage >= totalPages }" [href]="currentPage < totalPages ? '#' : null" id="pagination-{{ instanceId }}-next-page" (click)="next()" [attr.aria-label]= ariaNextLabel>
                 <i aria-hidden="true" class="fa fa-angle-right"></i>
                 <span class="u-screen-reader-only">Next</span>
             </a>
