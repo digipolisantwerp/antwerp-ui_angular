@@ -20,6 +20,16 @@ const buildExample = package => () => {
 	return exec(`ng build ${package} -c examples`);
 };
 
+const rimRafExamples = () => {
+	if (!process.env.example) {
+		exec(`rimraf examples`);
+
+		console.log(colors.green('Examples folder cleaned.'));
+	}
+
+	return Promise.resolve();
+}
+
 const updateRoutes = () => {
 	// TODO: fix lazy imports if this ever gets fixed: https://github.com/angular/angular-cli/issues/6373
 	console.log(colors.yellow('Updating styleguide routes...'));
@@ -67,6 +77,7 @@ const updateExamplesPackage = () => {
 }
 
 promiseQueue([
+	rimRafExamples,
 	...packages.filter(package => {
 		return (!process.env.example || (process.env.example && package === process.env.example))
 	}).map(buildExample),

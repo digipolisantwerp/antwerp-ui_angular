@@ -147,7 +147,7 @@ npm run examples
 To update just one examples, i.e. find a specific example modules and add it to the styleguide, run:
 
 ```bash
-example=<package> npm run example
+example=<package> npm run examples
 ```
 
 ### Styleguide routes

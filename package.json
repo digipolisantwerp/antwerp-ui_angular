@@ -22,7 +22,7 @@
     "e2e": "./node_modules/.bin/ng e2e",
     "build": "node scripts/build.js",
     "postbuild": "node scripts/prepublish.js",
-    "examples": "rimraf examples && node scripts/examples.js",
+    "examples": "node scripts/examples.js",
     "example": "node scripts/generate/example.js",
     "bump": "node scripts/version.js",
     "deploy": "npm run deploy:patch",
