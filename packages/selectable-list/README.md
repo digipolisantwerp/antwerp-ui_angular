@@ -84,7 +84,7 @@ Bind this directive to a focusable element.
 
 In the following example we bind the `auiSelectableActions` directive to a button (the focusable element). The callbacks of `keyArrowDown` and `keyArrowUp` let us manipulate the value of `index` so we can navigate with our arrow keys through the selectable list. With `keyEnter` we define the selected value and `keyEscape` makes sure the action can also be cancelled.
 
-> For this example to work you'll need to know how to work with the [ACPaaS UI Flyout](./packages/flyout/README.md). Also see the [ACPaaS UI Auto-complete](./packages/forms/src/lib/auto-complete/README.md).
+> For this example to work you'll need to know how to work with the [ACPaaS UI Flyout](../flyout/README.md). Also see the [ACPaaS UI Auto-complete](../forms/src/lib/auto-complete/README.md).
 
 ```typescript
 import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
@@ -129,4 +129,4 @@ public onKeyEscape() {
 
 ## Contributing
 
-Visit our [Contribution Guidelines](./contribute.md) for more information on how to contribute.
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
