@@ -1,50 +1,57 @@
-# @acpaas-ui/logo
-The @acpaas-ui/logo generates an image wrapped in an anchor.
+# @acpaas-ui/ngx-components/logo
 
-## Dependencies
-/
-
-## Installation
-
-```
-$ npm install @acpaas-ui/logo
-```
-
-Import component in **app.module.ts**
-
-```
-import { LogoModule } from '@acpaas-ui/logo';
-
-@NgModule({
-  imports: [
-    LogoModule
-  ],
-  declarations: [
-  ],
-  providers: [],
-  bootstrap: []
-})
-export class AppModule {
-}
-```
+This module displays an image wrapped in a link.
 
 ## Usage
 
+```typescript
+import { LogoModule } from '@acpaas-ui/ngx-components/logo'`;
 ```
-<aui-logo [title]="'Title for logo'" [src]="'/path/to/logo.svg'" [descriptor]="descriptorObject"></aui-logo>
+
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Selectable list module
+
+#### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() title: string;` | `'Placeholder'` | Used for alt and title attributes on img and a tags. |
+| `@Input() src: string;` | `'https://place-hold.it/192x192'` | Path to image. |
+| `@Input() link: string;` | `'/'` | URL address to go to when the logo is clicked. |
+| `@Input() onClick: Function;` | - | Function to execute when clicked on the logo. Note that this will not automatically override the link behaviour. |
+
+#### Example
+
+```
+import { LogoModule } from '@acpaas-ui/ngx-components/logo';
+
+@NgModule({
+	imports: [
+		LogoModule
+	]
+});
+
+export class AppModule {};
 ```
 
-### Options
+```
+public imgTitle = 'Title for logo';
+public imgSrc = 'https://robohash.org/acpaas-ui';
+public imgLink = '#';
 
-#### title
-*string* : Used for alt and title on img and a -tags
+public imgClicked(event) {
+	event.preventDefault();
+	alert('Logo was clicked');
+}
+```
 
-#### src
-*string* : Path to image
+```
+<aui-logo [src]="imgSrc" [title]="imgTitle" [link]="imgLink" [onClick]="imgClicked"></aui-logo>
+```
 
-#### link
-*string* : URL address to go to when the logo is clicked
+## Contributing
 
-## Descriptor
-
-If you want to add a descriptor logo, you can simply use another instance of the aui-logo component.
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
