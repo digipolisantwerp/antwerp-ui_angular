@@ -5,7 +5,7 @@ There are three directives necessary to get the flyout functionality: `auiFlyout
 
 ## Usage
 
-```javascript
+```typescript
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout'`;
 ```
 
@@ -24,7 +24,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 #### Example
 
-```
+```typescript
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
 @NgModule({
@@ -36,7 +36,7 @@ import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 export class AppModule {};`
 ```
 
-```
+```html
 <div auiFlyout size="small" align="left">
     <button auiFlyoutAction>Open flyout</button>
     <div auiFlyoutZone>
@@ -63,14 +63,15 @@ This directive is the wrapper around the `auiFlyoutAction` and `auiFlyoutZone`. 
 
 #### Example
 
-```
-<!-- FlyoutSize enum example -->
+**FlyoutSize enum example**
+
+```typescript
 import { FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
 
 public sizes = FlyoutSize;
 ```
 
-```
+```html
 <div auiFlyout [size]="sizes.Small" align="right" [toggleClick]="false" [activateOnFocus]="false">
     <input type="text" auiFlyoutAction>Open flyout/>
     <div auiFlyoutZone>
@@ -89,8 +90,9 @@ The content inside the html element or component with this directive will be dis
 
 #### Example
 
-```
-<!-- Custom component example -->
+**Custom component example**
+
+```html
 <div auiFlyout size="small" align="right">
     <button class="button" auiFlyoutAction>Welcome Jasper</button>
     <user-card auiFlyoutZone></user-card>
@@ -102,11 +104,11 @@ Use the `FlyoutService` to broadcast a close event to the available flyouts.
 
 #### Example
 
-```
+```typescript
 import { FlyoutService } from '@acpaas-ui/ngx-components/flyout';
 ```
 
-```
+```typescript
 class demoComponent {
     constructor(private flyoutService: FlyoutService) {}
 

@@ -5,7 +5,7 @@ You can use `FlyoutModule` to extend a component or use the `FlyoutButtonModule`
 
 ## Usage
 
-```javascript
+```typescript
 import {
     FlyoutModule,
     FlyoutButtonModule

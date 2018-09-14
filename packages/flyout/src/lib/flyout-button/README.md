@@ -7,7 +7,7 @@ This module has the FlyoutModule already implemented on a button, giving it a dr
 
 ## Usage
 
-```javascript
+```typescript
 import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout'`;
 ```
 
@@ -31,7 +31,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 #### Example
 
-```
+```typescript
 import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout';
 
 @NgModule({
@@ -43,7 +43,7 @@ import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout';
 export class AppModule {};`
 ```
 
-```
+```html
 <div auiFlyout size="small" align="left">
     <button auiFlyoutAction>Open flyout</button>
     <div auiFlyoutZone>
@@ -53,7 +53,7 @@ export class AppModule {};`
 </div>
 ```
 
-```
+```html
 	<aui-flyout-button
 		icon="fa fa-user"
 		label="Open flyout"
@@ -68,15 +68,15 @@ export class AppModule {};`
 	</aui-flyout-button>
 ```
 
-```
-<!-- FlyoutButtonSize enum example -->
+**FlyoutButtonSize enum example**
 
-// Controller
+```typescript
 import { FlyoutButtonSize } from '@acpaas-ui/ngx-components/flyout';
 
 public sizes = FlyoutButtonSize;
+```
 
-// Template
+```html
 <aui-flyout-button [size]="sizes.Small">...</aui-flyout-button>
 ```
 
