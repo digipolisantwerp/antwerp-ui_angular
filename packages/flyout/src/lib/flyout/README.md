@@ -123,4 +123,4 @@ class demoComponent {
 
 ## Contributing
 
-Visit our [Contribution Guidelines](./contribute.md) for more information on how to contribute.
+Visit our [Contribution Guidelines](../../../../../CONTRIBUTING.md) for more information on how to contribute.
