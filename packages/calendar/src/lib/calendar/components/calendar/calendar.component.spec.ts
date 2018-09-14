@@ -248,10 +248,16 @@ describe('The Calendar Component', () => {
 			calendar.activeView = views.CALENDAR_VIEW_DECENNIA;
 			fixture.detectChanges();
 
-			calendar.pickDate(new Date());
+			const date = new Date(1981, 4);
+			calendar.pickDate(date);
 
-			expect(calendar.selectDate.emit).toHaveBeenCalled();
+			expect(calendar.selectDate.emit).toHaveBeenCalledWith({
+				date: date,
+				complete: false,
+			});
 			expect(calendar.switchView).toHaveBeenCalled();
+			expect(calendar.activeDate).toEqual(date);
+			expect(calendar.selectedDate).not.toEqual(date);
 		});
 	});
 });
