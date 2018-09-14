@@ -5,6 +5,16 @@ import { Component } from '@angular/core';
 })
 export class ProgressBarDemoPageComponent {
 
+	public codeExampleJS = `import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
+
+@NgModule({
+  imports: [
+    ProgressBarModule
+  ]
+});
+
+export class AppModule {};`;
+
 	public codeExampleHTML =
 `<aui-progress-bar
 	[value]="uploadProgress"
