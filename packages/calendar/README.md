@@ -1,17 +1,31 @@
-# @acpaas-ui/calendar
-The `@acpaas-ui/calendar` package exports a `CalendarComponent` that enables the user to switch between a *month*, *year*, and *decennia* view.
+# @acpaas-ui/ngx-components/calendar
 
-## Dependencies
-* `@acpaas-ui/datehelper`
+A simple calendar component with a month, year and decennia view where you can easily navigate to a specific date.
 
-## Installation
-```
-npm install @acpaas-ui/calendar --save
+## Usage
+
+```typescript
+import { CalendarModule } from '@acpaas-ui/ngx-components/calendar'`;
 ```
 
-Import the `CalendarModule` in **app.module.ts** and provide some (optional) weekday and month labels via the `forChild` method:
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() selectedDate: Date;` | - | The date the user selected. Will be used as a base for the different calendar views. |
+| `@Input() range: DateRange;` | - | A date range to decide which dates are available for selection. |
+| `@Input() weekdayLabels: WeekdayLabelsConfig;` | - | Override the default weekday labels. Can also be done in the `forChild` method. |
+| `@Input() monthLabels: MonthLabelsConfig;` | - | Override the default month labels. Can also be done in the `forChild` method. |
+| `@Output() selectDate: EventEmitter<any>` | - | Will emit the selected date and completion state (the date is complete when a day is picked). |
+
+### Example
+
 ```
-import { CalendarModule } from '@acpaas-ui/calendar';
+import { CalendarModule } from '@acpaas-ui/ngx-components/calendar;'
 
 @NgModule({
     imports: [
@@ -21,35 +35,32 @@ import { CalendarModule } from '@acpaas-ui/calendar';
             'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
         ])
     ]
-})
+});
 
-export class AppModule {}
+export class AppModule {};
 ```
 
-## Usage
-The `CalendarModule` exposes 4 components and a service to create different calendar views. The main `CalendarComponent` allows switching between the views based on the selected date. The `CalendarMonthComponent`, `CalendarYearComponent` and `CalendarDecenniaComponent` can be used separately as well. The `CalendarService` uses the `@acpaas-ui/datehelper` package to generate months and calculate ranges.
-
-### Options
-* `selectedDate (Date)`: the date the user selected, will be used as a base for the different calendar views
-* `range (DateRange)`: a date range to decide which dates are available for selection (see the `@acpaas-ui/datehelper` package docs for more info on date ranges)
-* `weekdayLabels (string[])`: override the modules/default weekday labels
-* `monthLabels (string[])`: override the modules/default month labels
-* `selectDate (EventEmitter)`: will emit the selected date and completion state (the date is complete when a day is picked)
-
-You can override the month/weekday labels set in the `forChild` method on the `CalendarComponent`, as well as on the `YearComponent` and `MonthComponent` individually.
-
-### Usage
 ```
-public selectedDate: Date = new Date();
+import { DateRange } from '@acpaas-ui/js-date-utils';
+
+public clickedDate: Date = new Date();
 public range: DateRange = [1, 6];
 
-selectDate(result) {
-    if (result.complete) {
-        this.dateService.SendDate(result.date);
+selectDate(event) {
+    if (event.complete) {
+        this.clickedDate = event.date;
     }
 }
-
-...
-
-<aui-calendar [selectedDate]="selectedDate" [range]="range" (selectDate)="selectDate($event)"></aui-calendar>
 ```
+
+```
+<aui-calendar
+    [range]="range"
+    [selectedDate]="clickedDate"
+    (selectDate)="selectDate($event)">
+</aui-calendar>
+```
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
