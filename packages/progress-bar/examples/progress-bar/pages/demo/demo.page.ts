@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 })
 export class ProgressBarDemoPageComponent {
 
+	public uploadProgress = 20;
 	public codeExampleJS = `import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 
 @NgModule({

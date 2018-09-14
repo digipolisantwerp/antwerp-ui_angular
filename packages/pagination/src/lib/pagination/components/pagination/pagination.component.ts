@@ -41,7 +41,11 @@ export class PaginationComponent implements OnChanges {
 	}
 
 	public onUpdate(i: number|string) {
-		this.update.emit(parseInt(i as string, 10)); // input from numbers array is a string
+		const parsedValue = parseInt(i as string, 10); // input from numbers array is a string
+		if (parsedValue) {
+			this.update.emit(parsedValue);
+		}
+
 		return false; //  prevent the href being followed
 	}
 
