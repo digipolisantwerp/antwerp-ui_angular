@@ -11,7 +11,7 @@ export class PaginationDemoPageComponent implements OnInit {
 		{ name: 'Superman' },
 		{ name: 'Iron man' },
 		{ name: 'Wolverine' },
-		{ name: 'The Hulk' },
+		{ name: 'Wonder woman' },
 		{ name: 'Deadpool' },
 	];
 	public visibleHeroes: any[];
@@ -35,7 +35,7 @@ private heroes = [
 	{ name: 'Superman' },
 	{ name: 'Iron man' },
 	{ name: 'Wolverine' },
-	{ name: 'The Hulk' },
+	{ name: 'Wonder woman' },
 	{ name: 'Deadpool' }
 ];
 public visibleHeroes: any[];

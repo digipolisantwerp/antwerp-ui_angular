@@ -48,7 +48,7 @@ private heroes = [
     { name: 'Superman' },
     { name: 'Iron man' },
     { name: 'Wolverine' },
-    { name: 'The Hulk' },
+    { name: 'Wonder woman' },
     { name: 'Deadpool' }
 ];
 public visibleHeroes: any[];
@@ -82,4 +82,4 @@ private selectHeroes() {
 
 ## Contributing
 
-Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
+Visit our [Contribution Guidelines](../../../../../CONTRIBUTING.md) for more information on how to contribute.
