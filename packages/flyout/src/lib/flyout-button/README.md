@@ -1,88 +1,85 @@
-# @acpaas-ui/flyout-button
+# @acpaas-ui/ngx-components/flyout
+
+This module has the FlyoutModule already implemented on a button, giving it a dropdown / flyout functionality.
 
 ## Dependencies
-- @acpaas-ui/flyout
-
-## Installation
-
-```
-$ npm install @acpaas-ui/flyout-button --save
-```
-
-Import component in **app.module.ts**
-
-```
-import { FlyoutButtonModule } from '@acpaas-ui/flyout-button';
-
-@NgModule({
-  imports: [
-    FlyoutButtonModule
-  ],
-  declarations: [
-  ],
-  providers: [],
-  bootstrap: []
-})
-export class AppModule {
-}
-```
+* `@acpaas-ui/ngx-components/flyout`
 
 ## Usage
 
-```
-<aui-flyout-button icon="fa fa-user" label="Hello flyout button label" direction="left" title="Hello flyout button title">
-  <p>Hello flyout button content</p>
-</aui-flyout-button>
+```typescript
+import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout'`;
 ```
 
-### Options
+## Documentation
 
-#### title
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-`string` : The title for the flyout button
+### Flyout button module
 
-#### label
+#### API
 
-`string` : The label for the flyout button
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() align: string;` | `'left'` | The alignment of the flyout-zone. This can be `'left'` or `'right'` |
+| `@Input() icon: string;` | empty | Add a Font Awesome icon to the button. |
+| `@Input() label: string;` | empty | Add a label to the button. |
+| `@Input() title: string;` | empty | Add a title attribute to the button. |
+| `@Input() buttonSize: FlyoutButtonSize;` | `FlyoutButtonSize.Auto` | Defines the size of the flyout button, use it with a string or with the ButtonSize enum. Available options are `FlyoutButtonSize.Tiny`, `FlyoutButtonSize.Small`, `FlyoutButtonSize.Regular` and `FlyoutButtonSize.Large`. |
+| `@Input() size: FlyoutSize;` | `FlyoutSize.Auto` | By default a flyout doesn't have a fixed width and will wrap around its content. However, you can set an optional size (via string or FlyoutSize enum). Available options are `FlyoutSize.Auto`, `FlyoutSize.Small`, `FlyoutSize.Medium`, `FlyoutSize.Large` and `FlyoutSize.Full`. |
+| `@Input() outline: boolean;` | `false` | Give the button a outlined styling. |
 
-#### icon
+#### Example
 
-`string` : The icon class name(s) for the flyout button (For example font-awesome: fa fa-user)
+```typescript
+import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout';
 
-#### direction
+@NgModule({
+	imports: [
+		FlyoutButtonModule
+	]
+});
 
-`string` : The direction for the flyout button. (Default right)
-
+export class AppModule {};`
 ```
-    +------+    +-------+
-    | LEFT |    | RIGHT |
-+---+------+    +-------+----+
-|          |    |            |
-|          |    |            |
-+----------+    +------------+
+
+```html
+<div auiFlyout size="small" align="left">
+    <button auiFlyoutAction>Open flyout</button>
+    <div auiFlyoutZone>
+        <p>Hello world!</p>
+        <button auiFlyoutClose>Close flyout</button>
+    </div>
+</div>
 ```
 
-#### outline
-
-`boolean` : Whether the button is outlined or not, default is `false`
-
-#### flyoutSize
-
-`string` : Defines the size of the flyout.
-
-#### buttonSize
-
-`ButtonSize` : Defines the size of the flyout button, use it with a string or with the ButtonSize enum. Available options are `tiny`, `small`, `regular` and `large`.
-
+```html
+	<aui-flyout-button
+		icon="fa fa-user"
+		label="Open flyout"
+		align="right"
+		title="Click to open!"
+		outline=true
+		flyoutSize="small"
+		buttonSize="large">
+		<div class="u-margin">
+			<p>Hello world!</p>
+		</div>
+	</aui-flyout-button>
 ```
-e.g.
 
-// Controller
-import { ButtonSize } from '@acpaas-ui/flyout-button';
-public sizes = ButtonSize;
+**FlyoutButtonSize enum example**
 
-// Template
+```typescript
+import { FlyoutButtonSize } from '@acpaas-ui/ngx-components/flyout';
+
+public sizes = FlyoutButtonSize;
+```
+
+```html
 <aui-flyout-button [size]="sizes.Small">...</aui-flyout-button>
-or
-<aui-flyout-button size="small">...</aui-flyout-button>
 ```
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../../../../CONTRIBUTING.md) for more information on how to contribute.

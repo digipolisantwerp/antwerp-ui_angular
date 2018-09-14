@@ -6,7 +6,7 @@ The functionality can be extended by adding the `auiSelectableActions` directive
 ## Usage
 
 ```typescript
-import 'SelectableListModule' from '@acpaas-ui/ngx-components/selectable-list'`;
+import { SelectableListModule } from '@acpaas-ui/ngx-components//selectable-list'`;
 ```
 
 ## Documentation
@@ -39,8 +39,8 @@ import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list'
 
 export class AppModule {};`
 ```
-
 ```typescript
+```
 public index = 0;
 
 public heroes = [
