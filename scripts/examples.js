@@ -1,10 +1,9 @@
 const { resolve, sep } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
+const { writeFileSync } = require('fs');
 const colors = require('colors');
 const camelCase = require('lodash.camelcase');
-const upperFirst = require('lodash.upperFirst');
-const snakeCase = require('lodash.snakeCase');
-
+const upperFirst = require('lodash.upperfirst');
+const snakeCase = require('lodash.snakecase');
 
 const { getDirectories } = require('./helpers/dir');
 const promiseQueue = require('./helpers/queue');
@@ -39,7 +38,7 @@ const updateRoutes = () => {
 		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		moduleConfig += `	${moduleName},\n`;
-		routeConfig += `	{ path: '${package}', children: ${route} },\n`;
+		routeConfig += `	{ path: '${package}', children: ${route}, title: '${upperFirst(package.replace(/-/g, ' '))}', },\n`;
 	});
 
 	writeFileSync(srcModules, `${importConfigModules}\nexport const ExamplesModules = [\n${moduleConfig}];\n`, { encoding: 'utf-8' });
@@ -51,7 +50,9 @@ const updateRoutes = () => {
 };
 
 promiseQueue([
-	...packages.map(buildExample),
+	...packages.filter(package => {
+		return (!process.env.example || (process.env.example && package === process.env.example))
+	}).map(buildExample),
 	updateRoutes,
 ])
 	.then(() => {

@@ -1,8 +1,12 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../examples/avatar",
+  "dest": "../../examples/code-snippet",
   "deleteDestPath": false,
   "lib": {
     "entryFile": "examples/index.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "angular2-highlight-js",
+    "marked"
+  ]
 }

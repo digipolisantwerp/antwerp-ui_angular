@@ -2,9 +2,22 @@
 
 .p-modules {
 	display: flex;
+	flex-direction: column;
 
-	nav {
-		margin-right: 3 * $spacer;
-		width: 10 * $spacer;
+	> nav {
+		flex: 0 0 calc(100% / 4);
+		margin-bottom: $spacer-lg;
+	}
+
+	> div {
+		overflow-x: auto;
+	}
+
+	@include at($screen-sm) {
+		flex-direction: row;
+
+		> nav {
+			margin-right: $spacer-lg;
+		}
 	}
 }
