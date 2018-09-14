@@ -18,12 +18,12 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() className;` | `''` | A custom classname to add to the avatar. |
-| `@Input() icon: string;` | - | Renders an icon, font-awesome is used in this example. |
+| `@Input() className: string;` | `''` | A custom classname to add to the avatar. |
+| `@Input() icon: string;` | - | CSS class for rendering an icon, Font Awesome is used in this example. |
 | `@Input() image: string;` | - | URL to image src, renders an image. |
 | `@Input() letter: string;` | - | Renders a string (letter). |
 | `@Input() size: sizes;` | `sizes.R` | The size of the avatar. This can be `sizes.R`) (regular, default, `sizes.S` (small), `sizes.M` (medium) or `sizes.L` (large) |
-| `@Input() title;` | `''` | The title for the avatar. |
+| `@Input() title: string;` | `''` | The title for the avatar. |
 
 #### Example
 
