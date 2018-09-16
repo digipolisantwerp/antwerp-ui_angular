@@ -3,8 +3,6 @@
 [![acpaas-ui-angular-build]][acpaas-ui-angular-travis]
 [![ngx-components-status]][ngx-components-package]
 
-**This documentation is work-in-progress!**
-
 ## Introduction
 
 Antwerp City Platform as a Service User Interface (ACPaas UI) is a **component interface library** for building user interfaces and responsive web apps. It's designed to provide developers with functionality en UI/UX patterns that matches the Antwerpen styleguide.
@@ -18,43 +16,61 @@ This library is part of [ACPaaS UI][acpaas-ui].
 | Schematics        | ES5+       | [![acpaas-ui-schematics-github]][acpaas-ui-schematics] |
 | Javascript        | ES5+       | [![acpaas-ui-js-github]][acpaas-ui-js] |
 | Angular           | Angular 6+ | [![acpaas-ui-angular-github]][acpaas-ui-angular] |
-| React             | React 16+  | [acpaas-ui-react] |
-| VueJS             | TBA        | TBA  |
+| React             | React 16+  | [![acpaas-ui-react-github]][acpaas-ui-react] |
+
+## Getting Started
+
+Start a new Angular app.
+
+```sh
+npm install -g @angular/cli
+ng new my-app --style=scss
+cd my-app
+npm install @acpaas-ui/ngx-components
+```
+
+Edit styles.scss to import the branding look & feel.
+
+```scss
+@import url("https://cdn.antwerpen.be/core_branding_scss/2.3.0/main.min.css");
+```
+
+Then start using the components in your pages. Look at the component documentation below to learn how to use each component.
+
+> To learn more about using the branding look & feel, check the [core branding guide][branding-core-guide]. Note that the [core branding][branding-core] contains the Antwerp logo and fonts, which are subject to a usage restriction. For use outside of apps for the city of Antwerp you can use [acpaas branding][branding-acpaas] instead.
 
 ## Documentation
 
-To check out [live examples]() and docs, visit [acpaas-ui.digipolis.be/ui-components][acpaas-ui-components].
+Check out our [live examples][acpaas-ui-angular-styleguide] or visit the [ACPaaS UI site][acpaas-ui].
 
-## Library Contents
+This library contains the following components:
 
 | Name           | Description                              | URL                                                       |
 | -------------- | ---------------------------------------- | --------------------------------------------------------- |
-| agenda         | TODO                                     | [Documentation](./packages/agenda/README.md)              |
-| analytics      | TODO                                     | [Documentation](./packages/analytics/README.md)           |
-| avatar         | TODO                                     | [Documentation](./packages/avatar/README.md)              |
-| calendar       | TODO                                     | [Documentation](./packages/calendar/README.md)            |
-| code-snippet   | TODO                                     | [Documentation](./packages/code-snippet/README.md)        |
-| context        | TODO                                     | [Documentation](./packages/context/README.md)             |
-| flyout         | TODO                                     | [Documentation](./packages/flyout/README.md)              |
-| forms          | TODO                                     | [Documentation](./packages/forms/README.md)               |
-| layout         | TODO                                     | [Documentation](./packages/layout/README.md)              |
-| localstorage   | TODO                                     | [Documentation](./packages/localstorage/README.md)        |
-| logo           | TODO                                     | [Documentation](./packages/logo/README.md)                |
-| map            | TODO                                     | [Documentation](./packages/map/README.md)                 |
-| notifications  | TODO                                     | [Documentation](./packages/notifications/README.md)       |
-| pagination     | TODO                                     | [Documentation](./packages/pagination/README.md)          |
-| progress-bar   | TODO                                     | [Documentation](./packages/progress-bar/README.md)        |
-| selectable-list| TODO                                     | [Documentation](./packages/selectable-list/README.md)     |
-| table          | TODO                                     | [Documentation](./packages/table/README.md)               |
-| utils          | TODO                                     | [Documentation](./packages/utils/README.md)               |
+| agenda         | Calendar to display events               | [Documentation](./packages/agenda/README.md)              |
+| analytics      | Google Analytics integration             | [Documentation](./packages/analytics/README.md)           |
+| avatar         | User avatar icon                         | [Documentation](./packages/avatar/README.md)              |
+| calendar       | Calendar to select dates                 | [Documentation](./packages/calendar/README.md)            |
+| code-snippet   | Snippet of source code                   | [Documentation](./packages/code-snippet/README.md)        |
+| context        | Set meta tags for SEO                    | [Documentation](./packages/context/README.md)             |
+| flyout         | Reveal additional content                | [Documentation](./packages/flyout/README.md)              |
+| forms          | Assorted form fields                     | [Documentation](./packages/forms/README.md)               |
+| layout         | Assorted page layout components          | [Documentation](./packages/layout/README.md)              |
+| localstorage   | Interface with localstorage              | [Documentation](./packages/localstorage/README.md)        |
+| logo           | Logo icon                                | [Documentation](./packages/logo/README.md)                |
+| map            | Leaflet-based map                        | [Documentation](./packages/map/README.md)                 |
+| notifications  | Show user notifications                  | [Documentation](./packages/notifications/README.md)       |
+| pagination     | Pagination control                       | [Documentation](./packages/pagination/README.md)          |
+| progress-bar   | Progress bar control                     | [Documentation](./packages/progress-bar/README.md)        |
+| selectable-list| List control with selectable items       | [Documentation](./packages/selectable-list/README.md)     |
+| table          | Interactive table                        | [Documentation](./packages/table/README.md)               |
+| utils          | Assorted helpers                         | [Documentation](./packages/utils/README.md)               |
 
 ## Questions
 
-For questions and support please use [StackOverflow Issues][stackoverflow-issues]. The issue list of this repo is **exclusively** for bug reports and feature requests.
+For questions and support please ask a question on the [#acpaas-ui slack channel][acpaas-ui-slack].
 
-## Issues
-
-Please make sure to fill in the issue template when opening an issue. Issues not conforming to the guidelines may be closed immediately.
+If you stumble across a bug or missing feature, feel free to [report an issue][acpaas-ui-angular-issues]. Please fill out the issue template completely when [opening an issue][acpaas-ui-angular-issues]. This will help us get to your issue sooner.
 
 ## Changelog
 
@@ -62,30 +78,19 @@ Detailed changes for each release are documented in the [changelog](./CHANGELOG.
 
 ## Contributing
 
-Please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request.
+Your contributions are most welcome as pull requests, both code changes and documentation updates. However, to keep a high quality standard, please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request.
 
-Thank you to all the people who already contributed to ACPaaS UI!
-
-**List of contributors here**
-
-## Stay In Touch
-
-- [Twitter]()
-- [Slack]()
-- [Blog]()
+Thank you to all the people [who already contributed][acpaas-ui-angular-contributors] to ACPaaS UI!
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](./LICENSE.md)
 
 Copyright (c) 2016-present, Digipolis
 
 <!-- Generic Links -->
 [acpaas-ui]: https://acpaas-ui.digipolis.be
-[acpaas-ui-components]: https://acpaas-ui.digipolis.be/ui-components
-
-<!-- StackOverflow -->
-[stackoverflow-issues]: https://stackoverflow.com/questions/tagged/acpaas-ui
+[acpaas-ui-slack]: https://dgpls.slack.com/messages/C4M60PQJF
 
 <!-- Travis -->
 [acpaas-ui-angular-build]: https://img.shields.io/travis/digipolisantwerp/acpaas-ui_angular.svg
@@ -97,12 +102,19 @@ Copyright (c) 2016-present, Digipolis
 [acpaas-ui-schematics]: https://github.com/digipolisantwerp/acpaas-ui_schematics
 [acpaas-ui-js]: https://github.com/digipolisantwerp/acpaas-ui_js
 [acpaas-ui-angular]: https://github.com/digipolisantwerp/acpaas-ui_angular
+[acpaas-ui-angular-styleguide]: https://digipolisantwerp.github.io/acpaas-ui_angular
+[acpaas-ui-angular-issues]: https://github.com/digipolisantwerp/acpaas-ui_angular/issues
+[acpaas-ui-angular-contributors]: https://github.com/digipolisantwerp/acpaas-ui_angular/graphs/contributors
 [acpaas-ui-react]: https://github.com/digipolisantwerp/acpaas-ui_react
+[branding-core]: https://github.com/a-ui/core_branding_scss
+[branding-core-guide]: https://a-ui.github.io/core_branding_scss/
+[branding-acpaas]: https://github.com/a-ui/acpaas_branding_scss
 
 <!-- Github Version Badge -->
 [acpaas-ui-schematics-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/acpaas-ui_schematics.svg
 [acpaas-ui-angular-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/acpaas-ui_angular.svg
 [acpaas-ui-js-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/acpaas-ui_js.svg
+[acpaas-ui-react-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/acpaas-ui_react.svg
 
 <!-- NPM Package links -->
 [ngx-components-package]: https://www.npmjs.com/package/@acpaas-ui/ngx-components

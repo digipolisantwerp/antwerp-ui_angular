@@ -5,15 +5,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: './logo.component.html',
 })
 export class LogoComponent {
-  @Input()
-  title = 'Default';
+  @Input() title = 'Placeholder';
 
-  @Input()
-  src = 'https://place-hold.it/170x170';
+  @Input() src = 'https://place-hold.it/192x192';
 
-  @Input()
-  link ? = '/';
+  @Input() link ? = '/';
 
-  @Input()
-  onClick?: Function;
+  @Input() onClick?: Function;
 }
