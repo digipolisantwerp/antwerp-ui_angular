@@ -1,5 +1,5 @@
 const commandLineArgs = require('command-line-args');
-const exec = require('./helpers/bash');
+const exec = require('../helpers/bash');
 
 const cmd = commandLineArgs([{
 	name: 'name',

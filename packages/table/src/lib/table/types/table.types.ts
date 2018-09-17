@@ -15,7 +15,7 @@ export type TableColumnFormat = (o: string, key?: string, item?: any) => any;
 
 export interface TableColumn {
 	label: string;
-	value: string;
+	value?: string;
 	component?: any;
 	headerComponent?: any;
 	format?: TableColumnFormat;

@@ -1,11 +1,6 @@
 {
   "name": "forms",
   "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "~5.2.0",
-    "@angular/core": "~5.2.0",
-    "@angular/forms": "~5.2.0"
-  },
   "acpaas-ui": {
     "dependencies": [
       "calendar",
@@ -14,11 +9,7 @@
       "selectable-list"
     ]
   },
-  "devDependencies": {
-    "rxjs-compat": "~6.1.0"
-  },
   "dependencies": {
-    "@a-ui/core": "2.1.1",
     "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",
     "inputmask": "~3.3.11",
     "lodash-es": "~4.17.10",
