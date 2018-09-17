@@ -24,6 +24,6 @@ public maxValue = 100;`;
 	public codeExampleHTML =
 `<aui-progress-bar
   [value]="uploadProgress"
-  max="maxValue">
+  [max]="maxValue">
 </aui-progress-bar>`;
 }

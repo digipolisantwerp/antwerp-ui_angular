@@ -41,7 +41,7 @@ export class AppModule {};
 ```
 
 ```html
-<aui-progress-bar [value]="uploadProgress" max="maxValue"></aui-progress-bar>
+<aui-progress-bar [value]="uploadProgress" [max]="maxValue"></aui-progress-bar>
 ```
 
 ## Contributing
