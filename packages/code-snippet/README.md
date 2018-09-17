@@ -9,11 +9,9 @@ This package is build depending on:
 - and the [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
 - the [Marker npm package](https://www.npmjs.com/package/marked)
 
-*If you were to link this component locally, perform an `npm install` for the above npm packages in your app first.*
-
 ## Usage
 
-```javascript
+```typescript
 import 'CodeSnippetModule' from '@acpaas-ui/ngx-components/code-snippet'`;
 ```
 
