@@ -36,7 +36,7 @@ export class AppModule {};
 ```
 
 ```typescript
-	public uploadProgress = 20;
+  public uploadProgress = 20;
   public maxValue = 100;
 ```
 
