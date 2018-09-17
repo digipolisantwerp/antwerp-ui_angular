@@ -119,7 +119,6 @@ constructor(
     [codeSnippet]="mdExample"
     [processMarkdown]="true"
 ></aui-code-snippet>
-
 ```
 
 ## Contributing

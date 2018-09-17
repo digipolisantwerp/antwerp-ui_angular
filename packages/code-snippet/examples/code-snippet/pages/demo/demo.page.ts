@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 })
 export class CodeSnippetDemoPageComponent {
 
-	public codeExampleJS1 = `
+public codeExampleJS1 = `
 import { CodeSnippetModule } from \'@acpaas-ui/ngx-components/code-snippet\';
 
 @NgModule({
@@ -16,13 +16,13 @@ import { CodeSnippetModule } from \'@acpaas-ui/ngx-components/code-snippet\';
 
 export class AppModule {}`;
 
-	public codeExampleHTML1 = `<div class="u-margin-bottom">
+public codeExampleHTML1 = `<div class="u-margin-bottom">
     <div class="u-margin-bottom-xs">
         <h4><aui-code-snippet [codeSnippet]="'Single text example'"></aui-code-snippet></h4>
     </div>
 </div>`;
 
-	public html2 = `public codeExampleJSON = [
+public html2 = `public codeExampleJSON = [
     {
         "title": "apples",
         "count": [12000, 20000],
@@ -35,16 +35,49 @@ export class AppModule {}`;
     }
 ];`;
 
-	public html3 = `public codeExampleJS =
-function greetMe(yourName) {
-    alert('Hello ' + yourName);
-}
-greetMe('World');`;
+public html3 = `public codeExampleJS =
+	function greetMe(yourName) {
+		alert('Hello ' + yourName);
+	}
+	greetMe('World');`;
 
-	public html4 = `public codeExamples = [this.codeExampleJS, this.codeExampleJSON];`;
+public html4 = `public codeExampleJSON = [
+		{
+			"title": "apples",
+			"count": [12000, 20000],
+			"description": {"text": "...", "sensitive": false}
+		},
+		{
+			"title": "oranges",
+			"count": [17500, null],
+			"description": {"text": "...", "sensitive": false}
+		}
+	];
 
+public codeExampleJS =
+	function greetMe(yourName) {
+		alert('Hello ' + yourName);
+	}
+	greetMe('World');`;
 
-	public example1 = `<div class="u-margin-bottom">
+public html5 = `import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
+@Injectable()
+export class ContentService {
+	constructor(
+		private http: Http
+	) {}
+
+	getMarkdown(): any {
+		return this.http.get('/example.md')
+		.map((res) => res.text());
+	}
+}`;
+
+public example1 = `<div class="u-margin-bottom">
     <div class="u-margin-bottom-xs">
         <aui-code-snippet [codeSnippet]="'codeExample JS'"></aui-code-snippet>
     </div>
@@ -54,7 +87,7 @@ greetMe('World');`;
     </div>
 </div>`;
 
-	public example2 = `<div class="u-margin-bottom">
+public example2 = `<div class="u-margin-bottom">
     <div class="u-margin-bottom-xs">
         <aui-code-snippet [codeSnippet]="'codeExample JS'"></aui-code-snippet>
     </div>
@@ -64,7 +97,7 @@ greetMe('World');`;
     </div>
 </div>`;
 
-	public example3 = `<div class="u-margin-bottom">
+public example3 = `<div class="u-margin-bottom">
     <div class="u-margin-bottom-xs">
         <aui-code-snippet [codeSnippet]="'codeExample JS'"></aui-code-snippet>
     </div>
@@ -74,12 +107,18 @@ greetMe('World');`;
     </div>
 </div>`;
 
-	public example4 = `<aui-code-snippet
+public example4 = `<aui-code-snippet
 	*ngFor="let codeExample of codeExamples"
 	[codeSnippet]="codeExample"
 ></aui-code-snippet>`;
 
-	public codeExampleJSON = `[
+public example5 = `<aui-code-snippet
+    *ngIf="mdExample"
+    [codeSnippet]="mdExample"
+    [processMarkdown]="true"
+></aui-code-snippet>`;
+
+public codeExampleJSON = `[
     {
         "title": "apples",
         "count": [12000, 20000],
@@ -92,13 +131,21 @@ greetMe('World');`;
     }
 ]`;
 
-	public codeExampleJS = `
+public codeExampleJS = `
 function greetMe(yourName) {
-    alert('Hello ' + yourName);
+	alert('Hello ' + yourName);
 }
 greetMe('World');`;
 
 
-	public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
+public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
+
+public codeExampleMarkdown = `public mdExample: string;
+
+constructor(
+    private contentService: ContentService
+) {
+    contentService.getMarkdown().subscribe(data => this.mdExample = data);
+}`;
 
 }
