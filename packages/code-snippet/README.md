@@ -25,7 +25,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Description | Documentations |
 | -----------  | ------ | -------------------------- |
-| `@Input() codeSnippet: string;` | `''` | Add your code snippet here. |
+| `@Input() codeSnippet: string;` | `-` | Add your code snippet here. |
 | `@Input() processMarkdown: boolean;` | `false` | When having some markdown that contains code snippets. |
 | `@Input() scrollable: boolean;` | `true` | Boolean for when code snippet should not have a horizontal scrollbar when the code snippet is not wide enough. |
 

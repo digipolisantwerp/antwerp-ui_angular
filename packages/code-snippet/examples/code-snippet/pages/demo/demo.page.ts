@@ -41,6 +41,8 @@ function greetMe(yourName) {
 }
 greetMe('World');`;
 
+	public html4 = `public codeExamples = [this.codeExampleJS, this.codeExampleJSON];`;
+
 
 	public example1 = `<div class="u-margin-bottom">
     <div class="u-margin-bottom-xs">
@@ -72,7 +74,12 @@ greetMe('World');`;
     </div>
 </div>`;
 
-public codeExampleJSON = `[
+	public example4 = `<aui-code-snippet
+	*ngFor="let codeExample of codeExamples"
+	[codeSnippet]="codeExample"
+></aui-code-snippet>`;
+
+	public codeExampleJSON = `[
     {
         "title": "apples",
         "count": [12000, 20000],
@@ -90,4 +97,8 @@ function greetMe(yourName) {
     alert('Hello ' + yourName);
 }
 greetMe('World');`;
+
+
+	public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
+
 }
