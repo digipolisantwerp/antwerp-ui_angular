@@ -12,7 +12,7 @@ This package is build depending on:
 ## Usage
 
 ```typescript
-import 'CodeSnippetModule' from '@acpaas-ui/ngx-components/code-snippet'`;
+import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet'`;
 ```
 
 ## Documentation
