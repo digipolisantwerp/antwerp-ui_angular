@@ -1,3 +1,90 @@
+# @acpaas-ui/ngx-components/localstorage
+
+The `@acpaas-ui/localstorage` package allows you to easily store and retrieve data in and from your browsers storage. You can choose between different storage types and retrieve slices of the storage as observables with the `@storage` decorator. On top of that, you can easily sync your redux app state with the browser storage using the provided enhancer in the `LocalstorageStoreModule`.
+
+## Usage
+
+```typescript
+import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage'`;
+```
+
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() setItem: Date;` | - | The date the user selected. Will be used as a base for the different calendar views. |
+| `@Input() getItem: DateRange;` | - | A date range to decide which dates are available for selection. |
+| `@Input() removeItem: WeekdayLabelsConfig;` | - | Override the default weekday labels. Can also be done in the `forChild` method. |
+| `@Input() clear: MonthLabelsConfig;` | - | Override the default month labels. Can also be done in the `forChild` method. |
+| `@Output() select: EventEmitter<any>` | - | Will emit the selected date and completion state (the date is complete when a day is picked). |
+| `@Output() clearSubscribers: EventEmitter<any>` | - | Will emit the selected date and completion state (the date is complete when a day is picked). |
+
+### Example
+
+```typescript
+import { LocalstorageModule } from '@acpaas-ui/localstorage';
+
+@NgModule({
+    imports: [
+        LocalstorageModule.forRoot({
+            storageType: 'sessionStorage',
+            identifier: 'my-app-v1,
+        })
+    ]
+})
+
+export class AppModule {}
+```
+```typescript
+import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { LocalstorageService } from '@acpaas-ui/localstorage';
+
+interface IUser = {
+    username: string;
+}
+
+@Component({
+    selector: 'my-component',
+    template: '...',
+    providers: [ LocalstorageService ]
+})
+export class MyComponent {
+    public user$: BehaviorSubject<IUser>;
+
+    constructor(
+        private localstorageService: LocalstorageService
+    ) {
+        this.user$ = this.localstorageService.select('user');
+    }
+
+    getUser(): IUser {
+        this.localstorageService.getItem('user');
+    }
+
+    loggedIn(user: IUser): void {
+        this.localstorageService.setItem('user', user);
+    }
+
+    loggedOut(): void {
+        this.localstorageService.removeItem('user');
+    }
+}
+```
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
+
+
+
+
+
+
 # Localstorage Service
 The `@acpaas-ui/localstorage` package allows you to easily store and retrieve data in and from your browsers storage. You can choose between different storage types and retrieve slices of the storage as observables with the `@storage` decorator. On top of that, you can easily sync your redux app state with the browser storage using the provided enhancer in the `LocalstorageStoreModule`.
 
