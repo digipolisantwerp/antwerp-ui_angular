@@ -4,26 +4,8 @@ import { Component } from '@angular/core';
 	templateUrl: './demo.page.html',
 })
 export class CodeSnippetDemoPageComponent {
-	public codeExampleJSON = `[
-    {
-        "title": "apples",
-        "count": [12000, 20000],
-        "description": {"text": "...", "sensitive": false}
-    },
-    {
-        "title": "oranges",
-        "count": [17500, null],
-        "description": {"text": "...", "sensitive": false}
-    }
-]`;
 
-	public codeExampleJS = `
-function greetMe(yourName) {
-    alert('Hello ' + yourName);
-}
-greetMe('World');`;
-
-	public importModule = `
+	public codeExampleJS1 = `
 import { CodeSnippetModule } from \'@acpaas-ui/ngx-components/code-snippet\';
 
 @NgModule({
@@ -34,7 +16,7 @@ import { CodeSnippetModule } from \'@acpaas-ui/ngx-components/code-snippet\';
 
 export class AppModule {}`;
 
-	public html1 = `<div class="u-margin-bottom">
+	public codeExampleHTML1 = `<div class="u-margin-bottom">
     <div class="u-margin-bottom-xs">
         <h4><aui-code-snippet [codeSnippet]="'Single text example'"></aui-code-snippet></h4>
     </div>
@@ -59,9 +41,6 @@ function greetMe(yourName) {
 }
 greetMe('World');`;
 
-	// public example1 = '<aui-code-snippet [codeSnippet]="Single text example"></aui-code-snippet>';
-	// public example2 = '<aui-code-snippet [codeSnippet]="codeExampleJSON"></aui-code-snippet>';
-	// public example3 = '<aui-code-snippet [codeSnippet]="codeExampleJS"></aui-code-snippet>';
 
 	public example1 = `<div class="u-margin-bottom">
     <div class="u-margin-bottom-xs">
@@ -92,4 +71,24 @@ greetMe('World');`;
         <aui-code-snippet [codeSnippet]="codeExampleJS"></aui-code-snippet>
     </div>
 </div>`;
+
+public codeExampleJSON = `[
+    {
+        "title": "apples",
+        "count": [12000, 20000],
+        "description": {"text": "...", "sensitive": false}
+    },
+    {
+        "title": "oranges",
+        "count": [17500, null],
+        "description": {"text": "...", "sensitive": false}
+    }
+]`;
+
+	public codeExampleJS = `
+function greetMe(yourName) {
+    alert('Hello ' + yourName);
+}
+greetMe('World');`;
+
 }
