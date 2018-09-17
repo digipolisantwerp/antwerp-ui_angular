@@ -1,33 +1,49 @@
-# @acpaas-ui/progress-bar
+# @acpaas-ui/ngx-components/progress-bar
+
 This module provides a progress bar with a max value.
 
-## Installation
-```
-npm install @acpaas-ui/progress-bar
+## Usage
+
+```typescript
+import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar'`;
 ```
 
-Import component in **app.module.ts**
-```
-import { ProgressBarModule } from '@acpaas-ui/progress-bar';
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Progress bar module
+
+#### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() value: number;` | `0` | The current value of the progress. |
+| `@Input() max: number;` | `0` | The value when the progress is completed. |
+
+#### Example
+
+```typescript
+import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 
 @NgModule({
-    imports: [
-        ProgressBarModule
-    ]
-})
+	imports: [
+		ProgressBarModule
+	]
+});
 
-export class AppModule {}
+export class AppModule {};
 ```
 
-## Usage
+```typescript
+  public uploadProgress = 20;
+  public maxValue = 100;
 ```
-<aui-progress-bar [value]="uploadProgress" max="100"></aui-progress-bar>
-````
 
-### Options
+```html
+<aui-progress-bar [value]="uploadProgress" [max]="maxValue"></aui-progress-bar>
+```
 
-#### value
-`number`: the current value of the progress
+## Contributing
 
-#### max
-`number`: the value when the progress is completed
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
