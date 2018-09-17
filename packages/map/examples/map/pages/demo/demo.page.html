@@ -1,1 +1,19 @@
 <h1 class="h3 u-margin-bottom">Map</h1>
+
+<aui-leaflet [leafletMap]="leafletMap" [hasSidebar]="true">
+    <div controls top left>
+        Content displayed in top left corner of map
+    </div>
+    <div controls top right>
+        Content displayed in top right corner of map
+    </div>
+    <div controls bottom right>
+        Content displayed in bottom right corner of map
+    </div>
+    <div controls bottom left>
+        Content displayed in bottom left corner of map
+    </div>
+    <div>
+        Content displayed in sidebar
+    </div>
+</aui-leaflet>
