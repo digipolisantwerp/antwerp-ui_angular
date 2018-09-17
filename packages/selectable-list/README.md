@@ -5,8 +5,8 @@ The functionality can be extended by adding the `auiSelectableActions` directive
 
 ## Usage
 
-```javascript
-import 'SelectableListModule' from '@acpaas-ui/ngx-components/selectable-list'`;
+```typescript
+import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list'`;
 ```
 
 ## Documentation
@@ -28,7 +28,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 #### Example
 
-```
+```typescript
 import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
 
 @NgModule({
@@ -39,7 +39,7 @@ import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list'
 
 export class AppModule {};`
 ```
-
+```typescript
 ```
 public index = 0;
 
@@ -57,7 +57,7 @@ public onSelect(item) {
 }
 ```
 
-```
+```html
 <h4>Select your hero</h4>
 <aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)">
    <ng-template let-item="item">
@@ -75,18 +75,18 @@ Bind this directive to a focusable element.
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Output() keyArrowUp: EventEmitter<any>;` | - | Callback for arrow up key |
-| `@Output() keyArrowDown: EventEmitter<any>;` | - | Callback for arrow down key |
-| `@Output() keyEnter: EventEmitter<any>;` | - | Callback for enter key |
-| `@Output() keyEscape: EventEmitter<any>;` | - | Callback for escape key |
+| `@Output() keyArrowUp: EventEmitter<any>;` | - | Callback for the arrow up key |
+| `@Output() keyArrowDown: EventEmitter<any>;` | - | Callback for the arrow down key |
+| `@Output() keyEnter: EventEmitter<any>;` | - | Callback for the enter key |
+| `@Output() keyEscape: EventEmitter<any>;` | - | Callback for the escape key |
 
 #### Example
 
 In the following example we bind the `auiSelectableActions` directive to a button (the focusable element). The callbacks of `keyArrowDown` and `keyArrowUp` let us manipulate the value of `index` so we can navigate with our arrow keys through the selectable list. With `keyEnter` we define the selected value and `keyEscape` makes sure the action can also be cancelled.
 
-> For this example to work you'll need to know how to work with the [ACPaaS UI Flyout](./packages/flyout/README.md). Also see the [ACPaaS UI Auto-complete](./packages/forms/src/lib/auto-complete/README.md).
+> For this example to work you'll need to know how to work with the [ACPaaS UI Flyout](../flyout/README.md). Also see the [ACPaaS UI Auto-complete](../forms/src/lib/auto-complete/README.md).
 
-```
+```typescript
 import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
@@ -100,7 +100,7 @@ import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 export class AppModule {};
 ```
 
-```
+```typescript
 public onKeyArrowUp() {
     this.index += -1; // Don't forget to check the minimum value (probably 0 or -1)
 }
@@ -118,7 +118,7 @@ public onKeyEscape() {
 }
 ```
 
-```
+```html
 <div auiFlyout>
     <button class="button" auiFlyoutAction auiSelectableActions (keyArrowUp)="onKeyArrowUp()" (keyArrowDown)="onKeyArrowDown()" (keyEnter)="onKeyEnter()" (keyEscape)="onKeyEscape()">Heroes</button>
     <div auiFlyoutZone>
@@ -129,4 +129,4 @@ public onKeyEscape() {
 
 ## Contributing
 
-Visit our [Contribution Guidelines](./contribute.md) for more information on how to contribute.
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.

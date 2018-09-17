@@ -1,50 +1,50 @@
-# @acpaas-ui/avatar
-Renders the user avatar.
+# @acpaas-ui/ngx-components/avatar
 
-## Dependencies
-/
-
-## Installation
-```
-npm install @acpaas-ui/avatar
-```
-
-Import component in **app.module.ts**
-```
-import { AvatarModule } from 'aui-component-avatar';
-
-@NgModule({
-    imports: [
-        AvatarModule
-    ]
-})
-
-export class AppModule {}
-```
+This module renders a picture, an icon or a letter in the form of an avatar.
 
 ## Usage
+
+```typescript
+import { AvatarModule } from '@acpaas-ui/ngx-components/avatar'`;
 ```
-<aui-avatar image="test.jpg" title="test"></aui-avatar>
-<aui-avatar letter="A" title="test"></aui-avatar>
-<aui-avatar icon="fa fa-user" title="test"></aui-avatar>
-````
 
-### Options
+## Documentation
 
-#### image
-`string`: link to user avatar, renders an image.
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-#### letter
-`string`: renders a div with a string (letter).
+### Selectable list module
 
-#### icon
-`string`: renders an icon, font-awesome is used in this example.
+#### API
 
-#### title
-`string`: the title for the avatar.
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() className: string;` | `''` | A custom classname to add to the avatar. |
+| `@Input() icon: string;` | - | CSS class for rendering an icon, Font Awesome is used in this example. |
+| `@Input() image: string;` | - | URL to image src, renders an image. |
+| `@Input() letter: string;` | - | Renders a string (letter). |
+| `@Input() size: sizes;` | `sizes.R` | The size of the avatar. This can be `sizes.R`) (regular, default, `sizes.S` (small), `sizes.M` (medium) or `sizes.L` (large) |
+| `@Input() title: string;` | `''` | The title for the avatar. |
 
-#### className
-`string`: a custom classname to add to the avatar.
+#### Example
 
-#### size
-`string`: one of `S, M, L`, adds a class to the avatar
+```
+import { AvatarModule } from '@acpaas-ui/ngx-components/avatar';
+
+@NgModule({
+	imports: [
+		AvatarModule
+	]
+});
+
+export class AppModule {};
+```
+
+```
+<aui-avatar image="https://robohash.org/acpaas-ui" title="My image"></aui-avatar>
+<aui-avatar icon="fa fa-user" title="An icon" size="L"></aui-avatar>
+<aui-avatar letter="T" title="The letter T" size="S"></aui-avatar>
+```
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.

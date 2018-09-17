@@ -1,5 +1,5 @@
 const { resolve, sep } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
+const { writeFileSync } = require('fs');
 const colors = require('colors');
 const camelCase = require('lodash.camelcase');
 const upperFirst = require('lodash.upperfirst');

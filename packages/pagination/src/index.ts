@@ -1,2 +1,2 @@
-export * from './lib/pagination';
-export * from './lib/item-counter';
+export * from './lib/pagination/index';
+export * from './lib/item-counter/index';

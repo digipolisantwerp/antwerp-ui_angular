@@ -20,21 +20,15 @@ export class AvatarComponent {
 		R: '',
 	};
 
-	@Input()
-	title = '';
+	@Input() title = '';
 
-	@Input()
-	image: string;
+	@Input() image: string;
 
-	@Input()
-	icon: string;
+	@Input() icon: string;
 
-	@Input()
-	letter: string;
+	@Input() letter: string;
 
-	@Input()
-	className = '';
+	@Input() className = '';
 
-	@Input()
-	size: sizes = sizes.R;
+	@Input() size: sizes = sizes.R;
 }
