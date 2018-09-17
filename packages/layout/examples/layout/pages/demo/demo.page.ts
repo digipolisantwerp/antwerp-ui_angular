@@ -4,5 +4,4 @@ import { Component } from '@angular/core';
 	templateUrl: './demo.page.html',
 })
 export class LayoutDemoPageComponent {
-
 }
