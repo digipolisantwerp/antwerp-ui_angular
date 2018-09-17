@@ -33,7 +33,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ##### A single code snippet
 
-```
+```typescript
 import { CodeSnippetModule } from '@acpaas-ui/code-snippet';
 
 @NgModule({
@@ -44,7 +44,7 @@ import { CodeSnippetModule } from '@acpaas-ui/code-snippet';
 
 export class AppModule {}
 ```
-```
+```typescript
 public codeExampleJSON = `
 	[
 	    {
@@ -65,16 +65,16 @@ public codeExampleJS = `
     }
     greetMe('World');`;
 ```
-```
+```typescript
 <aui-code-snippet [codeSnippet]="codeExampleJSON"></aui-code-snippet>
 ```
 
 ##### Multiple code snippets
 
-```
+```typescript
 public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
 ```
-```
+```typescript
 <aui-code-snippet
 	*ngFor="let codeExample of codeExamples"
 	[codeSnippet]="codeExample"
@@ -86,7 +86,7 @@ If you have some markdown that contains code snippets, the component can also de
 
 *Create a service to get the markdown (this is just an example of getting a local markdown file):*
 
-```
+```typescript
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -104,7 +104,7 @@ export class ContentService {
     }
 }
 ```
-```
+```typescript
 public mdExample: string;
 
 constructor(
@@ -113,7 +113,7 @@ constructor(
     contentService.getMarkdown().subscribe(data => this.mdExample = data);
 }
 ```
-```
+```typescript
 <aui-code-snippet
     *ngIf="mdExample"
     [codeSnippet]="mdExample"
