@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { DemoPageComponent } from './pages/demo/demo.page';
+import { LayoutDemoPageComponent } from './pages/demo/demo.page';
 
 export const LAYOUT_EXAMPLES_ROUTES: Routes = [
 	{
 		path: '',
-		component: DemoPageComponent,
+		component: LayoutDemoPageComponent,
 		pathMatch: 'full',
 	},
 ];
