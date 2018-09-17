@@ -65,7 +65,7 @@ public codeExampleJS = `
     }
     greetMe('World');`;
 ```
-```typescript
+```html
 <aui-code-snippet [codeSnippet]="codeExampleJSON"></aui-code-snippet>
 ```
 
@@ -74,7 +74,7 @@ public codeExampleJS = `
 ```typescript
 public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
 ```
-```typescript
+```html
 <aui-code-snippet
 	*ngFor="let codeExample of codeExamples"
 	[codeSnippet]="codeExample"
@@ -113,7 +113,7 @@ constructor(
     contentService.getMarkdown().subscribe(data => this.mdExample = data);
 }
 ```
-```typescript
+```html
 <aui-code-snippet
     *ngIf="mdExample"
     [codeSnippet]="mdExample"
