@@ -11,20 +11,6 @@ This package is build depending on:
 
 *If you were to link this component locally, perform an `npm install` for the above npm packages in your app first.*
 
-### Highlight.js CDN's
-Add the following CDN's to your project:
-
-- `<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css">`
-- `<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>`
-
-You can also add additional languages if that's needed:
-
-- `<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/typescript.min.js"></script>`
-- `<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/scss.min.js"></script>`
-- ...
-
-An overview of all CDN links can be found [here](https://cdnjs.com/libraries/highlight.js/)
-
 ## Usage
 
 ```javascript
