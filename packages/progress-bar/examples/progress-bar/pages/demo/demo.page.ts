@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
 export class ProgressBarDemoPageComponent {
 
 	public uploadProgress = 20;
-	public codeExampleJS = `import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
+	public maxValue = 100;
+
+	public codeExampleJS1 = `import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 
 @NgModule({
   imports: [
@@ -16,9 +18,12 @@ export class ProgressBarDemoPageComponent {
 
 export class AppModule {};`;
 
+	public codeExampleJS2 = `public uploadProgress = 20;
+public maxValue = 100;`;
+
 	public codeExampleHTML =
 `<aui-progress-bar
-	[value]="uploadProgress"
-  max="100">
+  [value]="uploadProgress"
+  max="maxValue">
 </aui-progress-bar>`;
 }

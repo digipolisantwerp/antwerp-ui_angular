@@ -35,8 +35,13 @@ import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 export class AppModule {};
 ```
 
+```typescript
+	public uploadProgress = 20;
+  public maxValue = 100;
+```
+
 ```html
-<aui-progress-bar [value]="uploadProgress" max="100"></aui-progress-bar>
+<aui-progress-bar [value]="uploadProgress" max="maxValue"></aui-progress-bar>
 ```
 
 ## Contributing
