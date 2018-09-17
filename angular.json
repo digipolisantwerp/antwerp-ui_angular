@@ -677,7 +677,7 @@
               "project": "packages/pagination/ng-package.prod.json"
             },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/pagination/ng-package.examples.json"
             }
           }
         },

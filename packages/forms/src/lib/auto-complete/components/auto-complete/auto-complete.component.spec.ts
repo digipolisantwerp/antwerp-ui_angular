@@ -68,7 +68,7 @@ describe('The Autocomplete Component', () => {
 			{ id: 2, name: 'spiderman' },
 			{ id: 3, name: 'wolverine' },
 			{ id: 4, name: 'ironman' },
-			{ id: 5, name: 'the hulk' },
+			{ id: 5, name: 'Wonder woman' },
 		];
 		comp.minCharacters = 2;
 		comp.query = '';

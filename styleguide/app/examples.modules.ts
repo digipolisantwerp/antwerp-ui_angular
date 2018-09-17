@@ -4,6 +4,7 @@ import { FlyoutExamplesModule } from '@acpaas-ui/ngx-examples/flyout/fesm2015/fl
 import { FormsExamplesModule } from '@acpaas-ui/ngx-examples/forms/fesm2015/forms';
 import { LayoutExamplesModule } from '@acpaas-ui/ngx-examples/layout/fesm2015/layout';
 import { LogoExamplesModule } from '@acpaas-ui/ngx-examples/logo/fesm2015/logo';
+import { PaginationExamplesModule } from '@acpaas-ui/ngx-examples/pagination/fesm2015/pagination';
 import { SelectableListExamplesModule } from '@acpaas-ui/ngx-examples/selectable-list/fesm2015/selectable-list';
 import { TableExamplesModule } from '@acpaas-ui/ngx-examples/table/fesm2015/table';
 
@@ -14,6 +15,7 @@ export const ExamplesModules = [
 	FormsExamplesModule,
 	LayoutExamplesModule,
 	LogoExamplesModule,
+	PaginationExamplesModule,
 	SelectableListExamplesModule,
 	TableExamplesModule,
 ];
