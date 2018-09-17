@@ -3232,6 +3232,111 @@ var ItemCounterModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./dist/progress-bar/fesm5/progress-bar.js":
+/*!*************************************************!*\
+  !*** ./dist/progress-bar/fesm5/progress-bar.js ***!
+  \*************************************************/
+/*! exports provided: ProgressBarComponent, ProgressBarModule, ɵa */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressBarComponent", function() { return ProgressBarComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressBarModule", function() { return ProgressBarModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return Components; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var ProgressBarComponent = /** @class */ (function () {
+    function ProgressBarComponent() {
+        this.value = 0;
+        this.max = 0;
+    }
+    /**
+     * @return {?}
+     */
+    ProgressBarComponent.prototype.calcProgress = /**
+     * @return {?}
+     */
+    function () {
+        if (this.max > 0 && this.value > 0) {
+            var /** @type {?} */ res = (this.value / this.max);
+            return Math.floor(res * 100) + '%';
+        }
+        return 0;
+    };
+    ProgressBarComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    selector: 'aui-progress-bar',
+                    template: "<div class=\"aui-progress-bar m-progress\">\n\t<div class=\"m-progress__inner\">\n\t\t<div class=\"m-progress__bar\" role=\"progressbar\" aria-valuemin=\"0\" [attr.aria-valuemax]=\"max\" [attr.aria-valuenow]=\"value\" [ngStyle]=\"{'width': calcProgress()}\">\n\t\t</div>\n\t</div>\n</div>\n",
+                },] },
+    ];
+    /** @nocollapse */
+    ProgressBarComponent.propDecorators = {
+        "value": [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] },],
+        "max": [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] },],
+    };
+    return ProgressBarComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var /** @type {?} */ Components = [
+    ProgressBarComponent,
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var ProgressBarModule = /** @class */ (function () {
+    function ProgressBarModule() {
+    }
+    ProgressBarModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    imports: [
+                        _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                    ],
+                    declarations: [
+                        Components,
+                    ],
+                    exports: [
+                        Components,
+                    ],
+                },] },
+    ];
+    return ProgressBarModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+
+
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvZ3Jlc3MtYmFyLmpzLm1hcCIsInNvdXJjZXMiOlsibmc6Ly9wcm9ncmVzcy1iYXIvbGliL3Byb2dyZXNzLWJhci9jb21wb25lbnRzL3Byb2dyZXNzLWJhci9wcm9ncmVzcy1iYXIuY29tcG9uZW50LnRzIiwibmc6Ly9wcm9ncmVzcy1iYXIvbGliL3Byb2dyZXNzLWJhci9jb21wb25lbnRzL2luZGV4LnRzIiwibmc6Ly9wcm9ncmVzcy1iYXIvbGliL3Byb2dyZXNzLWJhci9wcm9ncmVzcy1iYXIubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgSW5wdXQsIE9uSW5pdCwgT3V0cHV0LCBFdmVudEVtaXR0ZXIgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG5cdHNlbGVjdG9yOiAnYXVpLXByb2dyZXNzLWJhcicsXG5cdHRlbXBsYXRlOiBgPGRpdiBjbGFzcz1cImF1aS1wcm9ncmVzcy1iYXIgbS1wcm9ncmVzc1wiPlxuXHQ8ZGl2IGNsYXNzPVwibS1wcm9ncmVzc19faW5uZXJcIj5cblx0XHQ8ZGl2IGNsYXNzPVwibS1wcm9ncmVzc19fYmFyXCIgcm9sZT1cInByb2dyZXNzYmFyXCIgYXJpYS12YWx1ZW1pbj1cIjBcIiBbYXR0ci5hcmlhLXZhbHVlbWF4XT1cIm1heFwiIFthdHRyLmFyaWEtdmFsdWVub3ddPVwidmFsdWVcIiBbbmdTdHlsZV09XCJ7J3dpZHRoJzogY2FsY1Byb2dyZXNzKCl9XCI+XG5cdFx0PC9kaXY+XG5cdDwvZGl2PlxuPC9kaXY+XG5gLFxufSlcbmV4cG9ydCBjbGFzcyBQcm9ncmVzc0JhckNvbXBvbmVudCB7XG5cdEBJbnB1dCgpIHB1YmxpYyB2YWx1ZSA9IDA7XG5cdEBJbnB1dCgpIHB1YmxpYyBtYXggPSAwO1xuXG5cdHB1YmxpYyBjYWxjUHJvZ3Jlc3MoKSB7XG5cdFx0aWYgKHRoaXMubWF4ID4gMCAmJiB0aGlzLnZhbHVlID4gMCkge1xuXHRcdFx0Y29uc3QgcmVzID0gKHRoaXMudmFsdWUgLyB0aGlzLm1heCk7XG5cdFx0XHRyZXR1cm4gTWF0aC5mbG9vcihyZXMgKiAxMDApICsgJyUnO1xuXHRcdH1cblxuXHRcdHJldHVybiAwO1xuXHR9XG59XG4iLCJpbXBvcnQgeyBQcm9ncmVzc0JhckNvbXBvbmVudCB9IGZyb20gJy4vcHJvZ3Jlc3MtYmFyL3Byb2dyZXNzLWJhci5jb21wb25lbnQnO1xuXG5leHBvcnQgY29uc3QgQ29tcG9uZW50cyA9IFtcblx0UHJvZ3Jlc3NCYXJDb21wb25lbnQsXG5dO1xuIiwiaW1wb3J0IHsgTmdNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IENvbW1vbk1vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvbW1vbic7XG5cbmltcG9ydCB7IENvbXBvbmVudHMgfSBmcm9tICcuL2NvbXBvbmVudHMvaW5kZXgnO1xuXG5ATmdNb2R1bGUoe1xuXHRpbXBvcnRzOiBbXG5cdFx0Q29tbW9uTW9kdWxlLFxuXHRdLFxuXHRkZWNsYXJhdGlvbnM6IFtcblx0XHRDb21wb25lbnRzLFxuXHRdLFxuXHRleHBvcnRzOiBbXG5cdFx0Q29tcG9uZW50cyxcblx0XSxcbn0pXG5leHBvcnQgY2xhc3MgUHJvZ3Jlc3NCYXJNb2R1bGUge31cbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O3FCQWF5QixDQUFDO21CQUNILENBQUM7Ozs7O0lBRWhCLDJDQUFZOzs7O1FBQ2xCLElBQUksSUFBSSxDQUFDLEdBQUcsR0FBRyxDQUFDLElBQUksSUFBSSxDQUFDLEtBQUssR0FBRyxDQUFDLEVBQUU7WUFDbkMscUJBQU0sR0FBRyxJQUFJLElBQUksQ0FBQyxLQUFLLEdBQUcsSUFBSSxDQUFDLEdBQUcsQ0FBQyxDQUFDO1lBQ3BDLE9BQU8sSUFBSSxDQUFDLEtBQUssQ0FBQyxHQUFHLEdBQUcsR0FBRyxDQUFDLEdBQUcsR0FBRyxDQUFDO1NBQ25DO1FBRUQsT0FBTyxDQUFDLENBQUM7OztnQkFwQlYsU0FBUyxTQUFDO29CQUNWLFFBQVEsRUFBRSxrQkFBa0I7b0JBQzVCLFFBQVEsRUFBRSxvU0FNVjtpQkFDQTs7OzswQkFFQyxLQUFLO3dCQUNMLEtBQUs7OytCQWRQOzs7Ozs7O0FDQUEscUJBRWEsVUFBVSxHQUFHO0lBQ3pCLG9CQUFvQjtDQUNwQjs7Ozs7O0FDSkQ7Ozs7Z0JBS0MsUUFBUSxTQUFDO29CQUNULE9BQU8sRUFBRTt3QkFDUixZQUFZO3FCQUNaO29CQUNELFlBQVksRUFBRTt3QkFDYixVQUFVO3FCQUNWO29CQUNELE9BQU8sRUFBRTt3QkFDUixVQUFVO3FCQUNWO2lCQUNEOzs0QkFmRDs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+
+/***/ }),
+
 /***/ "./dist/selectable-list/fesm5/selectable-list.js":
 /*!*******************************************************!*\
   !*** ./dist/selectable-list/fesm5/selectable-list.js ***!
@@ -4524,6 +4629,111 @@ var /** @type {?} */ PAGINATION_EXAMPLES_ROUTES = [
 
 /***/ }),
 
+/***/ "./examples/progress-bar/fesm5/progress-bar.js":
+/*!*****************************************************!*\
+  !*** ./examples/progress-bar/fesm5/progress-bar.js ***!
+  \*****************************************************/
+/*! exports provided: ProgressBarDemoPageComponent, ProgressBarExamplesModule, PROGRESS_BAR_EXAMPLES_ROUTES, ɵa */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressBarDemoPageComponent", function() { return ProgressBarDemoPageComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressBarExamplesModule", function() { return ProgressBarExamplesModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PROGRESS_BAR_EXAMPLES_ROUTES", function() { return PROGRESS_BAR_EXAMPLES_ROUTES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return Pages; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _acpaas_ui_ngx_components_progress_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @acpaas-ui/ngx-components/progress-bar */ "./dist/progress-bar/fesm5/progress-bar.js");
+/* harmony import */ var _acpaas_ui_ngx_components_code_snippet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @acpaas-ui/ngx-components/code-snippet */ "./dist/code-snippet/fesm5/code-snippet.js");
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var ProgressBarDemoPageComponent = /** @class */ (function () {
+    function ProgressBarDemoPageComponent() {
+        this.uploadProgress = 20;
+        this.maxValue = 100;
+        this.codeExampleJS1 = "import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';\n\n@NgModule({\n  imports: [\n    ProgressBarModule\n  ]\n});\n\nexport class AppModule {};";
+        this.codeExampleJS2 = "public uploadProgress = 20;\npublic maxValue = 100;";
+        this.codeExampleHTML = "<aui-progress-bar\n  [value]=\"uploadProgress\"\n  [max]=\"maxValue\">\n</aui-progress-bar>";
+    }
+    ProgressBarDemoPageComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    template: "<h1 class=\"h3 u-margin-bottom\">Progress bar</h1>\n<div class=\"u-margin-bottom\">\n\t<aui-code-snippet [codeSnippet]=\"codeExampleJS1\"></aui-code-snippet>\n</div>\n\n<div class=\"u-margin-bottom\">\n\t<aui-code-snippet [codeSnippet]=\"codeExampleJS2\"></aui-code-snippet>\n</div>\n\n<div class=\"u-margin-bottom\">\n\t<aui-code-snippet [codeSnippet]=\"codeExampleHTML\"></aui-code-snippet>\n</div>\n\n<div class=\"a-input\">\n\t<aui-progress-bar\n\t\t[value]=\"uploadProgress\"\n\t\t[max]=\"maxValue\">\n\t</aui-progress-bar>\n</div>\n",
+                },] },
+    ];
+    return ProgressBarDemoPageComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var /** @type {?} */ Pages = [
+    ProgressBarDemoPageComponent,
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var ProgressBarExamplesModule = /** @class */ (function () {
+    function ProgressBarExamplesModule() {
+    }
+    ProgressBarExamplesModule.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    imports: [
+                        _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                        _acpaas_ui_ngx_components_progress_bar__WEBPACK_IMPORTED_MODULE_2__["ProgressBarModule"],
+                        _acpaas_ui_ngx_components_code_snippet__WEBPACK_IMPORTED_MODULE_3__["CodeSnippetModule"],
+                    ],
+                    declarations: [
+                        Pages,
+                    ],
+                },] },
+    ];
+    return ProgressBarExamplesModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var /** @type {?} */ PROGRESS_BAR_EXAMPLES_ROUTES = [
+    {
+        path: '',
+        component: ProgressBarDemoPageComponent,
+        pathMatch: 'full',
+    },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+
+
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvZ3Jlc3MtYmFyLmpzLm1hcCIsInNvdXJjZXMiOlsibmc6Ly9wcm9ncmVzcy1iYXIvcHJvZ3Jlc3MtYmFyL3BhZ2VzL2RlbW8vZGVtby5wYWdlLnRzIiwibmc6Ly9wcm9ncmVzcy1iYXIvcHJvZ3Jlc3MtYmFyL3BhZ2VzL2luZGV4LnRzIiwibmc6Ly9wcm9ncmVzcy1iYXIvcHJvZ3Jlc3MtYmFyL3Byb2dyZXNzLWJhci5tb2R1bGUudHMiLCJuZzovL3Byb2dyZXNzLWJhci9wcm9ncmVzcy1iYXIvcHJvZ3Jlc3MtYmFyLnJvdXRlcy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG5cdHRlbXBsYXRlOiBgPGgxIGNsYXNzPVwiaDMgdS1tYXJnaW4tYm90dG9tXCI+UHJvZ3Jlc3MgYmFyPC9oMT5cbjxkaXYgY2xhc3M9XCJ1LW1hcmdpbi1ib3R0b21cIj5cblx0PGF1aS1jb2RlLXNuaXBwZXQgW2NvZGVTbmlwcGV0XT1cImNvZGVFeGFtcGxlSlMxXCI+PC9hdWktY29kZS1zbmlwcGV0PlxuPC9kaXY+XG5cbjxkaXYgY2xhc3M9XCJ1LW1hcmdpbi1ib3R0b21cIj5cblx0PGF1aS1jb2RlLXNuaXBwZXQgW2NvZGVTbmlwcGV0XT1cImNvZGVFeGFtcGxlSlMyXCI+PC9hdWktY29kZS1zbmlwcGV0PlxuPC9kaXY+XG5cbjxkaXYgY2xhc3M9XCJ1LW1hcmdpbi1ib3R0b21cIj5cblx0PGF1aS1jb2RlLXNuaXBwZXQgW2NvZGVTbmlwcGV0XT1cImNvZGVFeGFtcGxlSFRNTFwiPjwvYXVpLWNvZGUtc25pcHBldD5cbjwvZGl2PlxuXG48ZGl2IGNsYXNzPVwiYS1pbnB1dFwiPlxuXHQ8YXVpLXByb2dyZXNzLWJhclxuXHRcdFt2YWx1ZV09XCJ1cGxvYWRQcm9ncmVzc1wiXG5cdFx0W21heF09XCJtYXhWYWx1ZVwiPlxuXHQ8L2F1aS1wcm9ncmVzcy1iYXI+XG48L2Rpdj5cbmAsXG59KVxuZXhwb3J0IGNsYXNzIFByb2dyZXNzQmFyRGVtb1BhZ2VDb21wb25lbnQge1xuXG5cdHB1YmxpYyB1cGxvYWRQcm9ncmVzcyA9IDIwO1xuXHRwdWJsaWMgbWF4VmFsdWUgPSAxMDA7XG5cblx0cHVibGljIGNvZGVFeGFtcGxlSlMxID0gYGltcG9ydCB7IFByb2dyZXNzQmFyTW9kdWxlIH0gZnJvbSAnQGFjcGFhcy11aS9uZ3gtY29tcG9uZW50cy9wcm9ncmVzcy1iYXInO1xuXG5ATmdNb2R1bGUoe1xuICBpbXBvcnRzOiBbXG4gICAgUHJvZ3Jlc3NCYXJNb2R1bGVcbiAgXVxufSk7XG5cbmV4cG9ydCBjbGFzcyBBcHBNb2R1bGUge307YDtcblxuXHRwdWJsaWMgY29kZUV4YW1wbGVKUzIgPSBgcHVibGljIHVwbG9hZFByb2dyZXNzID0gMjA7XG5wdWJsaWMgbWF4VmFsdWUgPSAxMDA7YDtcblxuXHRwdWJsaWMgY29kZUV4YW1wbGVIVE1MID1cbmA8YXVpLXByb2dyZXNzLWJhclxuICBbdmFsdWVdPVwidXBsb2FkUHJvZ3Jlc3NcIlxuICBbbWF4XT1cIm1heFZhbHVlXCI+XG48L2F1aS1wcm9ncmVzcy1iYXI+YDtcbn1cbiIsImltcG9ydCB7IFByb2dyZXNzQmFyRGVtb1BhZ2VDb21wb25lbnQgfSBmcm9tICcuL2RlbW8vZGVtby5wYWdlJztcblxuZXhwb3J0IGNvbnN0IFBhZ2VzID0gW1xuXHRQcm9ncmVzc0JhckRlbW9QYWdlQ29tcG9uZW50LFxuXTtcbiIsImltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBDb21tb25Nb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb21tb24nO1xuaW1wb3J0IHsgUHJvZ3Jlc3NCYXJNb2R1bGUgfSBmcm9tICdAYWNwYWFzLXVpL25neC1jb21wb25lbnRzL3Byb2dyZXNzLWJhcic7XG5pbXBvcnQgeyBDb2RlU25pcHBldE1vZHVsZSB9IGZyb20gJ0BhY3BhYXMtdWkvbmd4LWNvbXBvbmVudHMvY29kZS1zbmlwcGV0JztcblxuaW1wb3J0IHsgUGFnZXMgfSBmcm9tICcuL3BhZ2VzL2luZGV4JztcblxuQE5nTW9kdWxlKHtcblx0aW1wb3J0czogW1xuXHRcdENvbW1vbk1vZHVsZSxcblx0XHRQcm9ncmVzc0Jhck1vZHVsZSxcblx0XHRDb2RlU25pcHBldE1vZHVsZSxcblx0XSxcblx0ZGVjbGFyYXRpb25zOiBbXG5cdFx0UGFnZXMsXG5cdF0sXG59KVxuZXhwb3J0IGNsYXNzIFByb2dyZXNzQmFyRXhhbXBsZXNNb2R1bGUge31cbiIsImltcG9ydCB7IFJvdXRlcyB9IGZyb20gJ0Bhbmd1bGFyL3JvdXRlcic7XG5cbmltcG9ydCB7IFByb2dyZXNzQmFyRGVtb1BhZ2VDb21wb25lbnQgfSBmcm9tICcuL3BhZ2VzL2RlbW8vZGVtby5wYWdlJztcblxuZXhwb3J0IGNvbnN0IFBST0dSRVNTX0JBUl9FWEFNUExFU19ST1VURVM6IFJvdXRlcyA9IFtcblx0e1xuXHRcdHBhdGg6ICcnLFxuXHRcdGNvbXBvbmVudDogUHJvZ3Jlc3NCYXJEZW1vUGFnZUNvbXBvbmVudCxcblx0XHRwYXRoTWF0Y2g6ICdmdWxsJyxcblx0fSxcbl07XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUE7OzhCQTBCeUIsRUFBRTt3QkFDUixHQUFHOzhCQUVHLHlLQVFFOzhCQUVGLHFEQUNGOytCQUd2Qiw2RkFHb0I7OztnQkE1Q25CLFNBQVMsU0FBQztvQkFDVixRQUFRLEVBQUUsNGhCQW1CVjtpQkFDQTs7dUNBdkJEOzs7Ozs7O0FDQUEscUJBRWEsS0FBSyxHQUFHO0lBQ3BCLDRCQUE0QjtDQUM1Qjs7Ozs7O0FDSkQ7Ozs7Z0JBT0MsUUFBUSxTQUFDO29CQUNULE9BQU8sRUFBRTt3QkFDUixZQUFZO3dCQUNaLGlCQUFpQjt3QkFDakIsaUJBQWlCO3FCQUNqQjtvQkFDRCxZQUFZLEVBQUU7d0JBQ2IsS0FBSztxQkFDTDtpQkFDRDs7b0NBaEJEOzs7Ozs7O0FDRUEscUJBRWEsNEJBQTRCLEdBQVc7SUFDbkQ7UUFDQyxJQUFJLEVBQUUsRUFBRTtRQUNSLFNBQVMsRUFBRSw0QkFBNEI7UUFDdkMsU0FBUyxFQUFFLE1BQU07S0FDakI7Q0FDRDs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+
+/***/ }),
+
 /***/ "./examples/selectable-list/fesm5/selectable-list.js":
 /*!***********************************************************!*\
   !*** ./examples/selectable-list/fesm5/selectable-list.js ***!
@@ -5143,7 +5353,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _acpaas_ui_ngx_examples_flyout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/flyout */ "./examples/flyout/fesm5/flyout.js");
 /* harmony import */ var _acpaas_ui_ngx_examples_logo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/logo */ "./examples/logo/fesm5/logo.js");
 /* harmony import */ var _acpaas_ui_ngx_examples_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/pagination */ "./examples/pagination/fesm5/pagination.js");
-/* harmony import */ var _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/selectable-list */ "./examples/selectable-list/fesm5/selectable-list.js");
+/* harmony import */ var _acpaas_ui_ngx_examples_progress_bar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/progress-bar */ "./examples/progress-bar/fesm5/progress-bar.js");
+/* harmony import */ var _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/selectable-list */ "./examples/selectable-list/fesm5/selectable-list.js");
+
 
 
 
@@ -5156,7 +5368,8 @@ var ExamplesModules = [
     _acpaas_ui_ngx_examples_flyout__WEBPACK_IMPORTED_MODULE_2__["FlyoutExamplesModule"],
     _acpaas_ui_ngx_examples_logo__WEBPACK_IMPORTED_MODULE_3__["LogoExamplesModule"],
     _acpaas_ui_ngx_examples_pagination__WEBPACK_IMPORTED_MODULE_4__["PaginationExamplesModule"],
-    _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_5__["SelectableListExamplesModule"],
+    _acpaas_ui_ngx_examples_progress_bar__WEBPACK_IMPORTED_MODULE_5__["ProgressBarExamplesModule"],
+    _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_6__["SelectableListExamplesModule"],
 ];
 
 
@@ -5177,7 +5390,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _acpaas_ui_ngx_examples_flyout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/flyout */ "./examples/flyout/fesm5/flyout.js");
 /* harmony import */ var _acpaas_ui_ngx_examples_logo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/logo */ "./examples/logo/fesm5/logo.js");
 /* harmony import */ var _acpaas_ui_ngx_examples_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/pagination */ "./examples/pagination/fesm5/pagination.js");
-/* harmony import */ var _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/selectable-list */ "./examples/selectable-list/fesm5/selectable-list.js");
+/* harmony import */ var _acpaas_ui_ngx_examples_progress_bar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/progress-bar */ "./examples/progress-bar/fesm5/progress-bar.js");
+/* harmony import */ var _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @acpaas-ui/ngx-examples/selectable-list */ "./examples/selectable-list/fesm5/selectable-list.js");
+
 
 
 
@@ -5190,7 +5405,8 @@ var EXAMPLES_ROUTES = [
     { path: 'flyout', children: _acpaas_ui_ngx_examples_flyout__WEBPACK_IMPORTED_MODULE_2__["FLYOUT_EXAMPLES_ROUTES"], title: 'Flyout', },
     { path: 'logo', children: _acpaas_ui_ngx_examples_logo__WEBPACK_IMPORTED_MODULE_3__["LOGO_EXAMPLES_ROUTES"], title: 'Logo', },
     { path: 'pagination', children: _acpaas_ui_ngx_examples_pagination__WEBPACK_IMPORTED_MODULE_4__["PAGINATION_EXAMPLES_ROUTES"], title: 'Pagination', },
-    { path: 'selectable-list', children: _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_5__["SELECTABLE_LIST_EXAMPLES_ROUTES"], title: 'Selectable list', },
+    { path: 'progress-bar', children: _acpaas_ui_ngx_examples_progress_bar__WEBPACK_IMPORTED_MODULE_5__["PROGRESS_BAR_EXAMPLES_ROUTES"], title: 'Progress bar', },
+    { path: 'selectable-list', children: _acpaas_ui_ngx_examples_selectable_list__WEBPACK_IMPORTED_MODULE_6__["SELECTABLE_LIST_EXAMPLES_ROUTES"], title: 'Selectable list', },
 ];
 
 
