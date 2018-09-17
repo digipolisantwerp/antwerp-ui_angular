@@ -23,7 +23,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Output() select: EventEmitter<any>` | - | Will emit the selected date and completion state (the date is complete when a day is picked). |
 | `@Output() clearSubscribers: EventEmitter<any>` | - | Will emit the selected date and completion state (the date is complete when a day is picked). |
 
-### Example
+### Example localstorage Service
 
 ```typescript
 import { LocalstorageModule } from '@acpaas-ui/localstorage';
@@ -76,9 +76,72 @@ export class MyComponent {
 }
 ```
 
+### Example storage decorator
+
+To retrieve data from the storage a bit easier, you can use the `storage` decorator:
+
+```typescript
+import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { storage, LocalstorageService } from '@acpaas-ui/localstorage';
+
+interface IUser = {
+    username: string;
+}
+
+@Component({
+    selector: 'my-component',
+    template: '...',
+    providers: [ LocalstorageService ]
+})
+export class MyComponent {
+    @storage() user$: BehaviorSubject<IUser>;
+
+    constructor(
+        private localstorageService: LocalstorageService
+    ) {}
+
+    getUser(): IUser {
+        this.localstorageService.getItem('user');
+    }
+
+    loggedIn(user: IUser): void {
+        this.localstorageService.setItem('user', user);
+    }
+
+    loggedOut(): void {
+        this.localstorageService.removeItem('user');
+    }
+}
+```
+
+#### selectors:
+
+```
+@select() user$: BehaviorSubject<IUser>; // select 'user' from the storage
+@select('user') user$: BehaviorSubject<IUser>; // identical, works for numbers as well
+
+@select(['user', 'username']) username$: BehaviorSubject<string>; // select only the username from the store
+
+@select(storage => storage.user.email) email$: BehaviorSubject<string>; // select by using a custom callback (note: this is triggered every time the storage changes)
+```
+
+By providing a custom comparator function, you can choose when the `BehaviorSubject` should be updated. By default, a deep compare will determine wether an update is necessary.
+
+The following example will only update the user if the username has changed. Changing other properties on the user will have no effect:
+```
+@select('user', (prevValue, nextValue) => prevValue.username === nextValue.username)) user$: BehaviorSubject<IUser>;
+```
+
 ## Contributing
 
 Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
+
+
+
+
+
+
 
 
 
