@@ -1,3 +1,12 @@
-<h1>Forms demo</h1>
+<h1 class="h3 u-margin-bottom">Forms</h1>
 
-<!-- demo the component here -->
+<div class="u-margin-bottom u-margin-top">
+	<aui-auto-complete
+		label="name"
+		[(ngModel)]="selectedValue"
+		[data]="heroes"
+		[results]="results"
+		(search)="searchHeroes($event)"
+		(select)="selectHero($event)">
+	</aui-auto-complete>
+</div>
