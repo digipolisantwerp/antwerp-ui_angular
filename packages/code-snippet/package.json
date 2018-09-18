@@ -1,10 +1,6 @@
 {
   "name": "code-snippet",
   "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "~5.2.0",
-    "@angular/core": "~5.2.0"
-  },
   "acpaas-ui": {
     "dependencies": []
   },

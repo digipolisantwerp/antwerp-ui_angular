@@ -41,9 +41,13 @@ Some useful commands:
 - `ng build <package>`: build a specific package
 - `npm run bump -- --major|minor|patch`: bump the library version
 - `npm run deploy[:major|minor|patch]`: bump the library version and deploy a new build
-- `npm run package <package>`: generate a new package
 
-For now, only the library generation is used, custom schematics might be added in the future to make the generation of other components possible as well.
+## Generating new packages
+
+We provided some custom schematics to make the creation of new packages easier. You can run these using the `ng generate`, specifying the `@acpaas-ui/schematics` or use the shorthand commands;
+
+- `npm run package <package>`: generate a new package
+- `npm run example <package>`: generate examples for an existing package
 
 ## Package vs Library
 
@@ -143,7 +147,7 @@ npm run examples
 To update just one examples, i.e. find a specific example modules and add it to the styleguide, run:
 
 ```bash
-example=<package> npm run example
+example=<package> npm run examples
 ```
 
 ### Styleguide routes
