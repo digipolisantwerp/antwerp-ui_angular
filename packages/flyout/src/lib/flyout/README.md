@@ -19,7 +19,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() align: string;` | `'left'` | The alignment of the flyout-zone. This can be `'left'` or `'right'` |
+| `@Input() align: string;` | `'left'` | The alignment of the flyout-zone. This can be `'left'` or `'right'`. |
 | `@Input() size: FlyoutSize;` | `FlyoutSize.Auto` | By default a flyout doesn't have a fixed width and will wrap around its content. However, you can set an optional size (via string or FlyoutSize enum). Available options are `FlyoutSize.Auto`, `FlyoutSize.Small`, `FlyoutSize.Medium`, `FlyoutSize.Large` and `FlyoutSize.Full`. |
 
 #### Example

@@ -6,7 +6,7 @@ The functionality can be extended by adding the `auiSelectableActions` directive
 ## Usage
 
 ```typescript
-import { SelectableListModule } from '@acpaas-ui/ngx-components//selectable-list'`;
+import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list'`;
 ```
 
 ## Documentation
