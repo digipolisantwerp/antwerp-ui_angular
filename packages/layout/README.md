@@ -1,12 +1,18 @@
 # @acpaas-ui/ngx-components/layout
 
-The layout module is a collection of several layout-related modules.
+The layout module is a collection of several layout-related modules, like a header, a footer, a modal, a pane, etc.
 
 ## Usage
 
 ```typescript
 import {
-	CookieconsentModule, FooterModule, HeaderModule, HeroModule, PaneModule, SidebarModule
+	CookieconsentModule,
+	FooterModule,
+	HeaderModule,
+	HeroModule,
+	ModalModule,
+	PaneModule,
+	SidebarModule
 } from '@acpaas-ui/ngx-components/layout'`;
 ```
 
@@ -18,12 +24,13 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |
-| `CookieconsentModule` | xxx | [Documentation](./src/lib/cookie-consent/README.md)
-| `FooterModule` | xxx  | [Documentation](./src/lib/footer/README.md)
-| `HeaderModule` | xxx  | [Documentation](./src/lib/header/README.md)
-| `HeroModule` | xxx  | [Documentation](./src/lib/hero/README.md)
-| `PaneModule` | xxx  | [Documentation](./src/lib/pane/README.md)
-| `SidebarModule` | xxx  | [Documentation](./src/lib/sidebar/README.md)
+| `CookieconsentModule` | Provides an easy, minimal configuration setup to add a cookie consent. | [Documentation](./src/lib/cookie-consent/README.md)
+| `FooterModule` | A simple footer with go-to-top functionality.  | [Documentation](./src/lib/footer/README.md)
+| `HeaderModule` | A header component with logo that can hide itself when scrolling. | [Documentation](./src/lib/header/README.md)
+| `HeroModule` | A basic hero component to display e.g. a title or action buttons. | [Documentation](./src/lib/hero/README.md)
+| `ModalModule` | A service and a basic class to create modals in your app. | [Documentation](./src/lib/modal/README.md)
+| `PaneModule` | An easy way to open a pane. | [Documentation](./src/lib/pane/README.md)
+| `SidebarModule` | An easy way to create a sidebar in your app. | [Documentation](./src/lib/sidebar/README.md)
 
 ## Contributing
 

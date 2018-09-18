@@ -5,7 +5,7 @@ Description goes here.
 ## Usage
 
 ```typescript
-import { CookieConsentModule } from '@acpaas-ui/ngx-components/layout'`;
+import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout'`;
 ```
 
 ## Documentation
@@ -21,11 +21,11 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ### Example
 
 ```typescript
-import { CookieConsentModule } from '@acpaas-ui/ngx-components/layout';
+import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
     imports: [
-        CookieConsentModule
+        CookieconsentModule
     ]
 });
 
