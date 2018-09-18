@@ -71,31 +71,31 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ISC
 ISC
 
-@angular/common@6.0.1
+@angular/common@6.1.7
 MIT
 MIT
 
-@angular/compiler@6.0.1
+@angular/compiler@6.1.7
 MIT
 MIT
 
-@angular/core@6.0.1
+@angular/core@6.1.7
 MIT
 MIT
 
-@angular/forms@6.0.1
+@angular/forms@6.1.7
 MIT
 MIT
 
-@angular/platform-browser-dynamic@6.0.1
+@angular/platform-browser-dynamic@6.1.7
 MIT
 MIT
 
-@angular/platform-browser@6.0.1
+@angular/platform-browser@6.1.7
 MIT
 MIT
 
-@angular/router@6.0.1
+@angular/router@6.1.7
 MIT
 MIT
 
@@ -139,7 +139,7 @@ cookieconsent@3.0.6
 MIT
 MIT
 
-lodash-es@4.17.11
+lodash-es@4.17.10
 MIT
 Copyright JS Foundation and other contributors <https://js.foundation/>
 
@@ -438,6 +438,10 @@ Apache License
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
+
+short-unique-id@1.1.1
+MIT
+MIT
 
 tslib@1.7.1
 Apache-2.0
