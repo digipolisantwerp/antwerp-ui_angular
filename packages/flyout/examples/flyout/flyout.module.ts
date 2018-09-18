@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogoModule } from '@acpaas-ui/ngx-components/logo';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
+import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout';
 
 import { Pages } from './pages/index';
 
 @NgModule({
 	imports: [
 		CommonModule,
-		LogoModule,
 		CodeSnippetModule,
+		FlyoutModule,
+		FlyoutButtonModule,
 	],
 	declarations: [
 		Pages,
 	],
 })
-export class LogoExamplesModule {}
+export class FlyoutExamplesModule {}
