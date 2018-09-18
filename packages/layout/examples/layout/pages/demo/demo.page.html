@@ -1,0 +1,82 @@
+<h1 class="h3 u-margin-bottom">Layout</h1>
+
+<!-- COOKIE CONSENT -->
+<!-- Just works :-) -->
+
+
+<!-- HEADER -->
+<div class="u-margin-bottom u-margin-top">
+	<aui-header>
+		<div auiHeaderContent>
+			<div auiHeaderLogo class="o-header__wrapper">
+				<aui-logo title="Example" src="https://robohash.org/acpaas-ui"></aui-logo>
+				<a class="o-header__link">Example</a>
+			</div>
+		</div>
+		<div auiHeaderMenuItem>
+			<a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button a-button--navigation has-icon-left" target="_blank">
+				<i class="fa fa-github"></i>ACPaaS UI on GitHub
+			</a>
+		</div>
+	</aui-header>
+</div>
+
+
+<!-- HERO -->
+<div class="u-margin-bottom u-margin-top">
+	<aui-hero>
+		<div auiHeroCard>
+			<h1>Hero title</h1>
+			<a>Hero link</a>
+		</div>
+		<div auiHeroCta>
+			<div class="buttons">
+				<a class="a-button">Hero action one</a>
+				<a class="a-button">Hero action two</a>
+			</div>
+		</div>
+	</aui-hero>
+</div>
+
+
+<!-- FOOTER -->
+<div class="u-margin-bottom u-margin-top">
+	<aui-footer>
+		<div class="u-margin-bottom u-margin-top">
+			<div auiFooterContent>
+				TOP CONTENT
+			</div>
+			<div auiFooterBottom>
+				<aui-subfooter>
+					<aui-copyright domain="Digipolis"></aui-copyright>
+				</aui-subfooter>
+			</div>
+		</div>
+	</aui-footer>
+</div>
+
+
+<!-- MODAL -->
+<div class="u-margin-bottom u-margin-top">
+	<button class="a-button"
+		(click)="openModal()">
+		Test modal
+	</button>
+</div>
+
+
+<!-- PANE -->
+<div class="u-margin-bottom u-margin-top">
+	<button class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
+	<button class="a-button" (click)="myPane.openPane()">Open pane</button>
+	<aui-pane #myPane [side]="'left'" [opened]="false" [backdrop]="false">
+	    Pane content
+		<button class="a-button" (click)="myPane.closePane()">Close pane</button>
+	</aui-pane>
+</div>
+
+
+<!-- SIDEBAR -->
+<div class="u-margin-bottom u-margin-top">
+	<aui-sidebar title="Demo sidebar" [items]="sidebarItems" open="true"></aui-sidebar>
+</div>
