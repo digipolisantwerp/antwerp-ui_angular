@@ -1,4 +1,4 @@
-const { resolve, sep } = require('path');
+const { resolve, sep, join } = require('path');
 const { writeFileSync } = require('fs');
 const colors = require('colors');
 const camelCase = require('lodash.camelcase');
@@ -20,6 +20,16 @@ const buildExample = package => () => {
 	return exec(`ng build ${package} -c examples`);
 };
 
+const rimRafExamples = () => {
+	if (!process.env.example) {
+		exec(`rimraf examples`);
+
+		console.log(colors.green('Examples folder cleaned.'));
+	}
+
+	return Promise.resolve();
+}
+
 const updateRoutes = () => {
 	// TODO: fix lazy imports if this ever gets fixed: https://github.com/angular/angular-cli/issues/6373
 	console.log(colors.yellow('Updating styleguide routes...'));
@@ -35,8 +45,9 @@ const updateRoutes = () => {
 		const route = `${snakeCase(package).toUpperCase()}_EXAMPLES_ROUTES`;
 		const moduleName = `${upperFirst(camelCase(package))}ExamplesModule`;
 
-		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}';\n`;
-		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}';\n`;
+		// TODO: investigate this further, importing from the fesm module seems to solve the path resolving issue but should not be required to make this work
+		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}/fesm2015/${package}';\n`;
+		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}/fesm2015/${package}';\n`;
 		moduleConfig += `	${moduleName},\n`;
 		routeConfig += `	{ path: '${package}', children: ${route}, title: '${upperFirst(package.replace(/-/g, ' '))}', },\n`;
 	});
@@ -49,11 +60,29 @@ const updateRoutes = () => {
 	return Promise.resolve();
 };
 
+const updateExamplesPackage = () => {
+	console.log(colors.yellow('Writing examples package.json...'));
+
+	const examplesDir = resolve(process.cwd(), 'examples');
+	const package = {
+		name: '@acpaas-ui/ngx-examples',
+		version: '0.0.1',
+	};
+
+	writeFileSync(join(examplesDir, 'package.json'), JSON.stringify(package, null, 2), { encoding: 'UTF-8' });
+
+	console.log(colors.green('Examples package.json complete.'));
+
+	return Promise.resolve();
+}
+
 promiseQueue([
+	rimRafExamples,
 	...packages.filter(package => {
 		return (!process.env.example || (process.env.example && package === process.env.example))
 	}).map(buildExample),
 	updateRoutes,
+	updateExamplesPackage,
 ])
 	.then(() => {
 		console.log(colors.green('Examples completed.'));

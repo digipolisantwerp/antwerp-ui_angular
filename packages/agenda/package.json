@@ -1,15 +1,8 @@
 {
   "name": "agenda",
   "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "~5.2.0",
-    "@angular/core": "~5.2.0"
-  },
   "acpaas-ui": {
     "dependencies": []
-  },
-  "devDependencies": {
-    "rxjs-compat": "~6.1.0"
   },
   "dependencies": {
     "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",

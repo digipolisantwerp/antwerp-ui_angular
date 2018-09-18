@@ -1,5 +1,5 @@
 import { HeaderModule, HeroModule, FooterModule, PaneModule } from '@acpaas-ui/ngx-components/layout';
-import { LogoModule } from '@acpaas-ui/ngx-components/logo/esm2015';
+import { LogoModule } from '@acpaas-ui/ngx-components/logo';
 
 export const AUIModules = [
 	HeaderModule,
