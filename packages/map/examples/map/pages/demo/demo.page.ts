@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { LeafletMap } from '@acpaas-ui/ngx-components/map';
+import { Component, OnInit } from '@angular/core';
+import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
 
 @Component({
 	templateUrl: './demo.page.html',
 })
-export class DemoPageComponent {
+export class DemoPageComponent implements OnInit {
 
 	public leafletMap: LeafletMap = new LeafletMap({
 		zoom: 13, // default zoom level
@@ -12,6 +12,12 @@ export class DemoPageComponent {
 		onAddPolygon: (layer) => {},
 		onAddLine: (layer) => {},
 		onEditFeature: (feature) => {},
-});
+	});
 
+	public ngOnInit(): void {
+		this.leafletMap.onInit.subscribe(() => {
+			this.leafletMap.addTileLayer(baseMapWorldGray);
+			this.leafletMap.addTileLayer(baseMapAntwerp);
+	 });
+	}
 }
