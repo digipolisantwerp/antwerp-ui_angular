@@ -1,4 +1,4 @@
-import { ApproveModalDirective } from '..';
+import { ApproveModalDirective } from './approve.directive';
 
 export const Directives = [
 	ApproveModalDirective,

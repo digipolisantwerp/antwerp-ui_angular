@@ -1,6 +1,8 @@
 import { AvatarExamplesModule } from '@acpaas-ui/ngx-examples/avatar/fesm2015/avatar';
 import { CalendarExamplesModule } from '@acpaas-ui/ngx-examples/calendar/fesm2015/calendar';
 import { FlyoutExamplesModule } from '@acpaas-ui/ngx-examples/flyout/fesm2015/flyout';
+import { FormsExamplesModule } from '@acpaas-ui/ngx-examples/forms/fesm2015/forms';
+import { LayoutExamplesModule } from '@acpaas-ui/ngx-examples/layout/fesm2015/layout';
 import { LogoExamplesModule } from '@acpaas-ui/ngx-examples/logo/fesm2015/logo';
 import { MapExamplesModule } from '@acpaas-ui/ngx-examples/map/fesm2015/map';
 import { PaginationExamplesModule } from '@acpaas-ui/ngx-examples/pagination/fesm2015/pagination';
@@ -12,6 +14,8 @@ export const ExamplesModules = [
 	AvatarExamplesModule,
 	CalendarExamplesModule,
 	FlyoutExamplesModule,
+	FormsExamplesModule,
+	LayoutExamplesModule,
 	LogoExamplesModule,
 	MapExamplesModule,
 	PaginationExamplesModule,
