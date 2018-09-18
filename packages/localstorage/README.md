@@ -133,54 +133,6 @@ The following example will only update the user if the username has changed. Cha
 @select('user', (prevValue, nextValue) => prevValue.username === nextValue.username)) user$: BehaviorSubject<IUser>;
 ```
 
-#### LocalstorageReduxPlugin
-
-If you are working with the `@angular-redux/store` package, you can use the enhancer provided in the `LocalstorageStoreModule` to keep your app state in sync with the browser storage.
-
-```typescript
-import { LocalstorageModule, LocalstorageStoreModule } from '@acpaas-ui/localstorage';
-
-@NgModule({
-    imports: [
-        LocalstorageModule.forRoot({
-            storageType: 'sessionStorage'
-        }),
-        LocalstorageStoreModule
-    ]
-})
-```
-and add the enhancer when configuring your store:
-```typescript
-export class AppModule {
-    constructor(
-        private ngRedux: NgRedux<any>,
-        private localstorageReduxPlugin: LocalstorageReduxPlugin
-    ) {
-        const enhancers = [localstorageReduxPlugin.enhancer(), ...enhancers];
-
-        this.ngredux.configureStore(rootReducer, initialState, [...middleware], enhancers);
-    }
-}
-```
-
-If you provide no selectors, the enhancer will keep track of the entire app state and store it in the selected storage as `reduxState`. You can however choose which parts of the state to store by providing some property and path `selectors`:
-
-```typescript
-localstorageReduxPlugin.enhancer([
-    'users',
-    ['user', 'likes', 'comments']
-]);
-```
-
-The selectors will be stored in the state as flattened keys:
-```typescript
-{
-    'users',
-    'users.likes.comments'
-}
-```
-and will be kept in sync when updating the state or vice versa when refreshing the page.
-
 ## Contributing
 
 Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
