@@ -1,6 +1,6 @@
 import { Directive, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
-import { ApproveModalComponent } from '../components/approve-modal.component';
+import { ApproveModalComponent } from '../components/approve-modal/approve-modal.component';
 import { ModalService } from '../services/modal.service';
 
 @Directive({
