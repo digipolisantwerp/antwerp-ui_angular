@@ -1,5 +1,22 @@
 <h1 class="h3 u-margin-bottom">Forms</h1>
 
-<div class="u-margin-bottom u-margin-top">
+<h2 class="h4 u-margin-bottom">Auto complete example</h2>
 
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-auto-complete
+		placeholder="Choose your hero…"
+		remote="true"
+		[results]="heroes"
+		label="name"
+		key="id"
+		(search)="searchItems($event)">
+	</aui-auto-complete>
 </div>
