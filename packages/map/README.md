@@ -1,11 +1,25 @@
 # @acpaas-ui/ngx-components/map
 
-This module renders a map component with some basic controls, based on leaflet.
+This module renders a map component with some basic controls, based on [Leaflet](https://leafletjs.com).
+
+## Dependencies
+* `leaflet`
+* `leaflet-draw`
+* `esri-leaflet`
 
 ## Usage
 
 ```typescript
-import { LeafletMap } from '@acpaas-ui/ngx-components/avatar'`;
+import { LeafletMap } from '@acpaas-ui/ngx-components/map'`;
+```
+
+Add the leaflet CSS style to the `src/angular.json` file.
+```typescript
+"styles": [
+  "styleguide/styles.scss",
+  "node_modules/leaflet/dist/leaflet.css",
+  "node_modules/leaflet-draw/dist/leaflet.draw.css"
+]
 ```
 
 ## Documentation
@@ -20,6 +34,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | -----------  | ------ | -------------------------- |
 | `@Input() leafletMap: LeafletMap;` | `-` | A custom LeafletMap. |
 | `@Input() hasSidebar: boolean;` | `-` | Define if the map has a sidebar. |
+
+Check the [Leaflet API reference](https://leafletjs.com/reference-1.3.0.html) for Leaflet specific API's.
 
 #### Example
 
