@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/localstorage
 
-The `@acpaas-ui/ngx-components/localstorage` package allows you to easily store and retrieve data in and from your browsers storage.
+The `acpaas-ui localstorage` service allows you to easily store and retrieve data in and from your browsers storage.
 
 ## Usage
 
