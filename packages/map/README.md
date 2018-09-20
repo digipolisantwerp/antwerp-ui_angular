@@ -1,105 +1,86 @@
-# Leaflet Component
-A map component with some basic controls, based on leaflet.
+# @acpaas-ui/ngx-components/map
 
-Available controls:
-- drag-control: switch to panning
-- draw-control: switch to drawing
-- fullscreen-control: toggle fullscreen mode
-- locate-control: zoom map to current location
-- zoom-control: zoom in and out
+This module renders a map component with some basic controls, based on [Leaflet](https://leafletjs.com).
 
 ## Dependencies
-- leaflet
-- leaflet-draw
-- esri-leaflet
-
-## Installation
-```
-npm install @acpaas-ui/leaflet
-```
-
-Import component in **app.module.ts**
-```
-import { LeafletModule } from '@acpaas-ui/leaflet';
-
-@NgModule({
-    imports: [
-        LeafletModule
-    ]
-})
-
-export class AppModule {}
-```
+* `leaflet`
+* `leaflet-draw`
+* `esri-leaflet`
+* `@acpaas-ui/ngx-components/flyout`
 
 ## Usage
 
-### Initialization
-
-The map component is controlled by an instance of the `LeafletMap` class.
-So first thing we'll have to do is create an instance.
+```typescript
+import { LeafletMap } from '@acpaas-ui/ngx-components/map'`;
 ```
-private leafletMap: LeafletMap = new LeafletMap({
-    zoom: 13, // default zoom level
-    center: [51.215, 4.425], // default center point
-    onAddPolygon: (layer) => {},
-    onAddLine: (layer) => {},
-    onEditFeature: (feature) => {},
+
+Add the leaflet CSS styles to the `src/angular.json` file.
+```typescript
+"styles": [
+  "styleguide/styles.scss",
+  "node_modules/leaflet/dist/leaflet.css",
+  "node_modules/leaflet-draw/dist/leaflet.draw.css"
+]
+```
+
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Selectable list module
+
+#### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example).|
+| `@Input() hasSidebar: boolean;` | `false` | Define if the map has a sidebar. |
+
+Check the [Leaflet API reference](https://leafletjs.com/reference-1.3.0.html) for Leaflet specific API's.
+
+#### Example
+
+```typescript
+import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
+
+public leafletMap: LeafletMap = new LeafletMap({
+  zoom: 13, // default zoom level
+  center: [51.215, 4.425], // default center point
+  onAddPolygon: (layer) => {},
+  onAddLine: (layer) => {},
+  onEditFeature: (feature) => {},
 });
-```
 
-Next you should bind this map to your `aui-leaflet` component.
-```
-<aui-leaflet [leafletMap]="leafletMap"></aui-leaflet>
-```
-
-### Adding layers
-
-Because leaflet needs the actual DOM element to be rendered, you can only add layers after initialization.
-Therefor a callback is provided to do so. By default we export 2 basic layers which can be used, but you can use any layer you want.
-
-```
-ngOnInit() {
- this.leafletMap.onInit.subscribe(() => {
+public ngOnInit(): void {
+  this.leafletMap.onInit.subscribe(() => {
     this.leafletMap.addTileLayer(baseMapWorldGray);
     this.leafletMap.addTileLayer(baseMapAntwerp);
- });
+  });
 }
 ```
 
-### Adding controls
-
-Adding controls is done by simply adding them to the content of your `aui-leaflet` component.
-You can set the position of your control by using the correct attribute selectors.
-You can also choose whether your component needs a sidebar or not by toggling the `hasSidebar` input.
-
-```
+```html
 <aui-leaflet [leafletMap]="leafletMap" [hasSidebar]="true">
-    <div controls top left>
-        Content displayed in top left corner of map
-    </div>
-    <div controls top right>
-        Content displayed in top right corner of map
-    </div>
-    <div controls bottom right>
-        Content displayed in bottom right corner of map
-    </div>
-    <div controls bottom left>
-        Content displayed in bottom left corner of map
-    </div>
-    <div>
-        Content displayed in sidebar
-    </div>
+  <div controls top left>
+    <aui-leaflet-drag-control></aui-leaflet-drag-control>
+    <aui-leaflet-draw-control></aui-leaflet-draw-control>
+  </div>
+  <div controls top right>
+    <aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
+  </div>
+  <div controls bottom left>
+    <aui-leaflet-locate-control></aui-leaflet-locate-control>
+  </div>
+  <div controls bottom right>
+    <aui-leaflet-zoom-control></aui-leaflet-zoom-control>
+  </div>
+  <div>
+    Content displayed in sidebar
+  </div>
 </aui-leaflet>
 ```
 
-### API
-
-#### Component
-
-- `leafletMap`: an instance of the LeafletMap class
-- `hasSidebar`: a boolean that determines whether the component should have a sidebar or not.
-
-#### LeafletMap
+#### Custom services
 
 - `map`: The native leaflet map instance
 - `addTileLayer(layer: LeafletLayer)`: adds a tile layer to the map. (see leaflet docs)
@@ -114,3 +95,7 @@ You can also choose whether your component needs a sidebar or not by toggling th
 - `setView(center, zoom)`: Zoom to the given center and zoom values.
 - `addMarker(position, options)`: Adds a marker to the given position. (see leaflet docs)
 - `addHTMLMarker`: Adds an HTML marker to the given position.
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.

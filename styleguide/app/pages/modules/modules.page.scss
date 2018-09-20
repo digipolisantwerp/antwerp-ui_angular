@@ -19,5 +19,9 @@
 		> nav {
 			margin-right: $spacer-lg;
 		}
+
+		> div {
+			flex: auto;
+		}
 	}
 }

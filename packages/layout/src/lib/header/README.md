@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/layout
 
-Description goes here.
+A header component with logo that can hide itself when scrolling.
 
 ## Usage
 
@@ -14,9 +14,20 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ### API
 
+#### Component
+
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() your: string;` | `'API'` | Goes here. |
+| `@Input() hasLogo: Boolean;` | `false` | Whether there is a logo or not in the header. Also sets the `has-logo` class. |
+| `@Input() hasContent: Boolean;` | `false` | Whether there is content or not in the header. |
+
+#### Available directives
+
+- auiHeaderContent
+- auiHeaderLogo
+- auiHeaderMenuItem
+
+The main (or only) functionality of these directives is helping you laying out your header.
 
 ### Example
 
@@ -32,12 +43,22 @@ import { HeaderModule } from '@acpaas-ui/ngx-components/layout';
 export class AppModule {};
 ```
 
-```typescript
-// Controller code
-```
+> Note that the example below makes use of the [ACPaaS UI logo component](../../../../logo/README.md).
 
 ```html
-<!-- HTML code -->
+<aui-header>
+	<div auiHeaderContent>
+		<div auiHeaderLogo class="o-header__wrapper">
+			<aui-logo title="Example" src="https://robohash.org/acpaas-ui"></aui-logo>
+			<a class="o-header__link">Example</a>
+		</div>
+	</div>
+	<div auiHeaderMenuItem>
+		<a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button a-button--navigation has-icon-left" target="_blank">
+			<i class="fa fa-github"></i>ACPaaS UI on GitHub
+		</a>
+	</div>
+</aui-header>
 ```
 
 ## Contributing
