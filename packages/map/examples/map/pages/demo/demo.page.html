@@ -1,0 +1,37 @@
+<h1 class="h3 u-margin-bottom">Map</h1>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-leaflet [leafletMap]="leafletMap" [hasSidebar]="true">
+		<div controls top left>
+			<aui-leaflet-drag-control></aui-leaflet-drag-control>
+			<aui-leaflet-draw-control></aui-leaflet-draw-control>
+		</div>
+		<div controls top right>
+			<aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
+		</div>
+		<div controls bottom left>
+			<aui-leaflet-locate-control></aui-leaflet-locate-control>
+		</div>
+		<div controls bottom right>
+			<aui-leaflet-zoom-control></aui-leaflet-zoom-control>
+		</div>
+		<div>
+			Content displayed in sidebar
+		</div>
+	</aui-leaflet>
+</div>
