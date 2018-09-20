@@ -14,16 +14,16 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ### Localstorage service
 
-### API
+### Methods
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `setItem: key: string, value: any;` | - | store an item in the localstorage and update the subscribers (all data is stringified to a JSON string). |
-| `getItem: key: string;` | - | retrieve an item from the localstorage (all data is parsed from a JSON string). |
-| `removeItem: key: string;` | - | remove an item from the localstorage and update the subscribers. |
-| `clear: ...args;` | - | clear the localstorage. |
-| `select: selector: Selector, comparator: Comparator = LocalstorageHelper.comparator` | - | get a BehaviorSubject containing the selected value. |
-| `clearSubscribers: ` | - | unsubscribe all subscribers. |
+| Method         | Description |
+| -----------    | -------------------------- |
+| `setItem(key: string, value: any): void` | store an item in the localstorage and update the subscribers (all data is stringified to a JSON string). |
+| `getItem<T = any>(key: string): T` | retrieve an item from the localstorage (all data is parsed from a JSON string). |
+| `removeItem(key: string): void` | remove an item from the localstorage and update the subscribers. |
+| `clear(...args): void` | clear the localstorage. |
+| `select<T = any>(selector: Selector, comparator: Comparator = LocalstorageHelper.comparator): BehaviorSubject<T>` | get a BehaviorSubject containing the selected value. |
+| `clearSubscribers(): void` | unsubscribe all subscribers. |
 
 ### Storage type
 
