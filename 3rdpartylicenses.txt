@@ -71,31 +71,31 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ISC
 ISC
 
-@angular/common@6.1.7
+@angular/common@6.1.8
 MIT
 MIT
 
-@angular/compiler@6.1.7
+@angular/compiler@6.1.8
 MIT
 MIT
 
-@angular/core@6.1.7
+@angular/core@6.1.8
 MIT
 MIT
 
-@angular/forms@6.1.7
+@angular/forms@6.1.8
 MIT
 MIT
 
-@angular/platform-browser-dynamic@6.1.7
+@angular/platform-browser-dynamic@6.1.8
 MIT
 MIT
 
-@angular/platform-browser@6.1.7
+@angular/platform-browser@6.1.8
 MIT
 MIT
 
-@angular/router@6.1.7
+@angular/router@6.1.8
 MIT
 MIT
 
