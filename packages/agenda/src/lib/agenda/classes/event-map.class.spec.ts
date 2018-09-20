@@ -79,7 +79,7 @@ describe('EventMap Class', () => {
 		]);
 	});
 
-	fit('should return an events map', () => {
+	it('should return an events map', () => {
 		const availableSlots = 4;
 		const eventMap = new EventMap(weeks, availableSlots);
 		eventMap.fillSlot(1, 3, 0, 2, { title: 'test 1', startDate: new Date(2018, 0, 10), endDate: new Date(2018, 0, 11) });

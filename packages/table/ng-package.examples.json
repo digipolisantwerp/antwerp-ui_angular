@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../examples/table",
+  "deleteDestPath": false,
+  "lib": {
+    "entryFile": "examples/index.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "short-unique-id"
+  ]
+}

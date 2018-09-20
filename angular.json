@@ -23,14 +23,17 @@
               "styleguide/assets"
             ],
             "styles": [
-              "styleguide/styles.scss"
+              "styleguide/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "styleguide/node_modules"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -461,7 +464,7 @@
               "project": "packages/layout/ng-package.prod.json"
             },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/layout/ng-package.examples.json"
             }
           }
         },
@@ -504,7 +507,7 @@
               "project": "packages/map/ng-package.prod.json"
             },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/map/ng-package.examples.json"
             }
           }
         },
@@ -844,6 +847,9 @@
             "project": "packages/table/ng-package.json"
           },
           "configurations": {
+            "examples": {
+              "project": "packages/table/ng-package.examples.json"
+            },
             "production": {
               "project": "packages/table/ng-package.prod.json"
             }

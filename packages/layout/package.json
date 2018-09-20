@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular-redux/store": "~7.1.1",
-    "@angular/common": "~5.2.0",
-    "@angular/core": "~5.2.0"
+    "redux": "~3.7.2"
   },
   "acpaas-ui": {
     "dependencies": [
@@ -13,13 +12,11 @@
   },
   "devDependencies": {
     "@angular-redux/store": "~7.1.1",
-    "rxjs-compat": "~6.1.0"
+    "redux": "~3.7.2"
   },
   "dependencies": {
-    "@a-ui/core": "2.1.1",
     "@jsprds/headroom.ts": "0.0.2",
     "cookieconsent": "~3.0.6",
-    "lodash-es": "~4.17.10",
-    "redux": "~3.7.2"
+    "lodash-es": "~4.17.10"
   }
 }

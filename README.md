@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Antwerp City Platform as a Service User Interface (ACPaas UI) is a **component interface library** for building user interfaces and responsive web apps. It's designed to provide developers with functionality en UI/UX patterns that matches the Antwerpen styleguide.
+Antwerp City Platform as a Service User Interface (ACPaas UI) is a **component interface library** for building user interfaces and responsive web apps. It's designed to provide developers with functionality and UI/UX patterns that matches the Antwerpen styleguide.
 
 ## Ecosystem
 
@@ -36,6 +36,16 @@ Edit styles.scss to import the branding look & feel.
 ```
 
 Then start using the components in your pages. Look at the component documentation below to learn how to use each component.
+
+You can also add a branding-compatible [flexbox grid layout system][flexboxgrid]:
+
+```sh
+npm install @a-ui/flexboxgrid
+```
+
+```scss
+@import '@a-ui/flexboxgrid/dist/flexboxgrid.min.css';
+```
 
 > To learn more about using the branding look & feel, check the [core branding guide][branding-core-guide]. Note that the [core branding][branding-core] contains the Antwerp logo and fonts, which are subject to a usage restriction. For use outside of apps for the city of Antwerp you can use [acpaas branding][branding-acpaas] instead.
 
@@ -91,6 +101,7 @@ Copyright (c) 2016-present, Digipolis
 <!-- Generic Links -->
 [acpaas-ui]: https://acpaas-ui.digipolis.be
 [acpaas-ui-slack]: https://dgpls.slack.com/messages/C4M60PQJF
+[flexboxgrid]: https://github.com/a-ui/core_flexboxgrid_scss
 
 <!-- Travis -->
 [acpaas-ui-angular-build]: https://img.shields.io/travis/digipolisantwerp/acpaas-ui_angular.svg
