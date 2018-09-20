@@ -1,5 +1,6 @@
-# @acpaas-ui/code-snippet
-*A component for displaying a code snippet formatted by highlight.js*
+# @acpaas-ui/ngx-components/code-snippet
+
+This module contains a component for displaying a code snippet formatted by highlight.js
 
 ## Dependencies
 This package is build depending on:
@@ -8,30 +9,31 @@ This package is build depending on:
 - and the [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
 - the [Marker npm package](https://www.npmjs.com/package/marked)
 
-*If you were to link this component locally, perform an `npm install` for the above npm packages in your app first.*
+## Usage
 
-### Highlight.js CDN's
-Add the following CDN's to your project:
-
-- `<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css">`
-- `<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>`
-
-You can also add additional languages if that's needed:
-
-- `<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/typescript.min.js"></script>`
-- `<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/scss.min.js"></script>`
-- ...
-
-An overview of all CDN links can be found [here](https://cdnjs.com/libraries/highlight.js/)
-
-## Installation
-```
-npm install @acpaas-ui/code-snippet --save
+```typescript
+import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet'`;
 ```
 
-Import the CodeSnippetModule in **app.module.ts**
+## Documentation
 
-``` typescript
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Code snippet list modules
+
+#### API
+
+| Name         | Description | Documentations |
+| -----------  | ------ | -------------------------- |
+| `@Input() codeSnippet: string;` | `-` | Add your code snippet here. |
+| `@Input() processMarkdown: boolean;` | `false` | When having some markdown that contains code snippets. |
+| `@Input() scrollable: boolean;` | `true` | Boolean for when code snippet should not have a horizontal scrollbar when the code snippet is not wide enough. |
+
+#### Example
+
+##### A single code snippet
+
+```typescript
 import { CodeSnippetModule } from '@acpaas-ui/code-snippet';
 
 @NgModule({
@@ -42,13 +44,7 @@ import { CodeSnippetModule } from '@acpaas-ui/code-snippet';
 
 export class AppModule {}
 ```
-
-## Usage
-
-### A single code snippet
-In *your.component.ts* file:
-
-``` typescript
+```typescript
 public codeExampleJSON = `
 	[
 	    {
@@ -69,41 +65,32 @@ public codeExampleJS = `
     }
     greetMe('World');`;
 ```
-
-In *your.component.html* file:
-
-``` html
+```html
 <aui-code-snippet [codeSnippet]="codeExampleJSON"></aui-code-snippet>
 ```
 
-### Multiple code snippets
+##### Multiple code snippets
 
-In *your.component.ts* file:
-
-``` typescript
+```typescript
 public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
 ```
-
-In *your.component.html* file:
-
-``` html
+```html
 <aui-code-snippet
 	*ngFor="let codeExample of codeExamples"
 	[codeSnippet]="codeExample"
 ></aui-code-snippet>
 ```
 
-### Process Markdown with code snippets
-If you have some Markdown that contains code snippets, the component can also deal with that.
+### Process markdown with code snippets
+If you have some markdown that contains code snippets, the component can also deal with that.
 
 *Create a service to get the markdown (this is just an example of getting a local markdown file):*
 
-``` typescript
+```typescript
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-
 
 @Injectable()
 export class ContentService {
@@ -117,10 +104,7 @@ export class ContentService {
     }
 }
 ```
-
-In *your.component.ts* file:
-
-``` typescript
+```typescript
 public mdExample: string;
 
 constructor(
@@ -129,24 +113,14 @@ constructor(
     contentService.getMarkdown().subscribe(data => this.mdExample = data);
 }
 ```
-
-In *your.component.html* file:
-
-``` html
+```html
 <aui-code-snippet
     *ngIf="mdExample"
     [codeSnippet]="mdExample"
     [processMarkdown]="true"
 ></aui-code-snippet>
-
 ```
 
-## Options
+## Contributing
 
-#### processMarkdown
-
-`boolean`: `false` by default but if you need to include some Markdown containing a code snippet, you can set it to `true` and just add the content of the markdown file to `[codeSnippet]`.
-
-#### scrollable
-
-`boolean`: `true` by default. Change to option to false if the code-snippet should not have a horizontal scrollbar when the code-snippet is not wide enough.
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.

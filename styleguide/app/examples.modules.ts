@@ -1,5 +1,6 @@
 import { AvatarExamplesModule } from '@acpaas-ui/ngx-examples/avatar/fesm2015/avatar';
 import { CalendarExamplesModule } from '@acpaas-ui/ngx-examples/calendar/fesm2015/calendar';
+import { CodeSnippetExamplesModule } from '@acpaas-ui/ngx-examples/code-snippet/fesm2015/code-snippet';
 import { FlyoutExamplesModule } from '@acpaas-ui/ngx-examples/flyout/fesm2015/flyout';
 import { FormsExamplesModule } from '@acpaas-ui/ngx-examples/forms/fesm2015/forms';
 import { LayoutExamplesModule } from '@acpaas-ui/ngx-examples/layout/fesm2015/layout';
@@ -13,6 +14,7 @@ import { TableExamplesModule } from '@acpaas-ui/ngx-examples/table/fesm2015/tabl
 export const ExamplesModules = [
 	AvatarExamplesModule,
 	CalendarExamplesModule,
+	CodeSnippetExamplesModule,
 	FlyoutExamplesModule,
 	FormsExamplesModule,
 	LayoutExamplesModule,
