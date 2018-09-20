@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/layout
 
-Description goes here.
+A simple footer with go-to-top functionality.
 
 ## Usage
 
@@ -14,9 +14,28 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ### API
 
+#### Footer
+
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() your: string;` | `'API'` | Goes here. |
+| `@Input() isExtended: Boolean;` | `false` | Whether there is more than only a subfooter module or not. This variable is used to activate change detection. |
+
+#### Subfooter
+
+No API.
+
+#### Copyright
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() domain: String;` | `''` | The copyright domain. |
+
+#### Available directives
+
+- auiFooterContent
+- auiFooterBottom
+
+The main (or only) functionality of these directives is helping you laying out your footer.
 
 ### Example
 
@@ -32,12 +51,19 @@ import { FooterModule } from '@acpaas-ui/ngx-components/layout';
 export class AppModule {};
 ```
 
-```typescript
-// Controller code
-```
-
 ```html
-<!-- HTML code -->
+<aui-footer isExtended="false">
+	<div class="u-margin-bottom u-margin-top">
+		<div auiFooterContent>
+			Footer content goes here
+		</div>
+		<div auiFooterBottom>
+			<aui-subfooter>
+				<aui-copyright domain="Digipolis"></aui-copyright>
+			</aui-subfooter>
+		</div>
+	</div>
+</aui-footer>
 ```
 
 ## Contributing
