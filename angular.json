@@ -23,7 +23,9 @@
               "styleguide/assets"
             ],
             "styles": [
-              "styleguide/styles.scss"
+              "styleguide/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -505,7 +507,7 @@
               "project": "packages/map/ng-package.prod.json"
             },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/map/ng-package.examples.json"
             }
           }
         },

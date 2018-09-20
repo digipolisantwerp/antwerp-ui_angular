@@ -31,7 +31,7 @@ export class LeafletComponent implements AfterViewInit, AfterContentInit {
 	@ContentChild(LeafletDragControlComponent) dragControl: LeafletDragControlComponent;
 	@ContentChild(LeafletDrawControlComponent) drawControl: LeafletDrawControlComponent;
 	@Input() leafletMap: LeafletMap;
-	@Input() hasSidebar;
+	@Input() hasSidebar = false;
 
 	ngAfterViewInit() {
 		// Make sure the map is properly rendered before initializing it

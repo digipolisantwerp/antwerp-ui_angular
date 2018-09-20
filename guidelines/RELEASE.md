@@ -22,7 +22,7 @@ Exceptions:
 
 1. **List Changes**
 
-   The maintainers list the PR's that are merged after the last release and determine the severity of the changes (PATCH - MINOR - MAJOR) according to [Semantic Versioning](https://semver.org/). They make sure that the Changelog is properly updated.
+   The maintainers list the PRs that are merged after the last release and determine the severity of the changes (PATCH - MINOR - MAJOR) according to [Semantic Versioning](https://semver.org/). They make sure that the Changelog is properly updated.
 
 2. **Version**
 
