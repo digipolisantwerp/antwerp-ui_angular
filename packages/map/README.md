@@ -6,6 +6,7 @@ This module renders a map component with some basic controls, based on [Leaflet]
 * `leaflet`
 * `leaflet-draw`
 * `esri-leaflet`
+* `@acpaas-ui/ngx-components/flyout`
 
 ## Usage
 
@@ -13,7 +14,7 @@ This module renders a map component with some basic controls, based on [Leaflet]
 import { LeafletMap } from '@acpaas-ui/ngx-components/map'`;
 ```
 
-Add the leaflet CSS style to the `src/angular.json` file.
+Add the leaflet CSS styles to the `src/angular.json` file.
 ```typescript
 "styles": [
   "styleguide/styles.scss",
@@ -32,8 +33,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() leafletMap: LeafletMap;` | `-` | A custom LeafletMap. |
-| `@Input() hasSidebar: boolean;` | `-` | Define if the map has a sidebar. |
+| `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example).|
+| `@Input() hasSidebar: boolean;` | `false` | Define if the map has a sidebar. |
 
 Check the [Leaflet API reference](https://leafletjs.com/reference-1.3.0.html) for Leaflet specific API's.
 
@@ -78,6 +79,22 @@ public ngOnInit(): void {
   </div>
 </aui-leaflet>
 ```
+
+#### Custom services
+
+- `map`: The native leaflet map instance
+- `addTileLayer(layer: LeafletLayer)`: adds a tile layer to the map. (see leaflet docs)
+- `addFeatureLayer(config: any)`: adds a feature layer to the map. (see esri leaflet docs)
+- `addGeoJSON(geoJson: any, config: any)`: add geoJSON to the map. (see leaflet docs)
+- `fitFeatureLayers(featureLayers)`: Fit the map bounds to the given feature layers.
+- `removeLayer(layer)`: removes a layer
+- `zoomIn()`: Zoom in
+- `zoomOut()`: Zoom out
+- `toggleFullscreen()`: Toggle fullscreen
+- `locate()`: Start zooming to current location
+- `setView(center, zoom)`: Zoom to the given center and zoom values.
+- `addMarker(position, options)`: Adds a marker to the given position. (see leaflet docs)
+- `addHTMLMarker`: Adds an HTML marker to the given position.
 
 ## Contributing
 
