@@ -2,10 +2,6 @@
 
 A header component with logo that can hide itself when scrolling.
 
-## Dependencies
-- @jsprds/headroom.ts
-
-
 ## Usage
 
 ```typescript
