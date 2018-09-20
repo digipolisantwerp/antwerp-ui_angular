@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import {
 	AutoCompleteModule,
 } from '@acpaas-ui/ngx-components/forms';
@@ -11,6 +12,7 @@ import { Pages } from './pages/index';
 @NgModule({
 	imports: [
 		CommonModule,
+		FormsModule,
 		RouterModule,
 		AutoCompleteModule,
 		CodeSnippetModule,

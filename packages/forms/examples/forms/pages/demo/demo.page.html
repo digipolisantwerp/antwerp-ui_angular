@@ -10,13 +10,20 @@
 	<aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom">
-	<aui-auto-complete
-		placeholder="Choose your hero…"
-		remote="true"
-		[results]="heroes"
-		label="name"
-		key="id"
-		(search)="searchItems($event)">
-	</aui-auto-complete>
+<div class="u-margin-bottom-xx col-md-6 col-xs-12">
+	<div class="a-input">
+		<div class="a-input__wrapper">
+			<aui-auto-complete
+				id="id"
+				placeholder="Choose your hero…"
+				remote="true"
+				[(ngModel)]="selectedValue"
+				[results]="results"
+				loadingText = "Loading"
+				searchIncentiveText="Type one or more keywords to start searching…"
+				showAllByDefault="true"
+				(search)="searchHeroes($event)">
+			</aui-auto-complete>
+		</div>
+	</div>
 </div>
