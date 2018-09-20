@@ -68,14 +68,17 @@ export class LocalstorageDemoPageComponent {
 
 	public user: any;
 	public item: any;
+	public timesUsed: any;
 
 	constructor(
 		private localstorageService: LocalstorageService
 	) {
 		this.user = this.localstorageService.select('user');
+		this.timesUsed = 0;
+		this.localstorageService.setItem('number', this.timesUsed);
 	}
 
-    loggedIn(): void {
+	loggedIn(): void {
 		this.localstorageService.setItem('user', 'You are logged in');
 	}
 
@@ -85,10 +88,17 @@ export class LocalstorageDemoPageComponent {
 
 	init(): void {
 		this.localstorageService.removeItem('user');
+		this.timesUsed = this.timesUsed + 1;
+		this.localstorageService.setItem('number', this.timesUsed);
+	}
+
+	clear(): void {
+		this.localstorageService.clear('user', 'number');
 	}
 
 	getItem(): any {
 		this.item = this.localstorageService.getItem('user');
+		this.timesUsed = this.localstorageService.getItem('number');
 	}
 }
 ```

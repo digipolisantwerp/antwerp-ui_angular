@@ -16,16 +16,16 @@
 
 <div class="u-margin-bottom">
 	<button (click)="loggedIn()" class="a-button u-margin-right">
-		Log in
+		User: Log in
 	</button>
 	<button (click)="loggedOut()" class="a-button u-margin-right">
-		Log out
+		User: Log out
 	</button>
 	<button (click)="init()" class="a-button u-margin-right">
-		Init localstorage user
+		User: init
 	</button>
 	<button (click)="clear()" class="a-button">
-		Clear localstorage user and number
+		User and number: clear
 	</button>
 </div>
 <div class="u-margin-bottom">
@@ -37,5 +37,5 @@
 	<label class="a-input__label a-input__label--inline">User: {{ this.item }}</label>
 </div>
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">You clicked the init localstorage user button this many times: {{ this.timesUsed }}</label>
+	<label class="a-input__label a-input__label--inline">number: You clicked the user init button this many times: {{ this.timesUsed }}</label>
 </div>
