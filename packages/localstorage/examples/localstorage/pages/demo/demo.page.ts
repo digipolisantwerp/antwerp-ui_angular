@@ -10,12 +10,6 @@ export class LocalstorageDemoPageComponent {
 	public user: any;
 	public item: any;
 
-	constructor(
-		private localstorageService: LocalstorageService
-	) {
-		this.user = this.localstorageService.select('user');
-	}
-
 	public typescript1 = `import { LocalstorageModule } from '@acpaas-ui/localstorage';
 
 @NgModule({
@@ -52,9 +46,7 @@ init(): void {
 
 getItem(): any {
 	this.item = this.localstorageService.getItem('user');
-}
-
-`;
+}`;
 
 	public example = `<div class="u-margin-bottom">
 	<button (click)="loggedIn()" class="a-button u-margin-right">
@@ -67,12 +59,18 @@ getItem(): any {
 		Init
 	</button>
 </div>
-	<div class="u-margin-bottom">
+<div class="u-margin-bottom">
 	<button (click)="getItem()" class="a-button u-margin-right">
 		Get item from local storage
 	</button>
 	<label class="a-input__label a-input__label--inline">{{ this.item }}</label>
 </div>`;
+
+	constructor(
+		private localstorageService: LocalstorageService
+	) {
+		this.user = this.localstorageService.select('user');
+	}
 
 	loggedIn(): void {
 		this.localstorageService.setItem('user', 'You are logged in');
@@ -89,5 +87,4 @@ getItem(): any {
 	getItem(): any {
 		this.item = this.localstorageService.getItem('user');
 	}
-
 }

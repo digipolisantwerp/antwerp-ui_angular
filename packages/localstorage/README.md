@@ -22,8 +22,18 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `getItem: key: string;` | - | retrieve an item from the localstorage (all data is parsed from a JSON string). |
 | `removeItem: key: string;` | - | remove an item from the localstorage and update the subscribers. |
 | `clear: ...args;` | - | clear the localstorage. |
-| `select: selector: Selector, comparator: Comparator = LocalstorageHelper.comparator` | - | get a behaviorsubject containing the selected value. |
+| `select: selector: Selector, comparator: Comparator = LocalstorageHelper.comparator` | - | get a BehaviorSubject containing the selected value. |
 | `clearSubscribers: ` | - | unsubscribe all subscribers. |
+
+### Storage type
+
+You can set the preferred storage type in the `forRoot` method when importing the `LocalstorageModule`. The service will verify the type exists and fall back to `localStorage` by default. If `localStorage` is not available, an in-memory polyfill will be used.
+
+### Identifier
+
+You can provide a custom identifier that will be checked on instantiating the `LocalstorageService`. If the identifier found in the storage is different from the config, the storage will be cleared.
+
+This way, you can invalidate your apps storage to prevent data conflicts.
 
 ### Example localstorage
 
@@ -34,7 +44,7 @@ import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage';
     imports: [
         LocalstorageModule.forRoot({
             storageType: 'sessionStorage',
-            identifier: 'my-app-v1,
+            identifier: 'my-app-v1',
         })
     ]
 })
@@ -88,6 +98,11 @@ export class LocalstorageDemoPageComponent {
 Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
 
 
+
+
+
+
+
 # @acpaas-ui/ngx-components/localstorage
 
 The `@acpaas-ui/localstorage` package allows you to easily store and retrieve data in and from your browsers storage. You can choose between different storage types and retrieve slices of the storage as observables with the `@storage` decorator. On top of that, you can easily sync your redux app state with the browser storage using the provided enhancer in the `LocalstorageStoreModule`.
@@ -122,7 +137,7 @@ import { LocalstorageModule } from '@acpaas-ui/localstorage';
     imports: [
         LocalstorageModule.forRoot({
             storageType: 'sessionStorage',
-            identifier: 'my-app-v1,
+            identifier: 'my-app-v1',
         })
     ]
 })
