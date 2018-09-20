@@ -16,15 +16,18 @@ export class LocalstorageDemoPageComponent {
 		this.user = this.localstorageService.select('user');
 	}
 
-	public typescript1 = `import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
+	public typescript1 = `import { LocalstorageModule } from '@acpaas-ui/localstorage';
 
 @NgModule({
-	imports: [
-		SelectableListModule
-	]
-});
+    imports: [
+        LocalstorageModule.forRoot({
+            storageType: 'sessionStorage',
+            identifier: 'my-app-v1,
+        })
+    ]
+})
 
-export class AppModule {};`;
+export class AppModule {}`;
 
 	public typescript2 = `public user: any;
 public item: any;
