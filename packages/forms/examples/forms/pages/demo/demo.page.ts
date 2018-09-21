@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NotVoid } from 'lodash';
+import { Uploader } from '@acpaas-ui/ngx-components/forms';
 
 @Component({
 	templateUrl: './demo.page.html',
@@ -85,18 +85,17 @@ public searchHeroes(event): void {
 	public setSelectedUser(person): void {
 		// do something
 	}`;
-	public UploadExampleHTML1 = `<aui-auto-complete
-		id="hero-names"
-		placeholder="Choose your hero…"
-		[(ngModel)]="selectedHero"
-		label="name"
-		value="''"
-		minCharacters = "3"
-		clearInvalid="true"
-		showAllByDefault="true"
-		[data]="heroList"
-		(select)="setSelectedHero($event)">
-	</aui-auto-complete>`;
+	public UploadExampleHTML1 = `<aui-upload [uploader]="uploader" (selectUploadedFiles)="onUpload($event)">
+<div class="aui-upload-message">
+  Drag your files here or click to upload
+	</div>
+	<div class="aui-upload-description">
+			Optional description message
+	</div>
+	<div class="aui-upload-button">
+			Message inside the button when the dropzone type is 'button'.
+	</div>
+</aui-upload>`;
 
 	// AUTOCOMPLETE DECLARATIONS
 	public selectedHero: string;
