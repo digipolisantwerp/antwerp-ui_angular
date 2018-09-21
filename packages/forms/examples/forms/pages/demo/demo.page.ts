@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NotVoid } from 'lodash';
 
 @Component({
 	templateUrl: './demo.page.html',
