@@ -2,12 +2,47 @@
 
 <h2 class="h4 u-margin-bottom">Auto complete example</h2>
 
+<h3 class="h5 u-margin-bottom">Local search</h3>
+
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="AutoCompleteImportExample"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="AutoCompleteExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="AutoCompleteExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom col-md-6 col-xs-12">
+	<div class="a-input">
+		<div class="a-input__wrapper">
+			<aui-auto-complete
+			id="hero-names"
+			placeholder="Choose your hero…"
+			[(ngModel)]="selectedHero"
+			label="name"
+			value="''"
+			minCharacters = "3"
+			clearInvalid="true"
+			showAllByDefault="true"
+			[data]="heroList"
+			(select)="setSelectedHero($event)"
+			></aui-auto-complete>
+		</div>
+	</div>
+</div>
+
+<h3 class="h5 u-margin-bottom">Remote search</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="AutoCompleteExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="AutoCompleteExampleHTML2"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom-xx col-md-6 col-xs-12">
@@ -15,14 +50,14 @@
 		<div class="a-input__wrapper">
 			<aui-auto-complete
 				id="id"
-				placeholder="Choose your hero…"
-				remote="true"
+				placeholder="This will return no results…"
 				[(ngModel)]="selectedValue"
-				[results]="results"
+				remote="true"
 				loadingText = "Loading"
-				searchIncentiveText="Type one or more keywords to start searching…"
-				showAllByDefault="true"
-				(search)="searchHeroes($event)">
+				noResultsText="No results found"
+				searchIncentiveText="Type one or more keywords to start searching"
+				[results]="results"
+				(search)="searchSomething($event)">
 			</aui-auto-complete>
 		</div>
 	</div>

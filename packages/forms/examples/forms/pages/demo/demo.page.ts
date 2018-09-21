@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotVoid } from 'lodash';
 
 @Component({
 	templateUrl: './demo.page.html',
@@ -6,41 +7,71 @@ import { Component } from '@angular/core';
 
 export class FormsDemoPageComponent {
 
-  public codeExampleJS1 = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms'`;
-	public codeExampleJS2 = `public selectedValue: string;
-public results = [];
+  public AutoCompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms'`;
+	public AutoCompleteExampleJS1 = `public selectedHero: string;
 
-public searchHeroes(event) {
-	// do search action
-  this.results =  [
-    {name: 'Batman'},
-    {name: 'Wonder Woman'},
-    {name: 'Wolverine'},
-    {name: 'Iron Man'},
-	  {name: 'Deadpool'},
-  ];
+public heroList = [
+  {name: 'Batman'},
+  {name: 'Wonder Woman'},
+  {name: 'Wolverine'},
+  {name: 'Iron Man'},
+  {name: 'Deadpool'},
+];
+public setSelectedUser(person): void {
+  // do something
 }`;
-	public codeExampleHTML1 = `<aui-auto-complete
-  id="id"
+	public AutoCompleteExampleHTML1 = `<aui-auto-complete
+	id="hero-names"
   placeholder="Choose your hero…"
-  remote="true"
-  [(ngModel)]="selectedValue"
-  [results]="results"
-  searchIncentiveText="Type one or more keywords to start searching…"
+  [(ngModel)]="selectedHero"
+  label="name"
+  value="''"
+  minCharacters = "3"
+  clearInvalid="true"
   showAllByDefault="true"
-  (search)="searchHeroes($event)">
+  [data]="heroList"
+	(select)="setSelectedHero($event)">
 </aui-auto-complete>`;
-public selectedValue: string;
+	public AutoCompleteExampleJS2 = `public selectedValue: string;
 public results = [];
 
-public searchHeroes(event) {
+public searchHeroes(event): void {
 	// do search action
-		this.results =  [
-			{name: 'Batman'},
-			{name: 'Wonder Woman'},
-			{name: 'Wolverine'},
-			{name: 'Iron Man'},
-			{name: 'Deadpool'},
+	setTimeout(() => {
+		this.results =  [];
+	}, 1500);
+}`;
+	public AutoCompleteExampleHTML2 = `<aui-auto-complete
+  id="id"
+  placeholder="This will return no results…"
+  [(ngModel)]="selectedValue"
+  remote="true"
+  loadingText = "Loading"
+  noResultsText="No results found"
+  searchIncentiveText="Type one or more keywords to start searching"
+  [results]="results"
+  (search)="searchSomething($event)">
+</aui-auto-complete>`;
+
+	public selectedHero: string;
+	public selectedValue: string;
+  public heroList = [
+		{name: 'Batman'},
+		{name: 'Wonder Woman'},
+		{name: 'Wolverine'},
+		{name: 'Iron Man'},
+		{name: 'Deadpool'},
 	];
-}
+	public results = [];
+
+	public setSelectedHero(person): void {
+		// do something
+	}
+
+	public searchSomething(event): void {
+		// do search action
+		setTimeout(() => {
+			this.results =  [];
+		}, 1500);
+	}
 }
