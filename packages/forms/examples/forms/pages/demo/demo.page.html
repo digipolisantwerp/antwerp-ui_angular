@@ -45,7 +45,7 @@
 	<aui-code-snippet [codeSnippet]="AutoCompleteExampleHTML2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-xx col-md-6 col-xs-12">
+<div class="u-margin-bottom col-md-6 col-xs-12">
 	<div class="a-input">
 		<div class="a-input__wrapper">
 			<aui-auto-complete
@@ -61,4 +61,19 @@
 			</aui-auto-complete>
 		</div>
 	</div>
+</div>
+
+<h2 class="h4 u-margin-bottom">Upload example</h2>
+<div class="u-margin-bottom-xx">
+	<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
+			<div class="aui-upload-message">
+					Drag your files here or click to upload
+			</div>
+			<div class="aui-upload-description">
+					Optional description message
+			</div>
+			<div class="aui-upload-button">
+					Message inside the button when the dropzone type is 'button'.
+			</div>
+	</aui-upload>
 </div>
