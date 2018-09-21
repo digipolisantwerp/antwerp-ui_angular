@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-Description goes here.
+This module creates an input field with auto complete functionality.
 
 ## Usage
 
@@ -28,8 +28,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() label: string;` | - | Provide a custom label prop for collections. This will be matched against for searching. |
 | `@Input() value: string;` | - | Provide a custom value prop for collections. This will be used as the actual value. |
 | `@Input() showAllByDefault: string;` | - | An attribute which can be set to true to show all items in `this.data` by default if no query is provided. This does need the `data`-attribute to have a correct value to work. |
-| `@Input() data: any[];` | [ ] | An array of filtered objects (use lable for this) or a flat array of filtered strings. Data is used to do basic filtering inside the component. It is also possible to do the filtering yourself and provide the results directly. |
-| `@Input() results: any[];` | [ ] | The values for the selectable list. This is an array of filtered objects (use lable for this) or a flat array of filtered strings. |
+| `@Input() data: any[];` | [ ] | An array of filtered objects (use the label and value properties) or a flat array of filtered strings. Data is used to do basic filtering inside the component. It is also possible to do the filtering yourself and provide the results directly. |
+| `@Input() results: any[];` | [ ] | The values for the selectable list. This is an array of filtered objects (use the label and value properties) or a flat array of filtered strings. |
 
 ### Methods
 
@@ -75,7 +75,7 @@ public setSelectedUser(person): void {
   placeholder="Choose your hero…"
   [(ngModel)]="selectedHero"
   label="name"
-  value="''"
+  value=""
   minCharacters = "3"
   clearInvalid="true"
   showAllByDefault="true"

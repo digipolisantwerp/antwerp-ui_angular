@@ -34,7 +34,7 @@ public setSelectedUser(person): void {
   placeholder="Choose your hero…"
   [(ngModel)]="selectedHero"
   label="name"
-  value="''"
+  value=""
   minCharacters = "3"
   clearInvalid="true"
   showAllByDefault="true"
