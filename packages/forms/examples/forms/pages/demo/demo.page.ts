@@ -7,7 +7,16 @@ import { NotVoid } from 'lodash';
 
 export class FormsDemoPageComponent {
 
-  public AutoCompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms'`;
+	public AutoCompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
+
+@NgModule({
+  imports: [
+    AutoCompleteModule,
+  ]
+});
+
+export class AppModule {};`;
+
 	public AutoCompleteExampleJS1 = `public selectedHero: string;
 
 public heroList = [

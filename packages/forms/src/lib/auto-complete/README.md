@@ -44,9 +44,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
-    imports: [
-        AutoCompleteModule
-    ]
+  imports: [
+    AutoCompleteModule,
+  ]
 });
 
 export class AppModule {};
