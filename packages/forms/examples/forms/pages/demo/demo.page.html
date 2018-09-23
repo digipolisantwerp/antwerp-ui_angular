@@ -64,16 +64,75 @@
 </div>
 
 <h2 class="h4 u-margin-bottom">Upload example</h2>
-<div class="u-margin-bottom-xx">
+
+<h3 class="h5 u-margin-bottom">Basic upload</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="UploadImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="UploadExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="UploadExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
 	<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
-			<div class="aui-upload-message">
-					Drag your files here or click to upload
-			</div>
-			<div class="aui-upload-description">
-					Optional description message
-			</div>
-			<div class="aui-upload-button">
-					Message inside the button when the dropzone type is 'button'.
-			</div>
+		<div class="aui-upload-message">
+			Drag your files here or click to upload
+		</div>
+		<div class="aui-upload-description">
+			Optional description message
+		</div>
 	</aui-upload>
+</div>
+
+<h3 class="h5 u-margin-bottom">Upload as form control</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="UploadExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="UploadExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
+		<div class="aui-upload-message">
+			Drag your files here or click to upload
+		</div>
+		<div class="aui-upload-description">
+			Optional description message
+		</div>
+	</aui-upload-input>
+	<pre>
+			{{output | json}}
+	</pre>
+</div>
+
+<h3 class="h5 u-margin-bottom">Upload as a button</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="UploadExampleJS3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="UploadExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-upload [options]="dropzone3" (selectUploadedFiles)="onUpload($event)">
+		<div class="aui-upload-button">
+			Upload button
+		</div>
+	</aui-upload>
+</div>
+
+<h3 class="h5 u-margin-bottom">Uploaded files</h3>
+<div class="u-margin-bottom-xx">
+	<aui-uploaded-list [uploadedFiles]="files" (delete)="onDeleteFile($event)"></aui-uploaded-list>
 </div>

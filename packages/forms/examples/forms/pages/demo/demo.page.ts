@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Uploader } from '@acpaas-ui/ngx-components/forms';
+import { UploadOptions } from '@acpaas-ui/ngx-components/forms';
 
 @Component({
 	templateUrl: './demo.page.html',
@@ -64,37 +64,50 @@ public searchHeroes(event): void {
 </aui-auto-complete>`;
 
 	// UPLOAD EXAMPLES
-	public UploadImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
+	public UploadImportExample = `import { UploadModule } from '@acpaas-ui/ngx-components/forms';
 
 	@NgModule({
 		imports: [
-			AutoCompleteModule,
+			UploadModule,
 		]
 	});
 
 	export class AppModule {};`;
-	public UploadExampleJS1 = `public selectedHero: string;
-
-	public heroList = [
-		{name: 'Batman'},
-		{name: 'Wonder Woman'},
-		{name: 'Wolverine'},
-		{name: 'Iron Man'},
-		{name: 'Deadpool'},
-	];
-	public setSelectedUser(person): void {
-		// do something
-	}`;
-	public UploadExampleHTML1 = `<aui-upload [uploader]="uploader" (selectUploadedFiles)="onUpload($event)">
-<div class="aui-upload-message">
-  Drag your files here or click to upload
-	</div>
-	<div class="aui-upload-description">
-			Optional description message
-	</div>
-	<div class="aui-upload-button">
-			Message inside the button when the dropzone type is 'button'.
-	</div>
+	public UploadExampleJS1 = `public dropzone1: UploadOptions = {
+  allowedMimeTypes: ['image/jpeg'],
+  queueLimit: 2,
+  url: 'http://localhost:3002/upload',
+};`;
+	public UploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
+  <div class="aui-upload-message">
+    Drag your files here or click to upload
+  </div>
+  <div class="aui-upload-description">
+    Optional description message
+  </div>
+</aui-upload>`;
+public UploadExampleJS2 = `public dropzone2: UploadOptions = {
+  allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+  autoUpload: true,
+  maxFileSize: 2000000,
+  url: 'http://localhost:3002/upload',
+};`;
+public UploadExampleHTML2 = `<aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
+  <div class="aui-upload-message">
+    Drag your files here or click to upload
+  </div>
+  <div class="aui-upload-description">
+    Optional description message
+  </div>
+</aui-upload-input>`;
+public UploadExampleJS3 = `public dropzone3: UploadOptions = {
+  type: 'button',
+  url: 'http://localhost:3002/upload',
+};`;
+public UploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFiles)="onUpload($event)">
+  <div class="aui-upload-button">
+    Upload button
+  </div>
 </aui-upload>`;
 
 	// AUTOCOMPLETE DECLARATIONS
@@ -110,7 +123,28 @@ public searchHeroes(event): void {
 	public results = [];
 
 	// UPLOAD DECLARATIONS
-	public dropzone1;
+	public files = [];
+	public output: any;
+
+	public dropzone1: UploadOptions = {
+		allowedMimeTypes: ['image/jpeg'],
+		queueLimit: 2,
+		type: 'drop',
+		url: 'http://localhost:3002/upload',
+	};
+
+	public dropzone2: UploadOptions = {
+		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+		autoUpload: true,
+		maxFileSize: 2000000,
+		type: 'drop',
+		url: 'http://localhost:3002/upload',
+	};
+
+	public dropzone3: UploadOptions = {
+			type: 'button',
+			url: 'http://localhost:3002/upload',
+	};
 
 	// AUTOCOMPLETE METHODS
 	public setSelectedHero(person): void {
@@ -125,6 +159,19 @@ public searchHeroes(event): void {
 	}
 
 	// UPLOAD METHODS
-	public onUpload(event) {}
+	public onUpload(files) {
+		this.files = this.files.concat(files);
+	}
+
+	public formatOutput(data) {
+		console.log(data);
+			return data.map((o) => {
+					return o.url;
+			});
+	}
+
+	public onDeleteFile(e) {
+			this.files.splice(e.index, 1); // e.index and e.file are available
+	}
 
 }

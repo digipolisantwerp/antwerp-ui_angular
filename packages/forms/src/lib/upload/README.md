@@ -21,7 +21,7 @@ Add a map with error messages for the validation
 ```typescript
 UploadModule.forChild({
   INVALID_FILE_TYPE: 'Ongeldig bestandstype',
-  INVALID_FILE_SIZE: 'Ongeldige bestandsgrootte'
+  INVALID_FILE_SIZE: 'Ongeldige bestandsgrootte',
   INVALID_MIME_TYPE: 'Ongeldig mime type'
 })
 ```
@@ -36,13 +36,13 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | The object with its different options and there default values is explained in detail below|
+| `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | The object with its different options and there default values is explained in detail below. |
 | `allowedMimeTypes: string[];` | `[]` | The MIME types that are allowed to be uploaded. |
 | `allowedFileTypes: string[];` | `[]` | The file extensions that are allowed to be uploaded. |
 | `autoUpload: boolean;` | `false` | Upload the file automatically without confirmation. |
 | `maxFileSize: number;` | `0` | The maximum file size that is allowed. The value is expressed in Bytes. The value 0 equals infinite. |
 | `queueLimit: number;` | `0` | The maximum number of files that can uploaded at the same time. The value 0 equals infinite. |
-| `type: string;` | `drop` | By default you can drop a file on the `upload-zone`. |
+| `type: string;` | `drop` | By default an upload has an `upload-zone` but with the option `button`, you can set it as an uploadbutton. |
 | `url: string;` | `""` | The upload url. |
 
 ### Example
