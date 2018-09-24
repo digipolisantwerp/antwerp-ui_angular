@@ -20,7 +20,5 @@ import { Pages } from './pages/index';
 	declarations: [
 		Pages,
 	],
-	entryComponents: [
-	],
 })
 export class FormsExamplesModule {}

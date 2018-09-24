@@ -23,7 +23,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() noResultsText: string;` | - | The message shown when the search is complete and there are no results. |
 | `@Input() remote: boolean;` | false | Enable remote search. |
 | `@Input() minCharacters: number;` | 0 | The minimal required characters to trigger a search. |
-| `@Input() mask: string;` | null | A mask pattern for the inputfield (see `MaskModule` for more info). |
+| `@Input() mask: string;` | null | A mask pattern for the inputfield (see [MaskModule](./../packages/forms/src/lib/mask/README.md) for more info). |
 | `@Input() clearInvalid: boolean;` | false | Clear invalid searchstring values on blur (resets to modelvalue). |
 | `@Input() label: string;` | - | Provide a custom label prop for collections. This will be matched against for searching. |
 | `@Input() value: string;` | - | Provide a custom value prop for collections. This will be used as the actual value. |
@@ -76,7 +76,7 @@ public setSelectedUser(person): void {
   [(ngModel)]="selectedHero"
   label="name"
   value=""
-  minCharacters = "3"
+  minCharacters="3"
   clearInvalid="true"
   showAllByDefault="true"
   [data]="heroList"
@@ -93,7 +93,7 @@ public results = [];
 public searchSomething(event): void {
 	// do search action
 	setTimeout(() => {
-		this.results =  [];
+		this.results = [];
 	}, 1500);
 }
 ```
@@ -104,7 +104,7 @@ public searchSomething(event): void {
   placeholder="This will return no results…"
   [(ngModel)]="selectedValue"
   remote="true"
-  loadingText = "Loading"
+  loadingText="Loading"
   noResultsText="No results found"
   searchIncentiveText="Type one or more keywords to start searching"
   [results]="results"
