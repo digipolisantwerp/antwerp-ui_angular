@@ -6,8 +6,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CopyrightComponent {
-	@Input()
-	domain?: String;
+	@Input() domain?: String;
 
 	public currentYear = new Date().getFullYear();
 }
