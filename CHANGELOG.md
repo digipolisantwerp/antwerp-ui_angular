@@ -4,12 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.0.2] - 2018-09-25
 ### Changed
 - `package.json` added meta data
 
-## [1.0.2] - 2018-09-03
-### Changed
+### Fixed
 - 'Table Cell regenerates component on value changes'
 
 ## [1.0.1] - 2018-07-02
@@ -39,5 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `styleguide`
 
 [Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.1...HEAD
+[1.0.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0
