@@ -82,7 +82,7 @@ public getItem(): any {
 	<label class="a-input__label a-input__label--inline">{{ this.item }}</label>
 </div>
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">You clicked the user init button this many times: {{ this.timesUsed }}</label>
+	<label class="a-input__label a-input__label--inline">You clicked the count clicks button this many times: {{ this.timesUsed }}</label>
 </div>`;
 
 	constructor(
