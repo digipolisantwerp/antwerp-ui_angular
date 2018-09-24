@@ -78,25 +78,25 @@ export class LocalstorageDemoPageComponent {
 		this.localstorageService.setItem('number', this.timesUsed);
 	}
 
-	loggedIn(): void {
+	public loggedIn(): void {
 		this.localstorageService.setItem('user', 'You are logged in');
 	}
 
-	loggedOut(): void {
+	public loggedOut(): void {
 		this.localstorageService.setItem('user', 'You are logged out');
 	}
 
-	init(): void {
+	public init(): void {
 		this.localstorageService.removeItem('user');
 		this.timesUsed = this.timesUsed + 1;
 		this.localstorageService.setItem('number', this.timesUsed);
 	}
 
-	clear(): void {
+	public clear(): void {
 		this.localstorageService.clear('user', 'number');
 	}
 
-	getItem(): any {
+	public getItem(): any {
 		this.item = this.localstorageService.getItem('user');
 		this.timesUsed = this.localstorageService.getItem('number');
 	}

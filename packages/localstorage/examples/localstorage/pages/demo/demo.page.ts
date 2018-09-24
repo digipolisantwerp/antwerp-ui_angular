@@ -36,53 +36,53 @@ constructor(
 	this.localstorageService.setItem('number', this.timesUsed);
 }
 
-loggedIn(): void {
+public loggedIn(): void {
 	this.localstorageService.setItem('user', 'You are logged in');
 }
 
-loggedOut(): void {
+public loggedOut(): void {
 	this.localstorageService.setItem('user', 'You are logged out');
 }
 
-init(): void {
+public init(): void {
 	this.localstorageService.removeItem('user');
 	this.timesUsed = this.timesUsed + 1;
 	this.localstorageService.setItem('number', this.timesUsed);
 }
 
-clear(): void {
+public clear(): void {
 	this.localstorageService.clear('user', 'number');
 }
 
-getItem(): any {
+public getItem(): any {
 	this.item = this.localstorageService.getItem('user');
 	this.timesUsed = this.localstorageService.getItem('number');
 }`;
 
 	public example = `<div class="u-margin-bottom">
 	<button (click)="loggedIn()" class="a-button u-margin-right">
-		User: Log in
+		Log in
 	</button>
 	<button (click)="loggedOut()" class="a-button u-margin-right">
-		User: Log out
+		Log out
 	</button>
 	<button (click)="init()" class="a-button u-margin-right">
-		User: init
-	</button>
-	<button (click)="clear()" class="a-button">
-		User and number: clear
+		Count clicks
 	</button>
 </div>
 <div class="u-margin-bottom">
 	<button (click)="getItem()" class="a-button u-margin-right">
-		Get items from localstorage
+		Get from local storage
+	</button>
+	<button (click)="clear()" class="a-button">
+		Clear local storage
 	</button>
 </div>
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">User: {{ this.item }}</label>
+	<label class="a-input__label a-input__label--inline">{{ this.item }}</label>
 </div>
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">number: You clicked the user init button this many times: {{ this.timesUsed }}</label>
+	<label class="a-input__label a-input__label--inline">You clicked the user init button this many times: {{ this.timesUsed }}</label>
 </div>`;
 
 	constructor(
@@ -93,25 +93,25 @@ getItem(): any {
 		this.localstorageService.setItem('number', this.timesUsed);
 	}
 
-	loggedIn(): void {
+	public loggedIn(): void {
 		this.localstorageService.setItem('user', 'You are logged in');
 	}
 
-	loggedOut(): void {
+	public loggedOut(): void {
 		this.localstorageService.setItem('user', 'You are logged out');
 	}
 
-	init(): void {
+	public init(): void {
 		this.localstorageService.removeItem('user');
 		this.timesUsed = this.timesUsed + 1;
 		this.localstorageService.setItem('number', this.timesUsed);
 	}
 
-	clear(): void {
+	public clear(): void {
 		this.localstorageService.clear('user', 'number');
 	}
 
-	getItem(): any {
+	public getItem(): any {
 		this.item = this.localstorageService.getItem('user');
 		this.timesUsed = this.localstorageService.getItem('number');
 	}
