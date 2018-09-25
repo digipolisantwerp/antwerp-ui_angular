@@ -25,8 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 - `table` Fixed table cell unnecessarily regenerating the component on value change.
-- `table` Fixed an issue where the table could nog be build.
-- `core` Fixed and optimized build script for examples with a hyphen in its name.
+- `table` Fixed an issue where the table could not be build.
+- `core` Fixed and optimized build script for examples with a hyphen in their name.
 - `calendar` Fixed an issue where an incorrect month or year was shown.
 
 ## [1.0.1] - 2018-07-02
