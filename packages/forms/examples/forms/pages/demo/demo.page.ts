@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UploadOptions } from '@acpaas-ui/ngx-components/forms';
+import { Subject } from 'rxjs/Subject';
+import { takeUntil, debounceTime } from 'rxjs/operators';
 
 @Component({
 	templateUrl: './demo.page.html',
 })
 
-export class FormsDemoPageComponent {
+export class FormsDemoPageComponent implements OnInit, OnDestroy {
 
-	// AUTOCOMPLETE EXAMPLES
-	public AutoCompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
+	public autocompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
   imports: [
@@ -18,9 +19,7 @@ export class FormsDemoPageComponent {
 
 export class AppModule {};`;
 
-	public AutoCompleteExampleJS1 = `public selectedHero: string;
-
-public heroList = [
+	public autocompleteExampleJS1 = `public heroList = [
   {name: 'Batman'},
   {name: 'Wonder Woman'},
   {name: 'Wolverine'},
@@ -30,10 +29,9 @@ public heroList = [
 public setSelectedUser(person): void {
   // do something
 }`;
-	public AutoCompleteExampleHTML1 = `<aui-auto-complete
-	id="hero-names"
+	public autocompleteExampleHTML1 = `<aui-auto-complete
+  id="hero-names"
   placeholder="Choose your hero…"
-  [(ngModel)]="selectedHero"
   label="name"
   value=""
   minCharacters = "3"
@@ -42,29 +40,33 @@ public setSelectedUser(person): void {
   [data]="heroList"
 	(select)="setSelectedHero($event)">
 </aui-auto-complete>`;
-	public AutoCompleteExampleJS2 = `public selectedValue: string;
-public results = [];
+	public autocompleteExampleJS2 = `public results = [];
+public heroList = [
+  {name: 'Batman'},
+  {name: 'Wonder Woman'},
+  {name: 'Wolverine'},
+  {name: 'Iron Man'},
+  {name: 'Deadpool'},
+];
 
-public searchHeroes(event): void {
-	// do search action
-	setTimeout(() => {
-		this.results =  [];
-	}, 1500);
+public searchItems(search: string): void {
+  // do search
 }`;
-	public AutoCompleteExampleHTML2 = `<aui-auto-complete
-  id="id"
-  placeholder="This will return no results…"
-  [(ngModel)]="selectedValue"
+	public autocompleteExampleHTML2 = `<aui-auto-complete
+  id="hero"
+  placeholder="Choose your hero…"
   remote="true"
-  loadingText = "Loading"
+  [results]="results"
+  label="name"
+  key="id"
+  loadingText = "Loading…"
   noResultsText="No results found"
   searchIncentiveText="Type one or more keywords to start searching"
-  [results]="results"
-  (search)="searchSomething($event)">
+  (search)="searchItems($event)">
 </aui-auto-complete>`;
 
 	// UPLOAD EXAMPLES
-	public UploadImportExample = `import { UploadModule } from '@acpaas-ui/ngx-components/forms';
+	public uploadImportExample = `import { UploadModule } from '@acpaas-ui/ngx-components/forms';
 
 	@NgModule({
 		imports: [
@@ -73,12 +75,12 @@ public searchHeroes(event): void {
 	});
 
 	export class AppModule {};`;
-	public UploadExampleJS1 = `public dropzone1: UploadOptions = {
+	public uploadExampleJS1 = `public dropzone1: UploadOptions = {
   allowedMimeTypes: ['image/jpeg'],
   queueLimit: 2,
   url: 'http://localhost:3002/upload',
 };`;
-	public UploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
+	public uploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-message">
     Drag your files here or click to upload
   </div>
@@ -86,13 +88,13 @@ public searchHeroes(event): void {
     Optional description message
   </div>
 </aui-upload>`;
-public UploadExampleJS2 = `public dropzone2: UploadOptions = {
+public uploadExampleJS2 = `public dropzone2: UploadOptions = {
   allowedFileTypes: ['.jpg', 'jpeg', 'png'],
   autoUpload: true,
   maxFileSize: 2000000,
   url: 'http://localhost:3002/upload',
 };`;
-public UploadExampleHTML2 = `<aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
+public uploadExampleHTML2 = `<aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
   <div class="aui-upload-message">
     Drag your files here or click to upload
   </div>
@@ -100,19 +102,17 @@ public UploadExampleHTML2 = `<aui-upload-input [options]="dropzone2" [(ngModel)]
     Optional description message
   </div>
 </aui-upload-input>`;
-public UploadExampleJS3 = `public dropzone3: UploadOptions = {
+public uploadExampleJS3 = `public dropzone3: UploadOptions = {
   type: 'button',
   url: 'http://localhost:3002/upload',
 };`;
-public UploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFiles)="onUpload($event)">
+public uploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-button">
     Upload button
   </div>
 </aui-upload>`;
 
 	// AUTOCOMPLETE DECLARATIONS
-	public selectedHero: string;
-	public selectedValue: string;
   public heroList = [
 		{name: 'Batman'},
 		{name: 'Wonder Woman'},
@@ -121,6 +121,8 @@ public UploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFi
 		{name: 'Deadpool'},
 	];
 	public results = [];
+	private debouncer: Subject<string> = new Subject();
+	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
 	// UPLOAD DECLARATIONS
 	public files = [];
@@ -146,16 +148,34 @@ public UploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFi
 			url: 'http://localhost:3002/upload',
 	};
 
+	public ngOnInit() {
+		this.debouncer.pipe(
+			takeUntil(this.componentDestroyed$),
+			debounceTime(1000)
+			).subscribe((value) => {
+				if (!value) {
+					this.results = [];
+				} else {
+					this.results = this.heroList.filter((hero) => {
+						return hero.name.indexOf(value) !== -1;
+					});
+				}
+			});
+	}
+
+	public ngOnDestroy() {
+		this.componentDestroyed$.next(true);
+		this.componentDestroyed$.complete();
+	}
+
 	// AUTOCOMPLETE METHODS
 	public setSelectedHero(person): void {
 		// do something
 	}
 
-	public searchSomething(event): void {
-		// do search action
-		setTimeout(() => {
-			this.results =  [];
-		}, 1500);
+	public searchItems(search: string): void {
+		// do search
+		this.debouncer.next(search);
 	}
 
 	// UPLOAD METHODS

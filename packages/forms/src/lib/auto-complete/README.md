@@ -23,7 +23,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() noResultsText: string;` | - | The message shown when the search is complete and there are no results. |
 | `@Input() remote: boolean;` | false | Enable remote search. |
 | `@Input() minCharacters: number;` | 0 | The minimal required characters to trigger a search. |
-| `@Input() mask: string;` | null | A mask pattern for the inputfield (see `MaskModule` for more info). |
+| `@Input() mask: string;` | null | A mask pattern for the inputfield (see [MaskModule](./../packages/forms/src/lib/mask/README.md) for more info). |
 | `@Input() clearInvalid: boolean;` | false | Clear invalid searchstring values on blur (resets to modelvalue). |
 | `@Input() label: string;` | - | Provide a custom label prop for collections. This will be matched against for searching. |
 | `@Input() value: string;` | - | Provide a custom value prop for collections. This will be used as the actual value. |
@@ -55,8 +55,6 @@ export class AppModule {};
 #### Local search
 
 ```typescript
-public selectedHero: string;
-
 public heroList = [
   {name: 'Batman'},
   {name: 'Wonder Woman'},
@@ -73,7 +71,6 @@ public setSelectedUser(person): void {
 <aui-auto-complete
   id="hero-names"
   placeholder="Choose your hero…"
-  [(ngModel)]="selectedHero"
   label="name"
   value=""
   minCharacters = "3"
@@ -87,28 +84,32 @@ public setSelectedUser(person): void {
 #### Remote search
 
 ```typescript
-public selectedValue: string;
 public results = [];
+public heroList = [
+  {name: 'Batman'},
+  {name: 'Wonder Woman'},
+  {name: 'Wolverine'},
+  {name: 'Iron Man'},
+  {name: 'Deadpool'},
+];
 
-public searchSomething(event): void {
-	// do search action
-	setTimeout(() => {
-		this.results =  [];
-	}, 1500);
+public searchItems(search: string): void {
+  // do search
 }
 ```
 
 ```html
 <aui-auto-complete
-  id="id"
-  placeholder="This will return no results…"
-  [(ngModel)]="selectedValue"
+  id="hero"
+  placeholder="Choose your hero…"
   remote="true"
-  loadingText = "Loading"
+  [results]="results"
+  label="name"
+  key="id"
+  loadingText = "Loading…"
   noResultsText="No results found"
   searchIncentiveText="Type one or more keywords to start searching"
-  [results]="results"
-  (search)="searchSomething($event)">
+  (search)="searchItems($event)">
 </aui-auto-complete>
 ```
 

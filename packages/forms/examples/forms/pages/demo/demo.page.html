@@ -1,19 +1,19 @@
 <h1 class="h3 u-margin-bottom">Forms</h1>
 
-<h2 class="h4 u-margin-bottom">Auto complete example</h2>
+<h2 class="h4 u-margin-bottom">Autocomplete</h2>
 
 <h3 class="h5 u-margin-bottom">Local search</h3>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="AutoCompleteImportExample"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="autocompleteImportExample"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="AutoCompleteExampleJS1"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="autocompleteExampleJS1"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="AutoCompleteExampleHTML1"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML1"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom col-md-6 col-xs-12">
@@ -22,7 +22,6 @@
 			<aui-auto-complete
 			id="hero-names"
 			placeholder="Choose your hero…"
-			[(ngModel)]="selectedHero"
 			label="name"
 			value=""
 			minCharacters = "3"
@@ -38,26 +37,27 @@
 <h3 class="h5 u-margin-bottom">Remote search</h3>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="AutoCompleteExampleJS2"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="autocompleteExampleJS2"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="AutoCompleteExampleHTML2"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML2"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom col-md-6 col-xs-12">
 	<div class="a-input">
 		<div class="a-input__wrapper">
 			<aui-auto-complete
-				id="id"
-				placeholder="This will return no results…"
-				[(ngModel)]="selectedValue"
+				id="hero"
+				placeholder="Choose your hero…"
 				remote="true"
-				loadingText = "Loading"
+				[results]="results"
+				label="name"
+				key="id"
+				loadingText = "Loading…"
 				noResultsText="No results found"
 				searchIncentiveText="Type one or more keywords to start searching"
-				[results]="results"
-				(search)="searchSomething($event)">
+				(search)="searchItems($event)">
 			</aui-auto-complete>
 		</div>
 	</div>
@@ -68,15 +68,15 @@
 <h3 class="h5 u-margin-bottom">Basic upload</h3>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="UploadImportExample"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="uploadImportExample"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="UploadExampleJS1"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="uploadExampleJS1"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="UploadExampleHTML1"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="uploadExampleHTML1"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
@@ -93,11 +93,11 @@
 <h3 class="h5 u-margin-bottom">Upload as form control</h3>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="UploadExampleJS2"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="uploadExampleJS2"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="UploadExampleHTML2"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="uploadExampleHTML2"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
@@ -117,11 +117,11 @@
 <h3 class="h5 u-margin-bottom">Upload as a button</h3>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="UploadExampleJS3"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="uploadExampleJS3"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="UploadExampleHTML3"></aui-code-snippet>
+	<aui-code-snippet [codeSnippet]="uploadExampleHTML3"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom">

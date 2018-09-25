@@ -29,6 +29,53 @@ export class AppModule {};`;
 		</a>
 	</div>
 </aui-header>`;
+	public footer1 = `import { FooterModule } from '@acpaas-ui/ngx-components/layout';
+
+@NgModule({
+	imports: [
+		FooterModule,
+	]
+});
+
+export class AppModule {};`;
+
+	public footer2 = `<aui-footer isExtended="false">
+	<div class="u-margin-bottom u-margin-top">
+		<div auiFooterContent>
+			Footer content goes here
+		</div>
+		<div auiFooterBottom>
+			<aui-subfooter>
+				<aui-copyright domain="Digipolis"></aui-copyright>
+			</aui-subfooter>
+		</div>
+	</div>
+</aui-footer>`;
+
+	public hero1 = `import { HeroModule } from '@acpaas-ui/ngx-components/layout';
+
+@NgModule({
+    imports: [
+        HeroModule
+    ]
+});
+
+export class AppModule {};`;
+
+	public hero2 = `<div class="u-margin-bottom u-margin-top">
+	<aui-hero>
+		<div auiHeroCard>
+			<h1>Your app</h1>
+			<a>Some link</a>
+		</div>
+		<div auiHeroCta>
+			<div class="buttons">
+				<a class="a-button">Home</a>
+				<a class="a-button">Another page</a>
+			</div>
+		</div>
+	</aui-hero>
+</div>`;
 
 	constructor(
 		private modalService: ModalService
