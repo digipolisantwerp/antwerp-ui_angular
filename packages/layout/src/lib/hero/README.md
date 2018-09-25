@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/layout
 
-Description goes here.
+The hero module provides two zones for content projection: the `auiHeroCard` zone and the `auiHeroCta` zone.
 
 ## Usage
 
@@ -14,9 +14,16 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ### API
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() your: string;` | `'API'` | Goes here. |
+#### Component
+
+No `@Input`s or `@Output`s for the hero component.
+
+#### Available directives
+
+- auiHeroCard
+- auiHeroCta
+
+The main (or only) functionality of these directives is helping you laying out your hero.
 
 ### Example
 
@@ -32,12 +39,21 @@ import { HeroModule } from '@acpaas-ui/ngx-components/layout';
 export class AppModule {};
 ```
 
-```typescript
-// Controller code
-```
-
 ```html
-<!-- HTML code -->
+<div class="u-margin-bottom u-margin-top">
+	<aui-hero>
+		<div auiHeroCard>
+			<h1>Your app</h1>
+			<a>Some link</a>
+		</div>
+		<div auiHeroCta>
+			<div class="buttons">
+				<a class="a-button">Home</a>
+				<a class="a-button">Another page</a>
+			</div>
+		</div>
+	</aui-hero>
+</div>
 ```
 
 ## Contributing
