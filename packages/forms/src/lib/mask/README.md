@@ -32,64 +32,18 @@ import { MaskModule } from '@acpaas-ui/ngx-components/forms';
 export class AppModule {};
 ```
 
-#### Local search
-
 ```typescript
-public selectedHero: string;
-
-public heroList = [
-  {name: 'Batman'},
-  {name: 'Wonder Woman'},
-  {name: 'Wolverine'},
-  {name: 'Iron Man'},
-  {name: 'Deadpool'},
-];
-public setSelectedUser(person): void {
-  // do something
-}
+public exampleCode = `<div class="a-input">
+    <input type="text" placeholder="dd/mm/yyyy" auiMask="99/99/9999" />
+</div>`;
 ```
 
 ```html
-<aui-auto-complete
-  id="hero-names"
-  placeholder="Choose your hero…"
-  [(ngModel)]="selectedHero"
-  label="name"
-  value=""
-  minCharacters = "3"
-  clearInvalid="true"
-  showAllByDefault="true"
-  [data]="heroList"
-  (select)="setSelectedHero($event)">
-</aui-auto-complete>
-```
-
-#### Remote search
-
-```typescript
-public selectedValue: string;
-public results = [];
-
-public searchSomething(event): void {
-	// do search action
-	setTimeout(() => {
-		this.results =  [];
-	}, 1500);
-}
-```
-
-```html
-<aui-auto-complete
-  id="id"
-  placeholder="This will return no results…"
-  [(ngModel)]="selectedValue"
-  remote="true"
-  loadingText = "Loading"
-  noResultsText="No results found"
-  searchIncentiveText="Type one or more keywords to start searching"
-  [results]="results"
-  (search)="searchSomething($event)">
-</aui-auto-complete>
+<div class="example">
+  <div class="a-input">
+      <input type="text" placeholder="dd/mm/yyyy" auiMask="99/99/9999" />
+  </div>
+</div>
 ```
 
 ## Contributing
