@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `flyout` Added documentation.
 - `layout/footer` Added documentation.
 - `layout/header` Added documentation.
+- `layout/hero` Added documentation.
 - `logo` Added documentation.
 - `localstorage` Added documentation.
 - `map` Added documentation.
