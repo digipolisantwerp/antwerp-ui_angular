@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased] - yyyy-mm-dd
 
-## [1.0.2] - 2018-09-25
+
+## [1.0.3] - 2018-09-25
 ### Added
 - `avatar` Added documentation.
 - `code-snippet` Added documentation.
@@ -30,9 +31,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `core` Fixed and optimized build script for examples with a hyphen in their name.
 - `calendar` Fixed an issue where an incorrect month or year was shown.
 
+## [1.0.2] - 2018-09-25 - BORKED
+
+
 ## [1.0.1] - 2018-07-02
 ### Changed
 - `core` Optimized build script.
+
 
 ## [1.0.0] - 2018-07-02
 Initial release.
