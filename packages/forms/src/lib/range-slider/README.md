@@ -16,12 +16,12 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() min: number;` | - | The id used for the input field. |
-| `@Input() max: number;` | - | The placeholder used for the input field. |
-| `@Input() minimalDistance: number;` | - | The message shown when the user focuses on the input field (useful for remote search). |
-| `@Input() step: number;` | - | The message shown when the search is loading results (accompanied by a loading icon). |
-| `@Input() labelBefore: number;` | - | The message shown when the search is complete and there are no results. |
-| `@Input() labelAfter: number;` | false | Enable remote search. |
+| `@Input() min: number;` | 0 | Minimum value on the slider. |
+| `@Input() max: number;` | 100 | Maximum value on the slider. |
+| `@Input() minimalDistance: number;` | 1 | ?. |
+| `@Input() step: number;` | 0 | The numeric steps shown on the slider. |
+| `@Input() labelBefore: number;` | - | Label before the text on the slider. |
+| `@Input() labelAfter: number;` | - | Label before the text on the slider. |
 
 ### Example
 
@@ -37,64 +37,23 @@ import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
 export class AppModule {};
 ```
 
-#### Local search
-
 ```typescript
-public selectedHero: string;
-
-public heroList = [
-  {name: 'Batman'},
-  {name: 'Wonder Woman'},
-  {name: 'Wolverine'},
-  {name: 'Iron Man'},
-  {name: 'Deadpool'},
-];
-public setSelectedUser(person): void {
-  // do something
-}
+public slider1;
+public slider2 = {start: 40};
+public slider3 = {start: 400, end: 500};
 ```
 
 ```html
-<aui-auto-complete
-  id="hero-names"
-  placeholder="Choose your hero…"
-  [(ngModel)]="selectedHero"
-  label="name"
-  value=""
-  minCharacters = "3"
-  clearInvalid="true"
-  showAllByDefault="true"
-  [data]="heroList"
-  (select)="setSelectedHero($event)">
-</aui-auto-complete>
-```
+<div class="example">
+  <aui-range-slider [(ngModel)]="slider1"></aui-range-slider>
+  <pre class="a-pre"><code>{{slider1 | json}}</code></pre>
 
-#### Remote search
+  <aui-range-slider [(ngModel)]="slider2" step="20"></aui-range-slider>
+  <pre class="a-pre"><code>{{slider2 | json}}</code></pre>
 
-```typescript
-public selectedValue: string;
-public results = [];
-
-public searchSomething(event): void {
-	// do search action
-	setTimeout(() => {
-		this.results =  [];
-	}, 1500);
-}
-```
-
-```html
-<aui-auto-complete
-  id="id"
-  placeholder="This will return no results…"
-  [(ngModel)]="selectedValue"
-  remote="true"
-  loadingText = "Loading"
-  noResultsText="No results found"
-  searchIncentiveText="Type one or more keywords to start searching"
-  [results]="results"
-  (search)="searchSomething($event)">
-</aui-auto-complete>
+  <aui-range-slider [(ngModel)]="slider3" min="300" max="500" labelBefore="€"></aui-range-slider>
+  <pre class="a-pre"><code>{{slider3 | json}}</code></pre>
+</div>
 ```
 
 ## Contributing
