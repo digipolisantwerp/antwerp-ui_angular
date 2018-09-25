@@ -55,8 +55,6 @@ export class AppModule {};
 #### Local search
 
 ```typescript
-public selectedHero: string;
-
 public heroList = [
   {name: 'Batman'},
   {name: 'Wonder Woman'},
@@ -73,10 +71,9 @@ public setSelectedUser(person): void {
 <aui-auto-complete
   id="hero-names"
   placeholder="Choose your hero…"
-  [(ngModel)]="selectedHero"
   label="name"
   value=""
-  minCharacters="3"
+  minCharacters = "3"
   clearInvalid="true"
   showAllByDefault="true"
   [data]="heroList"
@@ -87,28 +84,32 @@ public setSelectedUser(person): void {
 #### Remote search
 
 ```typescript
-public selectedValue: string;
 public results = [];
+public heroList = [
+  {name: 'Batman'},
+  {name: 'Wonder Woman'},
+  {name: 'Wolverine'},
+  {name: 'Iron Man'},
+  {name: 'Deadpool'},
+];
 
-public searchSomething(event): void {
-	// do search action
-	setTimeout(() => {
-		this.results = [];
-	}, 1500);
+public searchItems(search: string): void {
+  // do search
 }
 ```
 
 ```html
 <aui-auto-complete
-  id="id"
-  placeholder="This will return no results…"
-  [(ngModel)]="selectedValue"
+  id="hero"
+  placeholder="Choose your hero…"
   remote="true"
-  loadingText="Loading"
+  [results]="results"
+  label="name"
+  key="id"
+  loadingText = "Loading…"
   noResultsText="No results found"
   searchIncentiveText="Type one or more keywords to start searching"
-  [results]="results"
-  (search)="searchSomething($event)">
+  (search)="searchItems($event)">
 </aui-auto-complete>
 ```
 

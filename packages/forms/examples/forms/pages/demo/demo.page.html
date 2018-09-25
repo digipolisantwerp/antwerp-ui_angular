@@ -22,7 +22,6 @@
 			<aui-auto-complete
 			id="hero-names"
 			placeholder="Choose your hero…"
-			[(ngModel)]="selectedHero"
 			label="name"
 			value=""
 			minCharacters = "3"
@@ -49,15 +48,16 @@
 	<div class="a-input">
 		<div class="a-input__wrapper">
 			<aui-auto-complete
-				id="id"
-				placeholder="This will return no results…"
-				[(ngModel)]="selectedValue"
+				id="hero"
+				placeholder="Choose your hero…"
 				remote="true"
-				loadingText = "Loading"
+				[results]="results"
+				label="name"
+				key="id"
+				loadingText = "Loading…"
 				noResultsText="No results found"
 				searchIncentiveText="Type one or more keywords to start searching"
-				[results]="results"
-				(search)="searchSomething($event)">
+				(search)="searchItems($event)">
 			</aui-auto-complete>
 		</div>
 	</div>
