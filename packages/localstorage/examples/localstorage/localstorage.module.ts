@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
-// import { FormsModule } from '@angular/Forms';
-import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
-import { RouterModule } from '@angular/router';
 
 import { Pages } from './pages/index';
 
 @NgModule({
 	imports: [
 		CommonModule,
-		// FormsModule,
-		RangeSliderModule,
+		LocalstorageModule.forRoot({
+			storageType: 'sessionStorage',
+			identifier: 'my-app-v1',
+		}),
 		CodeSnippetModule,
-		RouterModule,
 	],
 	declarations: [
 		Pages,
 	],
 })
-export class FormsExamplesModule {}
+export class LocalstorageExamplesModule {}
