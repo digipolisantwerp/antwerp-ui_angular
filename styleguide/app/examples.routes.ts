@@ -4,6 +4,7 @@ import { CODE_SNIPPET_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/code-snipp
 import { FLYOUT_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/flyout/fesm2015/flyout';
 import { FORMS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/forms/fesm2015/forms';
 import { LAYOUT_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/layout/fesm2015/layout';
+import { LOCALSTORAGE_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/localstorage/fesm2015/localstorage';
 import { LOGO_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/logo/fesm2015/logo';
 import { MAP_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/map/fesm2015/map';
 import { PAGINATION_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/pagination/fesm2015/pagination';
@@ -18,6 +19,7 @@ export const EXAMPLES_ROUTES = [
 	{ path: 'flyout', children: FLYOUT_EXAMPLES_ROUTES, title: 'Flyout', },
 	{ path: 'forms', children: FORMS_EXAMPLES_ROUTES, title: 'Forms', },
 	{ path: 'layout', children: LAYOUT_EXAMPLES_ROUTES, title: 'Layout', },
+	{ path: 'localstorage', children: LOCALSTORAGE_EXAMPLES_ROUTES, title: 'Localstorage', },
 	{ path: 'logo', children: LOGO_EXAMPLES_ROUTES, title: 'Logo', },
 	{ path: 'map', children: MAP_EXAMPLES_ROUTES, title: 'Map', },
 	{ path: 'pagination', children: PAGINATION_EXAMPLES_ROUTES, title: 'Pagination', },

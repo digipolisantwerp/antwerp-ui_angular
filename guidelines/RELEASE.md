@@ -26,11 +26,15 @@ Exceptions:
 
 2. **Version**
 
-   Version the project using NPM commands; `npm version (patch | minor | major)`. This takes care of setting git tags.
+   Version the project using NPM commands; `npm version (patch | minor | major)`. This takes care of setting git tags. Don't forget to push these to the remote with the command `git push && git push --tags`
+
+3. **Build**
+
+   Build the project using NPM commands; `npm run build`.
 
 3. **Publish**
 
-   Publish the project using NPM commands; `npm publish`.
+   Make sure you have the necessary rights and login to npmjs. Publish the project using NPM commands; `npm publish dist`.
 
 ### Hotfixes
 
