@@ -1,141 +1,121 @@
-# Context Service
-The `@acpaas-ui/context` package manages meta tags and other SEO properties and provides a link to the redux state.
+# @acpaas-ui/ngx-components/context
 
-## Dependencies
-/
+This package manages meta tags and other SEO properties and provides a link to the redux state.
 
-## Installation
-```
-npm install @acpaas-ui/context --save
+## Usage
+
+```typescript
+import { ContextModule, ContextService } from '@acpaas-ui/ngx-components/context'`;
 ```
 
-Import the `ContextModule` in **app.module.ts**:
-```
-...
-import { ContextModule, ContextService } from '@acpaas-ui/context';
-...
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Code snippet list modules
+
+#### API
+
+| Name         | Description | Documentations |
+| -----------  | ------ | -------------------------- |
+| `@Input() codeSnippet: string;` | `-` | Add your code snippet here. |
+| `@Input() processMarkdown: boolean;` | `false` | When having some markdown that contains code snippets. |
+| `@Input() scrollable: boolean;` | `true` | Boolean for when code snippet should not have a horizontal scrollbar when the code snippet is not wide enough. |
+
+#### Example
+
+##### A single code snippet
+
+```typescript
+import { ContextModule, ContextService } from '@acpaas-ui/ngx-components/context';
 
 @NgModule({
-    imports: [
-        ContextModule
-    ]
+  imports: [
+    ContextModule
+  ]
 })
 
 export class AppModule {
-    constructor(private ContextService: ContextService) {}
+  constructor(private ContextService: ContextService) {}
 }
 ```
-If you want to sync the selected meta tags with the redux state using the `@angular-redux/store` module, import the `ContextStoreModule` as well:
-```
-...
-import { ContextModule, ContextStoreModule } from '@acpaas-ui/context';
-...
+```typescript
+public codeExampleJSON = `
+	[
+	    {
+	        "title": "apples",
+	        "count": [12000, 20000],
+	        "description": {"text": "...", "sensitive": false}
+	    },
+	    {
+	        "title": "oranges",
+	        "count": [17500, null],
+	        "description": {"text": "...", "sensitive": false}
+	    }
+	]`;
 
-@NgModule({
-    imports: [
-        ContextModule,
-        ContextStoreModule
-    ]
-})
-```
-and add the `contextReducer` to your store (use the `IContext` interface for typechecking):
-```
-...
-import { contextReducer as context } from '@acpaas-ui/context';
-...
-
-export const rootReducer = combineReducers<AppState>({
-    ...
-    context
-});
-```
-
-## Usage
-### Set defaults
-You can set defaults and other options for the module by using the forRoot() option in the imoport section:
-```
-@NgModule({
-    imports: [
-        ContextModule.forRoot({
-            useTitleSuffix: true,
-            defaults: {
-                titleSuffix: ' | ACPaaS UI'
-            }
-        })
-    ]
-})
-```
-**Available options:**
-* `useTitleSuffix` (boolean, default: `false`): add an optional title suffix
-* `extendTitle` (boolean, default: `false`): append parent page titles (when using router context)
-* `titleDelimiter` (string, default: ` | `): the separator to use when `extendTitle` is true
-* `defaults` (IContext, default: `{}`): default values for the meta tags
-* `routerContext` (boolean, default: `true`): listen for meta data on the route changes
-
-### Set tags on routes
-You can set tags on routes using the `data` property. The `ContextService` will subscribe to the router and pick up these tags automatically.
-```
-const ROUTES: Routes = [
-    {
-        path: 'home',
-        component: HomePage,
-        data: {
-            meta: {
-                page: 'home',
-                title: 'Home page',
-                description: 'Description of the home page',
-                metatags: 'Angular2, meta, seo'
-            }
-        }
+public codeExampleJS = `
+    function greetMe(yourName) {
+        alert('Hello ' + yourName);
     }
-];
+    greetMe('World');`;
+```
+```html
+<aui-code-snippet [codeSnippet]="codeExampleJSON"></aui-code-snippet>
 ```
 
+##### Multiple code snippets
 
-### Set tags in a component
-You can set tags manually in your components as well. This is useful for async data or generic routes. You can use `loadContext` method on either the `ContextService` (without redux) or the `ContextActionCreator` (with redux), both have the same API.
-
+```typescript
+public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
 ```
-...
-import { ContextActionCreator } from 'aui-service-context';
-...
+```html
+<aui-code-snippet
+	*ngFor="let codeExample of codeExamples"
+	[codeSnippet]="codeExample"
+></aui-code-snippet>
+```
 
-@Component({
-    ...
-    providers: [
-        ContextActionCreator
-    ]
-    ...
-})
-export class ContactPage implements OnInit {
-    constructor(private contextAction: ContextActionCreator) {}
+### Process markdown with code snippets
+If you have some markdown that contains code snippets, the component can also deal with that.
 
-    public ngOnInit() {
-        this.contextAction.loadContext({
-            title: 'New title'
-        });
+*Create a service to get the markdown (this is just an example of getting a local markdown file):*
+
+```typescript
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
+@Injectable()
+export class ContentService {
+    constructor(
+        private http: Http
+    ) {}
+
+    getMarkdown(): any {
+        return this.http.get('/example.md')
+        .map((res) => res.text());
     }
 }
 ```
+```typescript
+public mdExample: string;
 
-**Available tags:**
-Exceptions are added for title, description & favIcon tags and the most used tags are available in the IContext interface. You are free to use whichever tag you need however.
+constructor(
+    private contentService: ContentService
+) {
+    contentService.getMarkdown().subscribe(data => this.mdExample = data);
+}
+```
+```html
+<aui-code-snippet
+    *ngIf="mdExample"
+    [codeSnippet]="mdExample"
+    [processMarkdown]="true"
+></aui-code-snippet>
+```
 
-* title
-* titleSuffix
-* description
-* favIcon
-* canonical
-* og:url
-* og:type
-* og:title
-* og:description
-* og:image
-* fb:app_id
-* og:locale
-* og:locale:alternate
-* og:see_also
-* og:updated_time
-* twitter:card
-* twitter:site
-* twitter:creator
+## Contributing
+
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
