@@ -32,15 +32,9 @@ import { MaskModule } from '@acpaas-ui/ngx-components/forms';
 export class AppModule {};
 ```
 
-```typescript
-public exampleCode = `<div class="a-input">
-	<input type="text" placeholder="dd/mm/yyyy" auiMask="99/99/9999" />
-</div>`;
-```
-
 ```html
 <div class="a-input">
-    <input type="text" placeholder="dd/mm/yyyy" auiMask="99/99/9999" />
+	<input type="text" placeholder="dd/mm/yyyy" auiMask="99/99/9999" />
 </div>
 ```
 
