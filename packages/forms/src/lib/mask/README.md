@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-With the @acpaas-ui mask module you can mask input fields and choose wether to store the actual modelValue or the parsed viewValue as the value.
+With the @acpaas-ui mask module you can mask input fields.
 
 ## Usage
 
