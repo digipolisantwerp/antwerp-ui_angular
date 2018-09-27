@@ -39,7 +39,8 @@ export class AppModule {};
 <div class="a-input">
     <input 
       type="text" 
-      placeholder="Belgian account number" auiMask="BE99 9999 9999 9999"
+      placeholder="BE99 9999 9999 9999"
+      auiMask="BE99 9999 9999 9999"
     />
 </div>
 ```
