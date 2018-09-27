@@ -5,7 +5,8 @@ import {
 	AutoCompleteModule,
 } from '@acpaas-ui/ngx-components/forms';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
-import { RouterModule } from '@angular/router';
+import { MaskModule } from '@acpaas-ui/ngx-components/forms';
+import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
 
 import { Pages } from './pages/index';
 
@@ -13,9 +14,10 @@ import { Pages } from './pages/index';
 	imports: [
 		CommonModule,
 		FormsModule,
-		RouterModule,
 		AutoCompleteModule,
 		CodeSnippetModule,
+ 		MaskModule,
+		TimepickerModule,
 	],
 	declarations: [
 		Pages,
