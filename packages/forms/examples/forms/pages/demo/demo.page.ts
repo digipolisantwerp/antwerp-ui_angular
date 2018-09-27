@@ -14,7 +14,10 @@ export class FormsDemoPageComponent {
 export class AppModule {};`;
 
 	public maskExampleHTML1 = `<div class="a-input">
-	<input type="text" placeholder="dd/mm/yyyy" auiMask="99/99/9999" />
+	<input
+		type="text"
+		placeholder="Belgian account number"
+		auiMask="BE99 9999 9999 9999" />
 </div>`;
 
 }
