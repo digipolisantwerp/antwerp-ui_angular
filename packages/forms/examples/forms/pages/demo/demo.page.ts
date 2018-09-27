@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 })
 export class FormsDemoPageComponent {
 
-	public slider3;
+	public slider3 = {start: 400, end: 500};
 
 	public rangesliderImportExample = `import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({
@@ -22,11 +22,10 @@ export class AppModule {};`;
 </aui-range-slider>`;
 
 	public rangesliderExampleHTML3 = `<aui-range-slider
-	[(ngModel)]="slider3"
-	min="300"
-	max="500"
-	labelBefore="€"
-	step="100">
+		[(ngModel)]="slider3"
+		min="300"
+		max="500"
+		labelBefore="€">
 </aui-range-slider>`;
 
 }
