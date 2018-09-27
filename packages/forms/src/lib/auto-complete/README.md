@@ -62,7 +62,7 @@ public heroList = [
   {name: 'Iron Man'},
   {name: 'Deadpool'},
 ];
-public setSelectedUser(person): void {
+public setSelectedHero(hero: string): void {
   // do something
 }
 ```

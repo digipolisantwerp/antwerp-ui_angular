@@ -7,6 +7,7 @@ import { takeUntil, debounceTime } from 'rxjs/operators';
 })
 export class FormsDemoPageComponent implements OnInit, OnDestroy {
 
+	// AUTOCOMPLETE DECLARATIONS
 	public autocompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
@@ -24,7 +25,7 @@ export class AppModule {};`;
   {name: 'Iron Man'},
   {name: 'Deadpool'},
 ];
-public setSelectedUser(person): void {
+public setSelectedUser(hero): void {
   // do something
 }`;
 
@@ -66,6 +67,18 @@ public searchItems(search: string): void {
   (search)="searchItems($event)">
 </aui-auto-complete>`;
 
+	public results = [];
+	public heroList = [
+		{name: 'Batman'},
+		{name: 'Wonder Woman'},
+		{name: 'Wolverine'},
+		{name: 'Iron Man'},
+		{name: 'Deadpool'},
+	];
+	private debouncer: Subject<string> = new Subject();
+	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+
+	// MASK DECLARATIONS
 	public maskImportExample = `import { MaskModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({
 	  imports: [
@@ -80,11 +93,11 @@ export class AppModule {};`;
 		placeholder="BE99 9999 9999 9999"
 		auiMask="BE99 9999 9999 9999" />
 </div>`;
-	public time1 = "10:30";
-	public time2 = "20:30";
-	public time3 = "";
+	public time1 = '10:30';
+	public time2 = '20:30';
+	public time3 = '';
 
-    public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
+	public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
     @NgModule({
       imports: [
         TimepickerModule,
@@ -92,16 +105,16 @@ export class AppModule {};`;
     });
 export class AppModule {};`;
 
-	public timepickerExampleTypescript = `public time1 = "10:30";`;
+	public timepickerExampleTypescript = `public time1 = '10:30';`;
 
-    public timepickerExampleHTML1 = `<aui-timepicker
+  public timepickerExampleHTML1 = `<aui-timepicker
 	size="small"
 	[(ngModel)]="time1">
 </aui-timepicker>`;
 
-public timepickerExampleTypescript2 = `public time2 = "20:30";`;
+	public timepickerExampleTypescript2 = `public time2 = '20:30';`;
 
-    public timepickerExampleHTML2 = `<aui-timepicker
+  public timepickerExampleHTML2 = `<aui-timepicker
 	hoursPlaceholder="20"
 	minutesPlaceholder="30"
 	size="small"
@@ -114,17 +127,7 @@ public timepickerExampleTypescript2 = `public time2 = "20:30";`;
 	[(ngModel)]="time3">
 </aui-timepicker>`;
 
-	public results = [];
-	public heroList = [
-		{name: 'Batman'},
-		{name: 'Wonder Woman'},
-		{name: 'Wolverine'},
-		{name: 'Iron Man'},
-		{name: 'Deadpool'},
-	];
-	private debouncer: Subject<string> = new Subject();
-	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
-
+	// AUTOCOMPLETE METHODS
 	public ngOnInit() {
 		this.debouncer.pipe(
 			takeUntil(this.componentDestroyed$),
@@ -145,7 +148,7 @@ public timepickerExampleTypescript2 = `public time2 = "20:30";`;
 		this.componentDestroyed$.complete();
 	}
 
-	public setSelectedHero(person): void {
+	public setSelectedHero(hero: string): void {
 		// do something
 	}
 
