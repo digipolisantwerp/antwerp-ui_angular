@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 @Component({
     templateUrl: './demo.page.html',
 })
 export class FormsDemoPageComponent {
 
-	public time1 = "";
-	public time2 = "";
+	public time1 = "10:30";
+	public time2 = "20:30";
 	public time3 = "";
 
     public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
@@ -18,10 +17,14 @@ export class FormsDemoPageComponent {
     });
 export class AppModule {};`;
 
+	public timepickerExampleTypescript = `public time1 = "10:30";`;
+
     public timepickerExampleHTML1 = `<aui-timepicker
 	size="small"
 	[(ngModel)]="time1">
 </aui-timepicker>`;
+
+public timepickerExampleTypescript2 = `public time2 = "20:30";`;
 
     public timepickerExampleHTML2 = `<aui-timepicker
 	hoursPlaceholder="20"
