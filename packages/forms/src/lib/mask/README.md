@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-With the mask module you can make input fields that only accept a specific format.  The module provides an Angular Directive which is a wrapper around the [RobinHerbots/Inputmask](https://github.com/RobinHerbots/Inputmask) package.
+With the mask module you can make input fields that only accept a specific format. The module provides an Angular directive which is a wrapper around the [RobinHerbots/Inputmask](https://github.com/RobinHerbots/Inputmask) package.
 
 ## Usage
 
@@ -19,7 +19,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() auiMask: string;` | - | Use the auiMask input to apply config. |
+| `@Input() auiMask: string;` | - | Use the auiMask input to apply config. [documentation](https://github.com/RobinHerbots/Inputmask#masking-types)|
 
 ### Example
 
