@@ -16,10 +16,10 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() hoursPlaceholder: string;` | HH | Optional placeholder used in the hour picker. |
-| `@Input() minutesPlaceholder: string;` | MM | Optional placeholder used in the minutes picker. |
-| `@Input() hasError: boolean;` | false | Add optional `has-error` class to input fields inside timepicker. |
-| `@Input() size: TimepickerInputSize;` | auto | Enum sizes of the timepicker input fields inside the timepicker. |
+| `@Input() hoursPlaceholder: string;` | `'HH'` | Optional placeholder used in the hour picker. |
+| `@Input() minutesPlaceholder: string;` | `'MM'` | Optional placeholder used in the minutes picker. |
+| `@Input() hasError: boolean;` | `false` | Add optional `has-error` class to input fields inside timepicker. |
+| `@Input() size: TimepickerInputSize;` | `auto` | Enum sizes of the timepicker input fields inside the timepicker. |
 
 ### Example
 
