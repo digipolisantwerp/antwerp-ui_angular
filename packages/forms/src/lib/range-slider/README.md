@@ -20,8 +20,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() max: number;` | `100` | Maximum value on the slider. |
 | `@Input() minimalDistance: number;` | `1` | The minimum interval between the start and end values. |
 | `@Input() step: number;` | `false` | The numeric steps shown on the slider. |
-| `@Input() labelBefore: string;` | `-` | Label before the text on the slider. |
-| `@Input() labelAfter: string;` | `-` | Label before the text on the slider. |
+| `@Input() labelBefore: string;` | `''` | Label before the text on the slider. |
+| `@Input() labelAfter: string;` | `''` | Label before the text on the slider. |
 
 ### Example
 
@@ -43,13 +43,14 @@ public slider3 = {start: 400, end: 500};
 
 ```html
 <div class="example">
-  <aui-range-slider></aui-range-slider>
+  	<aui-range-slider></aui-range-slider>
 
-  <aui-range-slider
-		step="20">
+	<aui-range-slider
+		step="20"
+		labelAfter="%">
 	</aui-range-slider>
 
-  <aui-range-slider
+	<aui-range-slider
 		[(ngModel)]="slider3"
 		min="300"
 		max="600"
