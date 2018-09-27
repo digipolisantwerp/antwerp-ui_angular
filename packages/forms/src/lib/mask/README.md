@@ -19,7 +19,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() auiMask: string;` | - | Use the auiMask input to apply config. [documentation](https://github.com/RobinHerbots/Inputmask#masking-types)|
+| `@Input() auiMask: string;` | - | Use the auiMask input to apply config. [View documentation](https://github.com/RobinHerbots/Inputmask#masking-types)|
 
 ### Example
 
