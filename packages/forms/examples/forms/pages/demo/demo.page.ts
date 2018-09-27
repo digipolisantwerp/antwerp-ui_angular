@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 })
 export class FormsDemoPageComponent {
 
-	public slider3 = { start: 10, end: 50 };
+	public slider3;
 
 	public rangesliderImportExample = `import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({

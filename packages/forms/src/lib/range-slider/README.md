@@ -16,12 +16,12 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() min: number;` | 0 | Minimum value on the slider. |
-| `@Input() max: number;` | 100 | Maximum value on the slider. |
-| `@Input() minimalDistance: number;` | 1 | ?. |
-| `@Input() step: number;` | 0 | The numeric steps shown on the slider. |
-| `@Input() labelBefore: string;` | - | Label before the text on the slider. |
-| `@Input() labelAfter: string;` | - | Label before the text on the slider. |
+| `@Input() min: number;` | `0` | Minimum value on the slider. |
+| `@Input() max: number;` | `100` | Maximum value on the slider. |
+| `@Input() minimalDistance: number;` | `1` | ?. |
+| `@Input() step: number;` | `0` | The numeric steps shown on the slider. |
+| `@Input() labelBefore: string;` | `-` | Label before the text on the slider. |
+| `@Input() labelAfter: string;` | `-` | Label before the text on the slider. |
 
 ### Example
 
