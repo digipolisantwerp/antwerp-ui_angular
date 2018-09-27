@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-The timepicker package provides an easy way to pick a time by providing two fields: 1 for the hour value and 1 for the minutes value. You can pick a time either by choosing a slot in the dropdown or by typing in the autocomplete field and limit the allowed range of times by providing a TimeRange.
+The timepicker package provides an easy way to pick a time by providing two fields: 1 for the hour value and 1 for the minutes value. You can pick a time either by choosing a slot in the dropdown or by typing in the autocomplete field.
 
 ## Usage
 
@@ -16,10 +16,10 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() hoursPlaceholder: string;` | - | The id used for the input field. |
-| `@Input() minutesPlaceholder: string;` | - | The placeholder used for the input field. |
-| `@Input() hasError: boolean;` | - | The message shown when the user focuses on the input field (useful for remote search). |
-| `@Input() size: TimepickerInputSize;` | - | enum: The message shown when the search is loading results (accompanied by a loading icon). |
+| `@Input() hoursPlaceholder: string;` | - | The placeholder used in the hour picker (optional, default HH). |
+| `@Input() minutesPlaceholder: string;` | - | The placeholder used in the minutes picker, (optional, default MM). |
+| `@Input() hasError: boolean;` | - | Add has-error class to input fields inside timepicker, (optional, default false). |
+| `@Input() size: TimepickerInputSize;` | - | enum: sizes of the timepicker input fields instide the timepicker, (optional, default auto). |
 
 ### Example
 
@@ -35,64 +35,46 @@ import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
 export class AppModule {};
 ```
 
-#### Local search
+#### Basic
 
 ```typescript
-public selectedHero: string;
-
-public heroList = [
-  {name: 'Batman'},
-  {name: 'Wonder Woman'},
-  {name: 'Wolverine'},
-  {name: 'Iron Man'},
-  {name: 'Deadpool'},
-];
-public setSelectedUser(person): void {
-  // do something
-}
+public time1 = "";
 ```
 
 ```html
-<aui-auto-complete
-  id="hero-names"
-  placeholder="Choose your hero…"
-  [(ngModel)]="selectedHero"
-  label="name"
-  value=""
-  minCharacters = "3"
-  clearInvalid="true"
-  showAllByDefault="true"
-  [data]="heroList"
-  (select)="setSelectedHero($event)">
-</aui-auto-complete>
+<aui-timepicker
+	size="small"
+	[(ngModel)]="time1">
+</aui-timepicker>
 ```
 
-#### Remote search
+#### predefined hours and minutes
 
 ```typescript
-public selectedValue: string;
-public results = [];
-
-public searchSomething(event): void {
-	// do search action
-	setTimeout(() => {
-		this.results =  [];
-	}, 1500);
-}
+public time2 = "";
 ```
 
 ```html
-<aui-auto-complete
-  id="id"
-  placeholder="This will return no results…"
-  [(ngModel)]="selectedValue"
-  remote="true"
-  loadingText = "Loading"
-  noResultsText="No results found"
-  searchIncentiveText="Type one or more keywords to start searching"
-  [results]="results"
-  (search)="searchSomething($event)">
-</aui-auto-complete>
+<aui-timepicker
+	hoursPlaceholder="20"
+	minutesPlaceholder="30"
+	size="small"
+	[(ngModel)]="time2">
+</aui-timepicker>
+```
+
+#### error
+
+```typescript
+public time3 = "";
+```
+
+```html
+<aui-timepicker
+	hasError="true"
+	size="large"
+	[(ngModel)]="time3">
+</aui-timepicker>
 ```
 
 ## Contributing

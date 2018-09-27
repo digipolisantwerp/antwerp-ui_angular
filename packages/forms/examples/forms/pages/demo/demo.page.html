@@ -1,3 +1,56 @@
-<h1>Forms demo</h1>
+<h1 class="h3 u-margin-bottom">Forms</h1>
 
-<!-- demo the component here -->
+<!-- Timepicker -->
+<h2 class="h4 u-margin-bottom">Timepicker</h2>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerImportExample"></aui-code-snippet>
+</div>
+
+<h3 class="h5 u-margin-bottom">Basic</h3>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-timepicker
+		size="small"
+		[(ngModel)]="time1">
+	</aui-timepicker>
+</div>
+
+<pre class="a-pre">{{ time1 }}</pre>
+
+<h3 class="h5 u-margin-bottom">predefined hours and minutes</h3>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-timepicker
+		hoursPlaceholder="20"
+		minutesPlaceholder="30"
+		size="small"
+		[(ngModel)]="time2">
+	</aui-timepicker>
+</div>
+
+<pre class="a-pre">{{ time2 }}</pre>
+
+<h3 class="h5 u-margin-bottom">error</h3>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-timepicker
+		hasError="true"
+		size="large"
+		[(ngModel)]="time3">
+	</aui-timepicker>
+</div>
+
+<pre class="a-pre">{{ time3 }}</pre>
