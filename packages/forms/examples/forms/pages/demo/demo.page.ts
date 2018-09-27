@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 })
 export class FormsDemoPageComponent {
 
-	public slider3 = {start: 400, end: 500};
+	public slider3 = { start: 10, end: 50 };
 
 	public rangesliderImportExample = `import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({
@@ -13,32 +13,20 @@ export class FormsDemoPageComponent {
 		RangeSliderModule,
 	  ]
 	});
-	export class AppModule {};`;
+export class AppModule {};`;
 
 	public rangesliderExampleHTML1 = `<aui-range-slider></aui-range-slider>`;
 
 	public rangesliderExampleHTML2 = `<aui-range-slider
 	  step="20">
-	</aui-range-slider>`;
+</aui-range-slider>`;
 
-	public rangesliderExampleJS3 = `public selectedValue: string;
-	public results = [];
-	public searchHeroes(event): void {
-		// do search action
-		setTimeout(() => {
-			this.results =  [];
-		}, 1500);
-	}`;
-	public rangesliderExampleHTML3 = `<aui-auto-complete
-	  id="id"
-	  placeholder="This will return no results…"
-	  [(ngModel)]="selectedValue"
-	  remote="true"
-	  loadingText="Loading"
-	  noResultsText="No results found"
-	  searchIncentiveText="Type one or more keywords to start searching"
-	  [results]="results"
-	  (search)="searchSomething($event)">
-	</aui-auto-complete>`;
+	public rangesliderExampleHTML3 = `<aui-range-slider
+	[(ngModel)]="slider3"
+	min="300"
+	max="500"
+	labelBefore="€"
+	step="100">
+</aui-range-slider>`;
 
 }

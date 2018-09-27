@@ -24,21 +24,25 @@
 </div>
 
 <div class="u-margin-bottom-lg col-md-6 col-xs-12">
-	<aui-range-slider step="20"></aui-range-slider>
+	<aui-range-slider
+		step="20">
+	</aui-range-slider>
 </div>
 
 <h3 class="h5 u-margin-bottom">Range-slider: min/max</h3>
-
-<div class="u-margin-bottom">
-	<aui-code-snippet [codeSnippet]="rangesliderExampleJS3"></aui-code-snippet>
-</div>
 
 <div class="u-margin-bottom-lg">
 	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML3"></aui-code-snippet>
 </div>
 
 <div class="u-margin-bottom-lg col-md-6 col-xs-12">
-	<aui-range-slider min="300" max="500" labelBefore="€" step="100"></aui-range-slider>
+	<aui-range-slider
+		[(ngModel)]="slider3"
+		min="300"
+		max="500"
+		labelBefore="€"
+		step="100">
+	</aui-range-slider>
 </div>
 
 <!-- <aui-range-slider [(ngModel)]="slider3" min="300" max="500" labelBefore="€"></aui-range-slider> -->
