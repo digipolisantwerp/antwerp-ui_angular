@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
-import { Components } from './components';
+import { Components } from './components/index';
 
 @NgModule({
 	imports: [

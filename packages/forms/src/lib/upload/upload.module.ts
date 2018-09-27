@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 
-import { Components } from './components';
-import { Services } from './services';
+import { Components } from './components/index';
+import { Services } from './services/index';
 import { UPLOAD_VALIDATION_MESSAGES } from './upload.conf';
 import { ValidationMessages } from './types/upload.types';
 
