@@ -9,12 +9,12 @@ export class FormsDemoPageComponent {
 
 	public rangesliderImportExample = `import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
 import { FormsModule } from '@angular/forms';
-		@NgModule({
-	  	imports: [
-				RangeSliderModule,
-				FormsModule,
-			]
-		});
+	@NgModule({
+		imports: [
+			RangeSliderModule,
+			FormsModule,
+		]
+	});
 export class AppModule {};`;
 
 	public rangesliderExampleHTML1 = `<aui-range-slider></aui-range-slider>`;
@@ -34,11 +34,11 @@ export class AppModule {};`;
 </aui-range-slider>`;
 
 	public maskImportExample = `import { MaskModule } from '@acpaas-ui/ngx-components/forms';
-		@NgModule({
-	  	imports: [
-					MaskModule,
-			]
-		});
+	@NgModule({
+		imports: [
+				MaskModule,
+		]
+	});
 export class AppModule {};`;
 
 	public maskExampleHTML1 = `<div class="a-input">
@@ -53,11 +53,11 @@ export class AppModule {};`;
 	public time3 = "";
 
   public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
-    @NgModule({
-      imports: [
-        TimepickerModule,
-      ]
-    });
+	@NgModule({
+		imports: [
+			TimepickerModule,
+		]
+	});
 export class AppModule {};`;
 
 	public timepickerExampleTypescript = `public time1 = "10:30";`;
