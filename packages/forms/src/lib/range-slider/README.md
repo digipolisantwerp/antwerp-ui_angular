@@ -38,7 +38,7 @@ export class AppModule {};
 ```
 
 ```typescript
-
+public slider3 = {start: 400, end: 500};
 ```
 
 ```html
@@ -50,10 +50,10 @@ export class AppModule {};
 	</aui-range-slider>
 
   <aui-range-slider
+		[(ngModel)]="slider3"
 		min="300"
-    	max="500"
-		labelBefore="€"
-		labelAfter=",-">
+		max="600"
+		labelBefore="€">
 	</aui-range-slider>
 </div>
 ```

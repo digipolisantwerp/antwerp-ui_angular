@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
-import { FormsModule } from '@angular/Forms';
+import { FormsModule } from '@angular/forms';
 import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
 import { RouterModule } from '@angular/router';
 
