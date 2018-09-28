@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
 	AutoCompleteModule,
+	MaskModule,
+	RangeSliderModule,
 	UploadModule,
 } from '@acpaas-ui/ngx-components/forms';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
-import { RouterModule } from '@angular/router';
+import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
 
 import { Pages } from './pages/index';
 
@@ -14,10 +16,14 @@ import { Pages } from './pages/index';
 	imports: [
 		CommonModule,
 		FormsModule,
-		RouterModule,
+		RangeSliderModule,
+		CodeSnippetModule,
+		FormsModule,
 		AutoCompleteModule,
 		UploadModule,
 		CodeSnippetModule,
+ 		MaskModule,
+		TimepickerModule,
 	],
 	declarations: [
 		Pages,

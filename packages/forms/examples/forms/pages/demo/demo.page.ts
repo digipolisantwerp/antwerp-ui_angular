@@ -6,8 +6,18 @@ import { takeUntil, debounceTime } from 'rxjs/operators';
 @Component({
 	templateUrl: './demo.page.html',
 })
-
 export class FormsDemoPageComponent implements OnInit, OnDestroy {
+
+	// AUTOCOMPLETE DECLARATIONS
+  public heroList = [
+		{name: 'Batman'},
+		{name: 'Wonder Woman'},
+		{name: 'Wolverine'},
+		{name: 'Iron Man'},
+		{name: 'Deadpool'},
+	];
+	private debouncer: Subject<string> = new Subject();
+	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
 	public autocompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
 
@@ -26,9 +36,10 @@ export class AppModule {};`;
   {name: 'Iron Man'},
   {name: 'Deadpool'},
 ];
-public setSelectedUser(person): void {
+public setSelectedUser(hero): void {
   // do something
 }`;
+
 	public autocompleteExampleHTML1 = `<aui-auto-complete
   id="hero-names"
   placeholder="Choose your hero…"
@@ -38,8 +49,9 @@ public setSelectedUser(person): void {
   clearInvalid="true"
   showAllByDefault="true"
   [data]="heroList"
-	(select)="setSelectedHero($event)">
+  (select)="setSelectedHero($event)">
 </aui-auto-complete>`;
+
 	public autocompleteExampleJS2 = `public results = [];
 public heroList = [
   {name: 'Batman'},
@@ -52,6 +64,7 @@ public heroList = [
 public searchItems(search: string): void {
   // do search
 }`;
+
 	public autocompleteExampleHTML2 = `<aui-auto-complete
   id="hero"
   placeholder="Choose your hero…"
@@ -65,7 +78,30 @@ public searchItems(search: string): void {
   (search)="searchItems($event)">
 </aui-auto-complete>`;
 
-	// UPLOAD EXAMPLES
+	// UPLOAD DECLARATIONS
+	public files = [];
+	public output: any;
+
+	public dropzone1: UploadOptions = {
+		allowedMimeTypes: ['image/jpeg'],
+		queueLimit: 2,
+		type: 'drop',
+		url: 'http://localhost:3002/upload',
+	};
+
+	public dropzone2: UploadOptions = {
+		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+		autoUpload: true,
+		maxFileSize: 2000000,
+		type: 'drop',
+		url: 'http://localhost:3002/upload',
+	};
+
+	public dropzone3: UploadOptions = {
+			type: 'button',
+			url: 'http://localhost:3002/upload',
+	};
+
 	public uploadImportExample = `import { UploadModule } from '@acpaas-ui/ngx-components/forms';
 
 	@NgModule({
@@ -112,42 +148,87 @@ public uploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFi
   </div>
 </aui-upload>`;
 
-	// AUTOCOMPLETE DECLARATIONS
-  public heroList = [
-		{name: 'Batman'},
-		{name: 'Wonder Woman'},
-		{name: 'Wolverine'},
-		{name: 'Iron Man'},
-		{name: 'Deadpool'},
-	];
-	public results = [];
-	private debouncer: Subject<string> = new Subject();
-	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+	// RANGESLIDER DECLARATIONS
+	public slider3 = {start: 400, end: 500};
 
-	// UPLOAD DECLARATIONS
-	public files = [];
-	public output: any;
+	public rangesliderImportExample = `import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
+import { FormsModule } from '@angular/forms';
+	@NgModule({
+		imports: [
+			RangeSliderModule,
+			FormsModule,
+		]
+	});
+export class AppModule {};`;
 
-	public dropzone1: UploadOptions = {
-		allowedMimeTypes: ['image/jpeg'],
-		queueLimit: 2,
-		type: 'drop',
-		url: 'http://localhost:3002/upload',
-	};
+	public rangesliderExampleHTML1 = `<aui-range-slider></aui-range-slider>`;
 
-	public dropzone2: UploadOptions = {
-		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
-		autoUpload: true,
-		maxFileSize: 2000000,
-		type: 'drop',
-		url: 'http://localhost:3002/upload',
-	};
+	public rangesliderExampleHTML2 = `<aui-range-slider
+	step="20"
+	labelAfter="%">
+</aui-range-slider>`;
 
-	public dropzone3: UploadOptions = {
-			type: 'button',
-			url: 'http://localhost:3002/upload',
-	};
+  public rangesliderExampleTypescript3 = `public slider3 = {start: 400, end: 500};`;
 
+	public rangesliderExampleHTML3 = `<aui-range-slider
+	[(ngModel)]="slider3"
+	min="300"
+	max="600"
+	labelBefore="€">
+</aui-range-slider>`;
+
+	// MASK DECLARATIONS
+	public maskImportExample = `import { MaskModule } from '@acpaas-ui/ngx-components/forms';
+	@NgModule({
+		imports: [
+				MaskModule,
+		]
+	});
+export class AppModule {};`;
+
+	public maskExampleHTML1 = `<div class="a-input">
+	<input
+		type="text"
+		placeholder="BE99 9999 9999 9999"
+		auiMask="BE99 9999 9999 9999" />
+</div>`;
+
+	// TIMEPICKER DECLARATIONS
+	public time1 = '10:30';
+	public time2 = '20:30';
+	public time3 = '';
+
+  public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
+	@NgModule({
+		imports: [
+			TimepickerModule,
+		]
+	});
+export class AppModule {};`;
+
+	public timepickerExampleTypescript = `public time1 = "10:30";`;
+
+  public timepickerExampleHTML1 = `<aui-timepicker
+	size="small"
+	[(ngModel)]="time1">
+</aui-timepicker>`;
+
+  public timepickerExampleTypescript2 = `public time2 = "20:30";`;
+
+  public timepickerExampleHTML2 = `<aui-timepicker
+	hoursPlaceholder="20"
+	minutesPlaceholder="30"
+	size="small"
+	[(ngModel)]="time2">
+</aui-timepicker>`;
+
+	public timepickerExampleHTML3 = `<aui-timepicker
+	hasError="true"
+	size="large"
+	[(ngModel)]="time3">
+</aui-timepicker>`;
+
+	// AUTOCOMPLETE METHODS
 	public ngOnInit() {
 		this.debouncer.pipe(
 			takeUntil(this.componentDestroyed$),
@@ -168,8 +249,7 @@ public uploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFi
 		this.componentDestroyed$.complete();
 	}
 
-	// AUTOCOMPLETE METHODS
-	public setSelectedHero(person): void {
+	public setSelectedHero(hero: string): void {
 		// do something
 	}
 
@@ -193,5 +273,4 @@ public uploadExampleHTML3 = `<aui-upload [options]="dropzone3" (selectUploadedFi
 	public onDeleteFile(e) {
 			this.files.splice(e.index, 1); // e.index and e.file are available
 	}
-
 }
