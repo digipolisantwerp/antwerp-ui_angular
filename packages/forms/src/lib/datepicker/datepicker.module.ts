@@ -13,7 +13,7 @@ import {
 
 import { MaskModule } from '../mask';
 
-import { Components } from './components';
+import { Components } from './components/index';
 import { DATEPICKER_ERROR_LABELS, DATEPICKER_DEFAULT_ERROR_LABELS } from './datepicker.conf';
 import { DatepickerErrorLabels } from './types/datepicker.types';
 

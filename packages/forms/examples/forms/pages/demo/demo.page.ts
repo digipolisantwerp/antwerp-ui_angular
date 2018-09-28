@@ -78,12 +78,41 @@ public searchItems(search: string): void {
 	private debouncer: Subject<string> = new Subject();
 	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
+	// RANGESLIDER DECLARATIONS
+	public slider3 = {start: 400, end: 500};
+
+	public rangesliderImportExample = `import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
+import { FormsModule } from '@angular/forms';
+	@NgModule({
+		imports: [
+			RangeSliderModule,
+			FormsModule,
+		]
+	});
+export class AppModule {};`;
+
+	public rangesliderExampleHTML1 = `<aui-range-slider></aui-range-slider>`;
+
+	public rangesliderExampleHTML2 = `<aui-range-slider
+	step="20"
+	labelAfter="%">
+</aui-range-slider>`;
+
+  public rangesliderExampleTypescript3 = `public slider3 = {start: 400, end: 500};`;
+
+	public rangesliderExampleHTML3 = `<aui-range-slider
+	[(ngModel)]="slider3"
+	min="300"
+	max="600"
+	labelBefore="€">
+</aui-range-slider>`;
+
 	// MASK DECLARATIONS
 	public maskImportExample = `import { MaskModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({
-	  imports: [
-			MaskModule,
-	  ]
+		imports: [
+				MaskModule,
+		]
 	});
 export class AppModule {};`;
 
@@ -93,26 +122,28 @@ export class AppModule {};`;
 		placeholder="BE99 9999 9999 9999"
 		auiMask="BE99 9999 9999 9999" />
 </div>`;
+
+	// TIMEPICKER DECLARATIONS
 	public time1 = '10:30';
 	public time2 = '20:30';
 	public time3 = '';
 
-	public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
-    @NgModule({
-      imports: [
-        TimepickerModule,
-      ]
-    });
+  public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
+	@NgModule({
+		imports: [
+			TimepickerModule,
+		]
+	});
 export class AppModule {};`;
 
-	public timepickerExampleTypescript = `public time1 = '10:30';`;
+	public timepickerExampleTypescript = `public time1 = "10:30";`;
 
   public timepickerExampleHTML1 = `<aui-timepicker
 	size="small"
 	[(ngModel)]="time1">
 </aui-timepicker>`;
 
-	public timepickerExampleTypescript2 = `public time2 = '20:30';`;
+  public timepickerExampleTypescript2 = `public time2 = "20:30";`;
 
   public timepickerExampleHTML2 = `<aui-timepicker
 	hoursPlaceholder="20"

@@ -21,15 +21,15 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() searchIncentiveText: string;` | - | The message shown when the user focuses on the input field (useful for remote search). |
 | `@Input() loadingText: string;` | - | The message shown when the search is loading results (accompanied by a loading icon). |
 | `@Input() noResultsText: string;` | - | The message shown when the search is complete and there are no results. |
-| `@Input() remote: boolean;` | false | Enable remote search. |
+| `@Input() remote: boolean;` | `false` | Enable remote search. |
 | `@Input() minCharacters: number;` | 0 | The minimal required characters to trigger a search. |
-| `@Input() mask: string;` | null | A mask pattern for the inputfield (see [MaskModule](./../packages/forms/src/lib/mask/README.md) for more info). |
-| `@Input() clearInvalid: boolean;` | false | Clear invalid searchstring values on blur (resets to modelvalue). |
+| `@Input() mask: string;` | `null` | A mask pattern for the inputfield (see [MaskModule](./../packages/forms/src/lib/mask/README.md) for more info). |
+| `@Input() clearInvalid: boolean;` | `false` | Clear invalid searchstring values on blur (resets to modelvalue). |
 | `@Input() label: string;` | - | Provide a custom label prop for collections. This will be matched against for searching. |
 | `@Input() value: string;` | - | Provide a custom value prop for collections. This will be used as the actual value. |
 | `@Input() showAllByDefault: string;` | - | An attribute which can be set to true to show all items in `this.data` by default if no query is provided. This does need the `data`-attribute to have a correct value to work. |
-| `@Input() data: any[];` | [ ] | An array of filtered objects (use the label and value properties) or a flat array of filtered strings. Data is used to do basic filtering inside the component. It is also possible to do the filtering yourself and provide the results directly. |
-| `@Input() results: any[];` | [ ] | The values for the selectable list. This is an array of filtered objects (use the label and value properties) or a flat array of filtered strings. |
+| `@Input() data: any[];` | `[]` | An array of filtered objects (use the label and value properties) or a flat array of filtered strings. Data is used to do basic filtering inside the component. It is also possible to do the filtering yourself and provide the results directly. |
+| `@Input() results: any[];` | `[]` | The values for the selectable list. This is an array of filtered objects (use the label and value properties) or a flat array of filtered strings. |
 
 ### Methods
 
