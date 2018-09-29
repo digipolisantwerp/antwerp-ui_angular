@@ -32,12 +32,12 @@
 	/>
 
 	<div auiFlyoutZone>
-		<span class="aui-auto-complete__info u-text-light u-padding-right u-padding-left-xs" *ngIf="focused && loadingText && searching">
+		<span class="aui-auto-complete__info u-text-light u-margin-xs" *ngIf="focused && loadingText && searching">
 			<span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span>
 			{{ loadingText }}
 		</span>
-		<span class="aui-auto-complete__info u-text-light u-padding-right u-padding-left" *ngIf="focused && searchIncentiveText && !searching && !query && !results.length">{{ searchIncentiveText }}</span>
-		<span class="aui-auto-complete__info u-text-light u-padding-right u-padding-left" *ngIf="focused && noResultsText && !searching && query && !results.length">{{ noResultsText }}</span>
+		<span class="aui-auto-complete__info u-text-light u-margin-xs" *ngIf="focused && searchIncentiveText && !searching && !query && !results.length">{{ searchIncentiveText }}</span>
+		<span class="aui-auto-complete__info u-text-light u-margin-xs" *ngIf="focused && noResultsText && !searching && query && !results.length">{{ noResultsText }}</span>
 
 		<aui-selectable-list [items]="results" [index]="index" (selected)="onSelect($event)" [label]="label" [search]="query" [itemTemplate]="template" *ngIf="results.length > 0 && !(focused && loadingText && searching)"></aui-selectable-list>
 	</div>
