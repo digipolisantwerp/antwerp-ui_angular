@@ -14,7 +14,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ### Localstorage service
 
-### Methods
+#### Methods
 
 | Method         | Description |
 | -----------    | -------------------------- |
@@ -25,17 +25,17 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `select<T = any>(selector: Selector, comparator: Comparator = LocalstorageHelper.comparator): BehaviorSubject<T>` | get a BehaviorSubject containing the selected value. |
 | `clearSubscribers(): void` | unsubscribe all subscribers. |
 
-### Storage type
+#### Storage type
 
 You can set the preferred storage type in the `forRoot` method when importing the `LocalstorageModule`. The service will verify the type exists and fall back to `localStorage` by default. If `localStorage` is not available, an in-memory polyfill will be used.
 
-### Identifier
+#### Identifier
 
 You can provide a custom identifier that will be checked on instantiating the `LocalstorageService`. If the identifier found in the storage is different from the config, the storage will be cleared.
 
 This way, you can invalidate your apps storage to prevent data conflicts.
 
-### Example localstorage
+### Example
 
 ```typescript
 import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage';

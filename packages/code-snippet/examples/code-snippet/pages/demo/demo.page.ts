@@ -109,14 +109,12 @@ public example3 = `<div class="u-margin-bottom">
 
 public example4 = `<aui-code-snippet
 	*ngFor="let codeExample of codeExamples"
-	[codeSnippet]="codeExample"
-></aui-code-snippet>`;
+	[codeSnippet]="codeExample"></aui-code-snippet>`;
 
 public example5 = `<aui-code-snippet
 	*ngIf="mdExample"
 	[codeSnippet]="mdExample"
-	[processMarkdown]="true"
-></aui-code-snippet>`;
+	[processMarkdown]="true"></aui-code-snippet>`;
 
 public codeExampleJSON = `[
 	{
