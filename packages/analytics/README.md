@@ -25,7 +25,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ### Example
 
 ```typescript
-import { AnalyticsModule } from '@acpaas-ui/ngx-components/localstorage';
+import { AnalyticsModule } from '@acpaas-ui/ngx-components/analytics';
 
 @NgModule({
     imports: [
