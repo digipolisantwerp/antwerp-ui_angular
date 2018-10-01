@@ -14,17 +14,19 @@ export class LocalstorageDemoPageComponent {
 	public typescript1 = `import { LocalstorageModule } from '@acpaas-ui/localstorage';
 
 @NgModule({
-    imports: [
-        LocalstorageModule.forRoot({
-            storageType: 'sessionStorage',
-            identifier: 'my-app-v1,
-        })
-    ]
-})
+	imports: [
+		LocalstorageModule.forRoot({
+			storageType: 'sessionStorage',
+			identifier: 'my-app-v1',
+		})
+	]
+});
 
-export class AppModule {}`;
+export class AppModule {};`;
 
-	public typescript2 = `public user: any;
+	public typescript2 = `import { LocalstorageService } from '@acpaas-ui/ngx-components/localstorage';
+
+public user: any;
 public item: any;
 public timesUsed: any;
 
