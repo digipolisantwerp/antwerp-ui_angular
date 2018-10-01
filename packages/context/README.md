@@ -24,7 +24,7 @@ You can set defaults and other options for the module by using the `forRoot()` o
 | `useTitleSuffix: boolean;` | `false` | Add an optional title suffix. |
 | `extendTitle: boolean;` | `false` | Append parent page titles (when using router context). |
 | `titleDelimiter: string;` | `"|"` | The separator to use when extendTitle is true. |
-| `defaults: Context;` | `{}` | Default values for the meta tags. Have al look at the list down below for an overview of possible tags. |
+| `defaults: Context;` | `{}` | Default values for the meta tags. Have a look at the list down below for an overview of possible tags. |
 | `routerContext: boolean;` | `true` | Listen for meta data on the route changes. |
 
 #### Example
