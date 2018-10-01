@@ -50,11 +50,11 @@ public opened = false;
 public backdrop = true;
 
 public onOpen() {
-	this.pane = 'open';
+    this.pane = 'open';
 }
 
 public onClose() {
-	this.pane = 'closed';
+    this.pane = 'closed';
 }
 ```
 
@@ -63,13 +63,13 @@ public onClose() {
 <button class="a-button" (click)="myPane.openPane()">Open pane</button>
 <p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
 <aui-pane #myPane
-	[side]="'left'"
-	[opened]="opened"
-	[backdrop]="backdrop"
-	(open)="onOpen()"
-	(close)="onClose()">
+    [side]="'left'"
+    [opened]="opened"
+    [backdrop]="backdrop"
+    (open)="onOpen()"
+    (close)="onClose()">
     Pane content
-	<button class="a-button" (click)="myPane.closePane()">Close pane</button>
+    <button class="a-button" (click)="myPane.closePane()">Close pane</button>
 </aui-pane>
 ```
 

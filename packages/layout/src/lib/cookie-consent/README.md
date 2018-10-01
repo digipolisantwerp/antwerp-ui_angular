@@ -61,27 +61,27 @@ As an example, you can use the following SCSS code:
 @import '~@a-ui/core/dist/assets/styles/_quarks';
 
 .cc-banner {
-	align-items: baseline;
-	background: $white;
-	border-top: 1px solid $border-color;
-	box-shadow: 0 $spacer / -2 0 rgba($black, .1);
-	bottom: 0;
-	display: flex;
-	flex: 1 1 auto;
-	justify-content: space-between;
-	left: 0;
-	position: fixed;
-	right: 0;
-	transition: opacity $animation-duration $animation-easing;
-	z-index: 10;
+    align-items: baseline;
+    background: $white;
+    border-top: 1px solid $border-color;
+    box-shadow: 0 $spacer / -2 0 rgba($black, .1);
+    bottom: 0;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    left: 0;
+    position: fixed;
+    right: 0;
+    transition: opacity $animation-duration $animation-easing;
+    z-index: 10;
 
-	&.cc-invisible {
-		opacity: 0;
-	}
+    &.cc-invisible {
+        opacity: 0;
+    }
 
-	> p {
-		padding: $spacer / 2;
-	}
+    > p {
+        padding: $spacer / 2;
+    }
 }
 ```
 
@@ -91,29 +91,29 @@ As an example, you can use the following SCSS code:
 import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
-	imports: [
-		CookieconsentModule.forRoot({
-			autoInit: false,
-			content: {
-				message: 'I am the cookie consent demo. Will you allow my cookies?',
-				dismiss: 'Allow cookies',
-				link: 'Learn more',
-				href: 'http://cookiepedia.co.uk/all-about-cookies'
-			},
-			cookie: {
-				name: 'cookieconsent_demo',
-				path: '/',
-				domain: '',
-				expiryDays: 1
-			},
-			elements: {
-				messagelink: `<p id="cookieconsent:desc" class="cc-message">{{message}}
-					<a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank" class="cc-link">{{link}}</a>
-				</p>`,
-				dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button cc-btn cc-dismiss">{{dismiss}}</button>'
-			}
-		}),
-	]
+    imports: [
+        CookieconsentModule.forRoot({
+            autoInit: false,
+            content: {
+                message: 'I am the cookie consent demo. Will you allow my cookies?',
+                dismiss: 'Allow cookies',
+                link: 'Learn more',
+                href: 'http://cookiepedia.co.uk/all-about-cookies'
+            },
+            cookie: {
+                name: 'cookieconsent_demo',
+                path: '/',
+                domain: '',
+                expiryDays: 1
+            },
+            elements: {
+                messagelink: `<p id="cookieconsent:desc" class="cc-message">{{message}}
+                    <a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank" class="cc-link">{{link}}</a>
+                </p>`,
+                dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button cc-btn cc-dismiss">{{dismiss}}</button>'
+            }
+        }),
+    ]
 });
 
 export class AppModule {};
@@ -123,9 +123,9 @@ export class AppModule {};
 import { CookieconsentService } from '@acpaas-ui/ngx-components/layout';
 
 constructor(
-	private cookieconsentService: CookieconsentService
+    private cookieconsentService: CookieconsentService
 ) {
-	this.cookieconsentService.init({});
+    this.cookieconsentService.init({});
 }
 ```
 
