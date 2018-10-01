@@ -7,6 +7,10 @@ import { AUIDemoModalComponent } from './demo-modal.component';
 	templateUrl: './demo.page.html',
 })
 export class LayoutDemoPageComponent {
+	public pane = 'closed';
+	public opened = false;
+	public backdrop = true;
+
 	public cookie1 = `import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
@@ -141,12 +145,40 @@ export class AppModule {};`;
 	</aui-hero>
 </div>`;
 
-	constructor(
-		private cookieconsentService: CookieconsentService,
-		private modalService: ModalService
-	) {
-		this.cookieconsentService.init({});
-	}
+	public pane1 = `import { PaneModule } from '@acpaas-ui/ngx-components/layout';
+
+@NgModule({
+	imports: [
+		PaneModule,
+	]
+});
+
+export class AppModule {};`;
+
+	public pane2 = `public pane = 'closed';
+public opened = false;
+public backdrop = true;
+
+public onOpen() {
+	this.pane = 'open';
+}
+
+public onClose() {
+	this.pane = 'closed';
+}`;
+
+	public pane3 = `<button class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
+<button class="a-button" (click)="myPane.openPane()">Open pane</button>
+<p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
+<aui-pane #myPane
+	[side]="'left'"
+	[opened]="opened"
+	[backdrop]="backdrop"
+	(open)="onOpen()"
+	(close)="onClose()">
+    Pane content
+	<button class="a-button" (click)="myPane.closePane()">Close pane</button>
+</aui-pane>`;
 
 	public sidebarItems = [
 		{
@@ -163,6 +195,13 @@ export class AppModule {};`;
 		},
 	];
 
+	constructor(
+		private cookieconsentService: CookieconsentService,
+		private modalService: ModalService
+	) {
+		this.cookieconsentService.init({});
+	}
+
 	public openModal() {
 		this.modalService.openModal(
 			AUIDemoModalComponent,
@@ -173,6 +212,14 @@ export class AppModule {};`;
 				confirm: () => this.doSomething(),
 			}
 		);
+	}
+
+	public onOpen() {
+		this.pane = 'open';
+	}
+
+	public onClose() {
+		this.pane = 'closed';
 	}
 
 	private doSomething() {
