@@ -158,3 +158,27 @@ pre {
 		color: $grey-lighter;
 	}
 }
+
+.cc-banner {
+	align-items: baseline;
+	background: $white;
+	border-top: 1px solid $border-color;
+	box-shadow: 0 $spacer / -2 0 rgba($black, .1);
+	bottom: 0;
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: space-between;
+	left: 0;
+	position: fixed;
+	right: 0;
+	transition: opacity $animation-duration $animation-easing;
+	z-index: 10;
+
+	&.cc-invisible {
+		opacity: 0;
+	}
+
+	> p {
+		padding: $spacer / 2;
+	}
+}
