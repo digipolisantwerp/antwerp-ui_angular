@@ -158,6 +158,15 @@ export class AppModule {};`;
 	[(ngModel)]="time3">
 </aui-timepicker>`;
 
+	// DATEPICKER DECLARATIONS
+	public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
+	@NgModule({
+		imports: [
+			DatepickerModule,
+		]
+	});
+	export class AppModule {};`;
+
 	// AUTOCOMPLETE METHODS
 	public ngOnInit() {
 		this.debouncer.pipe(
