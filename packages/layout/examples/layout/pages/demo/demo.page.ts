@@ -10,10 +10,10 @@ export class LayoutDemoPageComponent {
 	public cookie1 = `import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
-    imports: [
-        CookieconsentModule.forRoot({
+	imports: [
+		CookieconsentModule.forRoot({
 			autoInit: false,
-	        content: {
+			content: {
 				message: 'I am the cookie consent demo. Will you allow my cookies?',
 				dismiss: 'Allow cookies',
 				link: 'Learn more',
@@ -32,34 +32,34 @@ export class LayoutDemoPageComponent {
 				dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button cc-btn cc-dismiss">{{dismiss}}</button>'
 			}
 		}),
-    ]
+	]
 });
 
 export class AppModule {};`;
 	public cookie2 = `import { CookieconsentService } from '@acpaas-ui/ngx-components/layout';
 
 constructor(
-    private cookieconsentService: CookieconsentService
+	private cookieconsentService: CookieconsentService
 ) {
-    this.cookieconsentService.init({});
+	this.cookieconsentService.init({});
 }`;
 
 	public cookie3 = `@import '~@a-ui/core/dist/assets/styles/_quarks';
 
 .cc-banner {
 	align-items: baseline;
-    background: $white;
-    border-top: 1px solid $border-color;
-    box-shadow: 0 $spacer / -2 0 rgba($black, .1);
-    bottom: 0;
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: space-between;
-    left: 0;
+	background: $white;
+	border-top: 1px solid $border-color;
+	box-shadow: 0 $spacer / -2 0 rgba($black, .1);
+	bottom: 0;
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: space-between;
+	left: 0;
 	position: fixed;
 	right: 0;
 	transition: opacity $animation-duration $animation-easing;
-    z-index: 10;
+	z-index: 10;
 
 	&.cc-invisible {
 		opacity: 0;
@@ -119,9 +119,9 @@ export class AppModule {};`;
 	public hero1 = `import { HeroModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
-    imports: [
-        HeroModule
-    ]
+	imports: [
+		HeroModule
+	]
 });
 
 export class AppModule {};`;
