@@ -1,3 +1,216 @@
-<h1>Forms demo</h1>
+<h1 class="h3 u-margin-bottom">Forms</h1>
 
-<!-- demo the component here -->
+<!-- Autocomplete -->
+<h2 class="h4 u-margin-bottom">Autocomplete</h2>
+
+<h3 class="h5 u-margin-bottom">Local search</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom col-md-6 col-xs-12">
+	<div class="a-input">
+		<div class="a-input__wrapper">
+			<aui-auto-complete
+				id="hero-names"
+				placeholder="Choose your hero…"
+				label="name"
+				value=""
+				minCharacters = "3"
+				clearInvalid="true"
+				showAllByDefault="true"
+				[data]="heroList"
+				(select)="setSelectedHero($event)">
+			</aui-auto-complete>
+		</div>
+	</div>
+</div>
+
+<h3 class="h5 u-margin-bottom">Remote search</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xx col-md-6 col-xs-12">
+	<div class="a-input">
+		<div class="a-input__wrapper">
+			<aui-auto-complete
+				id="hero"
+				placeholder="Choose your hero…"
+				remote="true"
+				[results]="results"
+				label="name"
+				key="id"
+				loadingText = "Loading…"
+				noResultsText="No results found"
+				searchIncentiveText="Type one or more keywords to start searching"
+				(search)="searchItems($event)">
+			</aui-auto-complete>
+		</div>
+	</div>
+</div>
+
+<!-- Mask -->
+<h2 class="h4 u-margin-bottom">Mask</h2>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="maskImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+    <aui-code-snippet [codeSnippet]="maskExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+    <div class="a-input">
+		<input
+			type="text"
+			placeholder="BE99 9999 9999 9999"
+			auiMask="BE99 9999 9999 9999" />
+	</div>
+</div>
+
+<!-- Range slider -->
+<h2 class="h4 u-margin-bottom">Range-slider</h2>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="rangesliderImportExample"></aui-code-snippet>
+</div>
+
+<h3 class="h5 u-margin-bottom">Basic</h3>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-range-slider></aui-range-slider>
+</div>
+
+<h3 class="h5 u-margin-bottom">Step</h3>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-range-slider
+		step="20"
+		labelAfter="%">
+	</aui-range-slider>
+</div>
+
+<h3 class="h5 u-margin-bottom">Min/max</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="rangesliderExampleTypescript3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-range-slider
+		[(ngModel)]="slider3"
+		min="300"
+		max="600"
+		labelBefore="€">
+	</aui-range-slider>
+</div>
+<!-- Mask -->
+<h2 class="h4 u-margin-bottom">Mask</h2>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="maskImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+    <aui-code-snippet [codeSnippet]="maskExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+    <div class="a-input">
+		<input
+			type="text"
+			placeholder="BE99 9999 9999 9999"
+			auiMask="BE99 9999 9999 9999" />
+	</div>
+</div>
+
+<!-- Timepicker -->
+<h2 class="h4 u-margin-bottom">Timepicker</h2>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerImportExample"></aui-code-snippet>
+</div>
+
+<h3 class="h5 u-margin-bottom">Basic</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerExampleTypescript"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-timepicker
+		size="small"
+		[(ngModel)]="time1">
+	</aui-timepicker>
+</div>
+
+<pre class="a-pre">{{ time1 }}</pre>
+
+<h3 class="h5 u-margin-bottom">Predefined hours and minutes</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerExampleTypescript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-timepicker
+		hoursPlaceholder="20"
+		minutesPlaceholder="30"
+		size="small"
+		[(ngModel)]="time2">
+	</aui-timepicker>
+</div>
+
+<pre class="a-pre">{{ time2 }}</pre>
+
+<h3 class="h5 u-margin-bottom">Validation</h3>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+	<aui-timepicker
+		hasError="true"
+		size="large"
+		[(ngModel)]="time3">
+	</aui-timepicker>
+</div>
+
+<pre class="a-pre">{{ time3 }}</pre>

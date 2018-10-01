@@ -63,7 +63,7 @@
     "@angular-devkit/schematics": "~0.6.5",
     "@angular-redux/store": "7.1.1",
     "@angular/animations": "~6.1.0",
-    "@angular/cli": "~6.0.8",
+    "@angular/cli": "~6.1.0",
     "@angular/common": "~6.1.0",
     "@angular/compiler": "~6.1.0",
     "@angular/compiler-cli": "~6.1.0",

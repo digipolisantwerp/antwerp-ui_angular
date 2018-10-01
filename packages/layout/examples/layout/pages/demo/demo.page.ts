@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CookieconsentService } from '@acpaas-ui/ngx-components/layout';
 import { ModalService } from '@acpaas-ui/ngx-components/layout';
 import { AUIDemoModalComponent } from './demo-modal.component';
 
@@ -6,6 +7,73 @@ import { AUIDemoModalComponent } from './demo-modal.component';
 	templateUrl: './demo.page.html',
 })
 export class LayoutDemoPageComponent {
+	public pane = 'closed';
+	public opened = false;
+	public backdrop = true;
+
+	public cookie1 = `import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
+
+@NgModule({
+	imports: [
+		CookieconsentModule.forRoot({
+			autoInit: false,
+			content: {
+				message: 'I am the cookie consent demo. Will you allow my cookies?',
+				dismiss: 'Allow cookies',
+				link: 'Learn more',
+				href: 'http://cookiepedia.co.uk/all-about-cookies'
+			},
+			cookie: {
+				name: 'cookieconsent_demo',
+				path: '/',
+				domain: '',
+				expiryDays: 1
+			},
+			elements: {
+				messagelink: \`<p id="cookieconsent:desc">{{message}}
+					<a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a>
+				</p>\`,
+				dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button cc-btn cc-dismiss">{{dismiss}}</button>'
+			}
+		}),
+	]
+});
+
+export class AppModule {};`;
+	public cookie2 = `import { CookieconsentService } from '@acpaas-ui/ngx-components/layout';
+
+constructor(
+	private cookieconsentService: CookieconsentService
+) {
+	this.cookieconsentService.init({});
+}`;
+
+	public cookie3 = `@import '~@a-ui/core/dist/assets/styles/_quarks';
+
+.cc-banner {
+	align-items: baseline;
+	background: $white;
+	border-top: 1px solid $border-color;
+	box-shadow: 0 $spacer / -2 0 rgba($black, .1);
+	bottom: 0;
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: space-between;
+	left: 0;
+	position: fixed;
+	right: 0;
+	transition: opacity $animation-duration $animation-easing;
+	z-index: 10;
+
+	&.cc-invisible {
+		opacity: 0;
+	}
+
+	> p {
+		padding: $spacer / 2;
+	}
+}`;
+
 	public header1 = `import { HeaderModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
@@ -55,9 +123,9 @@ export class AppModule {};`;
 	public hero1 = `import { HeroModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
-    imports: [
-        HeroModule
-    ]
+	imports: [
+		HeroModule
+	]
 });
 
 export class AppModule {};`;
@@ -77,9 +145,40 @@ export class AppModule {};`;
 	</aui-hero>
 </div>`;
 
-	constructor(
-		private modalService: ModalService
-	) {}
+	public pane1 = `import { PaneModule } from '@acpaas-ui/ngx-components/layout';
+
+@NgModule({
+	imports: [
+		PaneModule,
+	]
+});
+
+export class AppModule {};`;
+
+	public pane2 = `public pane = 'closed';
+public opened = false;
+public backdrop = true;
+
+public onOpen() {
+	this.pane = 'open';
+}
+
+public onClose() {
+	this.pane = 'closed';
+}`;
+
+	public pane3 = `<button class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
+<button class="a-button" (click)="myPane.openPane()">Open pane</button>
+<p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
+<aui-pane #myPane
+	[side]="'left'"
+	[opened]="opened"
+	[backdrop]="backdrop"
+	(open)="onOpen()"
+	(close)="onClose()">
+    Pane content
+	<button class="a-button" (click)="myPane.closePane()">Close pane</button>
+</aui-pane>`;
 
 	public sidebarItems = [
 		{
@@ -96,6 +195,13 @@ export class AppModule {};`;
 		},
 	];
 
+	constructor(
+		private cookieconsentService: CookieconsentService,
+		private modalService: ModalService
+	) {
+		this.cookieconsentService.init({});
+	}
+
 	public openModal() {
 		this.modalService.openModal(
 			AUIDemoModalComponent,
@@ -106,6 +212,14 @@ export class AppModule {};`;
 				confirm: () => this.doSomething(),
 			}
 		);
+	}
+
+	public onOpen() {
+		this.pane = 'open';
+	}
+
+	public onClose() {
+		this.pane = 'closed';
 	}
 
 	private doSomething() {
