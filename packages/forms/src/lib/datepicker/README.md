@@ -22,7 +22,10 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() align: string;` | `'left'` | The alignment of the flyout-zone. This can be `'left'` or `'right'`. |
+| `@Input() id: string;` | - | The id to use on the input field. |
+| `@Input() name: string;` | - | The name to use on the input field. |
+| `@Input() placeholder: string;` | `'dd/mm/yyyy'`| The placeholder to use on the input field. |
+| `@Input() autocomplete: string;` | `'off'` |  turn the browsers autocompletion on or off. |
 
 #### Example
 
@@ -31,15 +34,39 @@ import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
 	imports: [
-		DatepickerModule
-	]
-});
+		DatepickerModule.forChild([
+			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
+			], [
+			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
+		], {
+			ERRORS_INVALID_DATE: 'Ongeldige datum',
+			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden',
+	}),
+	],
+})
 
-export class AppModule {};`
+export class AppModule {};
 ```
 
 ```html
-
+<form [formGroup]="dateForm">
+	<div class="a-input has-icon-right u-margin-bottom-xs col-md-6 col-xs-12"
+	[ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}">
+		<label class="a-input__label" for="input-datepicker">Pick a date</label>
+		<aui-datepicker
+			id="input-datepicker"
+			name="input-datepicker"
+			autocomplete="off"
+			placeholder="dd/mm/jjjj"
+			formControlName="inputDate"
+			[range]="dateRange">
+		</aui-datepicker>
+		<div *ngIf="dateForm.controls['inputDate'].errors" class="u-text-danger u-margin-bottom-xs">
+			<p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
+			<p *ngIf="dateForm.controls['inputDate'].errors.range">{{ dateForm.controls['inputDate'].errors.range }}</p>
+		</div>
+	</div>
+</form>
 ```
 
 ## Contributing

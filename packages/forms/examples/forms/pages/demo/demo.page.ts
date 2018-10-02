@@ -1,11 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil, debounceTime } from 'rxjs/operators';
+
+import { DateRange } from '@acpaas-ui/js-date-utils';
 
 @Component({
 	templateUrl: './demo.page.html',
 })
 export class FormsDemoPageComponent implements OnInit, OnDestroy {
+
+	constructor(private fb: FormBuilder) { }
 
 	// AUTOCOMPLETE DECLARATIONS
 	public autocompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
@@ -159,16 +164,62 @@ export class AppModule {};`;
 </aui-timepicker>`;
 
 	// DATEPICKER DECLARATIONS
-	public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
-	@NgModule({
-		imports: [
-			DatepickerModule,
-		]
-	});
-	export class AppModule {};`;
+	public dateRange: DateRange = [
+		5, 6,
+	];
+	public dateForm: FormGroup;
 
-	// AUTOCOMPLETE METHODS
+	public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
+
+@NgModule({
+	imports: [
+		DatepickerModule.forChild([
+			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
+			], [
+			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
+		], {
+			ERRORS_INVALID_DATE: 'Ongeldige datum',
+			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden',
+	}),
+	],
+})
+
+export class AppModule {};`;
+	public datepickerExampleTypescript = `import { FormBuilder, FormGroup } from '@angular/forms';
+
+import { DateRange } from '@acpaas-ui/js-date-utils';
+
+constructor(private fb: FormBuilder) { }
+
+public dateRange: DateRange = [
+	5, 6,
+];
+public dateForm: FormGroup;
+
+this.dateForm = this.fb.group({
+	inputDate: [''],
+});`;
+  public datepickerExampleHTML = `<form [formGroup]="dateForm">
+	<div class="a-input has-icon-right u-margin-bottom-xs col-md-6 col-xs-12"
+	[ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}">
+		<label class="a-input__label" for="input-datepicker">Pick a date</label>
+		<aui-datepicker
+			id="input-datepicker"
+			name="input-datepicker"
+			autocomplete="off"
+			placeholder="dd/mm/jjjj"
+			formControlName="inputDate"
+			[range]="dateRange">
+		</aui-datepicker>
+		<div *ngIf="dateForm.controls['inputDate'].errors" class="u-text-danger u-margin-bottom-xs">
+			<p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
+			<p *ngIf="dateForm.controls['inputDate'].errors.range">{{ dateForm.controls['inputDate'].errors.range }}</p>
+		</div>
+	</div>
+</form>`;
+
 	public ngOnInit() {
+		// AUTOCOMPLETE
 		this.debouncer.pipe(
 			takeUntil(this.componentDestroyed$),
 			debounceTime(1000)
@@ -181,8 +232,13 @@ export class AppModule {};`;
 					});
 				}
 			});
+		// DATEPICKER
+		this.dateForm = this.fb.group({
+			inputDate: [''],
+		});
 	}
 
+	// AUTOCOMPLETE METHODS
 	public ngOnDestroy() {
 		this.componentDestroyed$.next(true);
 		this.componentDestroyed$.complete();
