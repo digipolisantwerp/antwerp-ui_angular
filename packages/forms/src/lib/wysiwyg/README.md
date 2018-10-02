@@ -29,14 +29,14 @@ script: [
 
 | Name        | Default value | Description |
 | ----------- | ------ | -------------------------- |
-| `@Input() additionalStyling: string;` | - | path to one or more css files.|
-| `@Input() availableTags: string;` | - | `;`-separated list of available tags, e.g.: `h2;h3;h4;h5;h6;p`|
-| `@Input() basic: boolean;` | - | use the basic version of the editor.|
-| `@Input() placeholder: string;` | - | additional info shown in the wysiwyg component|
-| `@Input() uiColour: string;` | - | change the colour of the UI, e.g.: `#00FF00`|
-| `@Input() debounce: number;` | - | you can add a delay (ms) when updating ngModel|
-| `@Input() customConfig: any;` | - | override ckeditor config, see [ckeditor config API](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html)|
-| `@Output() emitContent: string;` | - | callback triggered when content changes|
+| `@Input() additionalStyling: string;` | `-` | path to one or more css files.|
+| `@Input() availableTags: string;` | `-` | `;`-separated list of available tags, e.g.: `h2;h3;h4;h5;h6;p`|
+| `@Input() basic: boolean;` | `false` | use the basic version of the editor.|
+| `@Input() placeholder: string;` | `-` | additional info shown in the wysiwyg component|
+| `@Input() uiColour: string;` | `-` | change the colour of the UI, e.g.: `#00FF00`|
+| `@Input() debounce: number;` | `-` | you can add a delay (ms) when updating ngModel|
+| `@Input() customConfig: any;` | `-` | override ckeditor config, see [ckeditor config API](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html)|
+| `@Output() emitContent: string;` | `-` | callback triggered when content changes|
 
 ### Example
 
