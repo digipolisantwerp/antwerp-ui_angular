@@ -1,49 +1,44 @@
-# Analytics Service
-This service adds an angular layer on top of the Google Analytics `ga()` function.
+# @acpaas-ui/ngx-components/analytics
 
-## Dependencies
-/
+This service adds an Angular layer on top of the Google Analytics `ga()` function.
 
-## Installation
-```
-npm install @acpaas-ui/analytics --save
+## Usage
+
+```typescript
+import { AnalyticsModule } from '@acpaas-ui/ngx-components/analytics'`;
 ```
 
-Import the Analytics Module in **app.module.ts**
-```
-import { AnalyticsModule } from '@acpaas-ui/analytics';
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Analytics service
+
+### Methods
+
+| Method         | Description |
+| -----------    | -------------------------- |
+| `setDimension(key: string, value: string)` | Send a custom dimension. More info on dimensions and its parameters can be found [in the Google Analytics documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets). |
+| `triggerPageView(title?: string, location?: string, page?: string)` | Trigger a page view with optional custom parameters. More info on page tracking and its parameters can be found [in the Google Analytics documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/pages). |
+| `triggerEvent(category: string, action: string, label?: string, value?: any)` | Trigger an event with optional custom parameters. Usually the category is the tagname of the element. More info on event tracking and its parameters can be found [in the Google Analytics documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/events). |
+
+### Example
+
+```typescript
+import { AnalyticsModule } from '@acpaas-ui/ngx-components/analytics';
 
 @NgModule({
     imports: [
         AnalyticsModule
     ]
-})
+});
 
-export class AppModule {}
-```
-
-## Usage
-### Add the service to the component
-```
-...
-import { GaService } from '@acpaas-ui/analytics';
-...
-@Component({
-    selector: 'home-page',
-    styleUrls: ['./home.page.scss'],
-    templateUrl: './home.page.html'
-})
-export class HomePage implements OnInit {
-    ...
-    constructor(private gaService: GaService) {}
-    ...
-}
+export class AppModule {};
 ```
 
-### Disable autoTriggerPageView
-By default there is a page trigger for each route change. To disable this feature for a specific route, add `doNotTrack: true` property to your route
-```
-// app-routing.module
+By default there is a page trigger for each route change. To disable this feature for a specific route, add `doNotTrack: true` to your route's data in `app-routing.module.ts`.
+
+```typescript
 {
     path: 'home',
     component: HomePage,
@@ -53,38 +48,56 @@ By default there is a page trigger for each route change. To disable this featur
 }
 ```
 
-### Trigger page view
-https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
+```typescript
+import { GaService } from '@acpaas-ui/ngx-components/analytics';
+
+constructor(
+    private gaService: GaService
+) {}
 ```
-// Use default options
+
+#### Set dimension
+
+```typescript
+this.gaService.setDimension('some-dimension', 'some-value');
+```
+
+#### Trigger page view
+
+Use default parameters:
+
+```typescript
 this.gaService.triggerPageView();
-
-// Custom options
-// title: string, location: string, page: string
-this.gaService.triggerPageView('title', 'location', 'page');
 ```
 
-### Set dimension
-https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets
-```
-this.gaService.setDimension('dimension1', 'the value');
-``` 
+Or use custom parameters:
 
-### Trigger event
-https://developers.google.com/analytics/devguides/collection/analyticsjs/events
-
-Trigger an event, parameters category and action are required. Category is mostly the tagname of the element. 
+```typescript
+this.gaService.triggerPageView('custom title', 'custom location', 'custom page');
 ```
-category: string, action: string, label?: string, value?: any
+
+#### Trigger event
+
+Trigger an event from the controller:
+
+```typescript
 this.gaService.triggerEvent('button', 'click');
 ```
 
-### Trigger event with the GaEventDirective
-This directive sends a click event to GA with the tagname of the element as category, click as action, innertext as label and the directive input as value.
-```
-<!-- Without value -->
-<button gaEvent>Switch gender to male with directive</button>
+Or trigger an event from the view with the `gaEvent` directive. This directive sends a click event to GA with the tagname of the element as category, click as action, the inner text as label and the directive input as value.
 
-<!-- With value -->
+Trigger event without value:
+
+```html
+<button gaEvent>Switch gender to male with directive</button>
+```
+
+Trigger event with value:
+
+```html
 <button [gaEvent]="activeGender">Switch gender to male with directive</button>
 ```
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.

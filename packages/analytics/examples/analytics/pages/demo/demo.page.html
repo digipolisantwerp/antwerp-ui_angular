@@ -1,0 +1,70 @@
+<h1 class="h3 u-margin-bottom">Analytics</h1>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="javascript1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<p>By default there is a page trigger for each route change. To disable this feature for a specific route, add <code>doNotTrack: true</code> to your route's data in <code>app-routing.module.ts</code>.</p>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="javascript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="javascript3"></aui-code-snippet>
+</div>
+
+<h2 class="h4 u-margin-bottom">Set dimension</h2>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="javascript4"></aui-code-snippet>
+</div>
+
+<h2 class="h4 u-margin-bottom">Trigger page view</h2>
+
+<div class="u-margin-bottom-xs">
+	<p>Use default parameters:</p>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="javascript5"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xs">
+	<p>Or use custom parameters:</p>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="javascript6"></aui-code-snippet>
+</div>
+
+<h2 class="h4 u-margin-bottom">Trigger event</h2>
+
+<div class="u-margin-bottom-xs">
+	<p>Trigger an event from the controller:</p>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="javascript7"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xs">
+	<p>Or trigger an event from the view with the <code>gaEvent</code> directive. This directive sends a click event to GA with the tagname of the element as category, click as action, the inner text as label and the directive input as value.</p>
+</div>
+
+<div class="u-margin-bottom-xs">
+	<p>Trigger event without value:</p>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="html1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xs">
+	<p>Trigger event with value:</p>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="html2"></aui-code-snippet>
+</div>
