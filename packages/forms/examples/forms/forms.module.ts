@@ -5,9 +5,10 @@ import {
 	AutoCompleteModule,
 	MaskModule,
 	RangeSliderModule,
+	WysiwygModule,
+	TimepickerModule,
 } from '@acpaas-ui/ngx-components/forms';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
-import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
 
 import { Pages } from './pages/index';
 
@@ -22,6 +23,7 @@ import { Pages } from './pages/index';
 		CodeSnippetModule,
  		MaskModule,
 		TimepickerModule,
+		WysiwygModule,
 	],
 	declarations: [
 		Pages,

@@ -132,25 +132,6 @@
 		labelBefore="€">
 	</aui-range-slider>
 </div>
-<!-- Mask -->
-<h2 class="h4 u-margin-bottom">Mask</h2>
-
-<div class="u-margin-bottom">
-    <aui-code-snippet [codeSnippet]="maskImportExample"></aui-code-snippet>
-</div>
-
-<div class="u-margin-bottom-lg">
-    <aui-code-snippet [codeSnippet]="maskExampleHTML1"></aui-code-snippet>
-</div>
-
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
-    <div class="a-input">
-		<input
-			type="text"
-			placeholder="BE99 9999 9999 9999"
-			auiMask="BE99 9999 9999 9999" />
-	</div>
-</div>
 
 <!-- Timepicker -->
 <h2 class="h4 u-margin-bottom">Timepicker</h2>
@@ -214,3 +195,30 @@
 </div>
 
 <pre class="a-pre">{{ time3 }}</pre>
+
+<!-- Wysiwyg -->
+<h2 class="h4 u-margin-bottom">Wysiwyg</h2>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygImportExample2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+    <aui-code-snippet [codeSnippet]="wysiwygExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+    <div class="a-input">
+		<aui-wysiwyg
+			[placeholder]="'Type some richt text here…'"
+			[availableTags]="'h2;h3;h4;h5;h6;p'"
+			[uiColour]="'#C0C0C0'"
+			[debounce]="500"
+			(emitContent)="getContent($event)"
+		></aui-wysiwyg>
+	</div>
+</div>

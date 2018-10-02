@@ -158,6 +158,31 @@ export class AppModule {};`;
 	[(ngModel)]="time3">
 </aui-timepicker>`;
 
+	// WYSIWYG DECLARATIONS
+	public wysiwygImportExample = `import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
+	@NgModule({
+		imports: [
+			WysiwygModule,
+		]
+	});
+export class AppModule {};`;
+
+public wysiwygImportExample2 = `<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+</head>
+</html>`;
+
+	public wysiwygExampleHTML1 = `<aui-wysiwyg
+	[placeholder]="'Type some richt text here…'"
+	[availableTags]="'h2;h3;h4;h5;h6;p'"
+	[uiColour]="'#C0C0C0'"
+	[debounce]="500"
+	(emitContent)="getContent($event)"
+></aui-wysiwyg>`;
+
 	// AUTOCOMPLETE METHODS
 	public ngOnInit() {
 		this.debouncer.pipe(
@@ -187,4 +212,8 @@ export class AppModule {};`;
 		// do search
 		this.debouncer.next(search);
 	}
+
+	// WYSIWYG METHODS
+	public getContent(event) {}
+
 }
