@@ -5,8 +5,8 @@ import {
 	AutoCompleteModule,
 	MaskModule,
 	RangeSliderModule,
-	WysiwygModule,
 	TimepickerModule,
+	WysiwygModule,
 } from '@acpaas-ui/ngx-components/forms';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
 

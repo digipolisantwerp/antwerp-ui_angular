@@ -19,24 +19,24 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 You will need to add the library to your app, preferably with a CDN.
 
 ```typescript
-script: [
-        { src: 'https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js' },
-        ...
-    ]
+  script: [
+      { src: 'https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js' },
+      ...
+  ]
 ```
 
 ### API
 
 | Name        | Default value | Description |
 | ----------- | ------ | -------------------------- |
-| `@Input() additionalStyling: string;` | `-` | path to one or more css files.|
-| `@Input() availableTags: string;` | `-` | `;`-separated list of available tags, e.g.: `h2;h3;h4;h5;h6;p`|
-| `@Input() basic: boolean;` | `false` | use the basic version of the editor.|
-| `@Input() placeholder: string;` | `-` | additional info shown in the wysiwyg component|
-| `@Input() uiColour: string;` | `-` | change the colour of the UI, e.g.: `#00FF00`|
-| `@Input() debounce: number;` | `-` | you can add a delay (ms) when updating ngModel|
-| `@Input() customConfig: any;` | `-` | override ckeditor config, see [ckeditor config API](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html)|
-| `@Output() emitContent: string;` | `-` | callback triggered when content changes|
+| `@Input() additionalStyling: string;` | - | Path to one or more css files.|
+| `@Input() availableTags: string;` | - | `;`-separated list of available tags, e.g.: `h2;h3;h4;h5;h6;p`|
+| `@Input() basic: boolean;` | `false` | Use the basic version of the editor.|
+| `@Input() placeholder: string;` | - | Additional info shown in the wysiwyg component|
+| `@Input() uiColour: string;` | - | Change the colour of the UI, e.g.: `#00FF00`|
+| `@Input() debounce: number;` | - | You can add a delay (ms) when updating ngModel|
+| `@Input() customConfig: any;` | - | Override ckeditor config, see [ckeditor config API](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html)|
+| `@Output() emitContent: string;` | - | Callback triggered when content changes|
 
 ### Example
 
