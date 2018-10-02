@@ -112,7 +112,7 @@ import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
                 </p>`,
                 dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button cc-btn cc-dismiss">{{dismiss}}</button>'
             }
-        }),
+        })
     ]
 });
 

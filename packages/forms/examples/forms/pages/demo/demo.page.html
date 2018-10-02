@@ -3,11 +3,11 @@
 <!-- Autocomplete -->
 <h2 class="h4 u-margin-bottom">Autocomplete</h2>
 
-<h3 class="h5 u-margin-bottom">Local search</h3>
-
-<div class="u-margin-bottom">
+<div class="u-margin-bottom-lg">
 	<aui-code-snippet [codeSnippet]="autocompleteImportExample"></aui-code-snippet>
 </div>
+
+<h3 class="h5 u-margin-bottom">Local search</h3>
 
 <div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="autocompleteExampleJS1"></aui-code-snippet>
@@ -17,7 +17,7 @@
 	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom col-md-6 col-xs-12">
+<div class="u-margin-bottom-lg">
 	<div class="a-input">
 		<div class="a-input__wrapper">
 			<aui-auto-complete
@@ -45,7 +45,7 @@
 	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-xx col-md-6 col-xs-12">
+<div class="u-margin-bottom-xx">
 	<div class="a-input">
 		<div class="a-input__wrapper">
 			<aui-auto-complete
@@ -64,6 +64,7 @@
 	</div>
 </div>
 
+
 <!-- Mask -->
 <h2 class="h4 u-margin-bottom">Mask</h2>
 
@@ -75,7 +76,7 @@
     <aui-code-snippet [codeSnippet]="maskExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom-xx">
     <div class="a-input">
 		<input
 			type="text"
@@ -84,10 +85,11 @@
 	</div>
 </div>
 
-<!-- Range slider -->
-<h2 class="h4 u-margin-bottom">Range-slider</h2>
 
-<div class="u-margin-bottom">
+<!-- Range slider -->
+<h2 class="h4 u-margin-bottom">Range slider</h2>
+
+<div class="u-margin-bottom-lg">
 	<aui-code-snippet [codeSnippet]="rangesliderImportExample"></aui-code-snippet>
 </div>
 
@@ -97,7 +99,7 @@
 	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom-lg">
 	<aui-range-slider></aui-range-slider>
 </div>
 
@@ -107,7 +109,7 @@
 	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom-lg">
 	<aui-range-slider
 		step="20"
 		labelAfter="%">
@@ -124,7 +126,7 @@
 	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML3"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom-xx col-md-6 col-xs-12">
 	<aui-range-slider
 		[(ngModel)]="slider3"
 		min="300"
@@ -132,30 +134,12 @@
 		labelBefore="€">
 	</aui-range-slider>
 </div>
-<!-- Mask -->
-<h2 class="h4 u-margin-bottom">Mask</h2>
 
-<div class="u-margin-bottom">
-    <aui-code-snippet [codeSnippet]="maskImportExample"></aui-code-snippet>
-</div>
-
-<div class="u-margin-bottom-lg">
-    <aui-code-snippet [codeSnippet]="maskExampleHTML1"></aui-code-snippet>
-</div>
-
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
-    <div class="a-input">
-		<input
-			type="text"
-			placeholder="BE99 9999 9999 9999"
-			auiMask="BE99 9999 9999 9999" />
-	</div>
-</div>
 
 <!-- Timepicker -->
 <h2 class="h4 u-margin-bottom">Timepicker</h2>
 
-<div class="u-margin-bottom">
+<div class="u-margin-bottom-lg">
 	<aui-code-snippet [codeSnippet]="timepickerImportExample"></aui-code-snippet>
 </div>
 
@@ -165,18 +149,20 @@
 	<aui-code-snippet [codeSnippet]="timepickerExampleTypescript"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="timepickerExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom">
 	<aui-timepicker
 		size="small"
 		[(ngModel)]="time1">
 	</aui-timepicker>
 </div>
 
-<pre class="a-pre">{{ time1 }}</pre>
+<div class="u-margin-bottom-lg">
+	<pre class="a-pre">{{ time1 }}</pre>
+</div>
 
 <h3 class="h5 u-margin-bottom">Predefined hours and minutes</h3>
 
@@ -184,11 +170,11 @@
 	<aui-code-snippet [codeSnippet]="timepickerExampleTypescript2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="timepickerExampleHTML2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom">
 	<aui-timepicker
 		hoursPlaceholder="20"
 		minutesPlaceholder="30"
@@ -197,15 +183,17 @@
 	</aui-timepicker>
 </div>
 
-<pre class="a-pre">{{ time2 }}</pre>
+<div class="u-margin-bottom-lg">
+	<pre class="a-pre">{{ time2 }}</pre>
+</div>
 
 <h3 class="h5 u-margin-bottom">Validation</h3>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="timepickerExampleHTML3"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom">
 	<aui-timepicker
 		hasError="true"
 		size="large"
@@ -213,4 +201,6 @@
 	</aui-timepicker>
 </div>
 
-<pre class="a-pre">{{ time3 }}</pre>
+<div class="u-margin-bottom">
+	<pre class="a-pre">{{ time3 }}</pre>
+</div>

@@ -14,7 +14,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ### Localstorage service
 
-### Methods
+#### Methods
 
 | Method         | Description |
 | -----------    | -------------------------- |
@@ -25,17 +25,17 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `select<T = any>(selector: Selector, comparator: Comparator = LocalstorageHelper.comparator): BehaviorSubject<T>` | get a BehaviorSubject containing the selected value. |
 | `clearSubscribers(): void` | unsubscribe all subscribers. |
 
-### Storage type
+#### Storage type
 
 You can set the preferred storage type in the `forRoot` method when importing the `LocalstorageModule`. The service will verify the type exists and fall back to `localStorage` by default. If `localStorage` is not available, an in-memory polyfill will be used.
 
-### Identifier
+#### Identifier
 
 You can provide a custom identifier that will be checked on instantiating the `LocalstorageService`. If the identifier found in the storage is different from the config, the storage will be cleared.
 
 This way, you can invalidate your apps storage to prevent data conflicts.
 
-### Example localstorage
+### Example
 
 ```typescript
 import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage';
@@ -47,60 +47,76 @@ import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage';
             identifier: 'my-app-v1',
         })
     ]
-})
+});
 
-export class AppModule {}
+export class AppModule {};
 ```
+
 ```typescript
-import { Component } from '@angular/core';
-import { LocalstorageService } from '@acpaas-ui/localstorage';
+import { LocalstorageService } from '@acpaas-ui/ngx-components/localstorage';
 
-interface IUser = {
-    username: string;
+public user: any;
+public item: any;
+public timesUsed: any;
+
+constructor(
+	private localstorageService: LocalstorageService
+) {
+	this.user = this.localstorageService.select('user');
+	this.timesUsed = 0;
+	this.localstorageService.setItem('number', this.timesUsed);
 }
 
-@Component({
-    selector: 'my-component',
-    template: '...',
-    providers: [ LocalstorageService ]
-})
-export class LocalstorageDemoPageComponent {
-
-	public user: any;
-	public item: any;
-	public timesUsed: any;
-
-	constructor(
-		private localstorageService: LocalstorageService
-	) {
-		this.user = this.localstorageService.select('user');
-		this.timesUsed = 0;
-		this.localstorageService.setItem('number', this.timesUsed);
-	}
-
-	public loggedIn(): void {
-		this.localstorageService.setItem('user', 'You are logged in');
-	}
-
-	public loggedOut(): void {
-		this.localstorageService.setItem('user', 'You are logged out');
-	}
-
-	public init(): void {
-		this.localstorageService.removeItem('user');
-		this.timesUsed = this.timesUsed + 1;
-		this.localstorageService.setItem('number', this.timesUsed);
-	}
-
-	public clear(): void {
-		this.localstorageService.clear('user', 'number');
-	}
-
-	public getItem(): any {
-		this.item = this.localstorageService.getItem('user');
-		this.timesUsed = this.localstorageService.getItem('number');
-	}
+public loggedIn(): void {
+	this.localstorageService.setItem('user', 'You are logged in');
 }
+
+public loggedOut(): void {
+	this.localstorageService.setItem('user', 'You are logged out');
+}
+
+public init(): void {
+	this.localstorageService.removeItem('user');
+	this.timesUsed = this.timesUsed + 1;
+	this.localstorageService.setItem('number', this.timesUsed);
+}
+
+public clear(): void {
+	this.localstorageService.clear('user', 'number');
+}
+
+public getItem(): any {
+	this.item = this.localstorageService.getItem('user');
+	this.timesUsed = this.localstorageService.getItem('number');
+}
+```
+
+```html
+<div class="u-margin-bottom">
+	<button (click)="loggedIn()" class="a-button u-margin-right">
+		Log in
+	</button>
+	<button (click)="loggedOut()" class="a-button u-margin-right">
+		Log out
+	</button>
+	<button (click)="init()" class="a-button u-margin-right">
+		Count clicks
+	</button>
+</div>
+<div class="u-margin-bottom">
+	<button (click)="getItem()" class="a-button u-margin-right">
+		Get from local storage
+	</button>
+	<button (click)="clear()" class="a-button">
+		Clear local storage
+	</button>
+</div>
+<div class="u-margin-bottom">
+	<label class="a-input__label a-input__label--inline">{{ this.item }}</label>
+</div>
+<div class="u-margin-bottom">
+	<label class="a-input__label a-input__label--inline">You clicked the count clicks button this many times: {{ this.timesUsed }}</label>
+</div>
 ```
 
 ## Contributing
