@@ -1,0 +1,27 @@
+<h2 class="h4 u-margin-bottom">Pane</h2>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="pane1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="pane2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="pane3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xx">
+	<button class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
+	<button class="a-button" (click)="myPane.openPane()">Open pane</button>
+	<p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
+	<aui-pane #myPane
+		[side]="'left'"
+		[opened]="opened"
+		[backdrop]="backdrop"
+		(open)="onOpen()"
+		(close)="onClose()">
+		Pane content
+		<button class="a-button" (click)="myPane.closePane()">Close pane</button>
+	</aui-pane>
+</div>

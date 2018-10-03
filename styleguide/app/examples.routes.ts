@@ -1,3 +1,4 @@
+import { ANALYTICS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/analytics/fesm2015/analytics';
 import { AVATAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/avatar/fesm2015/avatar';
 import { CALENDAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/calendar/fesm2015/calendar';
 import { CODE_SNIPPET_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/code-snippet/fesm2015/code-snippet';
@@ -14,6 +15,7 @@ import { SELECTABLE_LIST_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/selecta
 import { TABLE_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/table/fesm2015/table';
 
 export const EXAMPLES_ROUTES = [
+	{ path: 'analytics', children: ANALYTICS_EXAMPLES_ROUTES, title: 'Analytics', },
 	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES, title: 'Avatar', },
 	{ path: 'calendar', children: CALENDAR_EXAMPLES_ROUTES, title: 'Calendar', },
 	{ path: 'code-snippet', children: CODE_SNIPPET_EXAMPLES_ROUTES, title: 'Code snippet', },

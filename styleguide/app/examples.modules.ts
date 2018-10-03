@@ -1,3 +1,4 @@
+import { AnalyticsExamplesModule } from '@acpaas-ui/ngx-examples/analytics/fesm2015/analytics';
 import { AvatarExamplesModule } from '@acpaas-ui/ngx-examples/avatar/fesm2015/avatar';
 import { CalendarExamplesModule } from '@acpaas-ui/ngx-examples/calendar/fesm2015/calendar';
 import { CodeSnippetExamplesModule } from '@acpaas-ui/ngx-examples/code-snippet/fesm2015/code-snippet';
@@ -14,6 +15,7 @@ import { SelectableListExamplesModule } from '@acpaas-ui/ngx-examples/selectable
 import { TableExamplesModule } from '@acpaas-ui/ngx-examples/table/fesm2015/table';
 
 export const ExamplesModules = [
+	AnalyticsExamplesModule,
 	AvatarExamplesModule,
 	CalendarExamplesModule,
 	CodeSnippetExamplesModule,
