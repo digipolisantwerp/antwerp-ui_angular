@@ -33,9 +33,13 @@ You can set defaults and other options for the module by using the `forRoot()` o
 @NgModule({
   imports: [
     ContextModule.forRoot({
+      useTitleSuffix: true,
+      extendTitle: true,
+      titleDelimiter: ' | ',
       defaults: {
-        title: 'Acpaas UI | Angular Modules',
+        titleSuffix: 'Context Module',
       },
+      routerContext: true,
     }),
   ]
 })

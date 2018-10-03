@@ -21,9 +21,13 @@ export class ContextDemoPageComponent implements OnInit {
 	public codeExampleJS1 = `@NgModule({
   imports: [
     ContextModule.forRoot({
-      defaults: {
-        title: 'Acpaas UI | Angular Modules',
-      },
+			useTitleSuffix: true,
+			extendTitle: true,
+			titleDelimiter: ' | ',
+			defaults: {
+				titleSuffix: 'Context Module',
+			},
+			routerContext: true,
     }),
   ]
 })`;

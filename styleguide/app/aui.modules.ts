@@ -4,9 +4,13 @@ import { LogoModule } from '@acpaas-ui/ngx-components/logo/fesm2015/logo';
 
 export const AUIModules = [
 	ContextModule.forRoot({
-			defaults: {
-					title: 'Acpaas UI | Angular Modules',
-			},
+		useTitleSuffix: true,
+		extendTitle: true,
+		titleDelimiter: ' | ',
+		defaults: {
+			titleSuffix: 'Context Module',
+		},
+		routerContext: true,
 	}),
 	HeaderModule,
 	FooterModule,
