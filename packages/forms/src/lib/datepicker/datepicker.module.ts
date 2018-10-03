@@ -10,7 +10,8 @@ import {
 	CALENDAR_MONTH_LABELS,
 	CALENDAR_DEFAULT_MONTH_LABELS
 } from '@acpaas-ui/ngx-components/calendar';
-import { MaskModule } from '@acpaas-ui/ngx-components/forms';
+
+import { MaskModule } from '../mask/mask.module';
 
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { DATEPICKER_ERROR_LABELS, DATEPICKER_DEFAULT_ERROR_LABELS } from './datepicker.conf';

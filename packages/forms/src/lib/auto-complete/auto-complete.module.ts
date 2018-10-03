@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
-import { MaskModule } from '@acpaas-ui/ngx-components/forms';
+
+import { MaskModule } from '../mask/mask.module';
 
 import { SearchService } from '../shared/services/search.service';
 
