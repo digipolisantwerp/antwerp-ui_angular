@@ -2,9 +2,6 @@
 
 This module has the FlyoutModule already implemented on a button, giving it a dropdown / flyout functionality.
 
-## Dependencies
-* `@acpaas-ui/ngx-components/flyout`
-
 ## Usage
 
 ```typescript

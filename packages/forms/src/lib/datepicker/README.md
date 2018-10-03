@@ -2,9 +2,6 @@
 The package creates a custom input component allowing the user to select a date either by input or by picking one in the calendar flyout.
 
 ## Dependencies
-* `@acpaas-ui/ngx-components/calendar`
-* `@acpaas-ui/ngx-components/flyout`
-* `@acpaas-ui/ngx-components/mask`
 * `@acpaas-ui/js-date-utils`
 
 ## Usage
