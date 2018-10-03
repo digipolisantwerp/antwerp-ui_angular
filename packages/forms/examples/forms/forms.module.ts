@@ -20,11 +20,11 @@ import { Pages } from './pages/index';
 		RouterModule,
 		DatepickerModule.forChild([
 			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
-			], [
+		], [
 			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
 		], {
 			ERRORS_INVALID_DATE: 'Ongeldige datum.',
-			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden'.,
+			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden.',
 		}),
 		FormsModule,
 		RangeSliderModule,

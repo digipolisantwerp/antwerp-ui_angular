@@ -31,6 +31,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 #### Example
 
+You can provide custom month and weekday labels as wel as error labels via the `forChild` method.
 ```typescript
 import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
 
@@ -50,24 +51,42 @@ import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
 export class AppModule {};
 ```
 
+You can use the component with template driven as well as reactive forms. The value is always an ISO string of the Date.
+In the example below we use a reactive form.
+```typescript
+import { FormBuilder, FormGroup } from '@angular/forms';
+
+import { DateRange } from '@acpaas-ui/js-date-utils';
+
+constructor(private fb: FormBuilder) { }
+
+public dateRange: DateRange = [
+  5, 6,
+];
+public dateForm: FormGroup;
+
+this.dateForm = this.fb.group({
+  inputDate: [''],
+});
+```
+
 ```html
 <form [formGroup]="dateForm">
-	<div class="a-input has-icon-right u-margin-bottom-xs col-md-6 col-xs-12"
-	[ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}">
-		<label class="a-input__label" for="input-datepicker">Pick a date</label>
-		<aui-datepicker
-			id="input-datepicker"
-			name="input-datepicker"
-			autocomplete="off"
-			placeholder="dd/mm/jjjj"
-			formControlName="inputDate"
-			[range]="dateRange">
-		</aui-datepicker>
-		<div *ngIf="dateForm.controls['inputDate'].errors" class="u-text-danger u-margin-bottom-xs">
-			<p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
-			<p *ngIf="dateForm.controls['inputDate'].errors.range">{{ dateForm.controls['inputDate'].errors.range }}</p>
-		</div>
-	</div>
+  <div class="a-input has-icon-right" [ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}">
+    <label class="a-input__label" for="input-datepicker">Pick a date</label>
+    <aui-datepicker
+      id="input-datepicker"
+      name="input-datepicker"
+      autocomplete="off"
+      placeholder="dd/mm/jjjj"
+      formControlName="inputDate"
+      [range]="dateRange">
+    </aui-datepicker>
+    <div *ngIf="dateForm.controls['inputDate'].errors">
+      <p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
+      <p *ngIf="dateForm.controls['inputDate'].errors.range">{{ dateForm.controls['inputDate'].errors.range }}</p>
+    </div>
+  </div>
 </form>
 ```
 
