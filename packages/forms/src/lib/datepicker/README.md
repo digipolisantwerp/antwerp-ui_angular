@@ -5,6 +5,7 @@ The package creates a custom input component allowing the user to select a date 
 * `@acpaas-ui/ngx-components/calendar`
 * `@acpaas-ui/ngx-components/flyout`
 * `@acpaas-ui/ngx-components/mask`
+* `@acpaas-ui/js-date-utils`
 
 ## Usage
 
@@ -25,7 +26,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() id: string;` | - | The id to use on the input field. |
 | `@Input() name: string;` | - | The name to use on the input field. |
 | `@Input() placeholder: string;` | `'dd/mm/yyyy'`| The placeholder to use on the input field. |
-| `@Input() autocomplete: string;` | `'off'` |  turn the browsers autocompletion on or off. |
+| `@Input() autocomplete: string;` | `'off'` |  Turn the browsers autocompletion on or off. |
+| `@Input() range: DateRange;` | - | A range of dates or weekdays to disable (see the [@acpaas-ui/js-date-utils](https://github.com/digipolisantwerp/acpaas-ui_js/blob/master/packages/date-utils/README.md) package for more info on date ranges). |
 
 #### Example
 
@@ -39,8 +41,8 @@ import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
 			], [
 			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
 		], {
-			ERRORS_INVALID_DATE: 'Ongeldige datum',
-			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden',
+			ERRORS_INVALID_DATE: 'Ongeldige datum.',
+			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden.',
 	}),
 	],
 })

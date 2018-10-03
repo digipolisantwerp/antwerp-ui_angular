@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import {
 	AutoCompleteModule,
 	DatepickerModule,
@@ -17,15 +17,15 @@ import { Pages } from './pages/index';
 	imports: [
 		CommonModule,
 		ReactiveFormsModule,
+		RouterModule,
 		DatepickerModule.forChild([
 			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
 			], [
 			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
 		], {
-			ERRORS_INVALID_DATE: 'Ongeldige datum',
-			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden',
-	}),
-
+			ERRORS_INVALID_DATE: 'Ongeldige datum.',
+			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden'.,
+		}),
 		FormsModule,
 		RangeSliderModule,
 		CodeSnippetModule,

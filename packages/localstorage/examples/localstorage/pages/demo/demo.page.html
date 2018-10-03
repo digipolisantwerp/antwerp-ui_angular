@@ -1,6 +1,4 @@
 <h3 class="u-margin-bottom">Localstorage</h3>
-<div class="u-margin-bottom">A component for reading and writing data in local storage.
-</div>
 
 <div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="typescript1"></aui-code-snippet>
@@ -25,6 +23,7 @@
 		Count clicks
 	</button>
 </div>
+
 <div class="u-margin-bottom">
 	<button (click)="getItem()" class="a-button u-margin-right">
 		Get from local storage
@@ -33,9 +32,11 @@
 		Clear local storage
 	</button>
 </div>
+
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">{{ this.item }}</label>
+	<p>{{ this.item }}</p>
 </div>
+
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">You clicked the count clicks button this many times: {{ this.timesUsed }}</label>
+	<p>You clicked the count clicks button this many times: {{ this.timesUsed }}</p>
 </div>

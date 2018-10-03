@@ -163,7 +163,7 @@
               "project": "packages/analytics/ng-package.prod.json"
             },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/analytics/ng-package.examples.json"
             }
           }
         },
