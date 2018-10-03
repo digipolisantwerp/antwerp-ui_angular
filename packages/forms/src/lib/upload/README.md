@@ -8,9 +8,6 @@ The upload module provides a couple of upload components and an `Uploader` class
 * `<aui-validation-list>` component
 * `Uploader` class (non-angular service)
 
-## Dependencies
-* `@acpaas-ui/ngx-components/progress-bar`
-
 ## Usage
 
 ```typescript
@@ -20,9 +17,9 @@ import { UploadModule } from '@acpaas-ui/ngx-components/forms'`;
 Add a map with error messages for the validation
 ```typescript
 UploadModule.forChild({
-  INVALID_FILE_TYPE: 'Ongeldig bestandstype',
-  INVALID_FILE_SIZE: 'Ongeldige bestandsgrootte',
-  INVALID_MIME_TYPE: 'Ongeldig mime type'
+    INVALID_FILE_TYPE: 'Ongeldig bestandstype',
+    INVALID_FILE_SIZE: 'Ongeldige bestandsgrootte',
+    INVALID_MIME_TYPE: 'Ongeldig mime type'
 })
 ```
 
@@ -33,17 +30,35 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ### API
 
 #### `<aui-upload>`
+This component wraps the `upload-zone`, `upload-queue` and `validation-list`, it is recommended to use this component instead of the individual `upload-zone` and `upload-queue` but it's not required.
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | The object with its different options and there default values is explained in detail below. |
+| `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | An instance of the UploadOptions interface. Its different options and there default values are explained in detail below. |
+
+##### `UploadOptions`
+This component provides the upload functionality.
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
 | `allowedMimeTypes: string[];` | `[]` | The MIME types that are allowed to be uploaded. |
 | `allowedFileTypes: string[];` | `[]` | The file extensions that are allowed to be uploaded. |
 | `autoUpload: boolean;` | `false` | Upload the file automatically without confirmation. |
 | `maxFileSize: number;` | `0` | The maximum file size that is allowed. The value is expressed in Bytes. The value 0 equals infinite. |
 | `queueLimit: number;` | `0` | The maximum number of files that can uploaded at the same time. The value 0 equals infinite. |
 | `type: string;` | `drop` | By default an upload has an `upload-zone` but with the option `button`, you can set it as an uploadbutton. |
-| `url: string;` | `""` | The upload url. |
+| `url: string;` | `''` | The upload url. |
+
+
+#### `<aui-upload-zone>`
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. Its different options and there default values are explained in detail above. |
+| `@Input() multiple: boolean;` | `true` | Enable the HTML `multiple` attribute so the user can select multiple files to upload. |
+| `@Output() uploadedFiles: EventEmitter<Object[]>;` | - | Emits an array of files that were uploaded. |
+| `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of files that were uploaded. |
+| `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | - | Callback for closed flyout |
 
 #### Example
 
@@ -63,20 +78,20 @@ export class AppModule {};
 
 ```typescript
 public dropzone1: UploadOptions = {
-  allowedMimeTypes: ['image/jpeg'],
-  queueLimit: 2,
-  url: 'http://localhost:3002/upload',
+    allowedMimeTypes: ['image/jpeg'],
+    queueLimit: 2,
+    url: 'http://localhost:3002/upload',
 };
 ```
 
 ```html
 <aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
-  <div class="aui-upload-message">
-    Drag your files here or click to upload
-  </div>
-  <div class="aui-upload-description">
-    Optional description message
-  </div>
+    <div class="aui-upload-message">
+        Drag your files here or click to upload
+    </div>
+    <div class="aui-upload-description">
+        Optional description message
+    </div>
 </aui-upload>
 ```
 
@@ -84,21 +99,21 @@ public dropzone1: UploadOptions = {
 
 ```typescript
 public dropzone2: UploadOptions = {
-  allowedFileTypes: ['.jpg', 'jpeg', 'png'],
-  autoUpload: true,
-  maxFileSize: 2000000,
-  url: 'http://localhost:3002/upload',
+    allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+    autoUpload: true,
+    maxFileSize: 2000000,
+    url: 'http://localhost:3002/upload',
 };
 ```
 
 ```html
 <aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
-  <div class="aui-upload-message">
-    Drag your files here or click to upload
-  </div>
-  <div class="aui-upload-description">
-    Optional description message
-  </div>
+    <div class="aui-upload-message">
+        Drag your files here or click to upload
+    </div>
+    <div class="aui-upload-description">
+        Optional description message
+    </div>
 </aui-upload-input>
 ```
 
@@ -106,21 +121,21 @@ public dropzone2: UploadOptions = {
 
 ```typescript
 public dropzone2: UploadOptions = {
-  allowedFileTypes: ['.jpg', 'jpeg', 'png'],
-  autoUpload: true,
-  maxFileSize: 2000000,
-  url: 'http://localhost:3002/upload',
+    allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+    autoUpload: true,
+    maxFileSize: 2000000,
+    url: 'http://localhost:3002/upload',
 };
 ```
 
 ```html
 <aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
-  <div class="aui-upload-message">
-    Drag your files here or click to upload
-  </div>
-  <div class="aui-upload-description">
-    Optional description message
-  </div>
+    <div class="aui-upload-message">
+        Drag your files here or click to upload
+    </div>
+    <div class="aui-upload-description">
+        Optional description message
+    </div>
 </aui-upload-input>
 ```
 
