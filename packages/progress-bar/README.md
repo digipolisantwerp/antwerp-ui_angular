@@ -27,9 +27,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 
 @NgModule({
-	imports: [
-		ProgressBarModule
-	]
+    imports: [
+        ProgressBarModule
+    ]
 });
 
 export class AppModule {};

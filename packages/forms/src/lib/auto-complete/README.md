@@ -44,9 +44,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
-  imports: [
-    AutoCompleteModule,
-  ]
+    imports: [
+        AutoCompleteModule,
+    ]
 });
 
 export class AppModule {};
@@ -56,11 +56,11 @@ export class AppModule {};
 
 ```typescript
 public heroList = [
-  {name: 'Batman'},
-  {name: 'Wonder Woman'},
-  {name: 'Wolverine'},
-  {name: 'Iron Man'},
-  {name: 'Deadpool'},
+    {name: 'Batman'},
+    {name: 'Wonder Woman'},
+    {name: 'Wolverine'},
+    {name: 'Iron Man'},
+    {name: 'Deadpool'},
 ];
 public setSelectedHero(hero: string): void {
   // do something
@@ -69,15 +69,15 @@ public setSelectedHero(hero: string): void {
 
 ```html
 <aui-auto-complete
-  id="hero-names"
-  placeholder="Choose your hero…"
-  label="name"
-  value=""
-  minCharacters = "3"
-  clearInvalid="true"
-  showAllByDefault="true"
-  [data]="heroList"
-  (select)="setSelectedHero($event)">
+    id="hero-names"
+    placeholder="Choose your hero…"
+    label="name"
+    value=""
+    minCharacters = "3"
+    clearInvalid="true"
+    showAllByDefault="true"
+    [data]="heroList"
+    (select)="setSelectedHero($event)">
 </aui-auto-complete>
 ```
 
@@ -86,11 +86,11 @@ public setSelectedHero(hero: string): void {
 ```typescript
 public results = [];
 public heroList = [
-  {name: 'Batman'},
-  {name: 'Wonder Woman'},
-  {name: 'Wolverine'},
-  {name: 'Iron Man'},
-  {name: 'Deadpool'},
+    {name: 'Batman'},
+    {name: 'Wonder Woman'},
+    {name: 'Wolverine'},
+    {name: 'Iron Man'},
+    {name: 'Deadpool'},
 ];
 
 public searchItems(search: string): void {
@@ -100,16 +100,16 @@ public searchItems(search: string): void {
 
 ```html
 <aui-auto-complete
-  id="hero"
-  placeholder="Choose your hero…"
-  remote="true"
-  [results]="results"
-  label="name"
-  key="id"
-  loadingText = "Loading…"
-  noResultsText="No results found"
-  searchIncentiveText="Type one or more keywords to start searching"
-  (search)="searchItems($event)">
+    id="hero"
+    placeholder="Choose your hero…"
+    remote="true"
+    [results]="results"
+    label="name"
+    key="id"
+    loadingText = "Loading…"
+    noResultsText="No results found"
+    searchIncentiveText="Type one or more keywords to start searching"
+    (search)="searchItems($event)">
 </aui-auto-complete>
 ```
 

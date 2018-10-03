@@ -31,9 +31,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { AvatarModule } from '@acpaas-ui/ngx-components/avatar';
 
 @NgModule({
-	imports: [
-		AvatarModule
-	]
+    imports: [
+        AvatarModule
+    ]
 });
 
 export class AppModule {};

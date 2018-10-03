@@ -29,9 +29,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
-  imports: [
-    RangeSliderModule,
-  ]
+    imports: [
+        RangeSliderModule,
+    ]
 });
 
 export class AppModule {};
@@ -43,19 +43,19 @@ public mySlider = {start: 400, end: 500};
 
 ```html
 <div class="example">
-  	<aui-range-slider></aui-range-slider>
+    <aui-range-slider></aui-range-slider>
 
-	<aui-range-slider
-		step="20"
-		labelAfter="%">
-	</aui-range-slider>
+    <aui-range-slider
+        step="20"
+        labelAfter="%">
+    </aui-range-slider>
 
-	<aui-range-slider
-		[(ngModel)]="mySlider"
-		min="300"
-		max="600"
-		labelBefore="€">
-	</aui-range-slider>
+    <aui-range-slider
+        [(ngModel)]="mySlider"
+        min="300"
+        max="600"
+        labelBefore="€">
+    </aui-range-slider>
 </div>
 ```
 

@@ -1,9 +1,6 @@
 # @acpaas-ui/agenda
 The `@acpaas-ui/agenda` module provides the `aui-agenda` component which can be used as a calendar to display events. At the moment the component can only display a month view.
 
-## Dependencies
-/
-
 ## Installation
 ```
 npm install @acpaas-ui/agenda --save
@@ -50,7 +47,7 @@ The most basic example is to render just the agenda for the current date.
 ></aui-agenda>
 ```
 
-`activeDate: Date` the current date. Example: "2018-01-10" will open the month view on January. "2018-02-20" will open the month view on February. 
+`activeDate: Date` the current date. Example: "2018-01-10" will open the month view on January. "2018-02-20" will open the month view on February.
 
 `view: string` the active view. For now, only the MONTH view is available.
 
@@ -128,4 +125,4 @@ When there are more events than slots for one day, the `aui-agenda` will display
 
 ## Agenda size (month view)
 
-The `aui-agenda` component is styled based on the available width of the parent container. Using the component in a sidebar should automaticly render the small version of the `aui-agenda`. Rendering the `aui-agenda` full-screen should render the big version on desktop and the small version on a small screen. 
+The `aui-agenda` component is styled based on the available width of the parent container. Using the component in a sidebar should automaticly render the small version of the `aui-agenda`. Rendering the `aui-agenda` full-screen should render the big version on desktop and the small version on a small screen.

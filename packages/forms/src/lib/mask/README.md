@@ -27,9 +27,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { MaskModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
-  imports: [
-    MaskModule,
-  ]
+    imports: [
+        MaskModule,
+    ]
 });
 
 export class AppModule {};
@@ -37,10 +37,10 @@ export class AppModule {};
 
 ```html
 <div class="a-input">
-    <input 
-      type="text" 
-      placeholder="BE99 9999 9999 9999"
-      auiMask="BE99 9999 9999 9999"
+    <input
+        type="text"
+        placeholder="BE99 9999 9999 9999"
+        auiMask="BE99 9999 9999 9999"
     />
 </div>
 ```

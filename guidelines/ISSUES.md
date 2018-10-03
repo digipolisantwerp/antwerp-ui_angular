@@ -5,9 +5,9 @@ Dear maintainer,
 To ensure issues are handled correctly and timely, it is paramount to review the issues list at regular intervals. These guidelines are for your convenience to help assess and resolve issues. All maintainers are kindly asked to pitch in and help keep a clean issues list.
 
 - [Issue Handling Guidelines](#issue-handling-guidelines)
-  - [Issue labels](#issue-labels)
-  - [Scanning the issues list](#scanning-the-issues-list)
-  - [Assigning and resolving issues](#assigning-and-resolving-issues)
+    - [Issue labels](#issue-labels)
+    - [Scanning the issues list](#scanning-the-issues-list)
+    - [Assigning and resolving issues](#assigning-and-resolving-issues)
 
 ## Issue labels
 
@@ -27,15 +27,15 @@ The various issue labels are:
 At regular intervals review the open issues list and **verify for every issue**:
 
 - Issues have received a `bug`, `feature` or `policy` label to clarify the type of issue
-  - When an issue combines multiple types, work with the submitter to split it into multiple issues. If the submitter proves unwilling to help, either split it yourself or close it with a label `invalid` and add a comment explaining why it was closed.
-  - When splitting an issue link back to the original issue from which the new issues are split off
+    - When an issue combines multiple types, work with the submitter to split it into multiple issues. If the submitter proves unwilling to help, either split it yourself or close it with a label `invalid` and add a comment explaining why it was closed.
+    - When splitting an issue link back to the original issue from which the new issues are split off
 - Bug reports are marked as `verified` or `missing info`.
-  - The label `verified` is applied when a maintainer has reproduced it or verified it is reproduceable.
-  - Feel free to try reproducing yourself.
+    - The label `verified` is applied when a maintainer has reproduced it or verified it is reproduceable.
+    - Feel free to try reproducing yourself.
 - Features and verified bug reports are on some team's roadmap, assigned to a developer, or marked as `help wanted`. (See the guidelines below for assigning.)
-  - And issues with label `help wanted` that are good for first-time contributors have the label `good first issue`.
+    - And issues with label `help wanted` that are good for first-time contributors have the label `good first issue`.
 - Issues that are blocked on additional information have a `missing info` label and a comment asking the appropriate person for the information.
-  - If the submitter does not respond in a few weeks, you can ping them or close the issue as `invalid`.
+    - If the submitter does not respond in a few weeks, you can ping them or close the issue as `invalid`.
 - Issues of type `policy` are assigned to someone for resolving.
 
 Doing this regularly ensures that the issues list remains clean and manageable.
