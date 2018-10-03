@@ -2,6 +2,7 @@ import { ANALYTICS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/analytics/fes
 import { AVATAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/avatar/fesm2015/avatar';
 import { CALENDAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/calendar/fesm2015/calendar';
 import { CODE_SNIPPET_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/code-snippet/fesm2015/code-snippet';
+import { CONTEXT_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/context/fesm2015/context';
 import { FLYOUT_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/flyout/fesm2015/flyout';
 import { FORMS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/forms/fesm2015/forms';
 import { LAYOUT_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/layout/fesm2015/layout';
@@ -18,6 +19,7 @@ export const EXAMPLES_ROUTES = [
 	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES, title: 'Avatar', },
 	{ path: 'calendar', children: CALENDAR_EXAMPLES_ROUTES, title: 'Calendar', },
 	{ path: 'code-snippet', children: CODE_SNIPPET_EXAMPLES_ROUTES, title: 'Code snippet', },
+	{ path: 'context', children: CONTEXT_EXAMPLES_ROUTES, title: 'Context', },
 	{ path: 'flyout', children: FLYOUT_EXAMPLES_ROUTES, title: 'Flyout', },
 	{ path: 'forms', children: FORMS_EXAMPLES_ROUTES, title: 'Forms', },
 	{ path: 'layout', children: LAYOUT_EXAMPLES_ROUTES, title: 'Layout', },
