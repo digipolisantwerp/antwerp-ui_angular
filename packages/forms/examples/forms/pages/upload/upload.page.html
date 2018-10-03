@@ -1,0 +1,73 @@
+<h2 class="h4 u-margin-bottom">Upload</h2>
+
+<h3 class="h5 u-margin-bottom">Basic upload</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
+		<div class="aui-upload-message">
+			Drag your files here or click to upload
+		</div>
+		<div class="aui-upload-description">
+			Optional description message
+		</div>
+	</aui-upload>
+</div>
+
+<h3 class="h5 u-margin-bottom">Upload as form control</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
+		<div class="aui-upload-message">
+			Drag your files here or click to upload
+		</div>
+		<div class="aui-upload-description">
+			Optional description message
+		</div>
+	</aui-upload-input>
+	<pre>
+			{{output | json}}
+	</pre>
+</div>
+
+<h3 class="h5 u-margin-bottom">Upload as a button</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleJS3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-upload [options]="dropzone3" (selectUploadedFiles)="onUpload($event)">
+		<div class="aui-upload-button">
+			Upload button
+		</div>
+	</aui-upload>
+</div>
+
+<h3 class="h5 u-margin-bottom">Uploaded files</h3>
+<div class="u-margin-bottom-xx">
+	<aui-uploaded-list [uploadedFiles]="files" (delete)="onDeleteFile($event)"></aui-uploaded-list>
+</div>
