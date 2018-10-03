@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'guide-header',
-	templateUrl: './header.component.html',
+	templateUrl: './header.page.html',
 })
-export class HeaderComponent {
+export class LayoutHeaderDemoPageComponent {
 	public header1 = `import { HeaderModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({

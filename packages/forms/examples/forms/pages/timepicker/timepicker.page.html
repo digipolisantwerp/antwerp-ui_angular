@@ -1,0 +1,67 @@
+<h2 class="h4 u-margin-bottom">Timepicker</h2>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="timepickerImportExample"></aui-code-snippet>
+</div>
+
+<h3 class="h5 u-margin-bottom">Basic</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerExampleTypescript"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-timepicker
+		size="small"
+		[(ngModel)]="time1">
+	</aui-timepicker>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<pre class="a-pre">{{ time1 }}</pre>
+</div>
+
+<h3 class="h5 u-margin-bottom">Predefined hours and minutes</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerExampleTypescript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-timepicker
+		hoursPlaceholder="20"
+		minutesPlaceholder="30"
+		size="small"
+		[(ngModel)]="time2">
+	</aui-timepicker>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<pre class="a-pre">{{ time2 }}</pre>
+</div>
+
+<h3 class="h5 u-margin-bottom">Validation</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="timepickerExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-timepicker
+		hasError="true"
+		size="large"
+		[(ngModel)]="time3">
+	</aui-timepicker>
+</div>
+
+<div class="u-margin-bottom">
+	<pre class="a-pre">{{ time3 }}</pre>
+</div>
