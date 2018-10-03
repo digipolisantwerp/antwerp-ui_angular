@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased] - yyyy-mm-dd
+### Added
+- `datepicker` Added documentation.
 
 
 ## [1.0.3] - 2018-09-25
