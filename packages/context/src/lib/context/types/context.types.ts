@@ -33,13 +33,13 @@ export interface ContextConfig {
 	 * Flag to append the title of parent pages to the page title.
 	 * Default value: false
 	 */
-	extendTitle: boolean;
+	extendTitle?: boolean;
 
 	/**
 	 * A delimter when using extendTitle.
 	 * Default value: | (pipe)
 	 */
-	titleDelimiter: string;
+	titleDelimiter?: string;
 
 	/**
 	 * A dictionary of default meta tags and their values

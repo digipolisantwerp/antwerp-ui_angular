@@ -1,141 +1,119 @@
-# Context Service
-The `@acpaas-ui/context` package manages meta tags and other SEO properties and provides a link to the redux state.
+# @acpaas-ui/ngx-components/context
 
-## Dependencies
-/
-
-## Installation
-```
-npm install @acpaas-ui/context --save
-```
-
-Import the `ContextModule` in **app.module.ts**:
-```
-...
-import { ContextModule, ContextService } from '@acpaas-ui/context';
-...
-
-@NgModule({
-    imports: [
-        ContextModule
-    ]
-})
-
-export class AppModule {
-    constructor(private ContextService: ContextService) {}
-}
-```
-If you want to sync the selected meta tags with the redux state using the `@angular-redux/store` module, import the `ContextStoreModule` as well:
-```
-...
-import { ContextModule, ContextStoreModule } from '@acpaas-ui/context';
-...
-
-@NgModule({
-    imports: [
-        ContextModule,
-        ContextStoreModule
-    ]
-})
-```
-and add the `contextReducer` to your store (use the `IContext` interface for typechecking):
-```
-...
-import { contextReducer as context } from '@acpaas-ui/context';
-...
-
-export const rootReducer = combineReducers<AppState>({
-    ...
-    context
-});
-```
+This package manages meta tags and other SEO properties.
 
 ## Usage
-### Set defaults
-You can set defaults and other options for the module by using the forRoot() option in the imoport section:
+
+```typescript
+import { ContextModule, ContextService } from '@acpaas-ui/ngx-components/context'`;
 ```
+
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Different ways to set tags and other SEO properties.
+
+##### Set defaults
+You can set defaults and other options for the module by using the `forRoot()` option in the import section:
+
+#### API
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `useTitleSuffix: boolean;` | `false` | Add an optional title suffix. |
+| `extendTitle: boolean;` | `false` | Append parent page titles (when using router context). |
+| `titleDelimiter: string;` | `'|'` | The separator to use when extendTitle is true. |
+| `defaults: Context;` | `{}` | Default values for the meta tags. Have a look at the list down below for an overview of possible tags. |
+| `routerContext: boolean;` | `true` | Listen for meta data on the route changes. |
+
+#### Example
+
+```typescript
 @NgModule({
     imports: [
         ContextModule.forRoot({
             useTitleSuffix: true,
+            extendTitle: true,
+            titleDelimiter: ' | ',
             defaults: {
-                titleSuffix: ' | ACPaaS UI'
-            }
-        })
+                titleSuffix: 'Context Module',
+            },
+            routerContext: true,
+        }),
     ]
 })
 ```
-**Available options:**
-* `useTitleSuffix` (boolean, default: `false`): add an optional title suffix
-* `extendTitle` (boolean, default: `false`): append parent page titles (when using router context)
-* `titleDelimiter` (string, default: ` | `): the separator to use when `extendTitle` is true
-* `defaults` (IContext, default: `{}`): default values for the meta tags
-* `routerContext` (boolean, default: `true`): listen for meta data on the route changes
 
-### Set tags on routes
+##### Set tags on routes
 You can set tags on routes using the `data` property. The `ContextService` will subscribe to the router and pick up these tags automatically.
-```
-const ROUTES: Routes = [
+
+```typescript
+export const CONTEXT_EXAMPLES_ROUTES: Routes = [
     {
-        path: 'home',
-        component: HomePage,
+        path: '',
+        component: ContextDemoPageComponent,
+        pathMatch: 'full',
         data: {
             meta: {
-                page: 'home',
-                title: 'Home page',
-                description: 'Description of the home page',
-                metatags: 'Angular2, meta, seo'
-            }
-        }
-    }
+                page: 'Context example page',
+                title: 'Context example',
+                description: 'Description of the context example page',
+                metatags: 'ACPaaS UI, Angular, context',
+            },
+        },
+    },
 ];
 ```
 
+##### Set tags on routes
+You can set tags manually in your components using the `loadContext` method as well. This is useful for async data or generic routes.
 
-### Set tags in a component
-You can set tags manually in your components as well. This is useful for async data or generic routes. You can use `loadContext` method on either the `ContextService` (without redux) or the `ContextActionCreator` (with redux), both have the same API.
-
-```
-...
-import { ContextActionCreator } from 'aui-service-context';
-...
+```typescript
+import { ContextService } from '@acpaas-ui/ngx-components/context';
 
 @Component({
-    ...
     providers: [
-        ContextActionCreator
-    ]
-    ...
+        ContextService,
+    ],
 })
-export class ContactPage implements OnInit {
-    constructor(private contextAction: ContextActionCreator) {}
 
-    public ngOnInit() {
-        this.contextAction.loadContext({
-            title: 'New title'
+export class ContextDemoPageComponent {
+    constructor(private contextService: ContextService) {}
+
+    public setTitle() {
+        this.contextService.updateContext({
+            title: 'New context example title',
         });
     }
 }
 ```
 
-**Available tags:**
-Exceptions are added for title, description & favIcon tags and the most used tags are available in the IContext interface. You are free to use whichever tag you need however.
+```html
+<button class="a-button" (click)="setTitle()">Set title</button>
+```
 
-* title
-* titleSuffix
-* description
-* favIcon
-* canonical
-* og:url
-* og:type
-* og:title
-* og:description
-* og:image
-* fb:app_id
-* og:locale
-* og:locale:alternate
-* og:see_also
-* og:updated_time
-* twitter:card
-* twitter:site
-* twitter:creator
+#### Default available tags
+The most used tags are available in the `Context` interface. You are however, free to use whichever tag you need in the format `[key: string]: string;`.
+
+- `title`
+- `titleSuffix`
+- `description`
+- `favIcon`
+- `og:url`
+- `og:type`
+- `og:title`
+- `og:description`
+- `og:image`
+- `fb:app_id`
+- `og:locale`
+- `og:locale:alternate`
+- `og:see_also`
+- `og:updated_time`
+- `twitter:card`
+- `twitter:site`
+- `twitter:creator`
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../CONTRIBUTING.md) for more information on how to contribute.
