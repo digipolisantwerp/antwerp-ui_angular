@@ -36,16 +36,16 @@ You can provide custom month and weekday labels as wel as error labels via the `
 import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
-	imports: [
-		DatepickerModule.forChild([
-			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
-			], [
-			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
-		], {
-			ERRORS_INVALID_DATE: 'Ongeldige datum.',
-			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden.',
-	}),
-	],
+  imports: [
+    DatepickerModule.forChild([
+      'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
+    ], [
+      'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
+    ], {
+      ERRORS_INVALID_DATE: 'Ongeldige datum.',
+      ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden.',
+    }),
+  ],
 })
 
 export class AppModule {};
@@ -60,9 +60,7 @@ import { DateRange } from '@acpaas-ui/js-date-utils';
 
 constructor(private fb: FormBuilder) { }
 
-public dateRange: DateRange = [
-  5, 6,
-];
+public dateRange: DateRange = [5, 6];
 public dateForm: FormGroup;
 
 this.dateForm = this.fb.group({

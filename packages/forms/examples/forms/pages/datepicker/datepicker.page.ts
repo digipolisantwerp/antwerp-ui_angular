@@ -4,14 +4,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { DateRange } from '@acpaas-ui/js-date-utils';
 
 @Component({
-  templateUrl: './datepicker.page.html',
+	templateUrl: './datepicker.page.html',
 })
 export class FormsDatepickerDemoPageComponent implements OnInit {
 	constructor(private fb: FormBuilder) { }
 
-	public dateRange: DateRange = [
-		5, 6,
-	];
+	public dateRange: DateRange = [5, 6];
 	public dateForm: FormGroup;
 
 	public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
@@ -36,9 +34,7 @@ import { DateRange } from '@acpaas-ui/js-date-utils';
 
 constructor(private fb: FormBuilder) { }
 
-public dateRange: DateRange = [
-	5, 6,
-];
+public dateRange: DateRange = [5, 6];
 public dateForm: FormGroup;
 
 this.dateForm = this.fb.group({
