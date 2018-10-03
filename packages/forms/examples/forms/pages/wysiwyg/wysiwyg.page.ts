@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
 })
 export class FormsWysiwygDemoPageComponent {
 
+	public result = '';
+
 	public wysiwygImportExample = `import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({
 		imports: [
@@ -29,6 +31,14 @@ public wysiwygImportExample2 = `<!doctype html>
 	(emitContent)="getContent($event)"
 ></aui-wysiwyg>`;
 
-	public getContent(event) {}
+	public wysiwygTypescript = `public result = '';
+
+public getContent(event) {
+	this.result = event;
+}`;
+
+	public getContent(event) {
+		this.result = event;
+	}
 
 }

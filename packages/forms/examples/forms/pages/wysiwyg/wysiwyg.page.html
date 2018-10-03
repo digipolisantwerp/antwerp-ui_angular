@@ -8,11 +8,15 @@
     <aui-code-snippet [codeSnippet]="wysiwygImportExample2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom">
     <aui-code-snippet [codeSnippet]="wysiwygExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg col-md-6 col-xs-12">
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygTypescript"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom col-md-6 col-xs-12">
     <div class="a-input">
 		<aui-wysiwyg
 			[placeholder]="'Type some richt text here…'"
@@ -22,4 +26,8 @@
 			(emitContent)="getContent($event)"
 		></aui-wysiwyg>
 	</div>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<pre class="a-pre">{{ result }}</pre>
 </div>
