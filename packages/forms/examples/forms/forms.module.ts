@@ -7,6 +7,7 @@ import {
 	MaskModule,
 	RangeSliderModule,
 	TimepickerModule,
+	WysiwygModule,
 } from '@acpaas-ui/ngx-components/forms';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
 
@@ -24,6 +25,7 @@ import { Pages } from './pages/index';
 		CodeSnippetModule,
  		MaskModule,
 		TimepickerModule,
+		WysiwygModule,
 	],
 	declarations: [
 		Pages,
