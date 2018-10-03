@@ -31,17 +31,17 @@ You can set defaults and other options for the module by using the `forRoot()` o
 
 ```typescript
 @NgModule({
-  imports: [
-    ContextModule.forRoot({
-      useTitleSuffix: true,
-      extendTitle: true,
-      titleDelimiter: ' | ',
-      defaults: {
-        titleSuffix: 'Context Module',
-      },
-      routerContext: true,
-    }),
-  ]
+    imports: [
+        ContextModule.forRoot({
+            useTitleSuffix: true,
+            extendTitle: true,
+            titleDelimiter: ' | ',
+            defaults: {
+                titleSuffix: 'Context Module',
+            },
+            routerContext: true,
+        }),
+    ]
 })
 ```
 
@@ -50,19 +50,19 @@ You can set tags on routes using the `data` property. The `ContextService` will 
 
 ```typescript
 export const CONTEXT_EXAMPLES_ROUTES: Routes = [
-  {
-    path: '',
-    component: ContextDemoPageComponent,
-    pathMatch: 'full',
-    data: {
-      meta: {
-        page: 'Context example page',
-        title: 'Context example',
-        description: 'Description of the context example page',
-        metatags: 'ACPaaS UI, Angular, context',
-      },
+    {
+        path: '',
+        component: ContextDemoPageComponent,
+        pathMatch: 'full',
+        data: {
+            meta: {
+                page: 'Context example page',
+                title: 'Context example',
+                description: 'Description of the context example page',
+                metatags: 'ACPaaS UI, Angular, context',
+            },
+        },
     },
-  },
 ];
 ```
 
@@ -73,19 +73,19 @@ You can set tags manually in your components using the `loadContext` method as w
 import { ContextService } from '@acpaas-ui/ngx-components/context';
 
 @Component({
-  providers: [
-    ContextService,
-	],
+    providers: [
+        ContextService,
+    ],
 })
 
 export class ContextDemoPageComponent {
-	constructor(private contextService: ContextService) {}
+    constructor(private contextService: ContextService) {}
 
-  public setTitle() {
-	  this.contextService.updateContext({
-		  title: 'New context example title',
-	  });
-  }
+    public setTitle() {
+        this.contextService.updateContext({
+            title: 'New context example title',
+        });
+    }
 }
 ```
 
