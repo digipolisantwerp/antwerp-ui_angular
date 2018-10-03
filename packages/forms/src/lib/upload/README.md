@@ -37,7 +37,6 @@ This component wraps the `upload-zone`, `upload-queue` and `validation-list`, it
 | `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | An instance of the UploadOptions interface. Its different options and there default values are explained in detail below. |
 
 ##### `UploadOptions`
-This component provides the upload functionality.
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
@@ -49,16 +48,24 @@ This component provides the upload functionality.
 | `type: string;` | `drop` | By default an upload has an `upload-zone` but with the option `button`, you can set it as an uploadbutton. |
 | `url: string;` | `''` | The upload url. |
 
-
 #### `<aui-upload-zone>`
+This component provides the upload functionality.
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
 | `@Input() uploader: Uploader;` | - | An instance of the Uploader class. Its different options and there default values are explained in detail above. |
 | `@Input() multiple: boolean;` | `true` | Enable the HTML `multiple` attribute so the user can select multiple files to upload. |
 | `@Output() uploadedFiles: EventEmitter<Object[]>;` | - | Emits an array of files that were uploaded. |
-| `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of files that were uploaded. |
-| `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | - | Callback for closed flyout |
+| `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of files that have past the validation and are ready to be uploaded. |
+| `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | - | Emits an array of invalid files and the reason why they are invalid. |
+
+#### `<aui-upload-queue>`
+This component provides a list of queued files.
+
+| Name         | Default value | Description |
+| -----------  | ------ | -------------------------- |
+| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. Its different options and there default values are explained in detail above. |
+
 
 #### Example
 
