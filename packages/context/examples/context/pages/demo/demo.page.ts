@@ -14,13 +14,13 @@ export class ContextDemoPageComponent implements OnInit {
 	public importModule = `import { ContextModule } from '@acpaas-ui/ngx-components/context';
 
 @NgModule({
-  imports: [
-    ContextModule
-  ]
+	imports: [
+		ContextModule
+	]
 })`;
 	public codeExampleJS1 = `@NgModule({
-  imports: [
-    ContextModule.forRoot({
+	imports: [
+		ContextModule.forRoot({
 			useTitleSuffix: true,
 			extendTitle: true,
 			titleDelimiter: ' | ',
@@ -28,40 +28,41 @@ export class ContextDemoPageComponent implements OnInit {
 				titleSuffix: 'Context Module',
 			},
 			routerContext: true,
-    }),
-  ]
+		}),
+	]
 })`;
 	public codeExampleJS2 = `export const CONTEXT_EXAMPLES_ROUTES: Routes = [
-  {
-    path: '',
-    component: ContextDemoPageComponent,
-    pathMatch: 'full',
-    data: {
-      meta: {
-        page: 'Context example page',
-        title: 'Context example',
-        description: 'Description of the context example page',
-        metatags: 'ACPaaS UI, Angular, context',
-      },
-    },
-  },
+	{
+		path: '',
+		component: ContextDemoPageComponent,
+		pathMatch: 'full',
+		data: {
+			meta: {
+				page: 'Context example page',
+				title: 'Context example',
+				description: 'Description of the context example page',
+				metatags: 'ACPaaS UI, Angular, context',
+			},
+		},
+	},
 ];`;
 	public codeExampleJS3 = `import { ContextService } from '@acpaas-ui/ngx-components/context';
 
 @Component({
-  providers: [
-    ContextService,
+	providers: [
+		ContextService,
 	],
 })
 
 export class ContextDemoPageComponent {
 	constructor(private contextService: ContextService) {}
 
-  public setTitle() {
-	  this.contextService.updateContext({
-		  title: 'New context example title',
-	  });
-  }`;
+	public setTitle() {
+		this.contextService.updateContext({
+			title: 'New context example title',
+		});
+	}
+}`;
 	public codeExampleHTML = `<button class="a-button" (click)="setTitle()">Set title</button>`;
 
 	public pageTitle: string;
