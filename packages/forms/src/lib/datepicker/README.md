@@ -48,7 +48,7 @@ import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
 export class AppModule {};
 ```
 
-You can use the component with template driven as well as reactive forms. The value is always an ISO string of the Date.
+You can use the component in template driven, as well as reactive forms. The value is always an ISO string of the Date.
 In the example below we use a reactive form.
 ```typescript
 import { FormBuilder, FormGroup } from '@angular/forms';
