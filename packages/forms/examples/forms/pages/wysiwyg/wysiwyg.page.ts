@@ -28,8 +28,8 @@ public wysiwygImportExample2 = `<!doctype html>
 	[availableTags]="'h2;h3;h4;h5;h6;p'"
 	[uiColour]="'#C0C0C0'"
 	[debounce]="500"
-	(emitContent)="getContent($event)"
-></aui-wysiwyg>`;
+	(emitContent)="getContent($event)">
+</aui-wysiwyg>`;
 
 	public wysiwygTypescript = `public result = '';
 

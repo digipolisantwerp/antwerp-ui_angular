@@ -46,18 +46,18 @@ export class AppModule {}
 ```
 ```typescript
 public codeExampleJSON = `
-	[
-	    {
-	        "title": "apples",
-	        "count": [12000, 20000],
-	        "description": {"text": "...", "sensitive": false}
-	    },
-	    {
-	        "title": "oranges",
-	        "count": [17500, null],
-	        "description": {"text": "...", "sensitive": false}
-	    }
-	]`;
+    [
+        {
+            "title": "apples",
+            "count": [12000, 20000],
+            "description": {"text": "...", "sensitive": false}
+        },
+        {
+            "title": "oranges",
+            "count": [17500, null],
+            "description": {"text": "...", "sensitive": false}
+        }
+    ]`;
 
 public codeExampleJS = `
     function greetMe(yourName) {
@@ -76,8 +76,8 @@ public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
 ```
 ```html
 <aui-code-snippet
-	*ngFor="let codeExample of codeExamples"
-	[codeSnippet]="codeExample"
+    *ngFor="let codeExample of codeExamples"
+    [codeSnippet]="codeExample"
 ></aui-code-snippet>
 ```
 

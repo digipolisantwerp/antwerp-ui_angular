@@ -19,10 +19,10 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 You will need to add the library to your app, preferably with a CDN.
 
 ```typescript
-  script: [
-      { src: 'https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js' },
-      ...
-  ]
+script: [
+    { src: 'https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js' },
+    ...
+]
 ```
 
 ### API
@@ -44,9 +44,9 @@ You will need to add the library to your app, preferably with a CDN.
 import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
-  imports: [
-    WysiwygModule,
-  ]
+    imports: [
+        WysiwygModule,
+    ]
 });
 
 export class AppModule {};
@@ -54,19 +54,19 @@ export class AppModule {};
 
 ```html
 <aui-wysiwyg
-  [placeholder]="'Type some richt text here…'"
-  [availableTags]="'h2;h3;h4;h5;h6;p'"
-  [uiColour]="'#C0C0C0'"
-  [debounce]="500"
-  (emitContent)="getContent($event)"
-></aui-wysiwyg>
+    [placeholder]="'Type some richt text here…'"
+    [availableTags]="'h2;h3;h4;h5;h6;p'"
+    [uiColour]="'#C0C0C0'"
+    [debounce]="500"
+    (emitContent)="getContent($event)">
+</aui-wysiwyg>
 ```
 
 ```typescript
 public result = '';
 
 public getContent(event) {
-	this.result = event;
+    this.result = event;
 }
 ```
 

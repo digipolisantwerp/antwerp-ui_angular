@@ -27,9 +27,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
-  imports: [
-    TimepickerModule,
-  ]
+    imports: [
+        TimepickerModule,
+    ]
 });
 
 export class AppModule {};
@@ -43,8 +43,8 @@ public time1 = "10:30";
 
 ```html
 <aui-timepicker
-	size="small"
-	[(ngModel)]="time1">
+    size="small"
+    [(ngModel)]="time1">
 </aui-timepicker>
 ```
 
@@ -56,10 +56,10 @@ public time2 = "20:30";
 
 ```html
 <aui-timepicker
-	hoursPlaceholder="20"
-	minutesPlaceholder="30"
-	size="small"
-	[(ngModel)]="time2">
+    hoursPlaceholder="20"
+    minutesPlaceholder="30"
+    size="small"
+    [(ngModel)]="time2">
 </aui-timepicker>
 ```
 
@@ -71,9 +71,9 @@ public time3 = "";
 
 ```html
 <aui-timepicker
-	hasError="true"
-	size="large"
-	[(ngModel)]="time3">
+    hasError="true"
+    size="large"
+    [(ngModel)]="time3">
 </aui-timepicker>
 ```
 
