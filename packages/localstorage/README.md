@@ -60,62 +60,62 @@ public item: any;
 public timesUsed: any;
 
 constructor(
-	private localstorageService: LocalstorageService
+    private localstorageService: LocalstorageService
 ) {
-	this.user = this.localstorageService.select('user');
-	this.timesUsed = 0;
-	this.localstorageService.setItem('number', this.timesUsed);
+    this.user = this.localstorageService.select('user');
+    this.timesUsed = 0;
+    this.localstorageService.setItem('number', this.timesUsed);
 }
 
 public loggedIn(): void {
-	this.localstorageService.setItem('user', 'You are logged in');
+    this.localstorageService.setItem('user', 'You are logged in');
 }
 
 public loggedOut(): void {
-	this.localstorageService.setItem('user', 'You are logged out');
+    this.localstorageService.setItem('user', 'You are logged out');
 }
 
 public init(): void {
-	this.localstorageService.removeItem('user');
-	this.timesUsed = this.timesUsed + 1;
-	this.localstorageService.setItem('number', this.timesUsed);
+    this.localstorageService.removeItem('user');
+    this.timesUsed = this.timesUsed + 1;
+    this.localstorageService.setItem('number', this.timesUsed);
 }
 
 public clear(): void {
-	this.localstorageService.clear('user', 'number');
+    this.localstorageService.clear('user', 'number');
 }
 
 public getItem(): any {
-	this.item = this.localstorageService.getItem('user');
-	this.timesUsed = this.localstorageService.getItem('number');
+    this.item = this.localstorageService.getItem('user');
+    this.timesUsed = this.localstorageService.getItem('number');
 }
 ```
 
 ```html
 <div class="u-margin-bottom">
-	<button (click)="loggedIn()" class="a-button u-margin-right">
-		Log in
-	</button>
-	<button (click)="loggedOut()" class="a-button u-margin-right">
-		Log out
-	</button>
-	<button (click)="init()" class="a-button u-margin-right">
-		Count clicks
-	</button>
+    <button (click)="loggedIn()" class="a-button u-margin-right">
+        Log in
+    </button>
+    <button (click)="loggedOut()" class="a-button u-margin-right">
+        Log out
+    </button>
+    <button (click)="init()" class="a-button u-margin-right">
+        Count clicks
+    </button>
 </div>
 <div class="u-margin-bottom">
-	<button (click)="getItem()" class="a-button u-margin-right">
-		Get from local storage
-	</button>
-	<button (click)="clear()" class="a-button">
-		Clear local storage
-	</button>
+    <button (click)="getItem()" class="a-button u-margin-right">
+        Get from local storage
+    </button>
+    <button (click)="clear()" class="a-button">
+        Clear local storage
+    </button>
 </div>
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">{{ this.item }}</label>
+    <label class="a-input__label a-input__label--inline">{{ this.item }}</label>
 </div>
 <div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">You clicked the count clicks button this many times: {{ this.timesUsed }}</label>
+    <label class="a-input__label a-input__label--inline">You clicked the count clicks button this many times: {{ this.timesUsed }}</label>
 </div>
 ```
 

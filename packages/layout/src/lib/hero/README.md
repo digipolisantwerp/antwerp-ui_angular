@@ -41,18 +41,18 @@ export class AppModule {};
 
 ```html
 <div class="u-margin-bottom u-margin-top">
-	<aui-hero>
-		<div auiHeroCard>
-			<h1>Your app</h1>
-			<a>Some link</a>
-		</div>
-		<div auiHeroCta>
-			<div class="buttons">
-				<a class="a-button">Home</a>
-				<a class="a-button">Another page</a>
-			</div>
-		</div>
-	</aui-hero>
+    <aui-hero>
+        <div auiHeroCard>
+            <h1>Your app</h1>
+            <a>Some link</a>
+        </div>
+        <div auiHeroCta>
+            <div class="buttons">
+                <a class="a-button">Home</a>
+                <a class="a-button">Another page</a>
+            </div>
+        </div>
+    </aui-hero>
 </div>
 ```
 

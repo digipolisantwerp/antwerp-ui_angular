@@ -17,9 +17,9 @@ export class AppModule {};`;
 
 	public codeExampleJS1 =
 `"styles": [
-  "styleguide/styles.scss",
-  "node_modules/leaflet/dist/leaflet.css",
-  "node_modules/leaflet-draw/dist/leaflet.draw.css"
+	"styleguide/styles.scss",
+	"node_modules/leaflet/dist/leaflet.css",
+	"node_modules/leaflet-draw/dist/leaflet.draw.css"
 ]`;
 	public codeExampleJS2 =
 `import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
@@ -40,22 +40,22 @@ public ngOnInit(): void {
 }`;
   public codeExampleHTML1 =
 `<aui-leaflet [leafletMap]="leafletMap" [hasSidebar]="true">
-  <div controls top left>
-    <aui-leaflet-drag-control></aui-leaflet-drag-control>
-    <aui-leaflet-draw-control></aui-leaflet-draw-control>
-  </div>
-  <div controls top right>
-    <aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
-  </div>
-  <div controls bottom left>
-    <aui-leaflet-locate-control></aui-leaflet-locate-control>
-  </div>
-  <div controls bottom right>
-    <aui-leaflet-zoom-control></aui-leaflet-zoom-control>
-  </div>
-  <div>
-    Content displayed in sidebar
-  </div>
+	<div controls top left>
+		<aui-leaflet-drag-control></aui-leaflet-drag-control>
+		<aui-leaflet-draw-control></aui-leaflet-draw-control>
+	</div>
+	<div controls top right>
+		<aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
+	</div>
+	<div controls bottom left>
+		<aui-leaflet-locate-control></aui-leaflet-locate-control>
+	</div>
+	<div controls bottom right>
+		<aui-leaflet-zoom-control></aui-leaflet-zoom-control>
+	</div>
+	<div>
+		Content displayed in sidebar
+	</div>
 </aui-leaflet>`;
 
 	public leafletMap: LeafletMap = new LeafletMap({

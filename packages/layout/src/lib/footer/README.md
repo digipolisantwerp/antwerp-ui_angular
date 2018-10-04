@@ -53,16 +53,16 @@ export class AppModule {};
 
 ```html
 <aui-footer isExtended="false">
-	<div class="u-margin-bottom u-margin-top">
-		<div auiFooterContent>
-			Footer content goes here
-		</div>
-		<div auiFooterBottom>
-			<aui-subfooter>
-				<aui-copyright domain="Digipolis"></aui-copyright>
-			</aui-subfooter>
-		</div>
-	</div>
+    <div class="u-margin-bottom u-margin-top">
+        <div auiFooterContent>
+            Footer content goes here
+        </div>
+        <div auiFooterBottom>
+            <aui-subfooter>
+                <aui-copyright domain="Digipolis"></aui-copyright>
+            </aui-subfooter>
+        </div>
+    </div>
 </aui-footer>
 ```
 
