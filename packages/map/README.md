@@ -6,7 +6,6 @@ This module renders a map component with some basic controls, based on [Leaflet]
 * `leaflet`
 * `leaflet-draw`
 * `esri-leaflet`
-* `@acpaas-ui/ngx-components/flyout`
 
 ## Usage
 

@@ -1,1 +1,34 @@
 <h2 class="h4 u-margin-bottom">Datepicker</h2>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="datepickerImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="datepickerExampleTypescript"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="datepickerExampleHTML"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<form [formGroup]="dateForm">
+		<div class="a-input has-icon-right u-margin-bottom-xs" [ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}">
+			<label class="a-input__label" for="input-datepicker">Pick a date</label>
+			<aui-datepicker
+				id="input-datepicker"
+				name="input-datepicker"
+				autocomplete="off"
+				placeholder="dd/mm/jjjj"
+				formControlName="inputDate"
+				[range]="dateRange">
+			</aui-datepicker>
+			<div *ngIf="dateForm.controls['inputDate'].errors" class="u-text-danger u-margin-top-xs u-margin-bottom">
+				<p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
+				<p *ngIf="dateForm.controls['inputDate'].errors.range">{{ dateForm.controls['inputDate'].errors.range }}</p>
+			</div>
+		</div>
+		<pre class="a-pre">{{ dateForm.controls['inputDate'].value | json }}</pre>
+	</form>
+</div>
