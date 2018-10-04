@@ -45,7 +45,7 @@
 		</div>
 	</aui-upload-input>
 	<pre>
-			{{output | json}}
+			{{ output | json }}
 	</pre>
 </div>
 
@@ -67,7 +67,23 @@
 	</aui-upload>
 </div>
 
-<h3 class="h5 u-margin-bottom">Uploaded files</h3>
-<div class="u-margin-bottom-xx">
-	<aui-uploaded-list [uploadedFiles]="files" (delete)="onDeleteFile($event)"></aui-uploaded-list>
+<h3 class="h5 u-margin-bottom">Custom upload</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleJS3"></aui-code-snippet>
 </div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleHTML3"></aui-code-snippet>
+</div>
+
+<aui-upload-zone [uploader]="uploader" (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" (invalidFiles)="onInvalidFiles($event)">
+		<div class="aui-upload-message">
+				Drag your files here or click to upload
+		</div>
+		<div class="aui-upload-description">
+				Maximum filesize: 100 MB,
+				File extension: pdf, docx
+		</div>
+</aui-upload-zone>
+<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>

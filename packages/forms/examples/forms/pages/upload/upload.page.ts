@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { UploadOptions } from '@acpaas-ui/ngx-components/forms';
+import { Component, OnInit } from '@angular/core';
+import { InvalidFile, UploadOptions, Uploader } from '@acpaas-ui/ngx-components/forms';
 
 @Component({
 	templateUrl: './upload.page.html',
 })
-export class FormsUploadDemoPageComponent {
+export class FormsUploadDemoPageComponent implements OnInit {
 	public files = [];
+	public invalidFiles: InvalidFile[] = [];
 	public output: any;
+	public queuedFiles: File[] = [];
+	public uploadedFiles: File[] = [];
+	public uploader: Uploader;
 
 	public dropzone1: UploadOptions = {
 		allowedMimeTypes: ['image/jpeg'],
@@ -74,18 +78,39 @@ export class AppModule {};`;
   </div>
 </aui-upload>`;
 
+	ngOnInit() {
+		this.uploader = new Uploader(this.dropzone1);
+	}
+
 	public onUpload(files) {
 		this.files = this.files.concat(files);
+		console.log('files = ', files);
 	}
 
 	public formatOutput(data) {
-		console.log(data);
+		console.log('data = ', data);
 			return data.map((o) => {
 					return o.url;
 			});
 	}
 
-	public onDeleteFile(e) {
-			this.files.splice(e.index, 1); // e.index and e.file are available
+	public onQueuedFiles(files: File[]) {
+		console.log('onQueuedFiles files that er uploaded ARRAY FILE OBJECTS = ', files);
+		if (!files.length) {
+			return;
+		}
+		this.queuedFiles = this.queuedFiles.concat(files);
+	}
+
+	public onInvalidFiles(errorFiles: InvalidFile[]) {
+		console.log('errorFiles = ', errorFiles);
+		this.invalidFiles = this.invalidFiles.concat(errorFiles);
+		console.log('this.invalidFiles = ', this.invalidFiles);
+	}
+
+	public onUploadedFiles(files: File[]) {
+		console.log('onUploadedFiles = ', files);
+		this.uploadedFiles = this.uploadedFiles.concat(files);
+		console.log('this.uploadedFiles = ', this.uploadedFiles);
 	}
 }
