@@ -27,7 +27,7 @@ export class LayoutCookieconsentDemoPageComponent {
 				messagelink: \`<p id="cookieconsent:desc">{{message}}
 					<a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a>
 				</p>\`,
-				dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button cc-btn cc-dismiss">{{dismiss}}</button>'
+				dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">{{dismiss}}</button>'
 			}
 		})
 	]
@@ -40,32 +40,6 @@ constructor(
 	private cookieconsentService: CookieconsentService
 ) {
 	this.cookieconsentService.init({});
-}`;
-
-	public cookie3 = `@import '~@a-ui/core/dist/assets/styles/_quarks';
-
-.cc-banner {
-	align-items: baseline;
-	background: $white;
-	border-top: 1px solid $border-color;
-	box-shadow: 0 $spacer / -2 0 rgba($black, .1);
-	bottom: 0;
-	display: flex;
-	flex: 1 1 auto;
-	justify-content: space-between;
-	left: 0;
-	position: fixed;
-	right: 0;
-	transition: opacity $animation-duration $animation-easing;
-	z-index: 10;
-
-	&.cc-invisible {
-		opacity: 0;
-	}
-
-	> p {
-		padding: $spacer / 2;
-	}
 }`;
 
 	constructor(
