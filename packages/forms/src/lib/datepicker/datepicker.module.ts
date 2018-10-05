@@ -11,9 +11,9 @@ import {
 	CALENDAR_DEFAULT_MONTH_LABELS
 } from '@acpaas-ui/ngx-components/calendar';
 
-import { MaskModule } from '../mask';
+import { MaskModule } from '../mask/index';
 
-import { Components } from './components/index';
+import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { DATEPICKER_ERROR_LABELS, DATEPICKER_DEFAULT_ERROR_LABELS } from './datepicker.conf';
 import { DatepickerErrorLabels } from './types/datepicker.types';
 
@@ -27,10 +27,10 @@ import { DatepickerErrorLabels } from './types/datepicker.types';
 		MaskModule,
 	],
 	declarations: [
-		...Components,
+		DatepickerComponent,
 	],
 	exports: [
-		...Components,
+		DatepickerComponent,
 	],
 	providers: [
 		{ provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS },

@@ -28,9 +28,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
 @NgModule({
-	imports: [
-		FlyoutModule
-	]
+    imports: [
+        FlyoutModule
+    ]
 });
 
 export class AppModule {};`

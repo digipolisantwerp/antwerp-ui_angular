@@ -29,9 +29,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { LogoModule } from '@acpaas-ui/ngx-components/logo';
 
 @NgModule({
-	imports: [
-		LogoModule
-	]
+    imports: [
+        LogoModule
+    ]
 });
 
 export class AppModule {};
@@ -43,8 +43,8 @@ public imgSrc = 'https://robohash.org/acpaas-ui';
 public imgLink = '#';
 
 public imgClicked(event) {
-	event.preventDefault();
-	alert('Logo was clicked');
+    event.preventDefault();
+    alert('Logo was clicked');
 }
 ```
 

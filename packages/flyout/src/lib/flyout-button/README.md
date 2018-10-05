@@ -2,9 +2,6 @@
 
 This module has the FlyoutModule already implemented on a button, giving it a dropdown / flyout functionality.
 
-## Dependencies
-* `@acpaas-ui/ngx-components/flyout`
-
 ## Usage
 
 ```typescript
@@ -35,9 +32,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout';
 
 @NgModule({
-	imports: [
-		FlyoutButtonModule
-	]
+    imports: [
+        FlyoutButtonModule
+    ]
 });
 
 export class AppModule {};`
@@ -54,18 +51,18 @@ export class AppModule {};`
 ```
 
 ```html
-	<aui-flyout-button
-		icon="fa fa-user"
-		label="Open flyout"
-		align="right"
-		title="Click to open!"
-		outline=true
-		flyoutSize="small"
-		buttonSize="large">
-		<div class="u-margin">
-			<p>Hello world!</p>
-		</div>
-	</aui-flyout-button>
+    <aui-flyout-button
+        icon="fa fa-user"
+        label="Open flyout"
+        align="right"
+        title="Click to open!"
+        outline=true
+        flyoutSize="small"
+        buttonSize="large">
+        <div class="u-margin">
+            <p>Hello world!</p>
+        </div>
+    </aui-flyout-button>
 ```
 
 **FlyoutButtonSize enum example**

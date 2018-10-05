@@ -32,9 +32,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list';
 
 @NgModule({
-	imports: [
-		SelectableListModule
-	]
+    imports: [
+        SelectableListModule
+    ]
 });
 
 export class AppModule {};`
@@ -52,8 +52,8 @@ public heroes = [
 public activeHero = this.heroes[this.index];
 
 public onSelect(item) {
-	this.index = this.heroes.findIndex(hero => hero.name === item.name);
-	this.activeHero = item;
+    this.index = this.heroes.findIndex(hero => hero.name === item.name);
+    this.activeHero = item;
 }
 ```
 
@@ -91,10 +91,10 @@ import { SelectableListModule } from '@acpaas-ui/ngx-components/selectable-list'
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
 @NgModule({
-	imports: [
-		SelectableListModule,
-		FlyoutModule
-	]
+    imports: [
+        SelectableListModule,
+        FlyoutModule
+    ]
 });
 
 export class AppModule {};
@@ -110,7 +110,7 @@ public onKeyArrowDown() {
 }
 
 public onKeyEnter() {
-	this.onSelect(this.heroes[this.index]);
+    this.onSelect(this.heroes[this.index]);
 }
 
 public onKeyEscape() {

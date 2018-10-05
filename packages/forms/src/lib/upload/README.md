@@ -45,7 +45,7 @@ This component wraps the `upload-zone`, `upload-queue` and `validation-list`, it
 | `allowedFileTypes: string[];` | `[]` | The file extensions that are allowed to be uploaded. |
 | `autoUpload: boolean;` | `false` | Upload the file automatically without confirmation. |
 | `maxFileSize: number;` | `0` | The maximum file size that is allowed. The value is expressed in Bytes. The value 0 equals infinite. |
-| `queueLimit: number;` | `0` | The maximum number of files that can uploaded at the same time. The value 0 equals infinite. |
+| `queueLimit: number;` | `0` | The maximum number of files that can be selected at the same time. The value 0 equals infinite. |
 | `type: string;` | `drop` | By default an upload has an `upload-zone` but with the option `button`, you can set it as an uploadbutton. |
 | `url: string;` | `''` | The upload url. |
 
@@ -57,7 +57,7 @@ This component provides the upload functionality.
 | `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values are explained in detail above. |
 | `@Input() multiple: boolean;` | `true` | Enable the HTML `multiple` attribute so the user can select multiple files to upload. |
 | `@Output() uploadedFiles: EventEmitter<Object[]>;` | - | Emits an array of files that were uploaded. |
-| `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of files that have past the validation and are ready to be uploaded. |
+| `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of file objects that have past the validation and are ready to be uploaded. |
 | `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | - | Emits an array of invalid files and the reason why they are invalid. |
 
 #### `<aui-upload-queue>`
@@ -153,6 +153,16 @@ public dropzone2: UploadOptions = {
         Optional description message
     </div>
 </aui-upload-input>
+```
+
+**Custom upload**
+
+```typescript
+
+```
+
+```html
+
 ```
 
 
