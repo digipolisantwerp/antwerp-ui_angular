@@ -21,4 +21,3 @@ export {
 	CALENDAR_WEEKDAY_LABELS
 } from './calendar.conf';
 export { CalendarModule } from './calendar.module';
-export { TitleCasePipe } from './pipes/title-case.pipe';

@@ -1,8 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { TableHelperService } from '../../services/table-helper.service';
+import ShortUniqueId from 'short-unique-id';
 
-/** Used to generate unique ID's for each column selector component (idea from Angular Material --> tab-group component) */
-let nextId = 0;
+import { TableHelperService } from '../../services/table-helper.service';
 
 @Component({
 	selector: 'aui-column-selector',
@@ -14,8 +13,10 @@ export class ColumnSelectorComponent {
 	public id: number;
 	public currentTarget;
 
+	private uid = new ShortUniqueId();
+
 	constructor(public tableHelper: TableHelperService) {
-		this.id = nextId++;
+		this.id = this.uid.randomUUID(8);
 	}
 
 	public updateDisplay(e, index) {

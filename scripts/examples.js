@@ -1,9 +1,9 @@
-const { resolve, sep } = require('path');
-const { readFileSync, writeFileSync } = require('fs');
+const { resolve, sep, join } = require('path');
+const { writeFileSync } = require('fs');
 const colors = require('colors');
 const camelCase = require('lodash.camelcase');
-const capitalize = require('lodash.capitalize');
-
+const upperFirst = require('lodash.upperfirst');
+const snakeCase = require('lodash.snakecase');
 
 const { getDirectories } = require('./helpers/dir');
 const promiseQueue = require('./helpers/queue');
@@ -20,6 +20,16 @@ const buildExample = package => () => {
 	return exec(`ng build ${package} -c examples`);
 };
 
+const rimRafExamples = () => {
+	if (!process.env.example) {
+		exec(`rimraf examples`);
+
+		console.log(colors.green('Examples folder cleaned.'));
+	}
+
+	return Promise.resolve();
+}
+
 const updateRoutes = () => {
 	// TODO: fix lazy imports if this ever gets fixed: https://github.com/angular/angular-cli/issues/6373
 	console.log(colors.yellow('Updating styleguide routes...'));
@@ -32,13 +42,14 @@ const updateRoutes = () => {
 	let importConfigRoutes = '';
 	let routeConfig = '';
 	packages.forEach(package => {
-		const route = `${package.toUpperCase()}_EXAMPLES_ROUTES`;
-		const moduleName = `${capitalize(camelCase(package))}ExamplesModule`;
+		const route = `${snakeCase(package).toUpperCase()}_EXAMPLES_ROUTES`;
+		const moduleName = `${upperFirst(camelCase(package))}ExamplesModule`;
 
-		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}';\n`;
-		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}';\n`;
+		// TODO: investigate this further, importing from the fesm module seems to solve the path resolving issue but should not be required to make this work
+		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}/fesm2015/${package}';\n`;
+		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}/fesm2015/${package}';\n`;
 		moduleConfig += `	${moduleName},\n`;
-		routeConfig += `	{ path: '${package}', children: ${route} },\n`;
+		routeConfig += `	{ path: '${package}', children: ${route}, title: '${upperFirst(package.replace(/-/g, ' '))}', },\n`;
 	});
 
 	writeFileSync(srcModules, `${importConfigModules}\nexport const ExamplesModules = [\n${moduleConfig}];\n`, { encoding: 'utf-8' });
@@ -49,9 +60,29 @@ const updateRoutes = () => {
 	return Promise.resolve();
 };
 
+const updateExamplesPackage = () => {
+	console.log(colors.yellow('Writing examples package.json...'));
+
+	const examplesDir = resolve(process.cwd(), 'examples');
+	const package = {
+		name: '@acpaas-ui/ngx-examples',
+		version: '0.0.1',
+	};
+
+	writeFileSync(join(examplesDir, 'package.json'), JSON.stringify(package, null, 2), { encoding: 'UTF-8' });
+
+	console.log(colors.green('Examples package.json complete.'));
+
+	return Promise.resolve();
+}
+
 promiseQueue([
-	...packages.map(buildExample),
+	rimRafExamples,
+	...packages.filter(package => {
+		return (!process.env.example || (process.env.example && package === process.env.example))
+	}).map(buildExample),
 	updateRoutes,
+	updateExamplesPackage,
 ])
 	.then(() => {
 		console.log(colors.green('Examples completed.'));

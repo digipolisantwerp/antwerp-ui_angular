@@ -1,8 +1,13 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../examples/avatar",
+  "dest": "../../examples/map",
   "deleteDestPath": false,
   "lib": {
     "entryFile": "examples/index.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "esri-leaflet",
+    "leaflet",
+    "leaflet-draw"
+  ]
 }

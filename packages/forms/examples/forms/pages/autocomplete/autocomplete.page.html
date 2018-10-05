@@ -1,0 +1,62 @@
+<h2 class="h4 u-margin-bottom">Autocomplete</h2>
+
+<div class="u-margin-bottom-lg">
+	<aui-code-snippet [codeSnippet]="autocompleteImportExample"></aui-code-snippet>
+</div>
+
+<h3 class="h5 u-margin-bottom">Local search</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<div class="a-input">
+		<div class="a-input__wrapper">
+			<aui-auto-complete
+				id="hero-names"
+				placeholder="Choose your hero…"
+				label="name"
+				value=""
+				minCharacters = "3"
+				clearInvalid="true"
+				showAllByDefault="true"
+				[data]="heroList"
+				(select)="setSelectedHero($event)">
+			</aui-auto-complete>
+		</div>
+	</div>
+</div>
+
+<h3 class="h5 u-margin-bottom">Remote search</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="autocompleteExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xx">
+	<div class="a-input">
+		<div class="a-input__wrapper">
+			<aui-auto-complete
+				id="hero"
+				placeholder="Choose your hero…"
+				remote="true"
+				[results]="results"
+				label="name"
+				key="id"
+				loadingText = "Loading…"
+				noResultsText="No results found"
+				searchIncentiveText="Type one or more keywords to start searching"
+				(search)="searchItems($event)">
+			</aui-auto-complete>
+		</div>
+	</div>
+</div>

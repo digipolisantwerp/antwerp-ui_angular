@@ -1,5 +1,5 @@
 const { lstatSync, readdirSync, readFileSync } = require('fs');
-const { join, resolve, sep } = require('path');
+const { join, resolve } = require('path');
 const mergePackages = require('@userfrosting/merge-package-dependencies');
 
 module.exports.getAUIDependencies = config => {

@@ -1,0 +1,33 @@
+<h2 class="h4 u-margin-bottom">WYSIWYG</h2>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygImportExample"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygImportExample2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygTypescript"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom col-md-6 col-xs-12">
+    <div class="a-input">
+		<aui-wysiwyg
+			[placeholder]="'Type some richt text here…'"
+			[availableTags]="'h2;h3;h4;h5;h6;p'"
+			[uiColour]="'#C0C0C0'"
+			[debounce]="500"
+			(emitContent)="getContent($event)">
+		</aui-wysiwyg>
+	</div>
+</div>
+
+<div class="u-margin-bottom-lg">
+	<pre class="a-pre">{{ result }}</pre>
+</div>
