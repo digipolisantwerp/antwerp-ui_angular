@@ -1,1 +1,22 @@
 <h2 class="h4 u-margin-bottom">Filter</h2>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<h2 class="h4 u-margin-bottom">Input Filter</h2>
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleHTML"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<aui-input-filter [filter]="searchFilter" (update)="changeSearchFilter($event)"></aui-input-filter>
+</div>
+<div class="u-margin-bottom">
+	<pre>{{ results | json }}</pre>
+</div>
