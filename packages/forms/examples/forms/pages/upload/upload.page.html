@@ -24,6 +24,10 @@
 		</div>
 	</aui-upload>
 </div>
+<div class="u-margin-bottom">
+	<p>The returned value depends on your API. In this case it will always return the `"id": 101`.</p>
+	<pre>{{ this.files | json }}</pre>
+</div>
 
 <h3 class="h5 u-margin-bottom">Upload as a button</h3>
 
@@ -41,6 +45,10 @@
 			Upload button
 		</div>
 	</aui-upload>
+</div>
+<div class="u-margin-bottom">
+		<p>The returned value depends on your API. In this case it will always return the `"id": 101`.</p>
+	<pre>{{ this.files | json }}</pre>
 </div>
 
 <h3 class="h5 u-margin-bottom">Custom upload</h3>
@@ -79,4 +87,5 @@
 		</ul>
 </div>
 <button (click)="uploadFiles()" [disabled]="queuedFiles.length === 0" class="a-button" id="uploadButton">Send</button>
+<p>The returned value depends on your API. In this case it will always return the `"id": 101`.</p>
 <pre>{{ this.uploadedFiles | json }}</pre>

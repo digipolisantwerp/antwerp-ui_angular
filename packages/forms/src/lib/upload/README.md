@@ -161,58 +161,54 @@ public fileName = '';
 ```
 
 ```typescript
-	public onQueuedFiles(files: File[]) {
-			if (!files.length) {
-					return;
-			}
+public onQueuedFiles(files: File[]) {
+        if (!files.length) {
+                return;
+        }
 
-			this.queuedFiles = this.queuedFiles.concat(files);
-	}
-
-	public onUploadedFiles(files) {
-		this.uploadedFiles = this.uploadedFiles.concat(files);
+        this.queuedFiles = this.queuedFiles.concat(files);
 }
 
-	public onInvalidFiles(errorFiles: InvalidFile[]) {
-		this.invalidFiles = errorFiles;
-		if (errorFiles.length > 0) {
-				this.fileName = this.invalidFiles[0]['file'].name;
-				this.showError = true;
-				this.invalidFiles = [];
-		} else {
-				this.showError = false;
-		}
-	}
+public onUploadedFiles(files) {
+    this.uploadedFiles = this.uploadedFiles.concat(files);
+}
 
-	public reloadErrors() {
-		this.showError = false;
-		if (!this.queuedFiles.length) {
-			return;
-		}
-	}
+public onInvalidFiles(errorFiles: InvalidFile[]) {
+    this.invalidFiles = errorFiles;
+    if (errorFiles.length > 0) {
+            this.fileName = this.invalidFiles[0]['file'].name;
+            this.showError = true;
+            this.invalidFiles = [];
+    } else {
+            this.showError = false;
+    }
+}
 
-	public uploadFiles(): void {
+public reloadErrors() {
+    this.showError = false;
+    if (!this.queuedFiles.length) {
+        return;
+    }
+}
+
+public uploadFiles(): void {
 	// Upload files returns an obervable
-	console.log('this.queuedFiles = ', this.queuedFiles);
 	this.uploader.uploadFiles(this.queuedFiles).subscribe(
 		(response) => {
-				// Response has a progress property to use with a progress bar
-				if (response.progress) {
-					console.log('response.progress = ', response.progress);
-				}
-				// Response had a data property with an array of uploaded files: UploadedFile[]
-				if (response.data) {
-					console.log('response.data = ', response.data);
-				}
-				console.log('HTTP response', response);
+			// Response has a progress property to use with a progress bar
+			if (response.progress) {
+				console.log('response.progress = ', response.progress);
+			}
+			// Response had a data property with an array of uploaded files: UploadedFile[]
+			if (response.data) {
+				console.log('response.data = ', response.data);
+			}
+			this.uploadedFiles = response.data;
 		},
 		(err) => {
 			console.log('HTTP Error', err);
-		},
-		() => {
-			console.log('HTTP request completed.');
 		});
-	}
+}
 ```
 
 ```html

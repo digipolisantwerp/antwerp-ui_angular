@@ -109,26 +109,22 @@ if (!this.queuedFiles.length) {
 }
 
 public uploadFiles(): void {
-// Upload files returns an obervable
-console.log('this.queuedFiles = ', this.queuedFiles);
-this.uploader.uploadFiles(this.queuedFiles).subscribe(
-(response) => {
-		// Response has a progress property to use with a progress bar
-		if (response.progress) {
-			console.log('response.progress = ', response.progress);
-		}
-		// Response had a data property with an array of uploaded files: UploadedFile[]
-		if (response.data) {
-			console.log('response.data = ', response.data);
-		}
-		console.log('HTTP response', response);
-},
-(err) => {
-	console.log('HTTP Error', err);
-},
-() => {
-	console.log('HTTP request completed.');
-});
+	// Upload files returns an obervable
+	this.uploader.uploadFiles(this.queuedFiles).subscribe(
+		(response) => {
+			// Response has a progress property to use with a progress bar
+			if (response.progress) {
+				console.log('response.progress = ', response.progress);
+			}
+			// Response had a data property with an array of uploaded files: UploadedFile[]
+			if (response.data) {
+				console.log('response.data = ', response.data);
+			}
+			this.uploadedFiles = response.data;
+		},
+		(err) => {
+			console.log('HTTP Error', err);
+		});
 }`;
 public uploadExampleHTML3 =
 `<aui-upload-zone
@@ -163,7 +159,6 @@ public uploadExampleHTML3 =
 
 	public onUpload(files) {
 		this.files = this.files.concat(files);
-		console.log('files = ', files);
 	}
 
 	// CUSTOM UPLOAD
@@ -176,6 +171,7 @@ public uploadExampleHTML3 =
 	}
 
 	public onUploadedFiles(files) {
+		console.log('onUploadedFiles = ', files);
 		this.uploadedFiles = this.uploadedFiles.concat(files);
 }
 
@@ -199,7 +195,6 @@ public uploadExampleHTML3 =
 
 	public uploadFiles(): void {
 	// Upload files returns an obervable
-	console.log('this.queuedFiles = ', this.queuedFiles);
 	this.uploader.uploadFiles(this.queuedFiles).subscribe(
 		(response) => {
 				// Response has a progress property to use with a progress bar
@@ -210,13 +205,10 @@ public uploadExampleHTML3 =
 				if (response.data) {
 					console.log('response.data = ', response.data);
 				}
-				console.log('HTTP response', response);
+				this.uploadedFiles = response.data;
 		},
 		(err) => {
 			console.log('HTTP Error', err);
-		},
-		() => {
-			console.log('HTTP request completed.');
 		});
 	}
 }
