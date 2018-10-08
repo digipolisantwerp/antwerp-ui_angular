@@ -98,8 +98,10 @@ export class AppModule {};
 ```typescript
 public dropzone1: UploadOptions = {
     allowedMimeTypes: ['image/jpeg'],
+    maxFileSize: 10000000,
     queueLimit: 2,
-    url: 'http://localhost:3002/upload',
+    type: 'drop',
+    url: 'https://jsonplaceholder.typicode.com/posts',
 };
 ```
 
@@ -114,48 +116,26 @@ public dropzone1: UploadOptions = {
 </aui-upload>
 ```
 
-**Upload as form control**
-
-```typescript
-public dropzone2: UploadOptions = {
-    allowedFileTypes: ['.jpg', 'jpeg', 'png'],
-    autoUpload: true,
-    maxFileSize: 2000000,
-    url: 'http://localhost:3002/upload',
-};
-```
-
-```html
-<aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
-    <div class="aui-upload-message">
-        Drag your files here or click to upload
-    </div>
-    <div class="aui-upload-description">
-        Optional description message
-    </div>
-</aui-upload-input>
-```
-
 **Upload button**
 
 ```typescript
 public dropzone2: UploadOptions = {
+    type: 'button',
     allowedFileTypes: ['.jpg', 'jpeg', 'png'],
     autoUpload: true,
     maxFileSize: 2000000,
-    url: 'http://localhost:3002/upload',
+    url: 'https://jsonplaceholder.typicode.com/posts',
 };
 ```
 
 ```html
-<aui-upload-input [options]="dropzone2" [(ngModel)]="output" [format]="formatOutput">
-    <div class="aui-upload-message">
-        Drag your files here or click to upload
-    </div>
-    <div class="aui-upload-description">
-        Optional description message
-    </div>
-</aui-upload-input>
+<div class="u-margin-bottom">
+	<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
+		<div class="aui-upload-button">
+			Upload button
+		</div>
+	</aui-upload>
+</div>
 ```
 
 **Custom upload using the Uploader class**
@@ -165,10 +145,18 @@ import { Uploader } from '@acpaas-ui/ngx-components/forms';
 ```
 
 ```typescript
+public files = [];
+public invalidFiles: InvalidFile[] = [];
+public queuedFiles: File[] = [];
+public uploadedFiles: File[] = [];
 // Pass created options into new instance of Uploader
 public uploader = new Uploader({
-	allowedFileTypes: ['jpg', 'jpeg', 'png'],
-	type: 'drop',
+    allowedFileTypes: ['jpg', 'jpeg', 'png'],
+    type: 'drop',
+    url: 'https://jsonplaceholder.typicode.com/posts',
+});
+public showError = false;
+public fileName = '';
 });
 ```
 
@@ -201,7 +189,30 @@ public uploader = new Uploader({
 		if (!this.queuedFiles.length) {
 			return;
 		}
-  }
+	}
+
+	public uploadFiles(): void {
+	// Upload files returns an obervable
+	console.log('this.queuedFiles = ', this.queuedFiles);
+	this.uploader.uploadFiles(this.queuedFiles).subscribe(
+		(response) => {
+				// Response has a progress property to use with a progress bar
+				if (response.progress) {
+					console.log('response.progress = ', response.progress);
+				}
+				// Response had a data property with an array of uploaded files: UploadedFile[]
+				if (response.data) {
+					console.log('response.data = ', response.data);
+				}
+				console.log('HTTP response', response);
+		},
+		(err) => {
+			console.log('HTTP Error', err);
+		},
+		() => {
+			console.log('HTTP request completed.');
+		});
+	}
 ```
 
 ```html

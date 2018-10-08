@@ -50,6 +50,11 @@
 </div>
 
 <div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="uploadExampleJS4"></aui-code-snippet>
+</div>
+
+
+<div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="uploadExampleHTML3"></aui-code-snippet>
 </div>
 
@@ -62,7 +67,7 @@
 				File extension: jpg, jpeg, png
 		</div>
 </aui-upload-zone>
-<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
+<aui-upload-queue [files]="queuedFiles" class="a-upload-queue__wrapper"></aui-upload-queue>
 <div *ngIf="showError" class="u-margin-bottom">
 		<ul class="m-upload__files">
 				<li class="is-error">
@@ -73,3 +78,5 @@
 				</li>
 		</ul>
 </div>
+<button (click)="uploadFiles()" [disabled]="queuedFiles.length === 0" class="a-button" id="uploadButton">Send</button>
+<pre>{{ this.uploadedFiles | json }}</pre>

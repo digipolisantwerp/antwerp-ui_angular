@@ -2,17 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { InvalidFile, UploadOptions, Uploader } from '@acpaas-ui/ngx-components/forms';
 
 @Component({
+	styleUrls: [
+		'./upload.page.scss',
+	],
 	templateUrl: './upload.page.html',
 })
 export class FormsUploadDemoPageComponent {
 	public files = [];
 	public invalidFiles: InvalidFile[] = [];
-	public output: any;
 	public queuedFiles: File[] = [];
 	public uploadedFiles: File[] = [];
 	public uploader = new Uploader({
 		allowedFileTypes: ['jpg', 'jpeg', 'png'],
 		type: 'drop',
+		url: 'https://jsonplaceholder.typicode.com/posts',
 	});
 	public showError = false;
 	public fileName = '';
@@ -22,6 +25,7 @@ export class FormsUploadDemoPageComponent {
 		maxFileSize: 10000000,
 		queueLimit: 2,
 		type: 'drop',
+		url: 'https://jsonplaceholder.typicode.com/posts',
 	};
 
 	public dropzone2: UploadOptions = {
@@ -29,6 +33,7 @@ export class FormsUploadDemoPageComponent {
 		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
 		autoUpload: true,
 		maxFileSize: 2000000,
+		url: 'https://jsonplaceholder.typicode.com/posts',
 	};
 
 	public uploadImportExample = `import { UploadModule } from '@acpaas-ui/ngx-components/forms';
@@ -60,28 +65,89 @@ export class AppModule {};`;
     Upload button
   </div>
 </aui-upload>`;
-public uploadExampleJS3 = `public uploader = new Uploader({
-	allowedFileTypes: ['jpg', 'jpeg', 'png'],
-	type: 'drop',
+public uploadExampleJS3 = `public files = [];
+public invalidFiles: InvalidFile[] = [];
+public queuedFiles: File[] = [];
+public uploadedFiles: File[] = [];
+// Pass created options into new instance of Uploader
+public uploader = new Uploader({
+    allowedFileTypes: ['jpg', 'jpeg', 'png'],
+    type: 'drop',
+    url: 'https://jsonplaceholder.typicode.com/posts',
+});
+public showError = false;
+public fileName = '';
 });`;
+public uploadExampleJS4 = `	public onQueuedFiles(files: File[]) {
+	if (!files.length) {
+			return;
+	}
+
+	this.queuedFiles = this.queuedFiles.concat(files);
+}
+
+public onUploadedFiles(files) {
+this.uploadedFiles = this.uploadedFiles.concat(files);
+}
+
+public onInvalidFiles(errorFiles: InvalidFile[]) {
+this.invalidFiles = errorFiles;
+if (errorFiles.length > 0) {
+		this.fileName = this.invalidFiles[0]['file'].name;
+		this.showError = true;
+		this.invalidFiles = [];
+} else {
+		this.showError = false;
+}
+}
+
+public reloadErrors() {
+this.showError = false;
+if (!this.queuedFiles.length) {
+	return;
+}
+}
+
+public uploadFiles(): void {
+// Upload files returns an obervable
+console.log('this.queuedFiles = ', this.queuedFiles);
+this.uploader.uploadFiles(this.queuedFiles).subscribe(
+(response) => {
+		// Response has a progress property to use with a progress bar
+		if (response.progress) {
+			console.log('response.progress = ', response.progress);
+		}
+		// Response had a data property with an array of uploaded files: UploadedFile[]
+		if (response.data) {
+			console.log('response.data = ', response.data);
+		}
+		console.log('HTTP response', response);
+},
+(err) => {
+	console.log('HTTP Error', err);
+},
+() => {
+	console.log('HTTP request completed.');
+});
+}`;
 public uploadExampleHTML3 =
 `<aui-upload-zone
 	[uploader]="uploader"
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
 	(invalidFiles)="onInvalidFiles($event)"
->
-<div class="aui-upload-message">
+	>
+	<div class="aui-upload-message">
 		Drag your files here or click to upload
-</div>
-<div class="aui-upload-description">
+	</div>
+	<div class="aui-upload-description">
 		Maximum filesize: 10 MB,
 		File extension: jpg, jpeg, png
-</div>
-</aui-upload-zone>
-<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
-<div *ngIf="showError" class="u-margin-bottom">
-<ul class="m-upload__files">
+	</div>
+	</aui-upload-zone>
+	<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
+	<div *ngIf="showError" class="u-margin-bottom">
+	<ul class="m-upload__files">
 		<li class="is-error">
 				<span class="fa fa-warning"></span>
 				<span class="m-upload__filename">{{ fileName }}</span>
@@ -92,7 +158,7 @@ public uploadExampleHTML3 =
 						<i class="fa fa-close"></i>
 				</button>
 		</li>
-</ul>
+	</ul>
 </div>`;
 
 	public onUpload(files) {
@@ -129,5 +195,28 @@ public uploadExampleHTML3 =
 		if (!this.queuedFiles.length) {
 			return;
 		}
+	}
+
+	public uploadFiles(): void {
+	// Upload files returns an obervable
+	console.log('this.queuedFiles = ', this.queuedFiles);
+	this.uploader.uploadFiles(this.queuedFiles).subscribe(
+		(response) => {
+				// Response has a progress property to use with a progress bar
+				if (response.progress) {
+					console.log('response.progress = ', response.progress);
+				}
+				// Response had a data property with an array of uploaded files: UploadedFile[]
+				if (response.data) {
+					console.log('response.data = ', response.data);
+				}
+				console.log('HTTP response', response);
+		},
+		(err) => {
+			console.log('HTTP Error', err);
+		},
+		() => {
+			console.log('HTTP request completed.');
+		});
 	}
 }
