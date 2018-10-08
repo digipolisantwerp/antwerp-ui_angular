@@ -7,6 +7,7 @@ import {
 	DatepickerModule,
 	MaskModule,
 	RangeSliderModule,
+	SearchFilterModule,
 	TimepickerModule,
 	WysiwygModule,
 } from '@acpaas-ui/ngx-components/forms';
@@ -33,7 +34,8 @@ import { Pages } from './pages/index';
 		FormsModule,
 		AutoCompleteModule,
 		CodeSnippetModule,
- 		MaskModule,
+		MaskModule,
+		SearchFilterModule,
 		TimepickerModule,
 		WysiwygModule,
 	],
