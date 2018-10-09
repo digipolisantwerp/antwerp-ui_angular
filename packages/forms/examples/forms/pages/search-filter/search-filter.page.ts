@@ -7,17 +7,17 @@ import { SearchFilterChoice } from '@acpaas-ui/ngx-components/forms';
 export class FormsSearchFilterDemoPageComponent {
 
 	public stuff: SearchFilterChoice[] = [{
-        label: "First item",
-        value: "one",
-    }, {
-        label: "Second item",
-        value: "two",
-    }, {
-        label: "Third item",
-        value: "three",
-    }, {
-        label: "Fourth item",
-        value: "four",
+		label: "First item",
+		value: "one",
+	}, {
+		label: "Second item",
+		value: "two",
+	}, {
+		label: "Third item",
+		value: "three",
+	}, {
+		label: "Fourth item",
+		value: "four",
 	}];
 
 	public searchfilterImportExample = `import { SearchFilterModule } from '@acpaas-ui/ngx-components/forms';
@@ -31,17 +31,17 @@ export class FormsSearchFilterDemoPageComponent {
 export class AppModule {};`;
 
 	public searchfilterExampleJS1 = `public stuff: SearchFilterChoice[] = [{
-	label: "First item",
-	value: "one",
-}, {
-	label: "Second item",
-	value: "two",
-}, {
-	label: "Third item",
-	value: "three",
-}, {
-	label: "Fourth item",
-	value: "four",
+		label: "First item",
+		value: "one",
+	}, {
+		label: "Second item",
+		value: "two",
+	}, {
+		label: "Third item",
+		value: "three",
+	}, {
+		label: "Fourth item",
+		value: "four",
 }];`;
 
 	public searchfilterExampleHTML1 = `<aui-search-filter
