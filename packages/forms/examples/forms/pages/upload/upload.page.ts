@@ -42,6 +42,7 @@ export class FormsUploadDemoPageComponent {
 });
 
 export class AppModule {};`;
+
 	public uploadExampleJS1 = `public dropzone1: UploadOptions = {
 	allowedMimeTypes: ['image/jpeg'],
 	maxFileSize: 10000000,
@@ -49,6 +50,7 @@ export class AppModule {};`;
 	type: 'drop',
 	url: 'api/upload',
 };`;
+
 	public uploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
 	<div class="aui-upload-message">
 		Drag your files here or click to upload
@@ -57,6 +59,7 @@ export class AppModule {};`;
     Optional description message
   </div>
 </aui-upload>`;
+
 	public uploadExampleJS2 = `public dropzone2: UploadOptions = {
 	type: 'button',
 	allowedFileTypes: ['.jpg', 'jpeg', 'png'],
@@ -64,12 +67,14 @@ export class AppModule {};`;
 	maxFileSize: 2000000,
 	url: 'api/upload',
 };`;
+
 	public uploadExampleHTML2 = `<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-button">
     Upload button
   </div>
 </aui-upload>`;
-public uploadExampleJS3 = `public files = [];
+
+	public uploadExampleJS3 = `public files = [];
 public invalidFiles: InvalidFile[] = [];
 public queuedFiles: File[] = [];
 public uploadedFiles: File[] = [];
@@ -82,7 +87,8 @@ public uploader = new Uploader({
 public showError = false;
 public fileName = '';
 });`;
-public uploadExampleJS4 = `public onQueuedFiles(files: File[]) {
+
+	public uploadExampleJS4 = `public onQueuedFiles(files: File[]) {
 	if (!files.length) {
 		return;
 	}
@@ -149,12 +155,15 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 // 		console.log(error);
 // 	});
 // }`;
-public uploadExampleSCSS = `::ng-deep .a-upload-queue__wrapper {
+
+	public uploadExampleSCSS = `// don't display the default upload button
+::ng-deep .a-upload-queue__wrapper {
 	.a-button {
 		display: none;
 	}
 }`;
-public uploadExampleHTML3 = `<aui-upload-zone
+
+	public uploadExampleHTML3 = `<aui-upload-zone
 	[uploader]="uploader"
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
@@ -189,25 +198,24 @@ public uploadExampleHTML3 = `<aui-upload-zone
 
 	// CUSTOM UPLOAD
 	public onQueuedFiles(files: File[]) {
-			if (!files.length) {
-					return;
-			}
-
-			this.queuedFiles = this.queuedFiles.concat(files);
+		if (!files.length) {
+			return;
+		}
+		this.queuedFiles = this.queuedFiles.concat(files);
 	}
 
 	public onUploadedFiles(files) {
 		this.uploadedFiles = this.uploadedFiles.concat(files);
-}
+	}
 
 	public onInvalidFiles(errorFiles: InvalidFile[]) {
 		this.invalidFiles = errorFiles;
 		if (errorFiles.length > 0) {
-				this.fileName = this.invalidFiles[0]['file'].name;
-				this.showError = true;
-				this.invalidFiles = [];
+			this.fileName = this.invalidFiles[0]['file'].name;
+			this.showError = true;
+			this.invalidFiles = [];
 		} else {
-				this.showError = false;
+			this.showError = false;
 		}
 	}
 
@@ -226,15 +234,15 @@ public uploadExampleHTML3 = `<aui-upload-zone
 	// Upload files returns an obervable
 	this.uploader.uploadFiles(this.queuedFiles).subscribe(
 		(response) => {
-				// Response has a progress property to use with a progress bar
-				if (response.progress) {
-					console.log('response.progress = ', response.progress);
-				}
-				// Response had a data property with an array of uploaded files: UploadedFile[]
-				if (response.data) {
-					console.log('response.data = ', response.data);
-				}
-				this.uploadedFiles = response.data;
+			// Response has a progress property to use with a progress bar
+			if (response.progress) {
+				console.log('response.progress = ', response.progress);
+			}
+			// Response had a data property with an array of uploaded files: UploadedFile[]
+			if (response.data) {
+				console.log('response.data = ', response.data);
+			}
+			this.uploadedFiles = response.data;
 		},
 		(err) => {
 			console.log('HTTP Error', err);

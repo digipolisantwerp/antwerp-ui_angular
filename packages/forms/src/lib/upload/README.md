@@ -76,7 +76,7 @@ This class handles the validation and upload of a file.
 | `autoUpload: boolean;` | `false` | Upload the file automatically without confirmation. |
 | `maxFileSize: number;` | `0` | The maximum file size that is allowed. The value is expressed in Bytes. The value 0 equals infinite. |
 | `queueLimit: number;` | `0` | The maximum number of files that can be selected at the same time. The value 0 equals infinite. |
-| `type: string;` | `drop` | By default an upload has an `upload-zone` but with the option `button`, you can set it as an uploadbutton. |
+| `type: string;` | `'drop'` | By default an upload has an `upload-zone` but with the option `'button'`, you can set it as an uploadbutton. |
 | `url: string;` | `''` | The upload url. |
 
 #### Example
@@ -130,11 +130,11 @@ public dropzone2: UploadOptions = {
 
 ```html
 <div class="u-margin-bottom">
-	<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
-		<div class="aui-upload-button">
-			Upload button
-		</div>
-	</aui-upload>
+    <aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
+        <div class="aui-upload-button">
+            Upload button
+        </div>
+    </aui-upload>
 </div>
 ```
 
@@ -162,33 +162,32 @@ public fileName = '';
 
 ```typescript
 public onQueuedFiles(files: File[]) {
-	if (!files.length) {
-		return;
-	}
-
-	this.queuedFiles = this.queuedFiles.concat(files);
+    if (!files.length) {
+        return;
+    }
+    this.queuedFiles = this.queuedFiles.concat(files);
 }
 
 public onUploadedFiles(files) {
-this.uploadedFiles = this.uploadedFiles.concat(files);
+    this.uploadedFiles = this.uploadedFiles.concat(files);
 }
 
 public onInvalidFiles(errorFiles: InvalidFile[]) {
-	this.invalidFiles = errorFiles;
-	if (errorFiles.length > 0) {
-			this.fileName = this.invalidFiles[0]['file'].name;
-			this.showError = true;
-			this.invalidFiles = [];
-	} else {
-			this.showError = false;
-	}
+    this.invalidFiles = errorFiles;
+    if (errorFiles.length > 0) {
+        this.fileName = this.invalidFiles[0]['file'].name;
+        this.showError = true;
+        this.invalidFiles = [];
+    } else {
+        this.showError = false;
+    }
 }
 
 public reloadErrors() {
-	this.showError = false;
-	if (!this.queuedFiles.length) {
-		return;
-	}
+    this.showError = false;
+    if (!this.queuedFiles.length) {
+        return;
+    }
 }
 
 /**
@@ -199,15 +198,15 @@ public uploadFiles(): void {
 // Upload files returns an obervable
 this.uploader.uploadFiles(this.queuedFiles).subscribe(
     (response) => {
-            // Response has a progress property to use with a progress bar
-            if (response.progress) {
-                console.log('response.progress = ', response.progress);
-            }
-            // Response had a data property with an array of uploaded files: UploadedFile[]
-            if (response.data) {
-                console.log('response.data = ', response.data);
-            }
-            this.uploadedFiles = response.data;
+        // Response has a progress property to use with a progress bar
+        if (response.progress) {
+            console.log('response.progress = ', response.progress);
+        }
+        // Response had a data property with an array of uploaded files: UploadedFile[]
+        if (response.data) {
+            console.log('response.data = ', response.data);
+        }
+        this.uploadedFiles = response.data;
     },
     (err) => {
         console.log('HTTP Error', err);
@@ -219,44 +218,43 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
  */
 
 // public uploadFiles(): void {
-// 	if (!this.queuedFiles.length) {
-// 		return;
-// 	}
-// 	this.customService.postFile(this.queuedFiles).subscribe(res => {
-// 		this.result = res;
-// 	}, (error) => {
-// 		console.log(error);
-// 	});
+//     if (!this.queuedFiles.length) {
+//         return;
+//     }
+//     this.customService.postFile(this.queuedFiles).subscribe(res => {
+//         this.result = res;
+//     }, (error) => {
+//         console.log(error);
+//     });
 // }
 ```
 
 ```scss
-// don't display the default upload button
 ::ng-deep .a-upload-queue__wrapper {
-	.a-button {
-		display: none;
-	}
+    .a-button {
+        display: none;
+    }
 }
 ```
 
 ```html
 <aui-upload-zone
     [uploader]="uploader"
-	(queuedFiles)="onQueuedFiles($event)"
-	(uploadedFiles)="onUploadedFiles($event)"
-	(invalidFiles)="onInvalidFiles($event)">
-	<div class="aui-upload-message">
-		Drag your files here or click to upload
-	</div>
-	<div class="aui-upload-description">
-		Maximum filesize: 10 MB,
-		File extension: jpg, jpeg, png
-	</div>
+    (queuedFiles)="onQueuedFiles($event)"
+    (uploadedFiles)="onUploadedFiles($event)"
+    (invalidFiles)="onInvalidFiles($event)">
+    <div class="aui-upload-message">
+        Drag your files here or click to upload
+    </div>
+    <div class="aui-upload-description">
+        Maximum filesize: 10 MB,
+        File extension: jpg, jpeg, png
+    </div>
 </aui-upload-zone>
 <aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
 <div *ngIf="showError" class="u-margin-bottom">
-	<ul class="m-upload__files">
-		<li class="is-error">
+    <ul class="m-upload__files">
+        <li class="is-error">
             <span class="fa fa-warning"></span>
             <span class="m-upload__filename">{{ fileName }}</span>
             <span class="m-upload__error">This file extension is not allowed.</span>
@@ -265,8 +263,8 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
                 class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
                 <i class="fa fa-close"></i>
             </button>
-		</li>
-	</ul>
+        </li>
+    </ul>
 </div>
 ```
 
