@@ -56,7 +56,7 @@
     "@a-ui/flexboxgrid": "~1.0.0",
     "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",
     "@acpaas-ui/js-notification-store": "1.0.1-alpha.5",
-    "@acpaas-ui/schematics": "0.0.4",
+    "@acpaas-ui/schematics": "0.0.5",
     "@angular-devkit/build-angular": "~0.8.0",
     "@angular-devkit/build-ng-packagr": "~0.8.0",
     "@angular-redux/store": "7.1.1",
