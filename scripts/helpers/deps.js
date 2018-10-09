@@ -13,7 +13,7 @@ module.exports.getAUIDependencies = config => {
 
     ancestors.push(name);
 
-    visited[name] = true;
+		visited[name] = true;
 
     config[name].forEach(dep => {
       if (ancestors.indexOf(dep) >= 0) { // if already in ancestors, a closed chain exists.

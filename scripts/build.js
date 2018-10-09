@@ -8,19 +8,19 @@ const promiseQueue = require('./helpers/queue');
 const buildPackage = require('./helpers/build');
 
 const directories = getDirectories(resolve(process.cwd(), 'packages'));
-const packages = directories.map(directory => directory.split(sep).pop());
 const configs = directories.map(directory => readFileSync(resolve(directory, 'package.json'), {
   encoding: 'UTF-8'
 }));
 const localDependencies = getAUIDependencies(configs.reduce((acc, curr) => {
-  const config = JSON.parse(curr);
+	const config = JSON.parse(curr);
+	const packageName = config.name.replace('@acpaas-ui/ngx-components/', '');
 
   return Object.assign({}, acc, {
-    [config.name]: (config['acpaas-ui'] || {}).dependencies || [],
+    [packageName]: (config['acpaas-ui'] || {}).dependencies || [],
   });
 }, {}));
 
-const queue = promiseQueue(localDependencies.map(package => buildPackage(package)))
+promiseQueue(localDependencies.map(package => buildPackage(package)))
 	.then(() => {
 		console.log(colors.green('Build completed.'));
 		process.exit();
