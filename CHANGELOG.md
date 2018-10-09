@@ -35,8 +35,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `logo` Added documentation.
 - `localstorage` Added documentation.
 - `map` Added documentation.
-- `progress bar` Added documentation.
 - `pagination` Added documentation.
+- `progress-bar` Added documentation.
 
 ### Changed
 - `core` Improved build proces for submodules.

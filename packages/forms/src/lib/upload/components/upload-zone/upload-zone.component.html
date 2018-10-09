@@ -5,7 +5,7 @@
 			<input type="file" #fileInput (change)="updateFiles()" class="m-upload__input" *ngIf="!multiple">
 
 			<div class="m-upload__content" *ngIf="!uploadProgress || uploadProgress === 0">
-				<p class="m-upload__message"><ng-content select=".aui-upload-message"></ng-content></p>
+				<p class="m-upload__message"><ng-content select=".m-upload__message"></ng-content></p>
 			</div>
 
 			<ng-container *ngIf="uploadProgress > 0">
@@ -19,10 +19,10 @@
 		</div>
 	</div>
 
-	<small class="m-upload__description"><ng-content select=".aui-upload-description"></ng-content></small>
+	<small class="m-upload__description"><ng-content select=".m-upload__description"></ng-content></small>
 </div>
 
-<button class="a-button aui-upload-button" (click)="triggerFile()" *ngIf="uploader.options.type === 'button'">
-	<ng-content select=".aui-upload-button"></ng-content>
+<button class="a-button m-upload__button" (click)="triggerFile()" *ngIf="uploader.options.type === 'button'">
+	<ng-content select=".m-upload__button"></ng-content>
 	<input type="file" #fileInput (change)="updateFiles()" multiple="multiple">
 </button>

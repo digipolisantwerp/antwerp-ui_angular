@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
 	) {}
 
 	public setupHeadroom() { // @todo: use headroom options from injector
-		const element = this.elementRef.nativeElement.querySelector('.aui-header');
+		const element = this.elementRef.nativeElement.querySelector('.o-header');
 		const head = new Headroom(element);
 
 		return head;

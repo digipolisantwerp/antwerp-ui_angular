@@ -25,7 +25,7 @@ describe('The Pane Component', () => {
 		comp = fixture.componentInstance; // BannerComponent test instance
 
 		// query for the title <h1> by CSS element selector
-		de = fixture.debugElement.query(By.css('.aui-pane'));
+		de = fixture.debugElement.query(By.css('.m-pane'));
 		el = de.nativeElement;
 	});
 
