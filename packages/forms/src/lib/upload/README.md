@@ -101,7 +101,7 @@ public dropzone1: UploadOptions = {
     maxFileSize: 10000000,
     queueLimit: 2,
     type: 'drop',
-    url: 'https://jsonplaceholder.typicode.com/posts',
+    url: 'api/upload',
 };
 ```
 
@@ -124,7 +124,7 @@ public dropzone2: UploadOptions = {
     allowedFileTypes: ['.jpg', 'jpeg', 'png'],
     autoUpload: true,
     maxFileSize: 2000000,
-    url: 'https://jsonplaceholder.typicode.com/posts',
+    url: 'api/upload',
 };
 ```
 
@@ -153,7 +153,7 @@ public uploadedFiles: File[] = [];
 public uploader = new Uploader({
     allowedFileTypes: ['jpg', 'jpeg', 'png'],
     type: 'drop',
-    url: 'https://jsonplaceholder.typicode.com/posts',
+    url: 'api/upload',
 });
 public showError = false;
 public fileName = '';
@@ -162,52 +162,80 @@ public fileName = '';
 
 ```typescript
 public onQueuedFiles(files: File[]) {
-        if (!files.length) {
-                return;
-        }
+	if (!files.length) {
+		return;
+	}
 
-        this.queuedFiles = this.queuedFiles.concat(files);
+	this.queuedFiles = this.queuedFiles.concat(files);
 }
 
 public onUploadedFiles(files) {
-    this.uploadedFiles = this.uploadedFiles.concat(files);
+this.uploadedFiles = this.uploadedFiles.concat(files);
 }
 
 public onInvalidFiles(errorFiles: InvalidFile[]) {
-    this.invalidFiles = errorFiles;
-    if (errorFiles.length > 0) {
-            this.fileName = this.invalidFiles[0]['file'].name;
-            this.showError = true;
-            this.invalidFiles = [];
-    } else {
-            this.showError = false;
-    }
+	this.invalidFiles = errorFiles;
+	if (errorFiles.length > 0) {
+			this.fileName = this.invalidFiles[0]['file'].name;
+			this.showError = true;
+			this.invalidFiles = [];
+	} else {
+			this.showError = false;
+	}
 }
 
 public reloadErrors() {
-    this.showError = false;
-    if (!this.queuedFiles.length) {
-        return;
-    }
+	this.showError = false;
+	if (!this.queuedFiles.length) {
+		return;
+	}
 }
 
+/**
+* Using the uploader url option
+*/
+
 public uploadFiles(): void {
-	// Upload files returns an obervable
-	this.uploader.uploadFiles(this.queuedFiles).subscribe(
-		(response) => {
-			// Response has a progress property to use with a progress bar
-			if (response.progress) {
-				console.log('response.progress = ', response.progress);
-			}
-			// Response had a data property with an array of uploaded files: UploadedFile[]
-			if (response.data) {
-				console.log('response.data = ', response.data);
-			}
-			this.uploadedFiles = response.data;
-		},
-		(err) => {
-			console.log('HTTP Error', err);
-		});
+// Upload files returns an obervable
+this.uploader.uploadFiles(this.queuedFiles).subscribe(
+    (response) => {
+            // Response has a progress property to use with a progress bar
+            if (response.progress) {
+                console.log('response.progress = ', response.progress);
+            }
+            // Response had a data property with an array of uploaded files: UploadedFile[]
+            if (response.data) {
+                console.log('response.data = ', response.data);
+            }
+            this.uploadedFiles = response.data;
+    },
+    (err) => {
+        console.log('HTTP Error', err);
+    });
+}
+
+/**
+ * Using a custom upload service
+ */
+
+// public uploadFiles(): void {
+// 	if (!this.queuedFiles.length) {
+// 		return;
+// 	}
+// 	this.uploadsService.postFile(this.queuedFiles).subscribe(res => {
+// 		this.result = res;
+// 	}, (error) => {
+// 		console.log(error);
+// 	});
+// }
+```
+
+```scss
+// don't display the default upload button
+::ng-deep .a-upload-queue__wrapper {
+	.a-button {
+		display: none;
+	}
 }
 ```
 
@@ -217,18 +245,18 @@ public uploadFiles(): void {
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
 	(invalidFiles)="onInvalidFiles($event)"
->
-<div class="aui-upload-message">
+	>
+	<div class="aui-upload-message">
 		Drag your files here or click to upload
-</div>
-<div class="aui-upload-description">
+	</div>
+	<div class="aui-upload-description">
 		Maximum filesize: 10 MB,
 		File extension: jpg, jpeg, png
-</div>
-</aui-upload-zone>
-<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
-<div *ngIf="showError" class="u-margin-bottom">
-<ul class="m-upload__files">
+	</div>
+	</aui-upload-zone>
+	<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
+	<div *ngIf="showError" class="u-margin-bottom">
+	<ul class="m-upload__files">
 		<li class="is-error">
 				<span class="fa fa-warning"></span>
 				<span class="m-upload__filename">{{ fileName }}</span>
@@ -239,7 +267,7 @@ public uploadFiles(): void {
 						<i class="fa fa-close"></i>
 				</button>
 		</li>
-</ul>
+	</ul>
 </div>
 ```
 

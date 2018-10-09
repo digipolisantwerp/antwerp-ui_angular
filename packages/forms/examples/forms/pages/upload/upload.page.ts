@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { InvalidFile, UploadOptions, Uploader } from '@acpaas-ui/ngx-components/forms';
 
 @Component({
@@ -15,7 +15,6 @@ export class FormsUploadDemoPageComponent {
 	public uploader = new Uploader({
 		allowedFileTypes: ['jpg', 'jpeg', 'png'],
 		type: 'drop',
-		url: 'https://jsonplaceholder.typicode.com/posts',
 	});
 	public showError = false;
 	public fileName = '';
@@ -25,7 +24,6 @@ export class FormsUploadDemoPageComponent {
 		maxFileSize: 10000000,
 		queueLimit: 2,
 		type: 'drop',
-		url: 'https://jsonplaceholder.typicode.com/posts',
 	};
 
 	public dropzone2: UploadOptions = {
@@ -33,7 +31,6 @@ export class FormsUploadDemoPageComponent {
 		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
 		autoUpload: true,
 		maxFileSize: 2000000,
-		url: 'https://jsonplaceholder.typicode.com/posts',
 	};
 
 	public uploadImportExample = `import { UploadModule } from '@acpaas-ui/ngx-components/forms';
@@ -46,8 +43,10 @@ export class FormsUploadDemoPageComponent {
 
 export class AppModule {};`;
 	public uploadExampleJS1 = `public dropzone1: UploadOptions = {
-  allowedMimeTypes: ['image/jpeg'],
-  queueLimit: 2,
+	allowedMimeTypes: ['image/jpeg'],
+	maxFileSize: 10000000,
+	queueLimit: 2,
+	type: 'drop',
 };`;
 	public uploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-message">
@@ -58,7 +57,10 @@ export class AppModule {};`;
   </div>
 </aui-upload>`;
 	public uploadExampleJS2 = `public dropzone2: UploadOptions = {
-  type: 'button',
+		type: 'button',
+		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+		autoUpload: true,
+		maxFileSize: 2000000,
 };`;
 	public uploadExampleHTML2 = `<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-button">
@@ -73,14 +75,14 @@ public uploadedFiles: File[] = [];
 public uploader = new Uploader({
     allowedFileTypes: ['jpg', 'jpeg', 'png'],
     type: 'drop',
-    url: 'https://jsonplaceholder.typicode.com/posts',
+    url: 'api/upload',
 });
 public showError = false;
 public fileName = '';
 });`;
-public uploadExampleJS4 = `	public onQueuedFiles(files: File[]) {
+public uploadExampleJS4 = `public onQueuedFiles(files: File[]) {
 	if (!files.length) {
-			return;
+		return;
 	}
 
 	this.queuedFiles = this.queuedFiles.concat(files);
@@ -91,40 +93,64 @@ this.uploadedFiles = this.uploadedFiles.concat(files);
 }
 
 public onInvalidFiles(errorFiles: InvalidFile[]) {
-this.invalidFiles = errorFiles;
-if (errorFiles.length > 0) {
-		this.fileName = this.invalidFiles[0]['file'].name;
-		this.showError = true;
-		this.invalidFiles = [];
-} else {
-		this.showError = false;
-}
+	this.invalidFiles = errorFiles;
+	if (errorFiles.length > 0) {
+			this.fileName = this.invalidFiles[0]['file'].name;
+			this.showError = true;
+			this.invalidFiles = [];
+	} else {
+			this.showError = false;
+	}
 }
 
 public reloadErrors() {
-this.showError = false;
-if (!this.queuedFiles.length) {
-	return;
-}
+	this.showError = false;
+	if (!this.queuedFiles.length) {
+		return;
+	}
 }
 
-public uploadFiles(): void {
+/**
+* Using the uploader url option
+*/
+
+	public uploadFiles(): void {
 	// Upload files returns an obervable
 	this.uploader.uploadFiles(this.queuedFiles).subscribe(
 		(response) => {
-			// Response has a progress property to use with a progress bar
-			if (response.progress) {
-				console.log('response.progress = ', response.progress);
-			}
-			// Response had a data property with an array of uploaded files: UploadedFile[]
-			if (response.data) {
-				console.log('response.data = ', response.data);
-			}
-			this.uploadedFiles = response.data;
+				// Response has a progress property to use with a progress bar
+				if (response.progress) {
+					console.log('response.progress = ', response.progress);
+				}
+				// Response had a data property with an array of uploaded files: UploadedFile[]
+				if (response.data) {
+					console.log('response.data = ', response.data);
+				}
+				this.uploadedFiles = response.data;
 		},
 		(err) => {
 			console.log('HTTP Error', err);
 		});
+	}
+
+	/**
+	 * Using a custom upload service
+	 */
+
+	// public uploadFiles(): void {
+	// 	if (!this.queuedFiles.length) {
+	// 		return;
+	// 	}
+	// 	this.uploadsService.postFile(this.queuedFiles).subscribe(res => {
+	// 		this.result = res;
+	// 	}, (error) => {
+	// 		console.log(error);
+	// 	});
+	// }`;
+public uploadExampleSCSS = `::ng-deep .a-upload-queue__wrapper {
+	.a-button {
+		display: none;
+	}
 }`;
 public uploadExampleHTML3 =
 `<aui-upload-zone
@@ -171,7 +197,6 @@ public uploadExampleHTML3 =
 	}
 
 	public onUploadedFiles(files) {
-		console.log('onUploadedFiles = ', files);
 		this.uploadedFiles = this.uploadedFiles.concat(files);
 }
 
@@ -193,6 +218,10 @@ public uploadExampleHTML3 =
 		}
 	}
 
+	/**
+	 * Using the uploader url option
+	 */
+
 	public uploadFiles(): void {
 	// Upload files returns an obervable
 	this.uploader.uploadFiles(this.queuedFiles).subscribe(
@@ -211,4 +240,19 @@ public uploadExampleHTML3 =
 			console.log('HTTP Error', err);
 		});
 	}
+
+	/**
+	 * Using a custom upload service
+	 */
+
+	// public uploadFiles(): void {
+	// 	if (!this.queuedFiles.length) {
+	// 		return;
+	// 	}
+	// 	this.uploadsService.postFile(this.queuedFiles).subscribe(res => {
+	// 		this.result = res;
+	// 	}, (error) => {
+	// 		console.log(error);
+	// 	});
+	// }
 }
