@@ -47,6 +47,7 @@ export class AppModule {};`;
 	maxFileSize: 10000000,
 	queueLimit: 2,
 	type: 'drop',
+	url: 'api/upload',
 };`;
 	public uploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-message">
@@ -61,6 +62,7 @@ export class AppModule {};`;
 		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
 		autoUpload: true,
 		maxFileSize: 2000000,
+		url: 'api/upload',
 };`;
 	public uploadExampleHTML2 = `<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-button">
@@ -114,39 +116,39 @@ public reloadErrors() {
 * Using the uploader url option
 */
 
-	public uploadFiles(): void {
-	// Upload files returns an obervable
-	this.uploader.uploadFiles(this.queuedFiles).subscribe(
-		(response) => {
-				// Response has a progress property to use with a progress bar
-				if (response.progress) {
-					console.log('response.progress = ', response.progress);
-				}
-				// Response had a data property with an array of uploaded files: UploadedFile[]
-				if (response.data) {
-					console.log('response.data = ', response.data);
-				}
-				this.uploadedFiles = response.data;
-		},
-		(err) => {
-			console.log('HTTP Error', err);
-		});
-	}
+public uploadFiles(): void {
+// Upload files returns an obervable
+this.uploader.uploadFiles(this.queuedFiles).subscribe(
+	(response) => {
+			// Response has a progress property to use with a progress bar
+			if (response.progress) {
+				console.log('response.progress = ', response.progress);
+			}
+			// Response had a data property with an array of uploaded files: UploadedFile[]
+			if (response.data) {
+				console.log('response.data = ', response.data);
+			}
+			this.uploadedFiles = response.data;
+	},
+	(err) => {
+		console.log('HTTP Error', err);
+	});
+}
 
-	/**
-	 * Using a custom upload service
-	 */
+/**
+ * Using a custom upload service
+ */
 
-	// public uploadFiles(): void {
-	// 	if (!this.queuedFiles.length) {
-	// 		return;
-	// 	}
-	// 	this.uploadsService.postFile(this.queuedFiles).subscribe(res => {
-	// 		this.result = res;
-	// 	}, (error) => {
-	// 		console.log(error);
-	// 	});
-	// }`;
+// public uploadFiles(): void {
+// 	if (!this.queuedFiles.length) {
+// 		return;
+// 	}
+// 	this.customService.postFile(this.queuedFiles).subscribe(res => {
+// 		this.result = res;
+// 	}, (error) => {
+// 		console.log(error);
+// 	});
+// }`;
 public uploadExampleSCSS = `::ng-deep .a-upload-queue__wrapper {
 	.a-button {
 		display: none;
@@ -157,8 +159,7 @@ public uploadExampleHTML3 =
 	[uploader]="uploader"
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
-	(invalidFiles)="onInvalidFiles($event)"
-	>
+	(invalidFiles)="onInvalidFiles($event)">
 	<div class="aui-upload-message">
 		Drag your files here or click to upload
 	</div>
@@ -177,7 +178,7 @@ public uploadExampleHTML3 =
 				<button
 					(click)="reloadErrors()"
 					class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-						<i class="fa fa-close"></i>
+					<i class="fa fa-close"></i>
 				</button>
 		</li>
 	</ul>

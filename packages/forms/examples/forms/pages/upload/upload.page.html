@@ -1,5 +1,11 @@
 <h2 class="h4 u-margin-bottom">Upload</h2>
 
+<div class="u-margin-bottom-xx">
+	<div class="m-alert">
+		<p>The following examples only have a visual purpose since they don't have a backend to talk to.</p>
+	</div>
+</div>
+
 <h3 class="h5 u-margin-bottom">Basic upload</h3>
 
 <div class="u-margin-bottom">
@@ -24,10 +30,6 @@
 		</div>
 	</aui-upload>
 </div>
-<div class="u-margin-bottom">
-	<p>The returned value depends on your API. In this case it will always return the `"id": 101`.</p>
-	<pre>{{ this.files | json }}</pre>
-</div>
 
 <h3 class="h5 u-margin-bottom">Upload as a button</h3>
 
@@ -46,12 +48,8 @@
 		</div>
 	</aui-upload>
 </div>
-<div class="u-margin-bottom">
-		<p>The returned value depends on your API. In this case it will always return the `"id": 101`.</p>
-	<pre>{{ this.files | json }}</pre>
-</div>
 
-<h3 class="h5 u-margin-bottom">Custom upload using the Uploader class</h3>
+<h3 class="h5 u-margin-bottom">Custom upload</h3>
 
 <div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="uploadExampleJS3"></aui-code-snippet>
@@ -90,5 +88,3 @@
 		</ul>
 </div>
 <button (click)="uploadFiles()" [disabled]="queuedFiles.length === 0" class="a-button" id="uploadButton">Send</button>
-<p>The returned value depends on your API. In this case it will always return the `"id": 101`.</p>
-<pre>{{ this.uploadedFiles | json }}</pre>

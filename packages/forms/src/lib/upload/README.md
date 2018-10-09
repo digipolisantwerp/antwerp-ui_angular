@@ -138,7 +138,7 @@ public dropzone2: UploadOptions = {
 </div>
 ```
 
-**Custom upload using the Uploader class**
+**Custom upload**
 
 ```typescript
 import { Uploader } from '@acpaas-ui/ngx-components/forms';
@@ -192,8 +192,8 @@ public reloadErrors() {
 }
 
 /**
-* Using the uploader url option
-*/
+ * Using the uploader url option
+ */
 
 public uploadFiles(): void {
 // Upload files returns an obervable
@@ -222,7 +222,7 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 // 	if (!this.queuedFiles.length) {
 // 		return;
 // 	}
-// 	this.uploadsService.postFile(this.queuedFiles).subscribe(res => {
+// 	this.customService.postFile(this.queuedFiles).subscribe(res => {
 // 		this.result = res;
 // 	}, (error) => {
 // 		console.log(error);
@@ -241,11 +241,10 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 
 ```html
 <aui-upload-zone
-	[uploader]="uploader"
+    [uploader]="uploader"
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
-	(invalidFiles)="onInvalidFiles($event)"
-	>
+	(invalidFiles)="onInvalidFiles($event)">
 	<div class="aui-upload-message">
 		Drag your files here or click to upload
 	</div>
@@ -253,19 +252,19 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 		Maximum filesize: 10 MB,
 		File extension: jpg, jpeg, png
 	</div>
-	</aui-upload-zone>
-	<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
-	<div *ngIf="showError" class="u-margin-bottom">
+</aui-upload-zone>
+<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
+<div *ngIf="showError" class="u-margin-bottom">
 	<ul class="m-upload__files">
 		<li class="is-error">
-				<span class="fa fa-warning"></span>
-				<span class="m-upload__filename">{{ fileName }}</span>
-				<span class="m-upload__error">This file extension is not allowed.</span>
-				<button
-					(click)="reloadErrors()"
-					class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-						<i class="fa fa-close"></i>
-				</button>
+            <span class="fa fa-warning"></span>
+            <span class="m-upload__filename">{{ fileName }}</span>
+            <span class="m-upload__error">This file extension is not allowed.</span>
+            <button
+                (click)="reloadErrors()"
+                class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
+                <i class="fa fa-close"></i>
+            </button>
 		</li>
 	</ul>
 </div>
