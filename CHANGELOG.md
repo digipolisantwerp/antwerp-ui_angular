@@ -6,8 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased] - yyyy-mm-dd
 ### Added
-- `datepicker` Added documentation.
+- `analytics` Added documentation.
+- `calendar` Added documentation.
+- `context` Added documentation.
+- `forms/auto-complete` Added documentation.
+- `forms/datepicker` Added documentation.
+- `forms/mask` Added documentation.
+- `forms/range-slider` Added documentation.
+- `forms/timepicker` Added documentation.
+- `forms/upload` Added documentation.
+- `forms/wysiwyg` Added documentation.
+- `layout/cookie-consent` Added documentation.
+- `layout/hero` Added documentation.
+- `layout/pane` Added documentation.
+- `layout/pane` Added documentation.
+- `selectable-list` Added documentation.
 
+### Changed
+- `context` The ContextModule is no longer dependent on the ContextStoreModule.
 
 ## [1.0.3] - 2018-09-25
 ### Added
@@ -45,7 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0
