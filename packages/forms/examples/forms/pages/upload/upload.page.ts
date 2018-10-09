@@ -50,19 +50,19 @@ export class AppModule {};`;
 	url: 'api/upload',
 };`;
 	public uploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
-  <div class="aui-upload-message">
-    Drag your files here or click to upload
+	<div class="aui-upload-message">
+		Drag your files here or click to upload
   </div>
   <div class="aui-upload-description">
     Optional description message
   </div>
 </aui-upload>`;
 	public uploadExampleJS2 = `public dropzone2: UploadOptions = {
-		type: 'button',
-		allowedFileTypes: ['.jpg', 'jpeg', 'png'],
-		autoUpload: true,
-		maxFileSize: 2000000,
-		url: 'api/upload',
+	type: 'button',
+	allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+	autoUpload: true,
+	maxFileSize: 2000000,
+	url: 'api/upload',
 };`;
 	public uploadExampleHTML2 = `<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
   <div class="aui-upload-button">
@@ -75,9 +75,9 @@ public queuedFiles: File[] = [];
 public uploadedFiles: File[] = [];
 // Pass created options into new instance of Uploader
 public uploader = new Uploader({
-    allowedFileTypes: ['jpg', 'jpeg', 'png'],
-    type: 'drop',
-    url: 'api/upload',
+	allowedFileTypes: ['jpg', 'jpeg', 'png'],
+  type: 'drop',
+  url: 'api/upload',
 });
 public showError = false;
 public fileName = '';
@@ -91,17 +91,17 @@ public uploadExampleJS4 = `public onQueuedFiles(files: File[]) {
 }
 
 public onUploadedFiles(files) {
-this.uploadedFiles = this.uploadedFiles.concat(files);
+	this.uploadedFiles = this.uploadedFiles.concat(files);
 }
 
 public onInvalidFiles(errorFiles: InvalidFile[]) {
 	this.invalidFiles = errorFiles;
 	if (errorFiles.length > 0) {
-			this.fileName = this.invalidFiles[0]['file'].name;
-			this.showError = true;
-			this.invalidFiles = [];
+		this.fileName = this.invalidFiles[0]['file'].name;
+		this.showError = true;
+		this.invalidFiles = [];
 	} else {
-			this.showError = false;
+		this.showError = false;
 	}
 }
 
@@ -120,15 +120,15 @@ public uploadFiles(): void {
 // Upload files returns an obervable
 this.uploader.uploadFiles(this.queuedFiles).subscribe(
 	(response) => {
-			// Response has a progress property to use with a progress bar
-			if (response.progress) {
-				console.log('response.progress = ', response.progress);
-			}
-			// Response had a data property with an array of uploaded files: UploadedFile[]
-			if (response.data) {
-				console.log('response.data = ', response.data);
-			}
-			this.uploadedFiles = response.data;
+		// Response has a progress property to use with a progress bar
+		if (response.progress) {
+			console.log('response.progress = ', response.progress);
+		}
+		// Response had a data property with an array of uploaded files: UploadedFile[]
+		if (response.data) {
+			console.log('response.data = ', response.data);
+		}
+		this.uploadedFiles = response.data;
 	},
 	(err) => {
 		console.log('HTTP Error', err);
@@ -140,7 +140,7 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
  */
 
 // public uploadFiles(): void {
-// 	if (!this.queuedFiles.length) {
+//	if (!this.queuedFiles.length) {
 // 		return;
 // 	}
 // 	this.customService.postFile(this.queuedFiles).subscribe(res => {
@@ -167,19 +167,19 @@ public uploadExampleHTML3 =
 		Maximum filesize: 10 MB,
 		File extension: jpg, jpeg, png
 	</div>
-	</aui-upload-zone>
-	<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
-	<div *ngIf="showError" class="u-margin-bottom">
+</aui-upload-zone>
+<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
+<div *ngIf="showError" class="u-margin-bottom">
 	<ul class="m-upload__files">
 		<li class="is-error">
-				<span class="fa fa-warning"></span>
-				<span class="m-upload__filename">{{ fileName }}</span>
-				<span class="m-upload__error">This file extension is not allowed.</span>
-				<button
-					(click)="reloadErrors()"
-					class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-					<i class="fa fa-close"></i>
-				</button>
+			<span class="fa fa-warning"></span>
+			<span class="m-upload__filename">{{ fileName }}</span>
+			<span class="m-upload__error">This file extension is not allowed.</span>
+			<button
+				(click)="reloadErrors()"
+				class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
+				<i class="fa fa-close"></i>
+			</button>
 		</li>
 	</ul>
 </div>`;

@@ -19,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `layout/cookie-consent` Added documentation.
 - `layout/hero` Added documentation.
 - `layout/pane` Added documentation.
-- `layout/pane` Added documentation.
 - `selectable-list` Added documentation.
 
 ### Changed
