@@ -154,8 +154,7 @@ public uploadExampleSCSS = `::ng-deep .a-upload-queue__wrapper {
 		display: none;
 	}
 }`;
-public uploadExampleHTML3 =
-`<aui-upload-zone
+public uploadExampleHTML3 = `<aui-upload-zone
 	[uploader]="uploader"
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
