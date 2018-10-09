@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-The search-filter is a component JIRA-like filter component with remote search capabilities.
+The search-filter is a JIRA-like filter component with remote search capabilities.
 
 ## Usage
 
@@ -67,23 +67,15 @@ public stuff: SearchFilterChoice[] = [{
 <aui-search-filter
     id="test"
     name="test"
-    [choices]="stuff">
+    label="Find stuff"
+    labelDeselect="Clear stuff"
+    labelResults="Found stuff"
+    labelNoResults="Couldn't find stuff!"
+    placeholder="Look for stuff"
+    inputDelay="0"
+    [choices]="stuff"
+    [showAllByDefault]="true">
 </aui-search-filter>
-```
-
-#### Remote
-
-```typescript
-public time2 = "20:30";
-```
-
-```html
-<aui-timepicker
-    hoursPlaceholder="20"
-    minutesPlaceholder="30"
-    size="small"
-    [(ngModel)]="time2">
-</aui-timepicker>
 ```
 
 ## Contributing

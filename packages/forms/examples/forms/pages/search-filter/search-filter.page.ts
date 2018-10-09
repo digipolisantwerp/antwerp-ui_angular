@@ -20,8 +20,6 @@ export class FormsSearchFilterDemoPageComponent {
         value: "four",
 	}];
 
-	public stuff2: SearchFilterChoice[] = [];
-
 	public searchfilterImportExample = `import { SearchFilterModule } from '@acpaas-ui/ngx-components/forms';
 
 @NgModule({
@@ -49,27 +47,14 @@ export class AppModule {};`;
 	public searchfilterExampleHTML1 = `<aui-search-filter
 	id="test"
 	name="test"
-	[choices]="stuff">
-</aui-search-filter>`;
-
-public searchfilterExampleJS2 = `public stuff: SearchFilterChoice[] = [{
-	label: "First item",
-	value: "one",
-}, {
-	label: "Second item",
-	value: "two",
-}, {
-	label: "Third item",
-	value: "three",
-}, {
-	label: "Fourth item",
-	value: "four",
-}];`;
-
-	public searchfilterExampleHTML2 = `<aui-search-filter
-	id="test"
-	name="test"
-	[choices]="stuff">
+	label="Find stuff"
+	labelDeselect="Clear stuff"
+	labelResults="Found stuff"
+	labelNoResults="Couldn't find stuff!"
+	placeholder="Look for stuff"
+	inputDelay="0"
+	[choices]="stuff"
+	[showAllByDefault]="true">
 </aui-search-filter>`;
 
 }
