@@ -4,5 +4,5 @@ import { HostBinding, Directive } from '@angular/core';
 	selector: '[auiTableBarSearch]',
 })
 export class TableBarSearchDirective {
-	@HostBinding('class.aui-table-bar-search') setClass = true;
+	@HostBinding('class.a-table-bar__search') setClass = true;
 }

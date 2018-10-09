@@ -86,7 +86,7 @@ describe('The upload zone component', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UploadZoneComponent);
 		comp  = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css('.aui-upload-drop')); // find hero element
+		de = fixture.debugElement.query(By.css('.m-upload__dropzone')); // find hero element
 	});
 
 	it('Should have options', () => {

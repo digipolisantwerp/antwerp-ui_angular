@@ -10,7 +10,8 @@
 	}
 
 	> div {
-		overflow-x: auto;
+		flex: 0 0 calc(100% / 4 * 3);
+		min-width: 0;
 	}
 
 	@include at($screen-sm) {

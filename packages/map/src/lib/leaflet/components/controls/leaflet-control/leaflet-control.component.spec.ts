@@ -18,7 +18,7 @@ describe('The leaflet control component', () => {
 
 	it('should be enabled', () => {
 		fixture.detectChanges();
-		expect(fixture.debugElement.query(By.css('.aui-leaflet__control')).properties.disabled).toBeUndefined();
+		expect(fixture.debugElement.query(By.css('.o-leaflet__control')).properties.disabled).toBeUndefined();
 	});
 
 	it('should have the correct icon', () => {
@@ -31,7 +31,7 @@ describe('The leaflet control component', () => {
 		it('should disable the button', () => {
 			comp.disabled = true;
 			fixture.detectChanges();
-			expect(fixture.debugElement.query(By.css('.aui-leaflet__control')).properties.disabled).toEqual(true);
+			expect(fixture.debugElement.query(By.css('.o-leaflet__control')).properties.disabled).toEqual(true);
 		});
 	});
 });

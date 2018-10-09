@@ -3,9 +3,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
 	selector: 'aui-pane',
 	templateUrl: './pane.component.html',
-	styleUrls: [
-		'./pane.component.scss',
-	],
 })
 export class PaneComponent {
 	@Input() opened = false;

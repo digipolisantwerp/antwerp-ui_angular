@@ -6,7 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased] - yyyy-mm-dd
 ### Added
-- `datepicker` Added documentation.
+- `analytics` Added documentation.
+- `calendar` Added documentation.
+- `context` Added documentation.
+- `forms/auto-complete` Added documentation.
+- `forms/datepicker` Added documentation.
+- `forms/mask` Added documentation.
+- `forms/range-slider` Added documentation.
+- `forms/timepicker` Added documentation.
+- `forms/wysiwyg` Added documentation.
+- `layout/cookie-consent` Added documentation.
+- `layout/hero` Added documentation.
+- `layout/pane` Added documentation.
+- `layout/pane` Added documentation.
+- `selectable-list` Added documentation.
 
 
 ## [1.0.3] - 2018-09-25
@@ -20,8 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `logo` Added documentation.
 - `localstorage` Added documentation.
 - `map` Added documentation.
-- `progress bar` Added documentation.
 - `pagination` Added documentation.
+- `progress-bar` Added documentation.
 
 ### Changed
 - `core` Improved build proces for submodules.
