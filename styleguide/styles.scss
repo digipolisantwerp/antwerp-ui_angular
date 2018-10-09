@@ -68,7 +68,10 @@ main {
 	}
 }
 
-.aui-header__content-wrapper {
+.o-header__content-wrapper {
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: space-between;
 	margin: 0 auto;
 	max-width: $screen-lg;
 	width: 100%;
@@ -167,4 +170,9 @@ pre {
 
 .m-nav-tabs__layout {
 	box-shadow: 0 -1px 0 $border-color inset;
+}
+
+.aui-code-snippet {
+	display: block;
+	overflow-x: auto;
 }

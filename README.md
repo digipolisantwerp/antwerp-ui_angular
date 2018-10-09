@@ -32,7 +32,7 @@ npm install @acpaas-ui/ngx-components
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-@import url("https://cdn.antwerpen.be/core_branding_scss/3.0.0/main.min.css");
+@import url("https://cdn.antwerpen.be/core_branding_scss/3.0.1/main.min.css");
 ```
 
 Then start using the components in your pages. Look at the component documentation below to learn how to use each component.
