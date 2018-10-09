@@ -1,5 +1,5 @@
 {
-  "name": "context",
+  "name": "@acpaas-ui/ngx-components/context",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular-redux/store": "~7.1.1",

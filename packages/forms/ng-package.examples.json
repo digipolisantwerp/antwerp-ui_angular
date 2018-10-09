@@ -1,10 +1,7 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../examples/forms",
-  "deleteDestPath": false,
-  "lib": {
-    "entryFile": "examples/index.ts"
-  },
+  "deleteDestPath": true,
   "whitelistedNonPeerDependencies": [
     "@a-ui/core",
     "@acpaas-ui/js-date-utils",
