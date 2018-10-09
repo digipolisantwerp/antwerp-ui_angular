@@ -19,15 +19,15 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() id: string;` | - | Field id. |
 | `@Input() name: string;` | - | Field name. |
 | `@Input() flyoutSize: enum;` | `FlyoutSize.Small` | Passed along to `auiFlyout`. |
-| `@Input() flyoutAlign: string;` | `left` | Passed along to `auiFlyout`. |
-| `@Input() label: string;` | `Filter` | Field label. |
-| `@Input() labelDeselect: string;` | `Alles deselecteren` | Clear button text. |
-| `@Input() labelResults: string;` | `Resultaten` | Result list header text. |
-| `@Input() labelNoResults: string;` | `Geen resultaten gevonden.` | Text shown when no results are found. |
+| `@Input() flyoutAlign: string;` | `'left'` | Passed along to `auiFlyout`. |
+| `@Input() label: string;` | `'Filter'` | Field label. |
+| `@Input() labelDeselect: string;` | `'Alles deselecteren'` | Clear button text. |
+| `@Input() labelResults: string;` | `'Resultaten'` | Result list header text. |
+| `@Input() labelNoResults: string;` | `'Geen resultaten gevonden.'` | Text shown when no results are found. |
 | `@Input() choices: SearchFilterChoice[];` | - | Available choices. |
-| `@Input() remote: string;` | `false` | Enable remote searching. |
-| `@Input() placeholder: string;` | `Zoeken` | Search field placeholder text. |
-| `@Input() inputDelay: string;` | `150` | Delay the search callback on the input field. |
+| `@Input() remote: boolean;` | `false` | Enable remote searching. |
+| `@Input() placeholder: string;` | `'Zoeken'` | Search field placeholder text. |
+| `@Input() inputDelay: string;` | `'150'` | Delay the search callback on the input field. |
 | `@Input() showAllByDefault: boolean;` | `false` | Show all items on init, will trigger a search when `remote` is `true`. |
 | `@Output() search: Event<string>;` | - | Callback triggered when `remote` is true. |
 
