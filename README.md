@@ -32,20 +32,18 @@ npm install @acpaas-ui/ngx-components
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-@import url("https://cdn.antwerpen.be/core_branding_scss/3.0.1/main.min.css");
+@import url('https://cdn.antwerpen.be/core_branding_scss/3.0.1/main.min.css');
 ```
 
 Then start using the components in your pages. Look at the component documentation below to learn how to use each component.
 
 You can also add a branding-compatible [flexbox grid layout system][flexboxgrid]:
 
-```sh
-npm install @a-ui/flexboxgrid
+```scss
+@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css';
 ```
 
-```scss
-@import '@a-ui/flexboxgrid/dist/flexboxgrid.min.css';
-```
+Note that you are free to use your own grid, as long as it meets our branding guidelines.
 
 > To learn more about using the branding look & feel, check the [core branding guide][branding-core-guide]. Note that the [core branding][branding-core] contains the Antwerp logo and fonts, which are subject to a usage restriction. For use outside of apps for the city of Antwerp you can use [acpaas branding][branding-acpaas] instead.
 
