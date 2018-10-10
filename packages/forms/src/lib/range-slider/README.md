@@ -5,7 +5,7 @@ Use the range slider as stand alone component or in a form.
 ## Usage
 
 ```typescript
-import { RangeSliderModule } from '@acpaas-ui/ngx-components/range-slider'`;
+import { RangeSliderModule } from '@acpaas-ui/ngx-components/forms'`;
 ```
 
 ## Documentation

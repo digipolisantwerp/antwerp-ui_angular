@@ -30,7 +30,9 @@ export class FormsSearchFilterDemoPageComponent {
 
 export class AppModule {};`;
 
-	public searchfilterExampleJS1 = `public stuff: SearchFilterChoice[] = [{
+	public searchfilterExampleJS1 = `import { SearchFilterChoice } from '@acpaas-ui/ngx-components/forms';
+
+	public stuff: SearchFilterChoice[] = [{
 		label: "First item",
 		value: "one",
 	}, {

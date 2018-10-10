@@ -5,7 +5,7 @@ A component to add a wysiwyg to a page or a form, build upon [ckeditor](https://
 ## Usage
 
 ```typescript
-import { WysiwygModule } from '@acpaas-ui/ngx-components/wysiwyg'`;
+import { WysiwygModule } from '@acpaas-ui/ngx-components/forms'`;
 ```
 
 ## Documentation

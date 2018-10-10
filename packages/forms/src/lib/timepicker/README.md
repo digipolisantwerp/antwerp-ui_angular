@@ -5,7 +5,7 @@ The timepicker package provides an easy way to pick a time by providing two fiel
 ## Usage
 
 ```typescript
-import { TimepickerModule } from '@acpaas-ui/ngx-components/timepicker'`;
+import { TimepickerModule } from '@acpaas-ui/ngx-components/forms'`;
 ```
 
 ## Documentation
