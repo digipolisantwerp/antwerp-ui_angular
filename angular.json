@@ -80,7 +80,7 @@
             "tsConfig": "styleguide/tsconfig.spec.json",
             "karmaConfig": "styleguide/karma.conf.js",
             "styles": [
-              "styleguide/styles.css"
+              "styleguide/styles.scss"
             ],
             "scripts": [],
             "assets": [
