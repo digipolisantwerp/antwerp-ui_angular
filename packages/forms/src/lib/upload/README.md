@@ -34,7 +34,7 @@ This component wraps the `upload-zone`, `upload-queue` and `validation-list`, it
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | An instance of the UploadOptions interface that is part of the Uploader class. Its different options and there default values are explained in detail below. |
+| `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | An instance of the UploadOptions interface that is part of the Uploader class. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
 | `@Output() selectUploadedFiles: EventEmitter<Object[]>` | - | On a successful upload, this will emit the response of the backend. This should be an array of objects with the uploaded filename and url. |
 
 #### `<aui-upload-zone>`
@@ -42,7 +42,7 @@ This component provides the upload functionality.
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values are explained in detail below. |
+| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
 | `@Input() multiple: boolean;` | `true` | Enable the HTML `multiple` attribute so the user can select multiple files to upload. |
 | `@Output() uploadedFiles: EventEmitter<Object[]>;` | - | Emits an array of files that were uploaded. |
 | `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of file objects that have past the validation and are ready to be uploaded. |
@@ -54,7 +54,7 @@ This component provides a list of queued files.
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
 | `@Input() files: File[];` | - | An array of files. |
-| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values are explained in detail above. |
+| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
 | `@Output() uploadedFiles: EventEmitter<Object[]>` | - | Emits an array of files that were uploaded. |
 
 #### `<aui-validation-list>`
