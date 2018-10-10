@@ -40,7 +40,7 @@ Then start using the components in your pages. Look at the component documentati
 You can also add a branding-compatible [flexbox grid layout system][flexboxgrid]:
 
 ```scss
-@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css';
+@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css');
 ```
 
 Note that you are free to use your own grid, as long as it meets our branding guidelines.
