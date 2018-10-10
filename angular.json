@@ -80,7 +80,9 @@
             "tsConfig": "styleguide/tsconfig.spec.json",
             "karmaConfig": "styleguide/karma.conf.js",
             "styles": [
-              "styleguide/styles.scss"
+              "styleguide/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
             "scripts": [],
             "assets": [
