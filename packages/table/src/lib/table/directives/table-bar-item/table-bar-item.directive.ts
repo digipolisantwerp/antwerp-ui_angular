@@ -4,5 +4,5 @@ import { HostBinding, Directive } from '@angular/core';
 	selector: '[auiTableBarItem]',
 })
 export class TableBarItemDirective {
-	@HostBinding('class.aui-table-bar-item') setClass = true;
+	@HostBinding('class.a-table-bar__item') setClass = true;
 }

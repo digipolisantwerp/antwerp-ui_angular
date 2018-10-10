@@ -48,7 +48,7 @@ describe('The Statusbar Component', () => {
 
 	it('should be empty when there is no active notification', () => {
 		fixture.detectChanges();
-		de = fixture.debugElement.query(By.css('.aui-statusbar'));
+		de = fixture.debugElement.query(By.css('.o-statusbar'));
 		expect(de).toBeNull();
 	});
 

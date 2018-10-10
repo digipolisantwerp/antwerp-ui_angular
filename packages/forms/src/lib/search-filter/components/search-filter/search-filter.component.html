@@ -20,13 +20,13 @@
 			</button>
 		</div>
 
-		<h6 class="m-search-filter__results__title">{{ labelResults }}</h6>
+		<h6 class="m-search-filter__results-title">{{ labelResults }}</h6>
 		<div class="u-text-center u-padding a-spinner" *ngIf="loading"></div>
 		<ul class="a-list a-list--lined a-list--unstyled" *ngIf="!loading">
-			<li class="m-search-filter__results__item a-list__item" *ngIf="!filteredChoices.length">
+			<li class="m-search-filter__results-item a-list__item" *ngIf="!filteredChoices.length">
 				<p class="u-padding-xs">{{ labelNoResults }}</p>
 			</li>
-			<li class="m-search-filter__results__item a-list__item" *ngFor="let choice of filteredChoices; index as i">
+			<li class="m-search-filter__results-item a-list__item" *ngFor="let choice of filteredChoices; index as i">
 				 <div class="a-input__checkbox">
 					<input
 						type="checkbox"

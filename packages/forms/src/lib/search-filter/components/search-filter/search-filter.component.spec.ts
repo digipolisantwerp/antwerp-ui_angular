@@ -48,7 +48,7 @@ describe('The SearchFilter Component', () => {
 		expect(el.querySelector('#test-id-search')).toBeDefined();
 		expect(el.querySelector('input[name="test-id-search"]')).toBeDefined();
 		expect(el.querySelector('.m-search-filter__label').textContent).toContain('test-label');
-		expect(el.querySelector('.m-search-filter__results__title').textContent).toContain('test-labelResults');
+		expect(el.querySelector('.m-search-filter__results-title').textContent).toContain('test-labelResults');
 		expect(el.querySelector('.m-search-filter__input input').getAttribute('placeholder')).toBe('test-placeholder');
 	});
 
@@ -66,8 +66,8 @@ describe('The SearchFilter Component', () => {
 
 		fixture.detectChanges();
 
-		expect(el.querySelectorAll('.m-search-filter__results__item').length).toBe(1);
-		expect(el.querySelector('.m-search-filter__results__item').textContent).toContain('test-noResults');
+		expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(1);
+		expect(el.querySelector('.m-search-filter__results-item').textContent).toContain('test-noResults');
 	});
 
 	it('should show the clear button when there are selected items', () => {
@@ -92,9 +92,9 @@ describe('The SearchFilter Component', () => {
 
 		fixture.detectChanges();
 
-		expect(el.querySelectorAll('.m-search-filter__results__item').length).toBe(2);
+		expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(2);
 
-		const items = Array.from(el.querySelectorAll('.m-search-filter__results__item'));
+		const items = Array.from(el.querySelectorAll('.m-search-filter__results-item'));
 
 		expect(items[0].querySelector('label').textContent).toBe('one');
 		expect(items[0].querySelector('input').checked).toBeFalsy();

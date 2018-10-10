@@ -6,9 +6,6 @@ import { Uploader } from '../../classes/uploader.class';
 @Component({
 	selector: 'aui-upload-zone',
 	templateUrl: './upload-zone.component.html',
-	styleUrls: [
-		'./upload-zone.component.scss',
-	],
 })
 export class UploadZoneComponent {
 	@ViewChild('fileInput') fileInput: ElementRef;
