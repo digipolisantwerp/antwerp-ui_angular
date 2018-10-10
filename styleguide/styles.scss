@@ -1,5 +1,5 @@
-@import '~@a-ui/flexboxgrid/dist/flexboxgrid.min.css';
-@import '~@a-ui/core/dist/assets/styles/_quarks';
+@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css');
+@import '~@a-ui/core/dist/assets/styles/quarks';
 
 /* Need to be included in core branding */
 $screen-xs-max: 44.9375rem;
@@ -68,7 +68,10 @@ main {
 	}
 }
 
-.aui-header__content-wrapper {
+.o-header__content-wrapper {
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: space-between;
 	margin: 0 auto;
 	max-width: $screen-lg;
 	width: 100%;
@@ -91,12 +94,18 @@ main {
 	font-weight: normal;
 }
 
-.m-pane {
-	width: 20rem;
+.m-pane--left {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	left: 0;
+	position: fixed !important;
+	top: 0;
+}
 
-	&--left {
-		position: fixed;
-	}
+.m-overlay__pane {
+	position: fixed !important;
 }
 
 .m-button-group--inline {
@@ -159,30 +168,11 @@ pre {
 	}
 }
 
-.cc-banner {
-	align-items: baseline;
-	background: $white;
-	border-top: 1px solid $border-color;
-	box-shadow: 0 $spacer / -2 0 rgba($black, .1);
-	bottom: 0;
-	display: flex;
-	flex: 1 1 auto;
-	justify-content: space-between;
-	left: 0;
-	position: fixed;
-	right: 0;
-	transition: opacity $animation-duration $animation-easing;
-	z-index: 10;
-
-	&.cc-invisible {
-		opacity: 0;
-	}
-
-	> p {
-		padding: $spacer / 2;
-	}
-}
-
 .m-nav-tabs__layout {
 	box-shadow: 0 -1px 0 $border-color inset;
+}
+
+.aui-code-snippet {
+	display: block;
+	overflow-x: auto;
 }

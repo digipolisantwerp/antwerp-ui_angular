@@ -92,19 +92,19 @@ describe('The leaflet component', () => {
 		fixture.detectChanges(false);
 		expect(
 			fixture.debugElement.query(By.directive(LeafletFullscreenControlComponent)).parent.nativeElement.parentNode.classList
-		).toContain('aui-leaflet__controls--top-left');
+		).toContain('o-leaflet__controls--top-left');
 		expect(
 			fixture.debugElement.query(By.directive(LeafletDragControlComponent)).parent.nativeElement.parentNode.classList
-		).toContain('aui-leaflet__controls--top-right');
+		).toContain('o-leaflet__controls--top-right');
 		expect(
 			fixture.debugElement.query(By.directive(LeafletDrawControlComponent)).parent.nativeElement.parentNode.classList
-		).toContain('aui-leaflet__controls--top-right');
+		).toContain('o-leaflet__controls--top-right');
 		expect(
 			fixture.debugElement.query(By.directive(LeafletZoomControlComponent)).parent.nativeElement.parentNode.classList
-		).toContain('aui-leaflet__controls--bottom-left');
+		).toContain('o-leaflet__controls--bottom-left');
 		expect(
 			fixture.debugElement.query(By.directive(LeafletLocateControlComponent)).parent.nativeElement.parentNode.classList
-		).toContain('aui-leaflet__controls--bottom-right');
+		).toContain('o-leaflet__controls--bottom-right');
 	});
 
 	it('should pass the map to each control', () => {

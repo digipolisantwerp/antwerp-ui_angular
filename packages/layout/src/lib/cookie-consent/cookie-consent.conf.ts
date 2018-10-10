@@ -16,8 +16,10 @@ export const DEFAULT_CONSENT_CONFIG: CookieConsentConfig = {
 		expiryDays: 365,
 	},
 	elements: {
-		messagelink: '<p id="cookieconsent:desc">{{message}} <a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a></p>', // tslint:disable-line:max-line-length
-		dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button cc-btn cc-dismiss">{{dismiss}}</button>',
+		/* tslint:disable:max-line-length */
+		messagelink: '<p id="cookieconsent:desc">{{message}} <a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a></p>',
+		dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">{{dismiss}}</button>',
+		/* tslint:enable:max-line-length */
 	},
 };
 

@@ -76,7 +76,7 @@ describe('The Autocomplete Component', () => {
 		fixture.detectChanges();
 
 		// query for the title <h1> by CSS element selector
-		de = fixture.debugElement.query(By.css('.aui-auto-complete'));
+		de = fixture.debugElement.query(By.css('.o-auto-complete'));
 		el = de.nativeElement;
 	});
 

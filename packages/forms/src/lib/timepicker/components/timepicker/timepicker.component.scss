@@ -1,11 +1,3 @@
 :host {
     display: block;
-
-    .a-input {
-        display: inline-block;
-    }
-
-    &::before {
-        z-index: 10;
-    }
 }
