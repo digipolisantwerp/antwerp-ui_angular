@@ -125,31 +125,31 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@angular/common@6.1.9
+@angular/common@6.1.10
 MIT
 MIT
 
-@angular/compiler@6.1.9
+@angular/compiler@6.1.10
 MIT
 MIT
 
-@angular/core@6.1.9
+@angular/core@6.1.10
 MIT
 MIT
 
-@angular/forms@6.1.9
+@angular/forms@6.1.10
 MIT
 MIT
 
-@angular/platform-browser-dynamic@6.1.9
+@angular/platform-browser-dynamic@6.1.10
 MIT
 MIT
 
-@angular/platform-browser@6.1.9
+@angular/platform-browser@6.1.10
 MIT
 MIT
 
-@angular/router@6.1.9
+@angular/router@6.1.10
 MIT
 MIT
 
