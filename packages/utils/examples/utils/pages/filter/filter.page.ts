@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Filter, FilterService } from '@acpaas-ui/ngx-components/utils';
-import { forEach } from 'lodash-es';
 
 @Component({
 	templateUrl: './filter.page.html',
@@ -32,7 +31,8 @@ export class UtilsFilterDemoPageComponent implements OnInit {
 	public codeExampleJS1 = `import { Filter, FilterService } from '@acpaas-ui/ngx-components/utils';
 
 	public searchFilter = new Filter();
-	public results = [];
+	public checkFilter = new Filter();
+	public selectFilter = new Filter();
 	public heroList = [
 		{ id: 'id1', name: 'Batman' },
 		{ id: 'id2', name: 'Wonder Woman' },
@@ -40,55 +40,84 @@ export class UtilsFilterDemoPageComponent implements OnInit {
 		{ id: 'id4', name: 'Iron Man' },
 		{ id: 'id5', name: 'Deadpool' },
 	];`;
-		public codeExampleJS2 = `constructor(public filterService: FilterService) {}
-		ngOnInit() {
-			this.searchFilter.id = 'searchFilter';
-			this.searchFilter.name = 'Search here...';
-			this.searchFilter.value = '';
-			this.searchFilter.parse = (data, value) => {
-					if (!value) {
-							return data;
-					}
+	public codeExampleJS2 = `constructor(public filterService: FilterService) {}`;
 
-					return data.filter((o) => {
-						return (o.name.toLowerCase()).indexOf(value.toLowerCase()) !== -1;
-					});
-			};
+
+	public codeExampleJS3 = `this.checkFilter.id = 'checkFilter';
+this.checkFilter.name = 'Checkbox filter';
+this.checkFilter.options = this.heroList;
+this.checkFilter.value = [];
+this.checkFilter.parse = (data, value) => {
+	if (!value || value.length === 0) {
+			return;
+	}
+	const result = [];
+	data.filter((o) => {
+		value.forEach( i => {
+			if ((o.id.toLowerCase()).indexOf(i.id.toLowerCase()) !== -1) {
+				result.push(i);
+			}
+		});
+	});
+	return result;
+};
+
+public changeCheckFilter(value) {
+	// Update filter value
+	this.checkFilter.value = value;
+	// filter data
+	this.checkResults = this.filterService.filterData(this.heroList, [this.checkFilter]);
+}`;
+
+public codeExampleJS4 = `this.searchFilter.id = 'searchFilter';
+this.searchFilter.name = 'Search here...';
+this.searchFilter.value = '';
+this.searchFilter.parse = (data, value) => {
+	if (!value || value.length === 0) {
+				return ;
+		}
+		return data.filter((o) => {
+			return (o.name.toLowerCase()).indexOf(value.toLowerCase()) !== -1;
+		});
+};
+
+public changeSearchFilter(value) {
+	this.searchFilter.value = value;
+	this.searchResults = this.filterService.filterData(this.heroList, [this.searchFilter]);
+}`;
+
+public codeExampleJS5 = `this.selectFilter.id = 'selectFilter';
+this.selectFilter.name = 'Select your hero';
+this.selectFilter.options = this.heroList;
+this.selectFilter.value = [];
+this.selectFilter.parse = (data, value) => {
+	if (!value || value.length === 0) {
+			return;
 	}
 
-	public changeSearchFilter(value) {
-		// Update filter value
-		this.searchFilter.value = value;
+	return data.filter((o) => {
+		return (o.id.toLowerCase()).indexOf(value.id.toLowerCase()) !== -1;
+	});
+};
 
-		// filter data
-		this.results = this.filterService.filterData(this.heroList, [this.searchFilter]);
+public changeSelectFilter(value) {
+	this.selectFilter.value = value;
+	this.selectResults = this.filterService.filterData(this.heroList, [this.selectFilter]);
 }`;
-	public codeExampleHTML = `<aui-input-filter [filter]="searchFilter" (update)="changeSearchFilter($event)"></aui-input-filter>`;
+
+	public codeExampleHTML1 = `<aui-checkbox-filter [filter]="checkFilter" (update)="changeCheckFilter($event)"></aui-checkbox-filter>`;
+
+	public codeExampleHTML2 = `<aui-input-filter [filter]="searchFilter" (update)="changeSearchFilter($event)"></aui-input-filter>`;
+
+	public codeExampleHTML3 = `<aui-select-filter [filter]="selectFilter" (update)="changeSelectFilter($event)"></aui-select-filter>`;
 
 	constructor(public filterService: FilterService) {}
 	ngOnInit() {
-		this.searchFilter.id = 'searchFilter';
-		this.searchFilter.name = 'Search here...';
-		this.searchFilter.value = '';
-		this.searchFilter.parse = (data, value) => {
-			if (!value || value.length === 0) {
-						return ;
-				}
-
-				return data.filter((o) => {
-					return (o.name.toLowerCase()).indexOf(value.toLowerCase()) !== -1;
-				});
-		};
-
+		// Checkbox filter
 		this.checkFilter.id = 'checkFilter';
-		this.checkFilter.name = 'Check here...';
-		this.checkFilter.options = [
-			{ id: 'id1', name: 'Batman', checked: false },
-			{ id: 'id2', name: 'Wonder Woman', checked: false },
-			{ id: 'id3', name: 'Wolverine', checked: false },
-			{ id: 'id4', name: 'Iron Man', checked: false },
-			{ id: 'id5', name: 'Deadpool', checked: false },
-		];
+		this.checkFilter.name = 'Checkbox filter';
+		this.checkFilter.options = this.heroList;
+		this.checkFilter.value = [];
 		this.checkFilter.parse = (data, value) => {
 			if (!value || value.length === 0) {
 					return;
@@ -104,15 +133,24 @@ export class UtilsFilterDemoPageComponent implements OnInit {
 			return result;
 		};
 
+		// Input filter
+		this.searchFilter.id = 'searchFilter';
+		this.searchFilter.name = 'Search here...';
+		this.searchFilter.value = '';
+		this.searchFilter.parse = (data, value) => {
+			if (!value || value.length === 0) {
+						return ;
+				}
+				return data.filter((o) => {
+					return (o.name.toLowerCase()).indexOf(value.toLowerCase()) !== -1;
+				});
+		};
+
+		// Select filter
 		this.selectFilter.id = 'selectFilter';
 		this.selectFilter.name = 'Select your hero';
-		this.selectFilter.options = [
-			{ id: 'id1', name: 'Batman' },
-			{ id: 'id2', name: 'Wonder Woman' },
-			{ id: 'id3', name: 'Wolverine' },
-			{ id: 'id4', name: 'Iron Man' },
-			{ id: 'id5', name: 'Deadpool' },
-		];
+		this.selectFilter.options = this.heroList;
+		this.selectFilter.value = [];
 		this.selectFilter.parse = (data, value) => {
 			if (!value || value.length === 0) {
 					return;
@@ -125,26 +163,17 @@ export class UtilsFilterDemoPageComponent implements OnInit {
 	}
 
 	public changeSearchFilter(value) {
-		// Update filter value
 		this.searchFilter.value = value;
-
-		// filter data
 		this.searchResults = this.filterService.filterData(this.heroList, [this.searchFilter]);
 	}
 
 	public changeCheckFilter(value) {
-		// Update filter value
 		this.checkFilter.value = value;
-
-		// filter data
 		this.checkResults = this.filterService.filterData(this.heroList, [this.checkFilter]);
 	}
 
 	public changeSelectFilter(value) {
-		// Update filter value
 		this.selectFilter.value = value;
-
-		// filter data
 		this.selectResults = this.filterService.filterData(this.heroList, [this.selectFilter]);
 	}
 }
