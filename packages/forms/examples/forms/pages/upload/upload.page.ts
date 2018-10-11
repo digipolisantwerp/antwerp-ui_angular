@@ -226,10 +226,6 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 		}
 	}
 
-	/**
-	 * Using the uploader url option
-	 */
-
 	public uploadFiles(): void {
 	// Upload files returns an obervable
 	this.uploader.uploadFiles(this.queuedFiles).subscribe(
@@ -248,19 +244,4 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 			console.log('HTTP Error', err);
 		});
 	}
-
-	/**
-	 * Using a custom upload service
-	 */
-
-	// public uploadFiles(): void {
-	// 	if (!this.queuedFiles.length) {
-	// 		return;
-	// 	}
-	// 	this.uploadsService.postFile(this.queuedFiles).subscribe(res => {
-	// 		this.result = res;
-	// 	}, (error) => {
-	// 		console.log(error);
-	// 	});
-	// }
 }
