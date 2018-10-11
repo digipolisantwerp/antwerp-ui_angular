@@ -64,7 +64,7 @@ describe('The upload queue component', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UploadQueueComponent);
 		comp  = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css('.aui-upload-queue')); // find hero element
+		de = fixture.debugElement.query(By.css('.m-upload__files')); // find hero element
 
 		comp.uploader = new MockUploader();
 		comp.files = mockFileList;

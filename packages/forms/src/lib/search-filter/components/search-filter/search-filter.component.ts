@@ -21,9 +21,6 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
 @Component({
 	selector: 'aui-search-filter',
 	templateUrl: './search-filter.component.html',
-	styleUrls: [
-		'./search-filter.component.scss',
-	],
 	providers: [{
 		provide: NG_VALUE_ACCESSOR,
 		useExisting: forwardRef(() => SearchFilterComponent), // tslint:disable-line:no-forward-ref

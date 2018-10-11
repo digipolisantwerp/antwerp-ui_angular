@@ -1,13 +1,4 @@
 :host {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.m-items-per-page {
-    .a-input {
-        .a-input__wrapper {
-            display: inline-block;
-            margin-right: .5rem;
-        }
-    }
+	align-items: center;
+    display: flex;
 }

@@ -47,7 +47,7 @@ describe('The Column Selector Component', () => {
 		comp = fixture.componentInstance; // BannerComponent test instance
 
 		// query for the title <h1> by CSS element selector
-		de = fixture.debugElement.query(By.css('.aui-column-selector'));
+		de = fixture.debugElement.query(By.css('.a-table-column-selector'));
 		el = de.nativeElement;
 	});
 
