@@ -142,7 +142,7 @@ public rows = [
         'id': 7,
         'firstName': 'Sharron',
         'lastName': 'Castro',
-        'registeredAt': 'Mon Sep 27 1976 07:55:10 GMT+0000 (UTC)'
+        'registeredAt': 'Mon Sep 27 1976 07:55:10 GMT+0000 (UTC)',
     },
     {
         'id': 8,
@@ -155,7 +155,7 @@ public rows = [
         'firstName': 'Griffin',
         'lastName': 'Navarro',
         'registeredAt': 'Tue Oct 24 2017 23:45:35 GMT+0000 (UTC)',
-    }
+    },
 ];
 
 
