@@ -34,7 +34,7 @@ export class TableDemoPageComponent {
 			component: TableActionComponent,
 		},
 	];
-	/* tslint:disable */
+
 	public rows = [
 		{
 			"id": 0,
@@ -227,7 +227,6 @@ constructor(
 	[rows]="rows">
 </aui-table>
 	`;
-	/* tslint:enable */
 
 	public loading: boolean = false;
 
