@@ -10,7 +10,7 @@ const defaultWeekdays = [
 	'Tuesday',
 	'Wednesday',
 	'Thursday',
-	'Firday',
+	'Friday',
 	'Saturday',
 ];
 const customWeekdays = [
