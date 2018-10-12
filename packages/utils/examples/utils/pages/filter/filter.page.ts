@@ -65,7 +65,7 @@ this.checkFilter.parse = (data, value) => {
 public changeCheckFilter(value) {
 	// Update filter value
 	this.checkFilter.value = value;
-	// filter data
+	// Filter data
 	this.checkResults = this.filterService.filterData(this.heroList, [this.checkFilter]);
 }`;
 
@@ -74,7 +74,7 @@ this.searchFilter.name = 'Search here...';
 this.searchFilter.value = '';
 this.searchFilter.parse = (data, value) => {
 	if (!value || value.length === 0) {
-				return ;
+		return ;
 		}
 		return data.filter((o) => {
 			return (o.name.toLowerCase()).indexOf(value.toLowerCase()) !== -1;
@@ -92,7 +92,7 @@ this.selectFilter.options = this.heroList;
 this.selectFilter.value = [];
 this.selectFilter.parse = (data, value) => {
 	if (!value || value.length === 0) {
-			return;
+		return;
 	}
 
 	return data.filter((o) => {
@@ -112,6 +112,7 @@ public changeSelectFilter(value) {
 	public codeExampleHTML3 = `<aui-select-filter [filter]="selectFilter" (update)="changeSelectFilter($event)"></aui-select-filter>`;
 
 	constructor(public filterService: FilterService) {}
+
 	ngOnInit() {
 		// Checkbox filter
 		this.checkFilter.id = 'checkFilter';
@@ -120,7 +121,7 @@ public changeSelectFilter(value) {
 		this.checkFilter.value = [];
 		this.checkFilter.parse = (data, value) => {
 			if (!value || value.length === 0) {
-					return;
+				return;
 			}
 			const result = [];
 			data.filter((o) => {
@@ -139,7 +140,7 @@ public changeSelectFilter(value) {
 		this.searchFilter.value = '';
 		this.searchFilter.parse = (data, value) => {
 			if (!value || value.length === 0) {
-						return ;
+				return ;
 				}
 				return data.filter((o) => {
 					return (o.name.toLowerCase()).indexOf(value.toLowerCase()) !== -1;

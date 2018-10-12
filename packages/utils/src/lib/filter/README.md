@@ -52,7 +52,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `parse: (data: any[], value: any) => any[];` | - | The custom parsing that is used to filter the data. |
 | `parseData(data: any): any[];` | - | Basic parsing that is used to filter the data. This is used in the filter service. |
 
-### Example
+### Examples
 
 ```typescript
 import { FilterModule } from '@acpaas-ui/ngx-components/utils';
@@ -85,7 +85,7 @@ import { Filter, FilterService } from '@acpaas-ui/ngx-components/utils';
 constructor(public filterService: FilterService) {}
 ```
 
-**Checkbox filter example**
+#### Checkbox filter example
 
 ```typescript
 this.checkFilter.id = 'checkFilter';
@@ -110,7 +110,7 @@ this.checkFilter.parse = (data, value) => {
 public changeCheckFilter(value) {
     // Update filter value
     this.checkFilter.value = value;
-    // filter data
+    // Filter data
     this.checkResults = this.filterService.filterData(this.heroList, [this.checkFilter]);
 }
 ```
@@ -119,7 +119,7 @@ public changeCheckFilter(value) {
 <aui-checkbox-filter [filter]="checkFilter" (update)="changeCheckFilter($event)"></aui-checkbox-filter>
 ```
 
-**Input filter example**
+#### Input filter example
 
 ```typescript
 this.searchFilter.id = 'searchFilter';
@@ -144,7 +144,7 @@ public changeSearchFilter(value) {
 <aui-input-filter [filter]="searchFilter" (update)="changeSearchFilter($event)"></aui-input-filter>
 ```
 
-**Select filter example**
+#### Select filter example
 
 ```typescript
 this.selectFilter.id = 'selectFilter';

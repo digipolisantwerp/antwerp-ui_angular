@@ -1,6 +1,7 @@
 # @acpaas-ui/ngx-components/utils
 
-Description goes here.
+The WindowModule contains a window provider service to inject the browser’s native window object into a component.
+It's actually based on Brian Love's [Angular Window Provider](https://brianflove.com/2018/01/11/angular-window-provider), so you can find more information in the article he wrote about it.
 
 ## Usage
 
@@ -12,32 +13,25 @@ import { WindowModule } from '@acpaas-ui/ngx-components/utils'`;
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-### API
+### WINDOW_PROVIDERS
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() your: string;` | `'API'` | Goes here. |
+| Provider         | Description |
+| -----------    | -------------------------- |
+| `WINDOW_PROVIDERS: []` | An array of window providers. |
 
 ### Example
 
 ```typescript
-import { ModalModule } from '@acpaas-ui/ngx-components/layout';
+import { WindowModule } from '@acpaas-ui/ngx-components/utils';
 
 @NgModule({
     imports: [
-        ModalModule
-    ]
+        WindowModule
+    ],
+    providers: [WINDOW_PROVIDERS],
 });
 
 export class AppModule {};
-```
-
-```typescript
-// Controller code
-```
-
-```html
-<!-- HTML code -->
 ```
 
 ## Contributing
