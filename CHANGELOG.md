@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `layout/hero` Added documentation.
 - `layout/pane` Added documentation.
 - `selectable-list` Added documentation.
+- `utils/filter` Added documentation.
 
 ### Changed
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
