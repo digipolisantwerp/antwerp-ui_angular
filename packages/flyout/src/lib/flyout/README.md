@@ -63,7 +63,7 @@ This directive is the wrapper around the `auiFlyoutAction` and `auiFlyoutZone`. 
 
 #### Example
 
-**FlyoutSize enum example**
+##### FlyoutSize enum
 
 ```typescript
 import { FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
@@ -90,7 +90,7 @@ The content inside the html element or component with this directive will be dis
 
 #### Example
 
-**Custom component example**
+##### Custom component
 
 ```html
 <div auiFlyout size="small" align="right">
@@ -99,7 +99,7 @@ The content inside the html element or component with this directive will be dis
 </div>
 ```
 
-## FlyoutService
+### FlyoutService
 Use the `FlyoutService` to broadcast a close event to the available flyouts.
 
 #### Example

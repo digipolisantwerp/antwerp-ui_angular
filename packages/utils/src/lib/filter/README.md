@@ -85,7 +85,7 @@ import { Filter, FilterService } from '@acpaas-ui/ngx-components/utils';
 constructor(public filterService: FilterService) {}
 ```
 
-#### Checkbox filter example
+#### Checkbox filter
 
 ```typescript
 this.checkFilter.id = 'checkFilter';
@@ -119,7 +119,7 @@ public changeCheckFilter(value) {
 <aui-checkbox-filter [filter]="checkFilter" (update)="changeCheckFilter($event)"></aui-checkbox-filter>
 ```
 
-#### Input filter example
+#### Input filter
 
 ```typescript
 this.searchFilter.id = 'searchFilter';
@@ -144,7 +144,7 @@ public changeSearchFilter(value) {
 <aui-input-filter [filter]="searchFilter" (update)="changeSearchFilter($event)"></aui-input-filter>
 ```
 
-#### Select filter example
+#### Select filter
 
 ```typescript
 this.selectFilter.id = 'selectFilter';

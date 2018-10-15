@@ -1,6 +1,7 @@
 # @acpaas-ui/ngx-components/utils
 
-The utils module is a collection of some frequently used utility modules so you don't need to reinvent the wheel every time.
+The utils module is a collection of some frequently used utility modules like a filter, labels or window module. So you don't need to reinvent the wheel every time.
+You can find an overview in the [Modules](#modules) section below.
 
 ## Usage
 
@@ -16,7 +17,7 @@ import {
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-## Modules
+## <a name="modules"></a>Modules
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |

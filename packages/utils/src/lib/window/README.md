@@ -13,12 +13,6 @@ import { WindowModule } from '@acpaas-ui/ngx-components/utils'`;
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-### WINDOW_PROVIDERS
-
-| Provider         | Description |
-| -----------    | -------------------------- |
-| `WINDOW_PROVIDERS: []` | An array of window providers. |
-
 ### Example
 
 ```typescript
