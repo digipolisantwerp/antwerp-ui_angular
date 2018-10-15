@@ -34,6 +34,40 @@ import { WindowModule } from '@acpaas-ui/ngx-components/utils';
 export class AppModule {};
 ```
 
+```typescript
+import { WINDOW } from '@acpaas-ui/ngx-components/utils';
+```
+
+```typescript
+@Component({
+    templateUrl: './window.page.html',
+    // fix for @Inject and global interface type
+    // https://github.com/angular/angular/issues/15640
+    providers: [
+        {
+            provide: WINDOW,
+            useValue: window,
+        },
+    ],
+})
+```
+
+```typescript
+windowObject: Window;
+constructor(@Inject(WINDOW) private window) {
+    this.windowObject = window;
+}
+```
+
+```html
+<dl>
+    <dt>innerWidth:</dt>
+        <dd>{{ windowObject.innerHeight }}</dd>
+    <dt>innerHeight:</dt>
+        <dd>{{ windowObject.innerWidth }}</dd>
+</dl>
+```
+
 ## Contributing
 
 Visit our [Contribution Guidelines](../../../../../CONTRIBUTING.md) for more information on how to contribute.
