@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `layout/pane` Added documentation.
 - `layout/pane` Added documentation.
 - `selectable-list` Added documentation.
+- `utils/filter` Added documentation.
 
 
 ## [1.0.3] - 2018-09-25
