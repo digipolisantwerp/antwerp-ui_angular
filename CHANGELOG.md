@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `layout/pane` Added documentation.
 - `selectable-list` Added documentation.
 - `utils/filter` Added documentation.
+- `utils/labels` Added documentation.
 - `utils/window` Added documentation.
 
 ### Changed
