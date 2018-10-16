@@ -32,7 +32,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example).|
+| `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example). |
 | `@Input() hasSidebar: boolean;` | `false` | Define if the map has a sidebar. |
 
 Check the [Leaflet API reference](https://leafletjs.com/reference-1.3.0.html) for Leaflet specific API's.

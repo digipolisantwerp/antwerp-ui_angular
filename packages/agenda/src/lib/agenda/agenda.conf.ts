@@ -6,7 +6,7 @@ export const DEFAULT_WEEKDAY_LABELS = [
 	'Tuesday',
 	'Wednesday',
 	'Thursday',
-	'Firday',
+	'Friday',
 	'Saturday',
 ];
 
