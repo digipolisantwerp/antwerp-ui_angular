@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/utils
 
-The labels module exposes some useful tools to handle (template) labels in isolated components.
+The `LabelsModule` exposes 2 pipes, the `interpolate` function and the `Label` & `ReplaceData` type to handle (template) labels in isolated components.
 
 ## Usage
 
@@ -31,6 +31,7 @@ import { Label, interpolate } from '@acpaas-ui/ngx-components/utils';
 ```
 
 #### Interpolate
+The `interpolate` function takes a label and a `ReplaceData` object and returns an interpolated string. It will match `%{}` groups in the label and replace them with the corresponding value found in the `ReplaceData`.
 
 ```typescript
 public interpolateValue() {
@@ -44,6 +45,7 @@ public interpolateValue() {
 ```
 
 #### InterpolateLabelPipe
+The `InterpolateLabelPipe` will run the provided string and optional `ReplaceData` through the `interpolate` function.
 
 ```typescript
 public interpolateMessage = 'This %{text} requires your attention.';
@@ -58,6 +60,8 @@ public interpolateString = {
 ```
 
 #### PluralizeLabelPipe
+
+The `PluralizeLabelPipe` will verify the provided amount and return the singular or plural label found in the provided `Label`.
 
 ```typescript
 public pluralizeMail: Label = {
