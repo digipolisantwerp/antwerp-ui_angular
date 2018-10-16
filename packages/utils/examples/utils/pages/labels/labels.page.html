@@ -1,1 +1,53 @@
 <h2 class="h4 u-margin-bottom">Labels</h2>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<h2 class="h4 u-margin-bottom">Interpolate</h2>
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<pre>{{ interpolateValue() }}</pre>
+</div>
+
+<h2 class="h4 u-margin-bottom">InterpolateLabelPipe</h2>
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleJS3"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="codeExampleHTML2"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+		<pre><span [innerHTML]="interpolateMessage | interpolateLabel:interpolateString "></span></pre>
+</div>
+
+<h2 class="h4 u-margin-bottom">PluralizeLabelPipe</h2>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleJS4"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleHTML3"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<pre><span [innerHTML]="pluralizeMail | pluralizeLabel:remainingMessages.remaining"></span></pre>
+</div>
+
+<h2 class="h4 u-margin-bottom">Combine label pipes</h2>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleJS5"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="codeExampleHTML4"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<pre>{{ pluralizeMessage | pluralizeLabel:remainingMessages.remaining | interpolateLabel:interpolateString }}</pre>
+</div>
