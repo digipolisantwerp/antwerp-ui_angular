@@ -107,10 +107,10 @@ public dropzone1: UploadOptions = {
 
 ```html
 <aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
-    <div class="aui-upload-message">
+    <div class="m-upload__message">
         Drag your files here or click to upload
     </div>
-    <div class="aui-upload-description">
+    <div class="m-upload__description">
         Optional description message
     </div>
 </aui-upload>
@@ -131,8 +131,8 @@ public dropzone2: UploadOptions = {
 ```html
 <div class="u-margin-bottom">
     <aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
-        <div class="aui-upload-button">
-            Upload button
+        <div class="m-upload__button">
+            Select your files to upload
         </div>
     </aui-upload>
 </div>
@@ -243,10 +243,10 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
     (queuedFiles)="onQueuedFiles($event)"
     (uploadedFiles)="onUploadedFiles($event)"
     (invalidFiles)="onInvalidFiles($event)">
-    <div class="aui-upload-message">
+    <div class="m-upload__message">
         Drag your files here or click to upload
     </div>
-    <div class="aui-upload-description">
+    <div class="m-upload__description">
         Maximum filesize: 10 MB,
         File extension: jpg, jpeg, png
     </div>

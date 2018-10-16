@@ -21,9 +21,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `layout/pane` Added documentation.
 - `selectable-list` Added documentation.
 - `utils/filter` Added documentation.
+- `utils/window` Added documentation.
 
 ### Changed
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
+
+### Fixed
+- `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
 
 ## [1.0.3] - 2018-09-25
 ### Added

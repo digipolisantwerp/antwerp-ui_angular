@@ -52,10 +52,10 @@ export class AppModule {};`;
 };`;
 
 	public uploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
-	<div class="aui-upload-message">
+	<div class="m-upload__message">
 		Drag your files here or click to upload
   </div>
-  <div class="aui-upload-description">
+  <div class="m-upload__description">
     Optional description message
   </div>
 </aui-upload>`;
@@ -69,8 +69,8 @@ export class AppModule {};`;
 };`;
 
 	public uploadExampleHTML2 = `<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
-  <div class="aui-upload-button">
-    Upload button
+	<div class="m-upload__button">
+		Select your files to upload
   </div>
 </aui-upload>`;
 
@@ -168,10 +168,10 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
 	(invalidFiles)="onInvalidFiles($event)">
-	<div class="aui-upload-message">
+	<div class="m-upload__message">
 		Drag your files here or click to upload
 	</div>
-	<div class="aui-upload-description">
+	<div class="m-upload__description">
 		Maximum filesize: 10 MB,
 		File extension: jpg, jpeg, png
 	</div>
