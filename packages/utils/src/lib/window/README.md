@@ -56,9 +56,9 @@ constructor(@Inject(WINDOW) private window) {
 ```html
 <dl>
     <dt>innerWidth:</dt>
-        <dd>{{ windowObject.innerHeight }}</dd>
-    <dt>innerHeight:</dt>
         <dd>{{ windowObject.innerWidth }}</dd>
+    <dt>innerHeight:</dt>
+        <dd>{{ windowObject.innerHeight }}</dd>
 </dl>
 ```
 

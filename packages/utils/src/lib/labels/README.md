@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/utils
 
-The `LabelsModule` exposes 2 pipes, the `interpolate` function and the `Label` & `ReplaceData` type to handle (template) labels in isolated components.
+The `LabelsModule` exposes `InterpolateLabelPipe`, `PluralizeLabelPipe`, the `interpolate` function and the types `Label` and `ReplaceData` to handle (template) labels in isolated components.
 
 ## Usage
 
@@ -31,11 +31,12 @@ import { Label, interpolate } from '@acpaas-ui/ngx-components/utils';
 ```
 
 #### Interpolate
-The `interpolate` function takes a label and a `ReplaceData` object and returns an interpolated string. It will match `%{}` groups in the label and replace them with the corresponding value found in the `ReplaceData`.
+The `interpolate` function takes a string and a `[key, value]` pair of the type `ReplaceData`. It will match `%{}` groups in the string and replace them with the corresponding value found in the `ReplaceData`. This value can be a string or number.
+The returned value is an interpolated string.
 
 ```typescript
 public interpolateValue() {
-    const interpolatedValue = interpolate('This is an interpolated %{text}.', {text: 'message'});
+    const interpolatedValue = interpolate('This is number %{number} of an interpolated %{text}.', {text: 'message', number: 1});
     return interpolatedValue;
 }
 ```
@@ -61,7 +62,7 @@ public interpolateString = {
 
 #### PluralizeLabelPipe
 
-The `PluralizeLabelPipe` will verify the provided amount and return the singular or plural label found in the provided `Label`.
+The `PluralizeLabelPipe` will verify the provided amount and return the singular or plural label found in the provided object of the type `Label`.
 
 ```typescript
 public pluralizeMail: Label = {
@@ -69,13 +70,15 @@ public pluralizeMail: Label = {
     plural: 'These mails require your attention.',
 };
 
-public remainingMessages = {
-    remaining: 0,
-};
+public get amount() { return this.toggle ? { value: 1 } : { value: 0 }; }
+
+public toggleAmount() { this.toggle = !this.toggle; }
 ```
 
 ```html
-<span [innerHTML]="pluralizeMail | pluralizeLabel:remainingMessages.remaining"></span>
+<button class="a-button" (click)="toggleAmount()">Toggle amount</button>
+
+{{ pluralizeMail | pluralizeLabel:amount.value }}
 ```
 
 #### Combine label pipes
@@ -91,7 +94,7 @@ public pluralizeMessage: Label = {
 };
 
 public remainingMessages = {
-    remaining: 0,
+    remaining: 3,
 };
 ```
 

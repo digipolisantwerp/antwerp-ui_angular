@@ -22,8 +22,10 @@ export class UtilsLabelsDemoPageComponent {
 	};
 
 	public remainingMessages = {
-		remaining: 0,
+		remaining: 3,
 	};
+
+	public toggle = true;
 
 	public importModule = `import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
 
@@ -38,7 +40,7 @@ export class AppModule {};`;
 	public codeExampleJS1 = `import { Label, interpolate } from '@acpaas-ui/ngx-components/utils';`;
 
 	public codeExampleJS2 = `public interpolateValue() {
-	const interpolatedValue = interpolate('This is an interpolated %{text}.', {text: 'message'});
+	const interpolatedValue = interpolate('This is number %{number} of an interpolated %{text}.', {text: 'message', number: 1});
 	return interpolatedValue;
 }`;
 
@@ -53,9 +55,9 @@ public interpolateString = {
 	plural: 'These mails require your attention.',
 };
 
-public remainingMessages = {
-	remaining: 0,
-};`;
+public get amount() { return this.toggle ? { value: 1 } : { value: 0 }; }
+
+public toggleAmount() { this.toggle = !this.toggle; }`;
 
 	public codeExampleJS5 = `public interpolateString = {
 	text: 'message',
@@ -67,19 +69,25 @@ public pluralizeMessage: Label = {
 };
 
 public remainingMessages = {
-	remaining: 0,
+	remaining: 3,
 };`;
 
 	public codeExampleHTML1 = `{{ interpolateValue() }}`;
 
 	public codeExampleHTML2 = `<span [innerHTML]="interpolateMessage | interpolateLabel:interpolateString "></span>`;
 
-	public codeExampleHTML3 = `<span [innerHTML]="pluralizeMail | pluralizeLabel:remainingMessages.remaining"></span>`;
+	public codeExampleHTML3 = `<button class="a-button" (click)="toggleAmount()">Toggle amount</button>
+
+{{ pluralizeMail | pluralizeLabel:amount.value }}`;
 
 	public codeExampleHTML4 = `{{ pluralizeMessage | pluralizeLabel:remainingMessages.remaining | interpolateLabel:interpolateString }}`;
 
 	public interpolateValue() {
-		const interpolatedValue = interpolate('This is an interpolated %{text}.', {text: 'message'});
+		const interpolatedValue = interpolate('This is number %{number} of an interpolated %{text}.', {text: 'message', number: 1});
 		return interpolatedValue;
 	}
+
+	public get amount() { return this.toggle ? { description: 'singular', value: 1 } : { description: 'plural', value: 0 }; }
+
+	public toggleAmount() { this.toggle = !this.toggle; }
 }
