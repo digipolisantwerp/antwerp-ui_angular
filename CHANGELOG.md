@@ -28,7 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
 
 ### Fixed
-- `upload` Updated the required styling to be in sync with the corresponding Core Branding classes and removed unnecessary module imports that caused build conflicts.
+- `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
+- `upload` Removed unnecessary module imports that caused build conflicts.
 - `layout/hero` Removed unnecessary module imports that caused build conflicts.
 
 ## [1.0.3] - 2018-09-25
