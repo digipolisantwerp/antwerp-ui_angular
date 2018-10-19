@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `layout/pane` Added documentation.
 - `selectable-list` Added documentation.
 - `utils/filter` Added documentation.
+- `utils/labels` Added documentation.
 - `utils/window` Added documentation.
 
 ### Changed
@@ -28,6 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 - `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
+- `upload` Removed unnecessary module imports that caused build conflicts.
+- `layout/hero` Removed unnecessary module imports that caused build conflicts.
 
 ## [1.0.3] - 2018-09-25
 ### Added
