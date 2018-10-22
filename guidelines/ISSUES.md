@@ -50,7 +50,7 @@ For types `bug` and `feature`:
 For type `policy`:
 
 - Look for an appropriate maintainer to help resolve this question and assign to them.
-- Link to the issue in the [#acpaas-ui-dev](https://dgpls.slack.com/messages/C4S2D7KTK) slack channel if it needs broader discussion.
+- Link to the issue in the [#acpaas-ui-ngx](https://digantcafe.slack.com/messages/CDF95H5B7/) slack channel if it needs broader discussion. If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
 
 Contributors are expected to keep an eye on their assigned issues and work towards resolving them. If this is not possible, the maintainers should help find someone else to assign the issue to.
 

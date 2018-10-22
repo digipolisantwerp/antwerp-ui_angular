@@ -76,7 +76,7 @@ This library contains the following components:
 
 ## Questions
 
-For questions and support please ask a question on the [#acpaas-ui slack channel][acpaas-ui-slack].
+For questions and support please ask a question on the [#acpaas-ui slack channel][acpaas-ui-slack]. If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
 
 If you stumble across a bug or missing feature, feel free to [report an issue][acpaas-ui-angular-issues]. Please fill out the issue template completely when [opening an issue][acpaas-ui-angular-issues]. This will help us get to your issue sooner.
 
@@ -98,7 +98,7 @@ Copyright (c) 2016-present, Digipolis
 
 <!-- Generic Links -->
 [acpaas-ui]: https://acpaas-ui.digipolis.be
-[acpaas-ui-slack]: https://dgpls.slack.com/messages/C4M60PQJF
+[acpaas-ui-slack]: https://digantcafe.slack.com/messages/CDDLYJU65/
 [flexboxgrid]: https://github.com/a-ui/core_flexboxgrid_scss
 
 <!-- Travis -->
