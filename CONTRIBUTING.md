@@ -11,8 +11,9 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
 
 ## Issue Reporting Guidelines
 
-- Use the [#acpaas-ui channel](https://dgpls.slack.com/messages/C4M60PQJF) on slack to ask questions about using ACPaaS UI.
-- Use the [#acpaas-ui-dev channel](https://dgpls.slack.com/messages/C4S2D7KTK) on slack to discuss changes to the ACPaaS UI code itself.
+- If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
+- Use the [#acpaas-ui channel](https://digantcafe.slack.com/messages/CDDLYJU65/) on slack to ask questions about using ACPaaS UI.
+- Use the [#acpaas-ui-ngx channel][acpaas-ui-ngx] on slack to discuss changes to the ACPaaS UI code itself.
 - Use [GitHub Issues][github-issues] to report bugs, request features, ask policy questions or propose policy changes.
 
 > Note: policy questions are about the way ACPaaS UI is developed and released, or about its architecture. We use github issues to have a public archive of these discussions.
@@ -89,10 +90,12 @@ $ npm run styleguide
 
 ACPaaS UI is supplied as a single library on NPM [@acpaas-ui/ngx-components](https://www.npmjs.com/package/@acpaas-ui/ngx-components), although related components (e.g. the [smart widgets](https://github.com/digipolisantwerp/smart-widgets)) may be packaged independently.
 
-It is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-dev channel](https://dgpls.slack.com/messages/C4S2D7KTK) to ask for an out-of-band release. (Before you do so, check the [dev guide](./guidelines/DEV_GUIDE.md#development-snapshots) for ways to use it without an official release.)
+It is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release. (Before you do so, check the [dev guide](./guidelines/DEV_GUIDE.md#development-snapshots) for ways to use it without an official release.)
 
 The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
 
 A [changelog](CHANGELOG.md) is provided for your convenience.
 
 > Maintainers: see the [release guide](./guidelines/RELEASE.md) for guidance on releases and versioning.
+
+[acpaas-ui-ngx]: https://digantcafe.slack.com/messages/CDF95H5B7/
