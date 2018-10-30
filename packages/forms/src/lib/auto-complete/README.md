@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-This module creates an input field with auto complete functionality.
+This module creates an input field with autocomplete functionality.
 
 ## Usage
 
