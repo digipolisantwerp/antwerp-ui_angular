@@ -16,7 +16,6 @@ import { LeafletMap } from '@acpaas-ui/ngx-components/map'`;
 Add the leaflet CSS styles to the `src/angular.json` file.
 ```typescript
 "styles": [
-    "styleguide/styles.scss",
     "node_modules/leaflet/dist/leaflet.css",
     "node_modules/leaflet-draw/dist/leaflet.draw.css"
 ]
