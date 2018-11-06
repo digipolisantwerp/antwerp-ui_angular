@@ -58,7 +58,7 @@
 				searchIncentiveText="Type one or more keywords to start searching"
 				(search)="searchItems($event)"
 				(select)="setSelectedItem2($event)">
-				<ng-template let-item >
+				<ng-template let-item>
 					<div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
 				</ng-template>
 			</aui-auto-complete>
