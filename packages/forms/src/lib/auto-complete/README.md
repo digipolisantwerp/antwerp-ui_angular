@@ -86,23 +86,23 @@ public setSelectedItem(hero: string): void {
 ```typescript
 public results = [];
 public heroList = [
-	{name: 'Batman'},
-	{name: 'Wonder Woman'},
-	{name: 'Wolverine'},
-	{name: 'Iron Man'},
-	{name: 'Deadpool'},
+    {name: 'Batman'},
+    {name: 'Wonder Woman'},
+    {name: 'Wolverine'},
+    {name: 'Iron Man'},
+    {name: 'Deadpool'},
 ];
 public searchValue = '';
 public selectedItem = '';
 
 public searchItems(search: string): void {
-	this.searchValue = search;
-	// do search
-	this.debouncer.next(search);
+    this.searchValue = search;
+    // do search
+    this.debouncer.next(search);
 }
 
 public setSelectedItem(hero: {name}): void {
-	this.selectedItem = hero;
+    this.selectedItem = hero;
 }
 
 public formatLabel(input: any) {
@@ -112,10 +112,10 @@ public formatLabel(input: any) {
         return inputString;
     }
 
-	// highlight searchValue in result
-	const regEx = new RegExp(this.searchValue, 'ig');
-	const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
-	return \`<i class="fa fa-user u-text-light u-margin-right-xs"></i>\${inputStringHighlighted}\`;
+    // highlight searchValue in result
+    const regEx = new RegExp(this.searchValue, 'ig');
+    const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
+    return \`<i class="fa fa-user u-text-light u-margin-right-xs"></i>\${inputStringHighlighted}\`;
 }
 ```
 
