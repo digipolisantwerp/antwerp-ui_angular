@@ -26,7 +26,7 @@ export class AppModule {};`;
 ];
 
 public setSelectedUser(hero): void {
-	// do something
+	// Do something
 }`;
 
 	public autocompleteExampleHTML1 = `<aui-auto-complete
@@ -54,7 +54,7 @@ public selectedItem = '';
 
 public searchItems(search: string): void {
 	this.searchValue = search;
-	// do search
+	// Do search
 	this.debouncer.next(search);
 }
 
@@ -69,7 +69,7 @@ public formatLabel(input: any) {
 		return inputString;
 	}
 
-	// highlight searchValue in result
+	// Highlight searchValue in result
 	const regEx = new RegExp(this.searchValue, 'ig');
 	const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
 	return \`<i class="fa fa-user u-text-light u-margin-right-xs"></i>\${inputStringHighlighted}\`;
@@ -128,7 +128,7 @@ public formatLabel(input: any) {
 
 	public searchItems(search: string): void {
 		this.searchValue = search;
-		// do search
+		// Do search
 		this.debouncer.next(search);
 	}
 
@@ -147,7 +147,7 @@ public formatLabel(input: any) {
 			return inputString;
 		}
 
-		// highlight searchValue in result
+		// Highlight searchValue in result
 		const regEx = new RegExp(this.searchValue, 'ig');
 		const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
 		return `<i class="fa fa-user u-text-light u-margin-right-xs"></i>${inputStringHighlighted}`;
