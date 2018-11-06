@@ -115,7 +115,7 @@ public formatLabel(input: any) {
 					this.results = [];
 				} else {
 					this.results = this.heroList.filter((hero) => {
-						return hero.name.toUpperCase().indexOf(value.toUpperCase()) !== -1;
+						return hero.name.localeCompare(value, 'en', {sensitivity: 'base'});
 					});
 				}
 			});
