@@ -3,16 +3,6 @@
 The utils module is a collection of some frequently used utility modules like a filter, labels or window module. So you don't need to reinvent the wheel every time.
 You can find an overview in the [Modules](#modules) section below.
 
-## Usage
-
-```typescript
-import {
-	FilterModule,
-	LabelsModule,
-	WindowModule
-} from '@acpaas-ui/ngx-components/utils'`;
-```
-
 ## Documentation
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines

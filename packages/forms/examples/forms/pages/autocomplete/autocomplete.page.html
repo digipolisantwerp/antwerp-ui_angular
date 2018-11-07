@@ -26,13 +26,14 @@
 				clearInvalid="true"
 				showAllByDefault="true"
 				[data]="heroList"
-				(select)="setSelectedHero($event)">
+				(select)="setSelectedItem1($event)">
 			</aui-auto-complete>
 		</div>
 	</div>
+	<p class="u-margin-top"><strong>Selected hero</strong>: {{ selectedItem1 }}</p>
 </div>
 
-<h3 class="h5 u-margin-bottom">Remote search</h3>
+<h3 class="h5 u-margin-bottom">Remote search with template</h3>
 
 <div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="autocompleteExampleJS2"></aui-code-snippet>
@@ -55,8 +56,13 @@
 				loadingText = "Loading…"
 				noResultsText="No results found"
 				searchIncentiveText="Type one or more keywords to start searching"
-				(search)="searchItems($event)">
+				(search)="searchItems($event)"
+				(select)="setSelectedItem2($event)">
+				<ng-template let-item>
+					<div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
+				</ng-template>
 			</aui-auto-complete>
 		</div>
 	</div>
+	<p class="u-margin-top"><strong>Selected hero</strong>: {{ selectedItem2 }}</p>
 </div>

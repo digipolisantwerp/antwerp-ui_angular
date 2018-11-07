@@ -1,26 +1,13 @@
 # @acpaas-ui/ngx-components/layout
 
 The layout module is a collection of several layout-related modules, like a header, a footer, a modal, a pane, etc.
-
-## Usage
-
-```typescript
-import {
-	CookieconsentModule,
-	FooterModule,
-	HeaderModule,
-	HeroModule,
-	ModalModule,
-	PaneModule,
-	SidebarModule
-} from '@acpaas-ui/ngx-components/layout'`;
-```
+You can find an overview in the [Modules](#modules) section below.
 
 ## Documentation
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-## Modules
+## <a name="modules"></a>Modules
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |

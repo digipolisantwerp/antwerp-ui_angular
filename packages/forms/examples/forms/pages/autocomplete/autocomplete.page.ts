@@ -26,7 +26,7 @@ export class AppModule {};`;
 ];
 
 public setSelectedUser(hero): void {
-	// do something
+	// Do something
 }`;
 
 	public autocompleteExampleHTML1 = `<aui-auto-complete
@@ -38,7 +38,7 @@ public setSelectedUser(hero): void {
 	clearInvalid="true"
 	showAllByDefault="true"
 	[data]="heroList"
-	(select)="setSelectedHero($event)">
+	(select)="setSelectedItem($event)">
 </aui-auto-complete>`;
 
 	public autocompleteExampleJS2 = `public results = [];
@@ -49,9 +49,30 @@ public heroList = [
 	{name: 'Iron Man'},
 	{name: 'Deadpool'},
 ];
+public searchValue = '';
+public selectedItem = '';
 
 public searchItems(search: string): void {
-  // do search
+	this.searchValue = search;
+	// Do search
+	this.debouncer.next(search);
+}
+
+public setSelectedItem(hero: {name}): void {
+	this.selectedItem = hero;
+}
+
+public formatLabel(input: any) {
+	const inputString = input.name;
+
+	if (!this.searchValue) {
+		return inputString;
+	}
+
+	// Highlight searchValue in result
+	const regEx = new RegExp(this.searchValue, 'ig');
+	const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
+	return \`<i class="fa fa-user u-text-light u-margin-right-xs"></i>\${inputStringHighlighted}\`;
 }`;
 
 	public autocompleteExampleHTML2 = `<aui-auto-complete
@@ -64,7 +85,11 @@ public searchItems(search: string): void {
 	loadingText = "Loading…"
 	noResultsText="No results found"
 	searchIncentiveText="Type one or more keywords to start searching"
-	(search)="searchItems($event)">
+	(search)="searchItems($event)"
+	(select)="setSelectedItem($event)">
+	<ng-template let-item >
+		<div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
+	</ng-template>
 </aui-auto-complete>`;
 
 	public results = [];
@@ -75,6 +100,9 @@ public searchItems(search: string): void {
 		{name: 'Iron Man'},
 		{name: 'Deadpool'},
 	];
+	public searchValue = '';
+	public selectedItem1 = '';
+	public selectedItem2 = '';
 	private debouncer: Subject<string> = new Subject();
 	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -87,7 +115,7 @@ public searchItems(search: string): void {
 					this.results = [];
 				} else {
 					this.results = this.heroList.filter((hero) => {
-						return hero.name.indexOf(value) !== -1;
+						return hero.name.localeCompare(value, 'en', {sensitivity: 'base'});
 					});
 				}
 			});
@@ -98,12 +126,30 @@ public searchItems(search: string): void {
 		this.componentDestroyed$.complete();
 	}
 
-	public setSelectedHero(hero: string): void {
-		// do something
+	public searchItems(search: string): void {
+		this.searchValue = search;
+		// Do search
+		this.debouncer.next(search);
 	}
 
-	public searchItems(search: string): void {
-		// do search
-		this.debouncer.next(search);
+	public setSelectedItem1(hero: {name}): void {
+		this.selectedItem1 = hero.name;
+	}
+
+	public setSelectedItem2(hero: {name}): void {
+		this.selectedItem2 = hero.name;
+	}
+
+	public formatLabel(input: any) {
+		const inputString = input.name;
+
+		if (!this.searchValue) {
+			return inputString;
+		}
+
+		// Highlight searchValue in result
+		const regEx = new RegExp(this.searchValue, 'ig');
+		const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
+		return `<i class="fa fa-user u-text-light u-margin-right-xs"></i>${inputStringHighlighted}`;
 	}
 }

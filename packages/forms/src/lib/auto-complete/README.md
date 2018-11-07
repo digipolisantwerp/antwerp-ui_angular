@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-This module creates an input field with auto complete functionality.
+This module creates an input field with autocomplete functionality.
 
 ## Usage
 
@@ -62,8 +62,8 @@ public heroList = [
     {name: 'Iron Man'},
     {name: 'Deadpool'},
 ];
-public setSelectedHero(hero: string): void {
-  // do something
+public setSelectedItem(hero: string): void {
+  // Do something
 }
 ```
 
@@ -77,11 +77,11 @@ public setSelectedHero(hero: string): void {
     clearInvalid="true"
     showAllByDefault="true"
     [data]="heroList"
-    (select)="setSelectedHero($event)">
+    (select)="setSelectedItem($event)">
 </aui-auto-complete>
 ```
 
-#### Remote search
+#### Remote search with template
 
 ```typescript
 public results = [];
@@ -92,9 +92,30 @@ public heroList = [
     {name: 'Iron Man'},
     {name: 'Deadpool'},
 ];
+public searchValue = '';
+public selectedItem = '';
 
 public searchItems(search: string): void {
-  // do search
+    this.searchValue = search;
+    // Do search
+    this.debouncer.next(search);
+}
+
+public setSelectedItem(hero: {name}): void {
+    this.selectedItem = hero;
+}
+
+public formatLabel(input: any) {
+    const inputString = input.name;
+
+    if (!this.searchValue) {
+        return inputString;
+    }
+
+    // Highlight searchValue in result
+    const regEx = new RegExp(this.searchValue, 'ig');
+    const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
+    return \`<i class="fa fa-user u-text-light u-margin-right-xs"></i>\${inputStringHighlighted}\`;
 }
 ```
 
@@ -109,7 +130,11 @@ public searchItems(search: string): void {
     loadingText = "Loading…"
     noResultsText="No results found"
     searchIncentiveText="Type one or more keywords to start searching"
-    (search)="searchItems($event)">
+    (search)="searchItems($event)"
+    (select)="setSelectedItem($event)">
+    <ng-template let-item >
+        <div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
+    </ng-template>
 </aui-auto-complete>
 ```
 
