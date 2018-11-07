@@ -1,26 +1,13 @@
 # @acpaas-ui/ngx-components/forms
 
 The forms module is a collection of several forms-related modules, like an autocomplete, a datepicker, a mask, a range slider, a timepicker, etc.
-
-## Usage
-
-```typescript
-import {
-	AutoCompleteModule,
-	DatepickerModule,
-	MaskModule,
-	RangeSliderModule,
-	TimepickerModule,
-	UploadModule,
-	WysiwygModule,
-} from '@acpaas-ui/ngx-components/forms'`;
-```
+You can find an overview in the [Modules](#modules) section below.
 
 ## Documentation
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-## Modules
+## <a name="modules"></a>Modules
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |
