@@ -1,9 +1,10 @@
-import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
-import { DebugElement, SimpleChange, SimpleChanges, Component } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 
 import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.conf';
+import { Uploader } from '../../classes/uploader.class';
 
 import { UploadQueueComponent } from './upload-queue.component';
 
@@ -11,7 +12,7 @@ const mockFile1 = new File(['file1'], 'filename1.txt', {type: 'text/plain', last
 const mockFile2 = new File(['file2'], 'filename2.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
 const mockFileList = [mockFile1, mockFile2];
 
-class MockUploader {
+class MockUploader implements Partial<Uploader> {
 	public options = UPLOAD_OPTIONS_DEFAULT;
 
 	constructor(options = {}) {
@@ -66,7 +67,7 @@ describe('The upload queue component', () => {
 		comp  = fixture.componentInstance;
 		de = fixture.debugElement.query(By.css('.m-upload__files')); // find hero element
 
-		comp.uploader = new MockUploader();
+		comp.uploader = new MockUploader() as any;
 		comp.files = mockFileList;
 		fixture.detectChanges(); // trigger initial data binding
 	});

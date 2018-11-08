@@ -17,7 +17,6 @@ export class AppModule {};`;
 
 	public codeExampleJS1 =
 `"styles": [
-	"styleguide/styles.scss",
 	"node_modules/leaflet/dist/leaflet.css",
 	"node_modules/leaflet-draw/dist/leaflet.draw.css"
 ]`;

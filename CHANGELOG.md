@@ -15,11 +15,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms/range-slider` Added documentation.
 - `forms/timepicker` Added documentation.
 - `forms/search-filter` Added documentation.
+- `forms/upload` Added documentation.
 - `forms/wysiwyg` Added documentation.
 - `layout/cookie-consent` Added documentation.
 - `layout/hero` Added documentation.
 - `layout/pane` Added documentation.
 - `selectable-list` Added documentation.
+- `utils/filter` Added documentation.
+- `utils/labels` Added documentation.
+- `utils/window` Added documentation.
+
+### Changed
+- `context` The ContextModule is no longer dependent on the ContextStoreModule.
+
+### Fixed
+- `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
+- `upload` Removed unnecessary module imports that caused build conflicts.
+- `layout/hero` Removed unnecessary module imports that caused build conflicts.
 
 ## [1.0.3] - 2018-09-25
 ### Added
@@ -57,7 +69,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.0

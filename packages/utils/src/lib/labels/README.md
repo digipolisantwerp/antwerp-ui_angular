@@ -1,93 +1,107 @@
-# @acpaas-ui/labels
-The labels module exposes some useful tools to handle (template) labels in isolated components.
+# @acpaas-ui/ngx-components/utils
 
-## Installation
-```
-npm install @acpaas-ui/labels
+The `LabelsModule` exposes `InterpolateLabelPipe`, `PluralizeLabelPipe`, the `interpolate` function and the types `Label` and `ReplaceData` to handle (template) labels in isolated components.
+
+## Usage
+
+```typescript
+import { LabelsModule } from '@acpaas-ui/ngx-components/utils'`;
 ```
 
-Import the `LabelsModule` in **app.module.ts**
-```
-import { LabelsModule } from '@acpaas-ui/labels';
+## Documentation
+
+Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+
+### Examples
+
+```typescript
+import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
 
 @NgModule({
     imports: [
         LabelsModule
-    ]
+    ],
 })
 
-export class AppModule {}
+export class AppModule {};
 ```
 
-## Usage
-The `LabelsModule` exposes 2 pipes, the `interpolate` function and the `Label` & `ReplaceData` type.
-
-### Label (type)
-
-The `Label` type defines a type for labels that can either be a string or an object containing a `singular` and `plural` prop that hold strings for the label depending on a provided count.
-
+```typescript
+import { Label, interpolate } from '@acpaas-ui/ngx-components/utils';
 ```
-label = 'some label';
 
-label = {
-    singular: 'some label',
-    plural: 'some labels'
+#### Interpolate
+The `interpolate` function takes a string and a `[key, value]` pair of the type `ReplaceData`. It will match `%{}` groups in the string and replace them with the corresponding value found in the `ReplaceData`. This value can be a string or number.
+The returned value is an interpolated string.
+
+```typescript
+public interpolateValue() {
+    const interpolatedValue = interpolate('This is number %{number} of an interpolated %{text}.', {text: 'message', number: 1});
+    return interpolatedValue;
+}
+```
+
+```html
+{{ interpolateValue() }}
+```
+
+#### InterpolateLabelPipe
+The `InterpolateLabelPipe` will run the provided string and optional `ReplaceData` through the `interpolate` function.
+
+```typescript
+public interpolateMessage = 'This %{text} requires your attention.';
+
+public interpolateString = {
+    text: 'message',
 };
 ```
 
-### interpolate (function)
-
-The `interpolate` function takes a `Label` and a `ReplaceData` object and returns an interpolated string. It will match `%{}` groups in the label and replace them with the corresponding value found in the replaceMap.
-
-Some examples:
-```
-interpolate('This is %{happiness} cool!', {
-    happiness: 'very'
-});
-// This is very cool!
-
-interpolate('This is %{happiness} cool!', {
-    happiness: 'kinda'
-});
-// This is kinda cool!
-
-interpolate('This is %{happiness} cool!', {
-    happiness: 'not'
-});
-// This is not cool!
+```html
+<span [innerHTML]="interpolateMessage | interpolateLabel:interpolateString "></span>
 ```
 
-You can add as many values to replace as you like.
+#### PluralizeLabelPipe
 
-### InterpolateLabelPipe
+The `PluralizeLabelPipe` will verify the provided amount and return the singular or plural label found in the provided object of the type `Label`.
 
-The `InterpolateLabel` pipe will run the provided string and optional replaceData through the `interpolate` function.
-```
-<p>{{ 'This is %{happiness} cool!' | interpolate:{happiness: 'kinda' } }}</p> // textContent will be 'This is kinda cool!'
-```
+```typescript
+public pluralizeMail: Label = {
+    singular: 'This mail requires your attention.',
+    plural: 'These mails require your attention.',
+};
 
-### PluralizeLabelPipe
+public get amount() { return this.toggle ? { value: 1 } : { value: 0 }; }
 
-The `PluralizeLabel` pipe will verify the provided amount and return the singular or plural label found in the provided `Label`.
-
-```
-<p>{{ 'this is a label' | pluralize }}</p> // textContent will be 'this is a label'
-<p>{{ 'this is a label' | pluralize:3 }}</p> // textContent will be 'this is a label'
-<p>{{ { singular: 'this is a label', plural: 'these are some labels' } | pluralize:1 }}</p> // textContent will be 'this is a label'
-<p>{{ { singular: 'this is a label', plural: 'these are some labels' } | pluralize:2 }}</p> // textContent will be 'these are some labels'
+public toggleAmount() { this.toggle = !this.toggle; }
 ```
 
-## Handling translations
+```html
+<button class="a-button" (click)="toggleAmount()">Toggle amount</button>
 
-You can mix the pipes with the translate pipe form either `ngx-translate` or `i18n` by running the label through the `translate` pipe before handing it off to the pipes provided by the `@acpaas-ui/labels` package:
-
+{{ pluralizeMail | pluralizeLabel:amount.value }}
 ```
-<p>{{ 'this is a label with a %{value}' | translate | interpolate:{value: 10} }}</p>
 
+#### Combine label pipes
 
-<p>{{ {
-        singular: ('this is a label with a value: %{value}' | translate),
-        plural: ('this is a label with some values: %{value}' | translate)
-      } | interpolate:{value: 10}
-}}</p>
+```typescript
+public interpolateString = {
+    text: 'message',
+};
+
+public pluralizeMessage: Label = {
+    singular: 'This %{text} requires your attention.',
+    plural: 'These %{text}s require your attention.',
+};
+
+public remainingMessages = {
+    remaining: 3,
+};
 ```
+
+```html
+{{ pluralizeMessage | pluralizeLabel:remainingMessages.remaining | interpolateLabel:interpolateString }}
+```
+
+## Contributing
+
+Visit our [Contribution Guidelines](../../../../../CONTRIBUTING.md) for more information on how to contribute.

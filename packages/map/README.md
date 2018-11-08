@@ -16,7 +16,6 @@ import { LeafletMap } from '@acpaas-ui/ngx-components/map'`;
 Add the leaflet CSS styles to the `src/angular.json` file.
 ```typescript
 "styles": [
-    "styleguide/styles.scss",
     "node_modules/leaflet/dist/leaflet.css",
     "node_modules/leaflet-draw/dist/leaflet.draw.css"
 ]
@@ -32,7 +31,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example).|
+| `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example). |
 | `@Input() hasSidebar: boolean;` | `false` | Define if the map has a sidebar. |
 
 Check the [Leaflet API reference](https://leafletjs.com/reference-1.3.0.html) for Leaflet specific API's.
