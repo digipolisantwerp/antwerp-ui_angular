@@ -13,6 +13,7 @@ import { PAGINATION_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/pagination';
 import { PROGRESS_BAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/progress-bar';
 import { SELECTABLE_LIST_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/selectable-list';
 import { TABLE_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/table';
+import { UTILS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/utils';
 
 export const EXAMPLES_ROUTES = [
 	{ path: 'analytics', children: ANALYTICS_EXAMPLES_ROUTES, title: 'Analytics', },
@@ -30,4 +31,5 @@ export const EXAMPLES_ROUTES = [
 	{ path: 'progress-bar', children: PROGRESS_BAR_EXAMPLES_ROUTES, title: 'Progress bar', },
 	{ path: 'selectable-list', children: SELECTABLE_LIST_EXAMPLES_ROUTES, title: 'Selectable list', },
 	{ path: 'table', children: TABLE_EXAMPLES_ROUTES, title: 'Table', },
+	{ path: 'utils', children: UTILS_EXAMPLES_ROUTES, title: 'Utils', },
 ];

@@ -8,7 +8,7 @@ import { Uploader } from '../../classes/uploader.class';
 })
 export class UploadQueueComponent {
 	@Input() public files: File[];
-	@Input() public uploader;
+	@Input() public uploader: Uploader;
 	@Output() public uploadedFiles: EventEmitter<Object[]> = new EventEmitter<Object[]>();
 
 	public uploadProgress: Number = 0;

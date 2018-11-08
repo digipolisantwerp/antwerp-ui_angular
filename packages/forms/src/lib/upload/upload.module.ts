@@ -1,5 +1,4 @@
-import { NgModule, ModuleWithProviders, Inject, Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -12,7 +11,6 @@ import { ValidationMessages } from './types/upload.types';
 
 @NgModule({
 	imports: [
-		BrowserModule,
 		CommonModule,
 		ProgressBarModule,
 		FormsModule,

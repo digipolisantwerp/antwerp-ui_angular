@@ -2,7 +2,7 @@
 
 Dear maintainer,
 
-To ensure issues are handled correctly and timely, it is paramount to review the issues list at regular intervals. These guidelines are for your convenience to help assess and resolve issues. All maintainers are kindly asked to pitch in and help keep a clean issues list.
+To ensure issues are handled correctly and timely, it is paramount that the issues list is reviewed at regular intervals. These guidelines are for your convenience to help assess and resolve issues. All maintainers are kindly asked to pitch in and help keep a clean issues list.
 
 - [Issue Handling Guidelines](#issue-handling-guidelines)
     - [Issue labels](#issue-labels)
@@ -33,7 +33,8 @@ At regular intervals review the open issues list and **verify for every issue**:
     - The label `verified` is applied when a maintainer has reproduced it or verified it is reproduceable.
     - Feel free to try reproducing yourself.
 - Features and verified bug reports are on some team's roadmap, assigned to a developer, or marked as `help wanted`. (See the guidelines below for assigning.)
-    - And issues with label `help wanted` that are good for first-time contributors have the label `good first issue`.
+    - Issues with label `help wanted` that are good for first-time contributors should have the label `good first issue`.
+    - For issues assigned to a person or team managed in JIRA, a corresponding JIRA issue should be created and linked to from the issue's description or comments.
 - Issues that are blocked on additional information have a `missing info` label and a comment asking the appropriate person for the information.
     - If the submitter does not respond in a few weeks, you can ping them or close the issue as `invalid`.
 - Issues of type `policy` are assigned to someone for resolving.
@@ -50,7 +51,7 @@ For types `bug` and `feature`:
 For type `policy`:
 
 - Look for an appropriate maintainer to help resolve this question and assign to them.
-- Link to the issue in the [#acpaas-ui-dev](https://dgpls.slack.com/messages/C4S2D7KTK) slack channel if it needs broader discussion.
+- Link to the issue in the [#acpaas-ui-ngx](https://digantcafe.slack.com/messages/CDF95H5B7/) slack channel if it needs broader discussion. If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
 
 Contributors are expected to keep an eye on their assigned issues and work towards resolving them. If this is not possible, the maintainers should help find someone else to assign the issue to.
 
