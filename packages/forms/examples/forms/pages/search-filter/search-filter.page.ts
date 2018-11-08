@@ -51,7 +51,7 @@ export class AppModule {};`;
 	name="test"
 	label="Find stuff"
 	labelDeselect="Clear stuff"
-	labelResults="Found stuff"
+	labelResults=""
 	labelNoResults="Couldn't find stuff!"
 	placeholder="Look for stuff"
 	inputDelay="0"

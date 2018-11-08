@@ -1,6 +1,8 @@
 @import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css');
 @import '~@a-ui/core/dist/assets/styles/quarks';
 
+// @import 'main.min.css';
+
 /* Need to be included in core branding */
 $screen-xs-max: 44.9375rem;
 $screen-sm-max: 61.9375rem;
@@ -47,39 +49,7 @@ main {
 	}
 }
 
-.o-header__link {
-	align-self: center;
-	display: inline-block;
-	font-weight: 700;
-	padding: $spacer / 2;
-
-	&,
-	&:link,
-	&:hover,
-	&:active,
-	&:visited,
-	&:focus {
-		color: $white;
-		text-decoration: none;
-	}
-
-	@include to($screen-sm) {
-		display: none;
-	}
-}
-
-.o-header__content-wrapper {
-	display: flex;
-	flex: 1 1 auto;
-	justify-content: space-between;
-	margin: 0 auto;
-	max-width: $screen-lg;
-	width: 100%;
-
-	@include at($screen-sm) {
-		padding: 0 $spacer;
-	}
-}
+a-button--navigation
 
 .o-header .a-input input:not([class*=a-button]):not([type=checkbox]):not([type=radio]) {
 	border: none;
