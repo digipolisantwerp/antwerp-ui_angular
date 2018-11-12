@@ -1,4 +1,4 @@
-const { readFileSync } = require('fs');
+const { readFileSync, lstatSync } = require('fs');
 const { resolve, sep } = require('path');
 const colors = require('colors');
 
@@ -6,6 +6,7 @@ const { getDirectories } = require('./helpers/dir');
 const { getAUIDependencies } = require('./helpers/deps');
 const promiseQueue = require('./helpers/queue');
 const buildPackage = require('./helpers/build');
+const exec = require('./helpers/bash');
 
 const directories = getDirectories(resolve(process.cwd(), 'packages'));
 const configs = directories.map(directory => readFileSync(resolve(directory, 'package.json'), {
@@ -22,6 +23,15 @@ const localDependencies = getAUIDependencies(configs.reduce((acc, curr) => {
 
 promiseQueue(localDependencies.map(package => buildPackage(package)))
 	.then(() => {
+		localDependencies.forEach(package => {
+			try {
+				if (lstatSync(`${process.cwd()}/dist/${package}/examples`).isDirectory()) {
+					exec(`rimraf ${process.cwd()}/dist/${package}/examples`);
+				}
+			} catch(e) {
+				console.log(colors.green(`No example found for ${package}`);
+			}
+		});
 		console.log(colors.green('Build completed.'));
 		process.exit();
 	})
