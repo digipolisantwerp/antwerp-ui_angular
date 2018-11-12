@@ -5,7 +5,7 @@ A header component with logo that can hide itself when scrolling.
 ## Usage
 
 ```typescript
-import { HeaderModule } from '@acpaas-ui/ngx-components/layout'`;
+import { HeaderModule } from '@acpaas-ui/ngx-components/layout';
 ```
 
 ## Documentation

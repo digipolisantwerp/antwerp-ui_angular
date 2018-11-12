@@ -5,7 +5,7 @@ This module provides a progress bar with a max value.
 ## Usage
 
 ```typescript
-import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar'`;
+import { ProgressBarModule } from '@acpaas-ui/ngx-components/progress-bar';
 ```
 
 ## Documentation

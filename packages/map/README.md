@@ -10,7 +10,7 @@ This module renders a map component with some basic controls, based on [Leaflet]
 ## Usage
 
 ```typescript
-import { LeafletMap } from '@acpaas-ui/ngx-components/map'`;
+import { LeafletMap } from '@acpaas-ui/ngx-components/map';
 ```
 
 Add the leaflet CSS styles to the `src/angular.json` file.

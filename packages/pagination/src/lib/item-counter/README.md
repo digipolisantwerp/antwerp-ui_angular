@@ -5,7 +5,7 @@ This module is the perfect enhancer to go with the pagination.
 ## Usage
 
 ```typescript
-import { ItemCounterModule } from '@acpaas-ui/ngx-components/pagination'`;
+import { ItemCounterModule } from '@acpaas-ui/ngx-components/pagination';
 ```
 
 ## Documentation
