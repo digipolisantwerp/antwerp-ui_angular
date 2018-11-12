@@ -5,7 +5,7 @@ This module displays an image wrapped in a link.
 ## Usage
 
 ```typescript
-import { LogoModule } from '@acpaas-ui/ngx-components/logo'`;
+import { LogoModule } from '@acpaas-ui/ngx-components/logo';
 ```
 
 ## Documentation

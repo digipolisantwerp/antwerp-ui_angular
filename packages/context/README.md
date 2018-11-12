@@ -5,7 +5,7 @@ This package manages meta tags and other SEO properties.
 ## Usage
 
 ```typescript
-import { ContextModule, ContextService } from '@acpaas-ui/ngx-components/context'`;
+import { ContextModule, ContextService } from '@acpaas-ui/ngx-components/context';
 ```
 
 ## Documentation

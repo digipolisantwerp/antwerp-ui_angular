@@ -5,7 +5,7 @@ The `LabelsModule` exposes `InterpolateLabelPipe`, `PluralizeLabelPipe`, the `in
 ## Usage
 
 ```typescript
-import { LabelsModule } from '@acpaas-ui/ngx-components/utils'`;
+import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
 ```
 
 ## Documentation

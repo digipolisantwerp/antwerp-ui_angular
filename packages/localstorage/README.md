@@ -5,7 +5,7 @@ The `acpaas-ui localstorage` service allows you to easily store and retrieve dat
 ## Usage
 
 ```typescript
-import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage'`;
+import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage';
 ```
 
 ## Documentation

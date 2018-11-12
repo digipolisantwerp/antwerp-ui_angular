@@ -5,7 +5,7 @@ This service adds an Angular layer on top of the Google Analytics `ga()` functio
 ## Usage
 
 ```typescript
-import { AnalyticsModule } from '@acpaas-ui/ngx-components/analytics'`;
+import { AnalyticsModule } from '@acpaas-ui/ngx-components/analytics';
 ```
 
 ## Documentation

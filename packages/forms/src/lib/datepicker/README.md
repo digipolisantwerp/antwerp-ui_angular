@@ -7,7 +7,7 @@ The package creates a custom input component allowing the user to select a date 
 ## Usage
 
 ```typescript
-import { DatepickerModule } from '@acpaas-ui/ngx-components/forms'`;
+import { DatepickerModule } from '@acpaas-ui/ngx-components/forms';
 ```
 
 ## Documentation

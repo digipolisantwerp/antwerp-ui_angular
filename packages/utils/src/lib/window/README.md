@@ -6,7 +6,7 @@ It's actually based on Brian Love's [Angular Window Provider](https://brianflove
 ## Usage
 
 ```typescript
-import { WindowModule } from '@acpaas-ui/ngx-components/utils'`;
+import { WindowModule } from '@acpaas-ui/ngx-components/utils';
 ```
 
 ## Documentation

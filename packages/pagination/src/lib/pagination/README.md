@@ -5,7 +5,7 @@ This component makes navigating between different pages extremely easy.
 ## Usage
 
 ```typescript
-import { PaginationModule } from '@acpaas-ui/ngx-components/pagination'`;
+import { PaginationModule } from '@acpaas-ui/ngx-components/pagination';
 ```
 
 ## Documentation

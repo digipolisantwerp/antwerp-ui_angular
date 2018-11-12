@@ -5,7 +5,7 @@ A simple calendar component with a month, year and decennia view where you can e
 ## Usage
 
 ```typescript
-import { CalendarModule } from '@acpaas-ui/ngx-components/calendar'`;
+import { CalendarModule } from '@acpaas-ui/ngx-components/calendar';
 ```
 
 ## Documentation

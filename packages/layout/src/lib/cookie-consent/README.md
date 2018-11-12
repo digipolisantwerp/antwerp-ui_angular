@@ -9,7 +9,7 @@ The Cookie consent module provides an easy, minimal configuration setup to add a
 ## Usage
 
 ```typescript
-import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout'`;
+import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
 ```
 
 ## Documentation

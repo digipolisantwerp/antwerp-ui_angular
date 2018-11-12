@@ -11,7 +11,7 @@ The upload module provides a couple of upload components and an `Uploader` class
 ## Usage
 
 ```typescript
-import { UploadModule } from '@acpaas-ui/ngx-components/forms'`;
+import { UploadModule } from '@acpaas-ui/ngx-components/forms';
 ```
 
 Add a map with error messages for the validation

@@ -5,7 +5,7 @@ Use the filter module to filter a set of data. The module provides easy to use f
 ## Usage
 
 ```typescript
-import { FilterModule } from '@acpaas-ui/ngx-components/utils'`;
+import { FilterModule } from '@acpaas-ui/ngx-components/utils';
 ```
 
 ## Documentation
