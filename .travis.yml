@@ -15,8 +15,6 @@ branches:
 
 script:
   - npm run lint
-  - ng build code-snippet
-  - ng build logo
   - npm run build
   - npm run examples
   - npm test
