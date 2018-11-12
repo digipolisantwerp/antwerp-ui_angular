@@ -5,7 +5,7 @@ This module renders a picture, an icon or a letter in the form of an avatar.
 ## Usage
 
 ```typescript
-import { AvatarModule } from '@acpaas-ui/ngx-components/avatar'`;
+import { AvatarModule } from '@acpaas-ui/ngx-components/avatar';
 ```
 
 ## Documentation

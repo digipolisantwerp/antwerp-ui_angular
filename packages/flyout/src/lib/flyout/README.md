@@ -6,7 +6,7 @@ There are three directives necessary to get the flyout functionality: `auiFlyout
 ## Usage
 
 ```typescript
-import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout'`;
+import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 ```
 
 ## Documentation

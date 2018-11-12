@@ -5,7 +5,7 @@ With the mask module you can make input fields that only accept a specific forma
 ## Usage
 
 ```typescript
-import { MaskModule } from '@acpaas-ui/ngx-components/mask'`;
+import { MaskModule } from '@acpaas-ui/ngx-components/mask';
 ```
 
 ## Documentation

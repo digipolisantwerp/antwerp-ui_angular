@@ -5,7 +5,7 @@ This module creates an input field with autocomplete functionality.
 ## Usage
 
 ```typescript
-import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms'`;
+import { AutoCompleteModule } from '@acpaas-ui/ngx-components/forms';
 ```
 
 ## Documentation

@@ -5,7 +5,7 @@ A simple footer with go-to-top functionality.
 ## Usage
 
 ```typescript
-import { FooterModule } from '@acpaas-ui/ngx-components/layout'`;
+import { FooterModule } from '@acpaas-ui/ngx-components/layout';
 ```
 
 ## Documentation

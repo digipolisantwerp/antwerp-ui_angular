@@ -5,7 +5,7 @@ Description goes here.
 ## Usage
 
 ```typescript
-import { SidebarModule } from '@acpaas-ui/ngx-components/layout'`;
+import { SidebarModule } from '@acpaas-ui/ngx-components/layout';
 ```
 
 ## Documentation

@@ -5,7 +5,7 @@ This module has the FlyoutModule already implemented on a button, giving it a dr
 ## Usage
 
 ```typescript
-import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout'`;
+import { FlyoutButtonModule } from '@acpaas-ui/ngx-components/flyout';
 ```
 
 ## Documentation

@@ -8,7 +8,7 @@ The pagination component contains two modules: the pagination itself and the ite
 import {
     PaginationModule,
     ItemCounterModule
-} from '@acpaas-ui/ngx-components/pagination'`;
+} from '@acpaas-ui/ngx-components/pagination';
 ```
 
 ## Documentation

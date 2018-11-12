@@ -15,7 +15,7 @@ The module contains:
 ## Usage
 
 ```typescript
-import { TableModule } from '@acpaas-ui/ngx-components/table'`;
+import { TableModule } from '@acpaas-ui/ngx-components/table';
 ```
 
 ## Documentation

@@ -5,7 +5,7 @@ Description goes here.
 ## Usage
 
 ```typescript
-import { ModalModule } from '@acpaas-ui/ngx-components/layout'`;
+import { ModalModule } from '@acpaas-ui/ngx-components/layout';
 ```
 
 ## Documentation
