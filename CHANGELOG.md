@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] - yyyy-mm-dd
+## [1.0.4] - 2018-11-13
+
 ### Added
 - `analytics` Added documentation.
 - `calendar` Added documentation.
@@ -25,19 +26,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `utils/window` Added documentation.
 
 ### Changed
-- `core` update angular-cli & ng-packagr
-- `core` update package names & setup
-- `core` update schematic
+- `core` Update angular-cli & ng-packagr
+- `core` Update package names & setup
+- `core` Update schematic
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
 
 ### Fixed
-- `packages` set package names to full import path -> fixes flatModuleId's used in metadata.json
-- `forms` fix inputmask import
+- `core` Fixed AOT builds
+- `packages` Set package names to full import path -> fixes flatModuleId's used in metadata.json
+- `forms` Fix inputmask import
 - `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
 - `upload` Removed unnecessary module imports that caused build conflicts.
 - `layout/hero` Removed unnecessary module imports that caused build conflicts.
 
 ## [1.0.3] - 2018-09-25
+
 ### Added
 - `avatar` Added documentation.
 - `code-snippet` Added documentation.
@@ -65,6 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## [1.0.1] - 2018-07-02
+
 ### Changed
 - `core` Optimized build script.
 
