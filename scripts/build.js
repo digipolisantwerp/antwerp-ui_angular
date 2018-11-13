@@ -29,7 +29,7 @@ promiseQueue(localDependencies.map(package => buildPackage(package)))
 					exec(`rimraf ${process.cwd()}/dist/${package}/examples`);
 				}
 			} catch(e) {
-				console.log(colors.green(`No example found for ${package}`);
+				console.log(colors.green(`No example found for ${package}`));
 			}
 		});
 		console.log(colors.green('Build completed.'));
