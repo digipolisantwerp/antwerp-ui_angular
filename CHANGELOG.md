@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.0.4] - 2018-11-13
+## Unreleased
+
+
+## [1.0.5] - 2018-11-13
 
 ### Added
 - `analytics` Added documentation.
@@ -38,6 +41,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
 - `upload` Removed unnecessary module imports that caused build conflicts.
 - `layout/hero` Removed unnecessary module imports that caused build conflicts.
+
+
+## [1.0.4] - 2018-11-13 - BORKED
+
 
 ## [1.0.3] - 2018-09-25
 
@@ -77,7 +84,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.4...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.5...HEAD
+[1.0.5]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.1...v1.0.2
