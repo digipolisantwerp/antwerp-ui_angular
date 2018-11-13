@@ -25,9 +25,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `utils/window` Added documentation.
 
 ### Changed
+- `core` update angular-cli & ng-packagr
+- `core` update package names & setup
+- `core` update schematic
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
 
 ### Fixed
+- `packages` set package names to full import path -> fixes flatModuleId's used in metadata.json
+- `forms` fix inputmask import
 - `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
 - `upload` Removed unnecessary module imports that caused build conflicts.
 - `layout/hero` Removed unnecessary module imports that caused build conflicts.

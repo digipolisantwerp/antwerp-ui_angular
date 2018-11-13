@@ -1,5 +1,5 @@
 {
-  "name": "map",
+  "name": "@acpaas-ui/ngx-components/map",
   "version": "0.0.1",
   "acpaas-ui": {
     "dependencies": []

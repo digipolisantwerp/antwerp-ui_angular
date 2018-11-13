@@ -1,5 +1,5 @@
 {
-  "name": "notifications",
+  "name": "@acpaas-ui/ngx-components/notifications",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular-redux/store": "^7.1.1",

@@ -1,5 +1,5 @@
 {
-  "name": "layout",
+  "name": "@acpaas-ui/ngx-components/layout",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular-redux/store": "~7.1.1",
