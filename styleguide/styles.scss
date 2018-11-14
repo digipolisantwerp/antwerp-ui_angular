@@ -47,6 +47,40 @@ main {
 	}
 }
 
+.o-header__link {
+	align-self: center;
+	display: inline-block;
+	font-weight: 700;
+	padding: $spacer / 2;
+
+	&,
+	&:link,
+	&:hover,
+	&:active,
+	&:visited,
+	&:focus {
+		color: $white;
+		text-decoration: none;
+	}
+
+	@include to($screen-sm) {
+		display: none;
+	}
+}
+
+.o-header__content-wrapper {
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: $screen-lg;
+	width: 100%;
+
+	@include at($screen-sm) {
+		padding: 0 $spacer;
+	}
+}
+
 .o-header .a-input input:not([class*=a-button]):not([type=checkbox]):not([type=radio]) {
 	border: none;
 }
