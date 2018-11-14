@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
-const Inputmask = require('inputmask');
+import Inputmask from 'inputmask';
 
 @Directive({
 	selector: '[auiMask]',

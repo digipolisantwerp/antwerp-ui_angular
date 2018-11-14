@@ -1,5 +1,5 @@
 {
-  "name": "analytics",
+  "name": "@acpaas-ui/ngx-components/analytics",
   "version": "0.0.1",
   "acpaas-ui": {
     "dependencies": [

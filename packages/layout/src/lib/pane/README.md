@@ -5,7 +5,7 @@ This module gives you an easy way to open a pane in your app.
 ## Usage
 
 ```typescript
-import { PaneModule } from '@acpaas-ui/ngx-components/layout'`;
+import { PaneModule } from '@acpaas-ui/ngx-components/layout';
 ```
 
 ## Documentation

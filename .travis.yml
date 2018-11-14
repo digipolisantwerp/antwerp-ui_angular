@@ -10,7 +10,7 @@ before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 branches:
-  only: 
+  only:
     - master
 
 script:

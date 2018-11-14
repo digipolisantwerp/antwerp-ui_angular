@@ -80,7 +80,9 @@
             "tsConfig": "styleguide/tsconfig.spec.json",
             "karmaConfig": "styleguide/karma.conf.js",
             "styles": [
-              "styleguide/styles.css"
+              "styleguide/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
             "scripts": [],
             "assets": [
@@ -116,11 +118,9 @@
             "project": "packages/agenda/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/agenda/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/agenda/ng-package.json",
+              "tsConfig": "packages/agenda/tsconfig.json"
             }
           }
         },
@@ -159,11 +159,9 @@
             "project": "packages/analytics/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/analytics/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/analytics/ng-package.examples.json"
+              "project": "packages/analytics/examples/ng-package.json",
+              "tsConfig": "packages/analytics/examples/tsconfig.json"
             }
           }
         },
@@ -202,11 +200,9 @@
             "project": "packages/avatar/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/avatar/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/avatar/examples/ng-package.json",
+              "tsConfig": "packages/avatar/examples/tsconfig.json"
             }
           }
         },
@@ -245,11 +241,9 @@
             "project": "packages/calendar/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/calendar/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/calendar/ng-package.examples.json"
+              "project": "packages/calendar/examples/ng-package.json",
+              "tsConfig": "packages/calendar/examples/tsconfig.json"
             }
           }
         },
@@ -288,11 +282,9 @@
             "project": "packages/code-snippet/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/code-snippet/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/code-snippet/ng-package.examples.json"
+              "project": "packages/code-snippet/examples/ng-package.json",
+              "tsConfig": "packages/code-snippet/examples/tsconfig.json"
             }
           }
         },
@@ -331,11 +323,9 @@
             "project": "packages/context/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/context/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/context/ng-package.examples.json"
+              "project": "packages/context/examples/ng-package.json",
+              "tsConfig": "packages/context/examples/tsconfig.json"
             }
           }
         },
@@ -374,11 +364,9 @@
             "project": "packages/flyout/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/flyout/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/flyout/ng-package.examples.json"
+              "project": "packages/flyout/examples/ng-package.json",
+              "tsConfig": "packages/flyout/examples/tsconfig.json"
             }
           }
         },
@@ -417,11 +405,9 @@
             "project": "packages/forms/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/forms/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/forms/ng-package.examples.json"
+              "project": "packages/forms/examples/ng-package.json",
+              "tsConfig": "packages/forms/examples/tsconfig.json"
             }
           }
         },
@@ -460,11 +446,9 @@
             "project": "packages/layout/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/layout/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/layout/ng-package.examples.json"
+              "project": "packages/layout/examples/ng-package.json",
+              "tsConfig": "packages/layout/examples/tsconfig.json"
             }
           }
         },
@@ -503,11 +487,9 @@
             "project": "packages/map/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/map/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/map/ng-package.examples.json"
+              "project": "packages/map/examples/ng-package.json",
+              "tsConfig": "packages/map/examples/tsconfig.json"
             }
           }
         },
@@ -546,11 +528,9 @@
             "project": "packages/localstorage/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/localstorage/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/localstorage/ng-package.examples.json"
+              "project": "packages/localstorage/examples/ng-package.json",
+              "tsConfig": "packages/localstorage/examples/tsconfig.json"
             }
           }
         },
@@ -589,11 +569,9 @@
             "project": "packages/logo/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/logo/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/logo/ng-package.examples.json"
+              "project": "packages/logo/examples/ng-package.json",
+              "tsConfig": "packages/logo/examples/tsconfig.json"
             }
           }
         },
@@ -632,11 +610,9 @@
             "project": "packages/notifications/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/notifications/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/avatar/ng-package.examples.json"
+              "project": "packages/avatar/examples/ng-package.json",
+              "tsConfig": "packages/avatar/examples/tsconfig.json"
             }
           }
         },
@@ -675,11 +651,9 @@
             "project": "packages/pagination/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/pagination/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/pagination/ng-package.examples.json"
+              "project": "packages/pagination/examples/ng-package.json",
+              "tsConfig": "packages/pagination/examples/tsconfig.json"
             }
           }
         },
@@ -718,11 +692,9 @@
             "project": "packages/progress-bar/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/progress-bar/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/progress-bar/ng-package.examples.json"
+              "project": "packages/progress-bar/examples/ng-package.json",
+              "tsConfig": "packages/progress-bar/examples/tsconfig.json"
             }
           }
         },
@@ -761,11 +733,9 @@
             "project": "packages/utils/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/utils/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/utils/ng-package.examples.json"
+              "project": "packages/utils/examples/ng-package.json",
+              "tsConfig": "packages/utils/examples/tsconfig.json"
             }
           }
         },
@@ -804,11 +774,9 @@
             "project": "packages/selectable-list/ng-package.json"
           },
           "configurations": {
-            "production": {
-              "project": "packages/selectable-list/ng-package.prod.json"
-            },
             "examples": {
-              "project": "packages/selectable-list/ng-package.examples.json"
+              "project": "packages/selectable-list/examples/ng-package.json",
+              "tsConfig": "packages/selectable-list/examples/tsconfig.json"
             }
           }
         },
@@ -848,10 +816,8 @@
           },
           "configurations": {
             "examples": {
-              "project": "packages/table/ng-package.examples.json"
-            },
-            "production": {
-              "project": "packages/table/ng-package.prod.json"
+              "project": "packages/table/examples/ng-package.json",
+              "tsConfig": "packages/table/examples/tsconfig.json"
             }
           }
         },

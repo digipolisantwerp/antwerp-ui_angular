@@ -9,7 +9,7 @@ You can use `FlyoutModule` to extend a component or use the `FlyoutButtonModule`
 import {
     FlyoutModule,
     FlyoutButtonModule
-} from '@acpaas-ui/ngx-components/flyout'`;
+} from '@acpaas-ui/ngx-components/flyout';
 ```
 
 ## Documentation

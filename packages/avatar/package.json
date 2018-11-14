@@ -1,5 +1,5 @@
 {
-  "name": "avatar",
+  "name": "@acpaas-ui/ngx-components/avatar",
   "version": "0.0.1",
   "acpaas-ui": {
     "dependencies": []

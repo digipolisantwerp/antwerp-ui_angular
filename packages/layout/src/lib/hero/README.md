@@ -5,7 +5,7 @@ The hero module provides two zones for content projection: the `auiHeroCard` zon
 ## Usage
 
 ```typescript
-import { HeroModule } from '@acpaas-ui/ngx-components/layout'`;
+import { HeroModule } from '@acpaas-ui/ngx-components/layout';
 ```
 
 ## Documentation
