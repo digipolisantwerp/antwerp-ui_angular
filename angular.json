@@ -20,7 +20,8 @@
             "tsConfig": "styleguide/tsconfig.app.json",
             "assets": [
               "styleguide/favicon.ico",
-              "styleguide/assets"
+              "styleguide/assets",
+              "404.html"
             ],
             "styles": [
               "styleguide/styles.scss",
@@ -87,7 +88,8 @@
             "scripts": [],
             "assets": [
               "styleguide/favicon.ico",
-              "styleguide/assets"
+              "styleguide/assets",
+              "404.html"
             ]
           }
         },
