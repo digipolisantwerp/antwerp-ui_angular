@@ -21,7 +21,7 @@
             "assets": [
               "styleguide/favicon.ico",
               "styleguide/assets",
-              "404.html"
+              "styleguide/404.html"
             ],
             "styles": [
               "styleguide/styles.scss",
@@ -89,7 +89,7 @@
             "assets": [
               "styleguide/favicon.ico",
               "styleguide/assets",
-              "404.html"
+              "styleguide/404.html"
             ]
           }
         },
