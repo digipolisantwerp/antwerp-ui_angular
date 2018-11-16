@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+- `core` Fixed an issue where an unwanted 404 was shown when the styleguide was reloaded on GitHub pages.
+
 
 ## [1.0.5] - 2018-11-13
 
