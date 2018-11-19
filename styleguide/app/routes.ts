@@ -4,7 +4,7 @@ import { NotFoundPageComponent } from './pages/not-found/not-found.page';
 
 export const ROUTES: Routes = [
 	{
-		path: '', redirectTo: '/modules/avatar', pathMatch: 'full',
+		path: '', redirectTo: '/modules/analytics', pathMatch: 'full',
 	},
 	{
 		path: 'not-found', component: NotFoundPageComponent,
