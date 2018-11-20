@@ -10,8 +10,8 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
-    "@a-ui/acpaas": "3.0.0",
-    "@a-ui/core": "3.0.1"
+    "@a-ui/acpaas": "3.0.3",
+    "@a-ui/core": "3.0.3"
   },
   "peerDependencies": {
     "@angular/animations": "^6.0.0",

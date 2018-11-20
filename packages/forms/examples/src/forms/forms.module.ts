@@ -7,6 +7,7 @@ import {
 	DatepickerModule,
 	MaskModule,
 	RangeSliderModule,
+	SearchFilterModule,
 	TimepickerModule,
 	UploadModule,
 	WysiwygModule,
@@ -17,12 +18,9 @@ import { Pages } from './pages/index';
 
 @NgModule({
 	imports: [
-		CommonModule,
-		FormsModule,
-		ReactiveFormsModule,
-		RouterModule,
 		AutoCompleteModule,
 		CodeSnippetModule,
+		CommonModule,
 		DatepickerModule.forChild([
 			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
 		], [
@@ -31,9 +29,13 @@ import { Pages } from './pages/index';
 			ERRORS_INVALID_DATE: 'Ongeldige datum.',
 			ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden.',
 		}),
+		FormsModule,
 		MaskModule,
 		RangeSliderModule,
+		ReactiveFormsModule,
+		SearchFilterModule,
 		TimepickerModule,
+		RouterModule,
 		UploadModule,
 		WysiwygModule,
 	],

@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms/mask` Added documentation.
 - `forms/range-slider` Added documentation.
 - `forms/timepicker` Added documentation.
+- `forms/search-filter` Added documentation.
 - `forms/upload` Added documentation.
 - `forms/wysiwyg` Added documentation.
 - `layout/cookie-consent` Added documentation.
