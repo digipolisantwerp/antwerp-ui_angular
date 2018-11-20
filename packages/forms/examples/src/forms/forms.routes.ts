@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 import { FormsDemoPageComponent } from './pages/demo/demo.page';
 import { FormsAutocompleteDemoPageComponent } from './pages/autocomplete/autocomplete.page';
 import { FormsDatepickerDemoPageComponent } from './pages/datepicker/datepicker.page';
-import { FormsFieldErrorsDemoPageComponent } from './pages/field-errors/field-errors.page';
 import { FormsMaskDemoPageComponent } from './pages/mask/mask.page';
 import { FormsRangeSliderDemoPageComponent } from './pages/range-slider/range-slider.page';
 import { FormsSearchFilterDemoPageComponent } from './pages/search-filter/search-filter.page';
@@ -30,11 +29,6 @@ export const FORMS_EXAMPLES_ROUTES: Routes = [
 				path: 'datepicker',
 				pathMatch: 'full',
 				component: FormsDatepickerDemoPageComponent,
-			},
-			{
-				path: 'field-errors',
-				pathMatch: 'full',
-				component: FormsFieldErrorsDemoPageComponent,
 			},
 			{
 				path: 'mask',
