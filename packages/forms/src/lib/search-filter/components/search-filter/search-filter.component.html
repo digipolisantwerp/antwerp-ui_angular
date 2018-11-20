@@ -24,7 +24,7 @@
 		<div class="u-text-center u-padding a-spinner" *ngIf="loading"></div>
 		<ul class="a-list a-list--lined a-list--unstyled" *ngIf="!loading">
 			<li class="m-search-filter__results-item a-list__item" *ngIf="!filteredChoices.length">
-				<p class="u-padding-xs">{{ labelNoResults }}</p>
+				<p class="u-margin-xs">{{ labelNoResults }}</p>
 			</li>
 			<li class="m-search-filter__results-item a-list__item" *ngFor="let choice of filteredChoices; index as i">
 				 <div class="a-input__checkbox">
