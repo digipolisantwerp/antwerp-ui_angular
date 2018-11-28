@@ -1,0 +1,9 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/code-snippet",
+  "deleteDestPath": true,
+  "whitelistedNonPeerDependencies": [
+    "angular2-highlight-js",
+    "marked"
+  ]
+}

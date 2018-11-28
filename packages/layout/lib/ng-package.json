@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/layout",
+  "deleteDestPath": true,
+  "whitelistedNonPeerDependencies": [
+    "@a-ui/core",
+    "@angular-redux/store",
+    "@jsprds/headroom.ts",
+    "cookieconsent",
+    "lodash-es",
+    "redux"
+  ]
+}

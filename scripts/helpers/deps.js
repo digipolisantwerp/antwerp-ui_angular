@@ -43,7 +43,7 @@ module.exports.getNPMDependencies = ({ preserve = false } = {}) => {
 	const isDirectory = source => lstatSync(source).isDirectory();
 	const getDirectories = source => readdirSync(source).map(name => join(source, name)).filter(isDirectory);
 
-	const packages = getDirectories(resolve(process.cwd(), 'packages')).map(path => `${path}/`);
+	const packages = getDirectories(resolve(process.cwd(), 'packages')).map(path => `${path}/lib/`);
 
 	const result = mergePackages.npm(packageJson, packages);
 

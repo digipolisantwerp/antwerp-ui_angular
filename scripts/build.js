@@ -9,7 +9,7 @@ const buildPackage = require('./helpers/build');
 const exec = require('./helpers/bash');
 
 const directories = getDirectories(resolve(process.cwd(), 'packages'));
-const configs = directories.map(directory => readFileSync(resolve(directory, 'package.json'), {
+const configs = directories.map(directory => readFileSync(resolve(`${directory}/lib`, 'package.json'), {
 	encoding: 'UTF-8'
 }));
 const localDependencies = getAUIDependencies(configs.reduce((acc, curr) => {

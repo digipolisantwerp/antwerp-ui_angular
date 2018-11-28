@@ -1,0 +1,11 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/notifications",
+  "deleteDestPath": true,
+  "whitelistedNonPeerDependencies": [
+    "@a-ui/core",
+    "@angular-redux/store",
+    "@acpaas-ui/js-notification-store",
+    "lodash-es"
+  ]
+}
