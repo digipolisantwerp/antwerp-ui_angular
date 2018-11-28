@@ -1,3 +1,4 @@
+import { AGENDA_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/agenda';
 import { ANALYTICS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/analytics';
 import { AVATAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/avatar';
 import { CALENDAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/calendar';
@@ -16,6 +17,7 @@ import { TABLE_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/table';
 import { UTILS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/utils';
 
 export const EXAMPLES_ROUTES = [
+	{ path: 'agenda', children: AGENDA_EXAMPLES_ROUTES, title: 'Agenda', },
 	{ path: 'analytics', children: ANALYTICS_EXAMPLES_ROUTES, title: 'Analytics', },
 	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES, title: 'Avatar', },
 	{ path: 'calendar', children: CALENDAR_EXAMPLES_ROUTES, title: 'Calendar', },

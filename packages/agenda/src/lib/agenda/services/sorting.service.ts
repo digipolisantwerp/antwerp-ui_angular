@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { EventInterface } from '../types/agenda.types';
 import { DateHelperService } from './date-helper.service';
-import { EventMap } from '../classes/event-map.class';
 
 @Injectable()
 export class SortingService {
