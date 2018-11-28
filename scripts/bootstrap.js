@@ -30,7 +30,7 @@ promiseQueue([
 	...directories.map(directory => {
 		// Handle spaces in the directory name
 		directory = directory.replace(" ", "\\ ");
-		return () => exec(`cd ${directory} && npm install`);
+		return () => exec(`cd ${directory}/lib && npm install`);
 	})
 ])
 	.then(() => {
