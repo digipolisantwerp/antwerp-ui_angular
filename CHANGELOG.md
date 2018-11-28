@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+- `core` fix AOT / Prod builds
+
 ### Fixed
 - `core` Fixed an issue where an unwanted 404 was shown when the styleguide was reloaded on GitHub pages.
 

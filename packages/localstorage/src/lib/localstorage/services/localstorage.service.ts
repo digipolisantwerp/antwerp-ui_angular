@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 
-import { LOCALSTORAGE_CONFIG, DEFAULT_LOCALSTORAGE_CONFIG } from '../localstorage.conf';
+import { LOCALSTORAGE_CONFIG } from '../localstorage.conf';
 import { Selector, PathSelector, Comparator, LocalstorageConfig } from '../types/localstorage.types';
 import { LocalstorageHelper } from '../localstorage.helper';
 import memoryStorage from '../localstorage.polyfill';

@@ -1,5 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { WINDOW } from '@acpaas-ui/ngx-components/utils';
+import { WindowModule, WINDOW_PROVIDERS } from '@acpaas-ui/ngx-components/utils';
 
 import {
 	LocalstorageConfig,
@@ -14,10 +14,11 @@ import {
 
 @NgModule({
 	imports: [
+		WindowModule,
 	],
 	providers: [
 		{ provide: LOCALSTORAGE_CONFIG, useValue: DEFAULT_LOCALSTORAGE_CONFIG },
-		{ provide: WINDOW, useValue: window },
+		...WINDOW_PROVIDERS,
 		LocalstorageService,
 	],
 })
@@ -29,13 +30,9 @@ export class LocalstorageModule {
 			ngModule: LocalstorageModule,
 			providers: [
 				{ provide: LOCALSTORAGE_CONFIG, useValue: localstorageConfig },
-				{ provide: WINDOW, useValue: window },
+				...WINDOW_PROVIDERS,
 				LocalstorageService,
 			],
 		};
 	}
-
-	constructor(
-		private localstorageService: LocalstorageService
-	) {}
 }
