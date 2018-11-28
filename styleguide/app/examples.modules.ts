@@ -1,4 +1,3 @@
-import { AgendaExamplesModule } from '@acpaas-ui/ngx-examples/agenda';
 import { AnalyticsExamplesModule } from '@acpaas-ui/ngx-examples/analytics';
 import { AvatarExamplesModule } from '@acpaas-ui/ngx-examples/avatar';
 import { CalendarExamplesModule } from '@acpaas-ui/ngx-examples/calendar';
@@ -17,7 +16,6 @@ import { TableExamplesModule } from '@acpaas-ui/ngx-examples/table';
 import { UtilsExamplesModule } from '@acpaas-ui/ngx-examples/utils';
 
 export const ExamplesModules = [
-	AgendaExamplesModule,
 	AnalyticsExamplesModule,
 	AvatarExamplesModule,
 	CalendarExamplesModule,
