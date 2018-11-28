@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### 2018-11-28
+
+- `core` build components independent of examples
 - `core` fix AOT / Prod builds
 
 ### Fixed
