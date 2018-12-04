@@ -138,6 +138,18 @@
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true
+    "directive-class-suffix": true,
+    "directive-selector": [
+      true,
+      "attribute",
+      "aui",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "aui",
+      "kebab-case"
+    ]
   }
 }
