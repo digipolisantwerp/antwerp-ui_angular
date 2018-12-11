@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### 2018-12-11
+
+- `documentation` changed paths to the library documentation
+- `localstorage` fix typo
+- `code-snippet` fix typo
+
 ### 2018-11-28
 
 - `core` build components independent of examples
