@@ -8,9 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### 2018-12-11
 
-- `documentation` changed paths to the library documentation
-- `localstorage` fix typo
-- `code-snippet` fix typo
+- `documentation` fixed some issue with the documentation
 
 ### 2018-11-28
 
