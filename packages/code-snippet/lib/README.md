@@ -34,7 +34,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ##### A single code snippet
 
 ```typescript
-import { CodeSnippetModule } from '@acpaas-ui/code-snippet';
+import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
 
 @NgModule({
     imports: [
