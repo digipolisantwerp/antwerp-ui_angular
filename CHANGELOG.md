@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### 2018-12-11
+
+- `documentation` fixed some issue with the documentation
+
 ### 2018-11-28
 
 - `core` build components independent of examples

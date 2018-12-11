@@ -55,24 +55,24 @@ This library contains the following components:
 
 | Name           | Description                              | URL                                                       |
 | -------------- | ---------------------------------------- | --------------------------------------------------------- |
-| agenda         | Calendar to display events               | [Documentation](./packages/agenda/README.md)              |
-| analytics      | Google Analytics integration             | [Documentation](./packages/analytics/README.md)           |
-| avatar         | User avatar icon                         | [Documentation](./packages/avatar/README.md)              |
-| calendar       | Calendar to select dates                 | [Documentation](./packages/calendar/README.md)            |
-| code-snippet   | Snippet of source code                   | [Documentation](./packages/code-snippet/README.md)        |
-| context        | Set meta tags for SEO                    | [Documentation](./packages/context/README.md)             |
-| flyout         | Reveal additional content                | [Documentation](./packages/flyout/README.md)              |
-| forms          | Assorted form fields                     | [Documentation](./packages/forms/README.md)               |
-| layout         | Assorted page layout components          | [Documentation](./packages/layout/README.md)              |
-| localstorage   | Interface with localstorage              | [Documentation](./packages/localstorage/README.md)        |
-| logo           | Logo icon                                | [Documentation](./packages/logo/README.md)                |
-| map            | Leaflet-based map                        | [Documentation](./packages/map/README.md)                 |
-| notifications  | Show user notifications                  | [Documentation](./packages/notifications/README.md)       |
-| pagination     | Pagination control                       | [Documentation](./packages/pagination/README.md)          |
-| progress-bar   | Progress bar control                     | [Documentation](./packages/progress-bar/README.md)        |
-| selectable-list| List control with selectable items       | [Documentation](./packages/selectable-list/README.md)     |
-| table          | Interactive table                        | [Documentation](./packages/table/README.md)               |
-| utils          | Assorted helpers                         | [Documentation](./packages/utils/README.md)               |
+| agenda         | Calendar to display events               | [Documentation](./packages/agenda/lib/README.md)              |
+| analytics      | Google Analytics integration             | [Documentation](./packages/analytics/lib/README.md)           |
+| avatar         | User avatar icon                         | [Documentation](./packages/avatar/lib/README.md)              |
+| calendar       | Calendar to select dates                 | [Documentation](./packages/calendar/lib/README.md)            |
+| code-snippet   | Snippet of source code                   | [Documentation](./packages/code-snippet/lib/README.md)        |
+| context        | Set meta tags for SEO                    | [Documentation](./packages/context/lib/README.md)             |
+| flyout         | Reveal additional content                | [Documentation](./packages/flyout/lib/README.md)              |
+| forms          | Assorted form fields                     | [Documentation](./packages/forms/lib/README.md)               |
+| layout         | Assorted page layout components          | [Documentation](./packages/layout/lib/README.md)              |
+| localstorage   | Interface with localstorage              | [Documentation](./packages/localstorage/lib/README.md)        |
+| logo           | Logo icon                                | [Documentation](./packages/logo/lib/README.md)                |
+| map            | Leaflet-based map                        | [Documentation](./packages/map/lib/README.md)                 |
+| notifications  | Show user notifications                  | [Documentation](./packages/notifications/lib/README.md)       |
+| pagination     | Pagination control                       | [Documentation](./packages/pagination/lib/README.md)          |
+| progress-bar   | Progress bar control                     | [Documentation](./packages/progress-bar/lib/README.md)        |
+| selectable-list| List control with selectable items       | [Documentation](./packages/selectable-list/lib/README.md)     |
+| table          | Interactive table                        | [Documentation](./packages/table/lib/README.md)               |
+| utils          | Assorted helpers                         | [Documentation](./packages/utils/lib/README.md)               |
 
 ## Questions
 

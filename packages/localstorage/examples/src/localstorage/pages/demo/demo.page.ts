@@ -11,7 +11,7 @@ export class LocalstorageDemoPageComponent {
 	public item: any;
 	public timesUsed: any;
 
-	public typescript1 = `import { LocalstorageModule } from '@acpaas-ui/localstorage';
+	public typescript1 = `import { LocalstorageModule } from '@acpaas-ui/ngx-components/localstorage';
 
 @NgModule({
 	imports: [
