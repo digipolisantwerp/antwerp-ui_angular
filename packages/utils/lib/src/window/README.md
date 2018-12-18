@@ -47,18 +47,18 @@ import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 ```
 
 ```typescript
-windowObject: Window;
-constructor(@Inject(WINDOW) private window) {
-    this.windowObject = window;
-}
+public windowObject = this.window;
+constructor(
+    @Inject(WINDOW) private window
+) {}
 ```
 
 ```html
 <dl>
-    <dt>innerWidth:</dt>
-        <dd>{{ windowObject.innerWidth }}</dd>
-    <dt>innerHeight:</dt>
-        <dd>{{ windowObject.innerHeight }}</dd>
+    <dt>Height:</dt>
+        <dd><pre>{{ windowObject.innerHeight }}</pre></dd>
+    <dt>Width:</dt>
+        <dd><pre>{{ windowObject.innerWidth }}</pre></dd>
 </dl>
 ```
 

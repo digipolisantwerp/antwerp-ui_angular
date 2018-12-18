@@ -13,8 +13,6 @@ import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 	],
 })
 export class UtilsWindowDemoPageComponent {
-	windowObject: Window;
-
 	public importModule = `import { WindowModule } from '@acpaas-ui/ngx-components/utils';
 
 @NgModule({
@@ -40,19 +38,19 @@ export class AppModule {};`;
 	],
 })`;
 
-	public codeExampleJS3 = `windowObject: Window;
-constructor(@Inject(WINDOW) private window) {
-	this.windowObject = window;
-}`;
+	public codeExampleJS3 = `public windowObject = this.window;
+	constructor(
+		@Inject(WINDOW) private window
+	) {}`;
 
 	public codeExampleHTML = `<dl>
-	<dt>innerWidth:</dt>
-		<dd>{{ windowObject.innerWidth }}</dd>
-	<dt>innerHeight:</dt>
-		<dd>{{ windowObject.innerHeight }}</dd>
+	<dt>Height:</dt>
+		<dd><pre>{{ windowObject.innerHeight }}</pre></dd>
+	<dt>Width:</dt>
+		<dd><pre>{{ windowObject.innerWidth }}</pre></dd>
 </dl>`;
-
-	constructor(@Inject(WINDOW) private window) {
-		this.windowObject = window;
-	}
+	public windowObject = this.window;
+	constructor(
+		@Inject(WINDOW) private window
+	) {}
 }
