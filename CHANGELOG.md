@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+- `documentation` fixed the `utils/window` example
+
 ### 2018-12-11
 
 - `documentation` fixed some issue with the documentation
