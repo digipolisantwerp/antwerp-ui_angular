@@ -16,7 +16,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ### Example
 
 ```typescript
-import { WindowModule } from '@acpaas-ui/ngx-components/utils';
+import { WindowModule, WINDOW_PROVIDERS } from '@acpaas-ui/ngx-components/utils';
 
 @NgModule({
     imports: [
@@ -33,32 +33,17 @@ import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 ```
 
 ```typescript
-@Component({
-    templateUrl: './window.page.html',
-    // fix for @Inject and global interface type
-    // https://github.com/angular/angular/issues/15640
-    providers: [
-        {
-            provide: WINDOW,
-            useValue: window,
-        },
-    ],
-})
-```
-
-```typescript
-windowObject: Window;
-constructor(@Inject(WINDOW) private window) {
-    this.windowObject = window;
-}
+constructor(
+    @Inject(WINDOW) public window
+) {}
 ```
 
 ```html
 <dl>
-    <dt>innerWidth:</dt>
-        <dd>{{ windowObject.innerWidth }}</dd>
-    <dt>innerHeight:</dt>
-        <dd>{{ windowObject.innerHeight }}</dd>
+    <dt>Height:</dt>
+        <dd><pre>{{ window.innerHeight }}</pre></dd>
+    <dt>Width:</dt>
+        <dd><pre>{{ window.innerWidth }}</pre></dd>
 </dl>
 ```
 

@@ -6,6 +6,7 @@ import {
 	FilterModule,
 	LabelsModule,
 	WindowModule,
+	WINDOW_PROVIDERS,
 } from '@acpaas-ui/ngx-components/utils';
 import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
 
@@ -24,5 +25,6 @@ import { Pages } from './pages/index';
 	declarations: [
 		Pages,
 	],
+	providers: [WINDOW_PROVIDERS],
 })
 export class UtilsExamplesModule {}
