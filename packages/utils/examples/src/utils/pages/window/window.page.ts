@@ -5,7 +5,7 @@ import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 	templateUrl: './window.page.html',
 })
 export class UtilsWindowDemoPageComponent {
-	public importModule = `import { WindowModule, WINDOW_PROVIDERS } from '@acpaas-ui/ngx-components/utils';';
+	public importModule = `import { WindowModule, WINDOW_PROVIDERS } from '@acpaas-ui/ngx-components/utils';
 
 @NgModule({
 	imports: [
