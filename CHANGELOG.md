@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `documentation` fixed the `utils/window` example
 
+### 2019-01-08
+
+- `documentation` added info in the code-snippet documentation about how to use highlight.js
+
 ### 2018-12-11
 
 - `documentation` fixed some issue with the documentation
