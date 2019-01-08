@@ -5,21 +5,9 @@ This module contains a component for displaying a code snippet formatted by high
 ## Dependencies
 This package is build depending on:
 
-- [hightlight.js](https://highlightjs.org)
-- and the [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
-- the [Marker npm package](https://www.npmjs.com/package/marked)
-
-```html
-Following lines must be included in your index.ts file in order to use highlight.js
-
-<head>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css">
-</head>
-
-<body>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
-</body>
-```
+- [hightlight.js](https://highlightjs.org), and needs to be installed [manually](https://highlightjs.org/usage/) (We use version 9.10.0)
+- [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
+- [Marker npm package](https://www.npmjs.com/package/marked)
 
 ## Usage
 
