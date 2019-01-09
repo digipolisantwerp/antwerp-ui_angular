@@ -9,9 +9,9 @@ This package is build depending on:
 - and the [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
 - the [Marker npm package](https://www.npmjs.com/package/marked)
 
-The code-snippet component relies on highlight.JS which needs to be installed manually. (We used and tested version 9.10.0)
+Be aware that you need to install the highlight.js package yourself. We have tested and used version 9.10.0 in our example.
 
-How to use [highlight.js](https://highlightjs.org/usage/)
+Check out the [highlight.js](https://highlightjs.org/usage/) documentation for more information on how to use it.
 
 ## Usage
 
