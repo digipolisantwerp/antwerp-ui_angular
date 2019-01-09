@@ -68,6 +68,7 @@ export class GAService {
 
 	private findLastChild(activatedRoute: ActivatedRoute) {
 		const snapshot = activatedRoute.snapshot;
+
 		let child = snapshot.firstChild;
 		while (child.firstChild !== null) {
 			child = child.firstChild;
