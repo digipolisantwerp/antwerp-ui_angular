@@ -5,9 +5,13 @@ This module contains a component for displaying a code snippet formatted by high
 ## Dependencies
 This package is build depending on:
 
-- [hightlight.js](https://highlightjs.org), and needs to be installed [manually](https://highlightjs.org/usage/) (We use version 9.10.0)
-- [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
-- [Marker npm package](https://www.npmjs.com/package/marked)
+- [hightlight.js](https://highlightjs.org)
+- and the [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
+- the [Marker npm package](https://www.npmjs.com/package/marked)
+
+The code-snippet component relies on highlight.JS and needs to be installed manually. (We used and tested version 9.10.0)
+
+How to use [highlight.js](https://highlightjs.org/usage/)
 
 ## Usage
 
