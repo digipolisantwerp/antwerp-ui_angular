@@ -9,7 +9,7 @@ This package is build depending on:
 - and the [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
 - the [Marker npm package](https://www.npmjs.com/package/marked)
 
-The code-snippet component relies on highlight.JS and needs to be installed manually. (We used and tested version 9.10.0)
+The code-snippet component relies on highlight.JS which needs to be installed manually. (We used and tested version 9.10.0)
 
 How to use [highlight.js](https://highlightjs.org/usage/)
 
