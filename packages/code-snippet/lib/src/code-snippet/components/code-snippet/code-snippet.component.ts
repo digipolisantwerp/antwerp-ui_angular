@@ -2,7 +2,7 @@ import {
 	Component,
 	Input,
 	OnChanges,
-	AfterViewChecked,
+	AfterViewInit,
 	ChangeDetectionStrategy,
 	HostBinding,
 	ElementRef,
@@ -19,7 +19,7 @@ import { HighlightJsService } from 'angular2-highlight-js';
 	templateUrl: './code-snippet.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CodeSnippetComponent implements OnChanges, AfterViewChecked {
+export class CodeSnippetComponent implements OnChanges, AfterViewInit {
 	@HostBinding('class.aui-code-snippet') setClass = true;
 
 	@Input() codeSnippet: string;
@@ -36,7 +36,7 @@ export class CodeSnippetComponent implements OnChanges, AfterViewChecked {
 		if (this.processMarkdown) { this.codeSnippet = marked(this.codeSnippet); }
 	}
 
-	public ngAfterViewChecked() {
+	public ngAfterViewInit() {
 		if (isPlatformBrowser(this.platformId)) {
 			const allPreEl = this.el.nativeElement.querySelectorAll('pre');
 
