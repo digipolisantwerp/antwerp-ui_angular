@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-- `documentation` Fixed the `utils/window` example
+- `documentation` Fixed the `utils/window` example.
 - `code-snippet` Fixed an issue where the `code-snippet` was constantly looking for `pre` tags.
+- `calendar` Fixed a faulty unit test.
 
 ### 2018-12-11
 
