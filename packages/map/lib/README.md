@@ -67,7 +67,7 @@ public ngOnInit(): void {
         <aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
     </div>
     <div controls bottom left>
-        <aui-leaflet-locate-control></aui-leaflet-locate-control>
+        <aui-leaflet-locate-control zoomlevel="16"></aui-leaflet-locate-control>
     </div>
     <div controls bottom right>
         <aui-leaflet-zoom-control></aui-leaflet-zoom-control>
@@ -89,7 +89,7 @@ public ngOnInit(): void {
 - `zoomIn()`: Zoom in
 - `zoomOut()`: Zoom out
 - `toggleFullscreen()`: Toggle fullscreen
-- `locate()`: Start zooming to current location
+- `locate(zoomlevel)`: Start zooming to current location with the given zoomlevel
 - `setView(center, zoom)`: Zoom to the given center and zoom values.
 - `addMarker(position, options)`: Adds a marker to the given position. (see leaflet docs)
 - `addHTMLMarker`: Adds an HTML marker to the given position.
