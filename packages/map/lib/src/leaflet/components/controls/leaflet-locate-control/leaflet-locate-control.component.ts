@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { LeafletMap } from '../../../classes/leaflet-map';
+
 
 @Component({
 	selector: 'aui-leaflet-locate-control',
@@ -8,4 +9,6 @@ import { LeafletMap } from '../../../classes/leaflet-map';
 })
 export class LeafletLocateControlComponent {
 	map: LeafletMap;
+
+	@Input() zoomlevel = 19;
 }
