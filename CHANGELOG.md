@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 - `documentation` fixed the `utils/window` example
+- `map` added possibility for users to specify zoomlevel when zooming to their current position on the `aui-leaflet-locate-control`.
 
 ### 2018-12-11
 
