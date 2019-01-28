@@ -72,7 +72,7 @@ describe('The Codesnippet Component', () => {
 
 	describe('Check if everything is set for highlight', () => {
 		it('all <pre> elements should have the "a-pre" class', () => {
-			comp.ngAfterViewChecked();
+			comp.ngAfterViewInit();
 			fixture.detectChanges();
 
 			const allPreEl = el.querySelectorAll('pre');
