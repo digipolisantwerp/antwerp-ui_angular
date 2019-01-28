@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `code-snippet` Fixed an issue where the `code-snippet` was constantly looking for `pre` tags.
 - `calendar` Fixed a faulty unit test.
 
+### 2019-01-08
+
+- `documentation` added info in the code-snippet documentation about how to use highlight.js
+
 ### 2018-12-11
 
 - `documentation` Fixed some issue with the documentation.
