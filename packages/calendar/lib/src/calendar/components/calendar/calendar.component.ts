@@ -53,6 +53,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 	) {}
 
 	ngOnInit() {
+		console.log('triggered calendar');
 		this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
 		this.monthLabels = this.monthLabels || this.moduleMonthLabels;
 		this.activeDate = this.calendarService.getClosestDateForRange(this.activeDate, this.range);
@@ -60,6 +61,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
+		console.log('ngOnChanges');
 		const selectedDate = changes.selectedDate && changes.selectedDate.currentValue ? changes.selectedDate : null;
 
 		if (
@@ -73,11 +75,13 @@ export class CalendarComponent implements OnInit, OnChanges {
 	}
 
 	updateActiveDate(factor: number = 0): void {
+		console.log('updateActiveDate');
 		if (factor === 0) {
 			return;
 		}
 
 		const activeDate = this.activeDate ? new Date(this.activeDate) : new Date();
+		console.log(activeDate);
 
 		switch (this.activeView) {
 			case CALENDAR_VIEW_MONTH:
@@ -96,6 +100,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 	}
 
 	switchView(factor: number = 1): void {
+		console.log('switchView');
 		const views = [CALENDAR_VIEW_MONTH, CALENDAR_VIEW_YEAR, CALENDAR_VIEW_DECENNIA];
 
 		const currView = views.indexOf(this.activeView);
