@@ -105,7 +105,7 @@ describe('The Calendar Year Component', () => {
 
 		// update the date within the same year
 		const newDate = new Date(now);
-		newDate.setMonth(12 - now.getMonth());
+		newDate.setMonth(11 - now.getMonth());
 		wrapper.activeDate = newDate;
 		fixture.detectChanges();
 
