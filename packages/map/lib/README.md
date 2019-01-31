@@ -89,7 +89,7 @@ public ngOnInit(): void {
 - `zoomIn()`: Zoom in
 - `zoomOut()`: Zoom out
 - `toggleFullscreen()`: Toggle fullscreen
-- `locate(zoomlevel)`: Start zooming to current location with the given zoomlevel
+- `locate(zoomLevel)`: Start zooming to current location with an optional zoom level
 - `setView(center, zoom)`: Zoom to the given center and zoom values.
 - `addMarker(position, options)`: Adds a marker to the given position. (see leaflet docs)
 - `addHTMLMarker`: Adds an HTML marker to the given position.

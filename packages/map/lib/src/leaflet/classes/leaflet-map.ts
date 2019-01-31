@@ -119,13 +119,13 @@ export class LeafletMap {
 	}
 
 	// CENTERING
-	locate(zoomlevel: number = 19) {
+	locate(zoomLevel: number) {
 		if (!this.locating && this.initialized) {
 			this.locating = true;
 			this.map.locate();
 			this.map.on('locationfound', (e: any) => {
 				this.locating = false;
-				this.map.setView(e.latlng, zoomlevel);
+				this.map.setView(e.latlng, zoomLevel);
 				this.map.off('locationfound');
 			});
 		}

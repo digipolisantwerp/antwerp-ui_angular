@@ -47,7 +47,7 @@ public ngOnInit(): void {
 		<aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
 	</div>
 	<div controls bottom left>
-		<aui-leaflet-locate-control></aui-leaflet-locate-control>
+		<aui-leaflet-locate-control zoomLevel="16"></aui-leaflet-locate-control>
 	</div>
 	<div controls bottom right>
 		<aui-leaflet-zoom-control></aui-leaflet-zoom-control>
