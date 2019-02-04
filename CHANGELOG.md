@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-- `calendar` Fixed an issue where calendar doesn't jump to predefined date.
+- `calendar` Fixed an issue where the calendar doesn't jump to a predefined date.
 - `documentation` Fixed the `utils/window` example.
 - `code-snippet` Fixed an issue where the `code-snippet` was constantly looking for `pre` tags.
 - `calendar` Fixed a faulty unit test.
