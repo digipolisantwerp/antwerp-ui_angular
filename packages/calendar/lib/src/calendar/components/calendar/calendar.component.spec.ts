@@ -98,13 +98,6 @@ describe('The Calendar Component', () => {
 			spyOn(calendar, 'updateHeaderLabel').and.stub();
 		});
 
-		it('does nothing if no factor was provided or the provided factor is 0', () => {
-			calendar.updateActiveDate();
-			calendar.updateActiveDate(0);
-
-			expect(calendar.updateHeaderLabel).not.toHaveBeenCalled();
-		});
-
 		it('updates the activeDates month if the activeView is the month view', () => {
 			calendar.activeView = views.CALENDAR_VIEW_MONTH;
 			fixture.detectChanges();

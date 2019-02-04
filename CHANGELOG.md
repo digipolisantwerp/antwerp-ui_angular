@@ -6,16 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-- `documentation` fixed the `utils/window` example
+- `calendar` Fixed an issue where calendar doesn't jump to predefined date.
+- `documentation` Fixed the `utils/window` example.
+- `code-snippet` Fixed an issue where the `code-snippet` was constantly looking for `pre` tags.
+- `calendar` Fixed a faulty unit test.
+
+### 2019-01-08
+
+- `documentation` added info in the code-snippet documentation about how to use highlight.js
 
 ### 2018-12-11
 
-- `documentation` fixed some issue with the documentation
+- `documentation` Fixed some issue with the documentation.
 
 ### 2018-11-28
 
-- `core` build components independent of examples
-- `core` fix AOT / Prod builds
+- `core` Build components independent of examples.
+- `core` Fix AOT / Prod builds.
 
 ### Fixed
 - `core` Fixed an issue where an unwanted 404 was shown when the styleguide was reloaded on GitHub pages.
@@ -44,15 +51,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `utils/window` Added documentation.
 
 ### Changed
-- `core` Update angular-cli & ng-packagr
-- `core` Update package names & setup
+- `core` Update angular-cli & ng-packagr.
+- `core` Update package names & setup.
 - `core` Update schematic
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
 
 ### Fixed
-- `core` Fixed AOT builds
-- `packages` Set package names to full import path -> fixes flatModuleId's used in metadata.json
-- `forms` Fix inputmask import
+- `core` Fixed AOT builds.
+- `packages` Set package names to full import path -> fixes flatModuleId's used in metadata.json .
+- `forms` Fix inputmask import.
 - `upload` Updated the required styling to be in sync with the corresponding Core Branding classes.
 - `upload` Removed unnecessary module imports that caused build conflicts.
 - `layout/hero` Removed unnecessary module imports that caused build conflicts.

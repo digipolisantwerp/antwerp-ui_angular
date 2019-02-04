@@ -72,7 +72,6 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	) {}
 
 	public ngOnInit(): void {
-		console.log('test onInit');
 		this.formControl = this.formBuilder.control('');
 		this.formControl.valueChanges
 			.pipe(
@@ -80,19 +79,13 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 			)
 			.subscribe((value) => {
 				if (value) {
-					console.log('---SUBSCRIBE---');
 					const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
 					const date = DateHelper.parseDate(format);
 					if (date) {
-						console.log('Date exist');
 						this.selectedDate = date;
-						console.log(date);
-						console.log(date.toISOString());
 						this.onChange(date.toISOString());
 					} else {
 						// Change value with original value (and not null or '') so we can add an error in the validate function
-						console.log('Date not exist');
-						console.log(value);
 						this.onChange(value);
 					}
 				}
@@ -105,7 +98,6 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	}
 
 	public writeValue(value: string): void {
-		console.log('writeValue');
 		const date = DateHelper.parseDate(value);
 		const dateString = date ? this.formatDate(date) : '';
 
@@ -114,15 +106,12 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	}
 
 	public registerOnChange(onChange: (res: any) => void): void {
-		console.log('registerOnChange');
-		console.log(onChange);
 		this.onChange = onChange;
 	}
 
 	public registerOnTouched(): void { }
 
 	public selectDateFromCalendar(result: DatepickerResult): void {
-		console.log('selectDateFromCalendar');
 		if (result.complete) {
 			this.formControl.setValue(this.formatDate(result.date));
 			this.flyout.close();
@@ -138,8 +127,6 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	}
 
 	public validate(ctrl: FormControl): DatepickerValidationErrors {
-		console.log('validate');
-		console.log(ctrl);
 		// no error on empty value (add required validator in app)
 		if (ctrl.value === '' || ctrl.value === null) {
 			return null;
