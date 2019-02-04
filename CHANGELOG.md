@@ -4,27 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## [1.0.6] - 2019-02-05
 
-- `documentation` Fixed the `utils/window` example.
-- `code-snippet` Fixed an issue where the `code-snippet` was constantly looking for `pre` tags.
-- `calendar` Fixed a faulty unit test.
+### Added
+- `layout/modal` Added documentation.
+- `code-snippet` Added documentation about how to use highlight.js.
 
-### 2019-01-08
-
-- `documentation` added info in the code-snippet documentation about how to use highlight.js
-
-### 2018-12-11
-
-- `documentation` Fixed some issue with the documentation.
-
-### 2018-11-28
-
+### Changed
 - `core` Build components independent of examples.
-- `core` Fix AOT / Prod builds.
 
 ### Fixed
+- `analytics` Fixed incorrect documentation.
+- `calendar` Fixed a faulty unit test.
 - `core` Fixed an issue where an unwanted 404 was shown when the styleguide was reloaded on GitHub pages.
+- `documentation` Fixed AOT build.
+- `form/autocomplete` Fixed an issue where Google Chrome would interfere with its own autocomplete feature.
 
 
 ## [1.0.5] - 2018-11-13
