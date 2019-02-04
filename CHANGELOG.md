@@ -4,9 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.0.6] - 2019-02-05
+## [1.1.0] - 2019-02-05
 
 ### Added
+- `core` Tested all components for Angular 7 compatibility. Note: ACPaaS UI is now fully compatible with Angular 6 and 7.
 - `layout/modal` Added documentation.
 - `code-snippet` Added documentation about how to use highlight.js.
 
