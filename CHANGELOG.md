@@ -6,18 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-<<<<<<< HEAD
-- `documentation` fixed the `utils/window` example
-- `map` added possibility to set the zoom level of the `aui-leaflet-locate-control`.
-=======
 - `documentation` Fixed the `utils/window` example.
 - `code-snippet` Fixed an issue where the `code-snippet` was constantly looking for `pre` tags.
 - `calendar` Fixed a faulty unit test.
+- `map` added possibility to set the zoom level of the `aui-leaflet-locate-control`.
 
 ### 2019-01-08
 
 - `documentation` added info in the code-snippet documentation about how to use highlight.js
->>>>>>> 6b93176a9f8a29c7dd42f64eac4fc8cdf7a10369
 
 ### 2018-12-11
 
