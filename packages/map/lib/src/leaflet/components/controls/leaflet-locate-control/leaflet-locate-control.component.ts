@@ -6,7 +6,7 @@ import { LeafletMap } from '../../../classes/leaflet-map';
 	templateUrl: './leaflet-locate-control.component.html',
 })
 export class LeafletLocateControlComponent {
-	map: LeafletMap;
-
 	@Input() public zoomLevel = 19;
+
+	public map: LeafletMap;
 }
