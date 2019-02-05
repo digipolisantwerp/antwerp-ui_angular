@@ -49,10 +49,10 @@ By default there is a page trigger for each route change. To disable this featur
 ```
 
 ```typescript
-import { GaService } from '@acpaas-ui/ngx-components/analytics';
+import { GAService } from '@acpaas-ui/ngx-components/analytics';
 
 constructor(
-    private gaService: GaService
+    private gaService: GAService
 ) {}
 ```
 
