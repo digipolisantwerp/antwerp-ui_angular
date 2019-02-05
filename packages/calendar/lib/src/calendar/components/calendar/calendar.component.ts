@@ -56,6 +56,10 @@ export class CalendarComponent implements OnInit, OnChanges {
 		this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
 		this.monthLabels = this.monthLabels || this.moduleMonthLabels;
 		this.activeDate = this.calendarService.getClosestDateForRange(this.activeDate, this.range);
+		if (this.selectedDate) {
+			this.activeDate = this.selectedDate;
+			this.updateActiveDate();
+		}
 		this.updateHeaderLabel();
 	}
 
@@ -73,10 +77,6 @@ export class CalendarComponent implements OnInit, OnChanges {
 	}
 
 	updateActiveDate(factor: number = 0): void {
-		if (factor === 0) {
-			return;
-		}
-
 		const activeDate = this.activeDate ? new Date(this.activeDate) : new Date();
 
 		switch (this.activeView) {
