@@ -60,7 +60,6 @@ this.dateForm = this.fb.group({
 
 	public ngOnInit() {
 		this.dateForm = this.fb.group({
-			// inputDate: [''],
 			inputDate: ['07/10/2019'],
 		});
 	}
