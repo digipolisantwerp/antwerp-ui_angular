@@ -228,7 +228,7 @@ describe('The leaflet map', () => {
 
 		it('should zoom to the current location', () => {
 			map.locate(16);
-			expect(setViewSpy).toHaveBeenCalledWith(options.center, 19);
+			expect(setViewSpy).toHaveBeenCalledWith(options.center, 16);
 		});
 	});
 
