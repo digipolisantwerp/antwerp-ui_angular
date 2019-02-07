@@ -33,6 +33,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | -----------  | ------ | -------------------------- |
 | `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example). |
 | `@Input() hasSidebar: boolean;` | `false` | Define if the map has a sidebar. |
+| `@Input() zoomLevel: number;` | `19` | Define how far to zoom in [Leaflet Zoom Level](https://leafletjs.com/examples/zoom-levels/)
 
 Check the [Leaflet API reference](https://leafletjs.com/reference-1.3.0.html) for Leaflet specific API's.
 
