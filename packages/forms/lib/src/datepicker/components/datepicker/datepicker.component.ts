@@ -152,4 +152,13 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 			range: this.errorLabels.ERRORS_INVALID_RANGE,
 		} : null;
 	}
+
+	onDateChange(event: any) {
+		if (event === '' || event === null) {
+			this.selectedDate = null;
+			this.onChange('');
+			this.formControl.setValue('');
+			return null;
+		}
+	}
 }
