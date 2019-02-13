@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+- `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
 - `calendar` Fixed an issue where the calendar doesn't jump to a predefined date.
 
 ## [1.1.0] - 2019-02-05
