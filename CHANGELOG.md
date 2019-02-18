@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
 - `calendar` Fixed an issue where the calendar doesn't jump to a predefined date.
+- `forms/datepicker` Fixed an issue where the datepicker doesn't initialize when being cleared.
 
 ## [1.1.0] - 2019-02-05
 

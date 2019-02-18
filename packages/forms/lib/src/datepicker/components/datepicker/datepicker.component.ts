@@ -88,6 +88,9 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 						// Change value with original value (and not null or '') so we can add an error in the validate function
 						this.onChange(value);
 					}
+				} else {
+					this.selectedDate = null;
+					this.onChange('');
 				}
 			});
 	}

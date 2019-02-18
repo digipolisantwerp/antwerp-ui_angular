@@ -53,14 +53,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 	) {}
 
 	ngOnInit() {
-		this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
-		this.monthLabels = this.monthLabels || this.moduleMonthLabels;
-		this.activeDate = this.calendarService.getClosestDateForRange(this.activeDate, this.range);
-		if (this.selectedDate) {
-			this.activeDate = this.selectedDate;
-			this.updateActiveDate();
-		}
-		this.updateHeaderLabel();
+		this.initControl();
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
@@ -73,7 +66,21 @@ export class CalendarComponent implements OnInit, OnChanges {
 		) {
 			this.activeDate = this.selectedDate;
 			this.updateHeaderLabel();
+		} else {
+			this.activeDate = DateHelper.parseDate(new Date());
+			this.initControl();
 		}
+	}
+
+	private initControl(): void {
+		this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
+		this.monthLabels = this.monthLabels || this.moduleMonthLabels;
+		this.activeDate = this.calendarService.getClosestDateForRange(this.activeDate, this.range);
+		if (this.selectedDate) {
+			this.activeDate = this.selectedDate;
+			this.updateActiveDate();
+		}
+		this.updateHeaderLabel();
 	}
 
 	updateActiveDate(factor: number = 0): void {
