@@ -32,8 +32,10 @@ npm install @acpaas-ui/ngx-components
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-@import url('https://cdn.antwerpen.be/core_branding_scss/3.0.1/main.min.css');
+@import url('https://cdn.antwerpen.be/core_branding_scss/3.1.0/main.min.css');
 ```
+
+You can also modify `index.html` to reference the [favicons for the city of Antwerp][branding-favicons].
 
 Then start using the components in your pages. Look at the component documentation below to learn how to use each component.
 
@@ -118,6 +120,7 @@ Copyright (c) 2016-present, Digipolis
 [branding-core]: https://github.com/a-ui/core_branding_scss
 [branding-core-guide]: https://a-ui.github.io/core_branding_scss/
 [branding-acpaas]: https://github.com/a-ui/acpaas_branding_scss
+[branding-favicons]: https://github.com/a-ui/core_branding_favicons
 
 <!-- Github Version Badge -->
 [acpaas-ui-schematics-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/acpaas-ui_schematics.svg
