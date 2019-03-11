@@ -222,13 +222,13 @@ describe('The leaflet map', () => {
 		});
 
 		it('should find the current location', () => {
-			map.locate();
+			map.locate(16);
 			expect(locateSpy).toHaveBeenCalled();
 		});
 
 		it('should zoom to the current location', () => {
-			map.locate();
-			expect(setViewSpy).toHaveBeenCalledWith(options.center, 19);
+			map.locate(16);
+			expect(setViewSpy).toHaveBeenCalledWith(options.center, 16);
 		});
 	});
 

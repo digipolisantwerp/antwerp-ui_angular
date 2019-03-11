@@ -33,6 +33,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | -----------  | ------ | -------------------------- |
 | `@Input() leafletMap: LeafletMap;` | `-` | An instance of the [Leaflet Map class](https://leafletjs.com/reference-1.3.0.html#map-example). |
 | `@Input() hasSidebar: boolean;` | `false` | Define if the map has a sidebar. |
+| `@Input() zoomLevel: number;` | `19` | Define how far to zoom in [Leaflet Zoom Level](https://leafletjs.com/examples/zoom-levels/)
 
 Check the [Leaflet API reference](https://leafletjs.com/reference-1.3.0.html) for Leaflet specific API's.
 
@@ -67,7 +68,7 @@ public ngOnInit(): void {
         <aui-leaflet-fullscreen-control></aui-leaflet-fullscreen-control>
     </div>
     <div controls bottom left>
-        <aui-leaflet-locate-control></aui-leaflet-locate-control>
+        <aui-leaflet-locate-control zoomLevel="16"></aui-leaflet-locate-control>
     </div>
     <div controls bottom right>
         <aui-leaflet-zoom-control></aui-leaflet-zoom-control>
@@ -89,7 +90,7 @@ public ngOnInit(): void {
 - `zoomIn()`: Zoom in
 - `zoomOut()`: Zoom out
 - `toggleFullscreen()`: Toggle fullscreen
-- `locate()`: Start zooming to current location
+- `locate(zoomLevel)`: Start zooming to current location with an optional zoom level
 - `setView(center, zoom)`: Zoom to the given center and zoom values.
 - `addMarker(position, options)`: Adds a marker to the given position. (see leaflet docs)
 - `addHTMLMarker`: Adds an HTML marker to the given position.

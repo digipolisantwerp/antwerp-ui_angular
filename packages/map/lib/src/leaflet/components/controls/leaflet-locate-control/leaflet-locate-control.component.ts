@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 import { LeafletMap } from '../../../classes/leaflet-map';
 
 @Component({
@@ -7,5 +6,7 @@ import { LeafletMap } from '../../../classes/leaflet-map';
 	templateUrl: './leaflet-locate-control.component.html',
 })
 export class LeafletLocateControlComponent {
-	map: LeafletMap;
+	@Input() public zoomLevel = 19;
+
+	public map: LeafletMap;
 }
