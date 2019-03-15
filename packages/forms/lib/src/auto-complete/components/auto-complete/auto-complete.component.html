@@ -12,7 +12,7 @@
 		(keyEnter)="onKeyEnter($event)"
 		(keyEscape)="onKeyEscape()"
 		(focus)="onFocus()"
-		autocomplete="new-password"
+		autocomplete="off"
 	/>
 	<input *ngIf="mask"
 		[id]="id"
@@ -27,7 +27,7 @@
 		(keyEnter)="onKeyEnter($event)"
 		(keyEscape)="onKeyEscape()"
 		(focus)="onFocus()"
-		autocomplete="new-password"
+		autocomplete="off"
 		[auiMask]="mask"
 	/>
 
