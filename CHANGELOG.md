@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 - `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
-- `calendar` Fixed an issue where the calendar doesn't jump to a predefined date.
-- `map` added possibility to set the zoom level of the `aui-leaflet-locate-control`.
-- `forms/datepicker` Fixed an issue where the datepicker doesn't initialize when being cleared.
+- `calendar` Fixed an issue where the calendar didn't jump to a predefined date.
+- `map` Added possibility to set the zoom level of the `aui-leaflet-locate-control`.
+- `forms/datepicker` Fixed an issue where the datepicker didn't initialize when being cleared.
+- `autocomplete` Fixed `autocomplete="new-password"` being ignored in Google Chrome again.
 
 ## [1.1.0] - 2019-02-05
 
