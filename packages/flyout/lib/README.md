@@ -20,8 +20,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |
-| `FlyoutModule` | Extend your component with a dropdown / flyout functionality | [Documentation](./src/lib/flyout/README.md) |
-| `FlyoutButtonModule` | Custom button to toggle dropdown / flyout  | [Documentation](./src/lib/flyout-button/README.md) |
+| `FlyoutModule` | Extend your component with a dropdown / flyout functionality | [Documentation](./src/flyout/README.md) |
+| `FlyoutButtonModule` | Custom button to toggle dropdown / flyout  | [Documentation](./src/flyout-button/README.md) |
 
 ## Contributing
 

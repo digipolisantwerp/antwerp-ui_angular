@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `map` Added possibility to set the zoom level of the `aui-leaflet-locate-control`.
 - `forms/datepicker` Fixed an issue where the datepicker didn't initialize when being cleared.
 - `autocomplete` Fixed `autocomplete="new-password"` being ignored in Google Chrome again.
+- `documentation` Fixed broken links.
 
 ## [1.1.0] - 2019-02-05
 

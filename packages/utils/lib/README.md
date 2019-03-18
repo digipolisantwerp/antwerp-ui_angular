@@ -11,9 +11,9 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |
-| `FilterModule` | A basic module to filter a set of data using an input, checkbox or select filter. | [Documentation](./src/lib/filter/README.md) |
-| `LabelsModule` | Some useful tools to handle (template) labels in isolated components. | [Documentation](./src/lib/labels/README.md) |
-| `WindowModule` | Window provider to inject the browser’s native window object into a component. | [Documentation](./src/lib/window/README.md) |
+| `FilterModule` | A basic module to filter a set of data using an input, checkbox or select filter. | [Documentation](./src/filter/README.md) |
+| `LabelsModule` | Some useful tools to handle (template) labels in isolated components. | [Documentation](./src/labels/README.md) |
+| `WindowModule` | Window provider to inject the browser’s native window object into a component. | [Documentation](./src/window/README.md) |
 
 ## Contributing
 

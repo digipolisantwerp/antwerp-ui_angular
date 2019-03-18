@@ -77,7 +77,7 @@ $ npm run styleguide
 - `packages`: the component sources
     - `some-package/`: sources for a component package (one or more components)
         - Use `npm run package some-other-package` to create a new package folder
-        - `src/lib/some-component/`: sources for a component
+        - `lib/src/some-component/`: sources for a component
         - `examples/`: examples (documentation) as shown in the styleguide app
         - `package.json`: dependencies needed by this package
         - `README.md`: documentation for this package, linked from the main [README.md](README.md)
