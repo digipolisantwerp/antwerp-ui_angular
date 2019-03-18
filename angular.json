@@ -613,8 +613,8 @@
           },
           "configurations": {
             "examples": {
-              "project": "packages/avatar/examples/ng-package.json",
-              "tsConfig": "packages/avatar/examples/tsconfig.json"
+              "project": "packages/notifications/examples/ng-package.json",
+              "tsConfig": "packages/notifications/examples/tsconfig.json"
             }
           }
         },
