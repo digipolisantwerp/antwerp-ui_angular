@@ -19,8 +19,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |
-| `PaginationModule` | Pagination component | [Documentation](./src/lib/pagination/README.md)
-| `ItemCounterModule` | Item counter and items per page components  | [Documentation](./src/lib/item-counter/README.md)
+| `PaginationModule` | Pagination component | [Documentation](./src/pagination/README.md)
+| `ItemCounterModule` | Item counter and items per page components  | [Documentation](./src/item-counter/README.md)
 
 ## Contributing
 

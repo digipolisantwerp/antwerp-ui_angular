@@ -18,8 +18,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | -----------  | ------ | -------------------------- |
 | `@Input() id: string;` | - | Field id. |
 | `@Input() name: string;` | - | Field name. |
-| `@Input() flyoutSize: enum;` | `FlyoutSize.Small` | Passed along to [`auiFlyout`](https://github.com/digipolisantwerp/acpaas-ui_angular/tree/master/packages/flyout/src/lib/flyout). |
-| `@Input() flyoutAlign: string;` | `'left'` | Passed along to [`auiFlyout`](https://github.com/digipolisantwerp/acpaas-ui_angular/tree/master/packages/flyout/src/lib/flyout). |
+| `@Input() flyoutSize: enum;` | `FlyoutSize.Small` | Passed along to [`auiFlyout`](https://github.com/digipolisantwerp/acpaas-ui_angular/tree/master/packages/flyout/lib/src/flyout). |
+| `@Input() flyoutAlign: string;` | `'left'` | Passed along to [`auiFlyout`](https://github.com/digipolisantwerp/acpaas-ui_angular/tree/master/packages/flyout/lib/src/flyout). |
 | `@Input() label: string;` | `'Filter'` | Field label. |
 | `@Input() labelDeselect: string;` | `'Alles deselecteren'` | Clear button text. |
 | `@Input() labelResults: string;` | `'Resultaten'` | Result list header text. |
