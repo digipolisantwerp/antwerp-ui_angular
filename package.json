@@ -39,6 +39,7 @@
   "peerDependencies": {
     "@a-ui/core": "~3.0.3",
     "@a-ui/flexboxgrid": "~1.0.0",
+    "@angular-redux/store": "~9.0.0",
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
     "@angular/core": "^6.1.0",
@@ -48,6 +49,7 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "redux": "~4.0.1",
     "rxjs": "~6.1.0",
     "typescript": "~2.9.2"
   },
@@ -59,7 +61,7 @@
     "@acpaas-ui/schematics": "0.0.8",
     "@angular-devkit/build-angular": "~0.8.0",
     "@angular-devkit/build-ng-packagr": "~0.8.0",
-    "@angular-redux/store": "7.1.1",
+    "@angular-redux/store": "~9.0.0",
     "@angular/animations": "^6.1.0",
     "@angular/cli": "~6.2.4",
     "@angular/common": "^6.1.0",
@@ -110,7 +112,7 @@
     "ng-packagr": "~4.2.0",
     "ng2-ckeditor": "~1.2.0",
     "protractor": "5.4.1",
-    "redux": "~3.7.2",
+    "redux": "~4.0.1",
     "rimraf": "2.6.2",
     "rxjs": "~6.1.0",
     "short-unique-id": "1.1.1",

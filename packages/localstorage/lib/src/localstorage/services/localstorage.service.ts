@@ -1,14 +1,12 @@
 import { Inject, Injectable } from '@angular/core';
 import { WINDOW } from '@acpaas-ui/ngx-components/utils';
 import { BehaviorSubject } from 'rxjs';
-
-
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 import { LOCALSTORAGE_CONFIG } from '../localstorage.conf';
 import { Selector, PathSelector, Comparator, LocalstorageConfig } from '../types/localstorage.types';
 import { LocalstorageHelper } from '../localstorage.helper';
 import memoryStorage from '../localstorage.polyfill';
-
 
 // @dynamic
 @Injectable()
@@ -83,12 +81,16 @@ export class LocalstorageService {
 		if (Array.isArray(selector)) {
 			return (this
 				.getChildSubscription(selector, this.select(selector[0]))
-				.distinctUntilChanged(comparator) as any) as BehaviorSubject<T>; // make sure it is only triggered when the value changes
+				.pipe(
+					distinctUntilChanged(comparator) as any)
+			 ) as BehaviorSubject<T>; // make sure it is only triggered when the value changes
 		}
 
 		return this
 			.addSubscriber<T>(selector)
-			.distinctUntilChanged<T>(comparator) as BehaviorSubject<T>;
+			.pipe(
+				distinctUntilChanged<T>(comparator)
+			) as BehaviorSubject<T>;
 	}
 
 	public clearSubscribers(): void {
@@ -142,9 +144,11 @@ export class LocalstorageService {
 		const subscriber = this.addSubscriber<T>(selector);
 
 		parentSubscription
-			.map((nextValue => {
-				return LocalstorageHelper.verifyPath(nextValue, selector.slice(1)); // filter out the selected path value
-			}).bind(this))
+			.pipe(
+				map((nextValue => {
+					return LocalstorageHelper.verifyPath(nextValue, selector.slice(1)); // filter out the selected path value
+				}).bind(this))
+			)
 			.subscribe((nextValue: T) => {
 				subscriber.next(nextValue);
 			});

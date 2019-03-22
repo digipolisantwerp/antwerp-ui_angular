@@ -2,14 +2,14 @@
   "name": "@acpaas-ui/ngx-components/context",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular-redux/store": "~7.1.1",
-    "redux": "~3.7.2"
+    "@angular-redux/store": "~9.0.0",
+    "redux": "~4.0.1"
   },
   "acpaas-ui": {
     "dependencies": []
   },
   "devDependencies": {
-    "@angular-redux/store": "~7.1.1",
-    "redux": "~3.7.2"
+    "@angular-redux/store": "~9.0.0",
+    "redux": "~4.0.1"
   }
 }

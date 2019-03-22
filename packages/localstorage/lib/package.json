@@ -2,8 +2,8 @@
   "name": "@acpaas-ui/ngx-components/localstorage",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular-redux/store": "~7.1.1",
-    "redux": "~3.7.2"
+    "@angular-redux/store": "~9.0.0",
+    "redux": "~4.0.1"
   },
   "acpaas-ui": {
     "dependencies": []
@@ -12,7 +12,7 @@
     "lodash-es": "~4.17.10"
   },
   "devDependencies": {
-    "@angular-redux/store": "~7.1.1",
-    "redux": "~3.7.2"
+    "@angular-redux/store": "~9.0.0",
+    "redux": "~4.0.1"
   }
 }
