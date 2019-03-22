@@ -10,9 +10,7 @@ import {
 	TemplateRef,
 	HostBinding,
 } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { timer } from 'rxjs/observable/timer';
+import { Observable, Subject, timer } from 'rxjs';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 
 import { DateHelper } from '@acpaas-ui/js-date-utils';

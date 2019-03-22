@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { TableHelperService } from '../../services/table-helper.service';
 import { TableColumn, OrderBy } from '../../types/table.types';
 import * as DEFAULT_MESSAGES from '../table.messages';

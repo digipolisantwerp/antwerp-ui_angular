@@ -10,8 +10,7 @@ import {
 	OnDestroy,
 	ElementRef,
 } from '@angular/core';
-import { timer } from 'rxjs/observable/timer';
-import { Subject } from 'rxjs/Subject';
+import { timer, Subject } from 'rxjs';
 import { takeUntil, map, distinctUntilChanged } from 'rxjs/operators';
 
 import { DateHelperService } from '../../services/date-helper.service';

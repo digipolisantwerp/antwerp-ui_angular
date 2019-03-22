@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { DateGenerator, DateHelper, Day, Month, DateRange } from '@acpaas-ui/js-date-utils';
 
 import { DateRangeMap } from '../types/calendar.types';

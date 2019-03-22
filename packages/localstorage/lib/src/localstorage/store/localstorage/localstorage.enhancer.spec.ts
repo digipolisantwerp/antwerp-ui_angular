@@ -1,8 +1,8 @@
 import { async, inject, TestBed } from '@angular/core/testing';
 import { NgRedux } from '@angular-redux/store';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/map';
+import { BehaviorSubject } from 'rxjs';
+
+
 import { Reducer, StoreEnhancer, StoreCreator, Unsubscribe } from 'redux';
 
 import { LocalstorageReduxPlugin } from './localstorage.enhancer';

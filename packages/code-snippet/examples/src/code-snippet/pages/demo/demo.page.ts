@@ -62,8 +62,8 @@ public codeExampleJS =
 
 public html5 = `import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ContentService {
@@ -73,7 +73,7 @@ export class ContentService {
 
 	getMarkdown(): any {
 		return this.http.get('/example.md')
-		.map((res) => res.text());
+		.pipe(map((res) => res.text()));
 	}
 }`;
 

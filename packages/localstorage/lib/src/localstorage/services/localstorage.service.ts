@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { WINDOW } from '@acpaas-ui/ngx-components/utils';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/map';
+import { BehaviorSubject } from 'rxjs';
+
+
 
 import { LOCALSTORAGE_CONFIG } from '../localstorage.conf';
 import { Selector, PathSelector, Comparator, LocalstorageConfig } from '../types/localstorage.types';

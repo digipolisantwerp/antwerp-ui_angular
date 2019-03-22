@@ -7,7 +7,7 @@ import { FlyoutService } from '../services/flyout.service';
 import { FlyoutDirective } from './flyout.directive';
 import { FlyoutCloseDirective } from './flyout-close.directive';
 
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 class MockFlyoutService {
 	// Observable string sources

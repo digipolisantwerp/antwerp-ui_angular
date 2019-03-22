@@ -1,9 +1,9 @@
 import { Reducer, StoreCreator, StoreEnhancer, Store, StoreEnhancerStoreCreator } from 'redux';
 import { NgRedux } from '@angular-redux/store';
 import { Injectable } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/first';
+import { Subscription } from 'rxjs';
+
+
 
 import { isEqual } from 'lodash-es';
 
