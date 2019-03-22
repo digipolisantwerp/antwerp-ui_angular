@@ -15,7 +15,6 @@ import { FlyoutZoneDirective } from './flyout-zone.directive';
 import { FlyoutService } from '../services/flyout.service';
 import { FlyoutSize } from '../types/flyout.types';
 
-
 @Directive({
 	selector: '[auiFlyout]',
 	exportAs: 'auiFlyout',

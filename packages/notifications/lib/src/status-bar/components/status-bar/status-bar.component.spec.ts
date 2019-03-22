@@ -9,7 +9,6 @@ import { StatusbarComponent } from './status-bar.component';
 import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from '../../status-bar.conf';
 import { Label, InterpolateLabelPipe, PluralizeLabelPipe } from '@acpaas-ui/ngx-components/utils';
 
-
 describe('The Statusbar Component', () => {
 	let comp: StatusbarComponent;
 	let fixture: ComponentFixture<StatusbarComponent>;

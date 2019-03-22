@@ -88,7 +88,6 @@ describe('The Table Header Component with component', () => {
 		// query for the title <h1> by CSS element selector
 		deSpan = fixture.debugElement.query(By.css('span'));
 
-
 		// elComp = deComp.nativeElement;
 	});
 

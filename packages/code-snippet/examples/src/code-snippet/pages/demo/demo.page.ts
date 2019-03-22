@@ -135,7 +135,6 @@ function greetMe(yourName) {
 }
 greetMe('World');`;
 
-
 public codeExamples = [this.codeExampleJS, this.codeExampleJSON];
 
 public codeExampleMarkdown = `public mdExample: string;

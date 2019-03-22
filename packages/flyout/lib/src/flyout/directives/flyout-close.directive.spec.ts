@@ -51,7 +51,6 @@ describe('Flyout close directive', () => {
 		fixture.detectChanges();
 	}));
 
-
 	it('should close onClick', () => {
 		spyOn(comp.element.flyoutService, 'close');
 		comp.element.onClick();

@@ -7,7 +7,6 @@ import { Directives } from './directives/index';
 
 import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from './analytics.conf';
 
-
 @NgModule({
 	imports: [
 		WindowModule,

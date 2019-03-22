@@ -99,7 +99,6 @@ describe('Flyout directive without flyout zone', () => {
 		componentElement = <HTMLElement>componentDebugElement.nativeElement;
 	}));
 
-
 	it('should open and close', () => {
 		comp.element.open();
 		fixture.detectChanges();

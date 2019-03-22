@@ -1,13 +1,10 @@
 import { async, inject, TestBed } from '@angular/core/testing';
 import { NgRedux } from '@angular-redux/store';
 import { BehaviorSubject } from 'rxjs';
-
-
 import { Reducer, StoreEnhancer, StoreCreator, Unsubscribe } from 'redux';
 
 import { LocalstorageReduxPlugin } from './localstorage.enhancer';
 import { LocalstorageService } from '../../services/localstorage.service';
-
 
 const injectService = (cb) => {
 	return inject(

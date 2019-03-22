@@ -42,7 +42,6 @@ export class UtilsFilterDemoPageComponent implements OnInit {
 	];`;
 	public codeExampleJS2 = `constructor(public filterService: FilterService) {}`;
 
-
 	public codeExampleJS3 = `this.checkFilter.id = 'checkFilter';
 this.checkFilter.name = 'Checkbox filter';
 this.checkFilter.options = this.heroList;

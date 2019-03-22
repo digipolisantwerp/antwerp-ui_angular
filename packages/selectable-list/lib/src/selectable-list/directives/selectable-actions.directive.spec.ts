@@ -42,7 +42,6 @@ describe('Flyout action directive without flyout zone', () => {
 		componentElement = <HTMLElement>componentDebugElement.nativeElement;
 	}));
 
-
 	it('should open and close onClick', () => {
 		spyOn(comp.element.keyArrowUp, 'emit');
 		spyOn(comp.element.keyArrowDown, 'emit');

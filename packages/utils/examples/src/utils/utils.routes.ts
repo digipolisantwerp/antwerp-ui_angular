@@ -5,8 +5,6 @@ import { UtilsFilterDemoPageComponent } from './pages/filter/filter.page';
 import { UtilsLabelsDemoPageComponent } from './pages/labels/labels.page';
 import { UtilsWindowDemoPageComponent } from './pages/window/window.page';
 
-
-
 export const UTILS_EXAMPLES_ROUTES: Routes = [
 	{
 		component: UtilsDemoPageComponent,

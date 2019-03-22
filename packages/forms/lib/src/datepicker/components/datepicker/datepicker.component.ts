@@ -13,7 +13,6 @@ import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
 
 import { FlyoutDirective } from '@acpaas-ui/ngx-components/flyout';
 
-
 import {
 	CALENDAR_MONTH_LABELS,
 	CALENDAR_DEFAULT_MONTH_LABELS,
