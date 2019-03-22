@@ -11,6 +11,7 @@ import { Services } from './services/index';
 
 import { CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT } from './context.conf';
 import { ContextService } from './services/context.service';
+import { ContextWriterService } from './services/context-writer.service';
 import { ContextConfig } from './types/context.types';
 import { RouterHelper } from './utils/router.helper';
 
@@ -36,11 +37,15 @@ export class ContextModule {
 
 	constructor(
 		private contextService: ContextService,
+		private contextWriterService: ContextWriterService,
 		private router: Router,
 		private activatedRoute: ActivatedRoute,
 		@Inject(CONTEXT_CONFIG) private contextConfig: ContextConfig
 	) {
-		if (!contextConfig.routerContext) {
+		if (!contextConfig.routerContext && contextConfig.defaults) {
+			Object.keys(contextConfig.defaults).forEach(key => {
+				this.contextWriterService.setTag(key, contextConfig.defaults);
+			});
 			return;
 		}
 

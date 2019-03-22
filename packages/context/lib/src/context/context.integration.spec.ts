@@ -1,18 +1,14 @@
 import { Component, NgModule } from '@angular/core';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { async, TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { combineReducers, Store, createStore } from 'redux';
-import { NgZone } from '@angular/core';
 
 import { ContextModule } from './context.module';
 import { ContextService } from './services/context.service';
-import { ContextConfig } from './types/context.types';
 import { ContextActionCreator } from './store/context/context.actioncreator';
 import { contextReducer } from './store/context/context.reducer';
-import { CONTEXT_CONFIG } from './context.conf';
 
 @Component({
 	template: '<router-outlet></router-outlet>',
