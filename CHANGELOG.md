@@ -6,19 +6,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-### Added
-- `map` Added possibility to set the zoom level of the `aui-leaflet-locate-control`.
+
+## [2.0.0] - 2019-03-29
 
 ### Changed
-- [BREAKING] removed rxjs-compat dependency
-- [BREAKING] updated @angular-redux/store & redux dependency
+- [BREAKING] Removed rxjs-compat dependency
+- [BREAKING] Updated `@angular-redux/store` and redux dependencies
+
+
+## [1.1.1] - 2019-03-29
 
 ### Fixed
-- `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
-- `calendar` Fixed an issue where the calendar didn't jump to a predefined date.
-- `forms/datepicker` Fixed an issue where the datepicker didn't initialize when being cleared.
 - `autocomplete` Fixed `autocomplete="new-password"` being ignored in Google Chrome again.
-- `documentation` Fixed broken links.
+- `calendar` Fixed an issue where the calendar didn't jump to a predefined date.
+- `context` Fixed an issue where `routerContext` always needed to be set to true.
+- `forms/datepicker` Fixed an issue where the datepicker didn't initialize when being cleared.
+- `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
+- `map` Added possibility to set the zoom level of the `aui-leaflet-locate-control`.
+- `core` Fixed broken links.
+
 
 ## [1.1.0] - 2019-02-05
 
@@ -116,7 +122,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.1...v2.0.0
+[1.1.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.5...v1.1.0
 [1.0.5]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.3...v1.0.4

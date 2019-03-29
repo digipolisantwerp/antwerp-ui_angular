@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
 import { async, TestBed, inject } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-
-import { Title, DOCUMENT } from '@angular/platform-browser';
 
 import { ContextWriterService } from './context-writer.service';
 import { ContextConfig } from '../types/context.types';
