@@ -4,15 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## Unreleased
 
-- `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
-- `calendar` Fixed an issue where the calendar didn't jump to a predefined date.
-- `map` Added possibility to set the zoom level of the `aui-leaflet-locate-control`.
-- `forms/datepicker` Fixed an issue where the datepicker didn't initialize when being cleared.
+
+## [1.1.1] - 2019-03-29
+
+### Fixed
 - `autocomplete` Fixed `autocomplete="new-password"` being ignored in Google Chrome again.
-- `documentation` Fixed broken links.
+- `calendar` Fixed an issue where the calendar didn't jump to a predefined date.
 - `context` Fixed an issue where `routerContext` always needed to be set to true.
+- `forms/datepicker` Fixed an issue where the datepicker didn't initialize when being cleared.
+- `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
+- `map` Added possibility to set the zoom level of the `aui-leaflet-locate-control`.
+- `core` Fixed broken links.
 
 ## [1.1.0] - 2019-02-05
 
