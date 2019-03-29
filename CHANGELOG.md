@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms/datepicker` Fixed an issue where the datepicker didn't initialize when being cleared.
 - `autocomplete` Fixed `autocomplete="new-password"` being ignored in Google Chrome again.
 - `documentation` Fixed broken links.
+- `context` Fixed an issue where `routerContext` always needed to be set to true.
 
 ## [1.1.0] - 2019-02-05
 
