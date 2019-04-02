@@ -7,11 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
-## [2.0.0] - 2019-03-29
-
 ### Changed
 - [BREAKING] Removed rxjs-compat dependency
 - [BREAKING] Updated `@angular-redux/store` and redux dependencies
+
+
+## [1.1.2] - 2019-03-29
+
+### Fixed
+- `context` Expose store module
+- `notifications` Expose store module
 
 
 ## [1.1.1] - 2019-03-29
@@ -24,7 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `map` Fixed an issue where the default map layer wouldn't show on iOS devices.
 - `map` Added possibility to set the zoom level of the `aui-leaflet-locate-control`.
 - `core` Fixed broken links.
-
 
 ## [1.1.0] - 2019-02-05
 
@@ -122,8 +126,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.1...v2.0.0
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.5...v1.1.0
 [1.0.5]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.4...v1.0.5
