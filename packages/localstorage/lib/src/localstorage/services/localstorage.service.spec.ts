@@ -1,8 +1,6 @@
 import { async, inject, TestBed } from '@angular/core/testing';
 import { WINDOW } from '@acpaas-ui/ngx-components/utils';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/map';
+import { BehaviorSubject } from 'rxjs';
 
 import { LOCALSTORAGE_CONFIG } from '../localstorage.conf';
 import { LocalstorageService } from './localstorage.service';

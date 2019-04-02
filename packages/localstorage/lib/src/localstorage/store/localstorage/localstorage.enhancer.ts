@@ -1,10 +1,8 @@
 import { Reducer, StoreCreator, StoreEnhancer, Store, StoreEnhancerStoreCreator } from 'redux';
 import { NgRedux } from '@angular-redux/store';
 import { Injectable } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/first';
-
+import { Subscription } from 'rxjs';
+import { first, filter } from 'rxjs/operators';
 import { isEqual } from 'lodash-es';
 
 import { LocalstorageHelper } from '../../localstorage.helper';
@@ -21,15 +19,15 @@ export class LocalstorageReduxPlugin {
 		private localstorageService: LocalstorageService
 	) {}
 
-	enhancer<T = any>(selectors?: Array<PropertySelector|PathSelector>): StoreEnhancer<T> {
+	enhancer<T = any>(selectors?: Array<PropertySelector|PathSelector>): StoreEnhancer {
 		const storedState = this.selectFromState(selectors);
 
 		this.subscribe(selectors);
 
-		return (createStore: StoreEnhancerStoreCreator<T>): StoreEnhancerStoreCreator<T> => (
-			reducer: Reducer<T>,
+		return (createStore: StoreEnhancerStoreCreator<T>): any => (
+			reducer: Reducer,
 			initialState: any
-		): Store<T> => {
+		): Store => {
 			return createStore(reducer, {
 				...initialState,
 				...storedState,
@@ -39,8 +37,10 @@ export class LocalstorageReduxPlugin {
 
 	subscribe(selectors?: Array<PropertySelector | PathSelector>): void {
 		this.ngRedux.select()
-			.filter(store => !!store)
-			.first()
+			.pipe(
+				filter(store => !!store),
+				first()
+			)
 			.subscribe(store => {
 				if (!selectors) {
 					this.subscribeSelector('reduxState');

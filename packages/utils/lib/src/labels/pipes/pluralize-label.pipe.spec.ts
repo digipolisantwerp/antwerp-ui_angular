@@ -2,7 +2,6 @@ import { async, inject } from '@angular/core/testing';
 
 import { PluralizeLabelPipe } from './pluralize-label.pipe';
 
-
 describe('The pluralize pipe', () => {
 	let pluralizePipe;
 

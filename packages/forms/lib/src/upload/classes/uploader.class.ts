@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { UPLOAD_OPTIONS_DEFAULT } from '../upload.conf';
 import { UploadOptions, InvalidFile } from '../types/upload.types';

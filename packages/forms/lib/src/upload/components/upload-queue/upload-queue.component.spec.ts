@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.conf';
 import { Uploader } from '../../classes/uploader.class';

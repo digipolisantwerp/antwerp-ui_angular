@@ -7,7 +7,7 @@ import { FlyoutService } from '../services/flyout.service';
 import { FlyoutDirective } from './flyout.directive';
 import { FlyoutCloseDirective } from './flyout-close.directive';
 
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 class MockFlyoutService {
 	// Observable string sources
@@ -50,7 +50,6 @@ describe('Flyout close directive', () => {
 		comp  = fixture.componentInstance;
 		fixture.detectChanges();
 	}));
-
 
 	it('should close onClick', () => {
 		spyOn(comp.element.flyoutService, 'close');

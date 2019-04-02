@@ -209,7 +209,6 @@ describe('PaginationComponent', () => {
 			comp.ngOnChanges();
 			fixture.detectChanges();
 
-
 			nr0Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-0'));
 			nr1Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-1'));
 			nr2Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-2'));

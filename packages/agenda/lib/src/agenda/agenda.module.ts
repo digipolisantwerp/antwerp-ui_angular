@@ -16,7 +16,6 @@ import {
 } from './agenda.conf';
 import { HammerConfig } from './hammer.conf';
 
-
 @NgModule({
 	imports: [
 		CommonModule,

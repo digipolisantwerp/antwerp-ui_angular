@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
 import { DebugElement, SimpleChange, SimpleChanges, Component, Input } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { UploadInputComponent } from './upload-input.component';
 

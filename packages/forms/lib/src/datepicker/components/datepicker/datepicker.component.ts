@@ -1,5 +1,5 @@
 import { Component, Input, Inject, forwardRef, ChangeDetectionStrategy, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import {
 	ControlValueAccessor,
@@ -12,7 +12,6 @@ import {
 import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
 
 import { FlyoutDirective } from '@acpaas-ui/ngx-components/flyout';
-
 
 import {
 	CALENDAR_MONTH_LABELS,

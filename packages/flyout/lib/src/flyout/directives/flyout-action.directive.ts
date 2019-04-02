@@ -2,7 +2,6 @@ import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inje
 import { isPlatformBrowser } from '@angular/common';
 import { FlyoutDirective } from './flyout.directive';
 
-
 @Directive({
 	selector: '[auiFlyoutAction]',
 	exportAs: 'auiFlyoutAction',

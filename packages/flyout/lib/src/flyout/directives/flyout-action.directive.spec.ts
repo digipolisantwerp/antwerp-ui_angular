@@ -8,7 +8,7 @@ import { FlyoutZoneDirective } from './flyout-zone.directive';
 
 import { FlyoutService } from '../services/flyout.service';
 
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 class MockFlyoutService {
 	// Observable string sources
@@ -62,7 +62,6 @@ describe('Flyout action directive without flyout zone', () => {
 		componentDebugElement = fixture.debugElement.query(By.directive(FlyoutActionDirective));
 		componentElement = <HTMLElement>componentDebugElement.nativeElement;
 	}));
-
 
 	it('should open and close onClick', () => {
 		spyOn(comp.element, 'open');

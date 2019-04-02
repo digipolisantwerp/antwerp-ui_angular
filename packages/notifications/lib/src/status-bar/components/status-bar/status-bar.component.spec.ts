@@ -3,12 +3,11 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router, NavigationStart } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 import { StatusbarComponent } from './status-bar.component';
 import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from '../../status-bar.conf';
 import { Label, InterpolateLabelPipe, PluralizeLabelPipe } from '@acpaas-ui/ngx-components/utils';
-
 
 describe('The Statusbar Component', () => {
 	let comp: StatusbarComponent;

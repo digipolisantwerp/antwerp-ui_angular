@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+### Changed
+- [BREAKING] Removed rxjs-compat dependency
+- [BREAKING] Updated `@angular-redux/store` and redux dependencies
+
+
 ## [1.1.2] - 2019-03-29
 
 ### Fixed

@@ -1,5 +1,5 @@
 import { Component, Input, Inject } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 export enum sizes {
 	S = <any>'S',
