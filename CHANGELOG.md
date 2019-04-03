@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+- `notifications`: aot builds
 
 ## [2.0.0] - 2019-04-02
 
