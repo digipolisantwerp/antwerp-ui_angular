@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
 
-import { Components } from './components';
+import { Components } from './components/index';
 import { StatusbarAvailableTypes } from './types/status-bar.types';
 import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from './status-bar.conf';
 
