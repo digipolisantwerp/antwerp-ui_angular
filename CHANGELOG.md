@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [1.1.3] - 2019-04-03
+
+### Fixed
+- `notifications` Fixed AOT builds
+
+
 ## [1.1.2] - 2019-03-29
 
 ### Fixed
@@ -121,7 +127,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.3...HEAD
+[1.1.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.0.5...v1.1.0
