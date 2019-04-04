@@ -1,3 +1,3 @@
-export * from './notifications';
-export * from './notifications/store';
-export * from './status-bar';
+export * from './notifications/index';
+export * from './notifications/store/index';
+export * from './status-bar/index';
