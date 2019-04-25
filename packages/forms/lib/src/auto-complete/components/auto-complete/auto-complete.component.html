@@ -13,6 +13,7 @@
 		(keyEscape)="onKeyEscape()"
 		(focus)="onFocus()"
 		autocomplete="off"
+		[attr.disabled]="isDisabled ? true : null"
 	/>
 	<input *ngIf="mask"
 		[id]="id"
@@ -29,9 +30,10 @@
 		(focus)="onFocus()"
 		autocomplete="off"
 		[auiMask]="mask"
+		[attr.disabled]="isDisabled ? true : null"
 	/>
 
-	<div auiFlyoutZone>
+	<div auiFlyoutZone *ngIf="!isDisabled">
 		<span class="o-auto-complete__info u-text-light u-margin-xs" *ngIf="focused && loadingText && searching">
 			<span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span>
 			{{ loadingText }}

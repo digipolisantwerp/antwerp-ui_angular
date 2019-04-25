@@ -100,6 +100,7 @@ public formatLabel(input: any) {
 		{name: 'Iron Man'},
 		{name: 'Deadpool'},
 	];
+	public disabledModel = 'Batman';
 	public searchValue = '';
 	public selectedItem1 = '';
 	public selectedItem2 = '';
