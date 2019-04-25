@@ -19,6 +19,9 @@ import { RangeSliderRange } from '../../types/range-slider.types';
 })
 export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 	@HostBinding('class.m-range-slider') core_branding = true;
+	@HostBinding('class.is-disabled') get disabledClass() {
+		return this.isDisabled;
+	}
 
 	@Input() public min = 0;
 	@Input() public max = 100;
@@ -33,6 +36,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 	public startPercentage;
 	public endPercentage;
 	public active = null;
+	public isDisabled = false;
 
 	constructor(private elRef: ElementRef) {}
 
@@ -75,7 +79,15 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		this.propagateChange = fn;
 	}
 
+	public setDisabledState(isDisabled: boolean): void {
+		this.isDisabled = isDisabled;
+	}
+
 	public onMouseDown(handle) {
+		if (this.isDisabled) {
+			return;
+		}
+
 		this.active = handle;
 	}
 
