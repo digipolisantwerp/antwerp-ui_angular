@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
 	templateUrl: './wysiwyg.page.html',
 })
 export class FormsWysiwygDemoPageComponent {
-
-	public result = '';
+	public contents = '';
+	public isDisabled = false;
 
 	public wysiwygImportExample = `import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({
@@ -31,14 +31,9 @@ public wysiwygImportExample2 = `<!doctype html>
 	(emitContent)="getContent($event)">
 </aui-wysiwyg>`;
 
-	public wysiwygTypescript = `public result = '';
+	public wysiwygTypescript = `public contents = '';
 
 public getContent(event) {
-	this.result = event;
+	this.contents = event;
 }`;
-
-	public getContent(event) {
-		this.result = event;
-	}
-
 }
