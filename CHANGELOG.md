@@ -5,7 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
-
+### Added
+- `forms`: add disabled state to all controls (except upload)
 
 ## [2.0.1] - 2019-04-04
 
