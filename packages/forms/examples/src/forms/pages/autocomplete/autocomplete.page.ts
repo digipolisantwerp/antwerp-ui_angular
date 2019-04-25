@@ -101,6 +101,7 @@ public formatLabel(input: any) {
 		{name: 'Deadpool'},
 	];
 	public disabledModel = 'Batman';
+	public isDisabled = true;
 	public searchValue = '';
 	public selectedItem1 = '';
 	public selectedItem2 = '';

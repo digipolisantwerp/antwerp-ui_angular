@@ -70,7 +70,7 @@
 <h3 class="h5 u-margin-bottom">Disabled state</h3>
 
 <div class="u-margin-bottom-xx">
-	<div class="a-input">
+	<div class="a-input u-margin-bottom">
 		<div class="a-input__wrapper">
 			<aui-auto-complete
 				id="hero-disabled"
@@ -85,11 +85,17 @@
 				(search)="searchItems($event)"
 				(select)="setSelectedItem2($event)"
 				[(ngModel)]="disabledModel"
-				disabled="true">
+				[disabled]="isDisabled">
 				<ng-template let-item>
 					<div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
 				</ng-template>
 			</aui-auto-complete>
+		</div>
+	</div>
+	<div class="a-input">
+		<div class="a-input__checkbox">
+			<input type="checkbox" id="isDisabled" [(ngModel)]="isDisabled" />
+			<label for="isDisabled">Toggle disabled state</label>
 		</div>
 	</div>
 </div>
