@@ -13,7 +13,7 @@
 		(keyEscape)="onKeyEscape()"
 		(focus)="onFocus()"
 		autocomplete="off"
-		[attr.disabled]="isDisabled ? true : null"
+		[disabled]="isDisabled ? true : null"
 	/>
 	<input *ngIf="mask"
 		[id]="id"
@@ -30,7 +30,7 @@
 		(focus)="onFocus()"
 		autocomplete="off"
 		[auiMask]="mask"
-		[attr.disabled]="isDisabled ? true : null"
+		[disabled]="isDisabled ? true : null"
 	/>
 
 	<div auiFlyoutZone *ngIf="!isDisabled">
