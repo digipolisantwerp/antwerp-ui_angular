@@ -45,7 +45,7 @@ describe('The Autocomplete Component', () => {
 				MaskModule,
 				FormsModule,
 			],
-			schemas: [ NO_ERRORS_SCHEMA ],
+			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [
 				MockFlyoutDirective,
 				MockSelectableListComponent,
@@ -55,7 +55,7 @@ describe('The Autocomplete Component', () => {
 				{ provide: SearchService, useValue: searchMock },
 			],
 		})
-		.compileComponents();  // compile template and css
+			.compileComponents();  // compile template and css
 	}));
 
 	// synchronous beforeEach
@@ -155,15 +155,17 @@ describe('The Autocomplete Component', () => {
 		});
 
 		it('should find the item by the provided key', () => {
-			comp.results = comp.data.map(d => ({...d}));
-			comp.propagateChange('spiderman');
+			comp.results = comp.data.map(d => ({ ...d }));
+			comp.propagateChange({ id: 2, name: 'spiderman' });
+			expect(comp.query).toBe('spiderman');
 			expect(comp.updateModel).toHaveBeenCalledWith('spiderman');
 		});
 
 		it('should return the prop set in the value', () => {
-			comp.results = comp.data.map(d => ({...d}));
+			comp.results = comp.data.map(d => ({ ...d }));
 			comp.value = 'id';
-			comp.propagateChange('spiderman');
+			comp.propagateChange({ id: 2, name: 'spiderman' });
+			expect(comp.query).toBe('spiderman');
 			expect(comp.updateModel).toHaveBeenCalledWith(2);
 		});
 	});
@@ -204,9 +206,9 @@ describe('The Autocomplete Component', () => {
 		it('should propagate the change and close the flyout', () => {
 			spyOn(comp, 'propagateChange');
 			spyOn(comp, 'closeFlyout');
-			comp.onSelect({name: 'test'});
+			comp.onSelect({ name: 'test' });
 
-			expect(comp.propagateChange).toHaveBeenCalledWith('test');
+			expect(comp.propagateChange).toHaveBeenCalledWith({ name: 'test' });
 			expect(comp.closeFlyout).toHaveBeenCalled();
 		});
 	});
@@ -214,10 +216,10 @@ describe('The Autocomplete Component', () => {
 	describe('onFlyoutClosed', () => {
 		it('if there is only 1 result and it is focused, it should be selected', () => {
 			comp.index = 0;
-			comp.results = [{name: 'test'}];
+			comp.results = [{ name: 'test' }];
 			spyOn(comp, 'onSelect');
 			comp.onFlyoutClosed();
-			expect(comp.onSelect).toHaveBeenCalledWith({name: 'test'});
+			expect(comp.onSelect).toHaveBeenCalledWith({ name: 'test' });
 		});
 
 		it('if there is no searchstring and the index is not set, it should clear the selected item', () => {
@@ -297,7 +299,9 @@ describe('The Autocomplete Component', () => {
 			}];
 			comp.onKeyEnter(e);
 
-			expect(comp.propagateChange).toHaveBeenCalledWith('bob');
+			expect(comp.propagateChange).toHaveBeenCalledWith({
+				name: 'bob',
+			});
 			expect(comp.closeFlyout).toHaveBeenCalled();
 		});
 
