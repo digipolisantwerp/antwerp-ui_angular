@@ -79,7 +79,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		@Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
 		private calendarService: CalendarService,
 		private formBuilder: FormBuilder,
-		private ref: ChangeDetectorRef,
+		private ref: ChangeDetectorRef
 	) {}
 
 	public ngOnInit(): void {
