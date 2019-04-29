@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 - `forms`: add disabled state to all controls (except upload)
 
+### Fixed
+- `autocomplete` Fixed  issues with items with identical labels and a custom template.
+
 ## [2.0.1] - 2019-04-04
 
 ### Fixed

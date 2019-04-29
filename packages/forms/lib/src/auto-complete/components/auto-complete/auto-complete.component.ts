@@ -99,7 +99,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 	}
 
 	// CONTROL_VALUE_ACCESSOR interface
-	public registerOnTouched() {}
+	public registerOnTouched() { }
 
 	public setDisabledState(isDisabled: boolean): void {
 		this.isDisabled = isDisabled;
@@ -131,10 +131,8 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 		}
 	}
 
-	public propagateChange(query: string) {
-		const item = this.results.find(res => this.label ? res[this.label] === query : res === query);
-
-		this.query = query;
+	public propagateChange(item: any) {
+		this.query = item !== null ? (this.label ? item[this.label] : item) : '';
 		this.select.emit(item);
 
 		if (!item) {
@@ -166,7 +164,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 	 * triggers on selectable-list:select -> onClick event in selectable-list
 	 */
 	public onSelect(item: any): void {
-		this.propagateChange(item !== null ? (this.label ? item[this.label] : item) : '');
+		this.propagateChange(item);
 		this.closeFlyout(); // Close the flyout manually
 	}
 
@@ -204,7 +202,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 	public onKeyEnter(event: Event): void {
 		event.preventDefault(); // Do not submit form when selecting an item.
 
-		const query = this.index >= 0 ? this.query = this.results[this.index][this.label] : this.query;
+		const query = this.index >= 0 ? this.results[this.index] : this.query;
 
 		this.propagateChange(query);
 		this.closeFlyout();
