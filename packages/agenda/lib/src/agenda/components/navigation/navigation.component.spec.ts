@@ -40,7 +40,6 @@ describe('The Navigation Component', () => {
 		el = de.nativeElement;
 
 		comp.activeDate = '2018-01-08';
-		fixture.detectChanges();
 	});
 
 	it('should exist', () => {

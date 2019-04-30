@@ -38,7 +38,6 @@ describe('The Month View Event Slots Component', () => {
 		fixture = TestBed.createComponent(MonthViewEventSlotsComponent);
 
 		comp = fixture.componentInstance;
-		fixture.detectChanges();
 
 		de = fixture.debugElement.query(By.css('.aui-agenda-month-view-event-slots'));
 
@@ -46,6 +45,8 @@ describe('The Month View Event Slots Component', () => {
 	});
 
 	it('should exist', () => {
+		fixture.detectChanges();
+
 		expect(el).toBeDefined();
 	});
 });
