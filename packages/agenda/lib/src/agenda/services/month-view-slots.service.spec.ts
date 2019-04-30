@@ -2,10 +2,10 @@ import { DateHelperService } from './date-helper.service';
 import { SortingService } from './sorting.service';
 import { MonthViewSlotsService } from './month-view-slots.service';
 import { EventInterface } from '../types/agenda.types';
-const dateHelper = new DateHelperService();
-const sortingService = new SortingService(dateHelper);
 
 describe('MonthViewSlots Service', () => {
+	const dateHelper = new DateHelperService();
+	const sortingService = new SortingService(dateHelper);
 	const monthViewSlotsService = new MonthViewSlotsService(dateHelper, sortingService);
 	const date = new Date(2018, 0, 10);
 	const days = dateHelper.getDaysForMonth(date, 1);

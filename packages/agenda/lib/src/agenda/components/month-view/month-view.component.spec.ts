@@ -7,7 +7,7 @@ import { WeekdayPipe } from '../../pipes/weekday.pipe';
 import { DateHelperService } from '../../services/date-helper.service';
 import { SortingService } from '../../services/sorting.service';
 import { MonthViewSlotsService } from '../../services/month-view-slots.service';
-import { WEEKDAY_LABELS, DEFAULT_WEEKDAY_LABELS } from '../../agenda.conf';
+import { WEEKDAY_LABELS } from '../../agenda.conf';
 
 describe('The MonthView Component', () => {
 	let comp: MonthViewComponent;

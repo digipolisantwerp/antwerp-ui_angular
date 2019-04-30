@@ -1,9 +1,8 @@
 import { EventMap } from './event-map.class';
 import { DateHelperService } from '../services/date-helper.service';
 
-const dateHelperService = new DateHelperService();
-
 describe('EventMap Class', () => {
+	const dateHelperService = new DateHelperService();
 	const currentDate = new Date(2018, 0, 10);
 	const days = dateHelperService.getDaysForMonth(currentDate, 1);
 	const weeks = dateHelperService.getWeeksForMonth(days);
