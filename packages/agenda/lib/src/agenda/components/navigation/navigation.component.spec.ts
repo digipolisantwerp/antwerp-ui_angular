@@ -40,7 +40,6 @@ describe('The Navigation Component', () => {
 		el = de.nativeElement;
 
 		comp.activeDate = '2018-01-08';
-		fixture.detectChanges();
 	});
 
 	it('should exist', () => {
@@ -54,23 +53,25 @@ describe('The Navigation Component', () => {
 			fixture.detectChanges();
 		});
 
-		it('should go back one day', () => {
+		it('should go back one day', (done) => {
 			const prevButton = de.query(By.css('.o-agenda__nav-previous'));
 			spyOn(comp.navigate, 'emit');
 			prevButton.nativeElement.click();
 
 			setTimeout(() => {
 				expect(comp.navigate.emit).toHaveBeenCalledWith(new Date(2018, 0, 7));
+				done();
 			}, 200);
 		});
 
-		it('should go further one day', () => {
+		it('should go further one day', (done) => {
 			const nextButton = de.query(By.css('.o-agenda__nav-next'));
 			spyOn(comp.navigate, 'emit');
 			nextButton.nativeElement.click();
 
 			setTimeout(() => {
 				expect(comp.navigate.emit).toHaveBeenCalledWith(new Date(2018, 0, 9));
+				done();
 			}, 200);
 		});
 	});
@@ -81,23 +82,25 @@ describe('The Navigation Component', () => {
 			fixture.detectChanges();
 		});
 
-		it('should go back one month ', () => {
+		it('should go back one month ', (done) => {
 			const prevButton = de.query(By.css('.o-agenda__nav-previous'));
 			spyOn(comp.navigate, 'emit');
 			prevButton.nativeElement.click();
 
 			setTimeout(() => {
 				expect(comp.navigate.emit).toHaveBeenCalledWith(new Date(2017, 11, 1));
+				done();
 			}, 200);
 		});
 
-		it('should go further one month ', () => {
+		it('should go further one month ', (done) => {
 			const nextButton = de.query(By.css('.o-agenda__nav-next'));
 			spyOn(comp.navigate, 'emit');
 			nextButton.nativeElement.click();
 
 			setTimeout(() => {
 				expect(comp.navigate.emit).toHaveBeenCalledWith(new Date(2018, 1, 1));
+				done();
 			}, 200);
 		});
 	});
@@ -108,23 +111,25 @@ describe('The Navigation Component', () => {
 			fixture.detectChanges();
 		});
 
-		it('should go back one year', () => {
+		it('should go back one year', (done) => {
 			const prevButton = de.query(By.css('.o-agenda__nav-previous'));
 			spyOn(comp.navigate, 'emit');
 			prevButton.nativeElement.click();
 
 			setTimeout(() => {
 				expect(comp.navigate.emit).toHaveBeenCalledWith(new Date(2017, 0, 1));
+				done();
 			}, 200);
 		});
 
-		it('should go further one year', () => {
+		it('should go further one year', (done) => {
 			const nextButton = de.query(By.css('.o-agenda__nav-next'));
 			spyOn(comp.navigate, 'emit');
 			nextButton.nativeElement.click();
 
 			setTimeout(() => {
 				expect(comp.navigate.emit).toHaveBeenCalledWith(new Date(2019, 0, 1));
+				done();
 			}, 200);
 		});
 	});

@@ -31,4 +31,7 @@ export class AppModule {};`;
 	max="600"
 	labelBefore="€">
 </aui-range-slider>`;
+
+	public isDisabled = false;
+	public disabledSlider = { start: 350, end: 450 };
 }

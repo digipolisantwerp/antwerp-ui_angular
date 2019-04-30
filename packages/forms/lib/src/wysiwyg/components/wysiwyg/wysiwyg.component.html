@@ -1,3 +1,9 @@
 <div class="aui-wysiwyg__inner">
-    <ckeditor [(ngModel)]="ckeditorContent" [config]="ckeditorConfig" [debounce]="debounce" (ngModelChange)="writeValue($event)"></ckeditor>
+	<ckeditor
+		[(ngModel)]="ckeditorContent"
+		[config]="ckeditorConfig"
+		[debounce]="debounce"
+		(ngModelChange)="writeValue($event)"
+		[readonly]="isDisabled"
+	></ckeditor>
 </div>

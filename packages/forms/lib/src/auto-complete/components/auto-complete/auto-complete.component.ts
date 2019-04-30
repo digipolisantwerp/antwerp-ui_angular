@@ -65,6 +65,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 	public selectedItem: any = null; // keep a backup of the selectedItem
 	public searching = false; // track remote search state
 	public focused = false;
+	public isDisabled = false;
 
 	private remoteValue = false;
 
@@ -99,6 +100,10 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 
 	// CONTROL_VALUE_ACCESSOR interface
 	public registerOnTouched() { }
+
+	public setDisabledState(isDisabled: boolean): void {
+		this.isDisabled = isDisabled;
+	}
 
 	public ngOnInit(): void {
 		if ((Array.isArray(this.data) && this.data.length > 0) && !this.query && this.showAllByDefault) {

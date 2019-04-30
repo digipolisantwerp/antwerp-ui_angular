@@ -48,6 +48,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
 	public selectedItems: string[] = [];
 	public filteredChoices: SearchFilterChoice[] = [];
 	public loading = false;
+	public isDisabled = false;
 
 	public filterDataFromSearch: (_any?) => {};
 
@@ -66,6 +67,10 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
 	}
 
 	public registerOnTouched(): void {}
+
+	public setDisabledState(isDisabled: boolean): void {
+		this.isDisabled = isDisabled;
+	}
 
 	public ngOnInit(): void {
 		if (this.showAllByDefault) {

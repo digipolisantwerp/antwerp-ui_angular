@@ -37,11 +37,31 @@
 	<aui-code-snippet [codeSnippet]="rangesliderExampleHTML3"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-xx col-md-6 col-xs-12">
+<div class="u-margin-bottom col-md-6 col-xs-12">
 	<aui-range-slider
 		[(ngModel)]="mySlider"
 		min="300"
 		max="600"
 		labelBefore="€">
 	</aui-range-slider>
+</div>
+
+<h3 class="h5 u-margin-bottom">Disabled</h3>
+
+<div class="u-margin-bottom-xx col-md-6 col-xs-12">
+	<div class="u-margin-bottom">
+		<aui-range-slider
+			[(ngModel)]="disabledSlider"
+			[disabled]="isDisabled"
+			min="300"
+			max="600"
+			labelBefore="€">
+		</aui-range-slider>
+	</div>
+	<div class="a-input u-margin-bottom">
+		<div class="a-input__checkbox">
+			<input type="checkbox" id="isDisabled" [(ngModel)]="isDisabled" />
+			<label for="isDisabled">Toggle disabled state</label>
+		</div>
+	</div>
 </div>

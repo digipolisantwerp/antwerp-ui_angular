@@ -7,10 +7,17 @@
 		[autocomplete]="autocomplete"
 		[formControl]="formControl"
 		[auiMask]="dateMask"
+		[attr.disabled]="isDisabled ? true : null"
 	>
-   <span class="fa fa-calendar is-clickable" auiFlyoutAction></span>
+	<span class="fa fa-calendar" *ngIf="isDisabled"></span>
 
-	<div role="datepicker" class="m-datepicker m-datepicker--fixed" auiFlyoutZone>
-		<aui-calendar [selectedDate]="selectedDate" [range]="range" (selectDate)="selectDateFromCalendar($event)"></aui-calendar>
-	</div>
+	<ng-container *ngIf="!isDisabled">
+		<span class="fa fa-calendar is-clickable" auiFlyoutAction></span>
+	</ng-container>
+
+	<ng-container *ngIf="!isDisabled">
+		<div role="datepicker" class="m-datepicker m-datepicker--fixed" auiFlyoutZone>
+			<aui-calendar [selectedDate]="selectedDate" [range]="range" (selectDate)="selectDateFromCalendar($event)"></aui-calendar>
+		</div>
+	</ng-container>
 </div>

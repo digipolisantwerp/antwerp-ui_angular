@@ -1,9 +1,9 @@
 import { DateHelperService } from './date-helper.service';
 import { SortingService } from './sorting.service';
 import { EventInterface } from '../types/agenda.types';
-const dateHelper = new DateHelperService();
 
 describe('Sorting Service', () => {
+	const dateHelper = new DateHelperService();
 	const sortingService = new SortingService(dateHelper);
 
 	it('should sort events by startdate, event length and start time', () => {

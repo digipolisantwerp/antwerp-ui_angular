@@ -7,18 +7,20 @@ import { SearchFilterChoice } from '@acpaas-ui/ngx-components/forms';
 export class FormsSearchFilterDemoPageComponent {
 
 	public stuff: SearchFilterChoice[] = [{
-		label: "First item",
-		value: "one",
+		label: 'First item',
+		value: 'one',
 	}, {
-		label: "Second item",
-		value: "two",
+		label: 'Second item',
+		value: 'two',
 	}, {
-		label: "Third item",
-		value: "three",
+		label: 'Third item',
+		value: 'three',
 	}, {
-		label: "Fourth item",
-		value: "four",
+		label: 'Fourth item',
+		value: 'four',
 	}];
+	public selectedItems: any[] = [];
+	public isDisabled = false;
 
 	public searchfilterImportExample = `import { SearchFilterModule } from '@acpaas-ui/ngx-components/forms';
 

@@ -41,21 +41,26 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
 
 	public ckeditorContent: string;
 	public ckeditorConfig = WYSIWYG_DEFAULT_CONFIG;
+	public isDisabled = false;
 
 	private updateModel: Function = () => {};
 
 	// NG_VALUE_ACCESSOR_INTERFACE
-	writeValue(value: string): void {
+	public writeValue(value: string): void {
 		this.ckeditorContent = value;
 		this.updateModel(value);
 		this.emitContent.emit(this.ckeditorContent);
 	}
 
-	registerOnChange(onChange: Function): void {
+	public registerOnChange(onChange: Function): void {
 		this.updateModel = onChange;
 	}
 
-	registerOnTouched(): void {}
+	public registerOnTouched(): void {}
+
+	public setDisabledState(isDisabled: boolean): void {
+		this.isDisabled = isDisabled;
+	}
 
 	public ngOnInit() {
 		this.setConfig();

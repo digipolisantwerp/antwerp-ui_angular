@@ -7,6 +7,7 @@ export class FormsTimepickerDemoPageComponent {
 	public time1 = '10:30';
 	public time2 = '20:30';
 	public time3 = '';
+	public isDisabled = false;
 
   public timepickerImportExample = `import { TimepickerModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({

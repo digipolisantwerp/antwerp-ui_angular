@@ -65,3 +65,20 @@
 <div class="u-margin-bottom">
 	<pre class="a-pre">{{ time3 }}</pre>
 </div>
+
+<h3 class="h5 u-margin-bottom">Disabled</h3>
+
+<div class="u-margin-bottom">
+	<div class="u-margin-bottom">
+		<aui-timepicker
+			[(ngModel)]="time3"
+			[disabled]="isDisabled"
+		></aui-timepicker>
+	</div>
+	<div class="a-input">
+		<div class="a-input__checkbox">
+			<input type="checkbox" id="isDisabled" [(ngModel)]="isDisabled" />
+			<label for="isDisabled">Toggle disabled state</label>
+		</div>
+	</div>
+</div>

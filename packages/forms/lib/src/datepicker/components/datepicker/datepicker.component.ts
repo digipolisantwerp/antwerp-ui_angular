@@ -1,4 +1,14 @@
-import { Component, Input, Inject, forwardRef, ChangeDetectionStrategy, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import {
+	Component,
+	Input,
+	Inject,
+	forwardRef,
+	ChangeDetectionStrategy,
+	OnInit,
+	OnDestroy,
+	ViewChild,
+	ChangeDetectorRef,
+} from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import {
@@ -58,6 +68,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	public dateMask = { mask: DATEPICKER_DATE_MASK, 'showMaskOnHover': false };
 	public formControl: FormControl;
 	public selectedDate: Date;
+	public isDisabled = false;
 
 	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 	private onChange: (res: any) => void = () => { };
@@ -67,11 +78,12 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		@Inject(CALENDAR_WEEKDAY_LABELS) private weekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
 		@Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
 		private calendarService: CalendarService,
-		private formBuilder: FormBuilder
+		private formBuilder: FormBuilder,
+		private ref: ChangeDetectorRef
 	) {}
 
 	public ngOnInit(): void {
-		this.formControl = this.formBuilder.control('');
+		this.formControl = this.formBuilder.control({ value: '', disabled: this.isDisabled });
 		this.formControl.valueChanges
 			.pipe(
 				takeUntil(this.componentDestroyed$)
@@ -112,6 +124,20 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	}
 
 	public registerOnTouched(): void { }
+
+	public setDisabledState(isDisabled: boolean): void {
+		this.isDisabled = isDisabled;
+
+		if (this.formControl) {
+			if (isDisabled && this.formControl.enabled) {
+				this.formControl.disable();
+			} else if (!isDisabled && this.formControl.disabled) {
+				this.formControl.enable();
+			}
+		}
+
+		this.ref.markForCheck();
+	}
 
 	public selectDateFromCalendar(result: DatepickerResult): void {
 		if (result.complete) {
