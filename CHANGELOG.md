@@ -5,11 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
+
+
+## [2.1.0] - 2019-05-02
+
 ### Added
-- `forms`: add disabled state to all controls (except upload)
+- `forms`: Added disabled state to all controls (except upload)
 
 ### Fixed
-- `autocomplete` Fixed  issues with items with identical labels and a custom template.
+- `autocomplete` Fixed issues with items with identical labels and a custom template.
+
 
 ## [2.0.1] - 2019-04-04
 
@@ -138,7 +143,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.2...v2.0.0
 [1.1.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.1...v1.1.2
