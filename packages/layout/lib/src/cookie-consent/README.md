@@ -53,38 +53,6 @@ Boolean, default set to `true`.
 | `messagelink: string;` | `'<p id="cookieconsent:desc">{{message}} <a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a></p>'` | The html markup for the cookie consent design |
 | `dismiss: string;` | `'<button aria-label="dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">{{dismiss}}</button>'` | The html markup for the dismiss button. If button must have the classes `.cc-btn` and `.cc-dismiss` in order to work properly. |
 
-> Note that since a cookie consent can take many forms, we did not provide a standard design for it. When dismissed a <code>.cc-invisible</code> class will be added. You can use this class to hide it from the user.
-
-As an example, you can use the following SCSS code:
-
-```scss
-@import '~@a-ui/core/dist/assets/styles/_quarks';
-
-.cc-banner {
-    align-items: baseline;
-    background: $white;
-    border-top: 1px solid $border-color;
-    box-shadow: 0 $spacer / -2 0 rgba($black, .1);
-    bottom: 0;
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: space-between;
-    left: 0;
-    position: fixed;
-    right: 0;
-    transition: opacity $animation-duration $animation-easing;
-    z-index: 10;
-
-    &.cc-invisible {
-        opacity: 0;
-    }
-
-    > p {
-        padding: $spacer / 2;
-    }
-}
-```
-
 ### Example
 
 ```typescript

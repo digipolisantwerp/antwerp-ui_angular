@@ -54,7 +54,8 @@
     "typescript": "~2.9.2"
   },
   "devDependencies": {
-    "@a-ui/core": "~3.0.3",
+    "@a-ui/core": "~3.2.1",
+    "@a-ui/acpaas": "~3.2.1",
     "@a-ui/flexboxgrid": "~1.0.0",
     "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",
     "@acpaas-ui/js-notification-store": "1.0.1-alpha.5",
