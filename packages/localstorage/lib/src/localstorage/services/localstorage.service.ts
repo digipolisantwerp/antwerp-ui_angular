@@ -118,7 +118,7 @@ export class LocalstorageService {
 			...Object.keys(this.storage).reduce((acc, prop) => {
 				acc[prop] = LocalstorageHelper.parseJSON(prop, this.storage[prop]);
 				return acc;
-			}, {})
+			}, {}),
 		} as T;
 	}
 
