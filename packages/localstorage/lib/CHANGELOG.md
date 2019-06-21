@@ -1,7 +1,8 @@
 # Changelog
 
 ## Unreleased
-
+### Fixed
+- remove Proxy usage from MemoryStorage polyfill (not supported in ie11)
 
 ## [3.1.0] - 2018-04-30
 ### Changed
