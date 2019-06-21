@@ -32,30 +32,3 @@ export class MemoryStorage {
 		this.store.clear();
 	}
 }
-
-const storage = new MemoryStorage();
-
-export default new Proxy(storage, {
-	get: function (target: any, name, receiver) {
-		if (name in target) {
-			return Reflect.get(target, name, receiver);
-		}
-
-		if (name in target.__proto__) {
-			return target.__proto__[name];
-		}
-
-		if (target.storage) {
-			return target.getItem(name);
-		}
-	},
-	ownKeys: function (target: any) {
-		return Object.keys(target.storage); // return stored keys when storage keys are requested
-	},
-	getOwnPropertyDescriptor() {
-		return {
-			enumerable: true, // ensure stored keys kan be iterated
-			configurable: true,
-		};
-	},
-});

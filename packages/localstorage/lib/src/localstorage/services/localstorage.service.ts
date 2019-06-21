@@ -6,12 +6,21 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 import { LOCALSTORAGE_CONFIG } from '../localstorage.conf';
 import { Selector, PathSelector, Comparator, LocalstorageConfig } from '../types/localstorage.types';
 import { LocalstorageHelper } from '../localstorage.helper';
-import memoryStorage from '../localstorage.polyfill';
+import { MemoryStorage } from '../localstorage.polyfill';
 
 // @dynamic
 @Injectable()
 export class LocalstorageService {
 	public static instance: LocalstorageService;
+	public static memoryStorage: MemoryStorage;
+
+	public get memoryStorage(): MemoryStorage {
+		if (!LocalstorageService.memoryStorage) {
+			LocalstorageService.memoryStorage = new MemoryStorage();
+		}
+
+		return LocalstorageService.memoryStorage;
+	}
 
 	public get instance(): LocalstorageService {
 		return LocalstorageService.instance;
@@ -46,7 +55,7 @@ export class LocalstorageService {
 		identifier = '',
 	}: LocalstorageConfig = {}): void {
 		this.storageType = this.verifyStorageType(storageType, 'localStorage');
-		this.storage = this.storageType === 'memory' ? memoryStorage : this.$window[this.storageType];
+		this.storage = this.storageType === 'memory' ? this.memoryStorage : this.$window[this.storageType];
 
 		this.identifier = identifier;
 	}
@@ -83,7 +92,7 @@ export class LocalstorageService {
 				.getChildSubscription(selector, this.select(selector[0]))
 				.pipe(
 					distinctUntilChanged(comparator) as any)
-			 ) as BehaviorSubject<T>; // make sure it is only triggered when the value changes
+			) as BehaviorSubject<T>; // make sure it is only triggered when the value changes
 		}
 
 		return this
@@ -105,10 +114,12 @@ export class LocalstorageService {
 			return {} as T;
 		}
 
-		return {...Object.keys(this.storage).reduce((acc, prop) => {
-			acc[prop] = LocalstorageHelper.parseJSON(prop, this.storage[prop]);
-			return acc;
-		}, {})} as T;
+		return {
+			...Object.keys(this.storage).reduce((acc, prop) => {
+				acc[prop] = LocalstorageHelper.parseJSON(prop, this.storage[prop]);
+				return acc;
+			}, {})
+		} as T;
 	}
 
 	// return or create a behaviorsubject from the selected value
