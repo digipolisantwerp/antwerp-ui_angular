@@ -1,6 +1,6 @@
 # ACPaaS UI Test Automation Guide
 
-When automating tests, one of the challenges is to keep the test resilient to code changes.  
+When automating tests, one of the challenges is to keep the test resilient to code changes.
 Using [data-attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help u with that, by creating unique selectors for your tests.
 
 ## Using uniqe data-attributes with ACPaaS UI
@@ -35,12 +35,12 @@ Which will result in:
 
 ## Branding classes
 
-Since you probably want to target a specific element or a subcomponent, selecting the parent component won't be enough.  
+Since you probably want to target a specific element or a subcomponent, selecting the parent component won't be enough.
 You can however target these elements and subcomponents based on their CSS classes in combination with the unique data-attribute of the parent component.
 
 #### Example
 
-In this example the calendar of the datepicker component can be opened or closed by toggling the `<span>` tag which has the CSS class `aui-flyout-action` and that's nested in the datepicker with the data-attribute `data-qa="id-1234"`.
+In this example the calendar of the datepicker component can be opened or closed by toggling the `<span>` tag, that's nested in the datepicker with the data-attribute `data-qa="id-1234"` and which has the CSS class `aui-flyout-action`.
 
 ```html
 <aui-datepicker ... data-qa="id-1234" ...>
@@ -127,5 +127,3 @@ To help you locate a specific element of a component, we've made an overview of 
 | | `m-upload__filename` | > > span | name of file to upload |
 | | `m-upload__error` | > > span | error message for faulty file |
 | | `a-button` | > button | upload button |
-
-
