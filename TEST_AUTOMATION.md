@@ -1,17 +1,17 @@
 # ACPaaS UI Test Automation Guide
 
 When automating tests, one of the challenges is to keep the test resilient to code changes.
-Using [data-attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help u with that, by creating unique selectors for your tests.
+Using [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help you with that, by creating unique selectors for your tests.
 
-## Using uniqe data-attributes with ACPaaS UI
+## Using unique data attributes with ACPaaS UI
 
-It's not possible to add uniqe data-attributes to the ACPaaS UI component library for the simple reason that the attribute won't be unique anymore when u use the component multiple times on the same page.
+It's not possible to add unique data attributes to the ACPaaS UI component library for the simple reason that the attribute won't be unique anymore when you use the component multiple times on the same page.
 
-But in your app you can simply add a data-attribute to each individual ACPaaS UI component so you can target the component that you want to test.
+But in your app you can simply add a data attribute to each individual ACPaaS UI component so you can target the component that you want to test.
 
 #### Example
 
-The following example shows the ACPaaS UI datepicker with the unique `qa` data-attribute `id-1234`.
+The following example shows the ACPaaS UI datepicker with the unique `qa` data attribute `id-1234`.
 
 ```html
 <aui-datepicker
@@ -36,11 +36,11 @@ Which will result in:
 ## Branding classes
 
 Since you probably want to target a specific element or a subcomponent, selecting the parent component won't be enough.
-You can however target these elements and subcomponents based on their CSS classes in combination with the unique data-attribute of the parent component.
+You can however target these elements and subcomponents based on their CSS classes in combination with the unique data attribute of the parent component.
 
 #### Example
 
-In this example the calendar of the datepicker component can be opened or closed by toggling the `<span>` tag, that's nested in the datepicker with the data-attribute `data-qa="id-1234"` and which has the CSS class `aui-flyout-action`.
+In this example the calendar of the datepicker component can be opened or closed by toggling the `<span>` tag, which is nested in the datepicker with data attribute `data-qa="id-1234"` and (with) CSS class `aui-flyout-action`.
 
 ```html
 <aui-datepicker ... data-qa="id-1234" ...>
