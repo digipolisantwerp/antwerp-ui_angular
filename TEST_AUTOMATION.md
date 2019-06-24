@@ -40,7 +40,7 @@ You can however target these elements and subcomponents based on their CSS class
 
 #### Example
 
-In this example the calendar of the datepicker component can be opened or closed by toggling the `<span>` tag, which is nested in the datepicker with data attribute `data-qa="id-1234"` and (with) CSS class `aui-flyout-action`.
+In this example the calendar of the datepicker component can be opened or closed by toggling the `<span>` tag, which is nested in the datepicker with data attribute `data-qa="id-1234"` and CSS class `aui-flyout-action`.
 
 ```html
 <aui-datepicker ... data-qa="id-1234" ...>
