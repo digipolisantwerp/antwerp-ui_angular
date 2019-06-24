@@ -1,4 +1,4 @@
-import { MemoryStorage, default as storage } from './localstorage.polyfill';
+import { MemoryStorage } from './localstorage.polyfill';
 
 describe('LocalStorage polyfill', () => {
 	describe('MemoryStorage Class', () => {
@@ -79,31 +79,6 @@ describe('LocalStorage polyfill', () => {
 			memStorage.clear();
 
 			expect(memStorage.store.size).toEqual(0);
-		});
-	});
-
-	describe('Memorystorage Proxy', () => {
-		it('should allow access to known properties on the MemoryStorage instance', () => {
-			expect(storage.length).toEqual(0);
-		});
-
-		it('should allow access to known methods on the MemoryStorage instance', () => {
-			storage.store.set('test', 0);
-
-			expect(storage.getItem).toEqual(jasmine.any(Function));
-			expect(storage.getItem('test')).toEqual(0);
-		});
-
-		it('should find unknown properties in the store', () => {
-			storage.store.set('test', 0);
-
-			expect(storage.test).toEqual(0);
-		});
-
-		it('should return the store ownKeys when ownKeys is called on the MemoryStorage instance', () => {
-			storage.store.set('test', 0);
-
-			expect(Object.keys(storage)).toEqual(['test']);
 		});
 	});
 });
