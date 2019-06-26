@@ -6,11 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Added
+- `documentation` Added test automation guidelines
+
 
 ## [2.1.0] - 2019-05-02
 
 ### Added
-- `forms`: Added disabled state to all controls (except upload)
+- `forms` Added disabled state to all controls (except upload)
 
 ### Fixed
 - `autocomplete` Fixed issues with items with identical labels and a custom template.

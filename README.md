@@ -76,6 +76,10 @@ This library contains the following components:
 | table          | Interactive table                        | [Documentation](./packages/table/lib/README.md)               |
 | utils          | Assorted helpers                         | [Documentation](./packages/utils/lib/README.md)               |
 
+## Test automation
+
+If you want to start automating your tests, you can have a look at our [Test Automation Guide](./TEST_AUTOMATION.md) for some tips on how to use data-attributes to keep your tests stable and maintainable.
+
 ## Questions
 
 For questions and support please ask a question on the [#acpaas-ui slack channel][acpaas-ui-slack]. If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
