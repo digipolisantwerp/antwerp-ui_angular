@@ -16,25 +16,46 @@
     <aui-code-snippet [codeSnippet]="wysiwygTypescript"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom col-md-6 col-xs-12">
-    <div class="a-input u-margin-bottom">
-		<aui-wysiwyg
-			[placeholder]="'Type some richt text here…'"
-			[availableTags]="'h2;h3;h4;h5;h6;p'"
-			[uiColour]="'#C0C0C0'"
-			[debounce]="500"
-			[(ngModel)]="contents"
-			[disabled]="isDisabled">
-		</aui-wysiwyg>
-	</div>
-	<div class="a-input">
-		<div class="a-input__checkbox">
-			<input type="checkbox" id="isDisabled" [(ngModel)]="isDisabled" />
-			<label for="isDisabled">Toggle disabled state</label>
+<div class="u-margin-bottom-lg">
+	<div class="u-margin-bottom col-md-6 col-xs-12">
+	    <div class="a-input u-margin-bottom">
+			<aui-wysiwyg
+				[placeholder]="'Type some richt text here…'"
+				[availableTags]="'h2;h3;h4;h5;h6;p'"
+				[uiColour]="'#C0C0C0'"
+				[debounce]="500"
+				[(ngModel)]="contents"
+				[disabled]="isDisabled">
+			</aui-wysiwyg>
 		</div>
+		<div class="a-input">
+			<div class="a-input__checkbox">
+				<input type="checkbox" id="isDisabled" [(ngModel)]="isDisabled" />
+				<label for="isDisabled">Toggle disabled state</label>
+			</div>
+		</div>
+	</div>
+	<div class="u-margin-bottom col-md-6 col-xs-12" *ngIf="contents !== ''">
+		<pre class="a-pre">{{ contents }}</pre>
 	</div>
 </div>
 
-<div class="u-margin-bottom-lg">
-	<pre class="a-pre">{{ contents }}</pre>
+<div class="u-margin-bottom">
+	<p>By default the following configuration is given to the WYSIWYG editor:</p>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="wysiwygExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<p>If you need to override this configuration, you can do this by passing your custom configuration object to the component:</p>
+</div>
+
+<div class="u-margin-bottom">
+    <aui-code-snippet [codeSnippet]="wysiwygExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<p>All available configuration options <a href="https://ckeditor.com/docs/ckeditor4/latest/guide/dev_configuration.html" class="has-icon-right" target="_blank">can be found here<i class="fa fa-external-link"></i></a>.</p>
 </div>

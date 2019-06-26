@@ -51,6 +51,12 @@ export class PaginationComponent implements OnChanges {
 
 	private setValues() {
 		if (this.totalValues && this.itemsPerPage) {
+			/**
+			 * Sometimes an API or text field may give the pagination component a string instead of a number.
+			 * This will result in some erratic pagination calculations. Casting to a number will fix this.
+			 */
+			this.currentPage = Number(this.currentPage);
+
 			this.totalPages = Math.ceil(this.totalValues / this.itemsPerPage);
 
 			const generateNumbers = Array(this.totalPages).fill('').map((e, i) => {
