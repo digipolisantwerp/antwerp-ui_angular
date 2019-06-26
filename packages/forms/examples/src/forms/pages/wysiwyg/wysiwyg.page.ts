@@ -24,7 +24,7 @@ export class AppModule {};`;
 </html>`;
 
 	public wysiwygExampleHTML1 = `<aui-wysiwyg
-	[placeholder]="'Type some richt text here…'"
+	[placeholder]="'Type some rich text here…'"
 	[availableTags]="'h2;h3;h4;h5;h6;p'"
 	[uiColour]="'#C0C0C0'"
 	[debounce]="500"
