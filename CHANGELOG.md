@@ -4,10 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## [2.1.1] - 2019-06-26
 
 ### Added
 - `documentation` Added test automation guidelines
+
+### Fixed
+- `pagination` Fixed faulty pagination count whenever the current page was provided as a string
 
 
 ## [2.1.0] - 2019-05-02
@@ -146,7 +149,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v1.1.2...v2.0.0
