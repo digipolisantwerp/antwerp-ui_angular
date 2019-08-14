@@ -1,6 +1,5 @@
 import {
 	Directive,
-	ElementRef,
 	ContentChild,
 	Output,
 	EventEmitter,
@@ -8,12 +7,12 @@ import {
 	HostBinding,
 	OnDestroy,
 } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Subject, merge } from 'rxjs';
+import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 
 import { FlyoutZoneDirective } from './flyout-zone.directive';
 import { FlyoutService } from '../services/flyout.service';
-import { FlyoutSize } from '../types/flyout.types';
+import { FlyoutSize, FlyoutState } from '../types/flyout.types';
 
 @Directive({
 	selector: '[auiFlyout]',
@@ -37,31 +36,45 @@ export class FlyoutDirective implements OnDestroy {
 		return this.size === 'full';
 	}
 	@HostBinding('class.is-open') get flyoutOpen() {
-		return this.flyoutOpened;
+		return this.isOpened;
 	}
 
-	@Input() public class = '';
 	@Input() public size: FlyoutSize = FlyoutSize.Auto;
 	@Input() public align: string;
 	@Input() public toggleClick = true;
 	@Input() public activateOnFocus = false;
+
 	@Output() public opened = new EventEmitter();
 	@Output() public closed = new EventEmitter();
 
 	@ContentChild(FlyoutZoneDirective) public flyoutZone: FlyoutZoneDirective;
 
-	private element: HTMLElement;
-	private flyoutOpened = false;
+	public isOpened = false;
+	public state$ = new Subject<FlyoutState>();
 
 	private destroyed$: Subject<boolean> = new Subject<boolean>();
 
-	constructor(private elementRef: ElementRef, private flyoutService: FlyoutService) {
-		this.element = this.elementRef.nativeElement;
+	constructor(
+		private flyoutService: FlyoutService
+	) {
+		this.state$.next(FlyoutState.CLOSED);
 
-		this.flyoutService.subject
-			.pipe(takeUntil(this.destroyed$))
-			.subscribe((res) => {
-				this.close();
+		merge(
+			this.state$,
+			this.flyoutService.state$
+		)
+			.pipe(
+				takeUntil(this.destroyed$),
+				distinctUntilChanged()
+			)
+			.subscribe((state: FlyoutState) => {
+				this.isOpened = state === FlyoutState.OPEN;
+
+				if (this.isOpened) {
+					this.opened.emit(undefined);
+				} else {
+					this.closed.emit(undefined);
+				}
 			});
 	}
 
@@ -70,28 +83,18 @@ export class FlyoutDirective implements OnDestroy {
 	}
 
 	public open(): void {
-		if (!this.flyoutOpened) {
-			this.flyoutOpened = true;
-			this.opened.emit(undefined);
-		}
+		this.state$.next(FlyoutState.OPEN);
 	}
 
 	public close(): void {
-		if (this.flyoutOpened) {
-			this.flyoutOpened = false;
-			this.closed.emit(undefined);
-		}
+		this.state$.next(FlyoutState.CLOSED);
 	}
 
 	public isInClosableZone(element: HTMLElement): boolean {
-		if (!this.flyoutZone) {
+		if (!this.flyoutZone || !element) {
 			return false;
 		}
 
 		return this.flyoutZone.contains(element);
-	}
-
-	public isOpened(): boolean {
-		return this.flyoutOpened;
 	}
 }

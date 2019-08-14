@@ -5,12 +5,9 @@ import { FlyoutState } from '../types/flyout.types';
 
 @Injectable()
 export class FlyoutService {
-	// Observable string sources
-	public subject = new Subject<FlyoutState>();
+	public state$ = new Subject<FlyoutState>();
 
 	public close() {
-		this.subject.next({
-			close: true,
-		});
+		this.state$.next(FlyoutState.CLOSED);
 	}
 }

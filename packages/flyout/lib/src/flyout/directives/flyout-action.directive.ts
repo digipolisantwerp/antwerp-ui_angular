@@ -1,47 +1,62 @@
-import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { FlyoutDirective } from './flyout.directive';
+import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inject, PLATFORM_ID, OnInit } from '@angular/core';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
+import { Subject } from 'rxjs';
+import { first, takeUntil } from 'rxjs/operators';
 
+import { FlyoutDirective } from './flyout.directive';
+import { FlyoutState } from '../types/flyout.types';
+
+// @dynamic
 @Directive({
 	selector: '[auiFlyoutAction]',
 	exportAs: 'auiFlyoutAction',
 })
-export class FlyoutActionDirective implements OnDestroy {
-
+export class FlyoutActionDirective implements OnInit, OnDestroy {
 	@HostBinding('class.aui-flyout-action') class = true;
+	@HostBinding('attr.tabindex') tabindex = '0';
 
-	/**
-     * This property is needed for dropdown not to open and instantly closed
-     * because the click event will be fired after the focus event so the click event will close the flyout
-     */
-	private openedByFocus = false;
-	private closeDropdownOnOutsideClick: (event: MouseEvent) => void;
+	private isPlatformBrowser: boolean;
+	private destroyed$ = new Subject<boolean>();
 
 	constructor(
 		@Host() public flyout: FlyoutDirective,
-		@Inject(PLATFORM_ID) private platformId: Object,
+		@Inject(PLATFORM_ID) platformId: Object,
+		@Inject(DOCUMENT) private document: Document,
 		private elementRef: ElementRef
 	) {
-		// Define this method in the constructor so "this" points to "this class"
-		this.closeDropdownOnOutsideClick = (event: Event) => {
-			this.closeIfInClosableZone(event);
-		};
+		this.isPlatformBrowser = isPlatformBrowser(platformId);
+		this.closeIfInClosableZone = this.closeIfInClosableZone.bind(this);
+		this.onBlur = this.onBlur.bind(this);
 	}
 
-	ngOnDestroy() {
-		if (this.isPlatformBrowser()) {
-			document.removeEventListener('click', this.closeDropdownOnOutsideClick, true);
+	public ngOnInit(): void {
+		this.flyout.state$
+			.pipe(
+				takeUntil(this.destroyed$)
+			)
+			.subscribe((state: FlyoutState) => {
+				if (state === FlyoutState.OPEN) {
+					setTimeout(() => {
+						this.addEventListeners();
+					}, 300); // flyout open delay
+				} else {
+					this.removeEventListeners();
+				}
+			});
+	}
+
+	public ngOnDestroy(): void {
+		this.destroyed$.next(true);
+		this.destroyed$.complete();
+
+		if (this.isPlatformBrowser) {
+			this.document.removeEventListener('click', this.closeIfInClosableZone, true);
 		}
 	}
 
 	@HostListener('click')
-	onClick() {
-		if (this.flyout.activateOnFocus && this.openedByFocus) {
-			this.openedByFocus = false;
-			return;
-		}
-
-		if (this.flyout.isOpened() && this.flyout.toggleClick) {
+	public onClick(): void {
+		if (this.flyout.isOpened && this.flyout.toggleClick) {
 			this.close();
 		} else {
 			this.open();
@@ -50,85 +65,69 @@ export class FlyoutActionDirective implements OnDestroy {
 
 	@HostListener('focus')
 	onFocus() {
-		if (!this.isPlatformBrowser()) {
+		if (!this.isPlatformBrowser || this.flyout.isOpened) {
 			return;
 		}
 
-		if (this.flyout.isOpened()) {
-			return;
-		}
-
-		this.openedByFocus = true;
-		this.flyout.open();
-
-		document.addEventListener('click', this.closeDropdownOnOutsideClick.bind(this), true);
+		this.open();
 	}
 
-	@HostListener('blur', ['$event'])
-	onBlur(event: FocusEvent) {
-		if (!this.isPlatformBrowser()) {
+	public onBlur(event: FocusEvent) {
+		if (!this.isPlatformBrowser || !this.flyout.isOpened) {
 			return;
 		}
 
-		if (event.relatedTarget && !this.flyout.isInClosableZone(<HTMLElement> event.relatedTarget)
-			&& event.relatedTarget !== this.elementRef.nativeElement) {
-			this.flyout.close();
-			document.removeEventListener('click', this.closeDropdownOnOutsideClick, true);
-		}
-	}
+		const isInClosableZone = !event.relatedTarget || this.flyout.isInClosableZone(event.relatedTarget as HTMLElement);
+		const isTarget = event.relatedTarget === this.elementRef.nativeElement;
 
-	public toggle() {
-		if (this.flyout.isOpened()) {
+		if (!isInClosableZone && !isTarget) {
 			this.close();
-		} else {
-			this.open();
 		}
 	}
 
 	public open() {
-		if (!this.isPlatformBrowser()) {
-			return;
-		}
-
-		if (this.flyout.isOpened()) {
+		if (!this.isPlatformBrowser || this.flyout.isOpened) {
 			return;
 		}
 
 		this.flyout.open();
-		document.addEventListener('click', this.closeDropdownOnOutsideClick, true);
 	}
 
 	public close() {
-		if (!this.isPlatformBrowser()) {
-			return;
-		}
-
-		if (!this.flyout.isOpened()) {
+		if (!this.isPlatformBrowser || !this.flyout.isOpened) {
 			return;
 		}
 
 		this.flyout.close();
-		document.removeEventListener('click', this.closeDropdownOnOutsideClick, true);
+	}
+
+	private addEventListeners(): void {
+		this.document.addEventListener('click', this.closeIfInClosableZone, true);
+		this.document.addEventListener('focusout', this.onBlur, true);
+	}
+
+	private removeEventListeners(): void {
+		this.document.removeEventListener('click', this.closeIfInClosableZone, true);
+		this.document.removeEventListener('focusout', this.onBlur, true);
 	}
 
 	private checkIfInClosableZone(event) {
-		return !this.flyout.isInClosableZone(<HTMLElement> event.target)
-				&& event.target !== this.elementRef.nativeElement
-				&& !this.elementRef.nativeElement.contains(event.target);
+		const isInClosableZone = this.flyout.isInClosableZone(event.target as HTMLElement);
+		const isTarget = event.target === this.elementRef.nativeElement;
+		const containsTarget = this.elementRef.nativeElement.contains(event.target);
+
+		return !isInClosableZone && !isTarget && !containsTarget;
 	}
 
 	private closeIfInClosableZone(event: Event): void {
-		if (!this.isPlatformBrowser()) {
+		if (!this.isPlatformBrowser) {
 			return;
 		}
 
-		if (this.checkIfInClosableZone(event)) {
-			this.flyout.close();
-			document.removeEventListener('click', this.closeDropdownOnOutsideClick, true);
-		}
-	}
+		const inClosableZone = this.checkIfInClosableZone(event);
 
-	private isPlatformBrowser(): boolean {
-		return isPlatformBrowser(this.platformId);
+		if (inClosableZone) {
+			this.close();
+		}
 	}
 }
