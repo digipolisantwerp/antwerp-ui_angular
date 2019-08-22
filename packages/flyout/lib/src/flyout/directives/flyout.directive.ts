@@ -71,9 +71,9 @@ export class FlyoutDirective implements OnDestroy {
 				this.isOpened = state === FlyoutState.OPEN;
 
 				if (this.isOpened) {
-					this.opened.emit(undefined);
+					this.opened.emit();
 				} else {
-					this.closed.emit(undefined);
+					this.closed.emit();
 				}
 			});
 	}
