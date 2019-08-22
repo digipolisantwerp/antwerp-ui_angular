@@ -3,6 +3,7 @@ import { Component, DebugElement, ViewChild, ChangeDetectionStrategy, Directive 
 import { By } from '@angular/platform-browser';
 
 import { FlyoutService } from '../services/flyout.service';
+import { FlyoutState } from '../types/flyout.types';
 
 import { FlyoutDirective } from './flyout.directive';
 import { FlyoutCloseDirective } from './flyout-close.directive';
@@ -10,13 +11,10 @@ import { FlyoutCloseDirective } from './flyout-close.directive';
 import { Subject } from 'rxjs';
 
 class MockFlyoutService {
-	// Observable string sources
-	public subject = new Subject<any>();
+	public state$ = new Subject<FlyoutState>();
 
 	public close() {
-		this.subject.next({
-			close: true,
-		});
+		this.state$.next(FlyoutState.CLOSED);
 	}
 }
 
@@ -47,13 +45,13 @@ describe('Flyout close directive', () => {
 
 		TestBed.compileComponents();
 		fixture = TestBed.createComponent(FlyoutComponent);
-		comp  = fixture.componentInstance;
+		comp = fixture.componentInstance;
 		fixture.detectChanges();
 	}));
 
-	it('should close onClick', () => {
-		spyOn(comp.element.flyoutService, 'close');
+	fit('should close onClick', () => {
+		spyOn(comp.element.flyout, 'close');
 		comp.element.onClick();
-		expect(comp.element.flyoutService.close).toHaveBeenCalled();
+		expect(comp.element.flyout.close).toHaveBeenCalled();
 	});
 });

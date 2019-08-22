@@ -8,11 +8,11 @@ import { FlyoutDirective } from './flyout.directive';
 })
 export class FlyoutCloseDirective {
 	constructor(
-		@Host() public flyout: FlyoutDirective,
+		@Host() public flyout: FlyoutDirective
 	) {}
 
 	@HostListener('click')
-	public onClick() {
+	public onClick(): void {
 		this.flyout.close();
 	}
 }

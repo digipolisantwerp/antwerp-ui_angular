@@ -64,7 +64,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 	}
 
 	@HostListener('focus')
-	onFocus() {
+	public onFocus(): void {
 		if (!this.isPlatformBrowser || this.flyout.isOpened) {
 			return;
 		}
@@ -72,7 +72,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 		this.open();
 	}
 
-	public onBlur(event: FocusEvent) {
+	public onBlur(event: FocusEvent): void {
 		if (!this.isPlatformBrowser || !this.flyout.isOpened) {
 			return;
 		}
@@ -85,7 +85,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 		}
 	}
 
-	public open() {
+	public open(): void {
 		if (!this.isPlatformBrowser || this.flyout.isOpened) {
 			return;
 		}
@@ -93,7 +93,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 		this.flyout.open();
 	}
 
-	public close() {
+	public close(): void {
 		if (!this.isPlatformBrowser || !this.flyout.isOpened) {
 			return;
 		}
@@ -111,7 +111,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 		this.document.removeEventListener('focusout', this.onBlur, true);
 	}
 
-	private checkIfInClosableZone(event) {
+	private checkIfInClosableZone(event): Boolean {
 		const isInClosableZone = this.flyout.isInClosableZone(event.target as HTMLElement);
 		const isTarget = event.target === this.elementRef.nativeElement;
 		const containsTarget = this.elementRef.nativeElement.contains(event.target);
