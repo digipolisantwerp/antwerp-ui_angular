@@ -1,16 +1,18 @@
-import { Directive, HostListener } from '@angular/core';
-import { FlyoutService } from '../services/flyout.service';
+import { Directive, HostListener, Host } from '@angular/core';
+
+import { FlyoutDirective } from './flyout.directive';
 
 @Directive({
 	selector: '[auiFlyoutClose]',
 	exportAs: 'auiFlyoutClose',
 })
 export class FlyoutCloseDirective {
-
-	constructor(private flyoutService: FlyoutService) {}
+	constructor(
+		@Host() public flyout: FlyoutDirective
+	) {}
 
 	@HostListener('click')
-	public onClick() {
-		this.flyoutService.close();
+	public onClick(): void {
+		this.flyout.close();
 	}
 }

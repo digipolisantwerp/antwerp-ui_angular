@@ -6,17 +6,15 @@ import { FlyoutDirective } from './flyout.directive';
 import { FlyoutZoneDirective } from './flyout-zone.directive';
 
 import { FlyoutService } from '../services/flyout.service';
+import { FlyoutState } from '../types/flyout.types';
 
 import { Subject } from 'rxjs';
 
 class MockFlyoutService {
-	// Observable string sources
-	public subject = new Subject<any>();
+	public state$ = new Subject<FlyoutState>();
 
 	public close() {
-		this.subject.next({
-			close: true,
-		});
+		this.state$.next(FlyoutState.CLOSED);
 	}
 }
 
@@ -104,13 +102,13 @@ describe('Flyout directive without flyout zone', () => {
 		fixture.detectChanges();
 
 		expect(componentElement.className).toContain('is-open');
-		expect(comp.element.isOpened()).toBeTruthy();
+		expect(comp.element.isOpened).toBeTruthy();
 
 		comp.element.close();
 		fixture.detectChanges();
 
 		expect(componentElement.className).not.toContain('is-open');
-		expect(comp.element.isOpened()).toBeFalsy();
+		expect(comp.element.isOpened).toBeFalsy();
 
 	});
 
@@ -120,8 +118,8 @@ describe('Flyout directive without flyout zone', () => {
 	});
 
 	it('should subscribe on flyoutService', inject([FlyoutService], (flyoutService: FlyoutService) => {
-		spyOn(comp.element, 'close');
+		spyOn(comp.element, 'isOpened');
 		flyoutService.close();
-		expect(comp.element.close).toHaveBeenCalled();
+		expect(comp.element.isOpened).toBeFalsy();
 	}));
 });
