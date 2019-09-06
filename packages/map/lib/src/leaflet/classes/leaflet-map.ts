@@ -1,16 +1,17 @@
 import { EventEmitter } from '@angular/core';
-import * as L from 'leaflet';
-import * as esri from 'esri-leaflet';
+import {MapService} from '../services';
+// import * as L from 'leaflet';
+// import * as esri from 'esri-leaflet';
 import 'leaflet-draw';
 
-import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
+import { LeafletLayer, LeafletMapOptions, LatLngExpression } from '../types/leaflet.types';
 
 export class LeafletMap {
 	private initialized = false;
 	private polygonDrawer: any;
 	private lineDrawer: any;
 	private editingLayer: any;
-	public map: L.Map;
+	public map;
 	public locating = false;
 	public fullScreen = false;
 	public onInit = new EventEmitter();
@@ -21,56 +22,67 @@ export class LeafletMap {
 	};
 	public mode = this.modes.DRAGGING;
 
-	constructor(public options: LeafletMapOptions) {
+	constructor(public options: LeafletMapOptions,
+				public mapService: MapService) {
 	}
 
 	// LIFECYCLE
 	init(element: any) {
-		this.initialized = true;
-		this.map = L.map(element, {
-			center: this.options.center,
-			zoom: this.options.zoom,
-			attributionControl: false,
-			zoomControl: false,
-			scrollWheelZoom: false,
-		});
-		this.onInit.emit();
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			this.initialized = true;
+			this.map = this.mapService.L.map(element, {
+				center: this.options.center,
+				zoom: this.options.zoom,
+				attributionControl: false,
+				zoomControl: false,
+				scrollWheelZoom: false,
+			});
+			this.onInit.emit();
+		}
 	}
 
 	// LAYERS
 	addTileLayer(layer: LeafletLayer) {
-		const tileLayer = new L.TileLayer(layer.url, layer.options);
-		this.map.addLayer(tileLayer);
-		return tileLayer;
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			const tileLayer = new this.mapService.L.TileLayer(layer.url, layer.options);
+			this.map.addLayer(tileLayer);
+			return tileLayer;
+		}
 	}
 
 	addFeatureLayer(config: any) {
-		const featureLayer = new esri.featureLayer(config);
-		this.map.addLayer(featureLayer);
-		return featureLayer;
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			const featureLayer = new this.mapService.esri.featureLayer(config);
+			this.map.addLayer(featureLayer);
+			return featureLayer;
+		}
 	}
 
 	addGeoJSON(geoJSON: any, config: any) {
-		const geoJSONLayer = L.geoJSON(geoJSON, config);
-		geoJSONLayer.addTo(this.map);
-		return geoJSONLayer;
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			const geoJSONLayer = this.mapService.L.geoJSON(geoJSON, config);
+			geoJSONLayer.addTo(this.map);
+			return geoJSONLayer;
+		}
 	}
 
 	fitFeatureLayers(featureLayers: any[]) {
-		const bounds = L.latLngBounds(([]));
-		let counter = 0;
-		featureLayers.forEach((featureLayer) => {
-			featureLayer.once('load', () => {
-				counter++;
-				featureLayer.eachFeature((layer: any) => {
-					bounds.extend(layer.getBounds());
-				});
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			const bounds = this.mapService.L.latLngBounds(([]));
+			let counter = 0;
+			featureLayers.forEach((featureLayer) => {
+				featureLayer.once('load', () => {
+					counter++;
+					featureLayer.eachFeature((layer: any) => {
+						bounds.extend(layer.getBounds());
+					});
 
-				if (counter === featureLayers.length && bounds.isValid()) {
-					this.map.fitBounds(bounds);
-				}
+					if (counter === featureLayers.length && bounds.isValid()) {
+						this.map.fitBounds(bounds);
+					}
+				});
 			});
-		});
+		}
 	}
 
 	removeLayer(layer: any) {
@@ -131,7 +143,7 @@ export class LeafletMap {
 		}
 	}
 
-	setView(center: L.LatLngExpression, zoom: number) {
+	setView(center: LatLngExpression, zoom: number) {
 		if (this.initialized) {
 			this.map.setView(center, zoom);
 		}
@@ -139,32 +151,36 @@ export class LeafletMap {
 
 	// DRAWING
 	switchToDragging = () => {
-		this.mode = this.modes.DRAGGING;
-		if (this.polygonDrawer) {
-			this.polygonDrawer.disable();
-			this.polygonDrawer = undefined;
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			this.mode = this.modes.DRAGGING;
+			if (this.polygonDrawer) {
+				this.polygonDrawer.disable();
+				this.polygonDrawer = undefined;
+			}
+			if (this.lineDrawer) {
+				this.lineDrawer.disable();
+				this.lineDrawer = undefined;
+			}
+			this.map.off(this.mapService.L.Draw.Event.CREATED);
+			this.map.off(this.mapService.L.Draw.Event.DRAWSTOP);
 		}
-		if (this.lineDrawer) {
-			this.lineDrawer.disable();
-			this.lineDrawer = undefined;
-		}
-		this.map.off(L.Draw.Event.CREATED);
-		this.map.off(L.Draw.Event.DRAWSTOP);
 	}
 
 	// DRAWING: POLYGON
 	switchToPolygon() {
-		this.switchToDragging();
-		this.mode = this.modes.DRAWING_POLYGON;
-		if (!this.polygonDrawer) {
-			this.polygonDrawer = new L.Draw['Polygon'](this.map, {
-				shapeOptions: this.options.polygonColor ? {
-					color: this.options.polygonColor,
-				} : {},
-			});
-			this.polygonDrawer.enable();
-			this.map.on(L.Draw.Event.CREATED, this.handleDrawPolygon);
-			this.map.on(L.Draw.Event.DRAWSTOP, this.switchToDragging);
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			this.switchToDragging();
+			this.mode = this.modes.DRAWING_POLYGON;
+			if (!this.polygonDrawer) {
+				this.polygonDrawer = new this.mapService.L.Draw['Polygon'](this.map, {
+					shapeOptions: this.options.polygonColor ? {
+						color: this.options.polygonColor,
+					} : {},
+				});
+				this.polygonDrawer.enable();
+				this.map.on(this.mapService.L.Draw.Event.CREATED, this.handleDrawPolygon);
+				this.map.on(this.mapService.L.Draw.Event.DRAWSTOP, this.switchToDragging);
+			}
 		}
 	}
 
@@ -176,17 +192,19 @@ export class LeafletMap {
 
 	// DRAWING: LINES
 	switchToLine() {
-		this.switchToDragging();
-		this.mode = this.modes.DRAWING_LINE;
-		if (!this.lineDrawer) {
-			this.lineDrawer = new L.Draw['Polyline'](this.map, {
-				shapeOptions: this.options.lineColor ? {
-					color: this.options.lineColor,
-				} : {},
-			});
-			this.lineDrawer.enable();
-			this.map.on(L.Draw.Event.CREATED, this.handleDrawLine);
-			this.map.on(L.Draw.Event.DRAWSTOP, this.switchToDragging);
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			this.switchToDragging();
+			this.mode = this.modes.DRAWING_LINE;
+			if (!this.lineDrawer) {
+				this.lineDrawer = new this.mapService.L.Draw['Polyline'](this.map, {
+					shapeOptions: this.options.lineColor ? {
+						color: this.options.lineColor,
+					} : {},
+				});
+				this.lineDrawer.enable();
+				this.map.on(this.mapService.L.Draw.Event.CREATED, this.handleDrawLine);
+				this.map.on(this.mapService.L.Draw.Event.DRAWSTOP, this.switchToDragging);
+			}
 		}
 	}
 
@@ -222,14 +240,18 @@ export class LeafletMap {
 	}
 
 	// MARKERS
-	addMarker(position: L.LatLngExpression, options?: any) {
-		return L.marker(position, options).addTo(this.map);
+	addMarker(position: LatLngExpression, options?: any) {
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			return this.mapService.L.marker(position, options).addTo(this.map);
+		}
 	}
 
-	addHtmlMarker(position: L.LatLngExpression, html: string) {
-		const customIcon = L.divIcon({ html: html, className: 'aui-leaflet__html-icon' });
-		return L.marker(position, {
-			icon: customIcon,
-		}).addTo(this.map);
+	addHtmlMarker(position: LatLngExpression, html: string) {
+		if (this.mapService.L !== null && this.mapService.esri !== null) {
+			const customIcon = this.mapService.L.divIcon({ html: html, className: 'aui-leaflet__html-icon' });
+			return this.mapService.L.marker(position, {
+				icon: customIcon,
+			}).addTo(this.map);
+		}
 	}
 }

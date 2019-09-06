@@ -15,3 +15,7 @@ export interface LeafletMapOptions {
 	onAddPolygon?: Function;
 	onEditFeature?: Function;
 }
+
+export interface LatLngExpression {
+	latLng: Array<any>;
+}

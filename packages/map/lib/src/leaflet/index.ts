@@ -6,6 +6,6 @@ export { LeafletFullscreenControlComponent } from './components/controls/leaflet
 export { LeafletLocateControlComponent } from './components/controls/leaflet-locate-control/leaflet-locate-control.component';
 export { LeafletZoomControlComponent } from './components/controls/leaflet-zoom-control/leaflet-zoom-control.component';
 export { LeafletComponent } from './components/leaflet/leaflet.component';
-export { LeafletLayer, LeafletMapOptions } from './types/leaflet.types';
+export { LeafletLayer, LeafletMapOptions, LatLngExpression } from './types/leaflet.types';
 export { baseMapAntwerp, baseMapWorldGray } from './leaflet.conf';
 export { LeafletModule } from './leaflet.module';
