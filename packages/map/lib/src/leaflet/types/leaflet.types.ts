@@ -17,5 +17,5 @@ export interface LeafletMapOptions {
 }
 
 export interface LatLngExpression {
-	latLng: Array<any>;
+	latLng: any;
 }

@@ -4,7 +4,7 @@ import {MapService} from '../services';
 // import * as esri from 'esri-leaflet';
 import 'leaflet-draw';
 
-import { LeafletLayer, LeafletMapOptions, LatLngExpression } from '../types/leaflet.types';
+import { LeafletLayer, LeafletMapOptions} from '../types/leaflet.types';
 
 export class LeafletMap {
 	private initialized = false;
@@ -143,7 +143,7 @@ export class LeafletMap {
 		}
 	}
 
-	setView(center: LatLngExpression, zoom: number) {
+	setView(center: any, zoom: number) {
 		if (this.initialized) {
 			this.map.setView(center, zoom);
 		}
@@ -240,13 +240,13 @@ export class LeafletMap {
 	}
 
 	// MARKERS
-	addMarker(position: LatLngExpression, options?: any) {
+	addMarker(position: any, options?: any) {
 		if (this.mapService.L !== null && this.mapService.esri !== null) {
 			return this.mapService.L.marker(position, options).addTo(this.map);
 		}
 	}
 
-	addHtmlMarker(position: LatLngExpression, html: string) {
+	addHtmlMarker(position: any, html: string) {
 		if (this.mapService.L !== null && this.mapService.esri !== null) {
 			const customIcon = this.mapService.L.divIcon({ html: html, className: 'aui-leaflet__html-icon' });
 			return this.mapService.L.marker(position, {
