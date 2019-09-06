@@ -76,9 +76,18 @@ This library contains the following components:
 | table          | Interactive table                        | [Documentation](./packages/table/lib/README.md)               |
 | utils          | Assorted helpers                         | [Documentation](./packages/utils/lib/README.md)               |
 
-## Test automation
+## Testing
+
+### Test automation
 
 If you want to start automating your tests, you can have a look at our [Test Automation Guide](./TEST_AUTOMATION.md) for some tips on how to use data-attributes to keep your tests stable and maintainable.
+
+### Cross Browser Testing
+
+We are using [Browserstack Live](https://www.browserstack.com/live) to make sure that our components work correctly on all major browsers and platforms.<br/>
+The people at Browserstack kindly offer an unlimited testing program, free of charge for open source projects so a big thanks to them!
+
+<a href="http://browserstack.com/"><img width="250" src="./assets/browserstack-logo-600x205.png" alt="Browserstack logo"></a>
 
 ## Questions
 
