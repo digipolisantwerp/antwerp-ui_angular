@@ -1,3 +1,4 @@
+export { MapService } from './services/map.service';
 export { LeafletMap } from './classes/leaflet-map';
 export { LeafletControlComponent } from './components/controls/leaflet-control/leaflet-control.component';
 export { LeafletDragControlComponent } from './components/controls/leaflet-drag-control/leaflet-drag-control.component';

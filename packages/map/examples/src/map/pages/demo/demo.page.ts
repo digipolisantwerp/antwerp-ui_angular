@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
-import {MapMockService} from '../../services';
+import { MapMockService } from '../../services/map.service';
 
 @Component({
 	templateUrl: './demo.page.html',
@@ -60,6 +60,7 @@ public ngOnInit(): void {
 		Content displayed in sidebar
 	</div>
 </aui-leaflet>`;
+  public mapMockService: MapMockService;
 
 	public leafletMap: LeafletMap = new LeafletMap({
 		zoom: 13, // default zoom level
@@ -67,7 +68,7 @@ public ngOnInit(): void {
 		onAddPolygon: (layer) => {},
 		onAddLine: (layer) => {},
 		onEditFeature: (feature) => {},
-	}, MapMockService);
+	}, this.mapMockService);
 
 	public ngOnInit(): void {
 		this.leafletMap.onInit.subscribe(() => {

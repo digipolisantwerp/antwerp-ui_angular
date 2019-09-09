@@ -5,10 +5,12 @@ import { By } from '@angular/platform-browser';
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
 import { LeafletMap } from '../../../classes/leaflet-map';
+import {MapService} from '../../../services/map.service';
 
 describe('The leaflet draw control component', () => {
 	let fixture: ComponentFixture<LeafletDrawControlComponent>;
 	let comp: LeafletDrawControlComponent;
+	let mapService: MapService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
@@ -21,10 +23,11 @@ describe('The leaflet draw control component', () => {
 		}).compileComponents();
 		fixture = TestBed.createComponent(LeafletDrawControlComponent);
 		comp = fixture.componentInstance;
+		mapService = TestBed.get(mapService);
 		comp.map = new LeafletMap({
 			zoom: 13,
 			center: [51.215, 4.425],
-		});
+		}, mapService);
 	});
 
 	it('should switch to polygons', () => {

@@ -1,13 +1,15 @@
 import { LeafletMap } from './leaflet-map';
 import { LeafletMapOptions, LeafletLayer } from '../types/leaflet.types';
-import * as L from 'leaflet';
-import * as esri from 'esri-leaflet';
-import { fakeAsync, tick } from '@angular/core/testing';
+import { MapService } from '../services/map.service';
+// import * as L from 'leaflet';
+// import * as esri from 'esri-leaflet';
+import {fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 describe('The leaflet map', () => {
 	const element = document.body;
 	let mapSpy;
 	let onInitSpy;
+	let mapService: MapService;
 	const options: LeafletMapOptions = {
 		zoom: 13,
 		center: [51.215, 4.425],
@@ -16,7 +18,7 @@ describe('The leaflet map', () => {
 		onAddPolygon: () => {
 		},
 	};
-	const map: LeafletMap = new LeafletMap(options);
+	const map: LeafletMap = new LeafletMap(options, this.mapService);
 	const fakeLayer: LeafletLayer = {
 		name: 'Fake Layer',
 		url: 'fakeUrl',
@@ -24,7 +26,8 @@ describe('The leaflet map', () => {
 	};
 
 	beforeEach(() => {
-		mapSpy = spyOn(L, 'map').and.callThrough();
+		mapService = TestBed.get(MapService);
+		mapSpy = spyOn(mapService.L, 'map').and.callThrough();
 		const fake = {
 			onInit: () => {
 			},
@@ -67,8 +70,9 @@ describe('The leaflet map', () => {
 		let returnedLayer;
 
 		beforeEach(() => {
+			mapService = TestBed.get(MapService);
 			addLayerSpy = spyOn(map.map, 'addLayer').and.callFake(() => fakeLayer);
-			tileLayerSpy = spyOn(L, 'TileLayer').and.callFake(() => fakeLayer);
+			tileLayerSpy = spyOn(mapService.L, 'TileLayer').and.callFake(() => fakeLayer);
 			returnedLayer = map.addTileLayer(fakeLayer);
 		});
 
@@ -91,8 +95,9 @@ describe('The leaflet map', () => {
 		let returnedLayer;
 
 		beforeEach(() => {
+			mapService = TestBed.get(MapService);
 			addLayerSpy = spyOn(map.map, 'addLayer').and.callFake(() => fakeLayer);
-			featureLayerSpy = spyOn(esri, 'featureLayer').and.callFake(() => fakeLayer);
+			featureLayerSpy = spyOn(mapService.esri, 'featureLayer').and.callFake(() => fakeLayer);
 			returnedLayer = map.addFeatureLayer(fakeLayer);
 		});
 
@@ -149,7 +154,7 @@ describe('The leaflet map', () => {
 		it('should fit all features in the viewport', () => {
 			map.fitFeatureLayers(featureLayers);
 			expect(fitBoundsSpy).toHaveBeenCalledTimes(1);
-			expect(fitBoundsSpy).toHaveBeenCalledWith(L.latLngBounds(([getBounds()])));
+			expect(fitBoundsSpy).toHaveBeenCalledWith(mapService.L.latLngBounds(([getBounds()])));
 		});
 	});
 
@@ -310,14 +315,14 @@ describe('The leaflet map', () => {
 
 	describe('when adding markers', () => {
 		it('should add a normal marker', () => {
-			const markerSpy = spyOn(L, 'marker').and.callThrough();
+			const markerSpy = spyOn(mapService.L, 'marker').and.callThrough();
 			map.addMarker(options.center);
 			expect(markerSpy).toHaveBeenCalledWith(options.center, undefined);
 		});
 
 		it('should add an html marker', () => {
-			const divIconSpy = spyOn(L, 'divIcon').and.callThrough();
-			const markerSpy = spyOn(L, 'marker').and.callThrough();
+			const divIconSpy = spyOn(mapService.L, 'divIcon').and.callThrough();
+			const markerSpy = spyOn(mapService.L, 'marker').and.callThrough();
 			map.addHtmlMarker(options.center, '<p>Test</p>');
 			expect(divIconSpy).toHaveBeenCalledWith({html: '<p>Test</p>', className: 'aui-leaflet__html-icon'});
 			expect(markerSpy).toHaveBeenCalled();

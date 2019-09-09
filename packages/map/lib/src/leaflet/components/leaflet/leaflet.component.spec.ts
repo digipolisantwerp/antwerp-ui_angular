@@ -12,6 +12,7 @@ import { LeafletZoomControlComponent } from '../controls/leaflet-zoom-control/le
 import { LeafletLocateControlComponent } from '../controls/leaflet-locate-control/leaflet-locate-control.component';
 
 import { LeafletModule } from '../../leaflet.module';
+import { MapService} from '../../services/map.service';
 
 @Component({
 	template: `
@@ -34,11 +35,12 @@ import { LeafletModule } from '../../leaflet.module';
 	`,
 })
 class TestLeafletComponent {
+	mapService = TestBed.get(MapService);
 	shouldHaveContent = false;
 	leafletMap = new LeafletMap({
 		zoom: 13,
 		center: [51.215, 4.425],
-	});
+	}, this.mapService);
 }
 
 // Mock timeout
@@ -59,6 +61,9 @@ describe('The leaflet component', () => {
 			],
 			declarations: [
 				TestLeafletComponent,
+			],
+			providers: [
+				MapService,
 			],
 		})
 		.compileComponents();
