@@ -17,6 +17,9 @@ describe('The leaflet zoom control component', () => {
 				LeafletZoomControlComponent,
 				LeafletControlComponent,
 			],
+			providers: [
+				MapService,
+			],
 		}).compileComponents();
 		fixture = TestBed.createComponent(LeafletZoomControlComponent);
 		comp = fixture.componentInstance;

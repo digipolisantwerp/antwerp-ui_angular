@@ -20,10 +20,13 @@ describe('The leaflet draw control component', () => {
 			declarations: [
 				LeafletDrawControlComponent,
 			],
+			providers: [
+				MapService,
+			],
 		}).compileComponents();
 		fixture = TestBed.createComponent(LeafletDrawControlComponent);
 		comp = fixture.componentInstance;
-		mapService = TestBed.get(mapService);
+		mapService = TestBed.get(MapService);
 		comp.map = new LeafletMap({
 			zoom: 13,
 			center: [51.215, 4.425],

@@ -4,6 +4,8 @@ import { MapService } from '../services/map.service';
 // import * as L from 'leaflet';
 // import * as esri from 'esri-leaflet';
 import {fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {LeafletControlComponent, LeafletDragControlComponent} from '..';
+import {PLATFORM_ID} from '@angular/core';
 
 describe('The leaflet map', () => {
 	const element = document.body;
@@ -18,7 +20,7 @@ describe('The leaflet map', () => {
 		onAddPolygon: () => {
 		},
 	};
-	const map: LeafletMap = new LeafletMap(options, this.mapService);
+	let map: LeafletMap;
 	const fakeLayer: LeafletLayer = {
 		name: 'Fake Layer',
 		url: 'fakeUrl',
@@ -26,7 +28,21 @@ describe('The leaflet map', () => {
 	};
 
 	beforeEach(() => {
+		TestBed.configureTestingModule({
+			declarations: [
+				LeafletDragControlComponent,
+				LeafletControlComponent,
+			],
+			providers: [
+				MapService,
+				{
+					provide: PLATFORM_ID,
+					useValue: 'browser',
+				},
+			],
+		}).compileComponents();
 		mapService = TestBed.get(MapService);
+		map = new LeafletMap(options, mapService);
 		mapSpy = spyOn(mapService.L, 'map').and.callThrough();
 		const fake = {
 			onInit: () => {

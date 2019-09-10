@@ -17,6 +17,9 @@ describe('The leaflet drag control component', () => {
 				LeafletDragControlComponent,
 				LeafletControlComponent,
 			],
+			providers: [
+				MapService,
+			],
 		}).compileComponents();
 		fixture = TestBed.createComponent(LeafletDragControlComponent);
 		comp = fixture.componentInstance;

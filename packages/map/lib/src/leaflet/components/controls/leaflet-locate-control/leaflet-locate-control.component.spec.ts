@@ -17,6 +17,9 @@ describe('The leaflet locate control component', () => {
 				LeafletLocateControlComponent,
 				LeafletControlComponent,
 			],
+			providers: [
+				MapService,
+			],
 		}).compileComponents();
 		fixture = TestBed.createComponent(LeafletLocateControlComponent);
 		comp = fixture.componentInstance;

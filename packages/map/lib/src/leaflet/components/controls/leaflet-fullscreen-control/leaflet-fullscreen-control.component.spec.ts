@@ -17,6 +17,9 @@ describe('The leaflet full screen control component', () => {
 				LeafletFullscreenControlComponent,
 				LeafletControlComponent,
 			],
+			providers: [
+				MapService,
+			],
 		}).compileComponents();
 		fixture = TestBed.createComponent(LeafletFullscreenControlComponent);
 		comp = fixture.componentInstance;
