@@ -1,8 +1,5 @@
 import { EventEmitter } from '@angular/core';
 import {MapService} from '../services/map.service';
-// import * as L from 'leaflet';
-// import * as esri from 'esri-leaflet';
-import 'leaflet-draw';
 
 import { LeafletLayer, LeafletMapOptions} from '../types/leaflet.types';
 

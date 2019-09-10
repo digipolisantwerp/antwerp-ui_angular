@@ -13,10 +13,11 @@ export class MapService {
 	}
 
 	requireMap() {
+
 		if (isPlatformBrowser(this.platformId)) {
 			this.L = require('leaflet');
 			this.esri = require('esri-leaflet');
-			// require('leaflet-draw');
+			require('leaflet-draw');
 		}
 	}
 }

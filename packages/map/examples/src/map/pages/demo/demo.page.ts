@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
-import { MapMockService } from '../../services/map.service';
+import {Component, OnInit} from '@angular/core';
+import {baseMapAntwerp, baseMapWorldGray, LeafletMap, MapService} from '@acpaas-ui/ngx-components/map';
 
 @Component({
 	templateUrl: './demo.page.html',
@@ -60,7 +59,8 @@ public ngOnInit(): void {
 		Content displayed in sidebar
 	</div>
 </aui-leaflet>`;
-  public mapMockService: MapMockService;
+
+  public mapMockService: MapService = new MapService('browser');
 
 	public leafletMap: LeafletMap = new LeafletMap({
 		zoom: 13, // default zoom level
