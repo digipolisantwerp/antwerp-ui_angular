@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {baseMapAntwerp, baseMapWorldGray, LeafletMap, MapService} from '@acpaas-ui/ngx-components/map';
+import { baseMapAntwerp, baseMapWorldGray, LeafletMap, MapService } from '@acpaas-ui/ngx-components/map';
 
 @Component({
 	templateUrl: './demo.page.html',
