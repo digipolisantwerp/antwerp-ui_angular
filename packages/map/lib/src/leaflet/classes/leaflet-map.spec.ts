@@ -1,11 +1,9 @@
 import { LeafletMap } from './leaflet-map';
 import { LeafletMapOptions, LeafletLayer } from '../types/leaflet.types';
 import { MapService } from '../services/map.service';
-// import * as L from 'leaflet';
-// import * as esri from 'esri-leaflet';
-import {fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {LeafletControlComponent, LeafletDragControlComponent} from '..';
-import {PLATFORM_ID} from '@angular/core';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { LeafletControlComponent, LeafletDragControlComponent } from '..';
+import { PLATFORM_ID } from '@angular/core';
 
 describe('The leaflet map', () => {
 	const element = document.body;
