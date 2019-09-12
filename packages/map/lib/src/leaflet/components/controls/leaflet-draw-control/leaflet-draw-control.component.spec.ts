@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
 import { LeafletMap } from '../../../classes/leaflet-map';
-import {MapService} from '../../../services/map.service';
+import { MapService } from '../../../services/map.service';
 
 describe('The leaflet draw control component', () => {
 	let fixture: ComponentFixture<LeafletDrawControlComponent>;
