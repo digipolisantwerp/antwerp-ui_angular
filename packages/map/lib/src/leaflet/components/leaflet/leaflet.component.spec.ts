@@ -12,7 +12,7 @@ import { LeafletZoomControlComponent } from '../controls/leaflet-zoom-control/le
 import { LeafletLocateControlComponent } from '../controls/leaflet-locate-control/leaflet-locate-control.component';
 
 import { LeafletModule } from '../../leaflet.module';
-import { MapService} from '../../services/map.service';
+import { MapService } from '../../services/map.service';
 
 @Component({
 	template: `
