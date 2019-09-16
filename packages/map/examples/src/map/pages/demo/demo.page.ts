@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
+import {Component, OnInit} from '@angular/core';
+import { baseMapAntwerp, baseMapWorldGray, LeafletMap, MapService } from '@acpaas-ui/ngx-components/map';
 
 @Component({
 	templateUrl: './demo.page.html',
@@ -23,13 +23,16 @@ export class AppModule {};`;
 	public codeExampleJS2 =
 `import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
 
+constructor(public mapService: MapService) {
+	}
+
 public leafletMap: LeafletMap = new LeafletMap({
 	zoom: 13, // default zoom level
 	center: [51.215, 4.425], // default center point
 	onAddPolygon: (layer) => {},
 	onAddLine: (layer) => {},
 	onEditFeature: (feature) => {},
-});
+}, this.mapService);
 
 public ngOnInit(): void {
 	this.leafletMap.onInit.subscribe(() => {
@@ -57,13 +60,15 @@ public ngOnInit(): void {
 	</div>
 </aui-leaflet>`;
 
+  public mapMockService: MapService = new MapService('browser');
+
 	public leafletMap: LeafletMap = new LeafletMap({
 		zoom: 13, // default zoom level
 		center: [51.215, 4.425], // default center point
 		onAddPolygon: (layer) => {},
 		onAddLine: (layer) => {},
 		onEditFeature: (feature) => {},
-	});
+	}, this.mapMockService);
 
 	public ngOnInit(): void {
 		this.leafletMap.onInit.subscribe(() => {
