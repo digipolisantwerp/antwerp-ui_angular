@@ -19,4 +19,12 @@ export class MapService {
 			require('leaflet-draw');
 		}
 	}
+
+	isAvailable() {
+		if (isPlatformBrowser(this.platformId)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

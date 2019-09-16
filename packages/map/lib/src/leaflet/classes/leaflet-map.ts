@@ -25,7 +25,7 @@ export class LeafletMap {
 
 	// LIFECYCLE
 	init(element: any) {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			this.initialized = true;
 			this.map = this.mapService.L.map(element, {
 				center: this.options.center,
@@ -40,7 +40,7 @@ export class LeafletMap {
 
 	// LAYERS
 	addTileLayer(layer: LeafletLayer) {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			const tileLayer = new this.mapService.L.TileLayer(layer.url, layer.options);
 			this.map.addLayer(tileLayer);
 			return tileLayer;
@@ -48,7 +48,7 @@ export class LeafletMap {
 	}
 
 	addFeatureLayer(config: any) {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			const featureLayer = new this.mapService.esri.featureLayer(config);
 			this.map.addLayer(featureLayer);
 			return featureLayer;
@@ -56,7 +56,7 @@ export class LeafletMap {
 	}
 
 	addGeoJSON(geoJSON: any, config: any) {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			const geoJSONLayer = this.mapService.L.geoJSON(geoJSON, config);
 			geoJSONLayer.addTo(this.map);
 			return geoJSONLayer;
@@ -64,7 +64,7 @@ export class LeafletMap {
 	}
 
 	fitFeatureLayers(featureLayers: any[]) {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			const bounds = this.mapService.L.latLngBounds(([]));
 			let counter = 0;
 			featureLayers.forEach((featureLayer) => {
@@ -148,7 +148,7 @@ export class LeafletMap {
 
 	// DRAWING
 	switchToDragging = () => {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			this.mode = this.modes.DRAGGING;
 			if (this.polygonDrawer) {
 				this.polygonDrawer.disable();
@@ -165,7 +165,7 @@ export class LeafletMap {
 
 	// DRAWING: POLYGON
 	switchToPolygon() {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			this.switchToDragging();
 			this.mode = this.modes.DRAWING_POLYGON;
 			if (!this.polygonDrawer) {
@@ -189,7 +189,7 @@ export class LeafletMap {
 
 	// DRAWING: LINES
 	switchToLine() {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			this.switchToDragging();
 			this.mode = this.modes.DRAWING_LINE;
 			if (!this.lineDrawer) {
@@ -238,13 +238,13 @@ export class LeafletMap {
 
 	// MARKERS
 	addMarker(position: any, options?: any) {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			return this.mapService.L.marker(position, options).addTo(this.map);
 		}
 	}
 
 	addHtmlMarker(position: any, html: string) {
-		if (this.mapService.L !== null && this.mapService.esri !== null) {
+		if (this.mapService.isAvailable()) {
 			const customIcon = this.mapService.L.divIcon({ html: html, className: 'aui-leaflet__html-icon' });
 			return this.mapService.L.marker(position, {
 				icon: customIcon,
