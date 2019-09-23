@@ -2,4 +2,5 @@
 	<img *ngIf="image" class="a-avatar__image" [alt]="title" [src]="image">
 	<i *ngIf="icon" class="a-avatar__icon" [ngClass]="[icon]"></i>
 	<span *ngIf="letter" class="a-avatar__letter">{{ letter }}</span>
+	<span class="u-screen-reader-only">{{ ariaLabel }}</span>
 </div>

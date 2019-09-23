@@ -31,4 +31,6 @@ export class AvatarComponent {
 	@Input() className = '';
 
 	@Input() size: sizes = sizes.R;
+
+	@Input() ariaLabel?: string = 'Gebruiker icoon';
 }
