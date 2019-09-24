@@ -10,6 +10,7 @@ export class PaginationComponent implements OnChanges {
 	@Input() public ariaNavigationLabel = 'Paginering';
 	@Input() public ariaPreviousLabel = 'Ga naar de vorige pagina';
 	@Input() public ariaNextLabel = 'Ga naar de volgende pagina';
+	@Input() public ariaCurrentLabel = "Pagina";
 	@Input() public currentPage: number;
 	@Input() public display: PaginationDisplay = 'basic';
 	@Input() public itemsPerPage: number;
