@@ -115,7 +115,7 @@ public formatLabel(input: any) {
     // Highlight searchValue in result
     const regEx = new RegExp(this.searchValue, 'ig');
     const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
-    return \`<i class="fa fa-user u-text-light u-margin-right-xs"></i>\${inputStringHighlighted}\`;
+    return \`<span class="fa fa-user u-text-light u-margin-right-xs"></span>\${inputStringHighlighted}\`;
 }
 ```
 

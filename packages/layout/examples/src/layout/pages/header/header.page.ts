@@ -23,7 +23,7 @@ export class AppModule {};`;
 	</div>
 	<div auiHeaderMenuItem>
 		<a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button a-button--navigation has-icon-left" target="_blank">
-			<i class="fa fa-github"></i>ACPaaS UI on GitHub
+			<span class="fa fa-github"></span>ACPaaS UI on GitHub
 		</a>
 	</div>
 </aui-header>`;

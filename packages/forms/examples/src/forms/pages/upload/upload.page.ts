@@ -183,7 +183,7 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 			<button
 				(click)="reloadErrors()"
 				class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-				<i class="fa fa-close"></i>
+				<span class="fa fa-close"></span>
 			</button>
 		</li>
 	</ul>

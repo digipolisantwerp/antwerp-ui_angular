@@ -7,7 +7,7 @@ import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-components/layout';
 		<div class="m-modal__content">
 			<div class="m-modal__header u-margin-bottom-xs">
 				<button class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
-					<i class="fa fa-close"></i>
+					<span class="fa fa-close"></span>
 				</button>
 				<h4>{{ modalData.title }}</h4>
 			</div>
