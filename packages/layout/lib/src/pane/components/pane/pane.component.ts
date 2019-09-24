@@ -8,6 +8,7 @@ export class PaneComponent {
 	@Input() opened = false;
 	@Input() side = 'left';
 	@Input() backdrop = true;
+	@Input() ariaLabelClosePane = 'Sluit paneel';
 	@Output() open = new EventEmitter();
 	@Output() close = new EventEmitter();
 
