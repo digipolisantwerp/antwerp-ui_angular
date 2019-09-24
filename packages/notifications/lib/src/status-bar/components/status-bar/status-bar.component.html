@@ -2,7 +2,7 @@
     <span class="o-statusbar__status" [ngClass]="iconMap[activeNotification.type]"></span>
 
     <div class="o-statusbar__notification">
-        <p>
+        <p role="status">
             <span [innerHTML]="activeNotification.message"></span>
             <span *ngIf="notifications.length > 1">(<span [innerHTML]="remainingMessage | pluralizeLabel:replaceMap.remaining | interpolateLabel:replaceMap"></span>)</span>
         </p>
