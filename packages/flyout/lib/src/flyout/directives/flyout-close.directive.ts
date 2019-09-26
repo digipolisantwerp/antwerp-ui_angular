@@ -1,4 +1,4 @@
-import { Directive, HostListener, Host } from '@angular/core';
+import { Directive, HostListener, Host, HostBinding } from '@angular/core';
 
 import { FlyoutDirective } from './flyout.directive';
 
@@ -7,6 +7,8 @@ import { FlyoutDirective } from './flyout.directive';
 	exportAs: 'auiFlyoutClose',
 })
 export class FlyoutCloseDirective {
+	@HostBinding('attr.role') role = 'button';
+
 	constructor(
 		@Host() public flyout: FlyoutDirective
 	) {}

@@ -14,6 +14,7 @@ import { FlyoutState } from '../types/flyout.types';
 export class FlyoutActionDirective implements OnInit, OnDestroy {
 	@HostBinding('class.aui-flyout-action') class = true;
 	@HostBinding('attr.tabindex') tabindex = '0';
+	@HostBinding('attr.role') role = 'button';
 
 	private isPlatformBrowser: boolean;
 	private destroyed$ = new Subject<boolean>();
