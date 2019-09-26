@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Awaiting approval
 
-- `localStorage` Fixed hard dependency on redux store enhancer.
+- `localStorage` [BREAKING] Fixed hard dependency on redux store enhancer.
 
 ## [2.1.2] - 2019-08-23
 
