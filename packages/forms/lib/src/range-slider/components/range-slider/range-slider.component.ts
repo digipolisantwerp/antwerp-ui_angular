@@ -92,48 +92,60 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		this.active = handle;
 	}
 
-	public toggleFocus(hasFocus) {
+	public toggleFocus(hasFocus, element, $event) {
 		if (this.isDisabled) {
 			return;
 		}
 
+		$event.preventDefault();
 		this.hasFocus = hasFocus;
+		this.active = element;
 	}
 
 	@HostListener('document:keydown', ['$event'])
-	public onKeyDown() {
+	public onKeyDown($event) {
 		if (!this.hasFocus) {
 			return;
 		}
 
-    const key = e.keyCode;
-    // 39: right
-    // 38: up
-    // 37: left
-    // 40: down
-    // 35: end
-    // 36: home
+		const setValue = (value) => {
+			this.updateHandle(value);
+		}
 
-    switch (key) {
-      case 39:
-      case 38:
-        newValue = value + step;
-        e.preventDefault();
-        break;
-      case 37:
-      case 40:
-        newValue = value - step;
-        e.preventDefault();
-        break;
-      case 35:
-        newValue = max;
-        e.preventDefault();
-        break;
-      case 36:
-        newValue = min;
-        e.preventDefault();
-        break;
-    }
+		let newValue = 0;
+		const value = this.active === 'start' ? this.min : this.max;
+		const key = $event.keyCode;
+
+		if (!~[35, 36, 37, 38, 39, 40].indexOf(key)) {
+			return;
+		}
+		// 39: right
+		// 38: up
+		// 37: left
+		// 40: down
+		// 35: end
+		// 36: home
+
+		switch (key) {
+			case 39:
+			case 38:
+				newValue = value + this.step;
+				$event.preventDefault();
+				break;
+			case 37:
+			case 40:
+				newValue = value - this.step;
+				$event.preventDefault();
+				break;
+			case 35:
+				setValue(100);
+				$event.preventDefault();
+				break;
+			case 36:
+				setValue(0);
+				$event.preventDefault();
+				break;
+		}
 
 	}
 
