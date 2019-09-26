@@ -81,7 +81,11 @@
 			<span class="fa fa-warning"></span>
 			<span class="m-upload__filename">{{ fileName }}</span>
 			<span class="m-upload__error">This file extension is not allowed.</span>
-			<button (click)="reloadErrors()" class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon"><span class="fa fa-close"></span></button>
+			<button (click)="reloadErrors()" class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
+				<span class="fa fa-close">
+					<span class="u-screen-reader-only">Close</span>
+				</span>
+			</button>
 		</li>
 	</ul>
 </div>

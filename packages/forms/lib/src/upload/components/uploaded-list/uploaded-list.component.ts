@@ -6,6 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UploadedListComponent {
 	@Input() public uploadedFiles = [];
+	@Input() public ariaLabelRemoveUpload: string = 'Verwijder';
 	@Output() public delete = new EventEmitter();
 
 	public remove(file, index) {

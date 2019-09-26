@@ -4,7 +4,9 @@
         <span class="m-upload__filename">{{ file.name }}</span>
 
         <button (click)="remove(file, i)" class="m-upload__delete a-button-transparent a-button--default a-button--small has-icon">
-            <span class="fa fa-close"></span>
+            <span class="fa fa-close">
+                <span class="u-screen-reader">{{ ariaLabelRemoveUpload }}</span>
+            </span>
         </button>
     </li>
 </ul>
