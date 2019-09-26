@@ -8,6 +8,7 @@
 		[formControl]="formControl"
 		[auiMask]="dateMask"
 		[attr.disabled]="isDisabled ? true : null"
+		(blur)="handleBlur($event)"
 	>
 	<span class="fa fa-calendar" *ngIf="isDisabled"></span>
 
