@@ -5,6 +5,7 @@ import { first, takeUntil } from 'rxjs/operators';
 
 import { FlyoutDirective } from './flyout.directive';
 import { FlyoutState } from '../types/flyout.types';
+import { isEvent } from '../utils/event';
 
 // @dynamic
 @Directive({
@@ -71,6 +72,13 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 		}
 
 		this.open();
+	}
+
+	@HostListener('keydown', ['$event'])
+	public onKeyDown(e: KeyboardEvent): void {
+		if (isEvent(e, 'space', 32) || isEvent(e, 'enter', 13)) {
+			this.open();
+		}
 	}
 
 	public onBlur(event: FocusEvent): void {
