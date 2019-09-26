@@ -1,7 +1,7 @@
-import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inject, PLATFORM_ID, OnInit } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inject, PLATFORM_ID, OnInit, Input } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { Subject } from 'rxjs';
-import { first, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 import { FlyoutDirective } from './flyout.directive';
 import { FlyoutState } from '../types/flyout.types';
@@ -16,6 +16,8 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 	@HostBinding('class.aui-flyout-action') class = true;
 	@HostBinding('attr.tabindex') tabindex = '0';
 	@HostBinding('attr.role') role = 'button';
+
+	@Input() public openOnFocus = true;
 
 	private isPlatformBrowser: boolean;
 	private destroyed$ = new Subject<boolean>();
@@ -67,7 +69,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 
 	@HostListener('focus')
 	public onFocus(): void {
-		if (!this.isPlatformBrowser || this.flyout.isOpened) {
+		if (!this.openOnFocus || !this.isPlatformBrowser || this.flyout.isOpened) {
 			return;
 		}
 
