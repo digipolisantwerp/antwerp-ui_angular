@@ -6,6 +6,7 @@ import {
 	Input,
 	HostBinding,
 	OnDestroy,
+	ElementRef,
 } from '@angular/core';
 import { Subject, merge } from 'rxjs';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
@@ -55,7 +56,8 @@ export class FlyoutDirective implements OnDestroy {
 	private destroyed$: Subject<boolean> = new Subject<boolean>();
 
 	constructor(
-		private flyoutService: FlyoutService
+		private flyoutService: FlyoutService,
+		private ref: ElementRef
 	) {
 		this.state$.next(FlyoutState.CLOSED);
 
@@ -91,10 +93,13 @@ export class FlyoutDirective implements OnDestroy {
 	}
 
 	public isInClosableZone(element: HTMLElement): boolean {
-		if (!this.flyoutZone || !element) {
+		if (!element) {
 			return false;
 		}
 
-		return this.flyoutZone.contains(element);
+		const isInZone = this.flyoutZone && this.flyoutZone.contains(element);
+		const isFlyout = this.ref.nativeElement === element || this.ref.nativeElement.contains(element);
+
+		return isInZone || isFlyout;
 	}
 }
