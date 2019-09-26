@@ -20,6 +20,20 @@ This library is part of [ACPaaS UI][acpaas-ui].
 
 ## Getting Started
 
+### Building packages
+
+The following will build `<packagename>` and it's example.
+
+```sh
+example=<packagename> npm run build:package
+```
+
+For example:
+
+```sh
+example=forms npm run build:package
+```
+
 Start a new Angular app.
 
 ```sh
