@@ -116,11 +116,10 @@ export class FlyoutDirective implements OnDestroy {
 
 	private handleKeyUp(e: KeyboardEvent): void {
 		if (isEvent(e, 'escape', 27)) {
-			this.close();
-
 			this.document.removeEventListener('keyup', this.handleKeyUp);
 
-			this.cdr.detectChanges();
+			this.close();
+			this.cdr.markForCheck();
 		}
 	}
 }
