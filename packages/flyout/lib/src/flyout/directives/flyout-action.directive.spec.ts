@@ -23,7 +23,7 @@ class MockFlyoutService {
 	selector: 'aui-app',
 	template: `<button class="dummyButton">dummyButton</button>
                <div auiFlyout>
-                    <button class="button" auiFlyoutAction #auiFlyoutAction="auiFlyoutAction">Open me</button>
+                    <button class="button" auiFlyoutAction [openOnFocus]="openOnFocus" #auiFlyoutAction="auiFlyoutAction">Open me</button>
                     <div auiFlyoutZone>
                         <button class="dummyButtonInside">dummyButtonInside</button>
                     </div>
@@ -32,6 +32,7 @@ class MockFlyoutService {
 class FlyoutComponent {
 	// Access directive
 	@ViewChild('auiFlyoutAction') element;
+	public openOnFocus = true;
 }
 
 describe('Flyout action directive without flyout zone', () => {
@@ -83,6 +84,15 @@ describe('Flyout action directive without flyout zone', () => {
 		expect(comp.element.flyout.open).toHaveBeenCalled();
 	});
 
+	it('should not open on focus if openOnFocus is disabled', () => {
+		spyOn(comp.element.flyout, 'open');
+		comp.openOnFocus = false;
+		fixture.detectChanges();
+
+		componentElement.focus();
+		expect(comp.element.flyout.open).not.toHaveBeenCalled();
+	});
+
 	it('should close on blur if relatedTarget is outside closable zone', () => {
 		spyOn(comp.element.flyout, 'close');
 		comp.element.open();
@@ -101,13 +111,35 @@ describe('Flyout action directive without flyout zone', () => {
 		expect(comp.element.flyout.close).not.toHaveBeenCalled();
 	});
 
-	it('should open', () => {
+	it('should open when focused and spacebar is pressed', () => {
+		spyOn(comp.element.flyout, 'open');
+		componentElement.focus();
+		componentDebugElement.triggerEventHandler('keydown', {
+			code: 'Space',
+			keyCode: 32,
+		});
+
+		expect(comp.element.flyout.open).toHaveBeenCalled();
+	});
+
+	it('should open when focused and enter is pressed', () => {
+		spyOn(comp.element.flyout, 'open');
+		componentElement.focus();
+		componentDebugElement.triggerEventHandler('keydown', {
+			code: 'Enter',
+			keyCode: 13,
+		});
+
+		expect(comp.element.flyout.open).toHaveBeenCalled();
+	});
+
+	it('should open the flyout', () => {
 		spyOn(comp.element.flyout, 'open');
 		comp.element.open();
 		expect(comp.element.flyout.open).toHaveBeenCalled();
 	});
 
-	it('should not open', () => {
+	it('should not open the flyout if it is open', () => {
 		comp.element.flyout.open(); // open it so we can test the close toggle
 
 		spyOn(comp.element.flyout, 'open');
@@ -115,7 +147,7 @@ describe('Flyout action directive without flyout zone', () => {
 		expect(comp.element.flyout.open).not.toHaveBeenCalled();
 	});
 
-	it('should close', () => {
+	it('should close the flyout', () => {
 		spyOn(comp.element.flyout, 'close');
 		comp.element.close();
 		expect(comp.element.flyout.close).not.toHaveBeenCalled();
@@ -123,5 +155,13 @@ describe('Flyout action directive without flyout zone', () => {
 		comp.element.open();
 		comp.element.close();
 		expect(comp.element.flyout.close).toHaveBeenCalled();
+	});
+
+	it('should not close the flyout if it is closed', () => {
+		comp.element.flyout.close(); // close it so we can test the close toggle
+
+		spyOn(comp.element.flyout, 'close');
+		comp.element.close();
+		expect(comp.element.flyout.close).not.toHaveBeenCalled();
 	});
 });

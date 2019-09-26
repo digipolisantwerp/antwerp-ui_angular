@@ -30,6 +30,8 @@ class FlyoutComponent {
 describe('Flyout close directive', () => {
 	let comp: FlyoutComponent;
 	let fixture: ComponentFixture<FlyoutComponent>;
+	let componentDebugElement: DebugElement;
+	let componentElement: HTMLElement;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -47,11 +49,35 @@ describe('Flyout close directive', () => {
 		fixture = TestBed.createComponent(FlyoutComponent);
 		comp = fixture.componentInstance;
 		fixture.detectChanges();
+		componentDebugElement = fixture.debugElement.query(By.directive(FlyoutCloseDirective));
+		componentElement = <HTMLElement>componentDebugElement.nativeElement;
 	}));
 
 	it('should close onClick', () => {
 		spyOn(comp.element.flyout, 'close');
 		comp.element.onClick();
+		expect(comp.element.flyout.close).toHaveBeenCalled();
+	});
+
+	it('should close when focused and spacebar is pressed', () => {
+		spyOn(comp.element.flyout, 'close');
+		componentElement.focus();
+		componentDebugElement.triggerEventHandler('keydown', {
+			code: 'Space',
+			keyCode: 32,
+		});
+
+		expect(comp.element.flyout.close).toHaveBeenCalled();
+	});
+
+	it('should close when focused and enter is pressed', () => {
+		spyOn(comp.element.flyout, 'close');
+		componentElement.focus();
+		componentDebugElement.triggerEventHandler('keydown', {
+			code: 'Enter',
+			keyCode: 13,
+		});
+
 		expect(comp.element.flyout.close).toHaveBeenCalled();
 	});
 });
