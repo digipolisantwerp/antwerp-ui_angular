@@ -1,11 +1,7 @@
 :host {
     display: block;
     position: relative;
-
-    .m-range-slider__handle + .m-range-slider__handle {
-        z-index: 3;
-    }
-
+    
     &.is-disabled {
         cursor: not-allowed;
 

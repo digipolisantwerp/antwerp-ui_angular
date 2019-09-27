@@ -109,8 +109,6 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 			return;
 		}
 
-		let newValue = 0;
-		const value = this.active === 'start' ? this.min : this.max;
 		const key = $event.keyCode;
 
 		if (!~[35, 36, 37, 38, 39, 40].indexOf(key)) {
@@ -122,16 +120,39 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		// 38: up
 		// 39: right
 		// 40: down
+		let increment = this.minimalDistance;
+
+		if (this.step > 0) {
+			increment = Number(this.step);
+		}
+
+		const processValue = (dir) => {
+			let newValue = (this.active === 'start' ? this.start : Number(this.end));
+			if(dir === 'up'){
+				newValue += increment;
+			} else {
+				newValue -= increment;
+			}
+			let newPercentage = (newValue - this.min) / (this.max - this.min) * 100;
+
+			if(newPercentage > 100){
+				newPercentage = 100;
+			}
+			if(newPercentage < 0){
+				newPercentage = 0;
+			}
+			return newPercentage;
+		}
 
 		switch (key) {
 			case 39:
 			case 38:
-				this.updateHandle(Math.round((newValue - this.min) / (this.max - this.min) * 100));
+				this.updateHandle(processValue('up'));
 				$event.preventDefault();
 				break;
 			case 37:
 			case 40:
-				this.updateHandle(Math.round((newValue - this.min) / (this.max - this.min) * 100));
+				this.updateHandle(processValue('down'));
 				$event.preventDefault();
 				break;
 			case 35:

@@ -10,6 +10,7 @@
 		(blur)="toggleFocus(false, null, $event)"
 		(touchstart)="onMouseDown('start')"
 		(mousedown)="onMouseDown('start')"
+		(dragexit)="onMouseUp($event)"
 		class="m-range-slider__handle"
 		[style.left]="startPercentage + '%'"
 	>
@@ -26,8 +27,9 @@
 		*ngIf="end"
 		(touchstart)="onMouseDown('end')"
 		(mousedown)="onMouseDown('end')"
+		(dragexit)="onMouseUp($event)"
 		class="m-range-slider__handle"
-        [style.left]="endPercentage + '%'"
+		[style.left]="endPercentage + '%'"
 	>
 		<div class="m-range-slider__tooltip a-tooltip a-tooltip--primary a-tooltip--top">
 			<p>{{ labelBefore }}{{ end }}{{ labelAfter }}</p>
