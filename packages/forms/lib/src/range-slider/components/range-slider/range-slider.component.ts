@@ -89,6 +89,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 			return;
 		}
 
+		this.hasFocus = true;
 		this.active = handle;
 	}
 
@@ -108,10 +109,6 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 			return;
 		}
 
-		const setValue = (value) => {
-			this.updateHandle(value);
-		}
-
 		let newValue = 0;
 		const value = this.active === 'start' ? this.min : this.max;
 		const key = $event.keyCode;
@@ -119,30 +116,30 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		if (!~[35, 36, 37, 38, 39, 40].indexOf(key)) {
 			return;
 		}
-		// 39: right
-		// 38: up
-		// 37: left
-		// 40: down
 		// 35: end
 		// 36: home
+		// 37: left
+		// 38: up
+		// 39: right
+		// 40: down
 
 		switch (key) {
 			case 39:
 			case 38:
-				newValue = value + this.step;
+				this.updateHandle(Math.round((newValue - this.min) / (this.max - this.min) * 100));
 				$event.preventDefault();
 				break;
 			case 37:
 			case 40:
-				newValue = value - this.step;
+				this.updateHandle(Math.round((newValue - this.min) / (this.max - this.min) * 100));
 				$event.preventDefault();
 				break;
 			case 35:
-				setValue(100);
+				this.updateHandle(100);
 				$event.preventDefault();
 				break;
 			case 36:
-				setValue(0);
+				this.updateHandle(0);
 				$event.preventDefault();
 				break;
 		}
@@ -163,6 +160,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		}
 
 		this.active = null;
+		this.hasFocus = false;
 	}
 
 	@HostListener('touchmove', ['$event'])
