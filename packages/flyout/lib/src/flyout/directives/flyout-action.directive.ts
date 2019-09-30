@@ -1,7 +1,7 @@
 import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { Subject } from 'rxjs';
-import { first, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 import { FlyoutDirective } from './flyout.directive';
 import { FlyoutState } from '../types/flyout.types';

@@ -20,6 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `selectable-list` Add aria-label.
 - `upload` Add WCAG attributes.
 - `datepicker` Add flyout WCAG info.
+- `Flyout/Flyout-button` Add WCAG info.
+- `Flyout/FlyoutZone` Auto aria-expanded.
+- `Flyout` Add aria-haspopup.
 
 ### Notes:
 
