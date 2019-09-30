@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
-## [Unreleased]
+## [2.1.4] - 2019-09-30
 
 ### Fixed
 - `core` Fixed peer dependency warnings
@@ -168,7 +168,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.3...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.4...HEAD
+[2.1.4]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.0...v2.1.1
