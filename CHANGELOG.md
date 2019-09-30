@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Awaiting approval
 
+- `Forms/search-filter` Add wcag labels and roles.
 - `Forms/timepicker` Add wcag labels.
 - `Forms/range-slider` Add wcag + keyboard binding.
 - `Forms/range-slider` Fix overlapping bug.
@@ -18,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `selectable-list` Add aria-label.
 - `upload` Add WCAG attributes.
 - `datepicker` Add flyout WCAG info.
+
+### Notes:
+
+- `Mask` Currently used library does not have full wcag support: https://github.com/RobinHerbots/Inputmask/issues/981
 
 ## [2.1.2] - 2019-08-23
 

@@ -1,5 +1,5 @@
 <div class="m-search-filter" auiFlyout [size]="flyoutSize" [align]="flyoutAlign">
-	<div class="m-search-filter__label has-icon-right" [ngClass]="{'m-search-filter__label--active': selectedItems.length > 0}" auiFlyoutAction>
+	<div class="m-search-filter__label has-icon-right" [ngClass]="{'m-search-filter__label--active': selectedItems.length > 0}" auiFlyoutAction aria-haspopup=”true”>
 		{{ label }}
 		<span *ngIf="selectedItems.length">({{ selectedItems.length }})</span>
 		<span class="fa fa-angle-down"></span>
@@ -8,7 +8,7 @@
 	<div class="m-search-filter__search m-search-filter__search--scroll" auiFlyoutZone>
 		<div class="m-search-filter__input a-input has-icon-right" *ngIf="!isDisabled">
 			<div class="a-input__wrapper">
-				<input type="text" name="{{ name + '-search' }}" id="{{ id + '-search' }}" [(ngModel)]="query" (input)="filterDataFromSearch()" [attr.placeholder]="placeholder">
+				<input type="text" aria-autocomplete="list" name="{{ name + '-search' }}" id="{{ id + '-search' }}" [(ngModel)]="query" (input)="filterDataFromSearch()" [attr.placeholder]="placeholder">
 				<span class="fa fa-search"></span>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 			<li class="m-search-filter__results-item a-list__item" *ngIf="!filteredChoices.length">
 				<p class="u-margin-xs">{{ labelNoResults }}</p>
 			</li>
-			<li class="m-search-filter__results-item a-list__item" *ngFor="let choice of filteredChoices; index as i">
+			<li class="m-search-filter__results-item a-list__item" *ngFor="let choice of filteredChoices; index as i" role="combobox">
 				 <div class="a-input__checkbox">
 					<input
 						type="checkbox"
@@ -35,7 +35,7 @@
 						[checked]="selectedItems.indexOf(choice.value) >= 0"
 						(change)="toggleSelected(choice.value)"
 						[attr.disabled]="isDisabled ? true : null"
-					>
+					/>
 					<label for="{{ 'checkbox--' + i + '--' + id }}">{{ choice.label }}</label>
 				</div>
 			</li>
