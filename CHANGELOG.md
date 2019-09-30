@@ -10,13 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `Forms/timepicker` Add wcag labels.
 - `Forms/range-slider` Add wcag + keyboard binding.
 - `Forms/range-slider` Fix overlapping bug.
+- `Forms/auto-complete` Add aria-label.
 - `Forms/wysiwyg` https://ckeditor.com/docs/ckeditor4/latest/guide/dev_wcag.html
 - `Avatar` Add screen-reader-only ariaLabel.
 - `Notifications/status-bar` Add role and aria Close label.
 - `Pagination` Add @Input for aria-labels.
 - `Layout/pane` WCAG Close information.
 - [BREAKING] `<i>` is for italic, not for icons. Only `<span class="..."></span>` is allowed. [WCAG 2.1 AA - Identify purpose](https://www.w3.org/TR/WCAG21/#identify-purpose)
-- `auto-complete` Add aria-label.
 - `selectable-list` Add aria-label.
 - `upload` Add WCAG attributes.
 - `datepicker` Add flyout WCAG info.
