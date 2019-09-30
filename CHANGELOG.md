@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
+## [Unreleased]
+
+### Fixed
+- `core` Fixed peer dependency warnings
+
+
 ## [2.1.3] - 2019-09-19
 
 ### Fixed
