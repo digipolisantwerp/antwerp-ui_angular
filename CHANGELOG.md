@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `Forms/timepicker` Add wcag labels.
 - `Forms/range-slider` Add wcag + keyboard binding.
 - `Forms/range-slider` Fix overlapping bug.
+- `Forms/wysiwyg` https://ckeditor.com/docs/ckeditor4/latest/guide/dev_wcag.html
 - `Avatar` Add screen-reader-only ariaLabel.
 - `Notifications/status-bar` Add role and aria Close label.
 - `Pagination` Add @Input for aria-labels.
