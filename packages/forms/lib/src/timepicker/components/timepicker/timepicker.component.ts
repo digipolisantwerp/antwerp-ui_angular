@@ -25,6 +25,8 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	@Input() public minutesPlaceholder = 'MM';
 	@Input() public hasError = false;
 	@Input() public size: TimepickerInputSize = TimepickerInputSize.Auto;
+	@Input() public ariaLabelHour = 'Uren';
+	@Input() public ariaLabelMinutes = 'Minuten';
 
 	public shouldUseFallback = false;
 	public minutes: string[] = [];
@@ -42,7 +44,7 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	) {}
 
 	public ngOnInit() {
-		this.shouldUseFallback = this.supportsNativeTimepicker();
+		this.shouldUseFallback = true;
 		this.minutes = this.getMinutes();
 		this.hours = this.getHours();
 

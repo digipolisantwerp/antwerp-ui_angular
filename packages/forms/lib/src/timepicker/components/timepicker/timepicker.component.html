@@ -6,7 +6,7 @@
 	<div *ngIf="shouldUseFallback" [formGroup]="fallbackForm">
 	    <div class="a-input has-icon-right" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }">
 	        <div class="a-input__wrapper">
-	            <select formControlName="hours">
+	            <select formControlName="hours" title="{{ariaLabelHour}}">
 	                <option disabled value="null">{{ hoursPlaceholder }}</option>
 	                <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
 	            </select>
@@ -16,7 +16,7 @@
 
 	    <div class="a-input has-icon-right" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }">
 	        <div class="a-input__wrapper">
-	            <select formControlName="minutes">
+	            <select formControlName="minutes" title="{{ariaLabelMinutes}}">
 	                <option disabled value="null">{{ minutesPlaceholder }}</option>
 	                <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
 	            </select>

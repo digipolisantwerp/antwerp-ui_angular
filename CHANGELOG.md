@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Awaiting approval
 
+- `Forms/timepicker` Add wcag labels.
 - `Forms/range-slider` Add wcag + keyboard binding.
 - `Forms/range-slider` Fix overlapping bug.
 - `Avatar` Add screen-reader-only ariaLabel.
