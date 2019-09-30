@@ -87,7 +87,7 @@ If you want to start automating your tests, you can have a look at our [Test Aut
 We are using [Browserstack Live](https://www.browserstack.com/live) to make sure that our components work correctly on all major browsers and platforms.<br/>
 The people at Browserstack kindly offer an unlimited testing program, free of charge for open source projects so a big thanks to them!
 
-<a href="http://browserstack.com/"><img width="250" src="./assets/browserstack-logo-600x205.png" alt="Browserstack logo"></a>
+<a href="http://browserstack.com/"><img width="250" src="https://cloud.githubusercontent.com/assets/7864462/12837037/452a17c6-cb73-11e5-9f39-fc96893bc9bf.png" alt="Browserstack logo"></a>
 
 ## Questions
 
