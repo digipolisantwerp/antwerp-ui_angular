@@ -27,6 +27,7 @@ main {
 }
 
 .o-header {
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	z-index: 20;
@@ -36,12 +37,23 @@ main {
 	}
 }
 
-.o-header__wrapper {
-	display: flex;
+.o-header__title {
+  color: $white;
+  font-weight: bold;
 }
 
 .o-header__logo {
+	align-items: center;
+	display: flex;
 	position: static;
+	top: 0;
+
+	&:hover,
+	&:active
+	&:focus {
+		color: $grey-light;
+		text-decoration: none;
+	}
 
 	img {
 		height: $spacer * 2;
