@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## Awaiting approval
+
+- `Forms/range-slider` Add wcag + keyboard binding.
+- `Forms/range-slider` Fix overlapping bug.
+- `Avatar` Add screen-reader-only ariaLabel.
+- `Notifications/status-bar` Add role and aria Close label.
+- `Pagination` Add @Input for aria-labels.
+- `Layout/pane` WCAG Close information.
+- [BREAKING] `<i>` is for italic, not for icons. Only `<span class="..."></span>` is allowed. [WCAG 2.1 AA - Identify purpose](https://www.w3.org/TR/WCAG21/#identify-purpose)
+- `auto-complete` Add aria-label.
+- `selectable-list` Add aria-label.
+- `upload` Add WCAG attributes.
+- `datepicker` Add flyout WCAG info.
+
 ## [2.1.2] - 2019-08-23
 
 ### Fixed
