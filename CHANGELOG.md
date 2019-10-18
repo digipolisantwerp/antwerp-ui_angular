@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Fixed
+- `flyout`: improve tab navigation (support for spacebar/enter and escape)
+- `forms`: only open flyout in datepicker when button is clicked, added blur event
 
 ## [2.1.4] - 2019-09-30
 

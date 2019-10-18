@@ -6,14 +6,20 @@ import {
 	Input,
 	HostBinding,
 	OnDestroy,
+	Inject,
+	ChangeDetectorRef,
+	ElementRef,
 } from '@angular/core';
 import { Subject, merge } from 'rxjs';
+import { DOCUMENT } from '@angular/platform-browser';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 
 import { FlyoutZoneDirective } from './flyout-zone.directive';
 import { FlyoutService } from '../services/flyout.service';
 import { FlyoutSize, FlyoutState } from '../types/flyout.types';
+import { isEvent } from '../utils/event';
 
+// @dynamic
 @Directive({
 	selector: '[auiFlyout]',
 	exportAs: 'auiFlyout',
@@ -55,8 +61,13 @@ export class FlyoutDirective implements OnDestroy {
 	private destroyed$: Subject<boolean> = new Subject<boolean>();
 
 	constructor(
-		private flyoutService: FlyoutService
+		@Inject(DOCUMENT) private document: Document,
+		private flyoutService: FlyoutService,
+		private cdr: ChangeDetectorRef,
+		private ref: ElementRef
 	) {
+		this.handleKeyUp = this.handleKeyUp.bind(this);
+
 		this.state$.next(FlyoutState.CLOSED);
 
 		merge(
@@ -84,6 +95,8 @@ export class FlyoutDirective implements OnDestroy {
 
 	public open(): void {
 		this.state$.next(FlyoutState.OPEN);
+
+		this.document.addEventListener('keyup', this.handleKeyUp);
 	}
 
 	public close(): void {
@@ -91,10 +104,22 @@ export class FlyoutDirective implements OnDestroy {
 	}
 
 	public isInClosableZone(element: HTMLElement): boolean {
-		if (!this.flyoutZone || !element) {
+		if (!element) {
 			return false;
 		}
 
-		return this.flyoutZone.contains(element);
+		const isInZone = this.flyoutZone && this.flyoutZone.contains(element);
+		const isFlyout = this.ref.nativeElement === element || this.ref.nativeElement.contains(element);
+
+		return isInZone || isFlyout;
+	}
+
+	private handleKeyUp(e: KeyboardEvent): void {
+		if (isEvent(e, 'escape', 27)) {
+			this.document.removeEventListener('keyup', this.handleKeyUp);
+
+			this.close();
+			this.cdr.markForCheck();
+		}
 	}
 }
