@@ -6,9 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [2.1.5] - 2019-10-18
+
+### Added
+- `documentation` Added testing documentation
+
 ### Fixed
-- `flyout`: improve tab navigation (support for spacebar/enter and escape)
-- `forms`: only open flyout in datepicker when button is clicked, added blur event
+- `flyout` Improved tab navigation (support for spacebar, enter and escape)
+- `forms` Only open flyout in datepicker when button is clicked, added blur event
+- `documentation` Fixed map documentation
 
 ## [2.1.4] - 2019-09-30
 
@@ -173,7 +180,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.4...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.5...HEAD
+[2.1.5]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.1...v2.1.2
