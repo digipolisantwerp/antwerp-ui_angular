@@ -21,10 +21,10 @@ export class AppModule {};`;
 	"node_modules/leaflet-draw/dist/leaflet.draw.css"
 ]`;
 	public codeExampleJS2 =
-`import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-components/map';
+`import { LeafletMap, baseMapWorldGray, baseMapAntwerp, MapService } from '@acpaas-ui/ngx-components/map';
 
 constructor(public mapService: MapService) {
-	}
+}
 
 public leafletMap: LeafletMap = new LeafletMap({
 	zoom: 13, // default zoom level
