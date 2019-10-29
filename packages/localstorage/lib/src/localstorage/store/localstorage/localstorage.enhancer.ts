@@ -19,15 +19,15 @@ export class LocalstorageReduxPlugin {
 		private localstorageService: LocalstorageService
 	) {}
 
-	enhancer<T = any>(selectors?: Array<PropertySelector|PathSelector>): StoreEnhancer {
+	enhancer<T = any>(selectors?: Array<PropertySelector|PathSelector>): StoreEnhancer<T> {
 		const storedState = this.selectFromState(selectors);
 
 		this.subscribe(selectors);
 
 		return (createStore: StoreEnhancerStoreCreator<T>): any => (
-			reducer: Reducer,
+			reducer: Reducer<T>,
 			initialState: any
-		): Store => {
+		): Store<T> => {
 			return createStore(reducer, {
 				...initialState,
 				...storedState,
