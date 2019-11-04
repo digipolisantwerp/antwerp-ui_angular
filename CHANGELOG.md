@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+- `flyout` Always close flyout when clicking outside.
 
 ## [2.1.5] - 2019-10-18
 

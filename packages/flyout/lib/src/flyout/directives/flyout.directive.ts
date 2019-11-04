@@ -11,7 +11,7 @@ import {
 	ElementRef,
 } from '@angular/core';
 import { Subject, merge } from 'rxjs';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 
 import { FlyoutZoneDirective } from './flyout-zone.directive';
@@ -101,6 +101,7 @@ export class FlyoutDirective implements OnDestroy {
 
 	public close(): void {
 		this.state$.next(FlyoutState.CLOSED);
+		this.cdr.markForCheck();
 	}
 
 	public isInClosableZone(element: HTMLElement): boolean {
