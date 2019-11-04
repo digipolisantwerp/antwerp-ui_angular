@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [2.1.6] - 2019-11-04
+
 ### Fixed
 - `flyout` Always close flyout when clicking outside.
 
@@ -182,7 +184,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.5...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.6...HEAD
+[2.1.6]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.5...v2.1.6
 [2.1.5]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.2...v2.1.3
