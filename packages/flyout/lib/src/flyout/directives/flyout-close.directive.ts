@@ -1,12 +1,15 @@
-import { Directive, HostListener, Host } from '@angular/core';
+import { Directive, HostListener, Host, HostBinding } from '@angular/core';
 
 import { FlyoutDirective } from './flyout.directive';
+import { isEvent } from '../utils/event';
 
 @Directive({
 	selector: '[auiFlyoutClose]',
 	exportAs: 'auiFlyoutClose',
 })
 export class FlyoutCloseDirective {
+	@HostBinding('attr.role') role = 'button';
+
 	constructor(
 		@Host() public flyout: FlyoutDirective
 	) {}
@@ -14,5 +17,12 @@ export class FlyoutCloseDirective {
 	@HostListener('click')
 	public onClick(): void {
 		this.flyout.close();
+	}
+
+	@HostListener('keydown', ['$event'])
+	public onKeyDown(e: KeyboardEvent): void {
+		if (isEvent(e, 'space', 32) || isEvent(e, 'enter', 13)) {
+			this.flyout.close();
+		}
 	}
 }
