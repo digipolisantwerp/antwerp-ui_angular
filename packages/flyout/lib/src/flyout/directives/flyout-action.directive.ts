@@ -1,10 +1,11 @@
-import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inject, PLATFORM_ID, OnInit } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, Host, HostListener, HostBinding, Inject, PLATFORM_ID, OnInit, Input } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { FlyoutDirective } from './flyout.directive';
 import { FlyoutState } from '../types/flyout.types';
+import { isEvent } from '../utils/event';
 
 // @dynamic
 @Directive({
@@ -14,6 +15,9 @@ import { FlyoutState } from '../types/flyout.types';
 export class FlyoutActionDirective implements OnInit, OnDestroy {
 	@HostBinding('class.aui-flyout-action') class = true;
 	@HostBinding('attr.tabindex') tabindex = '0';
+	@HostBinding('attr.role') role = 'button';
+
+	@Input() public openOnFocus = true;
 
 	private isPlatformBrowser: boolean;
 	private destroyed$ = new Subject<boolean>();
@@ -65,11 +69,18 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 
 	@HostListener('focus')
 	public onFocus(): void {
-		if (!this.isPlatformBrowser || this.flyout.isOpened) {
+		if (!this.openOnFocus || !this.isPlatformBrowser || this.flyout.isOpened) {
 			return;
 		}
 
 		this.open();
+	}
+
+	@HostListener('keydown', ['$event'])
+	public onKeyDown(e: KeyboardEvent): void {
+		if (isEvent(e, 'space', 32) || isEvent(e, 'enter', 13)) {
+			this.open();
+		}
 	}
 
 	public onBlur(event: FocusEvent): void {

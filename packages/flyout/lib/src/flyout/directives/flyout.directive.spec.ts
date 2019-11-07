@@ -1,5 +1,5 @@
-import { async, ComponentFixture, TestBed, fakeAsync, inject } from '@angular/core/testing';
-import { Component, DebugElement, ViewChild, ChangeDetectionStrategy, Directive } from '@angular/core';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { Component, DebugElement, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 import { FlyoutDirective } from './flyout.directive';
@@ -20,11 +20,9 @@ class MockFlyoutService {
 
 @Component({
 	selector: 'aui-app',
-	template: `<div class="dummyElement"></div><div auiFlyout #auiFlyout="auiFlyout"></div>`,
+	template: `<div class="dummyElement"></div><div auiFlyout></div>`,
 })
 class FlyoutComponent {
-	// Access directive
-	@ViewChild('auiFlyout') element;
 }
 
 @Component({
@@ -42,6 +40,8 @@ class FlyoutWithZoneComponent {
 describe('Flyout directive with flyout zone', () => {
 	let comp: FlyoutWithZoneComponent;
 	let fixture: ComponentFixture<FlyoutWithZoneComponent>;
+	let componentDebugElement: DebugElement;
+	let flyout: FlyoutDirective;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -59,21 +59,23 @@ describe('Flyout directive with flyout zone', () => {
 		fixture = TestBed.createComponent(FlyoutWithZoneComponent);
 		comp  = fixture.componentInstance;
 		fixture.detectChanges();
+		componentDebugElement = fixture.debugElement.query(By.directive(FlyoutDirective));
+		flyout = componentDebugElement.injector.get(FlyoutDirective);
 	}));
 
 	it('should not be in closable zone', () => {
 		const element = fixture.debugElement.query(By.css('.dummyElement'));
-		expect(comp.element.isInClosableZone(element.nativeElement)).toBeFalsy();
+		expect(flyout.isInClosableZone(element.nativeElement)).toBeFalsy();
 	});
 
 	it('should be in closable zone', () => {
 		const element = fixture.debugElement.query(By.css('.inZone'));
-		expect(comp.element.isInClosableZone(element.nativeElement)).toBeTruthy();
+		expect(flyout.isInClosableZone(element.nativeElement)).toBeTruthy();
 	});
 });
 
 describe('Flyout directive without flyout zone', () => {
-	let comp: FlyoutComponent;
+	let flyout: FlyoutDirective;
 	let fixture: ComponentFixture<FlyoutComponent>;
 	let componentDebugElement: DebugElement;
 	let componentElement: HTMLElement;
@@ -91,35 +93,54 @@ describe('Flyout directive without flyout zone', () => {
 
 		TestBed.compileComponents();
 		fixture = TestBed.createComponent(FlyoutComponent);
-		comp  = fixture.componentInstance;
 		fixture.detectChanges();
 		componentDebugElement = fixture.debugElement.query(By.directive(FlyoutDirective));
 		componentElement = <HTMLElement>componentDebugElement.nativeElement;
+		flyout = componentDebugElement.injector.get(FlyoutDirective);
 	}));
 
 	it('should open and close', () => {
-		comp.element.open();
+		flyout.open();
 		fixture.detectChanges();
 
 		expect(componentElement.className).toContain('is-open');
-		expect(comp.element.isOpened).toBeTruthy();
+		expect(flyout.isOpened).toBeTruthy();
 
-		comp.element.close();
+		flyout.close();
 		fixture.detectChanges();
 
 		expect(componentElement.className).not.toContain('is-open');
-		expect(comp.element.isOpened).toBeFalsy();
+		expect(flyout.isOpened).toBeFalsy();
 
 	});
 
 	it('should not be in closable zone', () => {
 		const element = fixture.debugElement.query(By.css('.dummyElement'));
-		expect(comp.element.isInClosableZone(element.nativeElement)).toBeFalsy();
+		expect(flyout.isInClosableZone(element.nativeElement)).toBeFalsy();
 	});
 
 	it('should subscribe on flyoutService', inject([FlyoutService], (flyoutService: FlyoutService) => {
-		spyOn(comp.element, 'isOpened');
+		spyOn(flyout, 'isOpened');
 		flyoutService.close();
-		expect(comp.element.isOpened).toBeFalsy();
+		expect(flyout.isOpened).toBeFalsy();
 	}));
+
+	it('should close when the escape key is pressed', (done) => {
+		spyOn(flyout, 'close').and.stub();
+		(flyout as any).handleKeyUp = (flyout as any).handleKeyUp.bind(flyout);
+		flyout.open();
+
+		document.dispatchEvent(new KeyboardEvent('keyup', {
+			bubbles : true,
+			cancelable : true,
+			code : 'Escape',
+			keyCode: 27,
+		} as any));
+
+		setTimeout(() => {
+			expect(flyout.close).toHaveBeenCalled();
+
+			done();
+		}, 100);
+	});
 });
