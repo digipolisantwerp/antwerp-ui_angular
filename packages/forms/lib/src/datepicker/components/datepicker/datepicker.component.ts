@@ -8,6 +8,8 @@ import {
 	OnDestroy,
 	ViewChild,
 	ChangeDetectorRef,
+	Output,
+	EventEmitter,
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -65,6 +67,8 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	@Input() range: DateRange;
 	@Input() autocomplete: 'off';
 
+	@Output() blur = new EventEmitter<Event>();
+
 	public dateMask = { mask: DATEPICKER_DATE_MASK, 'showMaskOnHover': false };
 	public formControl: FormControl;
 	public selectedDate: Date;
@@ -72,6 +76,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 
 	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 	private onChange: (res: any) => void = () => { };
+	private onTouched: (_: any) => void = () => { };
 
 	constructor(
 		@Inject(CALENDAR_MONTH_LABELS) private monthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
@@ -123,7 +128,9 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		this.onChange = onChange;
 	}
 
-	public registerOnTouched(): void { }
+	public registerOnTouched(onTouched: (_: any) => void): void {
+		this.onTouched = onTouched;
+	}
 
 	public setDisabledState(isDisabled: boolean): void {
 		this.isDisabled = isDisabled;
@@ -179,5 +186,10 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		return range.indexOf(date.getDate()) >= 0 ? {
 			range: this.errorLabels.ERRORS_INVALID_RANGE,
 		} : null;
+	}
+
+	public handleBlur(e: Event): void {
+		this.blur.emit(e);
+		this.onTouched(e);
 	}
 }

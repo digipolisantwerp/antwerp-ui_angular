@@ -4,9 +4,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-### Awaiting approval
+## Unreleased
+- [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
+- `core` Updated to the new ACPaaS branding.
 
-- `localStorage` [BREAKING] Fixed hard dependency on redux store enhancer.
+
+## [2.1.6] - 2019-11-04
+
+### Fixed
+- `flyout` Always close flyout when clicking outside.
+
+
+## [2.1.5] - 2019-10-18
+
+### Added
+- `documentation` Added testing documentation
+
+### Fixed
+- `flyout` Improved tab navigation (support for spacebar, enter and escape)
+- `forms` Only open flyout in datepicker when button is clicked, added blur event
+- `documentation` Fixed map documentation
+
+
+## [2.1.4] - 2019-09-30
+
+### Fixed
+- `core` Fixed peer dependency warnings
+
+
+## [2.1.3] - 2019-09-19
+
+### Fixed
+- `map` Fixed the map not working together with Angular Universal.
+
 
 ## [2.1.2] - 2019-08-23
 
@@ -159,7 +189,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.6...HEAD
+[2.1.6]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.5...v2.1.6
+[2.1.5]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.4...v2.1.5
+[2.1.4]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.3...v2.1.4
+[2.1.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.0.1...v2.1.0
