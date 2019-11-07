@@ -111,7 +111,8 @@ describe('The leaflet map', () => {
 		beforeEach(() => {
 			mapService = TestBed.get(MapService);
 			addLayerSpy = spyOn(map.map, 'addLayer').and.callFake(() => fakeLayer);
-			featureLayerSpy = spyOn(mapService.esri, 'featureLayer').and.callFake(() => fakeLayer);
+			featureLayerSpy = jasmine.createSpy('featureLayer').and.returnValue(fakeLayer);
+			spyOnProperty(mapService.esri, 'featureLayer', 'get').and.returnValue(featureLayerSpy);
 			returnedLayer = map.addFeatureLayer(fakeLayer);
 		});
 
