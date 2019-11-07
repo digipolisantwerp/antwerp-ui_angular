@@ -39,7 +39,7 @@
   "peerDependencies": {
     "@a-ui/core": "^4.0.0",
     "@a-ui/flexboxgrid": "^1.0.0",
-    "@angular-redux/store": ">9.0.0",
+    "@angular-redux/store": ">=9.0.0",
     "@angular/animations": ">=6.1.0",
     "@angular/common": ">=6.1.0",
     "@angular/core": ">=6.1.0",
