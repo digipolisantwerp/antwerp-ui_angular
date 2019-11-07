@@ -15,5 +15,3 @@ export {
 	PropertyDecorator,
 } from './types/localstorage.types';
 export { storage } from './localstorage.decorator';
-export { LocalstorageStoreModule } from './store/store.module';
-export { LocalstorageReduxPlugin } from './store/localstorage/localstorage.enhancer';

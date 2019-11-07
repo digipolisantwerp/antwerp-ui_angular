@@ -28,7 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `Mask` Currently used library does not have full wcag support: https://github.com/RobinHerbots/Inputmask/issues/981
 ## Unreleased
-- `core` Updated to the new ACPaaS branding
+- [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
+- `core` Updated to the new ACPaaS branding.
 
 
 ## [2.1.6] - 2019-11-04
