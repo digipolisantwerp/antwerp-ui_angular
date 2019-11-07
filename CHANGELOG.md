@@ -5,11 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
+- `core` Updated to the new ACPaaS branding
+
 
 ## [2.1.6] - 2019-11-04
 
 ### Fixed
 - `flyout` Always close flyout when clicking outside.
+
 
 ## [2.1.5] - 2019-10-18
 
@@ -20,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `flyout` Improved tab navigation (support for spacebar, enter and escape)
 - `forms` Only open flyout in datepicker when button is clicked, added blur event
 - `documentation` Fixed map documentation
+
 
 ## [2.1.4] - 2019-09-30
 
