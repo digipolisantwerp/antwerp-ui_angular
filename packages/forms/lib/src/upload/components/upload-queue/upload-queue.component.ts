@@ -9,7 +9,7 @@ import { Uploader } from '../../classes/uploader.class';
 export class UploadQueueComponent {
 	@Input() public files: File[];
 	@Input() public uploader: Uploader;
-	@Input() public ariaLabelRemoveUpload: string = 'Verwijder';
+	@Input() public ariaLabelRemoveUpload = 'Verwijder';
 	@Output() public uploadedFiles: EventEmitter<Object[]> = new EventEmitter<Object[]>();
 
 	public uploadProgress: Number = 0;

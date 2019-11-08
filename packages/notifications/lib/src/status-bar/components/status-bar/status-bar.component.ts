@@ -29,7 +29,7 @@ export class StatusbarComponent implements OnChanges {
 		plural: '%{remaining} more',
 	};
 
-	@Input() ariaLabelClose: string = 'Sluiten';
+	@Input() ariaLabelClose = 'Sluiten';
 
 	@Output() clearNotification = new EventEmitter();
 

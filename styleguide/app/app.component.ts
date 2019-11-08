@@ -1,7 +1,6 @@
 import {
 	Component,
 	ElementRef,
-	Renderer,
 	ViewChild,
 } from '@angular/core';
 import { Routes } from '@angular/router';
@@ -14,9 +13,7 @@ import { EXAMPLES_ROUTES } from './examples.routes';
 	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-	constructor(
-		private renderer: Renderer
-	) {}
+	constructor() {}
 
 	@ViewChild('mainContent') mainContent: ElementRef;
 	@ViewChild('skipContent') skipContent: ElementRef;
@@ -26,7 +23,7 @@ export class AppComponent {
 	public goToMainContent() {
 		const mainElement = this.mainContent.nativeElement;
 		const skipElement = this.skipContent.nativeElement;
-		this.renderer.invokeElementMethod(mainElement, 'focus');
+		mainElement.focus();
 		skipElement.blur();
 	}
 }

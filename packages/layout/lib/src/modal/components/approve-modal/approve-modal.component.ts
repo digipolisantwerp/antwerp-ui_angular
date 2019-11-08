@@ -24,7 +24,7 @@ export class ApproveModalComponent extends ModalAbstract implements OnInit {
 			question: 'Question?',
 			description: 'Description...',
 			approve: 'Ok',
-			reject: 'Cancel'
+			reject: 'Cancel',
 		};
 	}
 

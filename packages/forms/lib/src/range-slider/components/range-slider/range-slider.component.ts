@@ -111,7 +111,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 
 		const key = $event.keyCode;
 
-		if (!~[35, 36, 37, 38, 39, 40].indexOf(key)) {
+		if (!~[35, 36, 37, 38, 39, 40].indexOf(key)) {  // tslint:disable-line:no-bitwise
 			return;
 		}
 		// 35: end
@@ -128,21 +128,21 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 
 		const processValue = (dir) => {
 			let newValue = (this.active === 'start' ? this.start : Number(this.end));
-			if(dir === 'up'){
+			if (dir === 'up') {
 				newValue += increment;
 			} else {
 				newValue -= increment;
 			}
 			let newPercentage = (newValue - this.min) / (this.max - this.min) * 100;
 
-			if(newPercentage > 100){
+			if (newPercentage > 100) {
 				newPercentage = 100;
 			}
-			if(newPercentage < 0){
+			if (newPercentage < 0) {
 				newPercentage = 0;
 			}
 			return newPercentage;
-		}
+		};
 
 		switch (key) {
 			case 39:
