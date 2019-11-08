@@ -1,7 +1,11 @@
-<guide-header></guide-header>
+<header>
+	<a href onclick="return false;" (click)="goToMainContent()" class="a-button-negative o-header__button o-header__button-skip" #skipContent>Skip to main content</a>
+	<guide-header></guide-header>
+</header>
+
 <guide-hero title="ACPaaS UI Angular" description="Components documentation"></guide-hero>
 
-<main>
+<main tabindex="-1" #mainContent>
 	<router-outlet></router-outlet>
 </main>
 
