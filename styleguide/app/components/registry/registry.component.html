@@ -1,5 +1,5 @@
 <ul class="a-list a-list--reset">
 	<li *ngFor="let item of items">
-		<a [routerLink]="[item.path]" [routerLinkActive]="['is-active']"> {{ item.title }}</a>
+		<a [routerLink]="[item.path]" [routerLinkActive]="['is-active']"> {{ item.data?.meta?.title }}</a>
 	</li>
 </ul>

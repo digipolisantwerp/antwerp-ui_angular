@@ -4,13 +4,10 @@ import { LogoModule } from '@acpaas-ui/ngx-components/logo';
 
 export const AUIModules = [
 	ContextModule.forRoot({
-		useTitleSuffix: true,
-		extendTitle: true,
-		titleDelimiter: ' | ',
 		defaults: {
-			titleSuffix: 'Context Module',
+			title: 'ACPaaS UI Angular',
+			description: 'Angular components for building responsive front-end applications within the ACPaaS platform.',
 		},
-		routerContext: true,
 	}),
 	HeaderModule,
 	FooterModule,

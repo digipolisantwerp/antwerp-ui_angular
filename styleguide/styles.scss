@@ -25,6 +25,7 @@ main {
 }
 
 .o-header__logo {
+	height: calc(3rem + 1px);
 	position: static;
 	top: 0;
 
@@ -34,7 +35,7 @@ main {
     }
 
 	img {
-		height: $spacer * 2;
+		height: calc(3rem + 1px);
 	}
 }
 

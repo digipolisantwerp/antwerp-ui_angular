@@ -57,7 +57,7 @@ export const CONTEXT_EXAMPLES_ROUTES: Routes = [
         data: {
             meta: {
                 page: 'Context example page',
-                title: 'Context example',
+                title: 'Context',
                 description: 'Description of the context example page',
                 metatags: 'ACPaaS UI, Angular, context',
             },
