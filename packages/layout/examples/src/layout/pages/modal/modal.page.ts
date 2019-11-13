@@ -15,7 +15,7 @@ import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-components/layout';
 	template: \`<div class="m-modal">
 		<div class="m-modal__content">
 			<div class="m-modal__header u-margin-bottom-xs">
-				<button class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
+				<button type="button" class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
 					<span class="fa fa-close"></span>
 				</button>
 				<h4>{{ modalData.title }}</h4>
@@ -24,8 +24,8 @@ import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-components/layout';
 				<p>{{ modalData.text }}</p>
 			</div>
 			<div class="m-modal__footer">
-				<button class="a-button" (click)="submitAndCloseModal()">Close Modal</button>
-				<button class="a-button-outline" (click)="closeModal()">Cancel</button>
+				<button type="button" class="a-button" (click)="submitAndCloseModal()">Close Modal</button>
+				<button type="button" class="a-button-outline" (click)="closeModal()">Cancel</button>
 			</div>
 		</div>
 	</div>\`,
@@ -68,7 +68,7 @@ private doSomething() {
 	});
 }`;
 
-	public modal3 = `<button class="a-button"
+	public modal3 = `<button type="button" class="a-button"
 	(click)="openModal()">
 	Open modal
 </button>`;

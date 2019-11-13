@@ -120,7 +120,7 @@ public onKeyEscape() {
 
 ```html
 <div auiFlyout>
-    <button class="button" auiFlyoutAction auiSelectableActions (keyArrowUp)="onKeyArrowUp()" (keyArrowDown)="onKeyArrowDown()" (keyEnter)="onKeyEnter()" (keyEscape)="onKeyEscape()">Heroes</button>
+    <button type="button" class="button" auiFlyoutAction auiSelectableActions (keyArrowUp)="onKeyArrowUp()" (keyArrowDown)="onKeyArrowDown()" (keyEnter)="onKeyEnter()" (keyEscape)="onKeyEscape()">Heroes</button>
     <div auiFlyoutZone>
         <aui-selectable-list [items]="heroes" [index]="index" label="name" (selected)="onSelect($event)"></aui-selectable-list>
     </div>

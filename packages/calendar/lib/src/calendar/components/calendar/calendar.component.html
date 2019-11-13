@@ -1,5 +1,5 @@
 <div class="m-datepicker__nav">
-    <button type="button" aria-label="Ga naar vorige maand" class="a-button has-icon" (click)="updateActiveDate(-1)">
+    <button type="button" [attr.aria-label]="ariaPreviousLabel" class="a-button has-icon" (click)="updateActiveDate(-1)">
         <span class="fa fa-angle-left"></span>
     </button>
 
@@ -7,7 +7,7 @@
         {{ headerLabel | titlecase }}
     </button>
 
-    <button type="button" aria-label="Ga naar volgende maand" class="a-button has-icon" (click)="updateActiveDate(1)">
+    <button type="button" [attr.aria-label]="ariaNextLabel" class="a-button has-icon" (click)="updateActiveDate(1)">
         <span class="fa fa-angle-right"></span>
     </button>
 </div>

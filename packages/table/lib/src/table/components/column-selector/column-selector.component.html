@@ -5,10 +5,10 @@
 			<label for="checkbox-{{ id }}-{{ i }}-{{ tableHelper.getValue(column) }}">{{ tableHelper.getLabel(column) }}</label>
 		</div>
 		<div class="a-table-column-selector__actions">
-			<button [disabled]="isFirst" class="a-button-transparent a-button--tiny has-icon" (click)="move(column, -1)">
+			<button type="button" [disabled]="isFirst" class="a-button-transparent a-button--tiny has-icon" (click)="move(column, -1)">
 				<span class="fa fa-angle-up"></span>
 			</button>
-			<button [disabled]="isLast" class="a-button-transparent a-button--tiny has-icon" (click)="move(column, 1)">
+			<button type="button" [disabled]="isLast" class="a-button-transparent a-button--tiny has-icon" (click)="move(column, 1)">
 				<span class="fa fa-angle-down"></span>
 			</button>
 		</div>

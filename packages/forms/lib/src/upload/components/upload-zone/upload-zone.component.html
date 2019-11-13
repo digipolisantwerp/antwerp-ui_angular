@@ -22,7 +22,7 @@
 	<small class="m-upload__description"><ng-content select=".m-upload__description"></ng-content></small>
 </div>
 
-<button class="a-button m-upload__button" (click)="triggerFile()" *ngIf="uploader.options.type === 'button'">
+<button type="button" class="a-button m-upload__button" (click)="triggerFile()" *ngIf="uploader.options.type === 'button'">
 	<ng-content select=".m-upload__button"></ng-content>
 	<input type="file" #fileInput (change)="updateFiles()" multiple="multiple" class="m-upload__input">
 </button>

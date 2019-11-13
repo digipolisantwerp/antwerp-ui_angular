@@ -1,4 +1,4 @@
-<nav *ngIf="totalPages > 1" role="navigation" [attr.aria-label]= ariaNavigationLabel>
+<nav *ngIf="totalPages > 1" [attr.aria-label]= ariaNavigationLabel>
     <!-- Basic -->
     <ul class="m-pagination" [ngClass]="{'m-pagination--outline': styling === 'outlined' }" *ngIf="display === 'basic'">
         <li class="m-pagination__prev">

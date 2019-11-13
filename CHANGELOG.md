@@ -12,11 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `Forms/range-slider` Fix overlapping bug.
 - `Forms/auto-complete` Add aria-label.
 - `Forms/wysiwyg` https://ckeditor.com/docs/ckeditor4/latest/guide/dev_wcag.html
-- `Avatar` Add screen-reader-only ariaLabel.
 - `Notifications/status-bar` Add role and aria Close label.
 - `Pagination` Add @Input for aria-labels.
 - `Layout/pane` WCAG Close information.
-- [BREAKING] `<i>` is for italic, not for icons. Only `<span class="..."></span>` is allowed. [WCAG 2.1 AA - Identify purpose](https://www.w3.org/TR/WCAG21/#identify-purpose)
 - `selectable-list` Add aria-label.
 - `upload` Add WCAG attributes.
 - `datepicker` Add flyout WCAG info.
@@ -33,10 +31,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 - [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
-- [BREAKING] `datepicker` Made Dutch labels the default ones
+- [BREAKING] `calendar` Made Dutch labels the default ones.
 - `core` Updated to the new ACPaaS branding.
-- `avatar` Made avatar more accessible
-- `datepicker` Made datepicker more accessible
+- `core` Updated ACPaaS UI to be WCAG 2.1 AA compliant.
+- `avatar` Made avatar more accessible.
+- `calendar` Made the calendar more accessible.
 
 
 ## [2.1.6] - 2019-11-04
@@ -48,18 +47,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [2.1.5] - 2019-10-18
 
 ### Added
-- `documentation` Added testing documentation
+- `documentation` Added testing documentation.
 
 ### Fixed
-- `flyout` Improved tab navigation (support for spacebar, enter and escape)
-- `forms` Only open flyout in datepicker when button is clicked, added blur event
-- `documentation` Fixed map documentation
+- `flyout` Improved tab navigation (support for spacebar, enter and escape).
+- `forms` Only open flyout in datepicker when button is clicked, added blur event.
+- `documentation` Fixed map documentation.
 
 
 ## [2.1.4] - 2019-09-30
 
 ### Fixed
-- `core` Fixed peer dependency warnings
+- `core` Fixed peer dependency warnings.
 
 
 ## [2.1.3] - 2019-09-19
@@ -77,16 +76,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [2.1.1] - 2019-06-26
 
 ### Added
-- `documentation` Added test automation guidelines
+- `documentation` Added test automation guidelines.
 
 ### Fixed
-- `pagination` Fixed faulty pagination count whenever the current page was provided as a string
+- `pagination` Fixed faulty pagination count whenever the current page was provided as a string.
 
 
 ## [2.1.0] - 2019-05-02
 
 ### Added
-- `forms` Added disabled state to all controls (except upload)
+- `forms` Added disabled state to all controls (except upload).
 
 ### Fixed
 - `autocomplete` Fixed issues with items with identical labels and a custom template.
@@ -95,21 +94,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [2.0.1] - 2019-04-04
 
 ### Fixed
-- `notifications`: Fixed AOT builds
+- `notifications`: Fixed AOT builds.
 
 
 ## [2.0.0] - 2019-04-02
 
 ### Changed
-- [BREAKING] Removed rxjs-compat dependency
-- [BREAKING] Updated `@angular-redux/store` and redux dependencies
+- [BREAKING] Removed rxjs-compat dependency.
+- [BREAKING] Updated `@angular-redux/store` and redux dependencies.
 
 
 ## [1.1.2] - 2019-03-29
 
 ### Fixed
-- `context` Expose store module
-- `notifications` Expose store module
+- `context` Expose store module.
+- `notifications` Expose store module.
 
 
 ## [1.1.1] - 2019-03-29
@@ -166,7 +165,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - `core` Update angular-cli & ng-packagr.
 - `core` Update package names & setup.
-- `core` Update schematic
+- `core` Update schematic.
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
 
 ### Fixed

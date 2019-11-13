@@ -59,8 +59,8 @@ public onClose() {
 ```
 
 ```html
-<button class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
-<button class="a-button" (click)="myPane.openPane()">Open pane</button>
+<button type="button" class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
+<button type="button" class="a-button" (click)="myPane.openPane()">Open pane</button>
 <p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
 <aui-pane #myPane
     [side]="'left'"
@@ -69,7 +69,7 @@ public onClose() {
     (open)="onOpen()"
     (close)="onClose()">
     Pane content
-    <button class="a-button" (click)="myPane.closePane()">Close pane</button>
+    <button type="button" class="a-button" (click)="myPane.closePane()">Close pane</button>
 </aui-pane>
 ```
 

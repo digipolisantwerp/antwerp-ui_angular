@@ -259,6 +259,7 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
             <span class="m-upload__filename">{{ fileName }}</span>
             <span class="m-upload__error">This file extension is not allowed.</span>
             <button
+                type="button"
                 (click)="reloadErrors()"
                 class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
                 <span class="fa fa-close"></span>
