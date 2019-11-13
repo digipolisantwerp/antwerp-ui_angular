@@ -30,9 +30,9 @@ import { CalendarModule } from '@acpaas-ui/ngx-components/calendar;'
 @NgModule({
     imports: [
         CalendarModule.forChild([
-            'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'
+            'Monday', 'Tuesdag', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
         ], [
-            'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
+            'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
         ])
     ]
 });

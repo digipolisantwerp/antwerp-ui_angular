@@ -12,17 +12,27 @@ export class DemoPageComponent {
 
 @NgModule({
 	imports: [
+		CalendarModule
+	]
+});
+
+export class AppModule {};`;
+
+	public javascript2 = `import { CalendarModule } from '@acpaas-ui/ngx-components/calendar;'
+
+@NgModule({
+	imports: [
 		CalendarModule.forChild([
-			'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'
+			'Monday', 'Tuesdag', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
 		], [
-			'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
+			'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
 		])
 	]
 });
 
 export class AppModule {};`;
 
-	public javascript2 = `import { DateRange } from '@acpaas-ui/js-date-utils';
+	public javascript3 = `import { DateRange } from '@acpaas-ui/js-date-utils';
 
 public clickedDate: Date = new Date();
 public range: DateRange = [1, 6];

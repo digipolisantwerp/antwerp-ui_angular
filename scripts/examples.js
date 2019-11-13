@@ -40,7 +40,7 @@ const updateRoutes = () => {
 	let importConfigModules = '';
 	let moduleConfig = '';
 	let importConfigRoutes = `import { Routes } from '@angular/router';\n`;
-	let routeConfig = `\t{ path: '', redirectTo: '/analytics', pathMatch: 'full' },\n`;
+	let routeConfig = `\t{ path: '', redirectTo: 'analytics', pathMatch: 'full' },\n`;
 	packages.forEach(package => {
 		const route = `${snakeCase(package).toUpperCase()}_EXAMPLES_ROUTES`;
 		const moduleName = `${upperFirst(camelCase(package))}ExamplesModule`;

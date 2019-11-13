@@ -33,8 +33,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 - [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
+- [BREAKING] `datepicker` Made Dutch labels the default ones
 - `core` Updated to the new ACPaaS branding.
 - `avatar` Made avatar more accessible
+- `datepicker` Made datepicker more accessible
 
 
 ## [2.1.6] - 2019-11-04

@@ -1,5 +1,6 @@
 import {
 	Component,
+	HostBinding,
 	Inject,
 	Input,
 	Output,
@@ -33,6 +34,9 @@ import { CalendarService } from '../../services/calendar.service';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarComponent implements OnInit, OnChanges {
+	@HostBinding('attr.role') role = 'application';
+	@HostBinding('attr.aria-hidden') ariahidden = 'false';
+
 	@Input() selectedDate: Date;
 	@Input() range: DateRange;
 	@Input() weekdayLabels: WeekdayLabelsConfig;

@@ -17,7 +17,7 @@ import { TABLE_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/table';
 import { UTILS_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/utils';
 
 export const EXAMPLES_ROUTES: Routes = [
-	{ path: '', redirectTo: '/analytics', pathMatch: 'full' },
+	{ path: '', redirectTo: 'analytics', pathMatch: 'full' },
 	{ path: 'analytics', children: ANALYTICS_EXAMPLES_ROUTES, data: { meta: { title: 'Analytics', }, }, },
 	{ path: 'avatar', children: AVATAR_EXAMPLES_ROUTES, data: { meta: { title: 'Avatar', }, }, },
 	{ path: 'calendar', children: CALENDAR_EXAMPLES_ROUTES, data: { meta: { title: 'Calendar', }, }, },
