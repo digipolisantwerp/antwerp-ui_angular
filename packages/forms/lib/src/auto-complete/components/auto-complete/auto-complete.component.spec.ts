@@ -55,7 +55,7 @@ describe('The Autocomplete Component', () => {
 				{ provide: SearchService, useValue: searchMock },
 			],
 		})
-			.compileComponents();  // compile template and css
+		.compileComponents();  // compile template and css
 	}));
 
 	// synchronous beforeEach

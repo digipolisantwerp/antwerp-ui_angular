@@ -71,7 +71,7 @@ public formatLabel(input: any) {
 
 	// Highlight searchValue in result
 	const regEx = new RegExp(this.searchValue, 'ig');
-	const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
+	const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
 	return \`<span class="fa fa-user u-text-light u-margin-right-xs"></span>\${inputStringHighlighted}\`;
 }`;
 
@@ -103,8 +103,8 @@ public formatLabel(input: any) {
 	public disabledModel = 'Batman';
 	public isDisabled = true;
 	public searchValue = '';
-	public selectedItem1 = '';
-	public selectedItem2 = '';
+	public selectedItem1 = '-';
+	public selectedItem2 = '-';
 	private debouncer: Subject<string> = new Subject();
 	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -134,12 +134,12 @@ public formatLabel(input: any) {
 		this.debouncer.next(search);
 	}
 
-	public setSelectedItem1(hero: {name}): void {
-		this.selectedItem1 = hero.name;
+	public setSelectedItem1(hero: any): void {
+		this.selectedItem1 = (!!hero && !!hero.name) ? hero.name : '-';
 	}
 
-	public setSelectedItem2(hero: {name}): void {
-		this.selectedItem2 = hero.name;
+	public setSelectedItem2(hero: any): void {
+		this.selectedItem2 = (!!hero && !!hero.name) ? hero.name : '-';
 	}
 
 	public formatLabel(input: any) {
@@ -151,7 +151,7 @@ public formatLabel(input: any) {
 
 		// Highlight searchValue in result
 		const regEx = new RegExp(this.searchValue, 'ig');
-		const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
+		const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
 		return `<span class="fa fa-user u-text-light u-margin-right-xs"></span>${inputStringHighlighted}`;
 	}
 }

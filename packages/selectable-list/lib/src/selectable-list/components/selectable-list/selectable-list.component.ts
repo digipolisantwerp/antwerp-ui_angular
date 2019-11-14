@@ -27,6 +27,6 @@ export class SelectableListComponent {
 		}
 
 		const regEx = new RegExp(this.search, 'ig');
-		return inputString.replace(regEx, '<b>' + this.search + '</b>');
+		return inputString.replace(regEx, '<strong>' + this.search + '</strong>');
 	}
 }

@@ -42,7 +42,7 @@ public onSelect(item) {
 	public html = `<h4>Select your hero</h4>
 <aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)">
    <ng-template let-item="item">
-	   Template for: <b>{{ item.name }}</b>
+	   Template for: <strong>{{ item.name }}</strong>
    </ng-template>
 </aui-selectable-list>
 <p><strong>Active hero</strong>: {{ activeHero.name }}</p>`;
