@@ -36,6 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `core` Updated ACPaaS UI to be WCAG 2.1 AA compliant.
 - `avatar` Made avatar more accessible.
 - `calendar` Made the calendar more accessible.
+- `pagination` Made the items per page component more accessible.
+- `selectable-list` Made the selectable list more accessible.
 
 
 ## [2.1.6] - 2019-11-04
