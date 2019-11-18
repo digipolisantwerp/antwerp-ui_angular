@@ -20,7 +20,7 @@ You will need to add the library to your app, preferably with a CDN.
 
 ```typescript
 script: [
-    { src: 'https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js' },
+    { src: 'https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js' },
     ...
 ]
 ```

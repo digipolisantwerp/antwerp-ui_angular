@@ -19,7 +19,7 @@ export class AppModule {};`;
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+	<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 </head>
 </html>`;
 

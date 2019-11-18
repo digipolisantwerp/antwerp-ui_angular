@@ -10,7 +10,7 @@ import { ValidationMessagesService } from '../../services/validation-messages.se
 })
 export class ValidationListComponent {
 	@Input() public invalidFiles: InvalidFile[] = [];
-	@Input() public ariaLabelRemove = 'Verwijder';
+	@Input() public ariaLabelRemove = 'Verwijder upload';
 
 	constructor(private messagesService: ValidationMessagesService) {}
 

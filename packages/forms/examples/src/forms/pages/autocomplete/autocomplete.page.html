@@ -16,9 +16,10 @@
 
 <div class="u-margin-bottom-lg">
 	<div class="a-input">
+		<label class="a-input__label" for="hero-names">Hero</label>
 		<div class="a-input__wrapper">
 			<aui-auto-complete
-				id="hero-names"
+				data-id="hero-names"
 				placeholder="Choose your hero…"
 				label="name"
 				value=""
@@ -45,9 +46,10 @@
 
 <div class="u-margin-bottom">
 	<div class="a-input">
+		<label class="a-input__label" for="hero">Hero</label>
 		<div class="a-input__wrapper">
 			<aui-auto-complete
-				id="hero"
+				data-id="hero"
 				placeholder="Choose your hero…"
 				remote="true"
 				[results]="results"
@@ -71,9 +73,10 @@
 
 <div class="u-margin-bottom-xx">
 	<div class="a-input u-margin-bottom">
+		<label class="a-input__label" for="hero-disabled">Hero</label>
 		<div class="a-input__wrapper">
 			<aui-auto-complete
-				id="hero-disabled"
+				data-id="hero-disabled"
 				placeholder="Choose your hero..."
 				remote="true"
 				[results]="results"

@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `calendar` Made the calendar more accessible.
 - `pagination` Made the items per page component more accessible.
 - `selectable-list` Made the selectable list more accessible.
+- `flyout` Made the flyout more accessible
 
 
 ## [2.1.6] - 2019-11-04
