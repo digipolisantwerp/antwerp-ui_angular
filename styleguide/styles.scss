@@ -14,7 +14,11 @@ guide-root {
 	max-width: 100%;
 }
 
-main {
+main:focus {
+	outline: none;
+}
+
+.p-acpaas-ui {
 	flex: 1 1 auto;
 }
 

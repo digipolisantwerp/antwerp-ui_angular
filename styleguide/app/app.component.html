@@ -5,8 +5,15 @@
 
 <guide-hero title="ACPaaS UI Angular" description="Components documentation"></guide-hero>
 
-<main tabindex="-1" #mainContent>
-	<router-outlet></router-outlet>
-</main>
+<div class="u-container u-margin-top u-margin-bottom p-acpaas-ui">
+	<div class="row">
+		<nav aria-label="Main navigation" class="col-xs-12 col-sm-3 u-margin-bottom-lg">
+			<guide-registry [items]="packages"></guide-registry>
+		</nav>
+		<main tabindex="-1" #mainContent class="col-xs-12 col-sm-9">
+			<router-outlet></router-outlet>
+		</main>
+	</div>
+</div>
 
 <guide-footer></guide-footer>
