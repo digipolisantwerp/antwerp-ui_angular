@@ -16,7 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `Pagination` Add @Input for aria-labels.
 - `Layout/pane` WCAG Close information.
 - `selectable-list` Add aria-label.
-- `upload` Add WCAG attributes.
 - `datepicker` Add flyout WCAG info.
 - `Flyout/Flyout-button` Add WCAG info.
 - `Flyout/FlyoutZone` Auto aria-expanded.
@@ -39,6 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `pagination` Made the items per page component more accessible.
 - `selectable-list` Made the selectable list more accessible.
 - `flyout` Made the flyout more accessible
+- `upload` Made the flyout more accessible
+
+### Added
+- `upload` Added ability to add a custom id or ARIA id.
 
 
 ## [2.1.6] - 2019-11-04

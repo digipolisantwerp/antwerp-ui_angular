@@ -41,7 +41,7 @@ export class ItemsPerPageComponent {
 	constructor(
 		@Inject(ITEMS_PER_PAGE_LABEL) label
 	) {
-		this.id = 'aui-' + Math.random().toString(36).substring(2);
+		this.id = 'aui-pagination-' + Math.random().toString(36).substring(2);
 		if (label && !this.label) {
 			this.label = label;
 		} else if (!this.label) {

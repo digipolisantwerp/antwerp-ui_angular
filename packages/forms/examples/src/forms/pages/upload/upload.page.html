@@ -19,7 +19,8 @@
 </div>
 
 <div class="u-margin-bottom-lg">
-	<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
+	<label class="a-input__label" for="my-upload">Upload files</label>
+	<aui-upload data-id="my-upload" [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
 		<div class="m-upload__message">
 			Drag your files here or click to upload
 		</div>
@@ -65,7 +66,7 @@
 	<aui-code-snippet [codeSnippet]="uploadExampleHTML3"></aui-code-snippet>
 </div>
 
-<aui-upload-zone [uploader]="uploader" multiple=false (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" (invalidFiles)="onInvalidFiles($event)">
+<aui-upload-zone ariaId="my-other-upload" [uploader]="uploader" multiple=false (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" (invalidFiles)="onInvalidFiles($event)">
 	<div class="m-upload__message">
 		Drag your files here or click to upload
 	</div>
@@ -83,7 +84,7 @@
 			<span class="m-upload__error">This file extension is not allowed.</span>
 			<button type="button" (click)="reloadErrors()" class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
 				<span class="fa fa-close">
-					<span class="u-screen-reader-only">Close</span>
+					<span class="u-screen-reader-only">Remove</span>
 				</span>
 			</button>
 		</li>

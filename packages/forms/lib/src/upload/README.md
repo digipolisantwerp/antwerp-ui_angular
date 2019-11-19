@@ -35,6 +35,8 @@ This component wraps the `upload-zone`, `upload-queue` and `validation-list`, it
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
 | `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | An instance of the UploadOptions interface that is part of the Uploader class. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
+| `@Input() data-id: string;` | `''` | An id that can be used in combination with a label's for attribute. |
+| `@Input() ariaLabelRemove: string;` | `'Verwijder'` | The 'delete' text that is used for screenreaders. |
 | `@Output() selectUploadedFiles: EventEmitter<Object[]>` | - | On a successful upload, this will emit the response of the backend. This should be an array of objects with the uploaded filename and url. |
 
 #### `<aui-upload-zone>`
@@ -44,6 +46,8 @@ This component provides the upload functionality.
 | -----------  | ------ | -------------------------- |
 | `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
 | `@Input() multiple: boolean;` | `true` | Enable the HTML `multiple` attribute so the user can select multiple files to upload. |
+| `@Input() id: string;` | `''` | An id that can be used in combination with a label's for attribute. |
+| `@Input() ariaId: string;` | `[random id when no id was given]` | An id that can be used when you don't want a visible label. |
 | `@Output() uploadedFiles: EventEmitter<Object[]>;` | - | Emits an array of files that were uploaded. |
 | `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of file objects that have past the validation and are ready to be uploaded. |
 | `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | - | Emits an array of invalid files and the reason why they are invalid. |
@@ -55,6 +59,7 @@ This component provides a list of queued files.
 | -----------  | ------ | -------------------------- |
 | `@Input() files: File[];` | - | An array of files. |
 | `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
+| `@Input() ariaLabelRemove: string;` | `'Verwijder'` | The 'delete' text that is used for screenreaders. |
 | `@Output() uploadedFiles: EventEmitter<Object[]>` | - | Emits an array of files that were uploaded. |
 
 #### `<aui-validation-list>`
@@ -63,6 +68,7 @@ This component displays possible error messages.
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
 | `@Input() invalidFiles: InvalidFile[];` | `[]` | An array of invalid files and the reason why they are invalid. |
+| `@Input() ariaLabelRemove: string;` | `'Verwijder'` | The 'delete' text that is used for screenreaders. |
 
 #### `Uploader`
 This class handles the validation and upload of a file.
