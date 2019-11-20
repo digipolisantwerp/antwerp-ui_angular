@@ -17,6 +17,7 @@ import { ModalAbstract } from '../../classes/modal.abstract';
     `,
 })
 export class ModalOverlayComponent {
+	public mouseDownInsideOverlay: boolean;
 	public theme = 'dark';
 	@HostBinding('class') public get overlayClass() {
 		return `m-overlay m-overlay--${this.theme} is-active`;
@@ -26,12 +27,21 @@ export class ModalOverlayComponent {
 
 	constructor(
 		private ref: ElementRef
-	) {}
+	) { }
 
-	@HostListener('click', ['$event']) public clickHandler(e: MouseEvent) {
+	@HostListener('touchstart', ['$event'])
+	@HostListener('mousedown', ['$event'])
+	public mouseDownHandler(e: MouseEvent) {
+		const modal = this.ref.nativeElement.querySelector('.m-modal');
+		this.mouseDownInsideOverlay = modal && (e.target === modal || modal.contains(e.target));
+	}
+
+	@HostListener('touchend', ['$event'])
+	@HostListener('mouseup', ['$event'])
+	public mouseUpHandler(e: MouseEvent) {
 		const modal = this.ref.nativeElement.querySelector('.m-modal');
 
-		if (modal && (e.target === modal || modal.contains(e.target))) {
+		if ((modal && (e.target === modal || modal.contains(e.target))) || this.mouseDownInsideOverlay) {
 			return;
 		}
 
