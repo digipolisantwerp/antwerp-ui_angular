@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 - [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
 - `core` Updated to the new ACPaaS branding.
-
+- `layout` Don't close modal when click event starts inside the modal but ends outside.
 
 ## [2.1.6] - 2019-11-04
 
