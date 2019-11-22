@@ -1,13 +1,13 @@
-<div class="m-modal" aria-modal="true">
+<div class="m-modal" role="dialog" aria-modal="true" [attr.aria-labelledby]="titleId" [attr.aria-describedby]="descId">
 	<div class="m-modal__content">
 		<div class="m-modal__header u-margin-bottom-xs">
 			<button type="button" (click)="close()" class="m-modal__close a-button-transparent a-button--default has-icon">
 				<span class="fa fa-close"> {{ modalData.reject }} </span>
 			</button>
-			<h6>{{ modalData.question }}</h6>
+			<h2 [id]="titleId">{{ modalData.question }}</h2>
 		</div>
 		<div class="u-margin-bottom">
-			<p>{{ modalData.description }}</p>
+			<p [id]="descId">{{ modalData.description }}</p>
 		</div>
 		<div class="m-modal__footer">
 			<button type="button" (click)="close()" class="a-button a-button">{{ modalData.reject }}</button>

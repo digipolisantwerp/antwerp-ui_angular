@@ -10,16 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `Forms/timepicker` Add wcag labels.
 - `Forms/range-slider` Add wcag + keyboard binding.
 - `Forms/range-slider` Fix overlapping bug.
-- `Forms/auto-complete` Add aria-label.
 - `Forms/wysiwyg` https://ckeditor.com/docs/ckeditor4/latest/guide/dev_wcag.html
-- `Notifications/status-bar` Add role and aria Close label.
-- `Pagination` Add @Input for aria-labels.
 - `Layout/pane` WCAG Close information.
 - `selectable-list` Add aria-label.
-- `datepicker` Add flyout WCAG info.
-- `Flyout/Flyout-button` Add WCAG info.
-- `Flyout/FlyoutZone` Auto aria-expanded.
-- `Flyout` Add aria-haspopup.
 
 ### Notes:
 
@@ -36,12 +29,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `avatar` Made avatar more accessible.
 - `calendar` Made the calendar more accessible.
 - `pagination` Made the items per page component more accessible.
+- `pagination` Made the pagination component more accessible.
 - `selectable-list` Made the selectable list more accessible.
-- `flyout` Made the flyout more accessible
-- `upload` Made the flyout more accessible
+- `flyout` Made the flyout more accessible.
+- `flyout` Made the flyout button more accessible.
+- `forms` Made the autocomplete more accessible.
+- `forms` Made the datepicker more accessible.
+- `forms` Made the range slider more accessible.
+- `modal` Made the flyout more accessible.
+- `upload` Made the flyout more accessible.
 
 ### Added
 - `upload` Added ability to add a custom id or ARIA id.
+- `forms` Added keyboard navigation to the rangeslider.
 
 
 ## [2.1.6] - 2019-11-04
