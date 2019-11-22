@@ -36,12 +36,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms` Made the autocomplete more accessible.
 - `forms` Made the datepicker more accessible.
 - `forms` Made the range slider more accessible.
-- `modal` Made the flyout more accessible.
-- `upload` Made the flyout more accessible.
+- `forms` Made the upload more accessible.
+- `layout` Made the cookie consent more accessible.
+- `layout` Made the modal more accessible.
+- `layout` Made the pane more accessible.
 
 ### Added
-- `upload` Added ability to add a custom id or ARIA id.
 - `forms` Added keyboard navigation to the rangeslider.
+- `forms` Added ability to add a custom id or ARIA id to upload.
+- `layout` Added possibility to overwrite window property of cookie consent.
+- `layout` Added ability to add a custom id to pane.
 
 
 ## [2.1.6] - 2019-11-04
