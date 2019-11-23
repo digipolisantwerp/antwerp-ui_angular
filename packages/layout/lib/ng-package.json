@@ -5,7 +5,6 @@
   "whitelistedNonPeerDependencies": [
     "@a-ui/core",
     "@angular-redux/store",
-    "@jsprds/headroom.ts",
     "cookieconsent",
     "lodash-es",
     "redux"

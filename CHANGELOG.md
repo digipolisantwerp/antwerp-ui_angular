@@ -22,8 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 ### Changed
-- [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
 - [BREAKING] `calendar` Made Dutch labels the default ones.
+- [BREAKING] `layout` Changed the behaviour and inner workings of the header.
+- [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
 - `core` Updated to the new ACPaaS branding.
 - `core` Updated ACPaaS UI to be WCAG 2.1 AA compliant.
 - `avatar` Made avatar more accessible.
@@ -46,6 +47,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms` Added ability to add a custom id or ARIA id to upload.
 - `layout` Added possibility to overwrite window property of cookie consent.
 - `layout` Added ability to add a custom id to pane.
+
+### Fixed
+- [BREAKING] `logo` Fixed routing and click events on logo
 
 
 ## [2.1.6] - 2019-11-04

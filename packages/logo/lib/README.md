@@ -43,7 +43,6 @@ public imgSrc = 'https://robohash.org/acpaas-ui';
 public imgLink = '#';
 
 public imgClicked(event) {
-    event.preventDefault();
     alert('Logo was clicked');
 }
 ```
