@@ -20,7 +20,9 @@ export class AppComponent {
 
 	public packages: Routes = EXAMPLES_ROUTES;
 
-	public goToMainContent() {
+	public goToMainContent(event) {
+		event.preventDefault();
+		event.stopPropagation();
 		const mainElement = this.mainContent.nativeElement;
 		const skipElement = this.skipContent.nativeElement;
 		mainElement.focus();
