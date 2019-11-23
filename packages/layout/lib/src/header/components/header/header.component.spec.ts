@@ -50,23 +50,6 @@ describe('The Header Component', () => {
 			de = fixture.debugElement;
 		});
 
-		it('Should initialize headroom', () => {
-			spyOn(comp, 'setupHeadroom');
-			fixture.detectChanges();
-			expect(comp.setupHeadroom).toHaveBeenCalled();
-		});
-
-		it('Should set the has-logo class if a logo was provided', () => {
-			const logoFixture = TestBed.createComponent(LogoComponent);
-			const logoDe = logoFixture.debugElement;
-
-			logoFixture.detectChanges();
-
-			const header = getByCSSQuery('.o-header', logoDe.nativeElement);
-
-			expect(header.classList).toContain('has-logo');
-		});
-
 		it('Should not show the content section if no content is provided', () => {
 			expect(fixture.nativeElement.querySelector('.o-header__content').children.length === 0).toBe(true);
 		});

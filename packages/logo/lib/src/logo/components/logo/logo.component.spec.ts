@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { LogoComponent } from './logo.component';
 
@@ -14,6 +15,7 @@ describe('LogoComponent (templateUrl)', () => {
 	// async beforeEach
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [ RouterTestingModule ],
 			declarations: [ LogoComponent ],
 		})
 		.compileComponents();
@@ -45,8 +47,7 @@ describe('LogoComponent (templateUrl)', () => {
 
 			expect(element.querySelector('img').getAttribute('alt')).toBe(logo.title);
 			expect(element.querySelector('img').getAttribute('src')).toBe(logo.src);
-
-			expect(element.getAttribute('href')).toBe(logo.link);
+			expect(element.getAttribute('href')).toBe('#'); // Introducing new behaviour
 		});
 
 		it('Should have a callback', async(() => {

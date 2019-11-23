@@ -34,7 +34,7 @@ export class ModalService {
 			[modal.location.nativeElement],
 		]);
 		overlay.instance.modal = modal;
-		overlay.instance.title = modal.instance.modalData.title || 'Modal';
+		overlay.instance.title = (modal.instance.modalData && modal.instance.modalData.title) ? modal.instance.modalData.title  : 'Modal';
 		overlay.instance.theme = options.theme || 'dark';
 
 		this.activeModals.push({
