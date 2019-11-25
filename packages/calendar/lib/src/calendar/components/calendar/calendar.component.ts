@@ -69,7 +69,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 		private calendarService: CalendarService
 	) {}
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.initControl();
 	}
 

@@ -1,6 +1,6 @@
 <div class="m-search-filter" auiFlyout [size]="flyoutSize" [align]="flyoutAlign">
 	<div class="m-search-filter__label has-icon-right" [ngClass]="{'m-search-filter__label--active': selectedItems.length > 0}" auiFlyoutAction aria-haspopup=”true”>
-		{{ label }}
+		<span id="{{ id + '-label' }}">{{ label }}</span>
 		<span *ngIf="selectedItems.length">({{ selectedItems.length }})</span>
 		<span class="fa fa-angle-down"></span>
 	</div>
@@ -8,7 +8,7 @@
 	<div class="m-search-filter__search m-search-filter__search--scroll" auiFlyoutZone>
 		<div class="m-search-filter__input a-input has-icon-right" *ngIf="!isDisabled">
 			<div class="a-input__wrapper">
-				<input type="text" aria-autocomplete="list" name="{{ name + '-search' }}" id="{{ id + '-search' }}" [(ngModel)]="query" (input)="filterDataFromSearch()" [attr.placeholder]="placeholder">
+				<input type="text" aria-autocomplete="list" name="{{ name + '-search' }}" id="{{ id + '-search' }}" [(ngModel)]="query" (input)="filterDataFromSearch()" [attr.placeholder]="placeholder" [attr.aria-labelledby]="id + '-label'">
 				<span class="fa fa-search"></span>
 			</div>
 		</div>
@@ -20,13 +20,13 @@
 			</button>
 		</div>
 
-		<h6 class="m-search-filter__results-title">{{ labelResults }}</h6>
+		<p class="h6 m-search-filter__results-title" *ngIf="labelResults">{{ labelResults }}</p>
 		<div class="u-text-center u-padding a-spinner" *ngIf="loading"></div>
 		<ul class="a-list a-list--lined a-list--unstyled" *ngIf="!loading">
 			<li class="m-search-filter__results-item a-list__item" *ngIf="!filteredChoices.length">
 				<p class="u-margin-xs">{{ labelNoResults }}</p>
 			</li>
-			<li class="m-search-filter__results-item a-list__item" *ngFor="let choice of filteredChoices; index as i" role="combobox">
+			<li class="m-search-filter__results-item a-list__item" *ngFor="let choice of filteredChoices; index as i">
 				 <div class="a-input__checkbox">
 					<input
 						type="checkbox"

@@ -24,7 +24,7 @@ export class CalendarDecenniaComponent implements OnInit, OnChanges {
 	public selectedYear = -1;
 	public current = -1;
 
-	ngOnInit() {
+	public ngOnInit() {
 		const current = new Date();
 		this.current = current.getFullYear();
 	}

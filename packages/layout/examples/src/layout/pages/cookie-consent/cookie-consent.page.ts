@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { CookieconsentService } from '@acpaas-ui/ngx-components/layout';
 
 @Component({
 	templateUrl: './cookie-consent.page.html',
 })
-export class LayoutCookieconsentDemoPageComponent {
+export class LayoutCookieconsentDemoPageComponent implements OnInit {
+	@ViewChild('cookieConsent') cookieConsent: ElementRef;
+
 	public cookie1 = `import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
@@ -41,15 +43,27 @@ export class LayoutCookieconsentDemoPageComponent {
 export class AppModule {};`;
 	public cookie2 = `import { CookieconsentService } from '@acpaas-ui/ngx-components/layout';
 
+@ViewChild('cookieConsent') cookieConsent: ElementRef;
+
 constructor(
 	private cookieconsentService: CookieconsentService
-) {
-	this.cookieconsentService.init({});
+) { }
+
+public ngOnInit() {
+	// You can also initialize the cookie consent without defining a container.
+	// It will attach itself then as first element in the DOM.
+	this.cookieconsentService.init({container: this.cookieConsent.nativeElement});
 }`;
+
+	public cookie3 = `// It's better to use a container in order to meet WCAG 2.1 AA.
+// Otherwise the cookie consent will attach itself as first element in the DOM.'
+<div #cookieConsent></div>`;
 
 	constructor(
 		private cookieconsentService: CookieconsentService
-	) {
-		this.cookieconsentService.init({});
+	) { }
+
+	public ngOnInit() {
+		this.cookieconsentService.init({container: this.cookieConsent.nativeElement});
 	}
 }

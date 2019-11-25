@@ -6,7 +6,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Awaiting approval
 
-- `Forms/search-filter` Add wcag labels and roles.
 - `Forms/timepicker` Add wcag labels.
 - `Forms/range-slider` Add wcag + keyboard binding.
 - `Forms/range-slider` Fix overlapping bug.
@@ -37,10 +36,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms` Made the autocomplete more accessible.
 - `forms` Made the datepicker more accessible.
 - `forms` Made the range slider more accessible.
+- `forms` Made the search filter more accessible.
 - `forms` Made the upload more accessible.
 - `layout` Made the cookie consent more accessible.
 - `layout` Made the modal more accessible.
 - `layout` Made the pane more accessible.
+- `utils` Made the filter more accessible.
 
 ### Added
 - `forms` Added keyboard navigation to the rangeslider.

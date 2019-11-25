@@ -21,4 +21,5 @@ export interface CookieConsentConfig {
 		dismiss?: string;
 	};
 	window?: string;
+	container?: HTMLElement;
 }

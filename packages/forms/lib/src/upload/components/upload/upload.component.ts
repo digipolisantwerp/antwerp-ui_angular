@@ -20,7 +20,7 @@ export class UploadComponent implements OnInit {
 	public invalidFiles: InvalidFile[] = [];
 	public queuedFiles: File[] = [];
 
-	ngOnInit() {
+	public ngOnInit() {
 		if (!this.id) {
 			this.ariaId = 'aui-upload-' + Math.random().toString(36).substring(2);
 		}

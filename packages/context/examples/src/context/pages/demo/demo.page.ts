@@ -74,7 +74,7 @@ export class ContextDemoPageComponent {
 		this.pageTitle = this.titleService.getTitle();
 	}
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.pageTitle = this.titleService.getTitle();
 		this.pageDescription = this.meta.getTag('name = "description"').content;
 	}
