@@ -15,10 +15,16 @@
 </div>
 
 <div class="u-margin-bottom">
-	<aui-timepicker
-		size="small"
-		[(ngModel)]="time1">
-	</aui-timepicker>
+	<div class="a-input">
+		<label class="a-input__label" for="timepicker1">Time</label>
+		<aui-timepicker
+			data-id="timepicker1"
+			hoursPlaceholder="HH"
+			ariaLabelHours="Hours"
+			ariaLabelMinutes="Minutes"
+			[(ngModel)]="time1">
+		</aui-timepicker>
+	</div>
 </div>
 
 <div class="u-margin-bottom-lg">
@@ -36,12 +42,17 @@
 </div>
 
 <div class="u-margin-bottom">
-	<aui-timepicker
-		hoursPlaceholder="20"
-		minutesPlaceholder="30"
-		size="small"
-		[(ngModel)]="time2">
-	</aui-timepicker>
+	<div class="a-input">
+		<label class="a-input__label" for="timepicker2">Time</label>
+		<aui-timepicker
+			data-id="timepicker2"
+			hoursPlaceholder="HH"
+			ariaLabelHours="Hours"
+			ariaLabelMinutes="Minutes"
+			size="small"
+			[(ngModel)]="time2">
+		</aui-timepicker>
+	</div>
 </div>
 
 <div class="u-margin-bottom-lg">
@@ -55,11 +66,18 @@
 </div>
 
 <div class="u-margin-bottom">
-	<aui-timepicker
-		hasError="true"
-		size="large"
-		[(ngModel)]="time3">
-	</aui-timepicker>
+	<div class="a-input">
+		<label class="a-input__label" for="timepicker3">Time</label>
+		<aui-timepicker
+			data-id="timepicker3"
+			hoursPlaceholder="HH"
+			ariaLabelHours="Hours"
+			ariaLabelMinutes="Minutes"
+			hasError="true"
+			size="large"
+			[(ngModel)]="time3">
+		</aui-timepicker>
+	</div>
 </div>
 
 <div class="u-margin-bottom">
@@ -69,11 +87,16 @@
 <h4 class="h5 u-margin-bottom">Disabled</h4>
 
 <div class="u-margin-bottom">
-	<div class="u-margin-bottom">
+	<div class="a-input u-margin-bottom">
+		<label class="a-input__label" for="timepicker4">Time</label>
 		<aui-timepicker
-			[(ngModel)]="time3"
+			data-id="timepicker4"
+			hoursPlaceholder="HH"
+			ariaLabelHours="Hours"
+			ariaLabelMinutes="Minutes"
 			[disabled]="isDisabled"
-		></aui-timepicker>
+			[(ngModel)]="time4">
+		</aui-timepicker>
 	</div>
 	<div class="a-input">
 		<div class="a-input__checkbox">
@@ -81,4 +104,8 @@
 			<label for="isDisabled">Toggle disabled state</label>
 		</div>
 	</div>
+</div>
+
+<div class="u-margin-bottom">
+	<pre class="a-pre">{{ time4 }}</pre>
 </div>

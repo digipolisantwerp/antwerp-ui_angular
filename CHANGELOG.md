@@ -6,12 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Awaiting approval
 
-- `Forms/timepicker` Add wcag labels.
-- `Forms/range-slider` Add wcag + keyboard binding.
-- `Forms/range-slider` Fix overlapping bug.
 - `Forms/wysiwyg` https://ckeditor.com/docs/ckeditor4/latest/guide/dev_wcag.html
-- `Layout/pane` WCAG Close information.
-- `selectable-list` Add aria-label.
 
 ### Notes:
 
@@ -22,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 - [BREAKING] `calendar` Made Dutch labels the default ones.
+- [BREAKING] `forms` Made Dutch labels the default ones.
 - [BREAKING] `layout` Changed the behaviour and inner workings of the header.
 - [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
 - `core` Updated to the new ACPaaS branding.
@@ -37,10 +33,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms` Made the datepicker more accessible.
 - `forms` Made the range slider more accessible.
 - `forms` Made the search filter more accessible.
+- `forms` Made the timepicker more accessible.
 - `forms` Made the upload more accessible.
 - `layout` Made the cookie consent more accessible.
 - `layout` Made the modal more accessible.
 - `layout` Made the pane more accessible.
+- `selectable-list` Made the selectable list more accessible.
 - `utils` Made the filter more accessible.
 
 ### Added
@@ -48,9 +46,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms` Added ability to add a custom id or ARIA id to upload.
 - `layout` Added possibility to overwrite window property of cookie consent.
 - `layout` Added ability to add a custom id to pane.
+- `forms` Added keyboard bindings to the range slider.
 
 ### Fixed
-- [BREAKING] `logo` Fixed routing and click events on logo
+- [BREAKING] `logo` Fixed routing and click events on logo.
+- `forms` Fixed an overlapping issue in the range slider.
 
 
 ## [2.1.6] - 2019-11-04

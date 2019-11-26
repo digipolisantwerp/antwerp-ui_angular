@@ -1,12 +1,12 @@
 <div class="m-timepicker">
 	<div class="a-input" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }" *ngIf="!shouldUseFallback">
-	    <input type="time" [formControl]="timeControl">
+	    <input type="time" [formControl]="timeControl" [attr.aria-label]="ariaLabelTime" [id]="id" [attr.ariaLabel]="ariaLabelHours">
 	</div>
 
 	<div *ngIf="shouldUseFallback" [formGroup]="fallbackForm">
 	    <div class="a-input has-icon-right" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }">
 	        <div class="a-input__wrapper">
-	            <select formControlName="hours" title="{{ariaLabelHour}}">
+	            <select formControlName="hours" [attr.aria-label]="ariaLabelHours" [id]="id">
 	                <option disabled value="null">{{ hoursPlaceholder }}</option>
 	                <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
 	            </select>
@@ -16,7 +16,7 @@
 
 	    <div class="a-input has-icon-right" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }">
 	        <div class="a-input__wrapper">
-	            <select formControlName="minutes" title="{{ariaLabelMinutes}}">
+	            <select formControlName="minutes" [attr.aria-label]="ariaLabelMinutes" [attr.ariaLabel]="ariaLabelMinutes">
 	                <option disabled value="null">{{ minutesPlaceholder }}</option>
 	                <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
 	            </select>
