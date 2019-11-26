@@ -38,15 +38,15 @@ export class CalendarComponent implements OnInit, OnChanges {
 	@HostBinding('attr.aria-hidden') ariahidden = 'false';
 
 	@Input() ariaPreviousLabels = [
-		"Ga naar vorige maand",
-		"Ga naar vorig jaar",
-		"Ga naar vorige 12 jaren"
-	]
+		'Ga naar vorige maand',
+		'Ga naar vorig jaar',
+		'Ga naar vorige 12 jaren',
+	];
 	@Input() ariaNextLabels = [
-		"Ga naar volgende maand",
-		"Ga naar volgend jaar",
-		"Ga naar volgende 12 jaren"
-	]
+		'Ga naar volgende maand',
+		'Ga naar volgend jaar',
+		'Ga naar volgende 12 jaren',
+	];
 
 	@Input() selectedDate: Date;
 	@Input() range: DateRange;

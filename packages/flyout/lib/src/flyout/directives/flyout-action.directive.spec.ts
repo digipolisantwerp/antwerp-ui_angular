@@ -23,7 +23,9 @@ class MockFlyoutService {
 	selector: 'aui-app',
 	template: `<button type="button" class="dummyButton">dummyButton</button>
                <div auiFlyout>
-                    <button type="button" class="button" auiFlyoutAction [openOnFocus]="openOnFocus" #auiFlyoutAction="auiFlyoutAction">Open me</button>
+                    <button type="button" class="button" auiFlyoutAction [openOnFocus]="openOnFocus" #auiFlyoutAction="auiFlyoutAction">
+                    	Open me
+                    </button>
                     <div auiFlyoutZone>
                         <button type="button" class="dummyButtonInside">dummyButtonInside</button>
                     </div>
