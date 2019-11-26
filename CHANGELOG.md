@@ -8,10 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `Forms/wysiwyg` https://ckeditor.com/docs/ckeditor4/latest/guide/dev_wcag.html
 
-### Notes:
-
-- `Mask` Currently used library does not have full wcag support: https://github.com/RobinHerbots/Inputmask/issues/981
-
 
 ## Unreleased
 
@@ -51,6 +47,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 - [BREAKING] `logo` Fixed routing and click events on logo.
 - `forms` Fixed an overlapping issue in the range slider.
+
+### Notes
+- `forms` WCAG support could be improved: https://github.com/RobinHerbots/Inputmask/issues/981
 
 
 ## [2.1.6] - 2019-11-04

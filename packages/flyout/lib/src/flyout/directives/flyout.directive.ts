@@ -26,6 +26,7 @@ import { isEvent } from '../utils/event';
 })
 export class FlyoutDirective implements OnDestroy {
 	@HostBinding('class.m-flyout') flyoutClass = true;
+	@HostBinding('attr.tabindex') flyoutTabIndex = '-1';
 	@HostBinding('attr.aria-haspopup') flyoutAriaPop = true;
 	@HostBinding('class.m-flyout--right') get flyoutAlignRight() {
 		return this.align === 'right';

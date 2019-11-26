@@ -56,6 +56,10 @@ main:focus {
 	}
 }
 
+.m-flyout:focus {
+	outline: none;
+}
+
 .u-show-on-mobile {
 	@include at($screen-sm) {
 		display: none;
