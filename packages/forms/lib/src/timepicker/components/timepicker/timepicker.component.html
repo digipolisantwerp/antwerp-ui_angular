@@ -16,7 +16,7 @@
 
 	    <div class="a-input has-icon-right" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }">
 	        <div class="a-input__wrapper">
-	            <select formControlName="minutes" [attr.aria-label]="ariaLabelMinutes" [attr.aria-label]="ariaLabelMinutes">
+	            <select formControlName="minutes" [attr.aria-label]="ariaLabelMinutes">
 	                <option disabled value="null">{{ minutesPlaceholder }}</option>
 	                <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
 	            </select>
