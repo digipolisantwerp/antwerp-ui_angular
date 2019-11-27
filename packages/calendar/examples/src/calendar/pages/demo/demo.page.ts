@@ -23,7 +23,7 @@ export class AppModule {};`;
 @NgModule({
 	imports: [
 		CalendarModule.forChild([
-			'Monday', 'Tuesdag', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
+			'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
 		], [
 			'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
 		])

@@ -6,6 +6,9 @@ import { Uploader } from '../../classes/uploader.class';
 
 @Component({
 	selector: 'aui-upload',
+	styleUrls: [
+		'./upload.component.scss',
+	],
 	templateUrl: './upload.component.html',
 })
 export class UploadComponent implements OnInit {

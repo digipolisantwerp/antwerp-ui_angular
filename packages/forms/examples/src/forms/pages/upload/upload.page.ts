@@ -56,9 +56,9 @@ export class AppModule {};`;
 	<div class="m-upload__message">
 		Drag your files here or click to upload
 	</div>
-  <div class="m-upload__description">
-    Optional description message
-  </div>
+	<div class="m-upload__description">
+		Optional description message
+	</div>
 </aui-upload>`;
 
 	public uploadExampleJS2 = `public dropzone2: UploadOptions = {
@@ -74,7 +74,7 @@ export class AppModule {};`;
 	(selectUploadedFiles)="onUpload($event)">
 	<div class="m-upload__button">
 		Select your files to upload
-  </div>
+	</div>
 </aui-upload>`;
 
 	public uploadExampleJS3 = `public files = [];
@@ -84,8 +84,8 @@ public uploadedFiles: File[] = [];
 // Pass created options into new instance of Uploader
 public uploader = new Uploader({
 	allowedFileTypes: ['jpg', 'jpeg', 'png'],
-  type: 'drop',
-  url: 'api/upload',
+	type: 'drop',
+	url: 'api/upload',
 });
 public showError = false;
 public fileName = '';

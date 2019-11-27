@@ -66,7 +66,7 @@ export class AppModule {};`;
 		ariaLabelHours="Hours"
 		ariaLabelMinutes="Minutes"
 		[disabled]="isDisabled"
-		[(ngModel)]="time3">
+		[(ngModel)]="time4">
 	</aui-timepicker>
 </div>
 <div class="a-input">
