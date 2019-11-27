@@ -22,8 +22,8 @@ import { TimepickerInputSize } from '../../types/timepicker.types';
 })
 export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAccessor {
 	@Input() public id = 'aui-timepicker-' + Math.random().toString(36).substring(2);
-	@Input() public hoursPlaceholder = 'UU';
-	@Input() public minutesPlaceholder = 'MM';
+	@Input() public hoursPlaceholder = 'uu';
+	@Input() public minutesPlaceholder = 'mm';
 	@Input() public hasError = false;
 	@Input() public size: TimepickerInputSize = TimepickerInputSize.Auto;
 	@Input() public ariaLabelHours = 'Uur';

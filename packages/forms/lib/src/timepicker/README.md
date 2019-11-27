@@ -16,8 +16,8 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
-| `@Input() hoursPlaceholder: string;` | `'UU'` | Optional placeholder used in the hour picker. |
-| `@Input() minutesPlaceholder: string;` | `'MM'` | Optional placeholder used in the minutes picker. |
+| `@Input() hoursPlaceholder: string;` | `'uu'` | Optional placeholder used in the hour picker. |
+| `@Input() minutesPlaceholder: string;` | `'mm'` | Optional placeholder used in the minutes picker. |
 | `@Input() ariaLabelHours: string;` | `'Uur'` | Optional ARIA label used in the hour picker. |
 | `@Input() ariaLabelMinutes: string;` | `'Minuten'` | Optional ARIA label used in the minutes picker. |
 | `@Input() hasError: boolean;` | `false` | Add optional `has-error` class to input fields inside timepicker. |
