@@ -22,7 +22,7 @@ This library is part of [ACPaaS UI][acpaas-ui].
 
 ### Building packages
 
-The following will build `<packagename>` and it's example.
+The following will build `<packagename>` and its example.
 
 ```sh
 example=<packagename> npm run build:package

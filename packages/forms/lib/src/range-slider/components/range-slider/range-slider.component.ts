@@ -110,16 +110,18 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		}
 
 		const key = $event.keyCode;
+		const keyCodes = {
+			end: 35,
+			home: 36,
+			left: 37,
+			up: 38,
+			right: 39,
+			down: 40,
+		};
 
-		if (!~[35, 36, 37, 38, 39, 40].indexOf(key)) {  // tslint:disable-line:no-bitwise
+		if (Object.values(keyCodes).includes(key)) {
 			return;
 		}
-		// 35: end
-		// 36: home
-		// 37: left
-		// 38: up
-		// 39: right
-		// 40: down
 		let increment = this.minimalDistance;
 
 		if (this.step > 0) {
@@ -145,21 +147,21 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		};
 
 		switch (key) {
-			case 39:
-			case 38:
+			case keyCodes.right:
+			case keyCodes.up:
 				this.updateHandle(processValue('up'));
 				$event.preventDefault();
 				break;
-			case 37:
-			case 40:
+			case keyCodes.left:
+			case keyCodes.down:
 				this.updateHandle(processValue('down'));
 				$event.preventDefault();
 				break;
-			case 35:
+			case keyCodes.end:
 				this.updateHandle(100);
 				$event.preventDefault();
 				break;
-			case 36:
+			case keyCodes.home:
 				this.updateHandle(0);
 				$event.preventDefault();
 				break;
