@@ -18,7 +18,11 @@ export class LogoComponent {
   public logoClicked(event) {
   	event.preventDefault();
   	if (this.link && this.link !== '#') {
-  		this.router.navigate([this.link]);
+  		if (!event.metaKey) {
+  			this.router.navigate([this.link]);
+	  	} else {
+	  		this.router.navigate([]).then(result => {  window.open(this.link, '_blank'); });
+	  	}
   	}
   	if (this.onClick) {
   		this.onClick(event);
