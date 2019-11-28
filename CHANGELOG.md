@@ -4,10 +4,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## Awaiting approval
-
-- `Forms/wysiwyg` https://ckeditor.com/docs/ckeditor4/latest/guide/dev_wcag.html
-
 
 ## Unreleased
 
@@ -31,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `forms` Made the search filter more accessible.
 - `forms` Made the timepicker more accessible.
 - `forms` Made the upload more accessible.
+- `forms` Made the WYSIWYG editor more accessible.
 - `layout` Made the cookie consent more accessible.
 - `layout` Made the modal more accessible.
 - `layout` Made the pane more accessible.

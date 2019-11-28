@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 	templateUrl: './wysiwyg.page.html',
 })
 export class FormsWysiwygDemoPageComponent {
-	public contents = '';
+	public contents = '<p>Type some rich text here</p>';
 	public isDisabled = false;
 
 	public wysiwygImportExample = `import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
@@ -24,17 +24,19 @@ export class AppModule {};`;
 </html>`;
 
 	public wysiwygExampleHTML1 = `<aui-wysiwyg
-	[placeholder]="'Type some rich text here…'"
 	[availableTags]="'h2;h3;h4;h5;h6;p'"
 	[uiColour]="'#d8d8d8'"
-	[debounce]="500"
+	[(ngModel)]="contents"
+	[disabled]="isDisabled"
+	(focus)="onFocus($event)"
+	(blur)="onBlur($event)"
 	(emitContent)="getContent($event)">
 </aui-wysiwyg>`;
 
-	public wysiwygTypescript = `public contents = ''
+	public wysiwygTypescript = `public contents = '<p>Type some rich text here</p>';
 
 public getContent(event) {
-	this.contents = event;
+	// Do something with 'event';
 }`;
 
 	public wysiwygExampleHTML2 = `{
@@ -55,6 +57,14 @@ public getContent(event) {
 </aui-wysiwyg>`;
 
 	public getContent(event) {
-		this.contents = event;
+		// Do something with 'event';
+	}
+
+	public onFocus(event) {
+		// Do something on focus;
+	}
+
+	public onBlur(event) {
+		// Do something on blur;
 	}
 }

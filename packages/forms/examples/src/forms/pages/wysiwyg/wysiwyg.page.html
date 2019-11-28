@@ -20,12 +20,13 @@
 	<div class="u-margin-bottom col-md-6 col-xs-12">
 	    <div class="a-input u-margin-bottom">
 			<aui-wysiwyg
-				[placeholder]="'Type some rich text here…'"
 				[availableTags]="'h2;h3;h4;h5;h6;p'"
 				[uiColour]="'#d8d8d8'"
-				[debounce]="500"
 				[(ngModel)]="contents"
-				[disabled]="isDisabled">
+				[disabled]="isDisabled"
+				(focus)="onFocus($event)"
+				(blur)="onBlur($event)"
+				(emitContent)="getContent($event)">
 			</aui-wysiwyg>
 		</div>
 		<div class="a-input">

@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-A component to add a wysiwyg to a page or a form, build upon [ckeditor](https://ckeditor.com) and the [ng2-ckeditor](https://github.com/chymz/ng2-ckeditor) package.
+A component to add a wysiwyg to a page or a form, build upon [ckeditor](https://ckeditor.com) and the [ckeditor4-angular](https://github.com/ckeditor/ckeditor4-angular) package.
 
 ## Usage
 
@@ -14,7 +14,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ## Dependencies
 * [ckeditor](https://ckeditor.com)
-* [ng2-ckeditor](https://github.com/chymz/ng2-ckeditor)
+* [ckeditor4-angular](https://github.com/ckeditor/ckeditor4-angular)
 
 You will need to add the library to your app, preferably with a CDN.
 
@@ -33,10 +33,11 @@ script: [
 | `@Input() availableTags: string;` | - | `;`-separated list of available tags, e.g.: `h2;h3;h4;h5;h6;p`. |
 | `@Input() basic: boolean;` | `false` | Use the basic version of the editor. |
 | `@Input() placeholder: string;` | - | Additional info shown in the wysiwyg component. |
-| `@Input() uiColour: string;` | - | Change the colour of the UI, e.g.: `#00FF00`. |
-| `@Input() debounce: number;` | - | You can add a delay (ms) when updating ngModel. |
+| `@Input() uiColour: string;` | - | Change the (hexadecimal) colour of the UI, e.g.: `#00FF00`. |
 | `@Input() customConfig: any;` | - | Override ckeditor config, see [ckeditor config API](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html). |
 | `@Output() emitContent: string;` | - | Callback triggered when content changes. |
+| `@Output() focus: string;` | - | Callback triggered when ckeditor is focused. |
+| `@Output() blur: string;` | - | Callback triggered when ckeditor loses focus. |
 
 ### Example
 
@@ -53,20 +54,33 @@ export class AppModule {};
 ```
 
 ```html
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+
 <aui-wysiwyg
-    [placeholder]="'Type some richt text here…'"
     [availableTags]="'h2;h3;h4;h5;h6;p'"
     [uiColour]="'#d8d8d8'"
-    [debounce]="500"
+    [(ngModel)]="contents"
+    [disabled]="isDisabled"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
     (emitContent)="getContent($event)">
 </aui-wysiwyg>
 ```
 
 ```typescript
-public result = '';
+public contents = '<p>Type some rich text here</p>';
+public isDisabled = false;
 
 public getContent(event) {
-    this.result = event;
+    // Do something with 'event';
+}
+
+public onFocus(event) {
+    // Do something on focus;
+}
+
+public onBlur(event) {
+    // Do something on blur;
 }
 ```
 

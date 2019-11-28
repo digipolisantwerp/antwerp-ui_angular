@@ -7,6 +7,6 @@
     "@acpaas-ui/js-date-utils",
     "inputmask",
     "lodash-es",
-    "ng2-ckeditor"
+    "ckeditor4-angular"
   ]
 }
