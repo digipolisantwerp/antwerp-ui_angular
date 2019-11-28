@@ -119,7 +119,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 			down: 40,
 		};
 
-		if (Object.values(keyCodes).includes(key)) {
+		if (Object.keys(keyCodes).map(e => keyCodes[e]).indexOf(key) !== -1) {
 			return;
 		}
 		let increment = this.minimalDistance;
