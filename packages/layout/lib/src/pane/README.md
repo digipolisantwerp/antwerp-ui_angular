@@ -16,11 +16,15 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
+| `@Input() data-id: string;` | `''` | ID to identify the pane. |
 | `@Input() opened: boolean;` | `false` | Whether the state of the pane is opened or closed. |
 | `@Input() side: string;` | `'left'` | The position of the panel. Can be `'left'` or `'right'`. |
 | `@Input() backdrop: boolean;` | `true` | Whether the pane has a backdrop or not. |
+| `@Input() ariaLabel: string;` | `'Paneel'` | ARIA text to describe the pane. |
+| `@Input() ariaLabelClose: string;` | `'Sluit paneel'` | ARIA text for closing the pane. |
 | `@Output() open: EventEmitter;` | - | Emits the state of the pane whenever the pane is opened. |
 | `@Output() close: EventEmitter;` | - | Emits the state of the pane whenever the pane is closed. |
+
 
 ### Methods
 
@@ -59,17 +63,20 @@ public onClose() {
 ```
 
 ```html
-<button class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
-<button class="a-button" (click)="myPane.openPane()">Open pane</button>
+<button class="a-button" (click)="myPane.togglePane()" [attr.aria-controls]="myPane.id" [attr.aria-expanded]="myPane.opened">Toggle pane</button>
+<button class="a-button" (click)="myPane.openPane()" [attr.aria-controls]="myPane.id" [attr.aria-expanded]="myPane.opened">Open pane</button>
 <p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
 <aui-pane #myPane
+    data-id="demoPane"
     [side]="'left'"
+    [ariaLabel]="'Demo pane'"
+    [ariaLabelClose]="'Close pane'"
     [opened]="opened"
     [backdrop]="backdrop"
     (open)="onOpen()"
     (close)="onClose()">
     Pane content
-    <button class="a-button" (click)="myPane.closePane()">Close pane</button>
+    <button type="button" class="a-button" (click)="myPane.closePane()">Close pane</button>
 </aui-pane>
 ```
 

@@ -5,9 +5,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 	templateUrl: './pane.component.html',
 })
 export class PaneComponent {
+	@Input() id = 'aui-pane-' + Math.random().toString(36).substring(2);
 	@Input() opened = false;
 	@Input() side = 'left';
 	@Input() backdrop = true;
+	@Input() ariaLabel = 'Paneel';
+	@Input() ariaLabelClose = 'Sluit paneel';
 	@Output() open = new EventEmitter();
 	@Output() close = new EventEmitter();
 

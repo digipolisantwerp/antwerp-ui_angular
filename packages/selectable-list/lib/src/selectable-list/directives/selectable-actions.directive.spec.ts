@@ -13,7 +13,7 @@ const mockKeyDownEvent = (key) => {
 
 @Component({
 	selector: 'aui-test-component',
-	template: `<button class="button" auiSelectableActions #auiSelectableActions="auiSelectableActions">Open me</button>`,
+	template: `<button type="button" class="button" auiSelectableActions #auiSelectableActions="auiSelectableActions">Open me</button>`,
 })
 class TestComponent {
 	// Access directive

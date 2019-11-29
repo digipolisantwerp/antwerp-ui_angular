@@ -19,7 +19,7 @@ class TestComponent implements OnInit {
 		private fb: FormBuilder
 	) {}
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.form = this.fb.group({
 			masked: '',
 		});

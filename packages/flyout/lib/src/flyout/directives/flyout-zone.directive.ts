@@ -7,9 +7,13 @@ import { Directive, ElementRef, Input, HostBinding } from '@angular/core';
 export class FlyoutZoneDirective {
 
 	@HostBinding('class.m-flyout__content') class = true;
+	@HostBinding('attr.aria-expanded') get flyoutZoneIsExpanded() {
+		return this.isExpanded;
+	}
 
 	@Input() public auiFlyoutZone: boolean;
 
+	public isExpanded = false;
 	public element: HTMLElement;
 
 	constructor(private elementRef: ElementRef) {

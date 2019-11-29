@@ -12,6 +12,8 @@ export class UploadZoneComponent {
 
 	@Input() public uploader: Uploader;
 	@Input() public multiple = true;
+	@Input() public id = '';
+	@Input() public ariaId = '';
 	@Output() public uploadedFiles: EventEmitter<Object[]> = new EventEmitter<Object[]>();
 	@Output() public queuedFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
 	@Output() public invalidFiles: EventEmitter<InvalidFile[]> = new EventEmitter<InvalidFile[]>();

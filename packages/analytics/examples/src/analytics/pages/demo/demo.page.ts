@@ -36,8 +36,8 @@ constructor(
 
 	public javascript7 = `this.gaService.triggerEvent('button', 'click');`;
 
-	public html1 = `<button gaEvent>Switch gender to male with directive</button>`;
+	public html1 = `<button type="button" gaEvent>Switch gender to male with directive</button>`;
 
-	public html2 = `<button [gaEvent]="activeGender">Switch gender to male with directive</button>`;
+	public html2 = `<button type="button" [gaEvent]="activeGender">Switch gender to male with directive</button>`;
 
 }

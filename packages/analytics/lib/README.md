@@ -89,13 +89,13 @@ Or trigger an event from the view with the `gaEvent` directive. This directive s
 Trigger event without value:
 
 ```html
-<button gaEvent>Switch gender to male with directive</button>
+<button type="button" gaEvent>Switch gender to male with directive</button>
 ```
 
 Trigger event with value:
 
 ```html
-<button [gaEvent]="activeGender">Switch gender to male with directive</button>
+<button type="button" [gaEvent]="activeGender">Switch gender to male with directive</button>
 ```
 
 ## Contributing

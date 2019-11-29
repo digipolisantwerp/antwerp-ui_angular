@@ -62,7 +62,7 @@ export class ReactiveTestComponent implements OnInit {
 		private fb: FormBuilder
 	) {}
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.testForm = this.fb.group({
 			date: '',
 		});

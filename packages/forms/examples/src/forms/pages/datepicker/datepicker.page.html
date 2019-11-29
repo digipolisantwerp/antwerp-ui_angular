@@ -13,11 +13,11 @@
 </div>
 
 <div class="u-margin-bottom-lg">
-	<form [formGroup]="dateForm">
+	<div [formGroup]="dateForm">
 		<div class="a-input has-icon-right u-margin-bottom" [ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}">
 			<label class="a-input__label" for="input-datepicker">Pick a date</label>
 			<aui-datepicker
-				id="input-datepicker"
+				data-id="input-datepicker"
 				name="input-datepicker"
 				autocomplete="off"
 				placeholder="dd/mm/jjjj"
@@ -36,5 +36,5 @@
 			</div>
 		</div>
 		<pre class="a-pre">{{ dateForm.controls['inputDate'].value | json }}</pre>
-	</form>
+	</div>
 </div>

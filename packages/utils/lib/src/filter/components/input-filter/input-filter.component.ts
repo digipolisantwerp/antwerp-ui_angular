@@ -10,7 +10,7 @@ export class InputFilterComponent implements OnInit, FilterComponent {
 	@Output() update = new EventEmitter();
 	public value;
 
-	ngOnInit() {
+	public ngOnInit() {
 		if (this.filter) {
 			this.value = this.filter.value;
 		}

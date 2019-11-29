@@ -29,17 +29,22 @@ public setSelectedUser(hero): void {
 	// Do something
 }`;
 
-	public autocompleteExampleHTML1 = `<aui-auto-complete
-	id="hero-names"
-	placeholder="Choose your hero…"
-	label="name"
-	value=""
-	minCharacters = "3"
-	clearInvalid="true"
-	showAllByDefault="true"
-	[data]="heroList"
-	(select)="setSelectedItem($event)">
-</aui-auto-complete>`;
+	public autocompleteExampleHTML1 = `<div class="a-input">
+	<label class="a-input__label" for="hero-names">Hero</label>
+	<div class="a-input__wrapper">
+		<aui-auto-complete
+			data-id="hero-names"
+			placeholder="Choose your hero…"
+			label="name"
+			value=""
+			minCharacters = "3"
+			clearInvalid="true"
+			showAllByDefault="true"
+			[data]="heroList"
+			(select)="setSelectedItem($event)">
+		</aui-auto-complete>
+	</div>
+</div>`;
 
 	public autocompleteExampleJS2 = `public results = [];
 public heroList = [
@@ -71,26 +76,31 @@ public formatLabel(input: any) {
 
 	// Highlight searchValue in result
 	const regEx = new RegExp(this.searchValue, 'ig');
-	const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
-	return \`<i class="fa fa-user u-text-light u-margin-right-xs"></i>\${inputStringHighlighted}\`;
+	const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
+	return \`<span class="fa fa-user u-text-light u-margin-right-xs"></span>\${inputStringHighlighted}\`;
 }`;
 
-	public autocompleteExampleHTML2 = `<aui-auto-complete
-	id="hero"
-	placeholder="Choose your hero…"
-	remote="true"
-	[results]="results"
-	label="name"
-	key="id"
-	loadingText = "Loading…"
-	noResultsText="No results found"
-	searchIncentiveText="Type one or more keywords to start searching"
-	(search)="searchItems($event)"
-	(select)="setSelectedItem($event)">
-	<ng-template let-item >
-		<div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
-	</ng-template>
-</aui-auto-complete>`;
+	public autocompleteExampleHTML2 = `<div class="a-input">
+	<label class="a-input__label" for="hero">Hero</label>
+	<div class="a-input__wrapper">
+		<aui-auto-complete
+			data-id="hero"
+			placeholder="Choose your hero…"
+			remote="true"
+			[results]="results"
+			label="name"
+			key="id"
+			loadingText = "Loading…"
+			noResultsText="No results found"
+			searchIncentiveText="Type one or more keywords to start searching"
+			(search)="searchItems($event)"
+			(select)="setSelectedItem($event)">
+			<ng-template let-item >
+				<div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
+			</ng-template>
+		</aui-auto-complete>
+	</div>
+</div>`;
 
 	public results = [];
 	public heroList = [
@@ -103,8 +113,8 @@ public formatLabel(input: any) {
 	public disabledModel = 'Batman';
 	public isDisabled = true;
 	public searchValue = '';
-	public selectedItem1 = '';
-	public selectedItem2 = '';
+	public selectedItem1 = '-';
+	public selectedItem2 = '-';
 	private debouncer: Subject<string> = new Subject();
 	private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -134,12 +144,12 @@ public formatLabel(input: any) {
 		this.debouncer.next(search);
 	}
 
-	public setSelectedItem1(hero: {name}): void {
-		this.selectedItem1 = hero.name;
+	public setSelectedItem1(hero: any): void {
+		this.selectedItem1 = (!!hero && !!hero.name) ? hero.name : '-';
 	}
 
-	public setSelectedItem2(hero: {name}): void {
-		this.selectedItem2 = hero.name;
+	public setSelectedItem2(hero: any): void {
+		this.selectedItem2 = (!!hero && !!hero.name) ? hero.name : '-';
 	}
 
 	public formatLabel(input: any) {
@@ -151,7 +161,7 @@ public formatLabel(input: any) {
 
 		// Highlight searchValue in result
 		const regEx = new RegExp(this.searchValue, 'ig');
-		const inputStringHighlighted = (inputString.replace(regEx, '<b>' + this.searchValue + '</b>'));
-		return `<i class="fa fa-user u-text-light u-margin-right-xs"></i>${inputStringHighlighted}`;
+		const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
+		return `<span class="fa fa-user u-text-light u-margin-right-xs"></span>${inputStringHighlighted}`;
 	}
 }

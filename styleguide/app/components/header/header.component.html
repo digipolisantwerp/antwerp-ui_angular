@@ -1,12 +1,10 @@
-<header class="o-header">
-    <div class="o-header__logo">
-        <a [routerLink]="['/']">
-            <img src="./assets/acpaas-ui-logo.svg" alt="ACPaaS UI logo.">
-        </a>
-    </div>
-    <div class="o-header__content">
-        <a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button a-button--navigation has-icon-left">
-			<i class="fa fa-github"></i>GitHub
+<aui-header>
+	<div auiHeaderLogo>
+		<aui-logo title="ACPaaS UI logo." src="./assets/acpaas-ui-logo.svg" [link]="'/'"></aui-logo>
+	</div>
+	<div auiHeaderMenuItem>
+		<a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button-negative o-header__button has-icon-left">
+			<span class="fa fa-github"></span>GitHub
 		</a>
-    </div>
-</header>
+	</div>
+</aui-header>

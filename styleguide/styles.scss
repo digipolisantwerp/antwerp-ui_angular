@@ -14,37 +14,16 @@ guide-root {
 	max-width: 100%;
 }
 
-main {
+main:focus {
+	outline: none;
+}
+
+.p-acpaas-ui {
 	flex: 1 1 auto;
 }
 
-.o-header {
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
-}
-
-.o-header__logo {
-	position: static;
-	top: 0;
-
-	a {
-        display: inline-block;
-        height: calc(3rem + 1px);
-    }
-
-	img {
-		height: $spacer * 2;
-	}
-}
-
-.o-header__content {
-	flex: 0 1 auto;
-}
-
-.a-button--navigation {
-	background-color: transparent;
-	font-weight: normal;
+.a-pre.hljs {
+	border: 1px solid $grey-lighter;
 }
 
 .m-pane--left {
@@ -75,6 +54,10 @@ main {
 		padding-right: $spacer;
 		width: auto;
 	}
+}
+
+.m-flyout:focus {
+	outline: none;
 }
 
 .u-show-on-mobile {
@@ -112,7 +95,10 @@ pre {
 	}
 
 	&,
-	a {
+	a,
+	a:hover,
+	a:active,
+	a:focus {
 		color: $white;
 	}
 
@@ -128,4 +114,12 @@ pre {
 .aui-code-snippet {
 	display: block;
 	overflow-x: auto;
+}
+
+.o-leaflet__wrapper {
+	overflow: visible !important;
+}
+
+.o-leaflet__map:focus {
+	box-shadow: 0 0 0 3px $input-border-focus;
 }

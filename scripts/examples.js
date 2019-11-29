@@ -39,8 +39,8 @@ const updateRoutes = () => {
 
 	let importConfigModules = '';
 	let moduleConfig = '';
-	let importConfigRoutes = '';
-	let routeConfig = '';
+	let importConfigRoutes = `import { Routes } from '@angular/router';\n`;
+	let routeConfig = `\t{ path: '', redirectTo: 'analytics', pathMatch: 'full' },\n`;
 	packages.forEach(package => {
 		const route = `${snakeCase(package).toUpperCase()}_EXAMPLES_ROUTES`;
 		const moduleName = `${upperFirst(camelCase(package))}ExamplesModule`;
@@ -49,11 +49,11 @@ const updateRoutes = () => {
 		importConfigModules += `import { ${moduleName} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		importConfigRoutes += `import { ${route} } from '@acpaas-ui/ngx-examples/${package}';\n`;
 		moduleConfig += `	${moduleName},\n`;
-		routeConfig += `	{ path: '${package}', children: ${route}, title: '${upperFirst(package.replace(/-/g, ' '))}', },\n`;
+		routeConfig += `	{ path: '${package}', children: ${route}, data: { meta: { title: '${upperFirst(package.replace(/-/g, ' '))}', }, }, },\n`;
 	});
 
 	writeFileSync(srcModules, `${importConfigModules}\nexport const ExamplesModules = [\n${moduleConfig}];\n`, { encoding: 'utf-8' });
-	writeFileSync(srcRoutes, `${importConfigRoutes}\nexport const EXAMPLES_ROUTES = [\n${routeConfig}];\n`, { encoding: 'utf-8' });
+	writeFileSync(srcRoutes, `${importConfigRoutes}\nexport const EXAMPLES_ROUTES: Routes = [\n${routeConfig}];\n`, { encoding: 'utf-8' });
 
 	console.log(colors.green('Styleguide routes updated.'));
 

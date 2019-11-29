@@ -51,7 +51,7 @@ Boolean, default set to `true`.
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
 | `messagelink: string;` | `'<p id="cookieconsent:desc">{{message}} <a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a></p>'` | The html markup for the cookie consent design |
-| `dismiss: string;` | `'<button aria-label="dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">{{dismiss}}</button>'` | The html markup for the dismiss button. If button must have the classes `.cc-btn` and `.cc-dismiss` in order to work properly. |
+| `dismiss: string;` | `'<button aria-label="Dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">{{dismiss}}</button>'` | The html markup for the dismiss button. If button must have the classes `.cc-btn` and `.cc-dismiss` in order to work properly. |
 
 ### Example
 
@@ -78,7 +78,7 @@ import { CookieconsentModule } from '@acpaas-ui/ngx-components/layout';
                 messagelink: `<p id="cookieconsent:desc" class="cc-message">{{message}}
                     <a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank" class="cc-link">{{link}}</a>
                 </p>`,
-                dismiss: '<button aria-label="dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">{{dismiss}}</button>'
+                dismiss: '<button type="button" aria-label="Dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">{{dismiss}}</button>'
             }
         })
     ]

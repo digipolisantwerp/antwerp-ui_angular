@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 	templateUrl: './wysiwyg.page.html',
 })
 export class FormsWysiwygDemoPageComponent {
-	public contents = '';
+	public contents = '<p>Type some rich text here</p>';
 	public isDisabled = false;
 
 	public wysiwygImportExample = `import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
@@ -19,27 +19,35 @@ export class AppModule {};`;
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+	<script src="https://cdn.ckeditor.com/4.13.0/standard-all/ckeditor.js"></script>
 </head>
 </html>`;
 
 	public wysiwygExampleHTML1 = `<aui-wysiwyg
-	[placeholder]="'Type some rich text here…'"
-	[availableTags]="'h2;h3;h4;h5;h6;p'"
-	[uiColour]="'#C0C0C0'"
+	[(ngModel)]="contents"
 	[debounce]="500"
+	[availableTags]="'h2;h3;h4;h5;h6;p'"
+	[uiColour]="'#d8d8d8'"
+	[disabled]="isDisabled"
+	(focus)="onFocus($event)"
+	(blur)="onBlur($event)"
 	(emitContent)="getContent($event)">
 </aui-wysiwyg>`;
 
-	public wysiwygTypescript = `public contents = ''
+	public wysiwygTypescript = `public contents = '<p>Type some rich text here</p>';
 
 public getContent(event) {
-	this.contents = event;
+	// Do something with 'event';
 }`;
 
 	public wysiwygExampleHTML2 = `{
 	bodyClass: 'a-input ckeditor-editable-body',
-	contentsCss: ['https://cdn.antwerpen.be/core_branding_scss/3.2.2/main.min.css'],
+	contentsCss: ['https://cdn.antwerpen.be/core_branding_scss/4.0.0/main.min.css'],
+	extraPlugins: 'divarea',
+	find_highlight: {
+		element: 'span',
+		styles: { 'background-color': '#fffc00', color: '#0064b4' },
+	},
 	format_tags: 'p;h1;h2;h3;h4;h5;h6',
 	toolbar_Basic: [
 		[ 'Bold', 'Italic', 'Underline', '-', 'Format', '-', 'Source' ],
@@ -55,6 +63,14 @@ public getContent(event) {
 </aui-wysiwyg>`;
 
 	public getContent(event) {
-		this.contents = event;
+		// Do something with 'event';
+	}
+
+	public onFocus(event) {
+		// Do something on focus;
+	}
+
+	public onBlur(event) {
+		// Do something on blur;
 	}
 }

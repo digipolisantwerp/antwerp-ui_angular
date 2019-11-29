@@ -1,8 +1,18 @@
-<guide-header></guide-header>
-<guide-hero title="ACPaaS UI Angular" description="Components documentation"></guide-hero>
+<header role="banner" aria-label="Main header">
+	<a href="#main-content" (click)="goToMainContent($event)" class="a-button-negative o-header__button o-header__button-skip" #skipContent>Skip to main content</a>
+	<guide-header></guide-header>
+	<guide-hero title="ACPaaS UI Angular" description="Components documentation"></guide-hero>
+</header>
 
-<main>
-	<router-outlet></router-outlet>
-</main>
+<div class="u-container u-margin-top u-margin-bottom p-acpaas-ui">
+	<div class="row">
+		<nav aria-label="Main navigation" class="col-xs-12 col-sm-3 u-margin-bottom-lg">
+			<guide-registry [items]="packages"></guide-registry>
+		</nav>
+		<main id="main-content" tabindex="-1" #mainContent class="col-xs-12 col-sm-9">
+			<router-outlet></router-outlet>
+		</main>
+	</div>
+</div>
 
 <guide-footer></guide-footer>

@@ -4,6 +4,4 @@ import { Directive, HostBinding } from '@angular/core';
   selector: '[auiHeaderContent]',
 })
 export class HeaderContentDirective {
-	@HostBinding('style.display') public styleDisplay = 'block';
-	@HostBinding('style.height') public styleHeight = '100%';
 }

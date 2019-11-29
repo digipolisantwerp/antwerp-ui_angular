@@ -5,10 +5,6 @@
 </div>
 
 <div class="u-margin-bottom">
-    <aui-code-snippet [codeSnippet]="wysiwygImportExample2"></aui-code-snippet>
-</div>
-
-<div class="u-margin-bottom">
     <aui-code-snippet [codeSnippet]="wysiwygExampleHTML1"></aui-code-snippet>
 </div>
 
@@ -16,16 +12,18 @@
     <aui-code-snippet [codeSnippet]="wysiwygTypescript"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="row u-margin-bottom-lg">
 	<div class="u-margin-bottom col-md-6 col-xs-12">
 	    <div class="a-input u-margin-bottom">
 			<aui-wysiwyg
-				[placeholder]="'Type some rich text here…'"
-				[availableTags]="'h2;h3;h4;h5;h6;p'"
-				[uiColour]="'#C0C0C0'"
-				[debounce]="500"
 				[(ngModel)]="contents"
-				[disabled]="isDisabled">
+				[debounce]="500"
+				[availableTags]="'h2;h3;h4;h5;h6;p'"
+				[uiColour]="'#d8d8d8'"
+				[disabled]="isDisabled"
+				(focus)="onFocus($event)"
+				(blur)="onBlur($event)"
+				(emitContent)="getContent($event)">
 			</aui-wysiwyg>
 		</div>
 		<div class="a-input">
@@ -57,5 +55,5 @@
 </div>
 
 <div class="u-margin-bottom">
-	<p>All available configuration options <a href="https://ckeditor.com/docs/ckeditor4/latest/guide/dev_configuration.html" class="has-icon-right" target="_blank">can be found here<i class="fa fa-external-link"></i></a>.</p>
+	<p>All available configuration options <a href="https://ckeditor.com/docs/ckeditor4/latest/guide/dev_configuration.html" class="has-icon-right" target="_blank">can be found here<span class="fa fa-external-link"></span></a>.</p>
 </div>

@@ -1,4 +1,4 @@
-<div class="aui-datepicker a-input__wrapper" auiFlyout>
+<div class="aui-datepicker a-input__wrapper" auiFlyout aria-haspopup="grid">
 	<input
 		type="text"
 		name="{{ name }}"
@@ -17,7 +17,7 @@
 	</ng-container>
 
 	<ng-container *ngIf="!isDisabled">
-		<div role="datepicker" class="m-datepicker m-datepicker--fixed" auiFlyoutZone>
+		<div role="dialog" class="m-datepicker m-datepicker--fixed" auiFlyoutZone>
 			<aui-calendar [selectedDate]="selectedDate" [range]="range" (selectDate)="selectDateFromCalendar($event)"></aui-calendar>
 		</div>
 	</ng-container>

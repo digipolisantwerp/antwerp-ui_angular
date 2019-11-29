@@ -1,7 +1,7 @@
-<header class="o-header o-header--fixed aui-header" [ngClass]="{'has-logo': hasLogo}">
-    <ng-content select="[auiHeaderLogo]"></ng-content>
-
+<div class="o-header aui-header">
     <div class="o-header__content-wrapper">
+    	<ng-content select="[auiHeaderLogo]"></ng-content>
+
         <div class="o-header__content">
             <ng-content select="[auiHeaderContent]"></ng-content>
         </div>
@@ -10,4 +10,4 @@
             <ng-content select="[auiHeaderMenuItem]"></ng-content>
         </div>
     </div>
-</header>
+</div>

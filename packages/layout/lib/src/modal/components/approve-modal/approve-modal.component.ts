@@ -12,6 +12,8 @@ import { ModalService } from '../../services/modal.service';
 export class ApproveModalComponent extends ModalAbstract implements OnInit {
 	public modalData: any;
 	public modalActions: ModalActions;
+	public titleId: string;
+	public descId: string;
 
 	constructor(
 		protected modalService: ModalService
@@ -20,11 +22,13 @@ export class ApproveModalComponent extends ModalAbstract implements OnInit {
 	}
 
 	public ngOnInit() {
+		this.titleId = 'aui-modal-' + Math.random().toString(36).substring(2);
+		this.descId = 'aui-modal-' + Math.random().toString(36).substring(2);
 		this.modalData = this.modalData || {
-			question: 'Question?',
-			description: 'Description...',
-			approve: 'Ok',
-			reject: 'Cancel',
+			question: 'Vraag?',
+			description: 'Beschrijving…',
+			approve: 'OK',
+			reject: 'Annuleren',
 		};
 	}
 

@@ -4,10 +4,51 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+
 ## Unreleased
+
+### Changed
+- [BREAKING] `calendar` Made Dutch labels the default ones.
+- [BREAKING] `forms` Made Dutch labels the default ones.
+- [BREAKING] `layout` Changed the behaviour and inner workings of the header.
 - [BREAKING] `localstorage` Fixed hard dependency on redux store enhancer.
 - `core` Updated to the new ACPaaS branding.
-- `layout` Don't close modal when click event starts inside the modal but ends outside.
+- `core` Updated ACPaaS UI to be WCAG 2.1 AA compliant.
+- `avatar` Made avatar more accessible.
+- `calendar` Made the calendar more accessible.
+- `pagination` Made the items per page component more accessible.
+- `pagination` Made the pagination component more accessible.
+- `selectable-list` Made the selectable list more accessible.
+- `flyout` Made the flyout more accessible.
+- `flyout` Made the flyout button more accessible.
+- `forms` Made the autocomplete more accessible.
+- `forms` Made the datepicker more accessible.
+- `forms` Made the range slider more accessible.
+- `forms` Made the search filter more accessible.
+- `forms` Made the timepicker more accessible.
+- `forms` Made the upload more accessible.
+- `forms` Made the WYSIWYG editor more accessible.
+- `layout` Made the cookie consent more accessible.
+- `layout` Made the modal more accessible.
+- `layout` Made the pane more accessible.
+- `selectable-list` Made the selectable list more accessible.
+- `utils` Made the filter more accessible.
+
+### Added
+- `forms` Added keyboard navigation to the rangeslider.
+- `forms` Added ability to add a custom id or ARIA id to upload.
+- `layout` Added possibility to overwrite window property of cookie consent.
+- `layout` Added ability to add a custom id to pane.
+- `forms` Added keyboard bindings to the range slider.
+
+### Fixed
+- [BREAKING] `logo` Fixed routing and click events on logo.
+- `forms` Fixed an overlapping issue in the range slider.
+- `layout` Fixed an issue where the modal would be closed when a click event started inside the modal but ended outside.
+
+### Notes
+- `forms` WCAG support could be improved: https://github.com/RobinHerbots/Inputmask/issues/981
+
 
 ## [2.1.6] - 2019-11-04
 
@@ -18,18 +59,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [2.1.5] - 2019-10-18
 
 ### Added
-- `documentation` Added testing documentation
+- `documentation` Added testing documentation.
 
 ### Fixed
-- `flyout` Improved tab navigation (support for spacebar, enter and escape)
-- `forms` Only open flyout in datepicker when button is clicked, added blur event
-- `documentation` Fixed map documentation
+- `flyout` Improved tab navigation (support for spacebar, enter and escape).
+- `forms` Only open flyout in datepicker when button is clicked, added blur event.
+- `documentation` Fixed map documentation.
 
 
 ## [2.1.4] - 2019-09-30
 
 ### Fixed
-- `core` Fixed peer dependency warnings
+- `core` Fixed peer dependency warnings.
 
 
 ## [2.1.3] - 2019-09-19
@@ -47,16 +88,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [2.1.1] - 2019-06-26
 
 ### Added
-- `documentation` Added test automation guidelines
+- `documentation` Added test automation guidelines.
 
 ### Fixed
-- `pagination` Fixed faulty pagination count whenever the current page was provided as a string
+- `pagination` Fixed faulty pagination count whenever the current page was provided as a string.
 
 
 ## [2.1.0] - 2019-05-02
 
 ### Added
-- `forms` Added disabled state to all controls (except upload)
+- `forms` Added disabled state to all controls (except upload).
 
 ### Fixed
 - `autocomplete` Fixed issues with items with identical labels and a custom template.
@@ -65,21 +106,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [2.0.1] - 2019-04-04
 
 ### Fixed
-- `notifications`: Fixed AOT builds
+- `notifications`: Fixed AOT builds.
 
 
 ## [2.0.0] - 2019-04-02
 
 ### Changed
-- [BREAKING] Removed rxjs-compat dependency
-- [BREAKING] Updated `@angular-redux/store` and redux dependencies
+- [BREAKING] Removed rxjs-compat dependency.
+- [BREAKING] Updated `@angular-redux/store` and redux dependencies.
 
 
 ## [1.1.2] - 2019-03-29
 
 ### Fixed
-- `context` Expose store module
-- `notifications` Expose store module
+- `context` Expose store module.
+- `notifications` Expose store module.
 
 
 ## [1.1.1] - 2019-03-29
@@ -136,7 +177,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - `core` Update angular-cli & ng-packagr.
 - `core` Update package names & setup.
-- `core` Update schematic
+- `core` Update schematic.
 - `context` The ContextModule is no longer dependent on the ContextStoreModule.
 
 ### Fixed

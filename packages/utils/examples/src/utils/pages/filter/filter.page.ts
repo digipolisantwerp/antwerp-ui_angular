@@ -112,7 +112,7 @@ public changeSelectFilter(value) {
 
 	constructor(public filterService: FilterService) {}
 
-	ngOnInit() {
+	public ngOnInit() {
 		// Checkbox filter
 		this.checkFilter.id = 'checkFilter';
 		this.checkFilter.name = 'Checkbox filter';

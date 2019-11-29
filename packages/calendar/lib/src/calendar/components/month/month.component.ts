@@ -37,7 +37,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 		private calendarService: CalendarService
 	) {}
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
 	}
 
