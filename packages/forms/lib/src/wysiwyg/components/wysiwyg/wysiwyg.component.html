@@ -2,9 +2,9 @@
 	<ckeditor
 		[(ngModel)]="ckeditorContent"
 		[config]="ckeditorConfig"
-		[readOnly]="isDisabled"
-		[tagName]="'div'"
-		(dataChange)="writeValue($event)"
+		[debounce]="debounce"
+		(change)="writeValue($event)"
+		[readonly]="isDisabled"
 		(focus)="onFocus($event)"
 		(blur)="onBlur($event)"
 	></ckeditor>

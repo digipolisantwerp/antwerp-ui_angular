@@ -5,10 +5,6 @@
 </div>
 
 <div class="u-margin-bottom">
-    <aui-code-snippet [codeSnippet]="wysiwygImportExample2"></aui-code-snippet>
-</div>
-
-<div class="u-margin-bottom">
     <aui-code-snippet [codeSnippet]="wysiwygExampleHTML1"></aui-code-snippet>
 </div>
 
@@ -20,9 +16,10 @@
 	<div class="u-margin-bottom col-md-6 col-xs-12">
 	    <div class="a-input u-margin-bottom">
 			<aui-wysiwyg
+				[(ngModel)]="contents"
+				[debounce]="500"
 				[availableTags]="'h2;h3;h4;h5;h6;p'"
 				[uiColour]="'#d8d8d8'"
-				[(ngModel)]="contents"
 				[disabled]="isDisabled"
 				(focus)="onFocus($event)"
 				(blur)="onBlur($event)"

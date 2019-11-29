@@ -5,8 +5,8 @@
   "whitelistedNonPeerDependencies": [
     "@a-ui/core",
     "@acpaas-ui/js-date-utils",
+    "ng2-ckeditor",
     "inputmask",
-    "lodash-es",
-    "ckeditor4-angular"
+    "lodash-es"
   ]
 }

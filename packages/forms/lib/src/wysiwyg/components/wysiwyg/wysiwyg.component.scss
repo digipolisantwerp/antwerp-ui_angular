@@ -3,14 +3,28 @@
 
 :host ::ng-deep {
 	.cke {
-		iframe {
-			box-sizing: border-box;
+		.cke_chrome {
+			border: 1px solid $border-color;
+		}
+
+		.cke_top {
+			border-color: $border-color;
+		}
+
+		.cke_top,
+		.cke_bottom {
+			background-color: $grey-lighter;
+		}
+
+		.cke_wysiwyg_div {
 			padding: $spacer-xs / 3;
 		}
 
 		&.cke_focus {
-			iframe {
-				box-shadow: 0 0 0 3px $input-border-focus inset;
+			.cke_contents {
+				box-shadow: 0 0 0 1px $border-color, 0 0 0 4px $input-border-focus;
+				position: relative;
+				z-index: layer('base');
 			}
 		}
 	}

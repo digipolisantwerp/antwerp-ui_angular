@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-components/forms
 
-A component to add a wysiwyg to a page or a form, build upon [ckeditor](https://ckeditor.com) and the [ckeditor4-angular](https://github.com/ckeditor/ckeditor4-angular) package.
+A component to add a wysiwyg to a page or a form, build upon [ckeditor](https://ckeditor.com) and the [ng2-ckeditor](https://github.com/chymz/ng2-ckeditor) package.
 
 ## Usage
 
@@ -14,7 +14,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 ## Dependencies
 * [ckeditor](https://ckeditor.com)
-* [ckeditor4-angular](https://github.com/ckeditor/ckeditor4-angular)
+* [ng2-ckeditor](https://github.com/chymz/ng2-ckeditor)
 
 You will need to add the library to your app, preferably with a CDN.
 
@@ -32,7 +32,7 @@ script: [
 | `@Input() additionalStyling: string;` | - | Path to one or more css files. |
 | `@Input() availableTags: string;` | - | `;`-separated list of available tags, e.g.: `h2;h3;h4;h5;h6;p`. |
 | `@Input() basic: boolean;` | `false` | Use the basic version of the editor. |
-| `@Input() placeholder: string;` | - | Additional info shown in the wysiwyg component. |
+| `@Input() debounce: number;` | - | You can add a delay (ms) when updating ngModel. |
 | `@Input() uiColour: string;` | - | Change the (hexadecimal) colour of the UI, e.g.: `#00FF00`. |
 | `@Input() customConfig: any;` | - | Override ckeditor config, see [ckeditor config API](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html). |
 | `@Output() emitContent: string;` | - | Callback triggered when content changes. |
@@ -54,12 +54,13 @@ export class AppModule {};
 ```
 
 ```html
-<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.13.0/standard-all/ckeditor.js"></script>
 
 <aui-wysiwyg
+    [(ngModel)]="contents"
+    [debounce]="500"
     [availableTags]="'h2;h3;h4;h5;h6;p'"
     [uiColour]="'#d8d8d8'"
-    [(ngModel)]="contents"
     [disabled]="isDisabled"
     (focus)="onFocus($event)"
     (blur)="onBlur($event)"

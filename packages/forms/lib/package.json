@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@acpaas-ui/js-date-utils": "1.0.1",
-    "ckeditor4-angular": "^1.0.0",
     "inputmask": "~3.3.11",
-    "lodash-es": "~4.17.10"
+    "lodash-es": "~4.17.10",
+    "ng2-ckeditor": "~1.2.0"
   }
 }

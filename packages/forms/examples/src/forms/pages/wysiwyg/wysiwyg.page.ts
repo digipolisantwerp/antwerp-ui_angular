@@ -19,14 +19,15 @@ export class AppModule {};`;
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+	<script src="https://cdn.ckeditor.com/4.13.0/standard-all/ckeditor.js"></script>
 </head>
 </html>`;
 
 	public wysiwygExampleHTML1 = `<aui-wysiwyg
+	[(ngModel)]="contents"
+	[debounce]="500"
 	[availableTags]="'h2;h3;h4;h5;h6;p'"
 	[uiColour]="'#d8d8d8'"
-	[(ngModel)]="contents"
 	[disabled]="isDisabled"
 	(focus)="onFocus($event)"
 	(blur)="onBlur($event)"
@@ -42,6 +43,11 @@ public getContent(event) {
 	public wysiwygExampleHTML2 = `{
 	bodyClass: 'a-input ckeditor-editable-body',
 	contentsCss: ['https://cdn.antwerpen.be/core_branding_scss/4.0.0/main.min.css'],
+	extraPlugins: 'divarea',
+	find_highlight: {
+		element: 'span',
+		styles: { 'background-color': '#fffc00', color: '#0064b4' },
+	},
 	format_tags: 'p;h1;h2;h3;h4;h5;h6',
 	toolbar_Basic: [
 		[ 'Bold', 'Italic', 'Underline', '-', 'Format', '-', 'Source' ],

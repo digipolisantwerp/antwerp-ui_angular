@@ -36,6 +36,7 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
 	@Input() basic = false;
 	@Input() uiColour: string;
 	@Input() customConfig: any;
+	@Input() debounce: number;
 
 	@Output() emitContent: EventEmitter<string> = new EventEmitter();
 	@Output() focus: EventEmitter<string> = new EventEmitter();
