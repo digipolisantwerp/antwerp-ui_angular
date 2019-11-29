@@ -12,20 +12,20 @@ import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-components/layout';
 
 @Component({
 	selector: 'aui-modal',
-	template: \`<div class="m-modal">
+	template: \`<div class="m-modal" role="dialog" aria-modal="true" aria-labelledby="myModalTitle" aria-describedby="myModelDesc">
 		<div class="m-modal__content">
 			<div class="m-modal__header u-margin-bottom-xs">
-				<button class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
-					<i class="fa fa-close"></i>
+				<button type="button" class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
+					<span class="fa fa-close"></span>
 				</button>
-				<h4>{{ modalData.title }}</h4>
+				<h4 id="myModalTitle">{{ modalData.title }}</h4>
 			</div>
 			<div class="u-margin-bottom">
-				<p>{{ modalData.text }}</p>
+				<p id="myModalDesc">{{ modalData.text }}</p>
 			</div>
 			<div class="m-modal__footer">
-				<button class="a-button" (click)="submitAndCloseModal()">Close Modal</button>
-				<button class="a-button-outline" (click)="closeModal()">Cancel</button>
+				<button type="button" class="a-button" (click)="submitAndCloseModal()">Close Modal</button>
+				<button type="button" class="a-button-outline" (click)="closeModal()">Cancel</button>
 			</div>
 		</div>
 	</div>\`,
@@ -54,7 +54,7 @@ public openModal() {
 	this.modalService.openModal(
 		AUIDemoModalComponent,
 		{
-			title: 'Modal',
+			title: 'Modal demo',
 			text: 'Are you sure you want to see a demo of this modal?',
 		}, {
 			confirm: () => this.doSomething(),
@@ -68,7 +68,7 @@ private doSomething() {
 	});
 }`;
 
-	public modal3 = `<button class="a-button"
+	public modal3 = `<button type="button" class="a-button"
 	(click)="openModal()">
 	Open modal
 </button>`;
@@ -81,7 +81,7 @@ private doSomething() {
 		this.modalService.openModal(
 			AUIDemoModalComponent,
 			{
-				title: 'Modal',
+				title: 'Modal demo',
 				text: 'Are you sure you want to see a demo of this modal?',
 			}, {
 				confirm: () => this.doSomething(),

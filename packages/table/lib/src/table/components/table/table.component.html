@@ -8,13 +8,13 @@
 					</ng-container>
 					<ng-container *ngIf="!column.headerComponent">
 						<ng-container *ngIf="activeSorting">
-							<button *ngIf="!column.disableSorting && tableHelper.getValue(column) !== activeSorting?.key" class="a-button a-button--tiny a-button--transparent has-icon-right" (click)="sort(column, 'asc')">
+							<button type="button" *ngIf="!column.disableSorting && tableHelper.getValue(column) !== activeSorting?.key" class="a-button a-button--tiny a-button--transparent has-icon-right" (click)="sort(column, 'asc')">
 								{{ tableHelper.getLabel(column) }} <span class="fa fa-sort"></span>
 							</button>
-							<button *ngIf="!column.disableSorting && tableHelper.getValue(column) === activeSorting?.key && activeSorting?.order === 'desc'" class=" a-button a-button--tiny a-button--transparent has-icon-right" (click)="sort(column, 'asc')">
+							<button type="button" *ngIf="!column.disableSorting && tableHelper.getValue(column) === activeSorting?.key && activeSorting?.order === 'desc'" class=" a-button a-button--tiny a-button--transparent has-icon-right" (click)="sort(column, 'asc')">
 								{{ tableHelper.getLabel(column) }} <span class="fa fa-sort-desc"></span>
 							</button>
-							<button *ngIf="!column.disableSorting && tableHelper.getValue(column) === activeSorting?.key && activeSorting?.order === 'asc'" class=" a-button a-button--tiny a-button--transparent has-icon-right" (click)="sort(column, 'desc')">
+							<button type="button" *ngIf="!column.disableSorting && tableHelper.getValue(column) === activeSorting?.key && activeSorting?.order === 'asc'" class=" a-button a-button--tiny a-button--transparent has-icon-right" (click)="sort(column, 'desc')">
 								{{ tableHelper.getLabel(column) }} <span class="fa fa-sort-asc"></span>
 							</button>
 							<ng-container *ngIf="column.disableSorting">

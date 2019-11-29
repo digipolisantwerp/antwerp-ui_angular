@@ -42,10 +42,10 @@ export class AppModule {};`
 
 ```html
 <div auiFlyout size="small" align="left">
-    <button auiFlyoutAction>Open flyout</button>
+    <button type="button" auiFlyoutAction>Open flyout</button>
     <div auiFlyoutZone>
         <p>Hello world!</p>
-        <button auiFlyoutClose>Close flyout</button>
+        <button type="button" auiFlyoutClose>Close flyout</button>
     </div>
 </div>
 ```
@@ -54,7 +54,7 @@ export class AppModule {};`
     <aui-flyout-button
         icon="fa fa-user"
         label="Open flyout"
-        align="right"
+        data-align="right"
         title="Click to open!"
         outline=true
         flyoutSize="small"

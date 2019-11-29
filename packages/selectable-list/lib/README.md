@@ -61,7 +61,7 @@ public onSelect(item) {
 <h4>Select your hero</h4>
 <aui-selectable-list [items]="heroes" [index]="index" (selected)="onSelect($event)">
    <ng-template let-item="item">
-       Template for: <b>{{ item.name }}</b>
+       Template for: <strong>{{ item.name }}</strong>
    </ng-template>
 </aui-selectable-list>
 <p><strong>Active hero</strong>: {{ activeHero.name }}</p>
@@ -120,7 +120,7 @@ public onKeyEscape() {
 
 ```html
 <div auiFlyout>
-    <button class="button" auiFlyoutAction auiSelectableActions (keyArrowUp)="onKeyArrowUp()" (keyArrowDown)="onKeyArrowDown()" (keyEnter)="onKeyEnter()" (keyEscape)="onKeyEscape()">Heroes</button>
+    <button type="button" class="button" auiFlyoutAction auiSelectableActions (keyArrowUp)="onKeyArrowUp()" (keyArrowDown)="onKeyArrowDown()" (keyEnter)="onKeyEnter()" (keyEscape)="onKeyEscape()">Heroes</button>
     <div auiFlyoutZone>
         <aui-selectable-list [items]="heroes" [index]="index" label="name" (selected)="onSelect($event)"></aui-selectable-list>
     </div>

@@ -26,6 +26,8 @@ import { isEvent } from '../utils/event';
 })
 export class FlyoutDirective implements OnDestroy {
 	@HostBinding('class.m-flyout') flyoutClass = true;
+	@HostBinding('attr.tabindex') flyoutTabIndex = '-1';
+	@HostBinding('attr.aria-haspopup') flyoutAriaPop = true;
 	@HostBinding('class.m-flyout--right') get flyoutAlignRight() {
 		return this.align === 'right';
 	}
@@ -70,6 +72,7 @@ export class FlyoutDirective implements OnDestroy {
 
 		this.state$.next(FlyoutState.CLOSED);
 
+
 		merge(
 			this.state$,
 			this.flyoutService.state$
@@ -80,6 +83,9 @@ export class FlyoutDirective implements OnDestroy {
 			)
 			.subscribe((state: FlyoutState) => {
 				this.isOpened = state === FlyoutState.OPEN;
+				if (this.flyoutZone) {
+					this.flyoutZone.isExpanded = this.isOpened;
+				}
 
 				if (this.isOpened) {
 					this.opened.emit();

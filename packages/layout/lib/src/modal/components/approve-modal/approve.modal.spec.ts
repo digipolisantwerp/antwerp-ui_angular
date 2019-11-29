@@ -42,8 +42,8 @@ describe('Modal - ApproveModalComponent', () => {
 		comp.ngOnInit();
 
 		expect(comp.modalData).toEqual(jasmine.objectContaining({
-			question: 'Question?',
-			description: 'Description...',
+			question: 'Vraag?',
+			description: 'Beschrijving…',
 		}));
 	});
 

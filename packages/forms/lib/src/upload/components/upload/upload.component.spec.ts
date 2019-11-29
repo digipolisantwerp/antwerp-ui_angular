@@ -26,6 +26,7 @@ const mockInvalidFiles: InvalidFile[] = [{
 })
 export class UploadZoneComponent {
 	@Input() uploader;
+	@Input() ariaId;
 }
 
 @Component({
@@ -35,6 +36,7 @@ export class UploadZoneComponent {
 export class UploadQueueComponent {
 	@Input() uploader;
 	@Input() files;
+	@Input() ariaLabelRemove;
 }
 
 @Component({
@@ -43,6 +45,7 @@ export class UploadQueueComponent {
 })
 export class ValidationListComponent {
 	@Input() invalidFiles;
+	@Input() ariaLabelRemove;
 }
 
 describe('The Upload Component', () => {

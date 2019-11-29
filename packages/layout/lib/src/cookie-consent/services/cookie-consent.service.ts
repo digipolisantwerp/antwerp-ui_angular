@@ -27,6 +27,9 @@ export class CookieconsentService {
 			return console.warn('Cookie consent is not loaded!');
 		}
 
-		this.$window.cookieconsent.initialise(merge(this.cookieConsentConfig, config));
+		this.$window.cookieconsent.initialise(merge(
+			this.cookieConsentConfig,
+			config
+		));
 	}
 }

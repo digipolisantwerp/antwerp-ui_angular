@@ -48,13 +48,17 @@ export class AppModule {};`;
 	url: 'api/upload',
 };`;
 
-	public uploadExampleHTML1 = `<aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
+	public uploadExampleHTML1 = `<label class="a-input__label" for="my-upload">Upload files</label>
+<aui-upload
+	data-id="my-upload"
+	[options]="dropzone1"
+	(selectUploadedFiles)="onUpload($event)">
 	<div class="m-upload__message">
 		Drag your files here or click to upload
-  </div>
-  <div class="m-upload__description">
-    Optional description message
-  </div>
+	</div>
+	<div class="m-upload__description">
+		Optional description message
+	</div>
 </aui-upload>`;
 
 	public uploadExampleJS2 = `public dropzone2: UploadOptions = {
@@ -65,10 +69,12 @@ export class AppModule {};`;
 	url: 'api/upload',
 };`;
 
-	public uploadExampleHTML2 = `<aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
+	public uploadExampleHTML2 = `<aui-upload
+	[options]="dropzone2"
+	(selectUploadedFiles)="onUpload($event)">
 	<div class="m-upload__button">
 		Select your files to upload
-  </div>
+	</div>
 </aui-upload>`;
 
 	public uploadExampleJS3 = `public files = [];
@@ -78,8 +84,8 @@ public uploadedFiles: File[] = [];
 // Pass created options into new instance of Uploader
 public uploader = new Uploader({
 	allowedFileTypes: ['jpg', 'jpeg', 'png'],
-  type: 'drop',
-  url: 'api/upload',
+	type: 'drop',
+	url: 'api/upload',
 });
 public showError = false;
 public fileName = '';
@@ -142,16 +148,16 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
  * Using a custom upload service
  */
 
-// public uploadFiles(): void {
-//	if (!this.queuedFiles.length) {
-// 		return;
-// 	}
-// 	this.customService.postFile(this.queuedFiles).subscribe(res => {
-// 		this.result = res;
-// 	}, (error) => {
-// 		console.log(error);
-// 	});
-// }`;
+public uploadFiles(): void {
+	if (!this.queuedFiles.length) {
+		return;
+	}
+	this.customService.postFile(this.queuedFiles).subscribe(res => {
+		this.result = res;
+	}, (error) => {
+		console.log(error);
+	});
+}`;
 
 	public uploadExampleSCSS = `// don't display the default upload button
 ::ng-deep .a-upload-queue__wrapper {
@@ -161,6 +167,7 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 }`;
 
 	public uploadExampleHTML3 = `<aui-upload-zone
+	ariaId="my-other-upload"
 	[uploader]="uploader"
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
@@ -181,9 +188,10 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 			<span class="m-upload__filename">{{ fileName }}</span>
 			<span class="m-upload__error">This file extension is not allowed.</span>
 			<button
+				type="button"
 				(click)="reloadErrors()"
 				class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-				<i class="fa fa-close"></i>
+				<span class="u-screen-reader-only">Remove</span>
 			</button>
 		</li>
 	</ul>

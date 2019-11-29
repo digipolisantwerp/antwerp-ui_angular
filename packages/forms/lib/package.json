@@ -10,7 +10,7 @@
     ]
   },
   "dependencies": {
-    "@acpaas-ui/js-date-utils": "1.0.1-alpha.3",
+    "@acpaas-ui/js-date-utils": "1.0.1",
     "inputmask": "~3.3.11",
     "lodash-es": "~4.17.10",
     "ng2-ckeditor": "~1.2.0"

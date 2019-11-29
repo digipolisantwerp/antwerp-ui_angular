@@ -20,7 +20,9 @@ class MockFlyoutService {
 
 @Component({
 	selector: 'aui-app',
-	template: `<div auiFlyout><button class="button danger" auiFlyoutClose #auiFlyoutClose="auiFlyoutClose">Close</button></div>`,
+	template: `<div auiFlyout>
+		<button type="button" class="button danger" auiFlyoutClose #auiFlyoutClose="auiFlyoutClose">Close</button>
+	</div>`,
 })
 class FlyoutComponent {
 	// Access directive

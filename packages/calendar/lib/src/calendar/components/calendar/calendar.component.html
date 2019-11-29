@@ -1,14 +1,14 @@
 <div class="m-datepicker__nav">
-    <button tabindex="-1" type="button" aria-label="vorige maand" class="a-button has-icon" (click)="updateActiveDate(-1)">
-        <i class="fa fa-angle-left"></i>
+    <button type="button" [attr.aria-label]="ariaPreviousLabel" class="a-button has-icon" (click)="updateActiveDate(-1)">
+        <span class="fa fa-angle-left"></span>
     </button>
 
-    <button tabindex="0" type="button" class="m-datepicker__title a-button" (click)="switchView()">
+    <button type="button" class="m-datepicker__title a-button" (click)="switchView()">
         {{ headerLabel | titlecase }}
     </button>
 
-    <button tabindex="1" type="button" aria-label="volgende maand" class="a-button has-icon" (click)="updateActiveDate(1)">
-        <i class="fa fa-angle-right"></i>
+    <button type="button" [attr.aria-label]="ariaNextLabel" class="a-button has-icon" (click)="updateActiveDate(1)">
+        <span class="fa fa-angle-right"></span>
     </button>
 </div>
 

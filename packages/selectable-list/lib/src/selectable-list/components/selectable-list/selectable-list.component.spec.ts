@@ -58,9 +58,9 @@ describe('The Selectablelist Component', () => {
 		const res4 = comp.formatLabel({test: 'this is a test'});
 
 		expect(res1).toEqual('this is a test');
-		expect(res2).toEqual('this is a <b>test</b>');
-		expect(res3).toEqual('this is a <b>tEsT</b>');
-		expect(res4).toEqual('this is a <b>te</b>st');
+		expect(res2).toEqual('this is a <strong>test</strong>');
+		expect(res3).toEqual('this is a <strong>tEsT</strong>');
+		expect(res4).toEqual('this is a <strong>te</strong>st');
 	});
 });
 

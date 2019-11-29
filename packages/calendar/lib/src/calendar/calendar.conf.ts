@@ -2,26 +2,26 @@ import { InjectionToken } from '@angular/core';
 import { WeekdayLabelsConfig, MonthLabelsConfig } from './types/calendar.types';
 
 export const CALENDAR_DEFAULT_WEEKDAY_LABELS = [
-	'Mon',
-	'Tue',
-	'Wed',
-	'Thu',
-	'Fri',
-	'Sat',
-	'Sun',
+	'Maandag',
+	'Dinsdag',
+	'Woensdag',
+	'Donderdag',
+	'Vrijdag',
+	'Zaterdag',
+	'Zondag',
 ];
 
 export const CALENDAR_DEFAULT_MONTH_LABELS = [
-	'January',
-	'February',
-	'March',
+	'Januari',
+	'Februari',
+	'Maart',
 	'April',
-	'May',
-	'June',
-	'July',
-	'August',
+	'Mei',
+	'Juni',
+	'Juli',
+	'Augustus',
 	'September',
-	'October',
+	'Oktober',
 	'November',
 	'December',
 ];

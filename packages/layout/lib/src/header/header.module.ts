@@ -17,4 +17,4 @@ import { Directives } from './directives/index';
 		...Directives,
 	],
 })
-export class HeaderModule {} // @todo: add forroot with headroom options
+export class HeaderModule {}

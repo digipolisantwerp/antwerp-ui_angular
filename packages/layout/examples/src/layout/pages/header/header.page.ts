@@ -15,16 +15,15 @@ export class LayoutHeaderDemoPageComponent {
 export class AppModule {};`;
 
 	public header2 = `<aui-header>
-	<div auiHeaderContent>
-		<div auiHeaderLogo class="o-header__wrapper">
-			<aui-logo title="Example" src="https://robohash.org/acpaas-ui"></aui-logo>
-			<a class="o-header__link">Example</a>
-		</div>
+	<div auiHeaderLogo>
+		<aui-logo title="ACPaaS UI logo." src="./assets/acpaas-ui-logo.svg" [link]="'/'"></aui-logo>
 	</div>
+	<div auiHeaderContent><!-- Optional --></div>
 	<div auiHeaderMenuItem>
-		<a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button a-button--navigation has-icon-left" target="_blank">
-			<i class="fa fa-github"></i>ACPaaS UI on GitHub
+		<a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button-negative o-header__button has-icon-left">
+			<span class="fa fa-github"></span>GitHub
 		</a>
 	</div>
-</aui-header>`;
+</aui-header>
+`;
 }

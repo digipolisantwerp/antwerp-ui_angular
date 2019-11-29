@@ -1,5 +1,5 @@
 import { Component, Input, HostBinding, HostListener, ElementRef, ViewChild, OnInit, forwardRef } from '@angular/core';
-import { ControlValueAccessor,  NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { RangeSliderRange } from '../../types/range-slider.types';
 
@@ -37,10 +37,11 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 	public endPercentage;
 	public active = null;
 	public isDisabled = false;
+	public hasFocus = false;
 
-	constructor(private elRef: ElementRef) {}
+	constructor(private elRef: ElementRef) { }
 
-	public propagateChange = (value: number|RangeSliderRange) => {};
+	public propagateChange = (value: number | RangeSliderRange) => { };
 
 	public ngOnInit() {
 		if (this.step > 0) {
@@ -73,7 +74,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		}
 	}
 
-	public registerOnTouched() {}
+	public registerOnTouched() { }
 
 	public registerOnChange(fn) {
 		this.propagateChange = fn;
@@ -88,7 +89,84 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 			return;
 		}
 
+		this.hasFocus = true;
 		this.active = handle;
+	}
+
+	public toggleFocus(hasFocus, element, $event) {
+		if (this.isDisabled) {
+			return;
+		}
+
+		$event.preventDefault();
+		this.hasFocus = hasFocus;
+		this.active = element;
+	}
+
+	@HostListener('document:keydown', ['$event'])
+	public onKeyDown($event) {
+		if (!this.hasFocus) {
+			return;
+		}
+
+		const key = $event.keyCode;
+		const keyCodes = {
+			end: 35,
+			home: 36,
+			left: 37,
+			up: 38,
+			right: 39,
+			down: 40,
+		};
+
+		if (Object.keys(keyCodes).map(e => keyCodes[e]).indexOf(key) !== -1) {
+			return;
+		}
+		let increment = this.minimalDistance;
+
+		if (this.step > 0) {
+			increment = Number(this.step);
+		}
+
+		const processValue = (dir) => {
+			let newValue = (this.active === 'start' ? this.start : Number(this.end));
+			if (dir === 'up') {
+				newValue += increment;
+			} else {
+				newValue -= increment;
+			}
+			let newPercentage = (newValue - this.min) / (this.max - this.min) * 100;
+
+			if (newPercentage > 100) {
+				newPercentage = 100;
+			}
+			if (newPercentage < 0) {
+				newPercentage = 0;
+			}
+			return newPercentage;
+		};
+
+		switch (key) {
+			case keyCodes.right:
+			case keyCodes.up:
+				this.updateHandle(processValue('up'));
+				$event.preventDefault();
+				break;
+			case keyCodes.left:
+			case keyCodes.down:
+				this.updateHandle(processValue('down'));
+				$event.preventDefault();
+				break;
+			case keyCodes.end:
+				this.updateHandle(100);
+				$event.preventDefault();
+				break;
+			case keyCodes.home:
+				this.updateHandle(0);
+				$event.preventDefault();
+				break;
+		}
+
 	}
 
 	@HostListener('touchend', ['$event'])
@@ -105,6 +183,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 		}
 
 		this.active = null;
+		this.hasFocus = false;
 	}
 
 	@HostListener('touchmove', ['$event'])
@@ -169,14 +248,14 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 
 	public round(number, increment, offset) {
 		if (increment > 0) {
-			return Math.round((number - offset) / increment ) * increment + offset;
+			return Math.round((number - offset) / increment) * increment + offset;
 		}
 
 		return number;
 	}
 
 	public startToPercentage() {
-			return Math.round((this.start - this.min) / (this.max - this.min) * 100);
+		return Math.round((this.start - this.min) / (this.max - this.min) * 100);
 	}
 
 	public percentageToStart() {
@@ -184,7 +263,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 	}
 
 	public endToPercentage() {
-			return Math.round((Number(this.end) - this.min) / (this.max - this.min) * 100);
+		return Math.round((Number(this.end) - this.min) / (this.max - this.min) * 100);
 	}
 
 	public percentageToEnd() {

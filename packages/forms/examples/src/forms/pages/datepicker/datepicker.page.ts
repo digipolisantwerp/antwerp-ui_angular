@@ -46,7 +46,7 @@ this.dateForm = this.fb.group({
 	<div class="a-input has-icon-right" [ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}">
 		<label class="a-input__label" for="input-datepicker">Pick a date</label>
 		<aui-datepicker
-			id="input-datepicker"
+			data-id="input-datepicker"
 			name="input-datepicker"
 			autocomplete="off"
 			placeholder="dd/mm/jjjj"

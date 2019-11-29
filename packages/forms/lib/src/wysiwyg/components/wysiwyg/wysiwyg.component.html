@@ -3,7 +3,9 @@
 		[(ngModel)]="ckeditorContent"
 		[config]="ckeditorConfig"
 		[debounce]="debounce"
-		(ngModelChange)="writeValue($event)"
+		(change)="writeValue($event)"
 		[readonly]="isDisabled"
+		(focus)="onFocus($event)"
+		(blur)="onBlur($event)"
 	></ckeditor>
 </div>

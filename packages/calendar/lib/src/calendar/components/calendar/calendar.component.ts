@@ -1,5 +1,6 @@
 import {
 	Component,
+	HostBinding,
 	Inject,
 	Input,
 	Output,
@@ -33,6 +34,20 @@ import { CalendarService } from '../../services/calendar.service';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarComponent implements OnInit, OnChanges {
+	@HostBinding('attr.role') role = 'application';
+	@HostBinding('attr.aria-hidden') ariahidden = 'false';
+
+	@Input() ariaPreviousLabels = [
+		'Ga naar vorige maand',
+		'Ga naar vorig jaar',
+		'Ga naar vorige 12 jaren',
+	];
+	@Input() ariaNextLabels = [
+		'Ga naar volgende maand',
+		'Ga naar volgend jaar',
+		'Ga naar volgende 12 jaren',
+	];
+
 	@Input() selectedDate: Date;
 	@Input() range: DateRange;
 	@Input() weekdayLabels: WeekdayLabelsConfig;
@@ -45,6 +60,8 @@ export class CalendarComponent implements OnInit, OnChanges {
 	public activeDate: Date;
 	public activeView: string = CALENDAR_VIEW_MONTH;
 	public headerLabel = '';
+	public ariaPreviousLabel = this.ariaPreviousLabels[0];
+	public ariaNextLabel = this.ariaNextLabels[0];
 
 	constructor(
 		@Inject(CALENDAR_MONTH_LABELS) public moduleMonthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
@@ -52,7 +69,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 		private calendarService: CalendarService
 	) {}
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.initControl();
 	}
 
@@ -123,13 +140,19 @@ export class CalendarComponent implements OnInit, OnChanges {
 		switch (this.activeView) {
 			case CALENDAR_VIEW_MONTH:
 				this.headerLabel = this.monthLabels[this.activeDate.getMonth()] + ' ' + this.activeDate.getFullYear();
+				this.ariaPreviousLabel = this.ariaPreviousLabels[0];
+				this.ariaNextLabel = this.ariaNextLabels[0];
 				break;
 			case CALENDAR_VIEW_YEAR:
 				this.headerLabel = String(this.activeDate.getFullYear());
+				this.ariaPreviousLabel = this.ariaPreviousLabels[1];
+				this.ariaNextLabel = this.ariaNextLabels[1];
 				break;
 			case CALENDAR_VIEW_DECENNIA:
 				const startYear = this.activeDate.getFullYear();
 				this.headerLabel = `${startYear} - ${startYear + 11}`;
+				this.ariaPreviousLabel = this.ariaPreviousLabels[2];
+				this.ariaNextLabel = this.ariaNextLabels[2];
 				break;
 		}
 	}

@@ -19,6 +19,9 @@ import {
 @Component({
 	selector: 'aui-wysiwyg',
 	templateUrl: './wysiwyg.component.html',
+	styleUrls: [
+		'./wysiwyg.component.scss',
+	],
 	providers: [{
 		provide: NG_VALUE_ACCESSOR,
 		useExisting: forwardRef(() => WysiwygComponent), // tslint:disable-line:no-forward-ref
@@ -31,13 +34,13 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
 	@Input() additionalStyling: string[];
 	@Input() availableTags: string;
 	@Input() basic = false;
-	@Input() placeholder: string;
 	@Input() uiColour: string;
+	@Input() customConfig: any;
 	@Input() debounce: number;
 
-	@Input() customConfig: any;
-
 	@Output() emitContent: EventEmitter<string> = new EventEmitter();
+	@Output() focus: EventEmitter<string> = new EventEmitter();
+	@Output() blur: EventEmitter<string> = new EventEmitter();
 
 	public ckeditorContent: string;
 	public ckeditorConfig = WYSIWYG_DEFAULT_CONFIG;
@@ -52,6 +55,14 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
 		this.emitContent.emit(this.ckeditorContent);
 	}
 
+	public onFocus(value: string): void {
+		this.focus.emit(value);
+	}
+
+	public onBlur(value: string): void {
+		this.blur.emit(value);
+	}
+
 	public registerOnChange(onChange: Function): void {
 		this.updateModel = onChange;
 	}
@@ -64,10 +75,6 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
 
 	public ngOnInit() {
 		this.setConfig();
-
-		if (!this.ckeditorContent) {
-			this.ckeditorContent = this.placeholder;
-		}
 	}
 
 	private setConfig(): void {

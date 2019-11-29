@@ -76,7 +76,7 @@ public toggleAmount() { this.toggle = !this.toggle; }
 ```
 
 ```html
-<button class="a-button" (click)="toggleAmount()">Toggle amount</button>
+<button type="button" class="a-button" (click)="toggleAmount()">Toggle amount</button>
 
 {{ pluralizeMail | pluralizeLabel:amount.value }}
 ```

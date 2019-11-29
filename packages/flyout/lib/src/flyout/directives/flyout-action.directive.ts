@@ -14,10 +14,12 @@ import { isEvent } from '../utils/event';
 })
 export class FlyoutActionDirective implements OnInit, OnDestroy {
 	@HostBinding('class.aui-flyout-action') class = true;
-	@HostBinding('attr.tabindex') tabindex = '0';
-	@HostBinding('attr.role') role = 'button';
+	@HostBinding('attr.tabindex') get tabIndex() {
+		return this.disabled ? '-1' : '0';
+	}
 
 	@Input() public openOnFocus = true;
+	@Input() public disabled: string;
 
 	private isPlatformBrowser: boolean;
 	private destroyed$ = new Subject<boolean>();

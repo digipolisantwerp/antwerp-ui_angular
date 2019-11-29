@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ContextService } from '@acpaas-ui/ngx-components/context';
 
@@ -8,7 +8,7 @@ import { ContextService } from '@acpaas-ui/ngx-components/context';
 		ContextService,
 	],
 })
-export class ContextDemoPageComponent implements OnInit {
+export class ContextDemoPageComponent implements OnInit, OnDestroy {
 	constructor(private contextService: ContextService, private meta: Meta, private titleService: Title) {}
 
 	public importModule = `import { ContextModule } from '@acpaas-ui/ngx-components/context';
@@ -39,7 +39,7 @@ export class ContextDemoPageComponent implements OnInit {
 		data: {
 			meta: {
 				page: 'Context example page',
-				title: 'Context example',
+				title: 'Context',
 				description: 'Description of the context example page',
 				metatags: 'ACPaaS UI, Angular, context',
 			},
@@ -74,8 +74,14 @@ export class ContextDemoPageComponent {
 		this.pageTitle = this.titleService.getTitle();
 	}
 
-	ngOnInit() {
+	public ngOnInit() {
 		this.pageTitle = this.titleService.getTitle();
 		this.pageDescription = this.meta.getTag('name = "description"').content;
+	}
+
+	ngOnDestroy() {
+		this.contextService.updateContext({
+			title: 'ACPaaS UI Angular',
+		});
 	}
 }

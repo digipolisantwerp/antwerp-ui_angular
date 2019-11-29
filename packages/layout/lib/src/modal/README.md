@@ -34,10 +34,35 @@ export class AppModule {};
 
 ```typescript
 // Controller code
+constructor(
+    private modalService: ModalService
+) {}
+
+public openModal() {
+    this.modalService.openModal(
+        AUIDemoModalComponent,
+        {
+            title: 'Modal demo',
+            text: 'Are you sure you want to see a demo of this modal?',
+        }, {
+            confirm: () => this.doSomething(),
+        }
+    );
+}
+
+private doSomething() {
+    return new Promise((resolve, reject) => {
+        return resolve();
+    });
+}
 ```
 
 ```html
 <!-- HTML code -->
+<button type="button" class="a-button"
+    (click)="openModal()">
+    Open modal
+</button>
 ```
 
 ## Contributing

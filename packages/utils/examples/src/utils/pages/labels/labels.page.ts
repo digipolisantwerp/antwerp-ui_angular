@@ -76,7 +76,7 @@ public remainingMessages = {
 
 	public codeExampleHTML2 = `<span [innerHTML]="interpolateMessage | interpolateLabel:interpolateString "></span>`;
 
-	public codeExampleHTML3 = `<button class="a-button" (click)="toggleAmount()">Toggle amount</button>
+	public codeExampleHTML3 = `<button type="button" class="a-button" (click)="toggleAmount()">Toggle amount</button>
 
 {{ pluralizeMail | pluralizeLabel:amount.value }}`;
 

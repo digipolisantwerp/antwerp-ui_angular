@@ -6,18 +6,27 @@ import { Uploader } from '../../classes/uploader.class';
 
 @Component({
 	selector: 'aui-upload',
+	styleUrls: [
+		'./upload.component.scss',
+	],
 	templateUrl: './upload.component.html',
 })
 export class UploadComponent implements OnInit {
+	@Input() public id = '';
+	@Input() public ariaLabelRemove = 'Verwijder';
 	@Input() public options: UploadOptions = UPLOAD_OPTIONS_DEFAULT;
 	@Output() public selectUploadedFiles: EventEmitter<Object[]> = new EventEmitter<Object[]>();
 
 	public uploader;
+	public ariaId;
 	public uploadedFiles: Object[] = [];
 	public invalidFiles: InvalidFile[] = [];
 	public queuedFiles: File[] = [];
 
-	ngOnInit() {
+	public ngOnInit() {
+		if (!this.id) {
+			this.ariaId = 'aui-upload-' + Math.random().toString(36).substring(2);
+		}
 		this.uploader = new Uploader(this.options);
 	}
 

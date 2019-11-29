@@ -20,6 +20,20 @@ This library is part of [ACPaaS UI][acpaas-ui].
 
 ## Getting Started
 
+### Building packages
+
+The following will build `<packagename>` and its example.
+
+```sh
+example=<packagename> npm run build:package
+```
+
+For example:
+
+```sh
+example=forms npm run build:package
+```
+
 Start a new Angular app.
 
 ```sh
@@ -32,7 +46,7 @@ npm install @acpaas-ui/ngx-components
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-@import url('https://cdn.antwerpen.be/core_branding_scss/3.2.2/main.min.css');
+@import url('https://cdn.antwerpen.be/core_branding_scss/4.0.0/main.min.css');
 ```
 
 You can also modify `index.html` to reference the [favicons for the city of Antwerp][branding-favicons].

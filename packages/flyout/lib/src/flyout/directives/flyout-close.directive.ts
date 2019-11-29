@@ -8,7 +8,6 @@ import { isEvent } from '../utils/event';
 	exportAs: 'auiFlyoutClose',
 })
 export class FlyoutCloseDirective {
-	@HostBinding('attr.role') role = 'button';
 
 	constructor(
 		@Host() public flyout: FlyoutDirective

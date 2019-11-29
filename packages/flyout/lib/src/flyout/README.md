@@ -38,10 +38,10 @@ export class AppModule {};`
 
 ```html
 <div auiFlyout size="small" align="left">
-    <button auiFlyoutAction>Open flyout</button>
+    <button type="button" auiFlyoutAction>Open flyout</button>
     <div auiFlyoutZone>
         <p>Hello world!</p>
-        <button auiFlyoutClose>Close flyout</button>
+        <button type="button" auiFlyoutClose>Close flyout</button>
     </div>
 </div>
 ```
@@ -94,7 +94,7 @@ The content inside the html element or component with this directive will be dis
 
 ```html
 <div auiFlyout size="small" align="right">
-    <button class="button" auiFlyoutAction>Welcome Jasper</button>
+    <button type="button" class="button" auiFlyoutAction>Welcome Jasper</button>
     <user-card auiFlyoutZone></user-card>
 </div>
 ```

@@ -11,15 +11,19 @@ import { ModalAbstract } from '../../classes/modal.abstract';
 @Component({
 	selector: 'aui-modal-overlay',
 	template: `
-        <div class="m-overlay__inner">
+        <section class="m-overlay__inner">
             <ng-content></ng-content>
-        </div>
+        </section>
     `,
 })
 export class ModalOverlayComponent {
 	public theme = 'dark';
+	public title = 'Modal';
 	@HostBinding('class') public get overlayClass() {
 		return `m-overlay m-overlay--${this.theme} is-active`;
+	}
+	@HostBinding('attr.aria-label') public get ariaLabel() {
+		return this.title;
 	}
 
 	private modal: ComponentRef<ModalAbstract>;

@@ -30,17 +30,20 @@ public onClose() {
 	this.pane = 'closed';
 }`;
 
-	public pane3 = `<button class="a-button" (click)="myPane.togglePane()">Toggle pane</button>
-<button class="a-button" (click)="myPane.openPane()">Open pane</button>
+	public pane3 = `<button class="a-button" (click)="myPane.togglePane()" [attr.aria-controls]="myPane.id" [attr.aria-expanded]="myPane.opened">Toggle pane</button>
+<button class="a-button" (click)="myPane.openPane()" [attr.aria-controls]="myPane.id" [attr.aria-expanded]="myPane.opened">Open pane</button>
 <p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
 <aui-pane #myPane
+	data-id="demoPane"
 	[side]="'left'"
+	[ariaLabel]="'Demo pane'"
+	[ariaLabelClose]="'Close pane'"
 	[opened]="opened"
 	[backdrop]="backdrop"
 	(open)="onOpen()"
 	(close)="onClose()">
     Pane content
-	<button class="a-button" (click)="myPane.closePane()">Close pane</button>
+	<button type="button" class="a-button" (click)="myPane.closePane()">Close pane</button>
 </aui-pane>`;
 
 	public onOpen() {
