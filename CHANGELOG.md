@@ -44,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 - [BREAKING] `logo` Fixed routing and click events on logo.
 - `forms` Fixed an overlapping issue in the range slider.
+- `layout` Fixed an issue where the modal would be closed when a click event started inside the modal but ended outside.
 
 ### Notes
 - `forms` WCAG support could be improved: https://github.com/RobinHerbots/Inputmask/issues/981
