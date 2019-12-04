@@ -7,7 +7,7 @@ export class FormsWysiwygDemoPageComponent {
 	public contents = '<p>Type some rich text here</p>';
 	public isDisabled = false;
 
-	public wysiwygImportExample = `import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
+	public wysiwygImportExample1 = `import { WysiwygModule } from '@acpaas-ui/ngx-components/forms';
 	@NgModule({
 		imports: [
 			WysiwygModule,
