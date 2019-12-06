@@ -1,0 +1,23 @@
+@import '~@a-ui/core/dist/assets/styles/_quarks';
+
+.a-button-avatar {
+	padding-left: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+	padding-bottom: 0;
+	.a-avatar {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: center;
+		position: relative;
+		overflow:visible;
+		.a-badge {
+			position: absolute;
+			bottom: -$badge-height/2;
+		}
+	}
+
+}

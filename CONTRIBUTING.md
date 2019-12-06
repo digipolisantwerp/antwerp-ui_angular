@@ -70,6 +70,25 @@ $ npm run examples
 $ npm run styleguide
 ```
 
+## Using Docker
+
+Aditionally to running this project locally, the repostitory also offers you the option to develop using Docker containers.
+To start your service, execute:
+
+```sh
+docker-compose build
+docker-compose up -d
+```
+
+When the service is up, use following commands to execute bash inside your container:
+
+```sh
+docker ps
+docker exec -it ${YOUR_CONTAINER_ID} /bin/bash
+```
+
+From there you can run all necessary npm commands for development.
+
 ## Project Structure
 
 - `dist`: contains the build output for the components

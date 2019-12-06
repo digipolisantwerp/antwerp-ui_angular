@@ -1,3 +1,107 @@
-<h1>UserMenu demo</h1>
+<h2 class="h3 u-margin-bottom">User Menu</h2>
 
-<!-- demo the component here -->
+<h3 class="u-margin-bottom-xs">Demo</h3>
+
+<p class="u-text-bold u-margin-bottom">
+	The User Menu component can be used on a webpage to provide visual login and logout buttons.
+	If logged out, the component displays a single button enabling the user to login.
+	If logged in, the component provides an avatar button, displaying a flyout where a logout button is featured.
+</p>
+<p class="u-margin-bottom">
+	This component uses <strong>content projection</strong> inside it's tag, meaning whatever html is included
+	between the <code>aui-user-menu</code> tag will be inserted in the flyout section. The logout button is displayed
+	by default but can be disabled if you wish to implement your custom logout button.
+</p>
+<div class="u-margin-bottom">
+	<p>Two output events may be used to hook to login or logout functionality to the interface:</p>
+	<ul>
+		<li><code>login$</code></li>
+		<li><code>logout$</code></li>
+	</ul>
+	<strong>You are responsible for providing login and logout callback functionality, this component only provides
+		visuals</strong>
+</div>
+<div class="u-margin-bottom">
+	<aui-user-menu (login$)="loginUser()"></aui-user-menu>
+</div>
+<div class="u-margin-bottom">
+	<aui-user-menu [loggedIn]="true" [user]="mockUser" flyoutSize="Medium" [notificationsCount]="100"
+		(logout$)="logoutUser()">
+		<div class="u-margin-lg u-text-center">
+			Your Content Here
+		</div>
+	</aui-user-menu>
+</div>
+
+<h3 class="u-margin-bottom-xs">Usage</h3>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="importModuleSnippet"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="useComponentTagSnippet"></aui-code-snippet>
+</div>
+
+<table class="a-table a-table--primary u-margin-bottom">
+	<tr>
+		<th>Input</th>
+		<th>Type</th>
+		<th>Required</th>
+		<th>Default Value</th>
+	</tr>
+	<tr>
+		<td>loggedIn</td>
+		<td><code>boolean</code></td>
+		<td>Yes</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td>user</td>
+		<td><code>UserMenu.IUser</code></td>
+		<td>Yes, if logged in</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>direction</td>
+		<td>string: <code>'right' | 'left'</code></td>
+		<td>-</td>
+		<td><code>'right'</code></td>
+	</tr>
+	<tr>
+		<td>flyoutSize</td>
+		<td><code>Flyout.EFlyoutSize</code></td>
+		<td>-</td>
+		<td><code>FlyoutSize.Small</code></td>
+	</tr>
+	<tr>
+		<td>notificationsCount</td>
+		<td><code>number</code></td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>showLogoutButton</td>
+		<td><code>boolean</code></td>
+		<td>-</td>
+		<td><code>true</code></td>
+	</tr>
+</table>
+<table class="a-table a-table--primary u-margin-bottom-xx">
+	<tr>
+		<th>Output</th>
+		<th>Type</th>
+		<th>Required</th>
+		<th>Default Value</th>
+	</tr>
+	<tr>
+		<td>logout$</td>
+		<td><code>EventEmitter&lt;void&gt;</code></td>
+		<td>-</td>
+		<td><code>EventEmitter&lt;void&gt;</code></td>
+	</tr>
+	<tr>
+		<td>login$</td>
+		<td><code>EventEmitter&lt;void&gt;</code></td>
+		<td>-</td>
+		<td><code>EventEmitter&lt;void&gt;</code></td>
+	</tr>
+</table>

@@ -4,7 +4,9 @@ services:
         build: 
             context: .
             dockerfile: Dockerfile
-        command: npm run start:docker
+        command: bash
+        stdin_open: true
+        tty: false
         ports:
             - 4200:4200
         volumes:
