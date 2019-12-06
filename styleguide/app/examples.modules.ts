@@ -13,6 +13,7 @@ import { PaginationExamplesModule } from '@acpaas-ui/ngx-examples/pagination';
 import { ProgressBarExamplesModule } from '@acpaas-ui/ngx-examples/progress-bar';
 import { SelectableListExamplesModule } from '@acpaas-ui/ngx-examples/selectable-list';
 import { TableExamplesModule } from '@acpaas-ui/ngx-examples/table';
+import { UserMenuExamplesModule } from '@acpaas-ui/ngx-examples/user-menu';
 import { UtilsExamplesModule } from '@acpaas-ui/ngx-examples/utils';
 
 export const ExamplesModules = [
@@ -31,5 +32,6 @@ export const ExamplesModules = [
 	ProgressBarExamplesModule,
 	SelectableListExamplesModule,
 	TableExamplesModule,
+	UserMenuExamplesModule,
 	UtilsExamplesModule,
 ];

@@ -3,7 +3,6 @@ FROM node:8
 COPY . /code
 WORKDIR /code
 
-RUN npm ci
-RUN npm run bootstrap
+RUN npm i
 
-CMD ["npm run build"]
+CMD ["npm run bootstrap && npm run build"]
