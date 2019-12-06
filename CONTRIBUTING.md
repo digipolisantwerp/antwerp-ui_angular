@@ -95,7 +95,6 @@ From there you can run all necessary npm commands for development.
 - `examples`: contains the build output for the examples
 - `packages`: the component sources
     - `some-package/`: sources for a component package (one or more components)
-        - Use `npm run package some-other-package` to create a new package folder
         - `lib/src/some-component/`: sources for a component
         - `examples/`: examples (documentation) as shown in the styleguide app
         - `package.json`: dependencies needed by this package
@@ -104,6 +103,11 @@ From there you can run all necessary npm commands for development.
 - `styleguide`: sources for the examples web app (but not the actual examples)
 
 [github-issues]: https://github.com/digipolisantwerp/acpaas-ui_angular/issues
+
+## Creating New Packages
+
+Use `npm run package some-other-package` to create a new package folder.
+After making changes to your package, you should run `example=some-other-pacjage npm run build:package` to see your changes.
 
 ## Releases
 
