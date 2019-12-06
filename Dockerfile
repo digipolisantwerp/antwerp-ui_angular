@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:8-alpine
 
 COPY . /code
 WORKDIR /code
@@ -6,9 +6,21 @@ WORKDIR /code
 RUN npm i
 
 # Install Chrome
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
+# Add chromium and all necessary tools to run chrome headless browser (used for front-end testing)
+RUN apk -U --no-cache \
+	--allow-untrusted add \
+    zlib-dev \
+    chromium \
+    xvfb \
+    wait4ports \
+    xorg-server \
+    dbus \
+    ttf-freefont \
+    mesa-dri-swrast \
+    grep \
+    udev
 
-ENV CHROME_BIN=/usr/bin/google-chrome
+ENV CHROME_BIN=/usr/bin/chromium-browser
+ENV CHROME_PATH=/usr/lib/chromium/
 
 CMD ["npm run bootstrap && npm run build"]

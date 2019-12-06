@@ -25,7 +25,7 @@
 			<div auiFlyoutZone>
 				<!-- By using Content Projection, whatever the user iserts in the html tag of this component will get rendered in the flyout element -->
 				<ng-content></ng-content>
-				<button *ngIf="showLogoutButton" class='a-button a-button--danger a-button--block has-icon-left' (click)="logout$.next()" auiFlyoutClose>
+				<button *ngIf="showLogoutButton" class='a-button-logout a-button a-button--danger a-button--block has-icon-left' (click)="logout$.next()" auiFlyoutClose>
 					<span class="fa fa-power-off"></span>
 						Afmelden
 				</button>
