@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Added
+- `aui-user-menu` component was created
+- Docker configuration was added for local development
+
 ## [3.0.0] - 2019-11-29
 
 ### Changed
