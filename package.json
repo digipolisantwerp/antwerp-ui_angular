@@ -16,6 +16,7 @@
     "bootstrap": "node scripts/bootstrap.js",
     "package": "node scripts/generate/package.js",
     "styleguide": "./node_modules/.bin/ng serve styleguide",
+    "start:docker": "ng serve styleguide --host=0.0.0.0",
     "prestart": "npm run bootstrap && npm run build && npm run examples",
     "start": "npm run styleguide",
     "ng": "./node_modules/.bin/ng",
