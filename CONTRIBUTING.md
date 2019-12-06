@@ -3,11 +3,13 @@
 Hi! We're really excited that you are interested in contributing to ACPaaS UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
 - [ACPaaS UI Contributing Guide](#acpaas-ui-contributing-guide)
-    - [Issue Reporting Guidelines](#issue-reporting-guidelines)
-    - [Pull Request Guidelines](#pull-request-guidelines)
-    - [Development Setup](#development-setup)
-    - [Project Structure](#project-structure)
-    - [Releases](#releases)
+  - [Issue Reporting Guidelines](#issue-reporting-guidelines)
+  - [Pull Request Guidelines](#pull-request-guidelines)
+  - [Development Setup](#development-setup)
+  - [Using Docker](#using-docker)
+  - [Project Structure](#project-structure)
+  - [Creating New Packages](#creating-new-packages)
+  - [Releases](#releases)
 
 ## Issue Reporting Guidelines
 
@@ -72,7 +74,7 @@ $ npm run styleguide
 
 ## Using Docker
 
-Aditionally to running this project locally, the repostitory also offers you the option to develop using Docker containers.
+Aditionally to running this project locally, the repository also offers you the option to develop using Docker containers.
 To start your service, execute:
 
 ```sh
@@ -84,7 +86,7 @@ When the service is up, use following commands to execute bash inside your conta
 
 ```sh
 docker ps
-docker exec -it ${YOUR_CONTAINER_ID} /bin/bash
+docker exec -it ${YOUR_CONTAINER_ID} sh
 ```
 
 From there you can run all necessary npm commands for development.
@@ -107,7 +109,7 @@ From there you can run all necessary npm commands for development.
 ## Creating New Packages
 
 Use `npm run package some-other-package` to create a new package folder.
-After making changes to your package, you should run `example=some-other-pacjage npm run build:package` to see your changes.
+After making changes to your package, you should run `example=some-other-package npm run build:package` to see your changes.
 
 ## Releases
 
