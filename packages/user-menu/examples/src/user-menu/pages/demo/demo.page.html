@@ -1,4 +1,4 @@
-<h2 class="h3 u-margin-bottom">User Menu</h2>
+<h2 class="u-margin-bottom">User Menu</h2>
 
 <h3 class="u-margin-bottom-xs">Demo</h3>
 
@@ -22,10 +22,10 @@
 		visuals</strong>
 </div>
 <div class="u-margin-bottom">
-	<aui-user-menu (login$)="loginUser()"></aui-user-menu>
+	<aui-user-menu [translations]="translations" (login$)="loginUser()"></aui-user-menu>
 </div>
 <div class="u-margin-bottom">
-	<aui-user-menu [user]="mockUser" flyoutSize="Medium" [notificationsCount]="100"
+	<aui-user-menu [translations]="translations" [user]="mockUser" flyoutSize="Medium" [notificationsCount]="100"
 		(logout$)="logoutUser()">
 		<div class="u-margin-lg u-text-center">
 			Your Content Here
@@ -39,6 +39,9 @@
 </div>
 <div class="u-margin-bottom">
 	<aui-code-snippet [codeSnippet]="useComponentTagSnippet"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="componentInputs"></aui-code-snippet>
 </div>
 
 <table class="a-table a-table--primary u-margin-bottom">
@@ -77,6 +80,12 @@
 		<td><code>boolean</code></td>
 		<td>-</td>
 		<td><code>true</code></td>
+	</tr>
+	<tr>
+		<td>translations</td>
+		<td><code>UserMenu.ITranslations</code></td>
+		<td>-</td>
+		<td>EN labels</td>
 	</tr>
 </table>
 <table class="a-table a-table--primary u-margin-bottom-xx">

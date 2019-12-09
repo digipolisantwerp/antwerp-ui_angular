@@ -6,4 +6,10 @@ export declare namespace UserMenu {
 		lastName: string;
 		avatarUrl?: uri;
 	}
+	export interface ITranslations {
+		login: string;
+		logout: string;
+		loginAlt: string;
+		logoutAlt: string;
+	}
 }

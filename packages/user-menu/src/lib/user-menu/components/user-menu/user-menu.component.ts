@@ -18,6 +18,13 @@ export class UserMenuComponent {
 	notificationsCount: number = null;
 	@Input()
 	showLogoutButton = true;
+	@Input()
+	translations: UserMenu.ITranslations = {
+		login: 'Aanmelden',
+		logout: 'Afmelden',
+		loginAlt: 'Klik hier om aan te melden met uw A-profiel',
+		logoutAlt: 'Klik hier om af te melden',
+	};
 
 	@Output()
 	logout$: EventEmitter<void> = new EventEmitter();

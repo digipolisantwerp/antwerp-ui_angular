@@ -1,10 +1,10 @@
 <div class="m-user-menu-container">
 	<!-- Container showing the login button -->
 	<ng-container *ngIf="!user">
-		<button class="a-button a-button-login has-icon-left" title="Aanmelden"
-			alt="Klik hier om aan te melden met uw A-profiel" (click)="login$.next()">
+		<button class="a-button a-button-login has-icon-left" [attr.aria-label]="translations.login"
+			[attr.alt]="translations.loginAlt" (click)="login$.next()">
 			<span class="fa fa-user"></span>
-				Aanmelden
+			{{ translations.login }}
 		</button>
 	</ng-container>
 
@@ -25,9 +25,11 @@
 			<div auiFlyoutZone>
 				<!-- By using Content Projection, whatever the user iserts in the html tag of this component will get rendered in the flyout element -->
 				<ng-content></ng-content>
-				<button *ngIf="showLogoutButton" class='a-button-logout a-button a-button--danger a-button--block has-icon-left' (click)="logout$.next()" auiFlyoutClose>
+				<button *ngIf="showLogoutButton"
+					class='a-button-logout a-button a-button--danger a-button--block has-icon-left'
+					(click)="logout$.next()" auiFlyoutClose [attr.aria-label]="translations.logout" [attr.alt]="translations.logoutAlt">
 					<span class="fa fa-power-off"></span>
-						Afmelden
+					{{ translations.logout }}
 				</button>
 			</div>
 		</div>
