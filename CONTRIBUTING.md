@@ -3,11 +3,13 @@
 Hi! We're really excited that you are interested in contributing to ACPaaS UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
 - [ACPaaS UI Contributing Guide](#acpaas-ui-contributing-guide)
-    - [Issue Reporting Guidelines](#issue-reporting-guidelines)
-    - [Pull Request Guidelines](#pull-request-guidelines)
-    - [Development Setup](#development-setup)
-    - [Project Structure](#project-structure)
-    - [Releases](#releases)
+  - [Issue Reporting Guidelines](#issue-reporting-guidelines)
+  - [Pull Request Guidelines](#pull-request-guidelines)
+  - [Development Setup](#development-setup)
+  - [Using Docker](#using-docker)
+  - [Project Structure](#project-structure)
+  - [Creating New Packages](#creating-new-packages)
+  - [Releases](#releases)
 
 ## Issue Reporting Guidelines
 
@@ -70,13 +72,31 @@ $ npm run examples
 $ npm run styleguide
 ```
 
+## Using Docker
+
+Additionally to running this project locally, the repository also offers you the option to develop using Docker containers.
+To start your service, execute:
+
+```sh
+docker-compose build
+docker-compose up -d
+```
+
+When the service is up, use following commands to execute bash inside your container:
+
+```sh
+docker ps
+docker exec -it ${YOUR_CONTAINER_ID} sh
+```
+
+From there you can run all necessary npm commands for development.
+
 ## Project Structure
 
 - `dist`: contains the build output for the components
 - `examples`: contains the build output for the examples
 - `packages`: the component sources
     - `some-package/`: sources for a component package (one or more components)
-        - Use `npm run package some-other-package` to create a new package folder
         - `lib/src/some-component/`: sources for a component
         - `examples/`: examples (documentation) as shown in the styleguide app
         - `package.json`: dependencies needed by this package
@@ -85,6 +105,11 @@ $ npm run styleguide
 - `styleguide`: sources for the examples web app (but not the actual examples)
 
 [github-issues]: https://github.com/digipolisantwerp/acpaas-ui_angular/issues
+
+## Creating New Packages
+
+Use `npm run package some-other-package` to create a new package folder.
+After making changes to your package, you should run `example=some-other-package npm run build:package` to see your changes.
 
 ## Releases
 

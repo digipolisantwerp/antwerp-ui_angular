@@ -844,6 +844,50 @@
           }
         }
       }
+    },
+    "user-menu": {
+      "root": "packages/user-menu",
+      "sourceRoot": "packages/user-menu/src",
+      "projectType": "library",
+      "prefix": "aui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/user-menu/tsconfig.lib.json",
+            "project": "packages/user-menu/ng-package.json"
+          },
+          "configurations": {
+            "examples": {
+              "project": "packages/user-menu/examples/ng-package.json",
+              "tsConfig": "packages/user-menu/examples/tsconfig.json"
+            },
+            "production": {
+              "project": "packages/user-menu/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/user-menu/src/test.ts",
+            "tsConfig": "packages/user-menu/tsconfig.spec.json",
+            "karmaConfig": "packages/user-menu/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/user-menu/tsconfig.lib.json",
+              "packages/user-menu/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "styleguide",

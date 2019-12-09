@@ -10,3 +10,7 @@ export enum FlyoutState {
 	OPEN,
 	CLOSED,
 }
+
+export declare namespace Flyout {
+	export type EFlyoutSize = FlyoutSize;
+}
