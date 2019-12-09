@@ -858,6 +858,8 @@ MIT
 
 @acpaas-ui/ngx-examples/table
 
+@acpaas-ui/ngx-examples/user-menu
+
 @acpaas-ui/ngx-components/utils
 
 @acpaas-ui/ngx-examples/utils
@@ -909,6 +911,8 @@ SOFTWARE.
 @acpaas-ui/ngx-components/localstorage
 
 @acpaas-ui/ngx-components/pagination
+
+@acpaas-ui/ngx-components/user-menu
 
 @esri/arcgis-to-geojson-utils
 Apache-2.0
