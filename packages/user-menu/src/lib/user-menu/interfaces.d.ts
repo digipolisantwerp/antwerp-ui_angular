@@ -9,7 +9,6 @@ export declare namespace UserMenu {
 	export interface ITranslations {
 		login: string;
 		logout: string;
-		loginAlt: string;
-		logoutAlt: string;
+		userAvatar: string;
 	}
 }

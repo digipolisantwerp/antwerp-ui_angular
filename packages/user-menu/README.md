@@ -49,9 +49,8 @@ public mockUser: UserMenu.IUser = {
 	};
 public translations: UserMenu.ITranslations = {
     login: 'Login',
-    loginAlt: 'Click here to login',
     logout: 'Logout',
-    logoutAlt: 'Click here to logout'
+    userAvatar: 'User avatar',
 };
 public logoutUser(){
     alert('User is logged out!');

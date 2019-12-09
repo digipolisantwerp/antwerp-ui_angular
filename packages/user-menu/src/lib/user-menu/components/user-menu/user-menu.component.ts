@@ -22,8 +22,7 @@ export class UserMenuComponent {
 	translations: UserMenu.ITranslations = {
 		login: 'Aanmelden',
 		logout: 'Afmelden',
-		loginAlt: 'Klik hier om aan te melden met uw A-profiel',
-		logoutAlt: 'Klik hier om af te melden',
+		userAvatar: 'Gebruiker avatar',
 	};
 
 	@Output()

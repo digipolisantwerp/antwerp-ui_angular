@@ -2,7 +2,7 @@
 	<!-- Container showing the login button -->
 	<ng-container *ngIf="!user">
 		<button class="a-button a-button-login has-icon-left" [attr.aria-label]="translations.login"
-			[attr.alt]="translations.loginAlt" (click)="login$.next()">
+			(click)="login$.next()">
 			<span class="fa fa-user"></span>
 			{{ translations.login }}
 		</button>
@@ -13,9 +13,10 @@
 		<div auiFlyout class="m-user-menu-flyout" [attr.size]="flyoutSize" [attr.data-align]="direction">
 			<button class="a-button primary a-button-avatar" auiFlyoutAction>
 				<span class="a-avatar u-margin-right-xs">
-					<img *ngIf="user?.avatarUrl" [src]="user?.avatarUrl" alt="Gebruiker Avatar" />
+					<img *ngIf="user?.avatarUrl" [src]="user?.avatarUrl" [attr.alt]="translations.userAvatar" />
 					<span *ngIf="!(user?.avatarUrl)" class="a-avatar__icon">
-						<span class="fa fa-user"><span class="u-screen-reader-only">User icon</span></span>
+						<span class="fa fa-user"><span
+								class="u-screen-reader-only">{{ translations.userAvatar }}</span></span>
 					</span>
 					<span class="a-badge a-badge--warning"
 						*ngIf="notificationsCount > 0">{{ !notificationsCount ? 0 : notificationsCount }}</span>
@@ -27,7 +28,7 @@
 				<ng-content></ng-content>
 				<button *ngIf="showLogoutButton"
 					class='a-button-logout a-button a-button--danger a-button--block has-icon-left'
-					(click)="logout$.next()" auiFlyoutClose [attr.aria-label]="translations.logout" [attr.alt]="translations.logoutAlt">
+					(click)="logout$.next()" auiFlyoutClose [attr.aria-label]="translations.logout">
 					<span class="fa fa-power-off"></span>
 					{{ translations.logout }}
 				</button>
