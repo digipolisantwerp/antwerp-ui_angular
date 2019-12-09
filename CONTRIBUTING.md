@@ -74,7 +74,7 @@ $ npm run styleguide
 
 ## Using Docker
 
-Aditionally to running this project locally, the repository also offers you the option to develop using Docker containers.
+Additionally to running this project locally, the repository also offers you the option to develop using Docker containers.
 To start your service, execute:
 
 ```sh

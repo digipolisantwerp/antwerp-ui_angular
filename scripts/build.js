@@ -9,9 +9,20 @@ const buildPackage = require('./helpers/build');
 const exec = require('./helpers/bash');
 
 const directories = getDirectories(resolve(process.cwd(), 'packages'));
-const configs = directories.map(directory => readFileSync(resolve(`${directory}/lib`, 'package.json'), {
-	encoding: 'UTF-8'
-}));
+const configs = directories.map(directory => {
+	try {
+		// We'll first try to read legacy directory structure, under lib
+		return readFileSync(resolve(`${directory}/lib`, 'package.json'), {
+			encoding: 'UTF-8'
+		});
+	} catch (error) {
+		// If that doesn't work, we're most likely dealing with the new Angular 6 structure, where
+		// the package.json file is directly listed under the package directory
+		return readFileSync(resolve(`${directory}`, 'package.json'), {
+			encoding: 'UTF-8'
+		});
+	}
+});
 const localDependencies = getAUIDependencies(configs.reduce((acc, curr) => {
 	const config = JSON.parse(curr);
 	const packageName = config.name.replace('@acpaas-ui/ngx-components/', '');
@@ -28,7 +39,7 @@ promiseQueue(localDependencies.map(package => buildPackage(package)))
 				if (lstatSync(`${process.cwd()}/dist/${package}/examples`).isDirectory()) {
 					exec(`rimraf ${process.cwd()}/dist/${package}/examples`);
 				}
-			} catch(e) {
+			} catch (e) {
 				console.log(colors.green(`No example found for ${package}`));
 			}
 		});

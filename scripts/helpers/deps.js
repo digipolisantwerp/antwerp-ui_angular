@@ -1,4 +1,4 @@
-const { lstatSync, readdirSync, readFileSync } = require('fs');
+const { lstatSync, readdirSync, readFileSync, existsSync } = require('fs');
 const { join, resolve } = require('path');
 const mergePackages = require('@userfrosting/merge-package-dependencies');
 
@@ -43,8 +43,16 @@ module.exports.getNPMDependencies = ({ preserve = false } = {}) => {
 	const isDirectory = source => lstatSync(source).isDirectory();
 	const getDirectories = source => readdirSync(source).map(name => join(source, name)).filter(isDirectory);
 
-	const packages = getDirectories(resolve(process.cwd(), 'packages')).map(path => `${path}/lib/`);
-
+	const packages = getDirectories(resolve(process.cwd(), 'packages')).map(path => {
+		// We'll first try to read the legacy package.json file, under lib
+		if (existsSync(`${path}/lib/`)) {
+			return `${path}/lib/`;
+		// If that doesn't work out, we're most likely dealing with the new Angular 6 structure,
+		// where the package.json file is listed directly under the package directory
+		} else if (existsSync(`${path}/src/`)) {
+			return `${path}/`
+		}
+	});
 	const result = mergePackages.npm(packageJson, packages);
 
 	if (!preserve) {
