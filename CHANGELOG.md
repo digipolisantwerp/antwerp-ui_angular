@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [3.1.0] - 2019-12-09
+
 ### Added
-- `aui-user-menu` component was created
-- Docker configuration was added for local development
+- `user-menu` New component that provides visual login and logout functionality
+- `core` Docker configuration was added for local development
+
 
 ## [3.0.0] - 2019-11-29
 
@@ -236,7 +239,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.6...v3.0.0
 [2.1.6]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.5...v2.1.6
 [2.1.5]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.4...v2.1.5
