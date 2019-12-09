@@ -22,7 +22,7 @@ export class UserMenuDemoPageComponent {
 	`;
 
 	public useComponentTagSnippet: string = `
-	<aui-user-menu [loggedIn]="isLoggedIn" [user]="userObject" flyoutSize="Medium" [notificationsCount]="100"
+	<aui-user-menu [user]="userObject" flyoutSize="Medium" [notificationsCount]="100"
 		(logout$)="logoutUser()" (login$)="loginUser()">
 		<div class="u-margin-lg u-text-center">
 			Your Content Here

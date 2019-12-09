@@ -57,14 +57,12 @@ describe('User Menu Test', () => {
 
 	describe('Loggin Out', () => {
 		it('should display a user avatar button if the user is logged in', () => {
-			component.loggedIn = true;
 			component.user = mockUser;
 			fixture.detectChanges();
 			const userAvatar = fixture.debugElement.nativeElement.querySelector('.a-button-avatar');
 			expect(userAvatar).not.toBeNull();
 		});
 		it('should trigger the output event when the user clicks the logout button', () => {
-			component.loggedIn = true;
 			component.user = mockUser;
 			fixture.detectChanges();
 			const logoutButton = fixture.debugElement.nativeElement.querySelector('.a-button-logout');
@@ -81,12 +79,11 @@ describe('User Menu Test', () => {
 		});
 		it('should not display the logout button if setting is set so', () => {
 			component.showLogoutButton = false;
-			component.loggedIn = true;
 			component.user = mockUser;
 			fixture.detectChanges();
 
 			const logoutButton = fixture.debugElement.nativeElement.querySelector('.a-button.logout');
 			expect(logoutButton).toBeNull();
 		});
-	})
+	});
 });

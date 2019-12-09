@@ -1,6 +1,6 @@
 <div class="m-user-menu-container">
 	<!-- Container showing the login button -->
-	<ng-container *ngIf="!loggedIn">
+	<ng-container *ngIf="!user">
 		<button class="a-button a-button-login has-icon-left" title="Aanmelden"
 			alt="Klik hier om u zich aan te melden met uw A-profiel" (click)="login$.next()">
 			<span class="fa fa-user"></span>
@@ -9,7 +9,7 @@
 	</ng-container>
 
 	<!-- Container with user avatar, actions and logout functionality -->
-	<ng-container *ngIf="loggedIn">
+	<ng-container *ngIf="user">
 		<div auiFlyout class="m-user-menu-flyout" [attr.size]="flyoutSize" [attr.data-align]="direction">
 			<button class="a-button primary a-button-avatar" auiFlyoutAction>
 				<span class="a-avatar u-margin-right-xs">

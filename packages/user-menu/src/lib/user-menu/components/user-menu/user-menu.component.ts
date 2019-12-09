@@ -5,11 +5,9 @@ import { Flyout, FlyoutSize } from '@acpaas-ui/ngx-components/flyout';
 @Component({
 	selector: 'aui-user-menu',
 	templateUrl: './user-menu.component.html',
-	styleUrls: ['./user-menu.component.scss']
+	styleUrls: ['./user-menu.component.scss'],
 })
 export class UserMenuComponent {
-	@Input()
-	loggedIn: boolean = false;
 	@Input()
 	user?: UserMenu.IUser = null;
 	@Input()
@@ -19,7 +17,7 @@ export class UserMenuComponent {
 	@Input()
 	notificationsCount: number = null;
 	@Input()
-	showLogoutButton: boolean = true;
+	showLogoutButton = true;
 
 	@Output()
 	logout$: EventEmitter<void> = new EventEmitter();
