@@ -1,0 +1,21 @@
+<ul class="aui-selectable-list m-selectable-list m-selectable-list--no-border">
+	<li
+		class="m-selectable-list__item"
+		*ngFor="let item of items; let i = index"
+		attr.aria-selected="{{ i === index }}"
+		(click)="selectItem(item)"
+		[ngClass]="i === index ? 'm-selectable-list__item--active' : ''"
+	>
+		<span *ngIf="!template && !itemTemplate" [innerHTML]="formatLabel(item)"></span>
+		<ng-template
+			*ngIf="template"
+			[ngTemplateOutlet]="template"
+			[ngTemplateOutletContext]="{ item: item }"
+		></ng-template>
+		<ng-template
+			*ngIf="itemTemplate"
+			[ngTemplateOutlet]="itemTemplate"
+			[ngTemplateOutletContext]="{ $implicit: item }"
+		></ng-template>
+	</li>
+</ul>

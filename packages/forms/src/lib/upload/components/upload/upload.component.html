@@ -1,9 +1,0 @@
-<div class="aui-upload">
-    <aui-upload-zone [uploader]="uploader" (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" (invalidFiles)="onInvalidFiles($event)">
-        <div class="aui-upload-message"><ng-content select=".aui-upload-message"></ng-content></div>
-        <div class="aui-upload-description"><ng-content select=".aui-upload-description"></ng-content></div>
-        <div class="aui-upload-button"><ng-content select=".aui-upload-button"></ng-content></div>
-    </aui-upload-zone>
-    <aui-validation-list [invalidFiles]="invalidFiles"></aui-validation-list>
-    <aui-upload-queue *ngIf="!options?.autoUpload" [uploader]="uploader" [files]="queuedFiles" (uploadedFiles)="onUploadedFiles($event)"></aui-upload-queue>
-</div>

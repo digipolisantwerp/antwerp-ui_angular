@@ -51,27 +51,27 @@ For a working demo, clone this repo and run:
 
 1. Install all dependencies
 
-	```shell
-	npm install
-	```
+    ```shell
+    npm install
+    ```
 
-	or
+    or
 
-	```shell
-	yarn
-	```
+    ```shell
+    yarn
+    ```
 
 2. Start
 
-	```shell
-	npm start
-	```
+    ```shell
+    npm start
+    ```
 
-	or
+    or
 
-	```shell
-	yarn start
-	```
+    ```shell
+    yarn start
+    ```
 
 3. Open `http://localhost:4200` in your browser.
 

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/calendar",
+  "deleteDestPath": true,
+  "whitelistedNonPeerDependencies": [
+    "@acpaas-ui/js-date-utils",
+    "lodash-es"
+  ]
+}

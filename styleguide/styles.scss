@@ -1,156 +1,125 @@
-@import '~@a-ui/core/dist/assets/styles/_quarks';
-@import '~@a-ui/flexboxgrid/css/index.min.css';
+@import '~@a-ui/core/dist/assets/styles/quarks';
+@import '~@a-ui/acpaas/dist/assets/styles/quarks/quarks.variables';
 
 /* Need to be included in core branding */
-$screen-xs-max: 44.9375rem;
-$screen-sm-max: 61.9375rem;
-
 body {
-    display: flex;
-    min-height: 100vh;
+	display: flex;
+	min-height: 100vh;
 }
 
-styleguide-root {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    max-width: 100%;
+guide-root {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	max-width: 100%;
 }
 
-main {
-    flex: 1 1 auto;
+main:focus {
+	outline: none;
 }
 
-.u-container {
-    width: 100%;
+.p-acpaas-ui {
+	flex: 1 1 auto;
 }
 
-.o-header {
-    display: flex;
-    justify-content: space-between;
-    z-index: 20;
-
-    @include to($screen-xs-max) {
-        border-bottom-color: $border-color;
-    }
+.a-pre.hljs {
+	border: 1px solid $grey-lighter;
 }
 
-.o-header__wrapper {
-    display: flex;
+.m-pane--left {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	left: 0;
+	position: fixed !important;
+	top: 0;
 }
 
-.o-header__logo {
-    position: static;
-
-    img {
-        height: $spacer * 2;
-    }
-}
-
-.o-header__link {
-    align-self: center;
-    display: inline-block;
-    font-weight: 700;
-    padding: $spacer / 2;
-
-    &,
-    &:link,
-    &:hover,
-    &:active,
-    &:visited,
-    &:focus {
-        color: $white;
-        text-decoration: none;
-    }
-
-    @include to($screen-sm) {
-        display: none;
-    }
-}
-
-.aui-header__content-wrapper {
-    margin: 0 auto;
-    max-width: $screen-lg;
-    width: 100%;
-
-    @include at($screen-sm) {
-        padding: 0 $spacer;
-    }
-}
-
-.o-header .a-input input:not([class*=a-button]):not([type=checkbox]):not([type=radio]) {
-    border: none;
-}
-
-.o-header .a-input input:not([class*=a-button]):not([type=checkbox]):not([type=radio]):focus {
-    box-shadow: 0 0 0 2px $brand-primary;
-}
-
-.a-button--navigation {
-    background-color: transparent;
-    font-weight: normal;
-}
-
-.m-pane {
-    width: 20rem;
-
-    &--left {
-        position: fixed;
-    }
+.m-overlay__pane {
+	position: fixed !important;
 }
 
 .m-button-group--inline {
-    display: inline-flex;
+	display: inline-flex;
 }
 
 .m-sidebar {
-    @include to($screen-xs-max) {
-        background-color: $background-color-light;
-        margin-bottom: $spacer;
-        max-height: 15.75rem;
-        overflow: auto;
-        padding-left: $spacer;
-        padding-right: $spacer;
-        width: auto;
-    }
+	@include to($screen-xs-max) {
+		background-color: $background-color-light;
+		margin-bottom: $spacer;
+		max-height: 15.75rem;
+		overflow: auto;
+		padding-left: $spacer;
+		padding-right: $spacer;
+		width: auto;
+	}
+}
+
+.m-flyout:focus {
+	outline: none;
 }
 
 .u-show-on-mobile {
-    @include at($screen-sm) {
-        display: none;
-    }
+	@include at($screen-sm) {
+		display: none;
+	}
 }
 
 .u-hide-on-mobile {
-    @include to($screen-xs-max) {
-        display: none;
-    }
+	@include to($screen-xs-max) {
+		display: none;
+	}
 }
 
 .u-hide-on-tablet {
-    @include to($screen-sm-max) {
-        display: none;
-    }
+	@include to($screen-sm-max) {
+		display: none;
+	}
+}
+
+pre {
+	tab-size: 2;
 }
 
 .u-text-readable {
-    max-width: 28rem;
+	max-width: 28rem;
 }
 
 .aui-footer {
-    background: $black-pearl;
+	background: $black-pearl;
 
-    .u-container {
-        padding-top: $spacer-lg;
-        padding-bottom: $spacer-md;
-    }
+	.u-container {
+		padding-top: $spacer-lg;
+		padding-bottom: $spacer-md;
+	}
 
-    &,
-    a {
-        color: $white;
-    }
+	&,
+	a,
+	a:hover,
+	a:active,
+	a:focus {
+		color: $white;
+	}
 
-    h3.h5 {
-        color: $grey-lighter;
-    }
+	h3.h5 {
+		color: $grey-lighter;
+	}
+}
+
+.m-nav-tabs__layout {
+	box-shadow: 0 -1px 0 $border-color inset;
+}
+
+.aui-code-snippet {
+	display: block;
+	overflow-x: auto;
+}
+
+.o-leaflet__wrapper {
+	overflow: visible !important;
+}
+
+.o-leaflet__map:focus {
+	box-shadow: 0 0 0 3px $input-border-focus;
 }

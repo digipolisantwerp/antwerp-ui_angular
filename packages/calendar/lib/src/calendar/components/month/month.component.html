@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr class="m-datepicker__days">
+            <th scope="col" *ngFor="let day of weekdayLabels"><span [title]="day">{{ day | slice:0:2 | titlecase }}</span></th>
+        </tr>
+    </thead>
+
+    <tbody class="m-datepicker__calendar">
+        <tr *ngFor="let week of dates">
+            <td *ngFor="let day of week">
+                <button
+                    type="button"
+                    [ngClass]="{
+                        'is-faded': !day.date || day.padding,
+                        'is-selected': !day.padding && day.date === selectedDay,
+                        'is-current': !day.padding && day.date === current,
+                        'is-unavailable': !day.available
+                    }"
+                    [disabled]="!day.available"
+                    (click)="pickDate($event, day)"
+                >{{ day.date }}</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

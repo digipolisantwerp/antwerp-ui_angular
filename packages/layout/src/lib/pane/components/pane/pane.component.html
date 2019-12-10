@@ -1,4 +1,0 @@
-<div class="m-pane aui-pane" [ngClass]="{ 'm-pane--open': opened, 'm-pane--left': side === 'left', 'm-pane--right': side === 'right' }">
-	<ng-content></ng-content>
-</div>
-<div class="m-overlay m-overlay__pane is-active" *ngIf="opened && backdrop" (click)="closePane()"></div>

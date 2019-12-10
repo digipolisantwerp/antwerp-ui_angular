@@ -1,0 +1,14 @@
+{
+  "name": "@acpaas-ui/ngx-components/code-snippet",
+  "version": "0.0.1",
+  "acpaas-ui": {
+    "dependencies": []
+  },
+  "devDependencies": {
+    "@types/marked": "0.4.0"
+  },
+  "dependencies": {
+    "angular2-highlight-js": "~5.0.2",
+    "marked": "~0.7.0"
+  }
+}

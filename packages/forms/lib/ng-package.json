@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/forms",
+  "deleteDestPath": true,
+  "whitelistedNonPeerDependencies": [
+    "@a-ui/core",
+    "@acpaas-ui/js-date-utils",
+    "ng2-ckeditor",
+    "inputmask",
+    "lodash-es"
+  ]
+}

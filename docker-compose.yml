@@ -1,0 +1,14 @@
+version: '3'
+services:
+    acpaas-ui:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        command: sh
+        stdin_open: true
+        tty: false
+        ports:
+            - 4200:4200
+        volumes:
+            - .:/code
+            - /code/node_modules

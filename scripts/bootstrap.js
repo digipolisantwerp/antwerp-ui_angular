@@ -28,14 +28,16 @@ const updateNpmDependencies = () => {
 promiseQueue([
 	updateNpmDependencies(),
 	...directories.map(directory => {
-		return () => exec(`cd ${directory} && npm install`);
+		// Handle spaces in the directory name
+		directory = directory.replace(" ", "\\ ");
+		return () => exec(`cd ${directory}/lib && npm install`);
 	})
 ])
-    .then(() => {
-        console.log(colors.green('Bootstrap completed.'));
-        process.exit();
-    })
-    .catch(err => {
-        console.log(colors.red('Bootstrap failed.'));
-        process.exit(1);
-    });
+	.then(() => {
+		console.log(colors.green('Bootstrap completed.'));
+		process.exit();
+	})
+	.catch(err => {
+		console.log(colors.red('Bootstrap failed.'));
+		process.exit(1);
+	});

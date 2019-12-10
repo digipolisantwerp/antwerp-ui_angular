@@ -1,0 +1,42 @@
+<h3 class="u-margin-bottom">Localstorage</h3>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="typescript1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="typescript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="example"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<button type="button" (click)="loggedIn()" class="a-button u-margin-right">
+		Log in
+	</button>
+	<button type="button" (click)="loggedOut()" class="a-button u-margin-right">
+		Log out
+	</button>
+	<button type="button" (click)="init()" class="a-button u-margin-right">
+		Count clicks
+	</button>
+</div>
+
+<div class="u-margin-bottom">
+	<button type="button" (click)="getItem()" class="a-button u-margin-right">
+		Get from local storage
+	</button>
+	<button type="button" (click)="clear()" class="a-button">
+		Clear local storage
+	</button>
+</div>
+
+<div class="u-margin-bottom">
+	<p>{{ this.item }}</p>
+</div>
+
+<div class="u-margin-bottom">
+	<p>You clicked the count clicks button this many times: {{ this.timesUsed }}</p>
+</div>

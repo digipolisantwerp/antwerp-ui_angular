@@ -1,0 +1,29 @@
+<h2 class="h3 u-margin-bottom">Calendar</h2>
+
+<div class="u-margin-bottom-xs">
+	<aui-code-snippet [codeSnippet]="javascript1"></aui-code-snippet>
+</div>
+
+<p class="u-margin-bottom-xs">Or override the default values (Dutch labels are used by default):</p>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="javascript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="javascript3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<aui-code-snippet [codeSnippet]="html"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+	<div class="m-datepicker is-open">
+		<aui-calendar
+			[range]="range"
+			[selectedDate]="clickedDate"
+			(selectDate)="changeDate($event)">
+		</aui-calendar>
+	</div>
+</div>

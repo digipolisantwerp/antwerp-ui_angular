@@ -1,10 +1,11 @@
 const cpx = require('cpx');
+const { resolve } = require('path');
 const { writeFileSync } = require('fs');
 const { getNPMDependencies } = require('./helpers/deps');
 
-cpx.copy('LICENSE', 'dist');
-cpx.copy('README.md', 'dist');
-cpx.copy('CHANGELOG.md', 'dist');
+cpx.copySync('LICENSE.md', 'dist');
+cpx.copySync('README.md', 'dist');
+cpx.copySync('CHANGELOG.md', 'dist');
 
 const packageJson = getNPMDependencies({ preserve: true });
 
@@ -13,6 +14,6 @@ delete packageJson['private'];
 delete packageJson['devDependencies'];
 delete packageJson['publishConfig'];
 
-writeFileSync('dist/package.json', JSON.stringify(packageJson, undefined, 2));
+writeFileSync(resolve('dist', 'package.json'), JSON.stringify(packageJson, undefined, 2));
 
 process.exit();
