@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Added
+- Disabled state for upload component
+
 ## [3.1.0] - 2019-12-09
 
 ### Added
