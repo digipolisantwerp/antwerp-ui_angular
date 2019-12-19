@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [3.2.0] - 2019-12-19
+
 ### Added
-- Disabled state for upload component
+- `forms` Added disabled state for upload component
+
 
 ## [3.1.0] - 2019-12-09
 
@@ -242,7 +246,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.1.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.6...v3.0.0
 [2.1.6]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.5...v2.1.6
