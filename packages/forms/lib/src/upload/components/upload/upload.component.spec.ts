@@ -27,6 +27,7 @@ const mockInvalidFiles: InvalidFile[] = [{
 export class UploadZoneComponent {
 	@Input() uploader;
 	@Input() ariaId;
+	@Input() disabled = false;
 }
 
 @Component({

@@ -11,6 +11,7 @@ export class UploadZoneComponent {
 	@ViewChild('fileInput') fileInput: ElementRef;
 
 	@Input() public uploader: Uploader;
+	@Input() public disabled = false;
 	@Input() public multiple = true;
 	@Input() public id = '';
 	@Input() public ariaId = '';
