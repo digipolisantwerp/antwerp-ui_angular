@@ -18,9 +18,9 @@
       </aui-sub-menu>
     </aui-menu-tab>
   </nav>
-  <div class="o-menu__hide-cta" (click)="toggleDocking()">
-    <a href="#" *ngIf="(showHideMenuLabel$ | async)">Menu Verbergen&nbsp;<span
+  <div class="o-menu__hide-cta">
+    <a href="#" *ngIf="(showHideMenuLabel$ | async)" (click)="toggleDocking($event)">Menu Verbergen&nbsp;<span
         class="fa fa-angle-double-left"></span></a>
-    <a href="#" *ngIf="(showRevealMenuLabel$ | async)"><span class="fa fa-angle-double-right"></span></a>
+    <a href="#" *ngIf="(showRevealMenuLabel$ | async)" (click)="toggleDocking($event)"><span class="fa fa-angle-double-right"></span></a>
   </div>
 </div>

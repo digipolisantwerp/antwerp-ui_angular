@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Added
+- Navigation Menu package was added.
+
 
 ## [3.2.0] - 2019-12-19
 

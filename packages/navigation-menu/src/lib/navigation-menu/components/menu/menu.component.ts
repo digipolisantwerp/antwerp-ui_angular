@@ -34,29 +34,29 @@ import { select } from '../../services/helpers';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
-  /**
-   * We need a querylist of the main tabs to know if we should filter some out
-   * in case we are dealing with a screen that is to small (for mobile only)
-   */
+	/**
+	 * We need a querylist of the main tabs to know if we should filter some out
+	 * in case we are dealing with a screen that is to small (for mobile only)
+	 */
 	@ContentChildren(MenuTabComponent, { descendants: false })
 	public tabs: QueryList<MenuTabComponent>;
 
-  /**
-   * Helper used to hook observables to the content is init lifecycle hook
-   */
+	/**
+	 * Helper used to hook observables to the content is init lifecycle hook
+	 */
 	private afterContentChecked$ = new Subject<void>();
-  /**
-   * Menu items that are not visible on the screen since the latter is
-   * too small will have to be accessed to a 'more' tab. (for mobile only)
-   */
+	/**
+	 * Menu items that are not visible on the screen since the latter is
+	 * too small will have to be accessed to a 'more' tab. (for mobile only)
+	 */
 	public moreMenuItems$: Observable<Array<MenuTabComponent>>;
 
-  /**
-   * Helper observables used to show/hide the labels to (un)dock
-   * the menu. We're purposely not using a simple *ngIf directive as to
-   * be able to exactly decide when to show/hide the respective
-   * labels.
-   */
+	/**
+	 * Helper observables used to show/hide the labels to (un)dock
+	 * the menu. We're purposely not using a simple *ngIf directive as to
+	 * be able to exactly decide when to show/hide the respective
+	 * labels.
+	 */
 	public showHideMenuLabel$: Observable<boolean>;
 	public showRevealMenuLabel$: Observable<boolean>;
 
@@ -131,7 +131,10 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 		this.afterContentChecked$.next();
 	}
 
-	toggleDocking(): void {
+	toggleDocking(event?: MouseEvent): void {
+		if (event) {
+			event.preventDefault();
+		}
 		this.menuService.state$.pipe(
 			select(state => state.docked),
 			take(1),

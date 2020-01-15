@@ -35,14 +35,14 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
 	@ViewChild('inclusedContent')
 	ngContent: ElementRef;
 
-  /**
-   * Allows for recursive sub menus
-   */
+	/**
+	 * Allows for recursive sub menus
+	 */
 	@ContentChild(SubMenuComponent)
 	public subMenu?: SubMenuComponent;
 
 	@Input()
-	href = '#';
+	href = null;
 	@Input()
 	forceShowArrow: boolean;
 
