@@ -3,7 +3,7 @@ import { MenuService } from './services/menu.service';
 import { Menu } from './interfaces';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { COMPONENTS } from './components';
+import { COMPONENTS } from './components/index';
 import { AuiModule } from './aui/aui.module';
 
 const defaultConfiguration: Menu.ModuleConfiguration = {
