@@ -10,6 +10,7 @@ import { LAYOUT_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/layout';
 import { LOCALSTORAGE_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/localstorage';
 import { LOGO_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/logo';
 import { MAP_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/map';
+import { NAVIGATION_MENU_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/navigation-menu';
 import { PAGINATION_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/pagination';
 import { PROGRESS_BAR_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/progress-bar';
 import { SELECTABLE_LIST_EXAMPLES_ROUTES } from '@acpaas-ui/ngx-examples/selectable-list';
@@ -30,6 +31,7 @@ export const EXAMPLES_ROUTES: Routes = [
 	{ path: 'localstorage', children: LOCALSTORAGE_EXAMPLES_ROUTES, data: { meta: { title: 'Localstorage', }, }, },
 	{ path: 'logo', children: LOGO_EXAMPLES_ROUTES, data: { meta: { title: 'Logo', }, }, },
 	{ path: 'map', children: MAP_EXAMPLES_ROUTES, data: { meta: { title: 'Map', }, }, },
+	{ path: 'navigation-menu', children: NAVIGATION_MENU_EXAMPLES_ROUTES, data: { meta: { title: 'Navigation menu', }, }, },
 	{ path: 'pagination', children: PAGINATION_EXAMPLES_ROUTES, data: { meta: { title: 'Pagination', }, }, },
 	{ path: 'progress-bar', children: PROGRESS_BAR_EXAMPLES_ROUTES, data: { meta: { title: 'Progress bar', }, }, },
 	{ path: 'selectable-list', children: SELECTABLE_LIST_EXAMPLES_ROUTES, data: { meta: { title: 'Selectable list', }, }, },

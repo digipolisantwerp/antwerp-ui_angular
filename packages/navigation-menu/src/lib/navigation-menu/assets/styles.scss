@@ -1,0 +1,16 @@
+@import '~@a-ui/core/dist/assets/styles/_quarks';
+
+
+/*
+MOBILE DESIGN
+*/
+$mobile-menu-height: 60px;
+
+$navigation-pane-width: 330px;
+$menu-undocked-width: 240px;
+$menu-docked-width: $header-height;
+$submenu-inset: 12px;
+
+$animation-speed: 150ms;
+$outline: 5px auto -webkit-focus-ring-color;
+$overlay-color: #444;

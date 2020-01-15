@@ -1,0 +1,20 @@
+<!-- This template will be used by our service to be injected
+in the navigation page that will slide into the screen.
+Thus on loading, this element is not visible and is not accessible by crawlers -->
+<ng-template #subMenuTemplate>
+  <ul class="m-nav-list m-nav-list--left">
+    <li *ngIf="isNestedSubMenu" class="a-back-link" (click)="navigateBack()"><a href="#"><span
+          class="fa fa-angle-left"></span> Terug</a></li>
+    <ng-container *ngTemplateOutlet="inclusedContent"></ng-container>
+  </ul>
+</ng-template>
+
+<div class="o-sub-menu__content-wrapper" [ngClass]="{'docked' : (state$ | async)?.docked}">
+  <ul #children class="m-nav-list">
+    <ng-container *ngTemplateOutlet="inclusedContent"></ng-container>
+  </ul>
+</div>
+
+<ng-template #inclusedContent>
+  <ng-content></ng-content>
+</ng-template>

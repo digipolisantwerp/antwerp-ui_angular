@@ -1,0 +1,6 @@
+<li [ngClass]="{'has-sub-menu' : (!!subMenu), 'docked' : (state$ | async)?.docked}">
+	<a [href]="href" #inclusedContent>
+		<ng-content></ng-content><span *ngIf="!!subMenu || !!forceShowArrow" class='fa fa-angle-down'></span>
+	</a>
+	<ng-content select="aui-sub-menu"></ng-content>
+</li>

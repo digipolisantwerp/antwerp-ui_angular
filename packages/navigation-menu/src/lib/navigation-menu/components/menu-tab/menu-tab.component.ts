@@ -1,0 +1,125 @@
+import {
+	Component,
+	Input,
+	ViewChild,
+	OnInit,
+	ElementRef,
+	ContentChild,
+	HostListener,
+	OnDestroy,
+	ChangeDetectionStrategy
+} from '@angular/core';
+import { SubMenuComponent } from '../sub-menu/sub-menu.component';
+import { MenuService } from '../../services/menu.service';
+import { tap, map, filter, mapTo, scan, repeat, takeUntil, share, startWith } from 'rxjs/operators';
+import { Observable, merge, Subject, combineLatest } from 'rxjs';
+import { Menu } from '../../interfaces';
+import { select } from '../../services/helpers';
+
+@Component({
+	selector: 'aui-menu-tab',
+	templateUrl: './menu-tab.component.html',
+	styleUrls: ['./menu-tab.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class MenuTabComponent implements OnInit, OnDestroy {
+  /**
+   * Contains the inclused content, in which we can check if only
+   * valid HTML elements are used by the user
+   */
+	@ViewChild('inclusedContent')
+	public ngContent: ElementRef<HTMLElement>;
+
+	@ContentChild(SubMenuComponent)
+	public subMenu?: SubMenuComponent;
+
+	public tabIsActive$: Observable<boolean>;
+
+  /**
+   * Helper to map event to observable
+   */
+	public headerClicked$: Observable<boolean> = new Subject<boolean>();
+
+
+	@Input()
+	public icon = 'bars'; // will compile to 'fa fa-bars'
+
+	// Menu service state
+	state$: Observable<Menu.MenuState>;
+
+	private destroy$ = new Subject();
+
+	public constructor(private menuService: MenuService) { }
+
+	ngOnInit() {
+		this.state$ = this.menuService.state$;
+
+		// Observable emits true whenever our menu tab should close
+		const shouldCloseMenu$: Observable<boolean> = merge(
+			// Close when closing all menus
+			this.menuService.onCloseMenu$.pipe(mapTo(true)),
+			// Close when a menu different from ours opens
+			this.menuService.state$.pipe(
+				select(state => state.activeMenu),
+				filter(activeMenu => activeMenu && activeMenu.type === 'main' && activeMenu.menuItem !== this),
+				mapTo(true)
+			)
+		).pipe(
+			filter(v => v === true),
+			share()// Share to prevent double subscriptions!!
+		);
+
+		this.tabIsActive$ = merge(
+			// Tab becomes active if the root template ref is equal to our reference (used for mobile layout)
+			this.menuService.rootTemplateRef$.pipe(
+				map(ref => ref && this.subMenu && ref === this.subMenu.templateRef)
+			),
+			// or toggle if we click the tab header
+			this.headerClicked$.pipe(
+				scan((acc) => {
+					return !acc;
+				}, false),
+				takeUntil(shouldCloseMenu$),
+				repeat()
+			),
+			// or becomes inactive when closing the whole menu
+			shouldCloseMenu$.pipe(mapTo(false))
+		).pipe(
+			tap((isActive: boolean) => isActive && this.menuService.updateState('activeMenu', {
+				menuItem: this,
+				type: 'main',
+			})),
+			startWith(false)
+		);
+
+		// Open our menu in the navigation pane for mobile layouts
+		const openMobileMenu$ = combineLatest([
+			this.headerClicked$,
+			this.state$.pipe(select(state => state.mode), filter(mode => mode === 'mobile')),
+		]).pipe(
+			map(([isSubMenuItem, state]) => isSubMenuItem),
+			filter(() => (!!this.subMenu && !!this.subMenu.templateRef)),
+			tap((isSubMenuItem) => this.menuService.displaySubMenu({
+				// Important when mapping our 'more' menu items to sub menu, since they won't trigger main menu's anymore
+				type: isSubMenuItem ? 'submenu' : 'main',
+				templateRef: this.subMenu.templateRef,
+			})),
+			takeUntil(this.destroy$)
+		);
+
+		openMobileMenu$.subscribe();
+	}
+
+	@HostListener('click')
+	public followMenuTab(isSubMenuItem: boolean = false) {
+		(this.headerClicked$ as Subject<boolean>).next(isSubMenuItem);
+	}
+
+	public getLabel(): string {
+		return this.ngContent.nativeElement.childNodes[0].textContent;
+	}
+
+	ngOnDestroy() {
+		this.destroy$.next();
+	}
+}
