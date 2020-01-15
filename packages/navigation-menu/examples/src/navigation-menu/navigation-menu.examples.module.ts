@@ -8,7 +8,9 @@ import { CodeSnippetModule } from '@acpaas-ui/ngx-components/code-snippet';
 		NavigationMenuDemoPage,
 	],
 	imports: [
-		NavigationMenuModule,
+		NavigationMenuModule.configure({
+			dockedByDefault: true,
+		}),
 		CodeSnippetModule,
 	],
 })
