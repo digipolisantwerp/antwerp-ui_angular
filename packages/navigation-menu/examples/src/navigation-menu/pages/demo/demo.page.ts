@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 	selector: 'demo-page',
 	templateUrl: './demo.page.html',
 })
-export class DemoPage {
+export class NavigationMenuDemoPage {
 
 }
