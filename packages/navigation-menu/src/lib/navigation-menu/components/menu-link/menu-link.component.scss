@@ -1,0 +1,17 @@
+@import "../../assets/styles.scss";
+
+:host {
+
+    white-space: nowrap
+}
+
+a,
+a:active,
+a:link {
+
+    &,
+    &:hover {
+        color: $text-color-light;
+        text-decoration: none;
+    }
+}

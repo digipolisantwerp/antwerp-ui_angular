@@ -1,18 +1,34 @@
 <header role="banner" aria-label="Main header">
-	<a href="#main-content" (click)="goToMainContent($event)" class="a-button-negative o-header__button o-header__button-skip" #skipContent>Skip to main content</a>
+	<a href="#main-content" (click)="goToMainContent($event)"
+		class="a-button-negative o-header__button o-header__button-skip" #skipContent>Skip to main content</a>
 	<guide-header></guide-header>
 	<guide-hero title="ACPaaS UI Angular" description="Components documentation"></guide-hero>
 </header>
 
-<div class="u-container u-margin-top u-margin-bottom p-acpaas-ui">
-	<div class="row">
-		<nav aria-label="Main navigation" class="col-xs-12 col-sm-3 u-margin-bottom-lg">
-			<guide-registry [items]="packages"></guide-registry>
-		</nav>
-		<main id="main-content" tabindex="-1" #mainContent class="col-xs-12 col-sm-9">
-			<router-outlet></router-outlet>
-		</main>
+<main>
+	<aui-menu>
+		<aui-menu-tab *ngFor="let package of packages" icon="bars">
+			<aui-menu-link *ngIf="!shouldDisplaySubMenu(package)" [routerLink]="['modules/' + package.path]">
+				{{ package.data?.meta?.title }}
+			</aui-menu-link>
+			<aui-menu-link *ngIf="shouldDisplaySubMenu(package)">
+				{{ package.data?.meta?.title }}
+			</aui-menu-link>
+			<aui-sub-menu *ngIf="shouldDisplaySubMenu(package)">
+				<aui-sub-menu-item *ngFor="let childRoute of getChildrenRoutes(package)"
+					[routerLink]="['modules', package.path, childRoute.path]">
+					{{ childRoute.path }}
+				</aui-sub-menu-item>
+			</aui-sub-menu>
+		</aui-menu-tab>
+	</aui-menu>
+	<div class="u-container u-margin-top u-margin-bottom p-acpaas-ui">
+		<div class="row">
+			<main id="main-content" tabindex="-1" #mainContent class="col-xs-12 col-sm-9">
+				<router-outlet></router-outlet>
+			</main>
+		</div>
 	</div>
-</div>
+</main>
 
 <guide-footer></guide-footer>

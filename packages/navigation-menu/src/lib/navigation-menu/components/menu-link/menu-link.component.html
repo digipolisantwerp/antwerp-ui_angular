@@ -1,6 +1,10 @@
 <ng-container #inclusedContent>
-  <a *ngIf="href || routerLink" [attr.href]="href ? href : '#'" [routerLink]="routerLink ? routerLink : null">
-    <ng-content></ng-content>
-  </a>
-  <ng-content *ngIf="!href && !routerLink"></ng-content>
+	<a *ngIf="href || routerLink" [attr.href]="href ? href : '#'" [routerLink]="routerLink ? routerLink : null">
+		<ng-container *ngTemplateOutlet="title"></ng-container>
+	</a>
+	<ng-content *ngTemplateOutlet="!href && !routerLink && title"></ng-content>
 </ng-container>
+
+<ng-template #title>
+	<ng-content></ng-content>
+</ng-template>

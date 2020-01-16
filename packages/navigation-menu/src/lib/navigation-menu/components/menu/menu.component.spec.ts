@@ -22,31 +22,31 @@ describe('Menu Component Test', () => {
 		sandbox = sinon.createSandbox();
 		await TestBed.configureTestingModule({
 			declarations: [
-				...COMPONENTS
+				...COMPONENTS,
 			],
 			providers: [
 				{
 					provide: 'config',
 					useValue: {
-						dockedByDefault: false
-					}
+						dockedByDefault: false,
+					},
 				},
 				{
 					provide: MenuService,
-					useValue: sinon.createStubInstance(MenuService)
-				}
+					useValue: sinon.createStubInstance(MenuService),
+				},
 			],
 			imports: [
-				RouterModule,
-				CommonModule
-			]
+				RouterModule.forRoot([]),
+				CommonModule,
+			],
 		}).compileComponents();
 
 		service = TestBed.get(MenuService);
 
-    /*
-    DEFAULT CONFIG
-    */
+		/*
+		DEFAULT CONFIG
+		*/
 		state$ = hot('-');
 
 		sinon.stub(service, 'state$').get(() => state$);
@@ -70,8 +70,8 @@ describe('Menu Component Test', () => {
 			expect(component.isDocked).toBe(false);
 			state$ = hot('--a', {
 				a: {
-					docked: false
-				}
+					docked: false,
+				},
 			});
 			fixture.detectChanges();
 

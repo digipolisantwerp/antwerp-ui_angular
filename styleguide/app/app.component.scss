@@ -1,0 +1,10 @@
+@import "../../styleguide/styles.scss";
+
+main {
+    display: flex;
+    flex-direction: row;
+
+	top: $header-height;
+	height: 100%;
+	overflow: scroll;
+}

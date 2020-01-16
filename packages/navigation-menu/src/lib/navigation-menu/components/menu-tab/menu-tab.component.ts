@@ -15,6 +15,8 @@ import { tap, map, filter, mapTo, scan, repeat, takeUntil, share, startWith } fr
 import { Observable, merge, Subject, combineLatest } from 'rxjs';
 import { Menu } from '../../interfaces';
 import { select } from '../../services/helpers';
+import { MenuLinkComponent } from '../menu-link/menu-link.component';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'aui-menu-tab',
@@ -23,21 +25,23 @@ import { select } from '../../services/helpers';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuTabComponent implements OnInit, OnDestroy {
-  /**
-   * Contains the inclused content, in which we can check if only
-   * valid HTML elements are used by the user
-   */
+	/**
+	 * Contains the inclused content, in which we can check if only
+	 * valid HTML elements are used by the user
+	 */
 	@ViewChild('inclusedContent')
 	public ngContent: ElementRef<HTMLElement>;
 
 	@ContentChild(SubMenuComponent)
 	public subMenu?: SubMenuComponent;
+	@ContentChild(MenuLinkComponent)
+	public menuLink: MenuLinkComponent;
 
 	public tabIsActive$: Observable<boolean>;
 
-  /**
-   * Helper to map event to observable
-   */
+	/**
+	 * Helper to map event to observable
+	 */
 	public headerClicked$: Observable<boolean> = new Subject<boolean>();
 
 
@@ -49,7 +53,7 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 
 	private destroy$ = new Subject();
 
-	public constructor(private menuService: MenuService) { }
+	public constructor(private menuService: MenuService, private router: Router) { }
 
 	ngOnInit() {
 		this.state$ = this.menuService.state$;
@@ -85,10 +89,16 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 			// or becomes inactive when closing the whole menu
 			shouldCloseMenu$.pipe(mapTo(false))
 		).pipe(
-			tap((isActive: boolean) => isActive && this.menuService.updateState('activeMenu', {
-				menuItem: this,
-				type: 'main',
-			})),
+			tap((isActive: boolean) => {
+				if (isActive && this.subMenu) {
+					this.menuService.updateState('activeMenu', {
+						menuItem: this,
+						type: 'main',
+					});
+				} else if (this.menuLink && (this.menuLink.href || this.menuLink.routerLink)) {
+					this.menuLink.routerLink ? this.router.navigate(this.menuLink.routerLink) : window.location.href = this.menuLink.href;
+				}
+			}),
 			startWith(false)
 		);
 

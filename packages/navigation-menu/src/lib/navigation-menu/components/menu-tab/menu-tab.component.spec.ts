@@ -38,7 +38,7 @@ describe('Menu Tab Component Test', () => {
 				},
 			],
 			imports: [
-				RouterModule,
+				RouterModule.forRoot([]),
 				CommonModule,
 			],
 		}).compileComponents();
@@ -136,6 +136,7 @@ describe('Menu Tab Component Test', () => {
 	describe('Active Menu', () => {
 		it('should set the active menu to main type when clicked', () => getTestScheduler().run((helpers) => {
 			component.headerClicked$ = hot('a');
+			component.subMenu = { id: 'some-submenu' } as any;
 			fixture.detectChanges();
 			helpers.flush();
 			expect((service.updateState as sinon.SinonStub).withArgs('activeMenu', {

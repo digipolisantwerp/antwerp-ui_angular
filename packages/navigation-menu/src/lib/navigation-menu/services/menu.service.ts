@@ -30,38 +30,38 @@ export class MenuService {
 
 	private destroy$ = new Subject();
 
-  /**
-   * Returns an observable that will emit whenever we show/hide a submenu.
-   * Hiding a submenu is triggered when this observable emits null | undefined
-   */
+	/**
+	 * Returns an observable that will emit whenever we show/hide a submenu.
+	 * Hiding a submenu is triggered when this observable emits null | undefined
+	 */
 	get displaySubMenu$(): Observable<Menu.ISubMenu> {
 		return this.pDisplaySubMenu$.pipe(share());
 	}
 
-  /**
-   * Returns an observable that emits true if the current menu is a nested submenu
-   * (this is only used when displaying the external navigation pane)
-   */
+	/**
+	 * Returns an observable that emits true if the current menu is a nested submenu
+	 * (this is only used when displaying the external navigation pane)
+	 */
 	get currentMenuIsNestedSubMenu$(): Observable<boolean> {
 		return this.pDisplaySubMenu$.pipe(
 			map(menu => menu && menu.type === 'submenu')
 		);
 	}
 
-  /**
-   * Returns the template referenece of the root menu tab element (this is
-   * used to know which tab is active at the moment, on mobile layout)
-   */
+	/**
+	 * Returns the template referenece of the root menu tab element (this is
+	 * used to know which tab is active at the moment, on mobile layout)
+	 */
 	get rootTemplateRef$(): Observable<TemplateRef<Menu.ISubMenuContext>> {
 		return this.tree$.pipe(
 			map(tree => tree && tree[0] ? tree[0].templateRef : undefined)
 		);
 	}
 
-  /**
-   * Internal helper observable that emits true if we're on mobile
-   * or false otherwise. Based on screen size.
-   */
+	/**
+	 * Internal helper observable that emits true if we're on mobile
+	 * or false otherwise. Based on screen size.
+	 */
 	private get isMobile$(): Observable<boolean> {
 		return fromEvent(window, 'resize').pipe(
 			map(event => window.innerWidth),
@@ -70,9 +70,9 @@ export class MenuService {
 		);
 	}
 
-  /**
-   * Observable emits when closing all menus
-   */
+	/**
+	 * Observable emits when closing all menus
+	 */
 	get onCloseMenu$(): Observable<void> {
 		return this.pDisplaySubMenu$.pipe(filter(v => !v), mapTo(undefined));
 	}
@@ -82,9 +82,9 @@ export class MenuService {
 	}
 
 
-  /**
-   * Exposure of the state (this observable is replayed)
-   */
+	/**
+	 * Exposure of the state (this observable is replayed)
+	 */
 	get state$(): Observable<Menu.MenuState> {
 		return this.pState$;
 	}
@@ -109,7 +109,7 @@ export class MenuService {
 				map(isMobile => {
 					return {
 						...state, // and update the state accordingly
-						mode: isMobile ? ('mobile' as Menu.MenuMode) : ('desktop' as Menu.MenuMode)
+						mode: isMobile ? ('mobile' as Menu.MenuMode) : ('desktop' as Menu.MenuMode),
 					};
 				})
 			)),
@@ -136,16 +136,16 @@ export class MenuService {
 		this.tree$.subscribe();  // Start watching the tree immediately on construction
 	}
 
-  /**
-   * Update the state with known properties using patch system.
-   */
+	/**
+	 * Update the state with known properties using patch system.
+	 */
 	updateState<T extends keyof Menu.MenuState>(property: T, value: Menu.MenuState[T]): void {
 		return this.updateProps$.next({ prop: property, value });
 	}
 
-  /**
-   * Navigate back in the tree, used for mobile navigation only
-   */
+	/**
+	 * Navigate back in the tree, used for mobile navigation only
+	 */
 	navigateBack() {
 		this.tree$.pipe(
 			first(),
@@ -159,10 +159,10 @@ export class MenuService {
 		(this.pDisplaySubMenu$ as Subject<Menu.ISubMenu>).next();
 	}
 
-  /**
-   * Only for mobile
-   * Injects the TemplateRef in the right container, depending on the submenu
-   */
+	/**
+	 * Only for mobile
+	 * Injects the TemplateRef in the right container, depending on the submenu
+	 */
 	public displaySubMenu(subMenu: Menu.ISubMenu) {
 		(this.pDisplaySubMenu$ as Subject<Menu.ISubMenu>).next(subMenu);
 	}

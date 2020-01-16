@@ -5,19 +5,20 @@ import { lookForIllegalNodes } from '../../services/helpers';
 @Component({
 	selector: 'aui-menu-link',
 	templateUrl: './menu-link.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush
+	styleUrls: ['./menu-link.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuLinkComponent implements OnInit, Menu.ChecksChildren {
-  /**
-   * Content used to check if the user is inserting more than just text in here
-   */
+	/**
+	 * Content used to check if the user is inserting more than just text in here
+	 */
 	@ViewChild('inclusedContent')
 	public ngContent: ElementRef<HTMLElement>;
 
 	@Input()
 	href: string;
 	@Input()
-	routerLink: string;
+	routerLink: string[];
 
 	ngOnInit() {
 		this.checkChildren();

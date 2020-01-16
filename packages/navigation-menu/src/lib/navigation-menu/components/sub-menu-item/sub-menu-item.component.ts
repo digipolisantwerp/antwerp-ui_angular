@@ -44,6 +44,9 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
 	@Input()
 	href = null;
 	@Input()
+	routerLink = null;
+
+	@Input()
 	forceShowArrow: boolean;
 
 	@HostBinding('class')

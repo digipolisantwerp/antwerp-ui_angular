@@ -61,7 +61,6 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	public showRevealMenuLabel$: Observable<boolean>;
 
 	// Class will be used for appropriate styling
-	@HostBinding('class.docked')
 	isDocked = false;
 
 	private destroy$ = new Subject();

@@ -1,8 +1,9 @@
 @import "../../assets/styles.scss";
 
-:host {
+.o-menu {
+	background: $white;
   bottom: 0;
-  left: 0;
+	left: 0;
   position: fixed;
   width: 100%;
   z-index: layer('header');
@@ -10,14 +11,18 @@
   @include at($screen-sm) {
     border-right: 1px solid $border-color;
     height: 100%;
-    overflow: hidden; // By default, don't show overflowing content
-    top: $header-height;
-    transition: width ease-in-out $animation-speed;
-    width: $menu-undocked-width;
+		overflow-x: hidden; // By default, don't show overflowing content
+		overflow-y: auto;
+		position: relative;
+    top: 0;
+    transition: all ease-in-out $animation-speed;
+		width: $menu-undocked-width;
+		min-width: $menu-undocked-width;
 
     &.docked {
       overflow: visible; // Since when docked the submenu's will appear to the right, show the overflowing content
-      width: $menu-docked-width;
+			width: $menu-docked-width;
+			min-width: $menu-docked-width;
 
       .o-menu__tabs-wrapper {
         box-shadow: none;

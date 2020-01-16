@@ -16,7 +16,7 @@ describe('Menu Link Test', () => {
 			imports: [
 				RouterModule,
 				CommonModule,
-			]
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(MenuLinkComponent);
