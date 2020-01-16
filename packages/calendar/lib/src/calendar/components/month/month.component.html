@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr class="m-datepicker__days">
-            <th scope="col" *ngFor="let day of weekdayLabels"><span [title]="day">{{ day | slice:0:2 | titlecase }}</span></th>
+            <th scope="col" *ngFor="let day of weekdayLabels"><span [title]="day" class="u-text-capitalize">{{ day | slice:0:2 }}</span></th>
         </tr>
     </thead>
 
