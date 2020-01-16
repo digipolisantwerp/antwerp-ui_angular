@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+### Changed
+- Use CSS instead of pipes to capitalize weekdays labels on the calendar.
+
 ## [4.0.0-rc.1] - 2018-01-29
 - upgrade Angular 5
 - use `ngPackagr` for building and bundeling
