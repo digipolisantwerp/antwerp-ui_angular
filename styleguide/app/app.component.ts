@@ -21,7 +21,6 @@ export class AppComponent {
 
 	constructor() {
 		const routes = [...EXAMPLES_ROUTES];
-		console.log(routes);
 		this.packages = routes;
 
 	}

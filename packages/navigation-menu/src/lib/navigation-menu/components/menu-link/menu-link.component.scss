@@ -2,16 +2,16 @@
 
 :host {
 
-    white-space: nowrap
-}
+    white-space: nowrap;
 
-a,
-a:active,
-a:link {
+    ::ng-deep a,
+    ::ng-deep a:active,
+    ::ng-deep a:link {
 
-    &,
-    &:hover {
-        color: $text-color-light;
-        text-decoration: none;
+        &,
+        &:hover {
+            color: $text-color-light;
+            text-decoration: none;
+        }
     }
 }

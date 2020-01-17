@@ -22,9 +22,7 @@ import { NavigationMenuModule } from '@acpaas-ui/ngx-components/navigation-menu'
 		AUIModules,
 		ExamplesModules,
 		AppRoutingModule,
-		NavigationMenuModule.configure({
-			dockedByDefault: false
-		}),
+		NavigationMenuModule.configure(),
 	],
 	providers: [],
 	bootstrap: [AppComponent],

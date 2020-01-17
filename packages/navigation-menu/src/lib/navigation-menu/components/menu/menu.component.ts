@@ -45,6 +45,9 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	 * Helper used to hook observables to the content is init lifecycle hook
 	 */
 	private afterContentChecked$ = new Subject<void>();
+
+	public isDocked$: Observable<boolean>;
+
 	/**
 	 * Menu items that are not visible on the screen since the latter is
 	 * too small will have to be accessed to a 'more' tab. (for mobile only)
@@ -60,9 +63,6 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	public showHideMenuLabel$: Observable<boolean>;
 	public showRevealMenuLabel$: Observable<boolean>;
 
-	// Class will be used for appropriate styling
-	isDocked = false;
-
 	private destroy$ = new Subject();
 
 	constructor(private menuService: MenuService) {
@@ -70,16 +70,13 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 
 	ngOnInit() {
 		// observable will change css host class of this component‹
-		const menuIsDocked$: Observable<boolean> = this.menuService.state$.pipe(
-			select(state => state.docked),
-			takeUntil(this.destroy$),
-			tap(isDocked => this.isDocked = isDocked),
-			shareReplay(1)
+		this.isDocked$ = this.menuService.state$.pipe(
+			select(state => state.docked)
 		);
 
 		// Helper observable
 		// Emits when the menu goes from docked => undocked
-		const dockedToUndocked$ = menuIsDocked$.pipe(
+		const dockedToUndocked$ = this.isDocked$.pipe(
 			startWith(!this.menuService.configuration.dockedByDefault),
 			pairwise(),
 			filter(([previous, current]) => !!previous && !current)
@@ -87,7 +84,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 
 		// Helper observable
 		// Emits when the menu goes from undocked => docked
-		const undockedToDocked$ = menuIsDocked$.pipe(
+		const undockedToDocked$ = this.isDocked$.pipe(
 			startWith(this.menuService.configuration.dockedByDefault),
 			pairwise(),
 			filter(([previous, current]) => !previous && !!current),
@@ -99,7 +96,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 			dockedToUndocked$.pipe(delay(150), mapTo(true)) // Delay showing the label until there is enough space
 		);
 
-		this.showRevealMenuLabel$ = menuIsDocked$.pipe(
+		this.showRevealMenuLabel$ = this.isDocked$.pipe(
 			map(isDocked => !!isDocked)
 		);
 
@@ -108,11 +105,9 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 			map(() => this.tabs),
 			map(queryList => queryList.toArray()),
 			filter((tabs: Array<MenuTabComponent>) => tabs.length > 2),
-			map(tabs => tabs.splice(2, tabs.length - 1))
+			map(tabs => tabs.splice(2, tabs.length - 1)),
+			tap(tabs => tabs.forEach(tab => tab.isSubMenu = true))
 		);
-
-		// Manually subscribe to this observable since we'll map it's value to a local member variable
-		menuIsDocked$.subscribe();
 	}
 
 	@HostListener('document:click', ['$event'])

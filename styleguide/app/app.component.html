@@ -7,7 +7,7 @@
 
 <main>
 	<aui-menu>
-		<aui-menu-tab *ngFor="let package of packages" icon="bars">
+		<aui-menu-tab *ngFor="let package of packages" icon="">
 			<aui-menu-link *ngIf="!shouldDisplaySubMenu(package)" [routerLink]="['modules/' + package.path]">
 				{{ package.data?.meta?.title }}
 			</aui-menu-link>

@@ -47,6 +47,8 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 
 	@Input()
 	public icon = 'bars'; // will compile to 'fa fa-bars'
+	@Input()
+	public isSubMenu = false;
 
 	// Menu service state
 	state$: Observable<Menu.MenuState>;
@@ -95,7 +97,7 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 						menuItem: this,
 						type: 'main',
 					});
-				} else if (this.menuLink && (this.menuLink.href || this.menuLink.routerLink)) {
+				} else if (isActive && this.menuLink && (this.menuLink.href || this.menuLink.routerLink)) {
 					this.menuLink.routerLink ? this.router.navigate(this.menuLink.routerLink) : window.location.href = this.menuLink.href;
 				}
 			}),
@@ -120,13 +122,15 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 		openMobileMenu$.subscribe();
 	}
 
-	@HostListener('click')
-	public followMenuTab(isSubMenuItem: boolean = false) {
-		(this.headerClicked$ as Subject<boolean>).next(isSubMenuItem);
+	@HostListener('click', ['$event'])
+	public followMenuTab(event: MouseEvent) {
+		event.stopPropagation();
+		(this.headerClicked$ as Subject<boolean>).next(this.isSubMenu);
 	}
 
-	public getLabel(): string {
-		return this.ngContent.nativeElement.childNodes[0].textContent;
+	public getLabel() {
+		(window as any).a = this.ngContent;
+		return this.ngContent.nativeElement.innerHTML;
 	}
 
 	ngOnDestroy() {

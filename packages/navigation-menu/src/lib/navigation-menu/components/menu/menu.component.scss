@@ -2,7 +2,7 @@
 
 .o-menu {
 	background: $white;
-  bottom: 0;
+	bottom: 0;
 	left: 0;
   position: fixed;
   width: 100%;
@@ -10,7 +10,7 @@
 
   @include at($screen-sm) {
     border-right: 1px solid $border-color;
-    height: 100%;
+		height: calc(100% + #{$header-height} + 2px);	// Leave room for the dock/undock labels
 		overflow-x: hidden; // By default, don't show overflowing content
 		overflow-y: auto;
 		position: relative;
@@ -72,9 +72,8 @@
   display: none;
 
   @include at($screen-sm) {
-    bottom: $spacer-sm;
+    bottom: 0;
     display: block;
-    height: $spacer * 2;
     margin: $spacer-sm;
     position: absolute;
     right: 0;
