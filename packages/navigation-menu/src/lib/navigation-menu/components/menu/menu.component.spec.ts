@@ -65,41 +65,13 @@ describe('Menu Component Test', () => {
 	});
 
 	describe('Initializion', () => {
-		it('should create a valid component with begin state NOT docked', () => getTestScheduler().run(() => {
+		it('should create a valid component', () => {
 			expect(component).toBeDefined();
-			expect(component.isDocked).toBe(false);
-			state$ = hot('--a', {
-				a: {
-					docked: false,
-				},
-			});
 			fixture.detectChanges();
-
-			// Since menu shouldn't be docked, we should show hide label (but it is delayed a bit)
-			expect(component.showHideMenuLabel$).toBeObservable(cold(`150ms --a`, { a: true }));
-			// Since we are running fake sync code, the delay is in here too
-			expect(component.showRevealMenuLabel$).toBeObservable(cold('150ms --a', { a: false }));
-		}));
+		});
 	});
 
 	describe('Undock and Dock', () => {
-		it('should show the right labels when going from undocked to docked', () => getTestScheduler().run((helpers) => {
-			state$ = hot('---a---b', { a: { docked: false }, b: { docked: true } });
-			fixture.detectChanges();
-			getTestScheduler().createTime('-------|');
-			helpers.flush();
-
-			expect(component.showHideMenuLabel$).toBeObservable(cold('150ms ---a', { a: false }));
-			// Show reveal is not delayed, but the delay is in here too since we are async testing
-			expect(component.showRevealMenuLabel$).toBeObservable(cold('150ms ---a', { a: true }));
-		}));
-		it('should show the right labels when going from docked to undocked', () => getTestScheduler().run((helpers) => {
-			state$ = hot('---a---b', { a: { docked: true }, b: { docked: false } });
-			fixture.detectChanges();
-			helpers.flush();
-
-			expect(component.showHideMenuLabel$).toBeObservable(cold('150ms -------a 149ms b', { a: false, b: true }));
-		}));
 
 		it('should toggle docking', () => getTestScheduler().run((helpers) => {
 			state$ = hot('--a', { a: { docked: true } });
