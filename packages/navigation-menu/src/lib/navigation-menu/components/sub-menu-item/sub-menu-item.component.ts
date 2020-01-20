@@ -106,12 +106,6 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
 			shouldClose$.pipe(mapTo(false)),
 			this.itemClicked$.pipe( // toggle active on click
 				scan(acc => !acc, false as any),
-				tap(() => {
-					if (!this.subMenu) {
-						// We clicked the link
-						this.menuService.closeAllMenus();
-					}
-				}),
 				takeUntil(shouldClose$),
 				repeat()
 			)

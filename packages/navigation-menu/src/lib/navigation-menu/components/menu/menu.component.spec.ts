@@ -4,7 +4,7 @@ import * as sinon from 'sinon';
 import { MenuComponent } from './menu.component';
 import { COMPONENTS } from '../index';
 import { hot, cold, getTestScheduler } from 'jasmine-marbles';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, NavigationStart } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Menu } from '../../interfaces';
@@ -13,6 +13,7 @@ describe('Menu Component Test', () => {
 	let service: MenuService;
 	let fixture: ComponentFixture<MenuComponent>;
 	let component: MenuComponent;
+	let router: Router;
 
 	let state$: Observable<Menu.MenuState>;
 
@@ -43,6 +44,7 @@ describe('Menu Component Test', () => {
 		}).compileComponents();
 
 		service = TestBed.get(MenuService);
+		router = TestBed.get(Router);
 
 		/*
 		DEFAULT CONFIG
@@ -88,6 +90,21 @@ describe('Menu Component Test', () => {
 			component.toggleDocking();
 			helpers.flush();
 			expect(spyOnUpdate.withArgs('docked', true).calledOnce).toBe(true);
+		}));
+	});
+
+	describe('Closing Menus', () => {
+		it('should close the menus when a navigation start event occurs', () => getTestScheduler().run((helpers) => {
+			(router as any).events = hot('--a', { a: (new NavigationStart(1, '/some/url')) });
+			fixture.detectChanges();
+			helpers.flush();
+			expect((service.closeAllMenus as sinon.SinonStub).calledOnce).toBe(true);
+		}));
+		it('should not close menus on other events', () => getTestScheduler().run((helpers) => {
+			(router as any).events = hot('--a', { a: 'not an event' });
+			fixture.detectChanges();
+			helpers.flush();
+			expect((service.closeAllMenus as sinon.SinonStub).called).toBe(false);
 		}));
 	});
 

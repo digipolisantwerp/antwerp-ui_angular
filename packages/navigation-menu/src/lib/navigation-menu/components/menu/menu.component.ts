@@ -14,6 +14,7 @@ import { Observable, Subject, merge } from 'rxjs';
 import { map, filter, takeUntil, tap, delay, pairwise, startWith, mapTo, shareReplay, take } from 'rxjs/operators';
 import { MenuService } from '../../services/menu.service';
 import { select } from '../../services/helpers';
+import { Router, NavigationStart } from '@angular/router';
 
 /**
  * Main wrapper container that will orchestrate the menu.
@@ -65,7 +66,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 
 	private destroy$ = new Subject();
 
-	constructor(private menuService: MenuService) {
+	constructor(private menuService: MenuService, private router: Router) {
 	}
 
 	ngOnInit() {
@@ -108,6 +109,14 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 			map(tabs => tabs.splice(2, tabs.length - 1)),
 			tap(tabs => tabs.forEach(tab => tab.isSubMenu = true))
 		);
+
+
+		// Close all menus whenever we navigate
+		this.router.events.pipe(
+			filter(event => (event instanceof NavigationStart)),
+			takeUntil(this.destroy$),
+			tap(() => this.menuService.closeAllMenus())
+		).subscribe();
 	}
 
 	@HostListener('document:click', ['$event'])
