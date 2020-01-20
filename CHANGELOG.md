@@ -6,8 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
+
+
+## [3.2.1] - 2020-01-20
+
 ### Fixed
-- Fixed parsing of unregular dates on the date picker component by using @acpaas-ui/js-date-utils@^1.0.5
+- Fixed parsing of unregular dates on the date picker component by using `@acpaas-ui/js-date-utils@^1.0.6`
 
 
 ## [3.2.0] - 2019-12-19
@@ -248,7 +252,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.2.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.2.1...HEAD
+[3.2.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.2.0...v3.2.1
 [3.2.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v2.1.6...v3.0.0
