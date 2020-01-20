@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
+### Fixed
+- Fixed parsing of unregular dates on the date picker component by using @acpaas-ui/js-date-utils@^1.0.5
 
 
 ## [3.2.0] - 2019-12-19
