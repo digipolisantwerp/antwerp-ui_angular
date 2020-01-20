@@ -85,7 +85,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		private calendarService: CalendarService,
 		private formBuilder: FormBuilder,
 		private ref: ChangeDetectorRef
-	) {}
+	) { }
 
 	public ngOnInit(): void {
 		this.formControl = this.formBuilder.control({ value: '', disabled: this.isDisabled });
@@ -96,7 +96,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 			.subscribe((value) => {
 				if (value) {
 					const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
-					const date = DateHelper.parseDate(format);
+					const date = DateHelper.parseDate(format, 'YYYY-MM-DD', true);
 					if (date) {
 						this.selectedDate = date;
 						this.onChange(date.toISOString());
