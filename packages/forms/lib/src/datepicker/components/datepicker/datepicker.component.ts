@@ -85,7 +85,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		private calendarService: CalendarService,
 		private formBuilder: FormBuilder,
 		private ref: ChangeDetectorRef
-	) {}
+	) { }
 
 	public ngOnInit(): void {
 		this.formControl = this.formBuilder.control({ value: '', disabled: this.isDisabled });
@@ -96,7 +96,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 			.subscribe((value) => {
 				if (value) {
 					const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
-					const date = DateHelper.parseDate(format);
+					const date = DateHelper.parseDate(format, 'YYYY-MM-DD', true);
 					if (date) {
 						this.selectedDate = date;
 						this.onChange(date.toISOString());
@@ -117,7 +117,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 	}
 
 	public writeValue(value: string): void {
-		const date = DateHelper.parseDate(value);
+		const date = DateHelper.parseDate(value, 'DD/MM/YYYY', true);
 		const dateString = date ? this.formatDate(date) : '';
 
 		this.selectedDate = date;
@@ -168,7 +168,8 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		}
 
 		// throw format error if no valid date was provided
-		if (!DateHelper.parseDate(ctrl.value)) {
+		const date = DateHelper.parseDate(ctrl.value);
+		if (!date) {
 			return {
 				format: this.errorLabels.ERRORS_INVALID_DATE,
 			};
@@ -180,7 +181,6 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 		}
 
 		// throw error when out of range
-		const date = new Date(ctrl.value);
 		const range = this.calendarService.getRangeForDate(date, this.range);
 
 		return range.indexOf(date.getDate()) >= 0 ? {
