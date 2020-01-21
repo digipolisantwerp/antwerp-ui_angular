@@ -13,7 +13,7 @@
     height: calc(100% + #{$header-height} + 2px); // Leave room for the dock/undock labels
     overflow-x: hidden; // By default, don't show overflowing content
     overflow-y: auto;
-    position: relative;
+    position: initial;
     top: 0;
     transition: all ease-in-out $animation-speed;
     width: $menu-undocked-width;
@@ -72,11 +72,9 @@
   display: none;
 
   @include at($screen-sm) {
-    bottom: 0;
     display: block;
-    margin: $spacer-sm;
-    position: absolute;
-    right: 0;
+		margin: $spacer-sm;
+		text-align: right;
 
     >a {
       text-decoration: none;
