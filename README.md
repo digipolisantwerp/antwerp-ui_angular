@@ -89,6 +89,8 @@ This library contains the following components:
 | selectable-list| List control with selectable items       | [Documentation](./packages/selectable-list/lib/README.md)     |
 | table          | Interactive table                        | [Documentation](./packages/table/lib/README.md)               |
 | utils          | Assorted helpers                         | [Documentation](./packages/utils/lib/README.md)               |
+| user-menu      | User Menu providing login/logout         | [Documentation](./packages/user-menu/README.md)               |
+| navigation-menu| Generic navigation menu                  | [Documentation](./packages/navigation-menu/README.md)
 
 ## Testing
 

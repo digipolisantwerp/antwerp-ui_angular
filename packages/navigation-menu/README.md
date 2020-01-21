@@ -8,16 +8,6 @@ This component provides a generic navigation menu that can be used in your proje
 
 - **Desktop mode**: On desktop, the component features a navigation bar that places itself on the outright left border of the screen. The desktop mode integrates two layouts: docked and undocked. The default mode can be set through module configuration. When docked, the menu only displays square icons io full navigation links. Clicking on the link will trigger opening up sub menu items in overlay mode. When not docked, the menu features different accordeons, containing the configured navigation links.
 
-## Usage
+## Usage and Documentation
 
-```typescript
-import `NavigationMenuModule` from '@acpaas-ui/ngx-components/navigation-menu'`;
-```
-
-## Documentation
-
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
-
-## Contributing
-
-Visit our [Contribution Guidelines](./contribute.md) for more information on how to contribute.
+Visit our [documentation site](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/navigation-menu) for full how-to docs and guidelines
