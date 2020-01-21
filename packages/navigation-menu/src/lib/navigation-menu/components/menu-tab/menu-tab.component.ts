@@ -7,7 +7,8 @@ import {
 	ContentChild,
 	HostListener,
 	OnDestroy,
-	ChangeDetectionStrategy
+	ChangeDetectionStrategy,
+	HostBinding
 } from '@angular/core';
 import { SubMenuComponent } from '../sub-menu/sub-menu.component';
 import { MenuService } from '../../services/menu.service';
@@ -46,9 +47,10 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 
 
 	@Input()
-	public icon = 'bars'; // will compile to 'fa fa-bars'
+	public icon = null; // will compile to 'fa fa-bars'
 	@Input()
 	public isSubMenu = false;
+
 
 	// Menu service state
 	state$: Observable<Menu.MenuState>;

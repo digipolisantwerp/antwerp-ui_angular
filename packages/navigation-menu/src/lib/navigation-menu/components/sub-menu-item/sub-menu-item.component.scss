@@ -7,7 +7,6 @@ li {
     border-color: $border-color;
     color: $text-color-light;
     display: flex;
-    font-weight: normal;
     height: $header-height;
     justify-content: space-between;
     overflow: hidden;
@@ -25,7 +24,8 @@ li {
   }
 
   ::ng-deep &.a-back-link {
-    color: $text-color-light;
+		color: $text-color-light;
+		font-weight: normal;
   }
 
   &.has-sub-menu>a>span.fa {

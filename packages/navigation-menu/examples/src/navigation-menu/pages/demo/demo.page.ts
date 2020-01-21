@@ -25,7 +25,9 @@ export class NavigationMenuDemoPage {
 	@NgModule({
 		imports:[
 			 NavigationMenuModule.configure({
-				 dockedByDefault: true	// False by default
+				 dockedByDefault: true,	// False by default
+				 moreIcon: 'angle-up',
+				 moreText: 'Meer...'
 			 })
 		]
 	 })

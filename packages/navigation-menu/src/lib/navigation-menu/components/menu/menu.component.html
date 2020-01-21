@@ -9,8 +9,8 @@
 			Manually create a 'more' tab where items that wouldn't be visible on a mobile screen are placed under as a submenu
 			The items will be styles (and hidden/shown) using CSS.
     		-->
-			<aui-menu-tab icon="angle-up">
-				<aui-menu-link>Meer</aui-menu-link>
+			<aui-menu-tab [icon]="configuration.moreIcon">
+				<aui-menu-link>{{ configuration.moreText }}</aui-menu-link>
 				<aui-sub-menu>
 					<aui-sub-menu-item *ngFor="let tab of (moreMenuItems$ | async)" [forceShowArrow]='!!tab.subMenu' (click)="tab.followMenuTab($event)">
 						<aui-menu-link [innerHTML]="tab.getLabel()"></aui-menu-link>

@@ -1,8 +1,8 @@
 @import "../../assets/styles.scss";
 
 :host {
-	background: $white;
-	max-height: calc(100vh - #{$mobile-menu-height});
+  background: $white;
+  max-height: calc(100vh - #{$mobile-menu-height});
   position: absolute;
   top: 0px;
   transition: transform $animation-speed ease;
@@ -26,6 +26,10 @@
       min-height: 100vh;
       opacity: 0.8;
     }
+
+    &>.o-navigation-pane__wrapper {
+      margin: -1px;
+    }
   }
 
   @include at($screen-sm) {
@@ -35,9 +39,9 @@
 
 .o-navigation-pane__wrapper {
   box-shadow: 0rem -0.75rem 0 rgba($black, .1);
-	min-height: $spacer; // make up for the box shadow to be visible, even when hiddenq
-	max-height: calc(100vh - #{$header-height} - #{$mobile-menu-height});
-	overflow-y: scroll;
+  min-height: $spacer; // make up for the box shadow to be visible, even when hiddenq
+  max-height: calc(100vh - #{$header-height} - #{$mobile-menu-height});
+  overflow-y: scroll;
 }
 
 .main-submenu.slide-down {

@@ -7,7 +7,8 @@ import {
 	HostListener,
 	HostBinding,
 	OnDestroy,
-	ChangeDetectionStrategy
+	ChangeDetectionStrategy,
+	Input
 } from '@angular/core';
 import { MenuTabComponent } from '../menu-tab/menu-tab.component';
 import { Observable, Subject, merge } from 'rxjs';
@@ -15,6 +16,7 @@ import { map, filter, takeUntil, tap, delay, pairwise, startWith, mapTo, shareRe
 import { MenuService } from '../../services/menu.service';
 import { select } from '../../services/helpers';
 import { Router, NavigationStart } from '@angular/router';
+import { Menu } from '../../interfaces';
 
 /**
  * Main wrapper container that will orchestrate the menu.
@@ -64,6 +66,8 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	public showHideMenuLabel$: Observable<boolean>;
 	public showRevealMenuLabel$: Observable<boolean>;
 
+	public configuration: Menu.ModuleConfiguration;
+
 	private destroy$ = new Subject();
 
 	constructor(private menuService: MenuService, private router: Router) {
@@ -74,6 +78,8 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 		this.isDocked$ = this.menuService.state$.pipe(
 			select(state => state.docked)
 		);
+
+		this.configuration = this.menuService.configuration;
 
 		// Helper observable
 		// Emits when the menu goes from docked => undocked
