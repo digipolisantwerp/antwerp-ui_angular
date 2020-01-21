@@ -17,7 +17,7 @@
 			<aui-sub-menu *ngIf="shouldDisplaySubMenu(package)">
 				<aui-sub-menu-item *ngFor="let childRoute of getChildrenRoutes(package)"
 					[routerLink]="['modules', package.path, childRoute.path]">
-					{{ childRoute.path }}
+					{{ childRoute.data?.meta?.title }}
 				</aui-sub-menu-item>
 			</aui-sub-menu>
 		</aui-menu-tab>
