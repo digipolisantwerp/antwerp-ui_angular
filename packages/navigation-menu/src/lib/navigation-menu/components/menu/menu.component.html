@@ -10,7 +10,7 @@
 			The items will be styles (and hidden/shown) using CSS.
     		-->
 			<aui-menu-tab [icon]="configuration.moreIcon">
-				<aui-menu-link>{{ _translations.lblMore }}</aui-menu-link>
+				<aui-menu-link>{{ _translations?.lblMore }}</aui-menu-link>
 				<aui-sub-menu>
 					<aui-sub-menu-item *ngFor="let tab of (moreMenuItems$ | async)" [forceShowArrow]='!!tab.subMenu' (click)="tab.followMenuTab($event)">
 						<aui-menu-link [innerHTML]="tab.getLabel()"></aui-menu-link>
@@ -19,7 +19,7 @@
 			</aui-menu-tab>
 		</nav>
 		<div class="o-menu__hide-cta">
-			<a href="#" *ngIf="(showHideMenuLabel$ | async)" (click)="toggleDocking($event)">{{ _translations.lblHideMenu }}&nbsp;<span
+			<a href="#" *ngIf="(showHideMenuLabel$ | async)" (click)="toggleDocking($event)">{{ _translations?.lblHideMenu }}&nbsp;<span
 					class="fa fa-angle-double-left"></span></a>
 			<a href="#" *ngIf="(showRevealMenuLabel$ | async)" (click)="toggleDocking($event)"><span
 					class="fa fa-angle-double-right"></span></a>
