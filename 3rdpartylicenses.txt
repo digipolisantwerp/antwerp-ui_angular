@@ -876,6 +876,8 @@ MIT
 
 @acpaas-ui/ngx-examples/map
 
+@acpaas-ui/ngx-examples/navigation-menu
+
 @acpaas-ui/ngx-examples/pagination
 
 @acpaas-ui/ngx-examples/progress-bar
@@ -935,6 +937,8 @@ SOFTWARE.
 
 
 @acpaas-ui/ngx-components/localstorage
+
+@acpaas-ui/ngx-components/navigation-menu
 
 @acpaas-ui/ngx-components/pagination
 
