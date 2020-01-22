@@ -888,6 +888,50 @@
           }
         }
       }
+    },
+    "navigation-menu": {
+      "root": "packages/navigation-menu",
+      "sourceRoot": "packages/navigation-menu/src",
+      "projectType": "library",
+      "prefix": "aui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/navigation-menu/tsconfig.lib.json",
+            "project": "packages/navigation-menu/ng-package.json"
+          },
+          "configurations": {
+            "examples": {
+              "project": "packages/navigation-menu/examples/ng-package.json",
+              "tsConfig": "packages/navigation-menu/examples/tsconfig.json"
+            },
+            "production": {
+              "project": "packages/navigation-menu/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/navigation-menu/src/test.ts",
+            "tsConfig": "packages/navigation-menu/tsconfig.spec.json",
+            "karmaConfig": "packages/navigation-menu/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/navigation-menu/tsconfig.lib.json",
+              "packages/navigation-menu/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "styleguide",

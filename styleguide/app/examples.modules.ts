@@ -9,6 +9,7 @@ import { LayoutExamplesModule } from '@acpaas-ui/ngx-examples/layout';
 import { LocalstorageExamplesModule } from '@acpaas-ui/ngx-examples/localstorage';
 import { LogoExamplesModule } from '@acpaas-ui/ngx-examples/logo';
 import { MapExamplesModule } from '@acpaas-ui/ngx-examples/map';
+import { NavigationMenuExamplesModule } from '@acpaas-ui/ngx-examples/navigation-menu';
 import { PaginationExamplesModule } from '@acpaas-ui/ngx-examples/pagination';
 import { ProgressBarExamplesModule } from '@acpaas-ui/ngx-examples/progress-bar';
 import { SelectableListExamplesModule } from '@acpaas-ui/ngx-examples/selectable-list';
@@ -28,6 +29,7 @@ export const ExamplesModules = [
 	LocalstorageExamplesModule,
 	LogoExamplesModule,
 	MapExamplesModule,
+	NavigationMenuExamplesModule,
 	PaginationExamplesModule,
 	ProgressBarExamplesModule,
 	SelectableListExamplesModule,

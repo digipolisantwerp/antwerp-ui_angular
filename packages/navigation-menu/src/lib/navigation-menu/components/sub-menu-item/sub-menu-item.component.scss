@@ -1,0 +1,58 @@
+@import '../../assets/variables.scss';
+
+li {
+  position: relative;
+
+  a {
+    border-color: $border-color;
+    color: $text-color-light;
+    display: flex;
+    height: $header-height;
+    justify-content: space-between;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &>span.fa {
+      transform: rotate(-90deg);
+    }
+
+    @include at($screen-sm) {
+      // Padding is parent padding + icon size + header padding to the left to align the link to the header text
+      padding-left: calc(#{$menu-docked-width} + #{$submenu-inset});
+      padding-right: $spacer-xs / 2;
+    }
+  }
+
+  ::ng-deep &.a-back-link {
+		color: $text-color-light;
+		font-weight: normal;
+  }
+
+  &.has-sub-menu>a>span.fa {
+    transform: rotate(-90deg);
+  }
+
+  &.docked a {
+    padding-left: $spacer-sm;
+  }
+
+  @include at($screen-sm) {
+    &:not(.docked) a {
+      border: none;
+    }
+  }
+}
+
+@include at($screen-sm) {
+  li.has-sub-menu:not(.docked)>a>span.fa {
+    margin-right: $spacer-xs /2;
+    transition: transform $animation-speed ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  :host.active {
+    &>li:not(.docked)>a>span.fa {
+      transform: rotate(180deg);
+    }
+  }
+}

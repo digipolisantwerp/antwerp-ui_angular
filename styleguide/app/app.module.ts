@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { Components } from './components/index';
 import { Pages } from './pages/index';
 
+import { NavigationMenuModule } from '@acpaas-ui/ngx-components/navigation-menu';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -20,6 +22,7 @@ import { Pages } from './pages/index';
 		AUIModules,
 		ExamplesModules,
 		AppRoutingModule,
+		NavigationMenuModule.configure(),
 	],
 	providers: [],
 	bootstrap: [AppComponent],

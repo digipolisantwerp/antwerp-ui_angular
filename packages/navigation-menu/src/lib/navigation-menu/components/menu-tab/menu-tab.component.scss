@@ -1,0 +1,127 @@
+@import "../../assets/variables.scss";
+
+:host {
+  border-right: 1px solid $border-color;
+  cursor: pointer;
+  flex-basis: 0;
+  flex-grow: 1;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @include at($screen-sm) {
+    border-bottom: 1px solid $border-color;
+    border-right: none;
+  }
+}
+
+.o-menu-tab__wrapper {
+  overflow: hidden;
+
+  &:focus-within {
+    @include a-button-outline();
+  }
+
+  &.active {
+    overflow-y: auto;
+
+    .a-tab-submenu-icon {
+      transform: rotate(180deg);
+    }
+
+    ::ng-deep>aui-sub-menu>.o-sub-menu__content-wrapper:first-child {
+      display: block;
+      max-height: $submenu-height;
+      overflow: visible;
+
+      &.docked {
+        width: $navigation-pane-width;
+      }
+    }
+  }
+
+  @include at($screen-sm) {
+    &.docked {
+      overflow: hidden;
+      width: calc(#{$menu-docked-width} - 1px); // 1 px make up for border
+
+      ::ng-deep &>aui-sub-menu:first-of-type {
+        top: 0px;
+
+        // Remove border of the first sub menu item to prevent visual 'double border' effect
+        &>.o-sub-menu__content-wrapper:first-child>ul.m-nav-list {
+          border-left: none !important;
+        }
+      }
+    }
+  }
+}
+
+.o-menu-tab__header {
+  @include a-button-outline($btn-primary-outline-color, $btn-primary-outline-border, true);
+  align-items: center;
+  color: $text-color-light;
+  display: flex;
+  flex-direction: column;
+  height: $mobile-menu-height;
+  justify-content: center;
+
+  // Support for a margin for iPhone X
+  @supports (margin-bottom: env(safe-area-inset-bottom)) {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+
+  &:hover {
+    background-color: $background-color-light;
+    color: $text-color-light;
+  }
+
+  .o-menu-tab__title {
+    text-align: center;
+  }
+
+  .a-icon {
+    font-size: $icon-size-base;
+    margin-bottom: $spacer-xs / 2;
+
+    &.a-tab-icon {
+      width: $icon-size-lg;
+    }
+
+    &.a-tab-submenu-icon {
+      display: none;
+      transition: transform $animation-speed ease;
+
+      @include at($screen-sm) {
+        display: inline;
+      }
+    }
+
+    @include at($screen-sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include at($screen-sm) {
+    align-items: center;
+    flex-direction: row;
+    height: $header-height;
+    justify-content: space-between;
+    padding: $spacer-xs;
+    position: relative;
+
+    ::ng-deep aui-menu-link {
+      margin-left: $spacer-sm;
+    }
+
+    .o-menu-tab__title {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
