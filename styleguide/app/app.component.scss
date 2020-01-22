@@ -1,13 +1,9 @@
 @import "../../styleguide/styles.scss";
 
 main {
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-    top: $header-height;
-    height: 100%;
-
     @include at($screen-xs) {
+        display: flex;
+        flex-direction: row;
         overflow-y: hidden;
     }
 
