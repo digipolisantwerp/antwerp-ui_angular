@@ -73,8 +73,8 @@
 
   @include at($screen-sm) {
     display: block;
-		margin: $spacer-sm;
-		text-align: right;
+    margin: $spacer-sm;
+    text-align: right;
 
     >a {
       text-decoration: none;
