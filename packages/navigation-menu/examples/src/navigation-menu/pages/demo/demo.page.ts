@@ -27,7 +27,8 @@ export class NavigationMenuDemoPage {
 			 NavigationMenuModule.configure({
 				 dockedByDefault: true,	// False by default
 				 moreIcon: 'angle-up',
-				 moreText: 'Meer...'
+				 moreText: 'Meer...',
+				 backText: 'Terug'
 			 })
 		]
 	 })

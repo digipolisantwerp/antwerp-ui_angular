@@ -6,10 +6,11 @@ MOBILE DESIGN
 */
 $mobile-menu-height: 60px;
 
-$navigation-pane-width: 330px;
-$menu-undocked-width: 240px;
+$navigation-pane-width: 20rem;
+$menu-undocked-width: 15rem;
 $menu-docked-width: $header-height;
 $submenu-inset: 12px;
+$submenu-height: 30rem;
 
 $animation-speed: 150ms;
 $outline: 5px auto -webkit-focus-ring-color;

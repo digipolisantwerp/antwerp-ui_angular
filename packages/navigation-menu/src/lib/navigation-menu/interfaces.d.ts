@@ -24,6 +24,7 @@ export declare namespace Menu {
 		dockedByDefault?: boolean;
 		moreIcon?: string;
 		moreText?: string;
+		backText?: string;
 	}
 
 	export interface ISubMenuContext {

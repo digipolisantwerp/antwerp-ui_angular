@@ -43,7 +43,7 @@
 
   ::ng-deep aui-sub-menu-item {
     &.active>li>aui-sub-menu>.o-sub-menu__content-wrapper {
-      max-height: 500px;
+      max-height: $submenu-height;
       overflow: visible;
       display: block;
 

@@ -35,7 +35,7 @@
 
     ::ng-deep>aui-sub-menu>.o-sub-menu__content-wrapper:first-child {
       display: block;
-      max-height: 500px;
+      max-height: $submenu-height;
       overflow: visible;
 
       &.docked {

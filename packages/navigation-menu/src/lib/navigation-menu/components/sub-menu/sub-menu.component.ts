@@ -47,6 +47,7 @@ export class SubMenuComponent implements OnInit, OnDestroy, Menu.ChecksChildren,
 	public readonly onClose$ = new Subject<boolean>();
 
 	state$: Observable<Menu.MenuState>;
+	configuration: Menu.ModuleConfiguration;
 
 	@HostBinding('class.docked')
 	isDocked: boolean;
@@ -58,6 +59,7 @@ export class SubMenuComponent implements OnInit, OnDestroy, Menu.ChecksChildren,
 
 	ngOnInit() {
 		this.state$ = this.menuService.state$;
+		this.configuration = this.menuService.configuration;
 
 		this.state$.pipe(
 			select(state => state.docked),

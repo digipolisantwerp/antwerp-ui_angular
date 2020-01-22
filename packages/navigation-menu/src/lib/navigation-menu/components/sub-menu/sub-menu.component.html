@@ -4,7 +4,7 @@ Thus on loading, this element is not visible and is not accessible by crawlers -
 <ng-template #subMenuTemplate>
   <ul class="m-nav-list m-nav-list--left">
     <li *ngIf="isNestedSubMenu" class="a-back-link" (click)="navigateBack()"><a><span
-          class="fa fa-angle-left"></span> Terug</a></li>
+          class="fa fa-angle-left"></span>{{ configuration?.backText }}</a></li>
     <ng-container *ngTemplateOutlet="inclusedContent"></ng-container>
   </ul>
 </ng-template>

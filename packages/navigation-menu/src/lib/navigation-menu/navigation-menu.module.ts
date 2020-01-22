@@ -9,6 +9,7 @@ import { AuiModule } from './aui/aui.module';
 const defaultConfiguration: Menu.ModuleConfiguration = {
 	dockedByDefault: false,
 	moreText: 'More...',
+	backText: 'Back',
 };
 
 @NgModule({
