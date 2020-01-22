@@ -28,7 +28,24 @@ export class MenuService {
 	// Internal observable representing the state of the menu
 	private pState$: Observable<Menu.MenuState>;
 
+	private translationsMap: Menu.Translations = {
+		lblBack: 'Back',
+		lblHideMenu: 'Hide Menu',
+		lblMore: 'More...',
+	};
+
 	private destroy$ = new Subject();
+
+	set translations(value: Menu.Translations) {
+		this.translationsMap = {
+			...this.translationsMap,
+			...value,
+		};
+	}
+
+	public translate() {
+		return this.translationsMap;
+	}
 
 	/**
 	 * Returns an observable that will emit whenever we show/hide a submenu.

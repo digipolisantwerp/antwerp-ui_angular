@@ -23,8 +23,12 @@ export declare namespace Menu {
 	export interface ModuleConfiguration {
 		dockedByDefault?: boolean;
 		moreIcon?: string;
-		moreText?: string;
-		backText?: string;
+	}
+
+	export interface Translations {
+		lblMore?: string;
+		lblBack?: string;
+		lblHideMenu?: string;
 	}
 
 	export interface ISubMenuContext {

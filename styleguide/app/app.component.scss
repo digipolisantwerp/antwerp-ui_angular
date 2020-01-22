@@ -4,7 +4,6 @@ main {
     @include at($screen-xs) {
         display: flex;
         flex-direction: row;
-        overflow-y: hidden;
     }
 
     aui-sub-menu-item ::ng-deep li {

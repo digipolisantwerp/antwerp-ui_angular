@@ -26,9 +26,7 @@ export class NavigationMenuDemoPage {
 		imports:[
 			 NavigationMenuModule.configure({
 				 dockedByDefault: true,	// False by default
-				 moreIcon: 'angle-up',
-				 moreText: 'Meer...',
-				 backText: 'Terug'
+				 moreIcon: 'angle-up'
 			 })
 		]
 	 })
@@ -36,7 +34,7 @@ export class NavigationMenuDemoPage {
 	`;
 
 	basicUsage = `
-	<aui-menu>
+	<aui-menu [translations]="{ lblMore: 'More...'}>
     	<aui-menu-tab><aui-menu-link>Link One</aui-menu-link></aui-menu-tab>
     	<aui-menu-tab><aui-menu-link>Link Two</aui-menu-link></aui-menu-tab>
 	</aui-menu>

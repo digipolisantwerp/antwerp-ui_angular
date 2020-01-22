@@ -66,7 +66,11 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	public showHideMenuLabel$: Observable<boolean>;
 	public showRevealMenuLabel$: Observable<boolean>;
 
+	@Input()	// Translations coming from the user
+	translations: Menu.Translations;
+
 	public configuration: Menu.ModuleConfiguration;
+	public _translations: Menu.Translations;	// Real translations from the service
 
 	private destroy$ = new Subject();
 
@@ -74,12 +78,13 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.menuService.translations = this.translations;
+		this.configuration = this.menuService.configuration;
+		this._translations = this.menuService.translate();
 		// observable will change css host class of this component‹
 		this.isDocked$ = this.menuService.state$.pipe(
 			select(state => state.docked)
 		);
-
-		this.configuration = this.menuService.configuration;
 
 		// Helper observable
 		// Emits when the menu goes from docked => undocked
