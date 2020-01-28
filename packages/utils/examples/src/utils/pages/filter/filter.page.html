@@ -20,10 +20,10 @@
     <aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
 </div>
 <div class="u-margin-bottom">
-	<aui-checkbox-filter [filter]="checkFilter" (update)="changeCheckFilter($event)"></aui-checkbox-filter>
+    <aui-checkbox-filter [filter]="checkFilter" (update)="changeCheckFilter($event)"></aui-checkbox-filter>
 </div>
 <div class="u-margin-bottom">
-	<pre>{{ checkResults | json }}</pre>
+    <pre class="a-pre a-pre--scrollable">{{ checkResults | json }}</pre>
 </div>
 
 <h4 class="h5 u-margin-bottom">Input filter</h4>
@@ -34,10 +34,10 @@
     <aui-code-snippet [codeSnippet]="codeExampleHTML2"></aui-code-snippet>
 </div>
 <div class="u-margin-bottom">
-	<aui-input-filter [filter]="searchFilter" (update)="changeSearchFilter($event)"></aui-input-filter>
+    <aui-input-filter [filter]="searchFilter" (update)="changeSearchFilter($event)"></aui-input-filter>
 </div>
 <div class="u-margin-bottom">
-	<pre>{{ searchResults | json }}</pre>
+    <pre class="a-pre a-pre--scrollable">{{ searchResults | json }}</pre>
 </div>
 
 <h4 class="h5 u-margin-bottom">Select filter</h4>
@@ -48,8 +48,8 @@
     <aui-code-snippet [codeSnippet]="codeExampleHTML3"></aui-code-snippet>
 </div>
 <div class="u-margin-bottom">
-	<aui-select-filter [filter]="selectFilter" (update)="changeSelectFilter($event)"></aui-select-filter>
+    <aui-select-filter [filter]="selectFilter" (update)="changeSelectFilter($event)"></aui-select-filter>
 </div>
 <div class="u-margin-bottom">
-	<pre>{{ selectResults | json }}</pre>
+    <pre class="a-pre a-pre--scrollable">{{ selectResults | json }}</pre>
 </div>

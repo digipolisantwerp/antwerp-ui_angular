@@ -6,7 +6,7 @@
   left: 0;
   position: fixed;
   width: 100%;
-  z-index: layer('header');
+  z-index: layer('pane');
 
   @include at($screen-sm) {
     border-right: 1px solid $border-color;
@@ -65,6 +65,7 @@
     flex-direction: column;
     height: auto;
     width: auto;
+    z-index: layer('pane-overlay');
   }
 }
 

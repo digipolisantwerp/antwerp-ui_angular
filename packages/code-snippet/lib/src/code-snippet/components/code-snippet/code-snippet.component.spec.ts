@@ -32,7 +32,7 @@ describe('The Codesnippet Component', () => {
 				{ provide: HighlightJsService, useClass: MockHighlightJsService },
 			],
 		})
-		.compileComponents();  // compile template and css
+			.compileComponents();  // compile template and css
 	}));
 
 	// synchronous beforeEach
@@ -71,7 +71,7 @@ describe('The Codesnippet Component', () => {
 	});
 
 	describe('Check if everything is set for highlight', () => {
-		it('all <pre> elements should have the "a-pre" class', () => {
+		it('all <pre class="a-pre a-pre--scrollable"> elements should have the "a-pre" class', () => {
 			comp.ngAfterViewInit();
 			fixture.detectChanges();
 
