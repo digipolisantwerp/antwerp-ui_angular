@@ -31,8 +31,7 @@ describe('The Codesnippet Component', () => {
 			providers: [
 				{ provide: HighlightJsService, useClass: MockHighlightJsService },
 			],
-		})
-		.compileComponents();  // compile template and css
+		}).compileComponents();  // compile template and css
 	}));
 
 	// synchronous beforeEach
@@ -68,17 +67,5 @@ describe('The Codesnippet Component', () => {
 			tick();
 			expect(comp.codeSnippet).toContain('<p><code>some code</code></p>');
 		}));
-	});
-
-	describe('Check if everything is set for highlight', () => {
-		it('all <pre> elements should have the "a-pre" class', () => {
-			comp.ngAfterViewInit();
-			fixture.detectChanges();
-
-			const allPreEl = el.querySelectorAll('pre');
-			const allAPreEl = el.querySelectorAll('.a-pre');
-
-			expect(allPreEl.length).toBe(allAPreEl.length);
-		});
 	});
 });

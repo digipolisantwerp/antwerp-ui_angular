@@ -24,11 +24,11 @@ export class AppModule {};`;
 
 	public codeExampleHTML = `<dl>
 	<dt>Height:</dt>
-		<dd><pre>{{ window.innerHeight }}</pre></dd>
+		<dd><pre class="a-pre a-pre--scrollable">{{ window.innerHeight }}</pre></dd>
 	<dt>Width:</dt>
-		<dd><pre>{{ window.innerWidth }}</pre></dd>
+		<dd><pre class="a-pre a-pre--scrollable">{{ window.innerWidth }}</pre></dd>
 </dl>`;
 	constructor(
 		@Inject(WINDOW) public window
-	) {}
+	) { }
 }

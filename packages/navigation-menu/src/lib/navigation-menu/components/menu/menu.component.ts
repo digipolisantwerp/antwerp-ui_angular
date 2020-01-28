@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { MenuTabComponent } from '../menu-tab/menu-tab.component';
 import { Observable, Subject, merge } from 'rxjs';
-import { map, filter, takeUntil, tap, delay, pairwise, startWith, mapTo, shareReplay, take } from 'rxjs/operators';
+import { map, filter, takeUntil, tap, delay, pairwise, startWith, mapTo, shareReplay, take, first } from 'rxjs/operators';
 import { MenuService } from '../../services/menu.service';
 import { select } from '../../services/helpers';
 import { Router, NavigationStart } from '@angular/router';
@@ -50,6 +50,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	private afterContentChecked$ = new Subject<void>();
 
 	public isDocked$: Observable<boolean>;
+	public hasIconsInTabs$: Observable<boolean>;
 
 	/**
 	 * Menu items that are not visible on the screen since the latter is
@@ -86,6 +87,12 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 			select(state => state.docked)
 		);
 
+		this.hasIconsInTabs$ = this.afterContentChecked$.pipe(
+			first(),
+			map(() => this.tabs.toArray()),
+			map(tabs => tabs.every(tab => !!tab.icon))
+		);
+
 		// Helper observable
 		// Emits when the menu goes from docked => undocked
 		const dockedToUndocked$ = this.isDocked$.pipe(
@@ -116,8 +123,8 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 		this.moreMenuItems$ = this.afterContentChecked$.pipe(
 			map(() => this.tabs),
 			map(queryList => queryList.toArray()),
-			filter((tabs: Array<MenuTabComponent>) => tabs.length > 2),
-			map(tabs => tabs.splice(2, tabs.length - 1)),
+			filter((tabs: Array<MenuTabComponent>) => tabs.length > 3),	// 2 tabs + 'more' tab
+			map(tabs => tabs.splice(2, tabs.length - 2)),
 			tap(tabs => tabs.forEach(tab => tab.isSubMenu = true))
 		);
 
