@@ -3,7 +3,8 @@
 		<ng-container *ngTemplateOutlet="link"></ng-container>
 		<span *ngIf="!!subMenu || !!forceShowArrow" class="fa fa-angle-down"></span>
 	</a>
-	<a *ngIf="!href && !routerLink">
+	<a *ngIf="!href && !routerLink && menuLink" [href]="menuLink?.href ? menuLink.href : null"
+	   [routerLink]="menuLink?.routerLink ? menuLink.routerLink : null">
 		<ng-container *ngTemplateOutlet="link"></ng-container>
 		<span *ngIf="!!subMenu || !!forceShowArrow" class="fa fa-angle-down"></span>
 	</a>

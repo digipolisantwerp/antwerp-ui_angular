@@ -1,6 +1,6 @@
-import { Component, Input, ViewChild, ElementRef, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Menu } from '../../interfaces';
-import { lookForIllegalNodes } from '../../services/helpers';
+import {Component, Input, ViewChild, ElementRef, OnInit, ChangeDetectionStrategy, HostBinding} from '@angular/core';
+import {Menu} from '../../interfaces';
+import {lookForIllegalNodes} from '../../services/helpers';
 
 @Component({
 	selector: 'aui-menu-link',
@@ -14,6 +14,9 @@ export class MenuLinkComponent implements OnInit, Menu.ChecksChildren {
 	 */
 	@ViewChild('inclusedContent')
 	public ngContent: ElementRef<HTMLElement>;
+
+	@HostBinding('attr.tabindex')
+	tabIndex = -1;
 
 	@Input()
 	href: string;
