@@ -1,7 +1,5 @@
 <div class='o-menu' [ngClass]="{'docked' : isDocked$ | async }">
 	<div class="o-menu__wrapper">
-		<!-- Navigation pane first so that it appears below the menu since we're in the same stacking context -->
-		<aui-navigation-pane></aui-navigation-pane>
 		<nav class="o-menu__tabs-wrapper" role="navigation">
 			<ng-content></ng-content>
 
@@ -26,5 +24,7 @@
 			<a href="#" *ngIf="(showRevealMenuLabel$ | async)" (click)="toggleDocking($event)"><span
 					class="fa fa-angle-double-right"></span></a>
 		</div>
+
+		<aui-navigation-pane></aui-navigation-pane>
 	</div>
 </div>

@@ -11,12 +11,13 @@ import {
 	ChangeDetectionStrategy,
 	Host
 } from '@angular/core';
-import { SubMenuComponent } from '../sub-menu/sub-menu.component';
-import { MenuService } from '../../services/menu.service';
-import { Menu } from '../../interfaces';
-import { lookForIllegalNodes, select } from '../../services/helpers';
-import { filter, tap, map, takeUntil, mapTo, scan, repeat, share, startWith } from 'rxjs/operators';
-import { Subject, Observable, merge, combineLatest, of } from 'rxjs';
+import {SubMenuComponent} from '../sub-menu/sub-menu.component';
+import {MenuService} from '../../services/menu.service';
+import {Menu} from '../../interfaces';
+import {lookForIllegalNodes, select} from '../../services/helpers';
+import {filter, tap, map, takeUntil, mapTo, scan, repeat, share, startWith} from 'rxjs/operators';
+import {Subject, Observable, merge, combineLatest, of} from 'rxjs';
+import {MenuLinkComponent} from '../menu-link/menu-link.component';
 
 @Component({
 	selector: 'aui-sub-menu-item',
@@ -40,6 +41,8 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
 	 */
 	@ContentChild(SubMenuComponent)
 	public subMenu?: SubMenuComponent;
+	@ContentChild(MenuLinkComponent)
+	public menuLink?: MenuLinkComponent;
 
 	@Input()
 	href = null;
@@ -51,9 +54,11 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
 
 	@HostBinding('class')
 	class = 'm-nav-list m-nav-list--left';
-
 	@HostBinding('class.active')
 	isActive = false;
+	@HostBinding('attr.tabindex')
+	tabIndex = -1;
+
 	isActive$: Observable<boolean>;
 
 	state$: Observable<Menu.MenuState>;

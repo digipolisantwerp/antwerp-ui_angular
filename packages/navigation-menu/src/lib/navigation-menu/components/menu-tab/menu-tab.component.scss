@@ -3,11 +3,11 @@
 :host {
   border-right: 1px solid $border-color;
   cursor: pointer;
-  flex-basis: 0;
+  flex-basis: 33%;
   flex-grow: 1;
   height: 100%;
   position: relative;
-  width: 100%;
+  width: 33%;
 
   &:last-child {
     border-right: none;
@@ -16,6 +16,7 @@
   @include at($screen-sm) {
     border-bottom: 1px solid $border-color;
     border-right: none;
+	width: 100%;
   }
 }
 
