@@ -9,7 +9,7 @@ Thus on loading, this element is not visible and is not accessible by crawlers -
   </ul>
 </ng-template>
 
-<div class="o-sub-menu__content-wrapper" [ngClass]="{'docked' : (state$ | async)?.docked}">
+<div class="o-sub-menu__content-wrapper">
   <ul #children class="m-nav-list">
     <ng-container *ngTemplateOutlet="inclusedContent"></ng-container>
   </ul>

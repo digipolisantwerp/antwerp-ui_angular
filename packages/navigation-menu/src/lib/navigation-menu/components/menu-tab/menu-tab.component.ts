@@ -1,28 +1,26 @@
 import {
-	Component,
-	Input,
-	ViewChild,
-	OnInit,
-	ElementRef,
-	ContentChild,
-	HostListener,
-	OnDestroy,
 	ChangeDetectionStrategy,
-	HostBinding
+	Component,
+	ContentChild,
+	ElementRef,
+	HostBinding,
+	HostListener,
+	Input,
+	OnDestroy,
+	OnInit,
+	ViewChild
 } from '@angular/core';
-import { SubMenuComponent } from '../sub-menu/sub-menu.component';
-import { MenuService } from '../../services/menu.service';
-import { tap, map, filter, mapTo, scan, repeat, takeUntil, share, startWith } from 'rxjs/operators';
-import { Observable, merge, Subject, combineLatest } from 'rxjs';
-import { Menu } from '../../interfaces';
-import { select } from '../../services/helpers';
-import { MenuLinkComponent } from '../menu-link/menu-link.component';
-import { Router } from '@angular/router';
+import {SubMenuComponent} from '../sub-menu/sub-menu.component';
+import {MenuService} from '../../services/menu.service';
+import {filter, map, mapTo, repeat, scan, share, startWith, takeUntil, tap} from 'rxjs/operators';
+import {combineLatest, merge, Observable, Subject} from 'rxjs';
+import {select} from '../../services/helpers';
+import {MenuLinkComponent} from '../menu-link/menu-link.component';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'aui-menu-tab',
 	templateUrl: './menu-tab.component.html',
-	styleUrls: ['./menu-tab.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuTabComponent implements OnInit, OnDestroy {
@@ -38,6 +36,11 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 	@ContentChild(MenuLinkComponent)
 	public menuLink: MenuLinkComponent;
 
+	@HostBinding('class.o-menu-tab')
+	tab = true;
+	@HostBinding('class.active')
+	isActive = false;
+
 	public tabIsActive$: Observable<boolean>;
 
 	/**
@@ -51,17 +54,12 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 	@Input()
 	public isSubMenu = false;
 
-
-	// Menu service state
-	state$: Observable<Menu.MenuState>;
-
 	private destroy$ = new Subject();
 
-	public constructor(private menuService: MenuService, private router: Router) { }
+	public constructor(private menuService: MenuService, private router: Router) {
+	}
 
 	ngOnInit() {
-		this.state$ = this.menuService.state$;
-
 		// Observable emits true whenever our menu tab should close
 		const shouldCloseMenu$: Observable<boolean> = merge(
 			// Close when closing all menus
@@ -103,13 +101,17 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 					this.menuLink.routerLink ? this.router.navigate(this.menuLink.routerLink) : window.location.href = this.menuLink.href;
 				}
 			}),
-			startWith(false)
+			startWith(false),
+			takeUntil(this.destroy$),
+			tap(v => this.isActive = v)
 		);
+
+		this.tabIsActive$.subscribe();
 
 		// Open our menu in the navigation pane for mobile layouts
 		const openMobileMenu$ = combineLatest([
 			this.headerClicked$,
-			this.state$.pipe(select(state => state.mode), filter(mode => mode === 'mobile')),
+			this.menuService.state$.pipe(select(state => state.mode), filter(mode => mode === 'mobile')),
 		]).pipe(
 			map(([isSubMenuItem, state]) => isSubMenuItem),
 			filter(() => (!!this.subMenu && !!this.subMenu.templateRef)),

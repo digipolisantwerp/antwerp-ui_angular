@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, HostBinding, TemplateRef, OnDestroy } from '@angular/core';
-import { tap, filter, map, takeUntil, delay, mapTo, scan, startWith, pairwise } from 'rxjs/operators';
-import { MenuService } from '../../services/menu.service';
-import { Observable, Subject, merge } from 'rxjs';
-import { Menu } from '../../interfaces';
+import {Component, HostBinding, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {delay, filter, map, mapTo, pairwise, scan, startWith, takeUntil, tap} from 'rxjs/operators';
+import {MenuService} from '../../services/menu.service';
+import {merge, Observable, Subject} from 'rxjs';
+import {Menu} from '../../interfaces';
 
 /**
  * Navigation Pane
@@ -21,24 +21,25 @@ import { Menu } from '../../interfaces';
 @Component({
 	selector: 'aui-navigation-pane',
 	templateUrl: './navigation-pane.component.html',
-	styleUrls: ['./navigation-pane.component.scss'],
 })
 export class NavigationPaneComponent implements OnInit, OnDestroy {
-  /**
-   * Container reference where we will inject the submenu
-   */
-	@ViewChild('subMenu', { read: ViewContainerRef })
+	/**
+	 * Container reference where we will inject the submenu
+	 */
+	@ViewChild('subMenu', {read: ViewContainerRef})
 	private container: ViewContainerRef;
 
-  /**
-   * Container reference used for sliding in a submenu.
-   */
-	@ViewChild('slideInSubMenu', { read: ViewContainerRef })
+	/**
+	 * Container reference used for sliding in a submenu.
+	 */
+	@ViewChild('slideInSubMenu', {read: ViewContainerRef})
 	private slideInContainer: ViewContainerRef;
+	@HostBinding('class.o-menu-navigation-pane')
+	navigationPane = true;
 
-  /**
-   * Helper observable that emits whenever we need to slide in a new menu
-   */
+	/**
+	 * Helper observable that emits whenever we need to slide in a new menu
+	 */
 	public slideInSubMenu$: Observable<boolean>;
 
 	@HostBinding('class.visible')

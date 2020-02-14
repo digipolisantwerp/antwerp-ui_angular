@@ -5,7 +5,6 @@ import {
 	ContentChildren,
 	AfterContentChecked,
 	HostListener,
-	HostBinding,
 	OnDestroy,
 	ChangeDetectionStrategy,
 	Input
@@ -33,7 +32,6 @@ import { Menu } from '../../interfaces';
 @Component({
 	selector: 'aui-menu',
 	templateUrl: './menu.component.html',
-	styleUrls: ['./menu.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
@@ -137,8 +135,8 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 		).subscribe();
 	}
 
-	@HostListener('document:click', ['$event'])
-	public onDocumentClick(event) {
+	@HostListener('document:click')
+	public onDocumentClick() {
 		this.menuService.closeAllMenus();
 	}
 

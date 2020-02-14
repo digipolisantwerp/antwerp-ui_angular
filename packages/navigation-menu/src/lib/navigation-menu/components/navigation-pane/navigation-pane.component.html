@@ -2,8 +2,8 @@
 <ng-container>
   <!-- Overlay casts a 'dark' shadow over the rest of the page to bring focus on the main menu.-->
   <div class='o-navigation-pane__overlay' (click)='closeMenu()'></div>
-  <div class="o-navigation-pane__wrapper u-bg-white">
-    <div class="main-submenu" [ngClass]="{'slide-down' : (slideInSubMenu$ | async)}">
+  <div class="o-navigation-pane__wrapper">
+    <div class="main-submenu">
       <!-- Main menu shows the sub menu items -->
       <ng-container #subMenu></ng-container>
     </div>
