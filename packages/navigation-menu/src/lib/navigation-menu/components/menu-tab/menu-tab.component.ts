@@ -36,7 +36,7 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 	@ContentChild(MenuLinkComponent)
 	public menuLink: MenuLinkComponent;
 
-	@HostBinding('class.o-menu-tab')
+	@HostBinding('class.o-menu__tab')
 	tab = true;
 	@HostBinding('class.active')
 	isActive = false;

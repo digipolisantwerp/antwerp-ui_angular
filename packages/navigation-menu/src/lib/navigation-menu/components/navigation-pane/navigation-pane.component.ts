@@ -34,7 +34,7 @@ export class NavigationPaneComponent implements OnInit, OnDestroy {
 	 */
 	@ViewChild('slideInSubMenu', {read: ViewContainerRef})
 	private slideInContainer: ViewContainerRef;
-	@HostBinding('class.o-menu-navigation-pane')
+	@HostBinding('class.o-menu__navigation-pane')
 	navigationPane = true;
 
 	/**
@@ -42,7 +42,7 @@ export class NavigationPaneComponent implements OnInit, OnDestroy {
 	 */
 	public slideInSubMenu$: Observable<boolean>;
 
-	@HostBinding('class.visible')
+	@HostBinding('class.is-visible')
 	public paneIsVisible = false;
 	public paneIsVisible$: Observable<boolean>;
 

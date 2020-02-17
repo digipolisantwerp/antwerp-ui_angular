@@ -31,7 +31,7 @@ export class SubMenuComponent implements OnInit, OnDestroy, Menu.ChecksChildren,
 	templateRef: TemplateRef<Menu.ISubMenuContext>;
 	@ViewChild('children')
 	ngContent: ElementRef<HTMLElement>;
-	@HostBinding('class.o-menu-submenu')
+	@HostBinding('class.o-menu__submenu')
 	submenu = true;
 	/**
 	 * Helper to display a 'back' link if necessary.
