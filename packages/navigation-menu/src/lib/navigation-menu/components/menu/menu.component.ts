@@ -57,6 +57,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	 * too small will have to be accessed to a 'more' tab. (for mobile only)
 	 */
 	public moreMenuItems$: Observable<Array<MenuTabComponent>>;
+	public shouldShowMoreTab$: Observable<boolean>;
 
 	/**
 	 * Helper observables used to show/hide the labels to (un)dock
@@ -126,6 +127,12 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 			filter((tabs: Array<MenuTabComponent>) => tabs.length > 3),	// 2 tabs + 'more' tab
 			map(tabs => tabs.splice(2, tabs.length - 2)),
 			tap(tabs => tabs.forEach(tab => tab.isSubMenu = true))
+		);
+
+		this.shouldShowMoreTab$ = this.afterContentChecked$.pipe(
+			map(() => this.tabs),
+			map(tabs => tabs.toArray()),
+			map(tabs => tabs.length > 2)
 		);
 
 
