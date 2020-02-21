@@ -123,7 +123,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 		this.moreMenuItems$ = this.afterContentChecked$.pipe(
 			map(() => this.tabs),
 			map(queryList => queryList.toArray()),
-			filter((tabs: Array<MenuTabComponent>) => tabs.length > 3),	// 2 tabs + 'more' tab
+			filter((tabs: Array<MenuTabComponent>) => tabs.length >= 3),	// 2 tabs + 'more' tab
 			map(tabs => tabs.splice(2, tabs.length - 2)),
 			tap(tabs => tabs.forEach(tab => tab.isSubMenu = true))
 		);
@@ -141,7 +141,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 		).subscribe();
 	}
 
-	@HostListener('document:click', ['$event'])
+	@HostListener('document:click')
 	public onDocumentClick() {
 		this.menuService.closeAllMenus();
 	}
