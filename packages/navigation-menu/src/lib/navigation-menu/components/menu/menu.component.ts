@@ -5,7 +5,6 @@ import {
 	ContentChildren,
 	AfterContentChecked,
 	HostListener,
-	HostBinding,
 	OnDestroy,
 	ChangeDetectionStrategy,
 	Input
@@ -130,9 +129,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 		);
 
 		this.shouldShowMoreTab$ = this.afterContentChecked$.pipe(
-			map(() => this.tabs),
-			map(tabs => tabs.toArray()),
-			map(tabs => tabs.length > 2)
+			map(() => this.tabs.toArray().length > 2)
 		);
 
 
@@ -145,7 +142,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
 	}
 
 	@HostListener('document:click', ['$event'])
-	public onDocumentClick(event) {
+	public onDocumentClick() {
 		this.menuService.closeAllMenus();
 	}
 
