@@ -38,7 +38,7 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 
 	@HostBinding('class.o-menu__tab')
 	tab = true;
-	@HostBinding('class.active')
+	@HostBinding('class.is-active')
 	isActive = false;
 
 	public tabIsActive$: Observable<boolean>;

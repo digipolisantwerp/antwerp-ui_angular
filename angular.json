@@ -26,8 +26,7 @@
             "styles": [
               "styleguide/styles.scss",
               "node_modules/leaflet/dist/leaflet.css",
-              "node_modules/leaflet-draw/dist/leaflet.draw.css",
-              "../core_branding_scss/dist/main.css"
+              "node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
