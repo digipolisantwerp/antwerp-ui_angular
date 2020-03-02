@@ -72,6 +72,12 @@
       ],
       "aui-agenda/*": [
         "dist/aui-agenda/*"
+      ],
+      "aui-avatar": [
+        "dist/aui-avatar"
+      ],
+      "aui-avatar/*": [
+        "dist/aui-avatar/*"
       ]
     }
   },

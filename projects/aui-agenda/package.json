@@ -4,7 +4,7 @@
   "acpaas-ui": {
     "dependencies": []
   },
-  "dependencies": {
+  "whitelistedNonPeerDependencies": {
     "@acpaas-ui/js-date-utils": "1.0.1",
     "hammerjs": "~2.0.8"
   }
