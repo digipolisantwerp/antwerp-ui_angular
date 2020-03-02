@@ -11,6 +11,8 @@ import {CalendarModule} from '../../../aui-calendar/src/lib/calendar';
 import {ContextModule} from '../../../aui-context/src/lib/context';
 import {FlyoutModule} from '../../../aui-flyout/src/lib/flyout';
 import {FlyoutButtonModule} from '../../../aui-flyout/src/lib/flyout-button';
+import {LocalstorageModule} from '../../../aui-localstorage/src/lib/localstorage';
+import {LeafletModule} from '../../../aui-map/src/lib/leaflet';
 
 @NgModule({
   imports: [
@@ -25,7 +27,12 @@ import {FlyoutButtonModule} from '../../../aui-flyout/src/lib/flyout-button';
     CalendarModule,
     ContextModule,
     FlyoutModule,
-    FlyoutButtonModule
+    FlyoutButtonModule,
+    LocalstorageModule.forRoot({
+      storageType: 'sessionStorage',
+      identifier: 'my-app-v1',
+    }),
+    LeafletModule
   ],
   exports: [
     FooterModule,
@@ -39,7 +46,9 @@ import {FlyoutButtonModule} from '../../../aui-flyout/src/lib/flyout-button';
     CalendarModule,
     ContextModule,
     FlyoutModule,
-    FlyoutButtonModule
+    FlyoutButtonModule,
+    LocalstorageModule,
+    LeafletModule
   ]
 })
 export class AuiModule {

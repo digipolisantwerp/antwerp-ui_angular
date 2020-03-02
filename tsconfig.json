@@ -96,6 +96,18 @@
       ],
       "aui-flyout/*": [
         "dist/aui-flyout/*"
+      ],
+      "aui-localstorage": [
+        "dist/aui-localstorage"
+      ],
+      "aui-localstorage/*": [
+        "dist/aui-localstorage/*"
+      ],
+      "aui-map": [
+        "dist/aui-map"
+      ],
+      "aui-map/*": [
+        "dist/aui-map/*"
       ]
     }
   },

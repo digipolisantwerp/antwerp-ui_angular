@@ -579,6 +579,76 @@
           }
         }
       }
+    },
+    "aui-localstorage": {
+      "projectType": "library",
+      "root": "projects/aui-localstorage",
+      "sourceRoot": "projects/aui-localstorage/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-localstorage/tsconfig.lib.json",
+            "project": "projects/aui-localstorage/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-localstorage/src/test.ts",
+            "tsConfig": "projects/aui-localstorage/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-localstorage/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-localstorage/tsconfig.lib.json",
+              "projects/aui-localstorage/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "aui-map": {
+      "projectType": "library",
+      "root": "projects/aui-map",
+      "sourceRoot": "projects/aui-map/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-map/tsconfig.lib.json",
+            "project": "projects/aui-map/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-map/src/test.ts",
+            "tsConfig": "projects/aui-map/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-map/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-map/tsconfig.lib.json",
+              "projects/aui-map/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "styleguide"
 }
