@@ -4,6 +4,7 @@ import {LogoModule} from '../../../aui-logo/src/lib';
 import {HeaderModule} from '../../../aui-layout/src/lib/header';
 import {NavigationMenuModule} from '../../../aui-navigation-menu/src/lib/navigation-menu';
 import {CodeSnippetModule} from '../../../aui-code-snippet/src/lib/code-snippet';
+import {AnalyticsModule} from '../../../aui-analytics/src/lib/analytics';
 
 @NgModule({
   imports: [
@@ -12,13 +13,15 @@ import {CodeSnippetModule} from '../../../aui-code-snippet/src/lib/code-snippet'
     HeaderModule,
     CodeSnippetModule,
     NavigationMenuModule.configure(),
+    AnalyticsModule
   ],
   exports: [
     FooterModule,
     CodeSnippetModule,
     LogoModule,
     NavigationMenuModule,
-    HeaderModule
+    HeaderModule,
+    AnalyticsModule
   ]
 })
 export class AuiModule {

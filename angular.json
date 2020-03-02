@@ -334,6 +334,111 @@
           }
         }
       }
+    },
+    "analytics": {
+      "projectType": "library",
+      "root": "projects/analytics",
+      "sourceRoot": "projects/analytics/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/analytics/tsconfig.lib.json",
+            "project": "projects/analytics/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/analytics/src/test.ts",
+            "tsConfig": "projects/analytics/tsconfig.spec.json",
+            "karmaConfig": "projects/analytics/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/analytics/tsconfig.lib.json",
+              "projects/analytics/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "aui-analytics": {
+      "projectType": "library",
+      "root": "projects/aui-analytics",
+      "sourceRoot": "projects/aui-analytics/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-analytics/tsconfig.lib.json",
+            "project": "projects/aui-analytics/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-analytics/src/test.ts",
+            "tsConfig": "projects/aui-analytics/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-analytics/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-analytics/tsconfig.lib.json",
+              "projects/aui-analytics/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "aui-agenda": {
+      "projectType": "library",
+      "root": "projects/aui-agenda",
+      "sourceRoot": "projects/aui-agenda/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-agenda/tsconfig.lib.json",
+            "project": "projects/aui-agenda/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-agenda/src/test.ts",
+            "tsConfig": "projects/aui-agenda/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-agenda/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-agenda/tsconfig.lib.json",
+              "projects/aui-agenda/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "styleguide"
 }

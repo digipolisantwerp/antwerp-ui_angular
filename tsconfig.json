@@ -54,6 +54,24 @@
       ],
       "aui-code-snippet/*": [
         "dist/aui-code-snippet/*"
+      ],
+      "analytics": [
+        "dist/analytics"
+      ],
+      "analytics/*": [
+        "dist/analytics/*"
+      ],
+      "aui-analytics": [
+        "dist/aui-analytics"
+      ],
+      "aui-analytics/*": [
+        "dist/aui-analytics/*"
+      ],
+      "aui-agenda": [
+        "dist/aui-agenda"
+      ],
+      "aui-agenda/*": [
+        "dist/aui-agenda/*"
       ]
     }
   },
