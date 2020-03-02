@@ -509,6 +509,76 @@
           }
         }
       }
+    },
+    "aui-context": {
+      "projectType": "library",
+      "root": "projects/aui-context",
+      "sourceRoot": "projects/aui-context/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-context/tsconfig.lib.json",
+            "project": "projects/aui-context/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-context/src/test.ts",
+            "tsConfig": "projects/aui-context/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-context/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-context/tsconfig.lib.json",
+              "projects/aui-context/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "aui-flyout": {
+      "projectType": "library",
+      "root": "projects/aui-flyout",
+      "sourceRoot": "projects/aui-flyout/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-flyout/tsconfig.lib.json",
+            "project": "projects/aui-flyout/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-flyout/src/test.ts",
+            "tsConfig": "projects/aui-flyout/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-flyout/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-flyout/tsconfig.lib.json",
+              "projects/aui-flyout/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "styleguide"
 }

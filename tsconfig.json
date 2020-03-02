@@ -84,6 +84,18 @@
       ],
       "aui-calendar/*": [
         "dist/aui-calendar/*"
+      ],
+      "aui-context": [
+        "dist/aui-context"
+      ],
+      "aui-context/*": [
+        "dist/aui-context/*"
+      ],
+      "aui-flyout": [
+        "dist/aui-flyout"
+      ],
+      "aui-flyout/*": [
+        "dist/aui-flyout/*"
       ]
     }
   },

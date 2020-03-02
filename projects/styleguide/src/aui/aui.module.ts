@@ -8,6 +8,9 @@ import {AnalyticsModule} from '../../../aui-analytics/src/lib/analytics';
 import {AgendaModule} from '../../../aui-agenda/src/lib/agenda';
 import {AvatarModule} from '../../../aui-avatar/src/lib/avatar';
 import {CalendarModule} from '../../../aui-calendar/src/lib/calendar';
+import {ContextModule} from '../../../aui-context/src/lib/context';
+import {FlyoutModule} from '../../../aui-flyout/src/lib/flyout';
+import {FlyoutButtonModule} from '../../../aui-flyout/src/lib/flyout-button';
 
 @NgModule({
   imports: [
@@ -19,7 +22,10 @@ import {CalendarModule} from '../../../aui-calendar/src/lib/calendar';
     AnalyticsModule,
     AgendaModule,
     AvatarModule,
-    CalendarModule
+    CalendarModule,
+    ContextModule,
+    FlyoutModule,
+    FlyoutButtonModule
   ],
   exports: [
     FooterModule,
@@ -30,7 +36,10 @@ import {CalendarModule} from '../../../aui-calendar/src/lib/calendar';
     AnalyticsModule,
     AgendaModule,
     AvatarModule,
-    CalendarModule
+    CalendarModule,
+    ContextModule,
+    FlyoutModule,
+    FlyoutButtonModule
   ]
 })
 export class AuiModule {
