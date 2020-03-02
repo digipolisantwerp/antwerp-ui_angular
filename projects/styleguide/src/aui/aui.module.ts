@@ -7,6 +7,7 @@ import {CodeSnippetModule} from '../../../aui-code-snippet/src/lib/code-snippet'
 import {AnalyticsModule} from '../../../aui-analytics/src/lib/analytics';
 import {AgendaModule} from '../../../aui-agenda/src/lib/agenda';
 import {AvatarModule} from '../../../aui-avatar/src/lib/avatar';
+import {CalendarModule} from '../../../aui-calendar/src/lib/calendar';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {AvatarModule} from '../../../aui-avatar/src/lib/avatar';
     NavigationMenuModule.configure(),
     AnalyticsModule,
     AgendaModule,
-    AvatarModule
+    AvatarModule,
+    CalendarModule
   ],
   exports: [
     FooterModule,
@@ -27,7 +29,8 @@ import {AvatarModule} from '../../../aui-avatar/src/lib/avatar';
     HeaderModule,
     AnalyticsModule,
     AgendaModule,
-    AvatarModule
+    AvatarModule,
+    CalendarModule
   ]
 })
 export class AuiModule {

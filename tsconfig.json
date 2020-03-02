@@ -78,6 +78,12 @@
       ],
       "aui-avatar/*": [
         "dist/aui-avatar/*"
+      ],
+      "aui-calendar": [
+        "dist/aui-calendar"
+      ],
+      "aui-calendar/*": [
+        "dist/aui-calendar/*"
       ]
     }
   },

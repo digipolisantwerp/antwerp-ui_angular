@@ -4,7 +4,7 @@
   "acpaas-ui": {
     "dependencies": []
   },
-  "dependencies": {
+  "whitelistedNonPeerDependencies": {
     "@acpaas-ui/js-date-utils": "~1.0.1",
     "lodash-es": "~4.17.10"
   }

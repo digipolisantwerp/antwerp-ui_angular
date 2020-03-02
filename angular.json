@@ -474,6 +474,41 @@
           }
         }
       }
+    },
+    "aui-calendar": {
+      "projectType": "library",
+      "root": "projects/aui-calendar",
+      "sourceRoot": "projects/aui-calendar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-calendar/tsconfig.lib.json",
+            "project": "projects/aui-calendar/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-calendar/src/test.ts",
+            "tsConfig": "projects/aui-calendar/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-calendar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-calendar/tsconfig.lib.json",
+              "projects/aui-calendar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "styleguide"
 }

@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Components } from './components/index';
-import { Services } from './services/index';
+import { Components } from './components';
+import { Services } from './services';
 
 import {
 	CALENDAR_WEEKDAY_LABELS,

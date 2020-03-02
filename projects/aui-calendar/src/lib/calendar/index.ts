@@ -13,7 +13,7 @@ export {
 	CalendarMonthComponent,
 	CalendarYearComponent,
 	CalendarDecenniaComponent,
- } from './components/index';
+ } from './components';
 export {
 	CALENDAR_DEFAULT_MONTH_LABELS,
 	CALENDAR_DEFAULT_WEEKDAY_LABELS,
