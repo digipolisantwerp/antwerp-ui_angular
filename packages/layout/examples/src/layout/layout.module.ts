@@ -24,7 +24,7 @@ import { Pages } from './pages/index';
 		CookieconsentModule.forRoot({
 			autoInit: false,
 			content: {
-				message: 'I am the cookie consent demo. Will you allow my cookies?',
+				message: 'I am the cookie consent aui-logo. Will you allow my cookies?',
 				dismiss: 'Allow cookies',
 				link: 'Learn more',
 				href: 'http://cookiepedia.co.uk/all-about-cookies',

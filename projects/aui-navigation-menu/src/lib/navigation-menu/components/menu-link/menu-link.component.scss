@@ -1,0 +1,17 @@
+@import "../../assets/variables";
+
+:host {
+
+    white-space: nowrap;
+
+    ::ng-deep a,
+    ::ng-deep a:active,
+    ::ng-deep a:link {
+
+        &,
+        &:hover {
+            color: $text-color-light;
+            text-decoration: none;
+        }
+    }
+}

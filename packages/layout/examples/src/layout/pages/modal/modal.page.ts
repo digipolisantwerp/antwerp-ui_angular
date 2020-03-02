@@ -81,8 +81,8 @@ private doSomething() {
 		this.modalService.openModal(
 			AUIDemoModalComponent,
 			{
-				title: 'Modal demo',
-				text: 'Are you sure you want to see a demo of this modal?',
+				title: 'Modal aui-logo',
+				text: 'Are you sure you want to see a aui-logo of this modal?',
 			}, {
 				confirm: () => this.doSomething(),
 			}

@@ -5,25 +5,60 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2017",
+      "es2018",
       "dom"
     ],
     "paths": {
-      "@acpaas-ui/ngx-components/*": [
-        "dist/*"
+      "ngx-layout": [
+        "dist/ngx-layout"
       ],
-      "@acpaas-ui/ngx-examples/*": [
-        "examples/*"
+      "ngx-layout/*": [
+        "dist/ngx-layout/*"
+      ],
+      "ngx-logo": [
+        "dist/ngx-logo"
+      ],
+      "ngx-logo/*": [
+        "dist/ngx-logo/*"
+      ],
+      "aui-logo": [
+        "dist/aui-logo"
+      ],
+      "aui-logo/*": [
+        "dist/aui-logo/*"
+      ],
+      "aui-layout": [
+        "dist/aui-layout"
+      ],
+      "aui-layout/*": [
+        "dist/aui-layout/*"
+      ],
+      "aui-navigation-menu": [
+        "dist/aui-navigation-menu"
+      ],
+      "aui-navigation-menu/*": [
+        "dist/aui-navigation-menu/*"
+      ],
+      "aui-code-snippet": [
+        "dist/aui-code-snippet"
+      ],
+      "aui-code-snippet/*": [
+        "dist/aui-code-snippet/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

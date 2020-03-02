@@ -1,0 +1,85 @@
+@import "../../assets/variables";
+
+.o-menu {
+  background: $white;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: layer('pane');
+
+  @include at($screen-sm) {
+    border-right: 1px solid $border-color;
+    height: calc(100% + #{$header-height} + 2px); // Leave room for the dock/undock labels
+    overflow-x: hidden; // By default, don't show overflowing content
+    overflow-y: auto;
+    position: initial;
+    top: 0;
+    transition: all ease-in-out $animation-speed;
+    width: $menu-undocked-width;
+    min-width: $menu-undocked-width;
+
+    &.docked {
+      overflow: visible; // Since when docked the submenu's will appear to the right, show the overflowing content
+      width: $menu-docked-width;
+      min-width: $menu-docked-width;
+
+      .o-menu__tabs-wrapper {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.o-menu__tabs-wrapper {
+  align-content: space-between;
+  align-items: center;
+  background: $white;
+  border-top: 1px solid $border-color;
+  display: flex;
+  position: relative;
+  width: 100%;
+  z-index: layer('header');
+
+  // Only display the first 2 items on a mobile screen
+  // and ignore the last element, since it will show a 'more...' menu tab
+  &::ng-deep>aui-menu-tab:nth-child(n + 3) {
+    &:not(:last-child) {
+      display: none; //We will need to  display the 'more...' tab
+
+      @include at($screen-sm) {
+        display: block; // Just display all on desktop since we will have enough space
+      }
+    }
+
+    &:last-child {
+      display: block;
+
+      @include at($screen-sm) {
+        display: none; // Don't display the 'more' tab on desktop
+      }
+    }
+  }
+
+  @include at($screen-sm) {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    z-index: layer('pane-overlay');
+  }
+}
+
+.o-menu__hide-cta {
+  display: none;
+
+  @include at($screen-sm) {
+    display: block;
+    margin: $spacer-sm;
+    text-align: right;
+
+    >a {
+      text-decoration: none;
+    }
+  }
+
+}
