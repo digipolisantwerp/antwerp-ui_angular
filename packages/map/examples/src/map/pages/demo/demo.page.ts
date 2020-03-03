@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { baseMapAntwerp, baseMapWorldGray, LeafletMap, MapService } from '@acpaas-ui/ngx-components/map';
+import { LatLng } from 'leaflet';
 
 @Component({
 	templateUrl: './demo.page.html',
@@ -18,7 +19,6 @@ export class AppModule {};`;
 	public codeExampleJS1 =
 `"styles": [
 	"node_modules/leaflet/dist/leaflet.css",
-	"node_modules/leaflet-draw/dist/leaflet.draw.css"
 ]`;
 	public codeExampleJS2 =
 `import { LeafletMap, baseMapWorldGray, baseMapAntwerp, MapService } from '@acpaas-ui/ngx-components/map';
@@ -28,9 +28,8 @@ constructor(public mapService: MapService) {
 
 public leafletMap: LeafletMap = new LeafletMap({
 	zoom: 13, // default zoom level
-	center: [51.215, 4.425], // default center point
-	onAddPolygon: (layer) => {},
-	onAddLine: (layer) => {},
+	center: new LatLng(51.215, 4.425), // default center point
+	onAddFeature: (layer) => {},
 	onEditFeature: (feature) => {},
 }, this.mapService);
 
@@ -60,20 +59,32 @@ public ngOnInit(): void {
 	</div>
 </aui-leaflet>`;
 
-  public mapMockService: MapService = new MapService('browser');
+	public leafletMap: LeafletMap;
 
-	public leafletMap: LeafletMap = new LeafletMap({
-		zoom: 13, // default zoom level
-		center: [51.215, 4.425], // default center point
-		onAddPolygon: (layer) => {},
-		onAddLine: (layer) => {},
-		onEditFeature: (feature) => {},
-	}, this.mapMockService);
+	constructor() {
+		this.leafletMap = new LeafletMap({
+			zoom: 13, // default zoom level
+			center: new LatLng(51.215, 4.425), // default center point
+			onAddFeature: this.onAddFeature,
+			onEditFeature: (feature) => {},
+		}, new MapService('browser'));
+	}
 
 	public ngOnInit(): void {
 		this.leafletMap.onInit.subscribe(() => {
 			this.leafletMap.addTileLayer(baseMapWorldGray);
 			this.leafletMap.addTileLayer(baseMapAntwerp);
 	 });
+	}
+
+	public onAddFeature = (feature) => {
+		console.log(feature);
+		feature.on('click', () => {
+			this.leafletMap.startEditLayer(feature);
+			this.leafletMap.map.on('click', () => {
+				this.leafletMap.stopEditLayer();
+				this.leafletMap.map.off('click');
+			});
+		});
 	}
 }
