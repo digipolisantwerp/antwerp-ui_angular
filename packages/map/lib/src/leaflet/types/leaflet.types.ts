@@ -1,4 +1,4 @@
-import { LatLngExpression } from 'leaflet';
+import { LatLng, PathOptions } from 'leaflet';
 
 export interface LeafletLayer {
 	name: string;
@@ -7,15 +7,21 @@ export interface LeafletLayer {
 }
 
 export interface LeafletMapOptions {
-	center: LatLngExpression;
+	center: LatLng;
 	zoom: number;
-	lineColor?: string;
-	onAddLine?: Function;
-	polygonColor?: string;
-	onAddPolygon?: Function;
+	language?:  'en' | 'de' | 'it' | 'ru' | 'ro' | 'es' | 'fr' | 'pt_br' | 'id' | 'zh' | 'nl' | 'pl' | 'sv';
+	tooltips?: boolean;
+	onAddFeature?: Function;
 	onEditFeature?: Function;
 }
 
-export interface LatLngExpression {
-	latLng: any;
+export interface LeafletDrawOptions {
+	snappable?:	boolean;
+	snapDistance?: number;
+	snapMiddle?: boolean;
+	tooltips?: boolean;
+	allowSelfIntersection?: boolean;
+	templineStyle?:	PathOptions;
+	hintlineStyle?:	PathOptions;
+	cursorMarker?: boolean;
 }

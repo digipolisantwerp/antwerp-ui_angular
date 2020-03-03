@@ -1,26 +1,34 @@
 import { EventEmitter } from '@angular/core';
-import { MapService } from '../services/map.service';
 
-import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
+import { MapService } from '../services/map.service';
+import { LeafletDrawOptions, LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
+
+import { get } from 'lodash-es';
+
+export enum MODES {
+	DRAGGING = 'Dragging',
+	DRAWING_CIRCLE = 'Circle',
+	DRAWING_LINE = 'Line',
+	DRAWING_POLYGON = 'Polygon',
+	DRAWING_RECTANGLE = 'Rectangle',
+}
 
 export class LeafletMap {
-	private initialized = false;
-	private polygonDrawer: any;
-	private lineDrawer: any;
-	private editingLayer: any;
-	public map;
+	// public properties
+	public map: any;
 	public locating = false;
 	public fullScreen = false;
-	public onInit = new EventEmitter();
-	public modes = {
-		DRAGGING: 0,
-		DRAWING_POLYGON: 1,
-		DRAWING_LINE: 2,
-	};
-	public mode = this.modes.DRAGGING;
+	public onInit: EventEmitter<any> = new EventEmitter();
+	public mode: MODES = MODES.DRAGGING;
 
-	constructor(public options: LeafletMapOptions,
-				public mapService: MapService) {
+	// private properties
+	private initialized = false;
+	private editingLayer: any;
+
+	constructor(
+		public options: LeafletMapOptions,
+		public mapService: MapService
+	) {
 	}
 
 	// LIFECYCLE
@@ -34,12 +42,13 @@ export class LeafletMap {
 				zoomControl: false,
 				scrollWheelZoom: false,
 			});
+			this.map.pm.setLang(this.options.language || 'nl');
 			this.onInit.emit();
 		}
 	}
 
 	// LAYERS
-	addTileLayer(layer: LeafletLayer) {
+	public addTileLayer(layer: LeafletLayer): void {
 		if (this.mapService.isAvailable()) {
 			const tileLayer = new this.mapService.L.TileLayer(layer.url, layer.options);
 			this.map.addLayer(tileLayer);
@@ -47,7 +56,7 @@ export class LeafletMap {
 		}
 	}
 
-	addFeatureLayer(config: any) {
+	public addFeatureLayer(config: any): void {
 		if (this.mapService.isAvailable()) {
 			const featureLayer = new this.mapService.esri.featureLayer(config);
 			this.map.addLayer(featureLayer);
@@ -55,7 +64,7 @@ export class LeafletMap {
 		}
 	}
 
-	addGeoJSON(geoJSON: any, config: any) {
+	public addGeoJSON(geoJSON: any, config: any): void {
 		if (this.mapService.isAvailable()) {
 			const geoJSONLayer = this.mapService.L.geoJSON(geoJSON, config);
 			geoJSONLayer.addTo(this.map);
@@ -63,7 +72,7 @@ export class LeafletMap {
 		}
 	}
 
-	fitFeatureLayers(featureLayers: any[]) {
+	public fitFeatureLayers(featureLayers: any[]): void {
 		if (this.mapService.isAvailable()) {
 			const bounds = this.mapService.L.latLngBounds(([]));
 			let counter = 0;
@@ -82,53 +91,55 @@ export class LeafletMap {
 		}
 	}
 
-	removeLayer(layer: any) {
+	public removeLayer(layer: any): void {
 		this.map.removeLayer(layer);
 	}
 
 	// FULLSCREEN
-	toggleFullScreen() {
+	public toggleFullScreen(): void {
 		this.fullScreen = !this.fullScreen;
 		setTimeout(() => {
 			this.update();
 		});
 	}
 
-	update() {
+	public update(): void {
 		if (this.initialized) {
 			this.map.invalidateSize();
 		}
 	}
 
 	// ZOOMING
-	zoomIn() {
+	public zoomIn(): void {
 		if (this.initialized) {
 			this.map.zoomIn();
 		}
 	}
 
-	zoomInDisabled() {
+	public zoomInDisabled(): boolean {
 		if (this.initialized) {
 			return this.map.getMaxZoom() <= this.map.getZoom();
 		}
+
 		return true;
 	}
 
-	zoomOut() {
+	public zoomOut(): void {
 		if (this.initialized) {
 			this.map.zoomOut();
 		}
 	}
 
-	zoomOutDisabled() {
+	public zoomOutDisabled(): boolean {
 		if (this.initialized) {
 			return this.map.getMinZoom() >= this.map.getZoom();
 		}
+
 		return true;
 	}
 
 	// CENTERING
-	locate(zoomLevel: number) {
+	public locate(zoomLevel: number): void {
 		if (!this.locating && this.initialized) {
 			this.locating = true;
 			this.map.locate();
@@ -140,115 +151,87 @@ export class LeafletMap {
 		}
 	}
 
-	setView(center: any, zoom: number) {
+	public setView(center: any, zoom: number): void {
 		if (this.initialized) {
 			this.map.setView(center, zoom);
 		}
 	}
 
 	// DRAWING
-	switchToDragging = () => {
-		if (this.mapService.isAvailable()) {
-			this.mode = this.modes.DRAGGING;
-			if (this.polygonDrawer) {
-				this.polygonDrawer.disable();
-				this.polygonDrawer = undefined;
-			}
-			if (this.lineDrawer) {
-				this.lineDrawer.disable();
-				this.lineDrawer = undefined;
-			}
-			this.map.off(this.mapService.L.Draw.Event.CREATED);
-			this.map.off(this.mapService.L.Draw.Event.DRAWSTOP);
-		}
-	}
-
-	// DRAWING: POLYGON
-	switchToPolygon() {
-		if (this.mapService.isAvailable()) {
+	public draw(mode: MODES, config: LeafletDrawOptions = { allowSelfIntersection: false, snapDistance: 10}): void {
+		if (this.mapService.isAvailable) {
 			this.switchToDragging();
-			this.mode = this.modes.DRAWING_POLYGON;
-			if (!this.polygonDrawer) {
-				this.polygonDrawer = new this.mapService.L.Draw['Polygon'](this.map, {
-					shapeOptions: this.options.polygonColor ? {
-						color: this.options.polygonColor,
-					} : {},
-				});
-				this.polygonDrawer.enable();
-				this.map.on(this.mapService.L.Draw.Event.CREATED, this.handleDrawPolygon);
-				this.map.on(this.mapService.L.Draw.Event.DRAWSTOP, this.switchToDragging);
-			}
+			this.mode = mode;
+
+			this.map.pm.enableDraw(mode, { ...config, tooltips: get(this.options, 'tooltips', true) });
+			this.map.on('pm:create', this.handleDraw);
+			this.map.on('pm:drawend', () => this.switchToDragging(true));
 		}
-	}
-
-	handleDrawPolygon = (e: any) => {
-		this.map.addLayer(e.layer);
-		this.options.onAddPolygon(e.layer);
-		this.switchToDragging();
-	}
-
-	// DRAWING: LINES
-	switchToLine() {
-		if (this.mapService.isAvailable()) {
-			this.switchToDragging();
-			this.mode = this.modes.DRAWING_LINE;
-			if (!this.lineDrawer) {
-				this.lineDrawer = new this.mapService.L.Draw['Polyline'](this.map, {
-					shapeOptions: this.options.lineColor ? {
-						color: this.options.lineColor,
-					} : {},
-				});
-				this.lineDrawer.enable();
-				this.map.on(this.mapService.L.Draw.Event.CREATED, this.handleDrawLine);
-				this.map.on(this.mapService.L.Draw.Event.DRAWSTOP, this.switchToDragging);
-			}
-		}
-	}
-
-	handleDrawLine = (e: any) => {
-		this.map.addLayer(e.layer);
-		this.options.onAddLine(e.layer);
-		this.switchToDragging();
 	}
 
 	// EDIT: LAYER
-	startEditLayer(layer: any) {
+	public startEditLayer(layer: any): void {
 		this.stopEditLayer();
 		this.editingLayer = layer;
-		// TODO: temp workaround for chrome 62
-		// https://github.com/Leaflet/Leaflet.draw/issues/804
-		this.editingLayer.options.editing = this.editingLayer.options.editing || (this.editingLayer.options.editing = {});
-		this.editingLayer.editing.enable();
 
-		this.map.on('click', this.stopEditLayer);
+		this.editingLayer.pm.enable({
+			snappable: true,
+			snapDistance: 10,
+			allowSelfIntersection: false,
+		});
 
-		this.editingLayer.on('edit', () => {
+		this.editingLayer.on('pm:markerdragend', () => {
 			this.editingLayer.feature = this.editingLayer.toGeoJSON();
 			this.options.onEditFeature(this.editingLayer.toGeoJSON());
 		});
 	}
 
-	stopEditLayer = () => {
-		if (this.editingLayer) {
-			this.editingLayer.editing.disable();
-			this.editingLayer.off('edit');
-		}
-		this.map.off('click', this.stopEditLayer);
+	public startDragMode(): void {
+		this.map.pm.toggleGlobalDragMode();
 	}
 
 	// MARKERS
-	addMarker(position: any, options?: any) {
+	public addMarker(position: any, options?: any): void {
 		if (this.mapService.isAvailable()) {
 			return this.mapService.L.marker(position, options).addTo(this.map);
 		}
 	}
 
-	addHtmlMarker(position: any, html: string) {
+	public addHtmlMarker(position: any, html: string): void {
 		if (this.mapService.isAvailable()) {
 			const customIcon = this.mapService.L.divIcon({ html: html, className: 'aui-leaflet__html-icon' });
 			return this.mapService.L.marker(position, {
 				icon: customIcon,
 			}).addTo(this.map);
 		}
+	}
+
+	// CALLBACK: functions
+	switchToDragging = (eventCallback: boolean = false) => {
+		if (this.mapService.isAvailable()) {
+			this.map.pm.disableDraw(this.mode);
+			this.mode = MODES.DRAGGING;
+
+			if (eventCallback) {
+				this.map.off('pm:drawend');
+			}
+		}
+	}
+
+	stopEditLayer = () => {
+		if (this.editingLayer) {
+			this.editingLayer.pm.disable();
+			this.editingLayer.off('pm:markerdragend');
+		}
+	}
+
+	handleDraw = (e: any) => {
+		this.map.off('pm:drawend');
+
+		this.map.addLayer(e.layer);
+		this.options.onAddFeature(e.layer);
+		this.switchToDragging();
+
+		this.map.off('pm:create');
 	}
 }

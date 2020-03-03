@@ -4,8 +4,10 @@
 	</button>
 	<div auiFlyoutZone>
 		<ul class="m-selectable-list m-selectable-list--no-border">
-			<li auiFlyoutClose><a (click)="map?.switchToPolygon()" class="m-selectable-list__item">Vorm intekenen</a></li>
-			<li auiFlyoutClose><a (click)="map?.switchToLine()" class="m-selectable-list__item">Lijn/route intekenen</a></li>
+			<li auiFlyoutClose><a (click)="map?.draw(modes.DRAWING_POLYGON, polygonConfig)" class="m-selectable-list__item">Vorm intekenen</a></li>
+			<li auiFlyoutClose><a (click)="map?.draw(modes.DRAWING_LINE, lineConfig)" class="m-selectable-list__item">Lijn/route intekenen</a></li>
+			<li auiFlyoutClose><a (click)="map?.draw(modes.DRAWING_CIRCLE, circleConfig)" class="m-selectable-list__item">Cirkel intekenen</a></li>
+			<li auiFlyoutClose><a (click)="map?.draw(modes.DRAWING_RECTANGLE)" class="m-selectable-list__item">Vierhoek intekenen</a></li>
 		</ul>
 	</div>
 </div>
