@@ -1,9 +1,10 @@
-import { LeafletMap } from './leaflet-map';
+import { LeafletMap, MODES } from './leaflet-map';
 import { LeafletMapOptions, LeafletLayer } from '../types/leaflet.types';
 import { MapService } from '../services/map.service';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { LeafletControlComponent, LeafletDragControlComponent } from '..';
 import { PLATFORM_ID } from '@angular/core';
+import { LatLng } from 'leaflet';
 
 describe('The leaflet map', () => {
 	const element = document.body;
@@ -12,10 +13,10 @@ describe('The leaflet map', () => {
 	let mapService: MapService;
 	const options: LeafletMapOptions = {
 		zoom: 13,
-		center: [51.215, 4.425],
-		onAddLine: () => {
+		center: new LatLng(51.215, 4.425),
+		onAddFeature: () => {
 		},
-		onAddPolygon: () => {
+		onEditFeature: () => {
 		},
 	};
 	let map: LeafletMap;
@@ -255,49 +256,93 @@ describe('The leaflet map', () => {
 	describe('when switching to dragging', () => {
 		it('should update the mode to dragging', () => {
 			map.switchToDragging();
-			expect(map.mode).toEqual(map.modes.DRAGGING);
+			expect(map.mode).toEqual(MODES.DRAGGING);
 		});
 	});
 
-	describe('when switching to drawing polygons', () => {
-		it('should update the mode to drawing polygons', () => {
-			map.switchToPolygon();
-			expect(map.mode).toEqual(map.modes.DRAWING_POLYGON);
+	describe('when drawing polygons it', () => {
+		it('should update the mode to drawing polygon', () => {
+			map.draw(MODES.DRAWING_POLYGON);
+			expect(map.mode).toEqual(MODES.DRAWING_POLYGON);
 		});
 
 		it('should handle the draw polygon', () => {
 			const addLayerSpy = spyOn(map.map, 'addLayer');
-			const onAddPolygonSpy = spyOn(map.options, 'onAddPolygon');
+			const onAddFeatureSpy = spyOn(map.options, 'onAddFeature');
 			const switchToDraggingSpy = spyOn(map, 'switchToDragging');
-			map.switchToPolygon();
-			map.handleDrawPolygon({layer: fakeLayer});
+			const enableDrawSpy = spyOn(map.map.pm, 'enableDraw');
+			map.draw(MODES.DRAWING_POLYGON);
+			map.handleDraw({layer: fakeLayer});
+			expect(enableDrawSpy).toHaveBeenCalled();
 			expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
-			expect(onAddPolygonSpy).toHaveBeenCalledWith(fakeLayer);
+			expect(onAddFeatureSpy).toHaveBeenCalledWith(fakeLayer);
 			expect(switchToDraggingSpy).toHaveBeenCalledTimes(2);
 		});
 	});
 
-	describe('when switching to drawing lines', () => {
-		it('should update the mode to drawing lines', () => {
-			map.switchToLine();
-			expect(map.mode).toEqual(map.modes.DRAWING_LINE);
+	describe('when drawing lines it', () => {
+		it('should update the mode to drawing line', () => {
+			map.draw(MODES.DRAWING_LINE);
+			expect(map.mode).toEqual(MODES.DRAWING_LINE);
 		});
 
 		it('should handle the draw line', () => {
 			const addLayerSpy = spyOn(map.map, 'addLayer');
-			const onAddLineSpy = spyOn(map.options, 'onAddLine');
+			const onAddFeatureSpy = spyOn(map.options, 'onAddFeature');
 			const switchToDraggingSpy = spyOn(map, 'switchToDragging');
-			map.switchToLine();
-			map.handleDrawLine({layer: fakeLayer});
+			const enableDrawSpy = spyOn(map.map.pm, 'enableDraw');
+			map.draw(MODES.DRAWING_LINE);
+			map.handleDraw({layer: fakeLayer});
+			expect(enableDrawSpy).toHaveBeenCalled();
 			expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
-			expect(onAddLineSpy).toHaveBeenCalledWith(fakeLayer);
+			expect(onAddFeatureSpy).toHaveBeenCalledWith(fakeLayer);
+			expect(switchToDraggingSpy).toHaveBeenCalledTimes(2);
+		});
+	});
+
+	describe('when drawing circle it', () => {
+		it('should update the mode to drawing circle', () => {
+			map.draw(MODES.DRAWING_CIRCLE);
+			expect(map.mode).toEqual(MODES.DRAWING_CIRCLE);
+		});
+
+		it('should handle the draw circle', () => {
+			const addLayerSpy = spyOn(map.map, 'addLayer');
+			const onAddFeatureSpy = spyOn(map.options, 'onAddFeature');
+			const switchToDraggingSpy = spyOn(map, 'switchToDragging');
+			const enableDrawSpy = spyOn(map.map.pm, 'enableDraw');
+			map.draw(MODES.DRAWING_CIRCLE);
+			map.handleDraw({layer: fakeLayer});
+			expect(enableDrawSpy).toHaveBeenCalled();
+			expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
+			expect(onAddFeatureSpy).toHaveBeenCalledWith(fakeLayer);
+			expect(switchToDraggingSpy).toHaveBeenCalledTimes(2);
+		});
+	});
+
+	describe('when drawing rectangle it', () => {
+		it('should update the mode to drawing rectangle', () => {
+			map.draw(MODES.DRAWING_RECTANGLE);
+			expect(map.mode).toEqual(MODES.DRAWING_RECTANGLE);
+		});
+
+		it('should handle the draw rectangle', () => {
+			const addLayerSpy = spyOn(map.map, 'addLayer');
+			const onAddFeatureSpy = spyOn(map.options, 'onAddFeature');
+			const switchToDraggingSpy = spyOn(map, 'switchToDragging');
+			const enableDrawSpy = spyOn(map.map.pm, 'enableDraw');
+			map.draw(MODES.DRAWING_RECTANGLE);
+			map.handleDraw({layer: fakeLayer});
+			expect(enableDrawSpy).toHaveBeenCalled();
+			expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
+			expect(onAddFeatureSpy).toHaveBeenCalledWith(fakeLayer);
 			expect(switchToDraggingSpy).toHaveBeenCalledTimes(2);
 		});
 	});
 
 	describe('when editing a layer', () => {
 		const editingLayer = {
-			editing: {
+			pm: {
 				enable: () => {
 				},
 				disable: () => {
@@ -311,7 +356,7 @@ describe('The leaflet map', () => {
 		};
 
 		it('should enable the layers editing mode', () => {
-			const enableSpy = spyOn(editingLayer.editing, 'enable');
+			const enableSpy = spyOn(editingLayer.pm, 'enable');
 			const onSpy = spyOn(editingLayer, 'on');
 			map.startEditLayer(editingLayer);
 			expect(enableSpy).toHaveBeenCalled();
@@ -319,7 +364,7 @@ describe('The leaflet map', () => {
 		});
 
 		it('should disable the layers editing mode', () => {
-			const disableSpy = spyOn(editingLayer.editing, 'disable');
+			const disableSpy = spyOn(editingLayer.pm, 'disable');
 			const offSpy = spyOn(editingLayer, 'off');
 			map.startEditLayer(editingLayer);
 			map.stopEditLayer();

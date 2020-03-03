@@ -13,6 +13,7 @@ import { LeafletLocateControlComponent } from '../controls/leaflet-locate-contro
 
 import { LeafletModule } from '../../leaflet.module';
 import { MapService } from '../../services/map.service';
+import { LatLng } from 'leaflet';
 
 @Component({
 	template: `
@@ -39,7 +40,7 @@ class TestLeafletComponent {
 	shouldHaveContent = false;
 	leafletMap = new LeafletMap({
 		zoom: 13,
-		center: [51.215, 4.425],
+		center: new LatLng(51.215, 4.425),
 	}, this.mapService);
 }
 
