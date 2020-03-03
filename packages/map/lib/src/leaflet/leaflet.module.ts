@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { FlyoutModule } from '@acpaas-ui/ngx-components/flyout';
 
 import 'leaflet/dist/leaflet.css';
-import 'leaflet-draw/dist/leaflet.draw.css';
 
 import { Components } from './components/index';
 

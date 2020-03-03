@@ -7,6 +7,7 @@ export class MapService {
 
 	public L = null;
 	public esri = null;
+	public geoman = null;
 
 	constructor(@Inject(PLATFORM_ID) private platformId: Object) {
 		this.requireMap();
@@ -16,7 +17,7 @@ export class MapService {
 		if (isPlatformBrowser(this.platformId)) {
 			this.L = require('leaflet');
 			this.esri = require('esri-leaflet');
-			require('leaflet-draw');
+			this.geoman = require('@geoman-io/leaflet-geoman-free');
 		}
 	}
 

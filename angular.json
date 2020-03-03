@@ -26,14 +26,17 @@
             "styles": [
               "styleguide/styles.scss",
               "node_modules/leaflet/dist/leaflet.css",
-              "node_modules/leaflet-draw/dist/leaflet.draw.css"
+              "node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "styleguide/node_modules"
               ]
             },
-            "scripts": [],
+            "scripts": [
+              "node_modules/leaflet/dist/leaflet.js",
+              "node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.min.js"
+            ],
             "preserveSymlinks": true
           },
           "configurations": {
@@ -83,9 +86,12 @@
             "styles": [
               "styleguide/styles.scss",
               "node_modules/leaflet/dist/leaflet.css",
-              "node_modules/leaflet-draw/dist/leaflet.draw.css"
+              "node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/leaflet/dist/leaflet.js",
+              "node_modules/@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.min.js"
+            ],
             "assets": [
               "styleguide/favicon.ico",
               "styleguide/assets",
