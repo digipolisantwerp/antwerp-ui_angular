@@ -44,9 +44,10 @@ import { LeafletMap, baseMapWorldGray, baseMapAntwerp } from '@acpaas-ui/ngx-com
 
 public leafletMap: LeafletMap = new LeafletMap({
     zoom: 13, // default zoom level
-    center: [51.215, 4.425], // default center point
-    onAddPolygon: (layer) => {},
-    onAddLine: (layer) => {},
+    center: new LatLng(51.215, 4.425), // default center point
+    language: 'nl',
+    tooltips: true,
+    onAddFeature: (layer) => {},
     onEditFeature: (feature) => {},
 });
 
