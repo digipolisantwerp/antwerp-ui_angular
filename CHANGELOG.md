@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Changed
+- [BREAKING] `map` Implemented leaflet-geoman over Leaflet.Draw
 
 ## [3.3.0] - 2020-01-31
 
