@@ -26,7 +26,7 @@ class MockFlyoutService {
 })
 class FlyoutComponent {
   // Access directive
-  @ViewChild('auiFlyoutClose') element;
+  @ViewChild('auiFlyoutClose', {static: true}) element;
 }
 
 describe('Flyout close directive', () => {

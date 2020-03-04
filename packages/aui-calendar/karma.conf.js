@@ -15,8 +15,14 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../../coverage/aui-calendar'),
+      dir: require('path').join(__dirname, '../../coverage/aui-agenda'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
@@ -25,8 +31,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
+    browsers: ['ChromeHeadlessNoSandbox'],
+    singleRun: true,
     restartOnFileChange: true
   });
 };

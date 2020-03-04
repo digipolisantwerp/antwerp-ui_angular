@@ -8,7 +8,7 @@ import {Uploader} from '../../classes/uploader.class';
   templateUrl: './upload-zone.component.html',
 })
 export class UploadZoneComponent {
-  @ViewChild('fileInput', {static: true}) fileInput: ElementRef;
+  @ViewChild('fileInput', {static: false}) fileInput: ElementRef;
 
   @Input() public uploader: Uploader;
   @Input() public disabled = false;

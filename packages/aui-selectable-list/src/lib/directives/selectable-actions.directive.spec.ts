@@ -17,7 +17,7 @@ const mockKeyDownEvent = (key) => {
 })
 class TestComponent {
   // Access directive
-  @ViewChild('auiSelectableActions') element;
+  @ViewChild('auiSelectableActions', {static: true}) element;
 }
 
 describe('Flyout action directive without flyout zone', () => {

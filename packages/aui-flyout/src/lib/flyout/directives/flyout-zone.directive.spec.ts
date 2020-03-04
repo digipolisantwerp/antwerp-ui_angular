@@ -6,20 +6,25 @@ import {FlyoutZoneDirective} from './flyout-zone.directive';
 
 @Component({
   selector: 'aui-app',
-  template: `<div class="dummyElement"></div><div auiFlyoutZone #auiFlyoutZone=auiFlyoutZone></div>`,
+  template: `
+    <div class="dummyElement"></div>
+    <div auiFlyoutZone #auiFlyoutZone=auiFlyoutZone></div>`,
 })
 class TestComponent {
   // Access directive
-  @ViewChild('auiFlyoutZone') element;
+  @ViewChild('auiFlyoutZone', {static: true}) element;
 }
 
 @Component({
   selector: 'aui-app',
-  template: `<div [auiFlyoutZone]="false" #auiFlyoutZone=auiFlyoutZone><div class="dummyElement"></div></div>`,
+  template: `
+    <div [auiFlyoutZone]="false" #auiFlyoutZone=auiFlyoutZone>
+      <div class="dummyElement"></div>
+    </div>`,
 })
 class TestIsFalseComponent {
   // Access directive
-  @ViewChild('auiFlyoutZone') element;
+  @ViewChild('auiFlyoutZone', {static: true}) element;
 }
 
 describe('Flyout zone directive', () => {
@@ -41,7 +46,7 @@ describe('Flyout zone directive', () => {
     comp = fixture.componentInstance;
     fixture.detectChanges();
     componentDebugElement = fixture.debugElement.query(By.directive(FlyoutZoneDirective));
-    componentElement = <HTMLElement>componentDebugElement.nativeElement;
+    componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
   it('should not be in closable zone', () => {
@@ -69,7 +74,7 @@ describe('Flyout zone directive with false zone', () => {
     comp = fixture.componentInstance;
     fixture.detectChanges();
     componentDebugElement = fixture.debugElement.query(By.directive(FlyoutZoneDirective));
-    componentElement = <HTMLElement>componentDebugElement.nativeElement;
+    componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
   it('should not be in closable zone', () => {

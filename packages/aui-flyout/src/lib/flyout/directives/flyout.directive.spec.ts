@@ -34,7 +34,7 @@ class FlyoutComponent {
 })
 class FlyoutWithZoneComponent {
   // Access directive
-  @ViewChild('auiFlyout') element;
+  @ViewChild('auiFlyout', {static: true}) element;
 }
 
 describe('Flyout directive with flyout zone', () => {
@@ -95,7 +95,7 @@ describe('Flyout directive without flyout zone', () => {
     fixture = TestBed.createComponent(FlyoutComponent);
     fixture.detectChanges();
     componentDebugElement = fixture.debugElement.query(By.directive(FlyoutDirective));
-    componentElement = <HTMLElement>componentDebugElement.nativeElement;
+    componentElement = componentDebugElement.nativeElement as HTMLElement;
     flyout = componentDebugElement.injector.get(FlyoutDirective);
   }));
 
@@ -120,7 +120,6 @@ describe('Flyout directive without flyout zone', () => {
   });
 
   it('should subscribe on flyoutService', inject([FlyoutService], (flyoutService: FlyoutService) => {
-    spyOn(flyout, 'isOpened');
     flyoutService.close();
     expect(flyout.isOpened).toBeFalsy();
   }));

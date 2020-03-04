@@ -33,7 +33,7 @@ class MockFlyoutService {
 })
 class FlyoutComponent {
   // Access directive
-  @ViewChild('auiFlyoutAction') element;
+  @ViewChild('auiFlyoutAction', {static: true}) element;
   public openOnFocus = true;
 }
 
