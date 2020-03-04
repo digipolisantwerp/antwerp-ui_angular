@@ -20,7 +20,7 @@ export class GTMService {
   public trigger(event: string, data = {}) {
     const eventData = {
       ...data,
-      'event': event,
+      event,
     };
     this.addToDataLayer(eventData);
   }
