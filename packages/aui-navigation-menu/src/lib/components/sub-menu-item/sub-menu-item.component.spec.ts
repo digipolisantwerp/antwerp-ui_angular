@@ -167,19 +167,6 @@ describe('Sub Menu Item Component Test', () => {
       helpers.flush();
       expect(submenu.onClose$.next.withArgs(true).calledOnce).toBe(true);
     }));
-
-    it('should set active state boolean if active', () => getTestScheduler().run((helpers) => {
-      component.itemClicked$ = hot('a');
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.isActive).toBe(true);
-    }));
-    it('should reset the active state boolean if not active', () => getTestScheduler().run((helpers) => {
-      component.itemClicked$ = hot('a--b');
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.isActive).toBe(false);
-    }));
   });
 
   describe('Active Menu', () => {

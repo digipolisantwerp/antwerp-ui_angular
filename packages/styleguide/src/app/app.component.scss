@@ -1,8 +1,15 @@
-@import "../styles";
+@import "../styles.scss";
 
 main {
   aui-menu {
     margin-top: -1px;
+    position: fixed;
+    bottom: 0;
+    z-index: layer('pane');
+    @include at($screen-sm) {
+      height: calc(100% + #{$header-height} + 2px); // Leave room for the dock/undock labels
+      position: static;
+    }
   }
 
   @include at($screen-xs) {

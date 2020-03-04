@@ -32,7 +32,6 @@ import {Menu} from '../../interfaces';
 @Component({
   selector: 'aui-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {

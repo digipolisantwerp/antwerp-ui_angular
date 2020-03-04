@@ -21,25 +21,26 @@ import {Menu} from '../../interfaces';
 @Component({
   selector: 'aui-navigation-pane',
   templateUrl: './navigation-pane.component.html',
-  styleUrls: ['./navigation-pane.component.scss'],
 })
 export class NavigationPaneComponent implements OnInit, OnDestroy {
+  @HostBinding('class.o-menu__navigation-pane')
+  navigationPane = true;
   /**
    * Helper observable that emits whenever we need to slide in a new menu
    */
   public slideInSubMenu$: Observable<boolean>;
-  @HostBinding('class.visible')
+  @HostBinding('class.is-visible')
   public paneIsVisible = false;
   public paneIsVisible$: Observable<boolean>;
   /**
    * Container reference where we will inject the submenu
    */
-  @ViewChild('subMenu', {static: true, read: ViewContainerRef})
+  @ViewChild('subMenu', {read: ViewContainerRef, static: true})
   private container: ViewContainerRef;
   /**
    * Container reference used for sliding in a submenu.
    */
-  @ViewChild('slideInSubMenu', {static: true, read: ViewContainerRef})
+  @ViewChild('slideInSubMenu', {read: ViewContainerRef, static: true})
   private slideInContainer: ViewContainerRef;
   private destroy$ = new Subject();
 

@@ -22,8 +22,8 @@ import {MenuLinkComponent} from '../menu-link/menu-link.component';
 @Component({
   selector: 'aui-sub-menu-item',
   templateUrl: './sub-menu-item.component.html',
-  styleUrls: ['./sub-menu-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [':host { display: list-item; border: none !important;}'],
 })
 export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDestroy {
   private static readonly ALLOWED_CHILDREN = [
@@ -54,8 +54,6 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
 
   @HostBinding('class')
   class = 'm-nav-list m-nav-list--left';
-  @HostBinding('class.active')
-  isActive = false;
   @HostBinding('attr.tabindex')
   tabIndex = -1;
 
@@ -124,7 +122,6 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
             type: 'submenu',
           });
         }
-        this.isActive = isActive;
       }),
       takeUntil(this.destroy$),
       startWith(false)
@@ -142,7 +139,6 @@ export class SubMenuItemComponent implements OnInit, Menu.ChecksChildren, OnDest
       takeUntil(this.destroy$)
     );
 
-    this.isActive$.subscribe();
     openMobileMenu$.subscribe();
   }
 

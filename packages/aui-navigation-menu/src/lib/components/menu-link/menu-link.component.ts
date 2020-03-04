@@ -5,7 +5,6 @@ import {lookForIllegalNodes} from '../../services/helpers';
 @Component({
   selector: 'aui-menu-link',
   templateUrl: './menu-link.component.html',
-  styleUrls: ['./menu-link.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuLinkComponent implements OnInit, Menu.ChecksChildren {
@@ -15,6 +14,8 @@ export class MenuLinkComponent implements OnInit, Menu.ChecksChildren {
   @ViewChild('inclusedContent', {static: true})
   public ngContent: ElementRef<HTMLElement>;
 
+  @HostBinding('class.o-menu__link')
+  link = true;
   @HostBinding('attr.tabindex')
   tabIndex = -1;
 

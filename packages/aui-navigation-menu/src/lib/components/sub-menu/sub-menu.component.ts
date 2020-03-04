@@ -10,7 +10,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {Menu} from '../../interfaces';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 import {MenuService} from '../../services/menu.service';
 import {takeUntil, tap} from 'rxjs/operators';
 import {lookForIllegalNodes, select} from '../../services/helpers';
@@ -18,7 +18,6 @@ import {lookForIllegalNodes, select} from '../../services/helpers';
 @Component({
   selector: 'aui-sub-menu',
   templateUrl: './sub-menu.component.html',
-  styleUrls: ['./sub-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubMenuComponent implements OnInit, OnDestroy, Menu.ChecksChildren, AfterContentChecked {
@@ -32,6 +31,8 @@ export class SubMenuComponent implements OnInit, OnDestroy, Menu.ChecksChildren,
   templateRef: TemplateRef<Menu.ISubMenuContext>;
   @ViewChild('children', {static: true})
   ngContent: ElementRef<HTMLElement>;
+  @HostBinding('class.o-menu__submenu')
+  submenu = true;
   /**
    * Helper to display a 'back' link if necessary.
    * We use a static value io an observable since the
@@ -46,7 +47,6 @@ export class SubMenuComponent implements OnInit, OnDestroy, Menu.ChecksChildren,
    */
   public readonly onClose$ = new Subject<boolean>();
 
-  state$: Observable<Menu.MenuState>;
   configuration: Menu.ModuleConfiguration;
   translations: Menu.Translations;
 
@@ -62,9 +62,8 @@ export class SubMenuComponent implements OnInit, OnDestroy, Menu.ChecksChildren,
   ngOnInit() {
     this.translations = this.menuService.translate();
     this.configuration = this.menuService.configuration;
-    this.state$ = this.menuService.state$;
 
-    this.state$.pipe(
+    this.menuService.state$.pipe(
       select(state => state.docked),
       tap(docked => this.isDocked = docked),
       takeUntil(this.destroy$)
