@@ -27,6 +27,7 @@ import {SearchFilterModule} from '../../../aui-forms/src/lib/search-filter';
 import {TimepickerModule} from '../../../aui-forms/src/lib/timepicker';
 import {UploadModule} from '../../../aui-forms/src/lib/upload';
 import {WysiwygModule} from '../../../aui-forms/src/lib/wysiwyg';
+import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '@acpaas-ui/ngx-components/layout';
 
 @NgModule({
   imports: [
@@ -67,7 +68,38 @@ import {WysiwygModule} from '../../../aui-forms/src/lib/wysiwyg';
     SearchFilterModule,
     TimepickerModule,
     UploadModule,
-    WysiwygModule
+    WysiwygModule,
+    CookieconsentModule.forRoot({
+      autoInit: false,
+      content: {
+        message: 'I am the cookie consent aui-logo. Will you allow my cookies?',
+        dismiss: 'Allow cookies',
+        link: 'Learn more',
+        href: 'http://cookiepedia.co.uk/all-about-cookies',
+      },
+      cookie: {
+        name: 'cookieconsent_demo',
+        path: '/',
+        domain: '',
+        expiryDays: 1,
+      },
+      elements: {
+        messagelink: `
+        <p id="cookieconsent:desc">{{message}}
+					<a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a>
+				</p>`,
+        dismiss: `
+        <button type="button" aria-label="Dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">
+        {{dismiss}}
+        </button>`
+      },
+    }),
+    FooterModule,
+    HeaderModule,
+    HeroModule,
+    ModalModule,
+    PaneModule,
+    SidebarModule,
   ],
   exports: [
     FooterModule,
@@ -98,6 +130,13 @@ import {WysiwygModule} from '../../../aui-forms/src/lib/wysiwyg';
     TimepickerModule,
     UploadModule,
     WysiwygModule,
+    CookieconsentModule,
+    FooterModule,
+    HeaderModule,
+    HeroModule,
+    ModalModule,
+    PaneModule,
+    SidebarModule,
   ]
 })
 export class AuiModule {
