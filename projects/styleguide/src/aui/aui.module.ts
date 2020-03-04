@@ -13,6 +13,12 @@ import {FlyoutModule} from '../../../aui-flyout/src/lib/flyout';
 import {FlyoutButtonModule} from '../../../aui-flyout/src/lib/flyout-button';
 import {LocalstorageModule} from '../../../aui-localstorage/src/lib/localstorage';
 import {LeafletModule} from '../../../aui-map/src/lib/leaflet';
+import {PaginationModule} from '../../../aui-pagination/src/lib/pagination';
+import {ItemCounterModule} from '../../../aui-pagination/src/lib/item-counter';
+import {ProgressBarModule} from '../../../aui-progress-bar/src/lib/progress-bar';
+import {TableModule} from '../../../aui-table/src/lib/table';
+import {UserMenuModule} from '../../../aui-user-menu/src/lib/user-menu';
+import {SelectableListModule} from '../../../aui-selectable-list/src/lib/selectable-list';
 
 @NgModule({
   imports: [
@@ -32,7 +38,13 @@ import {LeafletModule} from '../../../aui-map/src/lib/leaflet';
       storageType: 'sessionStorage',
       identifier: 'my-app-v1',
     }),
-    LeafletModule
+    LeafletModule,
+    PaginationModule,
+    ItemCounterModule,
+    ProgressBarModule,
+    TableModule,
+    UserMenuModule,
+    SelectableListModule
   ],
   exports: [
     FooterModule,
@@ -48,7 +60,13 @@ import {LeafletModule} from '../../../aui-map/src/lib/leaflet';
     FlyoutModule,
     FlyoutButtonModule,
     LocalstorageModule,
-    LeafletModule
+    LeafletModule,
+    PaginationModule,
+    ItemCounterModule,
+    ProgressBarModule,
+    TableModule,
+    UserMenuModule,
+    SelectableListModule
   ]
 })
 export class AuiModule {

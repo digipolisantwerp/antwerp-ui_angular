@@ -108,6 +108,42 @@
       ],
       "aui-map/*": [
         "dist/aui-map/*"
+      ],
+      "aui-notifications": [
+        "dist/aui-notifications"
+      ],
+      "aui-notifications/*": [
+        "dist/aui-notifications/*"
+      ],
+      "aui-pagination": [
+        "dist/aui-pagination"
+      ],
+      "aui-pagination/*": [
+        "dist/aui-pagination/*"
+      ],
+      "aui-progress-bar": [
+        "dist/aui-progress-bar"
+      ],
+      "aui-progress-bar/*": [
+        "dist/aui-progress-bar/*"
+      ],
+      "aui-table": [
+        "dist/aui-table"
+      ],
+      "aui-table/*": [
+        "dist/aui-table/*"
+      ],
+      "aui-user-menu": [
+        "dist/aui-user-menu"
+      ],
+      "aui-user-menu/*": [
+        "dist/aui-user-menu/*"
+      ],
+      "aui-selectable-list": [
+        "dist/aui-selectable-list"
+      ],
+      "aui-selectable-list/*": [
+        "dist/aui-selectable-list/*"
       ]
     }
   },
