@@ -1,5 +1,4 @@
 import {DateHelperService} from './date-helper.service';
-
 import {DAYS} from '../types/agenda.types';
 
 describe('DateHelper Service', () => {
@@ -91,7 +90,7 @@ describe('DateHelper Service', () => {
   describe('highlights', () => {
     it('should return highlights for weekday(s)', () => {
       const range = {
-        'test': [
+        test: [
           [DAYS.SATURDAY, DAYS.SUNDAY],
         ],
       };
@@ -109,7 +108,7 @@ describe('DateHelper Service', () => {
 
     it('should return highlights for a specific date', () => {
       const range = {
-        'test': [
+        test: [
           new Date(2018, 1, 26),
         ],
       };

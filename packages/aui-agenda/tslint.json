@@ -11,7 +11,8 @@
       true,
       "element",
       "lib",
-      "kebab-case"
+      "kebab-case",
+      "aui"
     ]
   }
 }

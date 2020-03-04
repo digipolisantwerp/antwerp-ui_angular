@@ -12,8 +12,7 @@ import {
 } from '@angular/core';
 import {Subject, timer} from 'rxjs';
 import {distinctUntilChanged, map, takeUntil} from 'rxjs/operators';
-
-import {DateHelperService} from '../../services/date-helper.service';
+import {DateHelperService} from '../..';
 import {DateRangeInterface, DAYS, EventInterface, HighLightInterface, VIEWS} from '../../types/agenda.types';
 
 @Component({
@@ -41,8 +40,14 @@ export class AgendaComponent implements OnInit, OnChanges, OnDestroy {
 
   public agendaSize$;
   public weekdays: DAYS[] = [1, 2, 3, 4, 5, 6, 0];
-  public today: Date = this.getToday();
+  public today: Date = AgendaComponent.getToday();
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+
+  private static getToday(): Date {
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
+    return date;
+  }
 
   constructor(
     private elementRef: ElementRef,
@@ -115,12 +120,6 @@ export class AgendaComponent implements OnInit, OnChanges, OnDestroy {
 
   public onSelectRange(range: DateRangeInterface) {
     this.selectRange.emit(range);
-  }
-
-  private getToday(): Date {
-    const date = new Date();
-    date.setHours(0, 0, 0, 0);
-    return date;
   }
 
   private watchAgendaSize(): void {

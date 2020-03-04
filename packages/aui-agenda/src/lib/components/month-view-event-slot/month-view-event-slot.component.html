@@ -1,5 +1,6 @@
 <ng-template #defaultTemplate let-event="event">
-  <div [ngClass]="{ 'a-event--light': event.fullDay }" [ngStyle]="{ 'background-color': event.fullDay ? event.color : null }"
+  <div [ngClass]="{ 'a-event--light': event.fullDay }"
+       [ngStyle]="{ 'background-color': event.fullDay ? event.color : null }"
        class="a-event">
     <div *ngIf="!event.fullDay" [ngStyle]="{ 'background-color': event.color }" class="a-event__bar"></div>
 

@@ -1,7 +1,7 @@
 // TODO: Move this to @acpaas-ui/js-date-utils
 import {Injectable} from '@angular/core';
 
-import {DAYS, HighLightInterface, RangeInterface, WeekdayInterface,} from '../types/agenda.types';
+import {DAYS, HighLightInterface, RangeInterface, WeekdayInterface} from '../types/agenda.types';
 
 @Injectable()
 export class DateHelperService {
@@ -63,10 +63,10 @@ export class DateHelperService {
   }
 
   public moveToDayOfWeek(date: Date, dayOfWeek: number, orient: number): Date {
-    let diff = (dayOfWeek - date.getDay() + 7 * (orient || +1)) % 7;
-    const value = (diff === 0) ? diff += 7 * (orient || +1) : diff;
+    const diff = (dayOfWeek - date.getDay() + 7 * (orient || +1)) % 7;
+    const value = (diff === 0) ? diff + 7 * (orient || +1) : diff;
     const d = new Date(date);
-    return new Date(d.setDate(date.getDate() + value * 1));
+    return new Date(d.setDate(date.getDate() + value));
   }
 
   public getFirstWeekDayOfMonth(date: Date, startOfWeek: number | string): Date {
@@ -112,7 +112,7 @@ export class DateHelperService {
   }
 
   public orderWeekDays(startDayOfWeek: DAYS): DAYS[] {
-    const rotate = function (array, index) {
+    const rotate = (array, index) => {
       const arrayLength = array.length;
       return array.slice(arrayLength - index).concat(array.slice(0, arrayLength - index));
     };

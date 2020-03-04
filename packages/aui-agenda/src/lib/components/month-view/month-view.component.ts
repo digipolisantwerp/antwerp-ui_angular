@@ -1,7 +1,5 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnChanges, Output, TemplateRef,} from '@angular/core';
-
-import {DateRangeInterface, DAYS, EventInterface, HighLightInterface, SlotInterface, WeekdayInterface,} from '../../types/agenda.types';
-
+import {ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnChanges, Output, TemplateRef} from '@angular/core';
+import {DateRangeInterface, DAYS, EventInterface, HighLightInterface, SlotInterface, WeekdayInterface} from '../../types/agenda.types';
 import {MonthViewSlotsService} from '../../services/month-view-slots.service';
 import {DateHelperService} from '../../services/date-helper.service';
 
@@ -38,7 +36,6 @@ export class MonthViewComponent implements OnChanges {
   public weekHeight: number;
   public eventHeight = 28;
   public heightOffset = 28;
-  public eventsByDay: any;
   public availableSlots = 0;
 
   constructor(

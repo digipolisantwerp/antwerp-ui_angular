@@ -15,7 +15,7 @@ import {distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
 import {DateHelper} from '@acpaas-ui/js-date-utils';
 
-import {DateRangeInterface, DayRangeInterface, EventInterface, SlotInterface, WeekdayInterface,} from '../../types/agenda.types';
+import {DateRangeInterface, DayRangeInterface, EventInterface, SlotInterface, WeekdayInterface} from '../../types/agenda.types';
 
 @Component({
   selector: 'aui-agenda-month-view-calendar',
@@ -219,7 +219,7 @@ export class MonthViewCalendarComponent implements OnInit, OnDestroy {
       target$.next();
     }, false);
 
-    document.addEventListener('touchend', () => {
+    document.addEventListener('touchend', (event) => {
       // prevent default action (open as link for some elements)
       if (this.pressedDay) {
         event.preventDefault();
