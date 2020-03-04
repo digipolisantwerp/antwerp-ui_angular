@@ -5,10 +5,12 @@ main {
     margin-top: -1px;
     position: fixed;
     bottom: 0;
+    width: 100%;
     z-index: layer('pane');
     @include at($screen-sm) {
       height: calc(100% + #{$header-height} + 2px); // Leave room for the dock/undock labels
       position: static;
+      width: auto;
     }
   }
 

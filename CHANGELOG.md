@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
-
+### Changed
+- Entire rework of the structure of this project
+- Update to Angular 8
+- Custom scripts for generating new packages were removed
+- All libraries are Angular-standard compliant
+- Redux version locked on 4.0.1 due to lack of support for @angular-redux/store v.10
 
 ## [3.3.0] - 2020-01-31
 
