@@ -96,7 +96,7 @@
     "colors": "1.3.0",
     "command-line-args": "~5.0.2",
     "cookieconsent": "~3.1.1",
-    "core-js": "~2.5.4",    
+    "core-js": "~2.5.4",
     "cpx": "1.5.0",
     "esri-leaflet": "^2.1.4",
     "hammerjs": "~2.0.8",
