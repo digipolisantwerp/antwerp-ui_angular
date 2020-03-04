@@ -2,6 +2,16 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/aui-forms",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "lodash-es": "lodashEs",
+      "@acpaas-ui/ngx-components/flyout": "flyout",
+      "@acpaas-ui/ngx-components/selectable-list": "selectableList",
+      "inputmask": "Inputmask",
+      "@acpaas-ui/js-date-utils": "jsDateUtils",
+      "@acpaas-ui/ngx-components/calendar": "calendar",
+      "@acpaas-ui/ngx-components/progress-bar": "progressBar",
+      "ng2-ckeditor": "ng2Ckeditor"
+    }
   }
 }

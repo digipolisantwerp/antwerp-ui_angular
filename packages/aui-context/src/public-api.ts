@@ -1,2 +1,2 @@
-export * from './lib/context';
-export * from './lib/context/store';
+export * from './lib';
+export * from './lib/store';

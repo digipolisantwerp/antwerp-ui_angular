@@ -1,1 +1,1 @@
-export * from './lib/selectable-list';
+export * from './lib';

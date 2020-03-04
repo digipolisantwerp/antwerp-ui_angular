@@ -1,1 +1,1 @@
-export * from './lib/agenda';
+export * from './lib';

@@ -1,1 +1,1 @@
-export * from './lib/localstorage';
+export * from './lib';
