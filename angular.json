@@ -125,76 +125,6 @@
         }
       }
     },
-    "ngx-layout": {
-      "projectType": "library",
-      "root": "packages/ngx-layout",
-      "sourceRoot": "packages/ngx-layout/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "packages/ngx-layout/tsconfig.lib.json",
-            "project": "packages/ngx-layout/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/ngx-layout/src/test.ts",
-            "tsConfig": "packages/ngx-layout/tsconfig.spec.json",
-            "karmaConfig": "packages/ngx-layout/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "packages/ngx-layout/tsconfig.lib.json",
-              "packages/ngx-layout/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ngx-logo": {
-      "projectType": "library",
-      "root": "packages/ngx-logo",
-      "sourceRoot": "packages/ngx-logo/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "packages/ngx-logo/tsconfig.lib.json",
-            "project": "packages/ngx-logo/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/ngx-logo/src/test.ts",
-            "tsConfig": "packages/ngx-logo/tsconfig.spec.json",
-            "karmaConfig": "packages/ngx-logo/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "packages/ngx-logo/tsconfig.lib.json",
-              "packages/ngx-logo/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "aui-logo": {
       "projectType": "library",
       "root": "packages/aui-logo",
@@ -327,41 +257,6 @@
             "tsConfig": [
               "packages/aui-code-snippet/tsconfig.lib.json",
               "packages/aui-code-snippet/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "analytics": {
-      "projectType": "library",
-      "root": "packages/analytics",
-      "sourceRoot": "packages/analytics/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "packages/analytics/tsconfig.lib.json",
-            "project": "packages/analytics/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/analytics/src/test.ts",
-            "tsConfig": "packages/analytics/tsconfig.spec.json",
-            "karmaConfig": "packages/analytics/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "packages/analytics/tsconfig.lib.json",
-              "packages/analytics/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
