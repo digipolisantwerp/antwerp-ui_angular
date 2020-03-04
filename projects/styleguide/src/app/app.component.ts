@@ -26,11 +26,11 @@ export class AppComponent {
   }
 
   shouldDisplaySubMenu(route: Route): boolean {
-    return route && route.children && route.children[0] && route.children[0].children && route.children[0].children.length >= 1;
+    return route && route.children && route.children.length >= 1;
   }
 
   getChildrenRoutes(route: Route): Route[] {
-    const children = [...route.children[0].children];
+    const children = [...route.children];
     children.splice(0, 1);
     return children;
   }

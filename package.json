@@ -13,6 +13,7 @@
   "dependencies": {
     "@a-ui/acpaas": "^4.1.0",
     "@a-ui/core": "^4.1.0",
+    "@acpaas-ui/js-date-utils": "^1.0.6",
     "@acpaas-ui/js-notification-store": "^1.0.4",
     "@acpaas-ui/ngx-components": "^3.3.0",
     "@angular/animations": "~8.2.14",

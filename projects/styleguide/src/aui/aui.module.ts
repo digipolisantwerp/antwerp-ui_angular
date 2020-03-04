@@ -19,6 +19,14 @@ import {ProgressBarModule} from '../../../aui-progress-bar/src/lib/progress-bar'
 import {TableModule} from '../../../aui-table/src/lib/table';
 import {UserMenuModule} from '../../../aui-user-menu/src/lib/user-menu';
 import {SelectableListModule} from '../../../aui-selectable-list/src/lib/selectable-list';
+import {AutoCompleteModule} from '../../../aui-forms/src/lib/auto-complete';
+import {DatepickerModule} from '../../../aui-forms/src/lib/datepicker';
+import {MaskModule} from '../../../aui-forms/src/lib/mask';
+import {RangeSliderModule} from '../../../aui-forms/src/lib/range-slider';
+import {SearchFilterModule} from '../../../aui-forms/src/lib/search-filter';
+import {TimepickerModule} from '../../../aui-forms/src/lib/timepicker';
+import {UploadModule} from '../../../aui-forms/src/lib/upload';
+import {WysiwygModule} from '../../../aui-forms/src/lib/wysiwyg';
 
 @NgModule({
   imports: [
@@ -44,7 +52,22 @@ import {SelectableListModule} from '../../../aui-selectable-list/src/lib/selecta
     ProgressBarModule,
     TableModule,
     UserMenuModule,
-    SelectableListModule
+    SelectableListModule,
+    AutoCompleteModule,
+    DatepickerModule.forChild([
+      'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',
+    ], [
+      'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December',
+    ], {
+      ERRORS_INVALID_DATE: 'Ongeldige datum.',
+      ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden.',
+    }),
+    MaskModule,
+    RangeSliderModule,
+    SearchFilterModule,
+    TimepickerModule,
+    UploadModule,
+    WysiwygModule
   ],
   exports: [
     FooterModule,
@@ -66,7 +89,15 @@ import {SelectableListModule} from '../../../aui-selectable-list/src/lib/selecta
     ProgressBarModule,
     TableModule,
     UserMenuModule,
-    SelectableListModule
+    SelectableListModule,
+    AutoCompleteModule,
+    DatepickerModule,
+    MaskModule,
+    RangeSliderModule,
+    SearchFilterModule,
+    TimepickerModule,
+    UploadModule,
+    WysiwygModule,
   ]
 })
 export class AuiModule {

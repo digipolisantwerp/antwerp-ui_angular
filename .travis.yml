@@ -21,7 +21,7 @@ script:
   - ng build --prod --base-href "https://digipolisantwerp.github.io/acpaas-ui_angular/"
 
 deploy:
-  provider: pages
+  provider: aui-forms
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true

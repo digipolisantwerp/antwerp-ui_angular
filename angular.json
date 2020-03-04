@@ -859,6 +859,41 @@
           }
         }
       }
+    },
+    "aui-forms": {
+      "projectType": "library",
+      "root": "projects/aui-forms",
+      "sourceRoot": "projects/aui-forms/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/aui-forms/tsconfig.lib.json",
+            "project": "projects/aui-forms/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aui-forms/src/test.ts",
+            "tsConfig": "projects/aui-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/aui-forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aui-forms/tsconfig.lib.json",
+              "projects/aui-forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "styleguide"
 }

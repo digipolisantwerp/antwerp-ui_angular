@@ -44,7 +44,7 @@ describe('The ItemsPerPageComponent', () => {
 		expect(el).not.toBeUndefined();
 	});
 
-	it('should emit the chosen amount of pages', () => {
+	it('should emit the chosen amount of aui-forms', () => {
 		const mockAmount = 10;
 		spyOn(comp.returnAmount, 'emit');
 

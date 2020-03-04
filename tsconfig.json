@@ -144,6 +144,12 @@
       ],
       "aui-selectable-list/*": [
         "dist/aui-selectable-list/*"
+      ],
+      "aui-forms": [
+        "dist/aui-forms"
+      ],
+      "aui-forms/*": [
+        "dist/aui-forms/*"
       ]
     }
   },

@@ -55,7 +55,7 @@ describe('PaginationComponent', () => {
 		expect(comp.onUpdate).toHaveBeenCalledWith(1);
 	});
 
-	it('should not render if total pages < 1', () => {
+	it('should not render if total aui-forms < 1', () => {
 		comp.itemsPerPage = 4;
 		comp.totalValues = 3;
 		comp.currentPage = 1;
@@ -134,7 +134,7 @@ describe('PaginationComponent', () => {
 
 	describe('number buttons', () => {
 
-		it('should render buttons with less than 8 pages', () => {
+		it('should render buttons with less than 8 aui-forms', () => {
 			comp.itemsPerPage = 5;
 			comp.totalValues = 21;
 			comp.currentPage = 1;
@@ -168,7 +168,7 @@ describe('PaginationComponent', () => {
 			fixture.detectChanges();
 		});
 
-		it('should render buttons with more than 8 pages', () => {
+		it('should render buttons with more than 8 aui-forms', () => {
 			let nr0Button;
 			let nr1Button;
 			let nr2Button;

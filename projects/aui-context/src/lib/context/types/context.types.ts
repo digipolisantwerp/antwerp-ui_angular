@@ -30,7 +30,7 @@ export interface ContextConfig {
 	useTitleSuffix?: boolean;
 
 	/**
-	 * Flag to append the title of parent pages to the page title.
+	 * Flag to append the title of parent aui-forms to the page title.
 	 * Default value: false
 	 */
 	extendTitle?: boolean;
