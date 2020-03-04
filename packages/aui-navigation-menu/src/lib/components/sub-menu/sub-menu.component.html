@@ -3,13 +3,13 @@ in the navigation page that will slide into the screen.
 Thus on loading, this element is not visible and is not accessible by crawlers -->
 <ng-template #subMenuTemplate>
   <ul class="m-nav-list m-nav-list--left">
-    <li *ngIf="isNestedSubMenu" class="a-back-link u-cursor-pointer"><a (click)="navigateBack()" tabindex="0"><span
-      class="fa fa-angle-left"></span>{{ translations?.lblBack }}</a></li>
+    <li *ngIf="isNestedSubMenu" class="o-menu__back-link u-cursor-pointer"><a (click)="navigateBack()" tabindex="0"><span
+          class="fa fa-angle-left"></span>{{ translations?.lblBack }}</a></li>
     <ng-container *ngTemplateOutlet="inclusedContent"></ng-container>
   </ul>
 </ng-template>
 
-<div [ngClass]="{'docked' : (state$ | async)?.docked}" class="o-sub-menu__content-wrapper">
+<div class="o-menu__submenu-content-wrapper">
   <ul #children class="m-nav-list">
     <ng-container *ngTemplateOutlet="inclusedContent"></ng-container>
   </ul>

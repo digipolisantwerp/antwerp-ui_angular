@@ -1,0 +1,28 @@
+<div class='o-menu' [ngClass]="{'docked' : isDocked$ | async }">
+	<nav class="o-menu__tabs-wrapper" role="navigation">
+		<ng-content></ng-content>
+
+		<!--
+		Manually create a 'more' tab where items that wouldn't be visible on a mobile screen are placed under as a submenu
+		The items will be styles (and hidden/shown) using CSS.
+		-->
+		<aui-menu-tab [icon]="configuration.moreIcon" *ngIf="shouldShowMoreTab$ | async">
+			<aui-menu-link>{{ _translations?.lblMore }}</aui-menu-link>
+			<aui-sub-menu>
+				<aui-sub-menu-item *ngFor="let tab of (moreMenuItems$ | async)" [forceShowArrow]='!!tab.subMenu'
+								   (click)="tab.followMenuTab($event)">
+					<aui-menu-link [innerHTML]="tab.getLabel()"></aui-menu-link>
+				</aui-sub-menu-item>
+			</aui-sub-menu>
+		</aui-menu-tab>
+	</nav>
+	<div class="o-menu__hide-cta" *ngIf="(hasIconsInTabs$ | async)">
+		<a href="#" *ngIf="(showHideMenuLabel$ | async)"
+		   (click)="toggleDocking($event)">{{ _translations?.lblHideMenu }}&nbsp;<span
+				class="fa fa-angle-double-left"></span></a>
+		<a href="#" *ngIf="(showRevealMenuLabel$ | async)" (click)="toggleDocking($event)"><span
+				class="fa fa-angle-double-right"></span></a>
+	</div>
+
+	<aui-navigation-pane></aui-navigation-pane>
+</div>
