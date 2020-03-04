@@ -33,7 +33,7 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 
   @ContentChild(SubMenuComponent, {static: false})
   public subMenu?: SubMenuComponent;
-  @ContentChild(MenuLinkComponent, {static: true})
+  @ContentChild(MenuLinkComponent, {static: false})
   public menuLink: MenuLinkComponent;
 
   @HostBinding('class.o-menu__tab')
