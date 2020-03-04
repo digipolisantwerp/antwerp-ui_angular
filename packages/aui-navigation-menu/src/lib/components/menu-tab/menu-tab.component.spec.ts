@@ -136,8 +136,8 @@ describe('Menu Tab Component Test', () => {
   describe('Active Menu', () => {
     it('should set the active menu to main type when clicked', () => getTestScheduler().run((helpers) => {
       component.headerClicked$ = hot('a');
-      component.subMenu = {id: 'some-submenu'} as any;
       fixture.detectChanges();
+      component.subMenu = {id: 'some-submenu'} as any;
       helpers.flush();
       expect((service.updateState as sinon.SinonStub).withArgs('activeMenu', {
         type: 'main',
@@ -165,8 +165,8 @@ describe('Menu Tab Component Test', () => {
         },
       });
       component.headerClicked$ = hot('--a', {a: false});
-      component.subMenu = {templateRef: 'template' as any} as any;
       fixture.detectChanges();
+      component.subMenu = {templateRef: 'template' as any} as any;
       helpers.flush();
 
       expect((service.displaySubMenu as sinon.SinonStub).withArgs({type: 'main', templateRef: 'template'}).calledOnce).toBe(true);
@@ -179,8 +179,8 @@ describe('Menu Tab Component Test', () => {
         },
       });
       component.headerClicked$ = hot('--a', {a: true});
-      component.subMenu = {templateRef: 'template' as any} as any;
       fixture.detectChanges();
+      component.subMenu = {templateRef: 'template' as any} as any;
       helpers.flush();
 
       expect((service.displaySubMenu as sinon.SinonStub).withArgs({type: 'submenu', templateRef: 'template'}).calledOnce).toBe(true);
