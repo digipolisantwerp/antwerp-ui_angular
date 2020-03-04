@@ -27,6 +27,7 @@
     "@acpaas-ui/js-date-utils": "^1.0.6",
     "@acpaas-ui/js-notification-store": "^1.0.4",
     "@acpaas-ui/ngx-components": "^3.3.0",
+    "@angular-redux/store": "^10.0.0",
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
@@ -38,6 +39,7 @@
     "@ngrx/effects": "^8.6.0",
     "@ngrx/store": "^8.6.0",
     "@ngrx/store-devtools": "^8.6.0",
+    "redux": "4.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

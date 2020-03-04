@@ -1,3 +1,6 @@
-export {CONTEXT_LOAD} from './context.actions';
-export {contextReducer} from './context.reducer';
-export {ContextState} from './store.types';
+export { ContextActionCreator } from './context/context.actioncreator';
+export { CONTEXT_LOAD } from './context/context.actiontypes';
+export { contextReducer } from './context/context.reducer';
+
+export { ContextStoreModule } from './store.module';
+export { ContextState } from './store.types';
