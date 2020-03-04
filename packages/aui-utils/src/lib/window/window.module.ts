@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { WINDOW_PROVIDERS } from './services/window.service';
+import {WINDOW_PROVIDERS} from './services/window.service';
 
 @NgModule({
-	providers: [
-		WINDOW_PROVIDERS,
-	],
+  providers: [
+    WINDOW_PROVIDERS,
+  ],
 })
 export class WindowModule {
 }

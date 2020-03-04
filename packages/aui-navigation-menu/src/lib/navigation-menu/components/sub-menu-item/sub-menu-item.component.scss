@@ -12,7 +12,7 @@ li {
     overflow: hidden;
     white-space: nowrap;
 
-    &>span.fa {
+    & > span.fa {
       transform: rotate(-90deg);
     }
 
@@ -24,11 +24,11 @@ li {
   }
 
   ::ng-deep &.a-back-link {
-		color: $text-color-light;
-		font-weight: normal;
+    color: $text-color-light;
+    font-weight: normal;
   }
 
-  &.has-sub-menu>a>span.fa {
+  &.has-sub-menu > a > span.fa {
     transform: rotate(-90deg);
   }
 
@@ -44,14 +44,14 @@ li {
 }
 
 @include at($screen-sm) {
-  li.has-sub-menu:not(.docked)>a>span.fa {
+  li.has-sub-menu:not(.docked) > a > span.fa {
     margin-right: $spacer-xs /2;
     transition: transform $animation-speed ease-in-out;
     transform: rotate(0deg);
   }
 
   :host.active {
-    &>li:not(.docked)>a>span.fa {
+    & > li:not(.docked) > a > span.fa {
       transform: rotate(180deg);
     }
   }

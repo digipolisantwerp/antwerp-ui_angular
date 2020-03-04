@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy, ContentChild, AfterContentChecked, ChangeDetectorRef} from '@angular/core';
+import {AfterContentChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild} from '@angular/core';
 
 import {FooterContentDirective} from '../../directives/content.directive';
 

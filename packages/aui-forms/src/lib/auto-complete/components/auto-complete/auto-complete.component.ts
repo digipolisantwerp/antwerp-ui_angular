@@ -1,16 +1,16 @@
 import {
   Component,
-  Input,
-  Output,
+  ContentChild,
+  ElementRef,
   EventEmitter,
+  forwardRef,
+  Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
-  ElementRef,
-  ViewChild,
-  ContentChild,
   TemplateRef,
-  forwardRef
+  ViewChild
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {get, isEqual} from 'lodash-es';
@@ -69,14 +69,14 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 
   private remoteValue = false;
 
-  public updateModel = (_: any) => {
-  };
-
   constructor(
     private ref: ElementRef,
     private searchService: SearchService
   ) {
   }
+
+  public updateModel = (_: any) => {
+  };
 
   // CONTROL_VALUE_ACCESSOR interface
   public writeValue(value = '') {

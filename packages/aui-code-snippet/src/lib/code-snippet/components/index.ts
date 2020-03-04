@@ -1,9 +1,9 @@
-import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
+import {CodeSnippetComponent} from './code-snippet/code-snippet.component';
 
 export {
-	CodeSnippetComponent,
+  CodeSnippetComponent,
 };
 
 export const Components = [
-	CodeSnippetComponent,
+  CodeSnippetComponent,
 ];

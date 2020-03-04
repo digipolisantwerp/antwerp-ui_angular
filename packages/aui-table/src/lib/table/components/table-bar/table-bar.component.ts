@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter, HostBinding, ViewChild, DoCheck } from '@angular/core';
-import { Filter } from '@acpaas-ui/ngx-components/utils';
+import {Component, DoCheck, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Filter} from '@acpaas-ui/ngx-components/utils';
 
 @Component({
   selector: 'aui-table-bar',
@@ -23,26 +23,26 @@ export class TableBarComponent implements DoCheck {
   }
 
   public countInvisibleItems() {
-		const rectContainer = this.ref.nativeElement.getBoundingClientRect();
-		const childNodes = this.ref.nativeElement.childNodes;
+    const rectContainer = this.ref.nativeElement.getBoundingClientRect();
+    const childNodes = this.ref.nativeElement.childNodes;
 
-		for (let i = childNodes.length - 1; i >= 0; i--) {
-			const o = childNodes[i];
-			if (o.nodeName === 'AUI-TABLE-BAR-ITEM' && o.getBoundingClientRect) {
-				const rectChild = o.getBoundingClientRect();
-				if (this.isInVisible(rectContainer, rectChild)) {
-					this.invisibleItems = true;
-					break;
-				}
-			}
+    for (let i = childNodes.length - 1; i >= 0; i--) {
+      const o = childNodes[i];
+      if (o.nodeName === 'AUI-TABLE-BAR-ITEM' && o.getBoundingClientRect) {
+        const rectChild = o.getBoundingClientRect();
+        if (this.isInVisible(rectContainer, rectChild)) {
+          this.invisibleItems = true;
+          break;
+        }
+      }
 
-			if (i === 0) {
-				this.invisibleItems = false;
-			}
-		}
-	}
+      if (i === 0) {
+        this.invisibleItems = false;
+      }
+    }
+  }
 
-	public toggle() {
-		this.open = !this.open;
-	}
+  public toggle() {
+    this.open = !this.open;
+  }
 }

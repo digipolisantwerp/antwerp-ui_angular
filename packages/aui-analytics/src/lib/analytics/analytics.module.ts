@@ -1,40 +1,40 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 
-import { WindowModule } from '@acpaas-ui/ngx-components/utils';
+import {WindowModule} from '@acpaas-ui/ngx-components/utils';
 
-import { Services } from './services';
-import { Directives } from './directives';
+import {Services} from './services';
+import {Directives} from './directives';
 
-import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from './analytics.conf';
+import {GTM_CONFIG, GTM_CONFIG_DEFAULT} from './analytics.conf';
 
 @NgModule({
-	imports: [
-		WindowModule,
-	],
-	providers: [
-		{ provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT },
-		Services,
-	],
-	declarations: [
-		Directives,
-	],
-	exports: [
-		Directives,
-	],
+  imports: [
+    WindowModule,
+  ],
+  providers: [
+    {provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT},
+    Services,
+  ],
+  declarations: [
+    Directives,
+  ],
+  exports: [
+    Directives,
+  ],
 })
 export class AnalyticsModule {
-	static forChild(config = {}): ModuleWithProviders {
-		config = {
-			...GTM_CONFIG_DEFAULT,
-			...config,
-		};
+  static forChild(config = {}): ModuleWithProviders {
+    config = {
+      ...GTM_CONFIG_DEFAULT,
+      ...config,
+    };
 
-		return {
-			ngModule: AnalyticsModule,
-			providers: [
-				{ provide: GTM_CONFIG, useValue: config },
-				Services,
-			],
-		};
-	}
+    return {
+      ngModule: AnalyticsModule,
+      providers: [
+        {provide: GTM_CONFIG, useValue: config},
+        Services,
+      ],
+    };
+  }
 }

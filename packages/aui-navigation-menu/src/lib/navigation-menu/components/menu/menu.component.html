@@ -1,30 +1,30 @@
-<div class='o-menu' [ngClass]="{'docked' : isDocked$ | async }">
-	<div class="o-menu__wrapper">
-		<nav class="o-menu__tabs-wrapper" role="navigation">
-			<ng-content></ng-content>
+<div [ngClass]="{'docked' : isDocked$ | async }" class='o-menu'>
+  <div class="o-menu__wrapper">
+    <nav class="o-menu__tabs-wrapper" role="navigation">
+      <ng-content></ng-content>
 
-			<!--
-			Manually create a 'more' tab where items that wouldn't be visible on a mobile screen are placed under as a submenu
-			The items will be styles (and hidden/shown) using CSS.
-    		-->
-			<aui-menu-tab [icon]="configuration.moreIcon" *ngIf="shouldShowMoreTab$ | async">
-				<aui-menu-link>{{ _translations?.lblMore }}</aui-menu-link>
-				<aui-sub-menu>
-					<aui-sub-menu-item *ngFor="let tab of (moreMenuItems$ | async)" [forceShowArrow]='!!tab.subMenu'
-						(click)="tab.followMenuTab($event)">
-						<aui-menu-link [innerHTML]="tab.getLabel()"></aui-menu-link>
-					</aui-sub-menu-item>
-				</aui-sub-menu>
-			</aui-menu-tab>
-		</nav>
-		<div class="o-menu__hide-cta" *ngIf="(hasIconsInTabs$ | async)">
-			<a href="#" *ngIf="(showHideMenuLabel$ | async)"
-				(click)="toggleDocking($event)">{{ _translations?.lblHideMenu }}&nbsp;<span
-					class="fa fa-angle-double-left"></span></a>
-			<a href="#" *ngIf="(showRevealMenuLabel$ | async)" (click)="toggleDocking($event)"><span
-					class="fa fa-angle-double-right"></span></a>
-		</div>
+      <!--
+      Manually create a 'more' tab where items that wouldn't be visible on a mobile screen are placed under as a submenu
+      The items will be styles (and hidden/shown) using CSS.
+        -->
+      <aui-menu-tab *ngIf="shouldShowMoreTab$ | async" [icon]="configuration.moreIcon">
+        <aui-menu-link>{{ _translations?.lblMore }}</aui-menu-link>
+        <aui-sub-menu>
+          <aui-sub-menu-item (click)="tab.followMenuTab($event)" *ngFor="let tab of (moreMenuItems$ | async)"
+                             [forceShowArrow]='!!tab.subMenu'>
+            <aui-menu-link [innerHTML]="tab.getLabel()"></aui-menu-link>
+          </aui-sub-menu-item>
+        </aui-sub-menu>
+      </aui-menu-tab>
+    </nav>
+    <div *ngIf="(hasIconsInTabs$ | async)" class="o-menu__hide-cta">
+      <a (click)="toggleDocking($event)" *ngIf="(showHideMenuLabel$ | async)"
+         href="#">{{ _translations?.lblHideMenu }}&nbsp;<span
+        class="fa fa-angle-double-left"></span></a>
+      <a (click)="toggleDocking($event)" *ngIf="(showRevealMenuLabel$ | async)" href="#"><span
+        class="fa fa-angle-double-right"></span></a>
+    </div>
 
-		<aui-navigation-pane></aui-navigation-pane>
-	</div>
+    <aui-navigation-pane></aui-navigation-pane>
+  </div>
 </div>

@@ -1,10 +1,5 @@
-import {NgModule, ModuleWithProviders, Inject} from '@angular/core';
-import {
-  RouterModule,
-  Router,
-  NavigationEnd,
-  ActivatedRoute
-} from '@angular/router';
+import {Inject, ModuleWithProviders, NgModule} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router, RouterModule} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 
 import {Services} from './services';
@@ -15,7 +10,7 @@ import {ContextWriterService} from './services/context-writer.service';
 import {ContextConfig} from './types/context.types';
 import {RouterHelper} from './utils/router.helper';
 import {StoreModule} from '@ngrx/store';
-import {contextReducer, ContextState} from './store';
+import {contextReducer} from './store';
 
 @NgModule({
   imports: [
@@ -28,16 +23,6 @@ import {contextReducer, ContextState} from './store';
   ],
 })
 export class ContextModule {
-  static forRoot(metaConfig: ContextConfig): ModuleWithProviders {
-    return {
-      ngModule: ContextModule,
-      providers: [
-        {provide: CONTEXT_CONFIG, useValue: metaConfig},
-        ...Services,
-      ],
-    };
-  }
-
   constructor(
     private contextService: ContextService,
     private contextWriterService: ContextWriterService,
@@ -64,5 +49,15 @@ export class ContextModule {
 
         this.contextService.updateContext(route.data.meta);
       });
+  }
+
+  static forRoot(metaConfig: ContextConfig): ModuleWithProviders {
+    return {
+      ngModule: ContextModule,
+      providers: [
+        {provide: CONTEXT_CONFIG, useValue: metaConfig},
+        ...Services,
+      ],
+    };
   }
 }

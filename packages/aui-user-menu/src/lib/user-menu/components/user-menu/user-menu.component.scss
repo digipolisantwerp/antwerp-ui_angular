@@ -1,30 +1,30 @@
 @import '../../../../../../../node_modules/@a-ui/core/dist/assets/styles/quarks';
 
 :host {
-	display: inline-block;
+  display: inline-block;
 }
 
 .a-button-avatar {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	padding-bottom: 0;
-	padding-left: 0;
-    padding-top: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-top: 0;
 
-	.a-avatar {
-		align-content: center;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		overflow:visible;
-		position: relative;
+  .a-avatar {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: visible;
+    position: relative;
 
-		.a-badge {
-			bottom: -$badge-height/2;
-			position: absolute;
-			z-index: layer('tooltip');
-		}
-	}
+    .a-badge {
+      bottom: -$badge-height/2;
+      position: absolute;
+      z-index: layer('tooltip');
+    }
+  }
 
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Routes, Router, ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router, Routes} from '@angular/router';
 import {APP_ROUTES} from '../../app.routes';
 
 @Component({

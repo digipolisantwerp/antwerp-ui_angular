@@ -1,24 +1,25 @@
-<div class="aui-datepicker a-input__wrapper" auiFlyout aria-haspopup="grid">
-	<input
-		type="text"
-		name="{{ name }}"
-		id="{{ id }}"
-		placeholder="{{ placeholder }}"
-		[autocomplete]="autocomplete"
-		[formControl]="formControl"
-		[auiMask]="dateMask"
-		[attr.disabled]="isDisabled ? true : null"
-		(blur)="handleBlur($event)"
-	>
-	<span class="fa fa-calendar" *ngIf="isDisabled"></span>
+<div aria-haspopup="grid" auiFlyout class="aui-datepicker a-input__wrapper">
+  <input
+    (blur)="handleBlur($event)"
+    [attr.disabled]="isDisabled ? true : null"
+    [auiMask]="dateMask"
+    [autocomplete]="autocomplete"
+    [formControl]="formControl"
+    id="{{ id }}"
+    name="{{ name }}"
+    placeholder="{{ placeholder }}"
+    type="text"
+  >
+  <span *ngIf="isDisabled" class="fa fa-calendar"></span>
 
-	<ng-container *ngIf="!isDisabled">
-		<span class="fa fa-calendar is-clickable" auiFlyoutAction [openOnFocus]="false"></span>
-	</ng-container>
+  <ng-container *ngIf="!isDisabled">
+    <span [openOnFocus]="false" auiFlyoutAction class="fa fa-calendar is-clickable"></span>
+  </ng-container>
 
-	<ng-container *ngIf="!isDisabled">
-		<div role="dialog" class="m-datepicker m-datepicker--fixed" auiFlyoutZone>
-			<aui-calendar [selectedDate]="selectedDate" [range]="range" (selectDate)="selectDateFromCalendar($event)"></aui-calendar>
-		</div>
-	</ng-container>
+  <ng-container *ngIf="!isDisabled">
+    <div auiFlyoutZone class="m-datepicker m-datepicker--fixed" role="dialog">
+      <aui-calendar (selectDate)="selectDateFromCalendar($event)" [range]="range"
+                    [selectedDate]="selectedDate"></aui-calendar>
+    </div>
+  </ng-container>
 </div>

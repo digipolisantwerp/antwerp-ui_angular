@@ -1,9 +1,9 @@
-import { AvatarComponent } from './avatar/avatar.component';
+import {AvatarComponent} from './avatar/avatar.component';
 
 export {
-	AvatarComponent,
+  AvatarComponent,
 };
 
 export const Components = [
-	AvatarComponent,
+  AvatarComponent,
 ];

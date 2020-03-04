@@ -1,5 +1,5 @@
-import { GaEventDirective } from './event.directive';
+import {GaEventDirective} from './event.directive';
 
 export const Directives = [
-	GaEventDirective,
+  GaEventDirective,
 ];

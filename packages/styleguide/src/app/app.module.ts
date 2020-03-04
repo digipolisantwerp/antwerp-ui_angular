@@ -6,10 +6,6 @@ import {Pages} from './pages';
 
 import {RouterModule} from '@angular/router';
 import {APP_ROUTES} from './app.routes';
-import {FooterModule} from '../../../aui-layout/src/lib/footer';
-import {LogoModule} from '../../../aui-logo/src/lib';
-import {HeaderModule} from '../../../aui-layout/src/lib/header';
-import {NavigationMenuModule} from '../../../aui-navigation-menu/src/lib/navigation-menu';
 import {ExamplesModule} from '../examples/examples.module';
 import {AuiModule} from '../aui/aui.module';
 
@@ -28,4 +24,5 @@ import {AuiModule} from '../aui/aui.module';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

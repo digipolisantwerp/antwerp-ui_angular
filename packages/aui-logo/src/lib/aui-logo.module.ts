@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { AuiLogoComponent } from './aui-logo.component';
-
+import {NgModule} from '@angular/core';
+import {AuiLogoComponent} from './aui-logo.component';
 
 
 @NgModule({
   declarations: [AuiLogoComponent],
-  imports: [
-  ],
+  imports: [],
   exports: [AuiLogoComponent]
 })
-export class AuiLogoModule { }
+export class AuiLogoModule {
+}

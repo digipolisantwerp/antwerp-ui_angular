@@ -1,6 +1,6 @@
 export interface SearchOptions {
-	key?: string;
-	minLength?: number;
-	query?: string;
-	showAllByDefault?: boolean;
+  key?: string;
+  minLength?: number;
+  query?: string;
+  showAllByDefault?: boolean;
 }

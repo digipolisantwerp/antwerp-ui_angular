@@ -1,39 +1,39 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import {ModuleWithProviders, NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
-import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
+import {LabelsModule} from '@acpaas-ui/ngx-components/utils';
 
-import { Components } from './components';
-import { StatusbarAvailableTypes } from './types/status-bar.types';
-import { STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES } from './status-bar.conf';
+import {Components} from './components';
+import {StatusbarAvailableTypes} from './types/status-bar.types';
+import {STATUSBAR_AVAILABLE_TYPES, STATUSBAR_DEFAULT_TYPES} from './status-bar.conf';
 
 @NgModule({
-	imports: [
-		CommonModule,
-		RouterModule,
+  imports: [
+    CommonModule,
+    RouterModule,
 
-		LabelsModule,
-	],
-	declarations: [
-		...Components,
-	],
-	exports: [
-		...Components,
-	],
-	providers: [
-		{ provide: STATUSBAR_AVAILABLE_TYPES, useValue: STATUSBAR_DEFAULT_TYPES },
-	],
+    LabelsModule,
+  ],
+  declarations: [
+    ...Components,
+  ],
+  exports: [
+    ...Components,
+  ],
+  providers: [
+    {provide: STATUSBAR_AVAILABLE_TYPES, useValue: STATUSBAR_DEFAULT_TYPES},
+  ],
 })
 export class StatusbarModule {
-	static forChild(
-		availableTypes: StatusbarAvailableTypes
-	): ModuleWithProviders {
-		return {
-			ngModule: StatusbarModule,
-			providers: [
-				{ provide: STATUSBAR_AVAILABLE_TYPES, useValue: availableTypes },
-			],
-		};
-	}
+  static forChild(
+    availableTypes: StatusbarAvailableTypes
+  ): ModuleWithProviders {
+    return {
+      ngModule: StatusbarModule,
+      providers: [
+        {provide: STATUSBAR_AVAILABLE_TYPES, useValue: availableTypes},
+      ],
+    };
+  }
 }

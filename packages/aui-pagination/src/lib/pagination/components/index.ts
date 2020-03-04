@@ -1,5 +1,5 @@
-import { PaginationComponent } from './pagination/pagination.component';
+import {PaginationComponent} from './pagination/pagination.component';
 
 export const Components = [
-	PaginationComponent,
+  PaginationComponent,
 ];

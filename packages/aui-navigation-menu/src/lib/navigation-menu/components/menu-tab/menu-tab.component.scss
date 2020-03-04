@@ -16,7 +16,7 @@
   @include at($screen-sm) {
     border-bottom: 1px solid $border-color;
     border-right: none;
-	width: 100%;
+    width: 100%;
   }
 }
 
@@ -34,7 +34,7 @@
       transform: rotate(180deg);
     }
 
-    ::ng-deep>aui-sub-menu>.o-sub-menu__content-wrapper:first-child {
+    ::ng-deep > aui-sub-menu > .o-sub-menu__content-wrapper:first-child {
       display: block;
       max-height: $submenu-height;
       overflow: visible;
@@ -50,11 +50,11 @@
       overflow: hidden;
       width: calc(#{$menu-docked-width} - 1px); // 1 px make up for border
 
-      ::ng-deep &>aui-sub-menu:first-of-type {
+      ::ng-deep & > aui-sub-menu:first-of-type {
         top: 0px;
 
         // Remove border of the first sub menu item to prevent visual 'double border' effect
-        &>.o-sub-menu__content-wrapper:first-child>ul.m-nav-list {
+        & > .o-sub-menu__content-wrapper:first-child > ul.m-nav-list {
           border-left: none !important;
         }
       }

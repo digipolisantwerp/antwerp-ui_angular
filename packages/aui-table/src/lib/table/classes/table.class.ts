@@ -1,159 +1,155 @@
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 
-import { Filter } from '@acpaas-ui/ngx-components/utils';
+import {Filter} from '@acpaas-ui/ngx-components/utils';
 
-import { TableRecord, TableColumn, OrderBy } from '../types/table.types';
+import {OrderBy, TableColumn, TableRecord} from '../types/table.types';
 
 export class Table {
-	// Original data (json array from the server)
-	private rawData: TableRecord[] = [];
+  // Array of filters
+  public filters: Filter[] = [];
+  // Pagination
+  public page;
+  public limit;
+  public lastPage;
+  // Sorting
+  public orderBy: OrderBy;
+  public filteredData: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  public rows: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  public columns: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  // Original data (json array from the server)
+  private rawData: TableRecord[] = [];
+  // Original columns config (from the app)
+  private rawColumns: (TableColumn | string)[];
 
-	// Original columns config (from the app)
-	private rawColumns: (TableColumn|string)[];
+  // Init stuff...
+  constructor() {
+  }
 
-	// Array of filters
-	public filters: Filter[] = [];
+  // ---------- GETTERS | SETTERS ---------- //
 
-	// Pagination
-	public page;
-	public limit;
-	public lastPage;
+  public setRawData(data: any[]) {
+    this.rawData = data;
+    this.updateFilteredData();
+    this.setLastPage();
+    this.updateRows();
+  }
 
-	// Sorting
-	public orderBy: OrderBy;
+  public setRawColumns(columns) {
+    this.rawColumns = columns;
+    this.updateColumns();
+  }
 
-	public filteredData: BehaviorSubject<any[]> = new BehaviorSubject([]);
-	public rows: BehaviorSubject<any[]> = new BehaviorSubject([]);
-	public columns: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  public setFilters(filters: Filter[]) {
+    this.filters = filters;
+    this.updateFilteredData();
+    this.setLastPage();
+    this.updateRows();
+  }
 
-	// Init stuff...
-	constructor() {}
+  public addFilter(filter: Filter) {
+    this.filters.push(filter);
+    this.updateFilteredData();
+    this.setLastPage();
+    this.updateRows();
+  }
 
-	// ---------- GETTERS | SETTERS ---------- //
+  public setPage(i) {
+    this.page = Number(i); // something weird number >< string
+    this.updateRows();
+  }
 
-	public setRawData(data: any[]) {
-		this.rawData = data;
-		this.updateFilteredData();
-		this.setLastPage();
-		this.updateRows();
-	}
+  public setLimit(i: number) {
+    this.limit = Number(i); // something weird number >< string
+    this.setLastPage();
+    if (this.lastPage && this.page > this.lastPage) {
+      this.page = this.lastPage;
+    }
+    this.updateRows();
+  }
 
-	public setRawColumns(columns) {
-		this.rawColumns = columns;
-		this.updateColumns();
-	}
+  public setOrderBy(o) {
+    this.orderBy = o;
+    this.updateFilteredData();
+    this.setLastPage();
+    this.updateRows();
+  }
 
-	public setFilters(filters: Filter[]) {
-		this.filters = filters;
-		this.updateFilteredData();
-		this.setLastPage();
-		this.updateRows();
-	}
+  // ---------- VIRTUAL PROPS ---------- //
 
-	public addFilter(filter: Filter) {
-		this.filters.push(filter);
-		this.updateFilteredData();
-		this.setLastPage();
-		this.updateRows();
-	}
+  public getOffset() {
+    return (this.page * this.limit) - this.limit;
+  }
 
-	public setPage(i) {
-		this.page = Number(i); // something weird number >< string
-		this.updateRows();
-	}
+  // ---------- PROPERTY HELPERS ---------- //
 
-	public setLimit(i: number) {
-		this.limit = Number(i); // something weird number >< string
-		this.setLastPage();
-		if (this.lastPage && this.page > this.lastPage) {
-			this.page = this.lastPage;
-		}
-		this.updateRows();
-	}
+  public setLastPage() {
+    const d = this.filteredData.getValue();
+    this.lastPage = Math.ceil(d ? d.length / this.limit : 0);
+  }
 
-	public setOrderBy(o) {
-		this.orderBy = o;
-		this.updateFilteredData();
-		this.setLastPage();
-		this.updateRows();
-	}
+  public updateRows() {
+    let d = this.filteredData.getValue();
 
-	// ---------- VIRTUAL PROPS ---------- //
+    if (this.orderBy) {
+      d = this.sortData(d, this.orderBy.key, this.orderBy.order);
+    }
 
-	public getOffset() {
-		return (this.page * this.limit) - this.limit;
-	}
+    d = this.selectData(d, this.limit, this.getOffset());
 
-	// ---------- PROPERTY HELPERS ---------- //
+    this.rows.next(d);
+  }
 
-	public setLastPage() {
-		const d = this.filteredData.getValue();
-		this.lastPage = Math.ceil(d ? d.length / this.limit : 0);
-	}
+  public updateColumns() {
+    const c = this.filterHiddenColumns(this.rawColumns);
+    this.columns.next(c);
+  }
 
-	public updateRows() {
-		let d = this.filteredData.getValue();
+  public updateFilteredData() {
+    this.filteredData.next(this.filterData(this.rawData, this.filters));
+  }
 
-		if (this.orderBy) {
-			d = this.sortData(d, this.orderBy.key, this.orderBy.order);
-		}
+  // ---------- ABSTRACT HELPERS ---------- //
 
-		d = this.selectData(d, this.limit, this.getOffset());
+  public filterData(data, filters: Filter[]) {
+    let d = data.slice();
 
-		this.rows.next(d);
-	}
+    filters.forEach((filter) => {
+      d = filter.parseData(d);
+    });
 
-	public updateColumns() {
-		const c = this.filterHiddenColumns(this.rawColumns);
-		this.columns.next(c);
-	}
+    return d;
+  }
 
-	public updateFilteredData() {
-		this.filteredData.next(this.filterData(this.rawData, this.filters));
-	}
+  public sortData(data, key, order = 'asc') {
+    if (!data || !data.sort || !key) {
+      return;
+    }
 
-	// ---------- ABSTRACT HELPERS ---------- //
+    const d = data.slice();
+    d.sort((a, b) => {
+      if (a[key] < b[key]) {
+        return order === 'asc' ? -1 : 1;
+      }
 
-	public filterData(data, filters: Filter[]) {
-		let d = data.slice();
+      if (a[key] > b[key]) {
+        return order === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
 
-		filters.forEach((filter) => {
-			d = filter.parseData(d);
-		});
+    return d;
+  }
 
-		return d;
-	}
+  public selectData(data, limit, offset) {
+    if (data && limit >= 0 && offset >= 0) {
+      return data.slice(offset, offset + limit);
+    }
+    return data;
+  }
 
-	public sortData(data, key, order = 'asc') {
-		if (!data || !data.sort || !key) {
-			return;
-		}
-
-		const d = data.slice();
-		d.sort((a, b) => {
-			if (a[key] < b[key]) {
-				return order === 'asc' ? -1 : 1;
-			}
-
-			if (a[key] > b[key]) {
-				return order === 'asc' ? 1 : -1;
-			}
-			return 0;
-		});
-
-		return d;
-	}
-
-	public selectData(data, limit, offset) {
-		if (data && limit >= 0 && offset >= 0) {
-			return data.slice(offset, offset + limit);
-		}
-		return data;
-	}
-
-	public filterHiddenColumns(columns) {
-		return columns.filter((o) => {
-			return !o.hidden;
-		});
-	}
+  public filterHiddenColumns(columns) {
+    return columns.filter((o) => {
+      return !o.hidden;
+    });
+  }
 }

@@ -41,12 +41,12 @@
   }
 
   // First sub-layer of menus will get larger padding
-  &:not(.docked) ::ng-deep aui-sub-menu-item aui-sub-menu-item>li>a {
+  &:not(.docked) ::ng-deep aui-sub-menu-item aui-sub-menu-item > li > a {
     padding-left: calc(#{$menu-docked-width} + #{$submenu-inset * 2});
   }
 
   ::ng-deep aui-sub-menu-item {
-    &.active>li>aui-sub-menu>.o-sub-menu__content-wrapper {
+    &.active > li > aui-sub-menu > .o-sub-menu__content-wrapper {
       max-height: $submenu-height;
       overflow: visible;
       display: block;

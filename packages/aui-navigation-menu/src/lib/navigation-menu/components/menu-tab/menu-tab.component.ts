@@ -1,19 +1,18 @@
 import {
-  Component,
-  Input,
-  ViewChild,
-  OnInit,
-  ElementRef,
-  ContentChild,
-  HostListener,
-  OnDestroy,
   ChangeDetectionStrategy,
-  HostBinding
+  Component,
+  ContentChild,
+  ElementRef,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewChild
 } from '@angular/core';
 import {SubMenuComponent} from '../sub-menu/sub-menu.component';
 import {MenuService} from '../../services/menu.service';
-import {tap, map, filter, mapTo, scan, repeat, takeUntil, share, startWith} from 'rxjs/operators';
-import {Observable, merge, Subject, combineLatest} from 'rxjs';
+import {filter, map, mapTo, repeat, scan, share, startWith, takeUntil, tap} from 'rxjs/operators';
+import {combineLatest, merge, Observable, Subject} from 'rxjs';
 import {Menu} from '../../interfaces';
 import {select} from '../../services/helpers';
 import {MenuLinkComponent} from '../menu-link/menu-link.component';

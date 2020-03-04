@@ -1,5 +1,5 @@
 export enum TimepickerInputSize {
-	Auto = 'auto',
-	Small = 'small',
-	Large = 'large',
+  Auto = 'auto',
+  Small = 'small',
+  Large = 'large',
 }

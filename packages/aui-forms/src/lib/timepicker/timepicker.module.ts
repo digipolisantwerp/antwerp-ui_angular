@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
-import { Components } from './components';
+import {Components} from './components';
 
 @NgModule({
-	imports: [
-		ReactiveFormsModule,
-		CommonModule,
-	],
-	declarations: [
-		...Components,
-	],
-	exports: [
-		...Components,
-	],
-	providers: [],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+  ],
+  declarations: [
+    ...Components,
+  ],
+  exports: [
+    ...Components,
+  ],
+  providers: [],
 })
 export class TimepickerModule {
 }

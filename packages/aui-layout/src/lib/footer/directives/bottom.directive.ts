@@ -1,6 +1,7 @@
-import { Directive } from '@angular/core';
+import {Directive} from '@angular/core';
 
 @Directive({
-	selector: '[auiFooterBottom]',
+  selector: '[auiFooterBottom]',
 })
-export class FooterBottomDirective {}
+export class FooterBottomDirective {
+}

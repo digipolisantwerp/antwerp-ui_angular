@@ -1,16 +1,17 @@
-<div class="o-statusbar" *ngIf="activeNotification" [ngClass]="typeClasses[activeNotification.type]">
-    <span class="o-statusbar__status" [ngClass]="iconMap[activeNotification.type]"></span>
+<div *ngIf="activeNotification" [ngClass]="typeClasses[activeNotification.type]" class="o-statusbar">
+  <span [ngClass]="iconMap[activeNotification.type]" class="o-statusbar__status"></span>
 
-    <div class="o-statusbar__notification">
-        <p role="status">
-            <span [innerHTML]="activeNotification.message"></span>
-            <span *ngIf="notifications.length > 1">(<span [innerHTML]="remainingMessage | pluralizeLabel:replaceMap.remaining | interpolateLabel:replaceMap"></span>)</span>
-        </p>
-    </div>
+  <div class="o-statusbar__notification">
+    <p role="status">
+      <span [innerHTML]="activeNotification.message"></span>
+      <span *ngIf="notifications.length > 1">(<span
+        [innerHTML]="remainingMessage | pluralizeLabel:replaceMap.remaining | interpolateLabel:replaceMap"></span>)</span>
+    </p>
+  </div>
 
-    <button type="button" class="a-button has-icon" (click)="onClearNotification()">
+  <button (click)="onClearNotification()" class="a-button has-icon" type="button">
         <span class="fa fa-times">
             <span class="u-screen-reader-only">{{ ariaLabelClose }}</span>
         </span>
-    </button>
+  </button>
 </div>

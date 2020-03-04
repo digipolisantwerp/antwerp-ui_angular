@@ -1,5 +1,5 @@
-import { TimePickerValidators } from './timepicker.validators';
+import {TimePickerValidators} from './timepicker.validators';
 
 export const Classes = [
-	TimePickerValidators,
+  TimePickerValidators,
 ];

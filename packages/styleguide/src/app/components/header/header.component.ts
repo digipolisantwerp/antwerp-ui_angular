@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-	selector: 'guide-header',
-	templateUrl: './header.component.html',
+  selector: 'guide-header',
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent {
 }

@@ -1,18 +1,18 @@
 import {
-  Component,
-  ViewChild,
-  TemplateRef,
-  OnInit,
-  OnDestroy,
-  ElementRef,
   AfterContentChecked,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
   HostBinding,
-  ChangeDetectionStrategy
+  OnDestroy,
+  OnInit,
+  TemplateRef,
+  ViewChild
 } from '@angular/core';
 import {Menu} from '../../interfaces';
-import {Subject, Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {MenuService} from '../../services/menu.service';
-import {tap, takeUntil} from 'rxjs/operators';
+import {takeUntil, tap} from 'rxjs/operators';
 import {lookForIllegalNodes, select} from '../../services/helpers';
 
 @Component({

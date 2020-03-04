@@ -1,30 +1,29 @@
-import { Directive, ElementRef, Input, HostBinding } from '@angular/core';
+import {Directive, ElementRef, HostBinding, Input} from '@angular/core';
 
 @Directive({
-	selector: '[auiFlyoutZone]',
-	exportAs: 'auiFlyoutZone',
+  selector: '[auiFlyoutZone]',
+  exportAs: 'auiFlyoutZone',
 })
 export class FlyoutZoneDirective {
 
-	@HostBinding('class.m-flyout__content') class = true;
-	@HostBinding('attr.aria-expanded') get flyoutZoneIsExpanded() {
-		return this.isExpanded;
-	}
+  @HostBinding('class.m-flyout__content') class = true;
+  @Input() public auiFlyoutZone: boolean;
+  public isExpanded = false;
+  public element: HTMLElement;
 
-	@Input() public auiFlyoutZone: boolean;
+  constructor(private elementRef: ElementRef) {
+    this.element = this.elementRef.nativeElement;
+  }
 
-	public isExpanded = false;
-	public element: HTMLElement;
+  @HostBinding('attr.aria-expanded') get flyoutZoneIsExpanded() {
+    return this.isExpanded;
+  }
 
-	constructor(private elementRef: ElementRef) {
-		this.element = this.elementRef.nativeElement;
-	}
+  public contains(element: HTMLElement) {
+    if (this.auiFlyoutZone === false) {
+      return false;
+    }
 
-	public contains(element: HTMLElement) {
-		if (this.auiFlyoutZone === false) {
-			return false;
-		}
-
-		return this.element.contains(element);
-	}
+    return this.element.contains(element);
+  }
 }

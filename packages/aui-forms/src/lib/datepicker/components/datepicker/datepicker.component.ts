@@ -1,44 +1,38 @@
 import {
-  Component,
-  Input,
-  Inject,
-  forwardRef,
   ChangeDetectionStrategy,
-  OnInit,
-  OnDestroy,
-  ViewChild,
   ChangeDetectorRef,
-  Output,
+  Component,
   EventEmitter,
+  forwardRef,
+  Inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewChild,
 } from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {
-  ControlValueAccessor,
-  FormControl,
-  NG_VALUE_ACCESSOR,
-  NG_VALIDATORS,
-  FormBuilder,
-} from '@angular/forms';
+import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR,} from '@angular/forms';
 
 import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
 
 import {FlyoutDirective} from '@acpaas-ui/ngx-components/flyout';
 
 import {
-  CALENDAR_MONTH_LABELS,
   CALENDAR_DEFAULT_MONTH_LABELS,
-  CALENDAR_WEEKDAY_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
-  DatepickerResult,
+  CALENDAR_MONTH_LABELS,
+  CALENDAR_WEEKDAY_LABELS,
   CalendarService,
+  DatepickerResult,
 } from '@acpaas-ui/ngx-components/calendar';
 
 import {
-  DATEPICKER_ERROR_LABELS,
+  DATEPICKER_DATE_MASK,
   DATEPICKER_DEFAULT_ERROR_LABELS,
-  DATEPICKER_SEPARATOR_CHAR,
-  DATEPICKER_DATE_MASK
+  DATEPICKER_ERROR_LABELS,
+  DATEPICKER_SEPARATOR_CHAR
 } from '../../datepicker.conf';
 import {DatepickerValidationErrors} from '../../types/datepicker.types';
 
@@ -75,10 +69,6 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   public isDisabled = false;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
-  private onChange: (res: any) => void = () => {
-  };
-  private onTouched: (_: any) => void = () => {
-  };
 
   constructor(
     @Inject(CALENDAR_MONTH_LABELS) private monthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
@@ -195,4 +185,10 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
     this.blur.emit(e);
     this.onTouched(e);
   }
+
+  private onChange: (res: any) => void = () => {
+  };
+
+  private onTouched: (_: any) => void = () => {
+  };
 }

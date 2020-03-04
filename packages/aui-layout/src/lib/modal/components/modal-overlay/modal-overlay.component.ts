@@ -1,54 +1,52 @@
-import {
-	Component,
-	HostBinding,
-	HostListener,
-	ElementRef,
-	ComponentRef
-} from '@angular/core';
+import {Component, ComponentRef, ElementRef, HostBinding, HostListener} from '@angular/core';
 
-import { ModalAbstract } from '../../classes/modal.abstract';
+import {ModalAbstract} from '../../classes/modal.abstract';
 
 @Component({
-	selector: 'aui-modal-overlay',
-	template: `
+  selector: 'aui-modal-overlay',
+  template: `
         <section class="m-overlay__inner">
             <ng-content></ng-content>
         </section>
     `,
 })
 export class ModalOverlayComponent {
-	public mouseDownInsideOverlay: boolean;
-	public theme = 'dark';
-	public title = 'Modal';
-	@HostBinding('class') public get overlayClass() {
-		return `m-overlay m-overlay--${this.theme} is-active`;
-	}
-	@HostBinding('attr.aria-label') public get ariaLabel() {
-		return this.title;
-	}
+  public mouseDownInsideOverlay: boolean;
+  public theme = 'dark';
+  public title = 'Modal';
+  private modal: ComponentRef<ModalAbstract>;
 
-	private modal: ComponentRef<ModalAbstract>;
+  constructor(
+    private ref: ElementRef
+  ) {
+  }
 
-	constructor(
-		private ref: ElementRef
-	) { }
+  @HostBinding('class')
+  public get overlayClass() {
+    return `m-overlay m-overlay--${this.theme} is-active`;
+  }
 
-	@HostListener('touchstart', ['$event'])
-	@HostListener('mousedown', ['$event'])
-	public mouseDownHandler(e: MouseEvent) {
-		const modal = this.ref.nativeElement.querySelector('.m-modal');
-		this.mouseDownInsideOverlay = modal && (e.target === modal || modal.contains(e.target));
-	}
+  @HostBinding('attr.aria-label')
+  public get ariaLabel() {
+    return this.title;
+  }
 
-	@HostListener('touchend', ['$event'])
-	@HostListener('mouseup', ['$event'])
-	public mouseUpHandler(e: MouseEvent) {
-		const modal = this.ref.nativeElement.querySelector('.m-modal');
+  @HostListener('touchstart', ['$event'])
+  @HostListener('mousedown', ['$event'])
+  public mouseDownHandler(e: MouseEvent) {
+    const modal = this.ref.nativeElement.querySelector('.m-modal');
+    this.mouseDownInsideOverlay = modal && (e.target === modal || modal.contains(e.target));
+  }
 
-		if ((modal && (e.target === modal || modal.contains(e.target))) || this.mouseDownInsideOverlay) {
-			return;
-		}
+  @HostListener('touchend', ['$event'])
+  @HostListener('mouseup', ['$event'])
+  public mouseUpHandler(e: MouseEvent) {
+    const modal = this.ref.nativeElement.querySelector('.m-modal');
 
-		this.modal.instance.closeModal();
-	}
+    if ((modal && (e.target === modal || modal.contains(e.target))) || this.mouseDownInsideOverlay) {
+      return;
+    }
+
+    this.modal.instance.closeModal();
+  }
 }

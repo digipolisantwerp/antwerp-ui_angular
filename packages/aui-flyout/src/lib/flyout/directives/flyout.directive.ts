@@ -1,18 +1,18 @@
 import {
-  Directive,
-  ContentChild,
-  Output,
-  EventEmitter,
-  Input,
-  HostBinding,
-  OnDestroy,
-  Inject,
   ChangeDetectorRef,
+  ContentChild,
+  Directive,
   ElementRef,
+  EventEmitter,
+  HostBinding,
+  Inject,
+  Input,
+  OnDestroy,
+  Output,
 } from '@angular/core';
-import {Subject, merge} from 'rxjs';
+import {merge, Subject} from 'rxjs';
 import {DOCUMENT} from '@angular/common';
-import {takeUntil, distinctUntilChanged} from 'rxjs/operators';
+import {distinctUntilChanged, takeUntil} from 'rxjs/operators';
 
 import {FlyoutZoneDirective} from './flyout-zone.directive';
 import {FlyoutService} from '../services/flyout.service';
@@ -28,44 +28,15 @@ export class FlyoutDirective implements OnDestroy {
   @HostBinding('class.m-flyout') flyoutClass = true;
   @HostBinding('attr.tabindex') flyoutTabIndex = '-1';
   @HostBinding('attr.aria-haspopup') flyoutAriaPop = true;
-
-  @HostBinding('class.m-flyout--right') get flyoutAlignRight() {
-    return this.align === 'right';
-  }
-
-  @HostBinding('class.m-flyout--sm') get flyoutSmall() {
-    return this.size === 'small';
-  }
-
-  @HostBinding('class.m-flyout--md') get flyoutMedium() {
-    return this.size === 'medium';
-  }
-
-  @HostBinding('class.m-flyout--lg') get flyoutLarge() {
-    return this.size === 'large';
-  }
-
-  @HostBinding('class.m-flyout--full') get flyoutFull() {
-    return this.size === 'full';
-  }
-
-  @HostBinding('class.is-open') get flyoutOpen() {
-    return this.isOpened;
-  }
-
   @Input() public size: FlyoutSize = FlyoutSize.Auto;
   @Input() public align: string;
   @Input() public toggleClick = true;
   @Input() public activateOnFocus = false;
-
   @Output() public opened = new EventEmitter();
   @Output() public closed = new EventEmitter();
-
   @ContentChild(FlyoutZoneDirective, {static: true}) public flyoutZone: FlyoutZoneDirective;
-
   public isOpened = false;
   public state$ = new Subject<FlyoutState>();
-
   private destroyed$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
@@ -99,6 +70,30 @@ export class FlyoutDirective implements OnDestroy {
           this.closed.emit();
         }
       });
+  }
+
+  @HostBinding('class.m-flyout--right') get flyoutAlignRight() {
+    return this.align === 'right';
+  }
+
+  @HostBinding('class.m-flyout--sm') get flyoutSmall() {
+    return this.size === 'small';
+  }
+
+  @HostBinding('class.m-flyout--md') get flyoutMedium() {
+    return this.size === 'medium';
+  }
+
+  @HostBinding('class.m-flyout--lg') get flyoutLarge() {
+    return this.size === 'large';
+  }
+
+  @HostBinding('class.m-flyout--full') get flyoutFull() {
+    return this.size === 'full';
+  }
+
+  @HostBinding('class.is-open') get flyoutOpen() {
+    return this.isOpened;
   }
 
   public ngOnDestroy() {

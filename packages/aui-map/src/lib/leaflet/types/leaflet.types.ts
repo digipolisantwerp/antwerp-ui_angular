@@ -1,21 +1,21 @@
-import { LatLngExpression } from 'leaflet';
+import {LatLngExpression} from 'leaflet';
 
 export interface LeafletLayer {
-	name: string;
-	url: string;
-	options?: any;
+  name: string;
+  url: string;
+  options?: any;
 }
 
 export interface LeafletMapOptions {
-	center: LatLngExpression;
-	zoom: number;
-	lineColor?: string;
-	onAddLine?: Function;
-	polygonColor?: string;
-	onAddPolygon?: Function;
-	onEditFeature?: Function;
+  center: LatLngExpression;
+  zoom: number;
+  lineColor?: string;
+  onAddLine?: Function;
+  polygonColor?: string;
+  onAddPolygon?: Function;
+  onEditFeature?: Function;
 }
 
 export interface LatLngExpression {
-	latLng: any;
+  latLng: any;
 }

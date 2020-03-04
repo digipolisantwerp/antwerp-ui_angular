@@ -1,19 +1,19 @@
 import {
-  Component,
-  Input,
-  OnChanges,
   AfterViewInit,
   ChangeDetectionStrategy,
-  HostBinding,
+  Component,
   ElementRef,
+  HostBinding,
   Inject,
+  Input,
+  OnChanges,
   PLATFORM_ID,
 } from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 import * as _marked from 'marked';
+import {HighlightJsService} from 'angular2-highlight-js';
 
 const marked = _marked;
-import {HighlightJsService} from 'angular2-highlight-js';
 
 @Component({
   selector: 'aui-code-snippet',

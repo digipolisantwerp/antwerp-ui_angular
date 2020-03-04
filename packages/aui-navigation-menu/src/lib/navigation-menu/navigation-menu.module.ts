@@ -1,4 +1,4 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {MenuService} from './services/menu.service';
 import {Menu} from './interfaces';
 import {BrowserModule} from '@angular/platform-browser';

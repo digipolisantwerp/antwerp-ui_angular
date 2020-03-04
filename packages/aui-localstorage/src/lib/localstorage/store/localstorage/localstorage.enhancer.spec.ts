@@ -1,256 +1,264 @@
-import { async, inject, TestBed } from '@angular/core/testing';
-import { NgRedux } from '@angular-redux/store';
-import { BehaviorSubject } from 'rxjs';
-import { Reducer, StoreEnhancer, StoreCreator, Unsubscribe } from 'redux';
+import {async, inject, TestBed} from '@angular/core/testing';
+import {NgRedux} from '@angular-redux/store';
+import {BehaviorSubject} from 'rxjs';
 
-import { LocalstorageReduxPlugin } from './localstorage.enhancer';
-import { LocalstorageService } from '../../services/localstorage.service';
+import {LocalstorageReduxPlugin} from './localstorage.enhancer';
+import {LocalstorageService} from '../../services/localstorage.service';
 
 const injectService = (cb) => {
-	return inject(
-		[LocalstorageReduxPlugin],
-		(localstorageReduxPlugin: LocalstorageReduxPlugin) => cb(localstorageReduxPlugin)
-	);
+  return inject(
+    [LocalstorageReduxPlugin],
+    (localstorageReduxPlugin: LocalstorageReduxPlugin) => cb(localstorageReduxPlugin)
+  );
 };
 
 const localstorageServiceStub = {
-	setItem: () => {},
-	getItem: () => {},
-	getStorage: () => {},
+  setItem: () => {
+  },
+  getItem: () => {
+  },
+  getStorage: () => {
+  },
 };
 const ngReduxStub = {
-	_store: null,
-	_store$: new BehaviorSubject(null),
-	subscribe: () => {},
-	getState: () => {},
-	select: () => ngReduxStub._store$,
+  _store: null,
+  _store$: new BehaviorSubject(null),
+  subscribe: () => {
+  },
+  getState: () => {
+  },
+  select: () => ngReduxStub._store$,
 };
 
 describe('The Localstorage Redux Plugin', () => {
-	// async beforeEach
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			providers: [
-				LocalstorageReduxPlugin,
-				{ provide: NgRedux, useValue: ngReduxStub },
-				{ provide: LocalstorageService, useValue: localstorageServiceStub },
-			],
-		});
-	}));
+  // async beforeEach
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        LocalstorageReduxPlugin,
+        {provide: NgRedux, useValue: ngReduxStub},
+        {provide: LocalstorageService, useValue: localstorageServiceStub},
+      ],
+    });
+  }));
 
-	afterAll(() => {
-		delete LocalstorageService.instance;
-	});
+  afterAll(() => {
+    delete LocalstorageService.instance;
+  });
 
-	describe('enhancer', () => {
-		it(
-			'sets the initial state, subscribes the selectors and returns a StoreCreator function',
-			injectService(localstorageReduxPlugin => {
-				spyOn(localstorageReduxPlugin, 'selectFromState').and.callFake((selectors) => ({test: 'data'}));
-				spyOn(localstorageReduxPlugin, 'subscribe').and.stub();
+  describe('enhancer', () => {
+    it(
+      'sets the initial state, subscribes the selectors and returns a StoreCreator function',
+      injectService(localstorageReduxPlugin => {
+        spyOn(localstorageReduxPlugin, 'selectFromState').and.callFake((selectors) => ({test: 'data'}));
+        spyOn(localstorageReduxPlugin, 'subscribe').and.stub();
 
-				const storeCreator = localstorageReduxPlugin.enhancer(['users']);
+        const storeCreator = localstorageReduxPlugin.enhancer(['users']);
 
-				expect(typeof storeCreator).toEqual('function');
-				expect(localstorageReduxPlugin.selectFromState).toHaveBeenCalledWith(['users']);
-				expect(localstorageReduxPlugin.subscribe).toHaveBeenCalledWith(['users']);
+        expect(typeof storeCreator).toEqual('function');
+        expect(localstorageReduxPlugin.selectFromState).toHaveBeenCalledWith(['users']);
+        expect(localstorageReduxPlugin.subscribe).toHaveBeenCalledWith(['users']);
 
-				const reduxStub = {
-					createStore: () => {},
-				};
+        const reduxStub = {
+          createStore: () => {
+          },
+        };
 
-				spyOn(reduxStub, 'createStore');
+        spyOn(reduxStub, 'createStore');
 
-				const reducer = () => {};
-				const initialState = {
-					posts: [],
-				};
+        const reducer = () => {
+        };
+        const initialState = {
+          posts: [],
+        };
 
-				storeCreator(reduxStub.createStore)(reducer, initialState);
+        storeCreator(reduxStub.createStore)(reducer, initialState);
 
-				expect(reduxStub.createStore).toHaveBeenCalledWith(reducer, {
-					posts: [],
-					test: 'data',
-				});
-			})
-		);
-	});
+        expect(reduxStub.createStore).toHaveBeenCalledWith(reducer, {
+          posts: [],
+          test: 'data',
+        });
+      })
+    );
+  });
 
-	describe('subscribe', () => {
-		it(
-			'subscribes to the store and registers the selectors once the store is configured',
-			injectService(localstorageReduxPlugin => {
-				spyOn(localstorageReduxPlugin, 'subscribeSelector').and.stub();
-				spyOn(localstorageReduxPlugin.ngRedux, 'select').and.callThrough();
+  describe('subscribe', () => {
+    it(
+      'subscribes to the store and registers the selectors once the store is configured',
+      injectService(localstorageReduxPlugin => {
+        spyOn(localstorageReduxPlugin, 'subscribeSelector').and.stub();
+        spyOn(localstorageReduxPlugin.ngRedux, 'select').and.callThrough();
 
-				localstorageReduxPlugin.subscribe();
+        localstorageReduxPlugin.subscribe();
 
-				expect(localstorageReduxPlugin.ngRedux.select).toHaveBeenCalled();
-				expect(localstorageReduxPlugin.subscribeSelector).not.toHaveBeenCalled();
+        expect(localstorageReduxPlugin.ngRedux.select).toHaveBeenCalled();
+        expect(localstorageReduxPlugin.subscribeSelector).not.toHaveBeenCalled();
 
-				localstorageReduxPlugin.ngRedux._store$.next({});
+        localstorageReduxPlugin.ngRedux._store$.next({});
 
-				expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalled();
-			})
-		);
+        expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalled();
+      })
+    );
 
-		it('subscribes to the "reduxState" prop if no selectors are provided', injectService(localstorageReduxPlugin => {
-			localstorageReduxPlugin.ngRedux._store = {};
-			spyOn(localstorageReduxPlugin, 'subscribeSelector');
+    it('subscribes to the "reduxState" prop if no selectors are provided', injectService(localstorageReduxPlugin => {
+      localstorageReduxPlugin.ngRedux._store = {};
+      spyOn(localstorageReduxPlugin, 'subscribeSelector');
 
-			localstorageReduxPlugin.subscribe();
+      localstorageReduxPlugin.subscribe();
 
-			expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalledWith('reduxState');
-		}));
+      expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalledWith('reduxState');
+    }));
 
-		it('subscribes each selector', injectService(localstorageReduxPlugin => {
-			localstorageReduxPlugin.ngRedux._store = {};
-			spyOn(localstorageReduxPlugin, 'subscribeSelector').and.stub();
-			localstorageReduxPlugin.subscribe(['test', ['some', 'data']]);
+    it('subscribes each selector', injectService(localstorageReduxPlugin => {
+      localstorageReduxPlugin.ngRedux._store = {};
+      spyOn(localstorageReduxPlugin, 'subscribeSelector').and.stub();
+      localstorageReduxPlugin.subscribe(['test', ['some', 'data']]);
 
-			expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalledTimes(2);
-		}));
-	});
+      expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalledTimes(2);
+    }));
+  });
 
-	describe('subscribeSelector', () => {
-		describe('updating subscribers', () => {
-			it('does nothing if no selector was provided', injectService(localstorageReduxPlugin => {
-				spyOn(localstorageReduxPlugin.subscribers, 'get');
+  describe('subscribeSelector', () => {
+    describe('updating subscribers', () => {
+      it('does nothing if no selector was provided', injectService(localstorageReduxPlugin => {
+        spyOn(localstorageReduxPlugin.subscribers, 'get');
 
-				localstorageReduxPlugin.subscribeSelector();
+        localstorageReduxPlugin.subscribeSelector();
 
-				expect(localstorageReduxPlugin.subscribers.get).not.toHaveBeenCalled();
-			}));
+        expect(localstorageReduxPlugin.subscribers.get).not.toHaveBeenCalled();
+      }));
 
-			it('unsubscribes the subscriber if it exists', injectService(localstorageReduxPlugin => {
-				const subscriberMock = {
-					unsubscribe: () => {},
-				};
+      it('unsubscribes the subscriber if it exists', injectService(localstorageReduxPlugin => {
+        const subscriberMock = {
+          unsubscribe: () => {
+          },
+        };
 
-				spyOn(subscriberMock, 'unsubscribe');
+        spyOn(subscriberMock, 'unsubscribe');
 
-				localstorageReduxPlugin.subscribers.set('test', subscriberMock);
+        localstorageReduxPlugin.subscribers.set('test', subscriberMock);
 
-				spyOn(localstorageReduxPlugin.subscribers, 'set').and.stub();
+        spyOn(localstorageReduxPlugin.subscribers, 'set').and.stub();
 
-				localstorageReduxPlugin.subscribeSelector('test');
+        localstorageReduxPlugin.subscribeSelector('test');
 
-				expect(subscriberMock.unsubscribe).toHaveBeenCalled();
-			}));
+        expect(subscriberMock.unsubscribe).toHaveBeenCalled();
+      }));
 
-			it('sets a subscriber for the selector', injectService(localstorageReduxPlugin => {
-				spyOn(localstorageReduxPlugin.ngRedux, 'subscribe').and.callFake(() => () => {});
-				spyOn(localstorageReduxPlugin.subscribers, 'set');
+      it('sets a subscriber for the selector', injectService(localstorageReduxPlugin => {
+        spyOn(localstorageReduxPlugin.ngRedux, 'subscribe').and.callFake(() => () => {
+        });
+        spyOn(localstorageReduxPlugin.subscribers, 'set');
 
-				localstorageReduxPlugin.subscribeSelector('test');
+        localstorageReduxPlugin.subscribeSelector('test');
 
-				expect(localstorageReduxPlugin.subscribers.set).toHaveBeenCalledWith('test', jasmine.any(Function));
-				expect(localstorageReduxPlugin.ngRedux.subscribe).toHaveBeenCalledWith(jasmine.any(Function));
-			}));
-		});
+        expect(localstorageReduxPlugin.subscribers.set).toHaveBeenCalledWith('test', jasmine.any(Function));
+        expect(localstorageReduxPlugin.ngRedux.subscribe).toHaveBeenCalledWith(jasmine.any(Function));
+      }));
+    });
 
-		describe('updating the storage', () => {
-			let subscriber;
-			let state;
-			let newState;
+    describe('updating the storage', () => {
+      let subscriber;
+      let state;
+      let newState;
 
-			function addSpies(plugin) {
-				plugin.ngRedux.subscribe = cb => {
-					subscriber = cb;
-				};
+      function addSpies(plugin) {
+        plugin.ngRedux.subscribe = cb => {
+          subscriber = cb;
+        };
 
-				plugin.ngRedux.getState = () => newState;
-				plugin.localstorageService.getItem = (key) => {
-					return state[key];
-				};
+        plugin.ngRedux.getState = () => newState;
+        plugin.localstorageService.getItem = (key) => {
+          return state[key];
+        };
 
-				spyOn(plugin.localstorageService, 'setItem').and.stub();
-			}
+        spyOn(plugin.localstorageService, 'setItem').and.stub();
+      }
 
-			beforeEach(() => {
-				state = {
-					test: ['data'],
-					some: {
-						data: 'test',
-					},
-				};
-				newState = {...state};
-			});
+      beforeEach(() => {
+        state = {
+          test: ['data'],
+          some: {
+            data: 'test',
+          },
+        };
+        newState = {...state};
+      });
 
-			it('updates the storage if the store is updated and the value is changed', injectService(localstorageReduxPlugin => {
-				addSpies(localstorageReduxPlugin);
+      it('updates the storage if the store is updated and the value is changed', injectService(localstorageReduxPlugin => {
+        addSpies(localstorageReduxPlugin);
 
-				localstorageReduxPlugin.subscribeSelector('test');
+        localstorageReduxPlugin.subscribeSelector('test');
 
-				subscriber();
+        subscriber();
 
-				expect(localstorageReduxPlugin.localstorageService.setItem).not.toHaveBeenCalled();
+        expect(localstorageReduxPlugin.localstorageService.setItem).not.toHaveBeenCalled();
 
-				newState = {
-					test: ['data', 'more data'],
-				};
+        newState = {
+          test: ['data', 'more data'],
+        };
 
-				subscriber();
+        subscriber();
 
-				expect(localstorageReduxPlugin.localstorageService.setItem).toHaveBeenCalledWith('test', newState.test);
-			}));
+        expect(localstorageReduxPlugin.localstorageService.setItem).toHaveBeenCalledWith('test', newState.test);
+      }));
 
-			it('returns if the entire state was "reduxState"', injectService(localstorageReduxPlugin => {
-				newState.test = ['data', 'more data'];
+      it('returns if the entire state was "reduxState"', injectService(localstorageReduxPlugin => {
+        newState.test = ['data', 'more data'];
 
-				addSpies(localstorageReduxPlugin);
+        addSpies(localstorageReduxPlugin);
 
-				localstorageReduxPlugin.subscribeSelector('reduxState');
+        localstorageReduxPlugin.subscribeSelector('reduxState');
 
-				subscriber();
+        subscriber();
 
-				expect(localstorageReduxPlugin.localstorageService.setItem).toHaveBeenCalledWith('reduxState', newState);
-			}));
+        expect(localstorageReduxPlugin.localstorageService.setItem).toHaveBeenCalledWith('reduxState', newState);
+      }));
 
-			it('joins arrays to a path', injectService(localstorageReduxPlugin => {
-				addSpies(localstorageReduxPlugin);
+      it('joins arrays to a path', injectService(localstorageReduxPlugin => {
+        addSpies(localstorageReduxPlugin);
 
-				localstorageReduxPlugin.subscribeSelector(['some', 'data']);
+        localstorageReduxPlugin.subscribeSelector(['some', 'data']);
 
-				subscriber();
+        subscriber();
 
-				expect(localstorageReduxPlugin.localstorageService.setItem).toHaveBeenCalledWith('some.data', newState.some.data);
-			}));
-		});
-	});
+        expect(localstorageReduxPlugin.localstorageService.setItem).toHaveBeenCalledWith('some.data', newState.some.data);
+      }));
+    });
+  });
 
-	describe('selectFromState', () => {
-		it('returns the redux state if no selectors were provided', injectService(localstorageReduxPlugin => {
-			spyOn(localstorageReduxPlugin.localstorageService, 'getItem').and.stub();
+  describe('selectFromState', () => {
+    it('returns the redux state if no selectors were provided', injectService(localstorageReduxPlugin => {
+      spyOn(localstorageReduxPlugin.localstorageService, 'getItem').and.stub();
 
-			localstorageReduxPlugin.selectFromState();
+      localstorageReduxPlugin.selectFromState();
 
-			expect(localstorageReduxPlugin.localstorageService.getItem).toHaveBeenCalledWith('reduxState');
+      expect(localstorageReduxPlugin.localstorageService.getItem).toHaveBeenCalledWith('reduxState');
 
-			localstorageReduxPlugin.localstorageService.getItem.calls.reset();
+      localstorageReduxPlugin.localstorageService.getItem.calls.reset();
 
-			localstorageReduxPlugin.selectFromState([]);
+      localstorageReduxPlugin.selectFromState([]);
 
-			expect(localstorageReduxPlugin.localstorageService.getItem).toHaveBeenCalledWith('reduxState');
-		}));
+      expect(localstorageReduxPlugin.localstorageService.getItem).toHaveBeenCalledWith('reduxState');
+    }));
 
-		it('returns a reduced state based on the provided selectors', injectService(localstorageReduxPlugin => {
-			const state = {
-				test: ['some', 'data'],
-				user: {
-					likes: {
-						comments: ['1'],
-						posts: ['one'],
-					},
-				},
-			};
+    it('returns a reduced state based on the provided selectors', injectService(localstorageReduxPlugin => {
+      const state = {
+        test: ['some', 'data'],
+        user: {
+          likes: {
+            comments: ['1'],
+            posts: ['one'],
+          },
+        },
+      };
 
-			localstorageReduxPlugin.localstorageService.getStorageSnapshot = () => state;
+      localstorageReduxPlugin.localstorageService.getStorageSnapshot = () => state;
 
-			expect(localstorageReduxPlugin.selectFromState([
-				'test',
-				['user', 'likes'],
-			])).toEqual(state);
-		}));
-	});
+      expect(localstorageReduxPlugin.selectFromState([
+        'test',
+        ['user', 'likes'],
+      ])).toEqual(state);
+    }));
+  });
 });

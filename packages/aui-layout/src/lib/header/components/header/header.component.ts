@@ -1,10 +1,7 @@
-import {
-	Component,
-	ContentChild,
-} from '@angular/core';
+import {Component, ContentChild,} from '@angular/core';
 
-import { HeaderLogoDirective } from '../../directives/logo.directive';
-import { HeaderContentDirective } from '../../directives/content.directive';
+import {HeaderLogoDirective} from '../../directives/logo.directive';
+import {HeaderContentDirective} from '../../directives/content.directive';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -15,4 +12,6 @@ export class HeaderComponent {
   @ContentChild(HeaderLogoDirective, {static: true}) logo: HeaderLogoDirective;
   @ContentChild(HeaderContentDirective, {static: true}) content: HeaderContentDirective;
 }
-{}
+
+{
+}

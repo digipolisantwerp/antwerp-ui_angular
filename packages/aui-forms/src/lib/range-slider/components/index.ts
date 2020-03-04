@@ -1,5 +1,5 @@
-import { RangeSliderComponent } from './range-slider/range-slider.component';
+import {RangeSliderComponent} from './range-slider/range-slider.component';
 
 export const Components = [
-	RangeSliderComponent,
+  RangeSliderComponent,
 ];

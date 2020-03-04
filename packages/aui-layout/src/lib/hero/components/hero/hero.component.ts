@@ -1,5 +1,5 @@
-import { Component, ContentChild } from '@angular/core';
-import { HeroCtaDirective } from '../../directives/hero-cta.directive';
+import {Component, ContentChild} from '@angular/core';
+import {HeroCtaDirective} from '../../directives/hero-cta.directive';
 
 @Component({
   selector: 'aui-hero',

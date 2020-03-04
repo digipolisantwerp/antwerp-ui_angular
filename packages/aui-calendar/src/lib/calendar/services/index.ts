@@ -1,5 +1,5 @@
-import { CalendarService } from './calendar.service';
+import {CalendarService} from './calendar.service';
 
 export const Services = [
-	CalendarService,
+  CalendarService,
 ];

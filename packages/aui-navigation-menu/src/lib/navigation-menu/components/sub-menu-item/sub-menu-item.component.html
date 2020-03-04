@@ -1,16 +1,16 @@
-<li [ngClass]="{'has-sub-menu' : (!!subMenu), 'docked' : (state$ | async)?.docked}" #inclusedContent>
-	<a *ngIf="href || routerLink" [href]="href ? href : null" [routerLink]="routerLink ? routerLink : null">
-		<ng-container *ngTemplateOutlet="link"></ng-container>
-		<span *ngIf="!!subMenu || !!forceShowArrow" class="fa fa-angle-down"></span>
-	</a>
-	<a *ngIf="!href && !routerLink && menuLink" [href]="menuLink?.href ? menuLink.href : null"
-	   [routerLink]="menuLink?.routerLink ? menuLink.routerLink : null">
-		<ng-container *ngTemplateOutlet="link"></ng-container>
-		<span *ngIf="!!subMenu || !!forceShowArrow" class="fa fa-angle-down"></span>
-	</a>
-	<ng-content select="aui-sub-menu"></ng-content>
+<li #inclusedContent [ngClass]="{'has-sub-menu' : (!!subMenu), 'docked' : (state$ | async)?.docked}">
+  <a *ngIf="href || routerLink" [href]="href ? href : null" [routerLink]="routerLink ? routerLink : null">
+    <ng-container *ngTemplateOutlet="link"></ng-container>
+    <span *ngIf="!!subMenu || !!forceShowArrow" class="fa fa-angle-down"></span>
+  </a>
+  <a *ngIf="!href && !routerLink && menuLink" [href]="menuLink?.href ? menuLink.href : null"
+     [routerLink]="menuLink?.routerLink ? menuLink.routerLink : null">
+    <ng-container *ngTemplateOutlet="link"></ng-container>
+    <span *ngIf="!!subMenu || !!forceShowArrow" class="fa fa-angle-down"></span>
+  </a>
+  <ng-content select="aui-sub-menu"></ng-content>
 </li>
 
 <ng-template #link>
-	<ng-content></ng-content>
+  <ng-content></ng-content>
 </ng-template>

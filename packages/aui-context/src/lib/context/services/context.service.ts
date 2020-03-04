@@ -3,7 +3,7 @@ import {BehaviorSubject} from 'rxjs';
 import {Context} from '../types/context.types';
 import {ContextWriterService} from './context-writer.service';
 import {tap} from 'rxjs/operators';
-import {CONTEXT_LOAD, ContextState} from '../store';
+import {ContextState} from '../store';
 import {Store} from '@ngrx/store';
 import {LoadContext} from '../store/context.actions';
 

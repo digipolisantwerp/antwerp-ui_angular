@@ -1,21 +1,21 @@
 import {
-	Component,
-	QueryList,
-	OnInit,
-	ContentChildren,
-	AfterContentChecked,
-	HostListener,
-	OnDestroy,
-	ChangeDetectionStrategy,
-	Input
+  AfterContentChecked,
+  ChangeDetectionStrategy,
+  Component,
+  ContentChildren,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  QueryList
 } from '@angular/core';
-import { MenuTabComponent } from '../menu-tab/menu-tab.component';
-import { Observable, Subject, merge } from 'rxjs';
-import { map, filter, takeUntil, tap, delay, pairwise, startWith, mapTo, shareReplay, take, first } from 'rxjs/operators';
-import { MenuService } from '../../services/menu.service';
-import { select } from '../../services/helpers';
-import { Router, NavigationStart } from '@angular/router';
-import { Menu } from '../../interfaces';
+import {MenuTabComponent} from '../menu-tab/menu-tab.component';
+import {merge, Observable, Subject} from 'rxjs';
+import {delay, filter, first, map, mapTo, pairwise, shareReplay, startWith, take, takeUntil, tap} from 'rxjs/operators';
+import {MenuService} from '../../services/menu.service';
+import {select} from '../../services/helpers';
+import {NavigationStart, Router} from '@angular/router';
+import {Menu} from '../../interfaces';
 
 /**
  * Main wrapper container that will orchestrate the menu.
@@ -30,146 +30,139 @@ import { Menu } from '../../interfaces';
  * in droppable subitems (no overlay used
  */
 @Component({
-	selector: 'aui-menu',
-	templateUrl: './menu.component.html',
-	styleUrls: ['./menu.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'aui-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
-	/**
-	 * We need a querylist of the main tabs to know if we should filter some out
-	 * in case we are dealing with a screen that is to small (for mobile only)
-	 */
-	@ContentChildren(MenuTabComponent, { descendants: false })
-	public tabs: QueryList<MenuTabComponent>;
+  /**
+   * We need a querylist of the main tabs to know if we should filter some out
+   * in case we are dealing with a screen that is to small (for mobile only)
+   */
+  @ContentChildren(MenuTabComponent, {descendants: false})
+  public tabs: QueryList<MenuTabComponent>;
+  public isDocked$: Observable<boolean>;
+  public hasIconsInTabs$: Observable<boolean>;
+  /**
+   * Menu items that are not visible on the screen since the latter is
+   * too small will have to be accessed to a 'more' tab. (for mobile only)
+   */
+  public moreMenuItems$: Observable<Array<MenuTabComponent>>;
+  public shouldShowMoreTab$: Observable<boolean>;
+  /**
+   * Helper observables used to show/hide the labels to (un)dock
+   * the menu. We're purposely not using a simple *ngIf directive as to
+   * be able to exactly decide when to show/hide the respective
+   * labels.
+   */
+  public showHideMenuLabel$: Observable<boolean>;
+  public showRevealMenuLabel$: Observable<boolean>;
+  @Input()	// Translations coming from the user
+  translations: Menu.Translations;
+  public configuration: Menu.ModuleConfiguration;
+  public _translations: Menu.Translations;	// Real translations from the service
+  /**
+   * Helper used to hook observables to the content is init lifecycle hook
+   */
+  private afterContentChecked$ = new Subject<void>();
+  private destroy$ = new Subject();
 
-	/**
-	 * Helper used to hook observables to the content is init lifecycle hook
-	 */
-	private afterContentChecked$ = new Subject<void>();
+  constructor(private menuService: MenuService, private router: Router) {
+  }
 
-	public isDocked$: Observable<boolean>;
-	public hasIconsInTabs$: Observable<boolean>;
+  ngOnInit() {
+    this.menuService.translations = this.translations;
+    this.configuration = this.menuService.configuration;
+    this._translations = this.menuService.translate();
+    // observable will change css host class of this component‹
+    this.isDocked$ = this.menuService.state$.pipe(
+      select(state => state.docked)
+    );
 
-	/**
-	 * Menu items that are not visible on the screen since the latter is
-	 * too small will have to be accessed to a 'more' tab. (for mobile only)
-	 */
-	public moreMenuItems$: Observable<Array<MenuTabComponent>>;
-	public shouldShowMoreTab$: Observable<boolean>;
+    this.hasIconsInTabs$ = this.afterContentChecked$.pipe(
+      first(),
+      map(() => this.tabs.toArray()),
+      map(tabs => tabs.every(tab => !!tab.icon))
+    );
 
-	/**
-	 * Helper observables used to show/hide the labels to (un)dock
-	 * the menu. We're purposely not using a simple *ngIf directive as to
-	 * be able to exactly decide when to show/hide the respective
-	 * labels.
-	 */
-	public showHideMenuLabel$: Observable<boolean>;
-	public showRevealMenuLabel$: Observable<boolean>;
+    // Helper observable
+    // Emits when the menu goes from docked => undocked
+    const dockedToUndocked$ = this.isDocked$.pipe(
+      startWith(!this.menuService.configuration.dockedByDefault),
+      pairwise(),
+      filter(([previous, current]) => !!previous && !current)
+    );
 
-	@Input()	// Translations coming from the user
-	translations: Menu.Translations;
+    // Helper observable
+    // Emits when the menu goes from undocked => docked
+    const undockedToDocked$ = this.isDocked$.pipe(
+      startWith(this.menuService.configuration.dockedByDefault),
+      pairwise(),
+      filter(([previous, current]) => !previous && !!current),
+      shareReplay(1)
+    );
 
-	public configuration: Menu.ModuleConfiguration;
-	public _translations: Menu.Translations;	// Real translations from the service
+    this.showHideMenuLabel$ = merge(
+      undockedToDocked$.pipe(mapTo(false)), // Immediately show hide label
+      dockedToUndocked$.pipe(delay(150), mapTo(true)) // Delay showing the label until there is enough space
+    );
 
-	private destroy$ = new Subject();
+    this.showRevealMenuLabel$ = this.isDocked$.pipe(
+      map(isDocked => !!isDocked)
+    );
 
-	constructor(private menuService: MenuService, private router: Router) {
-	}
+    // Which tabs should be visible under the 'more' menu items?
+    this.moreMenuItems$ = this.afterContentChecked$.pipe(
+      map(() => this.tabs),
+      map(queryList => queryList.toArray()),
+      filter((tabs: Array<MenuTabComponent>) => tabs.length >= 3),	// 2 tabs + 'more' tab
+      map(tabs => tabs.splice(2, tabs.length - 2)),
+      tap(tabs => tabs.forEach(tab => tab.isSubMenu = true))
+    );
 
-	ngOnInit() {
-		this.menuService.translations = this.translations;
-		this.configuration = this.menuService.configuration;
-		this._translations = this.menuService.translate();
-		// observable will change css host class of this component‹
-		this.isDocked$ = this.menuService.state$.pipe(
-			select(state => state.docked)
-		);
-
-		this.hasIconsInTabs$ = this.afterContentChecked$.pipe(
-			first(),
-			map(() => this.tabs.toArray()),
-			map(tabs => tabs.every(tab => !!tab.icon))
-		);
-
-		// Helper observable
-		// Emits when the menu goes from docked => undocked
-		const dockedToUndocked$ = this.isDocked$.pipe(
-			startWith(!this.menuService.configuration.dockedByDefault),
-			pairwise(),
-			filter(([previous, current]) => !!previous && !current)
-		);
-
-		// Helper observable
-		// Emits when the menu goes from undocked => docked
-		const undockedToDocked$ = this.isDocked$.pipe(
-			startWith(this.menuService.configuration.dockedByDefault),
-			pairwise(),
-			filter(([previous, current]) => !previous && !!current),
-			shareReplay(1)
-		);
-
-		this.showHideMenuLabel$ = merge(
-			undockedToDocked$.pipe(mapTo(false)), // Immediately show hide label
-			dockedToUndocked$.pipe(delay(150), mapTo(true)) // Delay showing the label until there is enough space
-		);
-
-		this.showRevealMenuLabel$ = this.isDocked$.pipe(
-			map(isDocked => !!isDocked)
-		);
-
-		// Which tabs should be visible under the 'more' menu items?
-		this.moreMenuItems$ = this.afterContentChecked$.pipe(
-			map(() => this.tabs),
-			map(queryList => queryList.toArray()),
-			filter((tabs: Array<MenuTabComponent>) => tabs.length >= 3),	// 2 tabs + 'more' tab
-			map(tabs => tabs.splice(2, tabs.length - 2)),
-			tap(tabs => tabs.forEach(tab => tab.isSubMenu = true))
-		);
-
-		this.shouldShowMoreTab$ = this.afterContentChecked$.pipe(
-			map(() => this.tabs.toArray().length > 2)
-		);
+    this.shouldShowMoreTab$ = this.afterContentChecked$.pipe(
+      map(() => this.tabs.toArray().length > 2)
+    );
 
 
-		// Close all menus whenever we navigate
-		this.router.events.pipe(
-			filter(event => (event instanceof NavigationStart)),
-			takeUntil(this.destroy$),
-			tap(() => this.menuService.closeAllMenus())
-		).subscribe();
-	}
+    // Close all menus whenever we navigate
+    this.router.events.pipe(
+      filter(event => (event instanceof NavigationStart)),
+      takeUntil(this.destroy$),
+      tap(() => this.menuService.closeAllMenus())
+    ).subscribe();
+  }
 
-	@HostListener('document:click')
-	public onDocumentClick() {
-		this.menuService.closeAllMenus();
-	}
+  @HostListener('document:click')
+  public onDocumentClick() {
+    this.menuService.closeAllMenus();
+  }
 
-	@HostListener('click', ['$event'])
-	public onInsideClick(event) {
-		// Don't propagate event down to the document, since that would make the menu close
-		event.stopPropagation();
-	}
+  @HostListener('click', ['$event'])
+  public onInsideClick(event) {
+    // Don't propagate event down to the document, since that would make the menu close
+    event.stopPropagation();
+  }
 
-	ngAfterContentChecked() {
-		this.afterContentChecked$.next();
-	}
+  ngAfterContentChecked() {
+    this.afterContentChecked$.next();
+  }
 
-	toggleDocking(event?: MouseEvent): void {
-		if (event) {
-			event.preventDefault();
-		}
-		this.menuService.state$.pipe(
-			select(state => state.docked),
-			take(1),
-			tap(isDocked => this.menuService.updateState('docked', !isDocked))
-		).subscribe();
-	}
+  toggleDocking(event?: MouseEvent): void {
+    if (event) {
+      event.preventDefault();
+    }
+    this.menuService.state$.pipe(
+      select(state => state.docked),
+      take(1),
+      tap(isDocked => this.menuService.updateState('docked', !isDocked))
+    ).subscribe();
+  }
 
-	ngOnDestroy() {
-		this.destroy$.next();
-		this.destroy$.complete();
-		this.menuService.destroy(); // Don't forget to destroy subscriptions created in the service!!
-	}
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+    this.menuService.destroy(); // Don't forget to destroy subscriptions created in the service!!
+  }
 }

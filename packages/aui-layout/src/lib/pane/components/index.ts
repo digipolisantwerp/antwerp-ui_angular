@@ -1,5 +1,5 @@
-import { PaneComponent } from './pane/pane.component';
+import {PaneComponent} from './pane/pane.component';
 
 export const Components = [
-	PaneComponent,
+  PaneComponent,
 ];

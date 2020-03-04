@@ -1,4 +1,4 @@
-import {Component, Input, ViewChild, ElementRef, OnInit, ChangeDetectionStrategy, HostBinding} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, OnInit, ViewChild} from '@angular/core';
 import {Menu} from '../../interfaces';
 import {lookForIllegalNodes} from '../../services/helpers';
 

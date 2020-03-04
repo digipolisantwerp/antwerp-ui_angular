@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AuiLogoService } from './aui-logo.service';
+import {AuiLogoService} from './aui-logo.service';
 
 describe('AuiLogoService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -1,13 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  ViewChild,
-  ContentChild,
-  AfterContentInit,
-  ViewEncapsulation,
-} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, ContentChild, ElementRef, Input, ViewChild, ViewEncapsulation,} from '@angular/core';
 
 import {LeafletMap} from '../../classes/leaflet-map';
 import {LeafletFullscreenControlComponent} from '../controls/leaflet-fullscreen-control/leaflet-fullscreen-control.component';

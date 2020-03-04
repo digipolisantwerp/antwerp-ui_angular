@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AuiLogoComponent } from './aui-logo.component';
+import {AuiLogoComponent} from './aui-logo.component';
 
 describe('AuiLogoComponent', () => {
   let component: AuiLogoComponent;
@@ -8,9 +8,9 @@ describe('AuiLogoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuiLogoComponent ]
+      declarations: [AuiLogoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

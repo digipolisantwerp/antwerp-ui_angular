@@ -1,5 +1,5 @@
-import { HeroComponent } from './hero/hero.component';
+import {HeroComponent} from './hero/hero.component';
 
 export const Components = [
-	HeroComponent,
+  HeroComponent,
 ];

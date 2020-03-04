@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, Input} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'aui-logo',
@@ -12,20 +12,23 @@ export class LogoComponent {
   @Input() onClick?: Function;
 
   constructor(
-  	private router: Router
-  ) { }
+    private router: Router
+  ) {
+  }
 
   public logoClicked(event) {
-  	event.preventDefault();
-  	if (this.link && this.link !== '#') {
-  		if (!event.metaKey) {
-  			this.router.navigate([this.link]);
-	  	} else {
-	  		this.router.navigate([]).then(result => {  window.open(this.link, '_blank'); });
-	  	}
-  	}
-  	if (this.onClick) {
-  		this.onClick(event);
-  	}
+    event.preventDefault();
+    if (this.link && this.link !== '#') {
+      if (!event.metaKey) {
+        this.router.navigate([this.link]);
+      } else {
+        this.router.navigate([]).then(result => {
+          window.open(this.link, '_blank');
+        });
+      }
+    }
+    if (this.onClick) {
+      this.onClick(event);
+    }
   }
 }

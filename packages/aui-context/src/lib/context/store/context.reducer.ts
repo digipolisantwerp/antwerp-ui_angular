@@ -13,4 +13,4 @@ export function contextReducer(state: ContextState = defaultState, action: Actio
     default:
       return state;
   }
-};
+}

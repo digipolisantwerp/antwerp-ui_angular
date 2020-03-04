@@ -1,14 +1,14 @@
 <table>
-    <tbody class="m-datepicker__calendar">
-        <tr *ngFor="let group of years">
-            <td *ngFor="let year of group">
-                <button type="button" [ngClass]="{
+  <tbody class="m-datepicker__calendar">
+  <tr *ngFor="let group of years">
+    <td *ngFor="let year of group">
+      <button (click)="pickDate($event, year)" [ngClass]="{
                     'is-current': year === current,
                     'is-selected': year === selectedYear
-                }" (click)="pickDate($event, year)">
-                    {{ year }}
-                </button>
-            </td>
-        </tr>
-    </tbody>
+                }" type="button">
+        {{ year }}
+      </button>
+    </td>
+  </tr>
+  </tbody>
 </table>

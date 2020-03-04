@@ -1,4 +1,4 @@
 export interface SearchFilterChoice {
-	label: string;
-	value: string;
+  label: string;
+  value: string;
 }

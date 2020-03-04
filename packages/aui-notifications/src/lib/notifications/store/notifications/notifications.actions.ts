@@ -2,12 +2,7 @@ import {Injectable} from '@angular/core';
 import {NgRedux} from '@angular-redux/store';
 import {NotificationStore} from '@acpaas-ui/js-notification-store';
 
-import {
-  NOTIFICATION_CLEAR,
-  NOTIFICATION_CLEAR_TARGET,
-  NOTIFICATION_TRIGGER,
-  NOTIFICATIONS_LOAD,
-} from './notifications.actiontypes';
+import {NOTIFICATION_CLEAR, NOTIFICATION_CLEAR_TARGET, NOTIFICATION_TRIGGER, NOTIFICATIONS_LOAD,} from './notifications.actiontypes';
 import {Notifications} from '../../types/notifications.types';
 import {NotificationsState} from '../store.types';
 

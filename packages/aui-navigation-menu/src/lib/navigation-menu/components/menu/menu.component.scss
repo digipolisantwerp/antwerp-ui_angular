@@ -43,7 +43,7 @@
 
   // Only display the first 2 items on a mobile screen
   // and ignore the last element, since it will show a 'more...' menu tab
-  &::ng-deep>aui-menu-tab:nth-child(n + 3) {
+  &::ng-deep > aui-menu-tab:nth-child(n + 3) {
     &:not(:last-child) {
       display: none; //We will need to  display the 'more...' tab
 
@@ -77,7 +77,7 @@
     margin: $spacer-sm;
     text-align: right;
 
-    >a {
+    > a {
       text-decoration: none;
     }
   }

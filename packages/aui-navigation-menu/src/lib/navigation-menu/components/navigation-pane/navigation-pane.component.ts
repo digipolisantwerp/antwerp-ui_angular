@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild, ViewContainerRef, HostBinding, TemplateRef, OnDestroy} from '@angular/core';
-import {tap, filter, map, takeUntil, delay, mapTo, scan, startWith, pairwise} from 'rxjs/operators';
+import {Component, HostBinding, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {delay, filter, map, mapTo, pairwise, scan, startWith, takeUntil, tap} from 'rxjs/operators';
 import {MenuService} from '../../services/menu.service';
-import {Observable, Subject, merge} from 'rxjs';
+import {merge, Observable, Subject} from 'rxjs';
 import {Menu} from '../../interfaces';
 
 /**
@@ -25,26 +25,22 @@ import {Menu} from '../../interfaces';
 })
 export class NavigationPaneComponent implements OnInit, OnDestroy {
   /**
+   * Helper observable that emits whenever we need to slide in a new menu
+   */
+  public slideInSubMenu$: Observable<boolean>;
+  @HostBinding('class.visible')
+  public paneIsVisible = false;
+  public paneIsVisible$: Observable<boolean>;
+  /**
    * Container reference where we will inject the submenu
    */
   @ViewChild('subMenu', {static: true, read: ViewContainerRef})
   private container: ViewContainerRef;
-
   /**
    * Container reference used for sliding in a submenu.
    */
   @ViewChild('slideInSubMenu', {static: true, read: ViewContainerRef})
   private slideInContainer: ViewContainerRef;
-
-  /**
-   * Helper observable that emits whenever we need to slide in a new menu
-   */
-  public slideInSubMenu$: Observable<boolean>;
-
-  @HostBinding('class.visible')
-  public paneIsVisible = false;
-  public paneIsVisible$: Observable<boolean>;
-
   private destroy$ = new Subject();
 
   constructor(private menuService: MenuService) {
