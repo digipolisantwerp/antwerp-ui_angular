@@ -300,33 +300,33 @@
         }
       }
     },
-    "aui-agenda": {
+    "ngx-agenda": {
       "projectType": "library",
-      "root": "packages/aui-agenda",
-      "sourceRoot": "packages/aui-agenda/src",
+      "root": "packages/ngx-agenda",
+      "sourceRoot": "packages/ngx-agenda/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "packages/aui-agenda/tsconfig.lib.json",
-            "project": "packages/aui-agenda/ng-package.json"
+            "tsConfig": "packages/ngx-agenda/tsconfig.lib.json",
+            "project": "packages/ngx-agenda/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "packages/aui-agenda/src/test.ts",
-            "tsConfig": "packages/aui-agenda/tsconfig.spec.json",
-            "karmaConfig": "packages/aui-agenda/karma.conf.js"
+            "main": "packages/ngx-agenda/src/test.ts",
+            "tsConfig": "packages/ngx-agenda/tsconfig.spec.json",
+            "karmaConfig": "packages/ngx-agenda/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "packages/aui-agenda/tsconfig.lib.json",
-              "packages/aui-agenda/tsconfig.spec.json"
+              "packages/ngx-agenda/tsconfig.lib.json",
+              "packages/ngx-agenda/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

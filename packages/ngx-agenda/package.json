@@ -1,9 +1,6 @@
 {
-  "name": "@acpaas-ui/ngx-components/agenda",
+  "name": "@acpaas-ui/ngx-agenda",
   "version": "0.0.1",
-  "acpaas-ui": {
-    "dependencies": []
-  },
   "whitelistedNonPeerDependencies": {
     "@acpaas-ui/js-date-utils": "1.0.1",
     "hammerjs": "~2.0.8"

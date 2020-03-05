@@ -5,7 +5,7 @@ import {HeaderModule} from '../../../aui-layout/src/lib/header';
 import {NavigationMenuModule} from '../../../aui-navigation-menu/src/lib';
 import {CodeSnippetModule} from '../../../aui-code-snippet/src/lib';
 import {AnalyticsModule} from '../../../aui-analytics/src/lib';
-import {AgendaModule} from '../../../aui-agenda/src/lib';
+import {AgendaModule} from '../../../ngx-agenda/src/lib';
 import {AvatarModule} from '../../../aui-avatar/src/lib';
 import {CalendarModule} from '../../../aui-calendar/src/lib';
 import {ContextModule} from '../../../aui-context/src/lib';

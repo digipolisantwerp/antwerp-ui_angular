@@ -67,11 +67,11 @@
       "aui-analytics/*": [
         "dist/aui-analytics/*"
       ],
-      "aui-agenda": [
-        "dist/aui-agenda"
+      "ngx-agenda": [
+        "dist/ngx-agenda"
       ],
-      "aui-agenda/*": [
-        "dist/aui-agenda/*"
+      "ngx-agenda/*": [
+        "dist/ngx-agenda/*"
       ],
       "aui-avatar": [
         "dist/aui-avatar"
