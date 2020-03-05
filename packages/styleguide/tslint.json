@@ -5,13 +5,21 @@
       true,
       "attribute",
       "app",
+      "guide",
+      "aui",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
       "app",
+      "guide",
+      "aui",
       "kebab-case"
+    ],
+    "component-class-suffix": [
+      "Component",
+      "Page"
     ]
   }
 }

@@ -33,7 +33,7 @@ export class TableHeaderComponent implements OnChanges {
     viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    (<Cell>componentRef.instance).data = this.value;
+    (componentRef.instance as Cell).data = this.value;
     this.changeDetectionRef.detectChanges();
   }
 }
