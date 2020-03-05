@@ -1,10 +1,7 @@
 {
   "name": "@acpaas-ui/ngx-analytics",
   "version": "0.0.1",
-  "acpaas-ui": {
-    "dependencies": [
-      "utils"
-    ]
-  },
-  "devDependencies": {}
+  "whitelistedNonPeerDependencies": {
+    "@acpaas-ui/ngx-utils": "^3.0.0"
+  }
 }

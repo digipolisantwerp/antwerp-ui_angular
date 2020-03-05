@@ -2,7 +2,9 @@
 FILTERS
  */
 export {FilterModule} from './lib/filter/filter.module';
-export {CheckboxFilterComponent, InputFilterComponent, SelectFilterComponent} from './lib/filter/components';
+export {CheckboxFilterComponent} from './lib/filter/components/checkbox-filter/checkbox-filter.component';
+export {InputFilterComponent} from './lib/filter/components/input-filter/input-filter.component';
+export {SelectFilterComponent} from './lib/filter/components/select-filter/select-filter.component';
 export {Filter} from './lib/filter/classes/filter.class';
 export {FilterService} from './lib/filter/services/filter.service';
 export {FilterComponent} from './lib/filter/types/filter.types';
