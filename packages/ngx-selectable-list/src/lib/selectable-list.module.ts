@@ -1,20 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Components} from './components';
-import {Directives} from './directives';
+import {SelectableListComponent} from './components/selectable-list/selectable-list.component';
+import {SelectableActionsDirective} from './directives/selectable-actions.directive';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    Components,
-    Directives,
+    SelectableListComponent,
+    SelectableActionsDirective,
   ],
   exports: [
-    Components,
-    Directives,
+    SelectableListComponent,
+    SelectableActionsDirective,
   ],
 })
 export class SelectableListModule {
