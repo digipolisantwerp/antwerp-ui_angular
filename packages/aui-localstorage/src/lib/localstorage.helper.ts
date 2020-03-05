@@ -29,7 +29,7 @@ export class LocalstorageHelper {
   // property selector: compare the key with the selector
   // path selector: verify the key is the last item in the path
   // function selector: always return true
-  static keyMatches(key: string, selector: Selector): Boolean {
+  static keyMatches(key: string, selector: Selector): boolean {
     const keyMatchesSelector = key === selector;
     const keyInSelector = Array.isArray(selector) ? selector.indexOf(key) >= 0 : false;
     const selectorIsFunction = typeof selector === 'function';
@@ -45,9 +45,9 @@ export class LocalstorageHelper {
 
     let curr = data;
 
-    for (let i = 0; i < selector.length; i += 1) {
-      if (curr.hasOwnProperty(selector[i])) {
-        curr = curr[selector[i]];
+    for (const s of selector) {
+      if (curr.hasOwnProperty(s)) {
+        curr = curr[s];
         continue;
       }
 

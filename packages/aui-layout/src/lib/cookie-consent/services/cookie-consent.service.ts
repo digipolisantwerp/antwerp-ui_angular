@@ -7,7 +7,7 @@ import {CookieConsentConfig} from '../types/cookie-consent.types';
 
 @Injectable()
 export class CookieconsentService {
-  private static initialized: Boolean = false;
+  private static initialized = false;
 
   constructor(
     @Inject(COOKIE_CONSENT_CONFIG) private cookieConsentConfig,

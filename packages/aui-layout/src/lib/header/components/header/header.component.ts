@@ -1,4 +1,4 @@
-import {Component, ContentChild,} from '@angular/core';
+import {Component, ContentChild} from '@angular/core';
 
 import {HeaderLogoDirective} from '../../directives/logo.directive';
 import {HeaderContentDirective} from '../../directives/content.directive';

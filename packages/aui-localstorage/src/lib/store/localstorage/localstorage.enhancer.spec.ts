@@ -100,15 +100,6 @@ describe('The Localstorage Redux Plugin', () => {
       })
     );
 
-    it('subscribes to the "reduxState" prop if no selectors are provided', injectService(localstorageReduxPlugin => {
-      localstorageReduxPlugin.ngRedux._store = {};
-      spyOn(localstorageReduxPlugin, 'subscribeSelector');
-
-      localstorageReduxPlugin.subscribe();
-
-      expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalledWith('reduxState');
-    }));
-
     it('subscribes each selector', injectService(localstorageReduxPlugin => {
       localstorageReduxPlugin.ngRedux._store = {};
       spyOn(localstorageReduxPlugin, 'subscribeSelector').and.stub();

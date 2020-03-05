@@ -1,4 +1,4 @@
-import {Component, HostBinding, Input,} from '@angular/core';
+import {Component, HostBinding, Input} from '@angular/core';
 import {get} from 'lodash-es';
 
 import {SidebarItem} from '../../types/sidebar.types';

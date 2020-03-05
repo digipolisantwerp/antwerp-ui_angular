@@ -30,8 +30,8 @@ export class ModalService {
     overlay.instance.theme = options.theme || 'dark';
 
     this.activeModals.push({
-      modal: modal,
-      overlay: overlay,
+      modal,
+      overlay,
     });
 
     this.appendRefs(overlay);

@@ -42,7 +42,7 @@ class Storage implements BrowserStorage {
 const windowStub = {
   localStorage: new Storage(),
   sessionStorage: new Storage(),
-  Storage: Storage,
+  Storage,
 };
 
 const injectService = (cb) => {
@@ -67,12 +67,6 @@ describe('The Localstorage Service', () => {
         ],
       });
     });
-
-    it('stores the first instance on the class', injectService(localstorageService => {
-      expect(LocalstorageService.instance).toBeDefined();
-      expect(LocalstorageService.instance).toBe(localstorageService);
-      expect(LocalstorageService.instance).toBe(localstorageService.instance);
-    }));
   });
 
   describe('Storage validation', () => {

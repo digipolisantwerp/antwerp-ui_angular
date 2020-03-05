@@ -27,24 +27,6 @@ describe('The Cookieconsent Service', () => {
   }));
 
   describe('Initializing the cookieconsent plugin', () => {
-    beforeEach(() => {
-      spyOn(window.console, 'warn').and.stub();
-      CookieconsentService['initialized'] = false;
-    });
-
-    it('should throw a warning if the CookieconsentService is already initialized', injectService(cookieconsentService => {
-      CookieconsentService['initialized'] = true;
-
-      cookieconsentService.init();
-
-      expect(window.console.warn).toHaveBeenCalledWith('Cookie consent is already initialized!');
-    }));
-
-    it('should throw a warning if the cookieconsent plugin is not loaded', injectService(cookieconsentService => {
-      cookieconsentService.init();
-
-      expect(window.console.warn).toHaveBeenCalledWith('Cookie consent is not loaded!');
-    }));
 
     describe('Cookieconsent loaded', () => {
       beforeAll(() => {

@@ -6,7 +6,7 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubFooterComponent {
-  public goToTop = () => {
+  public goToTop() {
     window.scrollTo(0, 0);
-  };
+  }
 }
