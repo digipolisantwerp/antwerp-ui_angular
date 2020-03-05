@@ -33,14 +33,14 @@ class MockUploader implements Partial<Uploader> {
     };
   }
 
-  public uploadFiles(files) {
-    return Observable.create(observer => {
+  public uploadFiles(files): any {
+    return new Observable(observer => {
       observer.next({
         progress: 0.5,
         data: null,
       });
 
-      setTimeout(function () {
+      setTimeout(() => {
         observer.next({
           progress: 1,
           data: {
@@ -138,7 +138,7 @@ describe('The upload zone component', () => {
 
       expect(comp.uploadProgress).toEqual(50);
 
-      setTimeout(function () {
+      setTimeout(() => {
         expect(comp.uploadProgress).toEqual(100);
         expect(comp.uploadedFiles.emit).toHaveBeenCalled();
         expect(comp.hasDragOver).toBeFalsy();

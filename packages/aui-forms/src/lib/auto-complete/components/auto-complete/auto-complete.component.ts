@@ -76,7 +76,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
   }
 
   public updateModel = (_: any) => {
-  };
+  }
 
   // CONTROL_VALUE_ACCESSOR interface
   public writeValue(value = '') {

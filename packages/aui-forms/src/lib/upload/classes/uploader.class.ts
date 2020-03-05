@@ -14,10 +14,10 @@ export class Uploader {
     this.options = Object.assign({}, this.options, options);
   }
 
-  public uploadFiles(files: File[]) {
+  public uploadFiles(files: File[]): Observable<{ progress: number, data: object[] }> {
     const formData: FormData = this.filesToFormData(files);
 
-    return Observable.create(observer => {
+    return new Observable(observer => {
       const xhr = new XMLHttpRequest();
 
       // Progress callback
@@ -74,15 +74,15 @@ export class Uploader {
         } else {
           invalidFiles.push({
             reasons: errors,
-            file: file,
+            file,
           });
         }
       }
     }
 
     return {
-      validFiles: validFiles,
-      invalidFiles: invalidFiles,
+      validFiles,
+      invalidFiles,
     };
   }
 

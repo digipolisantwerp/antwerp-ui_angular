@@ -13,7 +13,7 @@ import {
 } from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR,} from '@angular/forms';
+import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
 
@@ -63,7 +63,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 
   @Output() blur = new EventEmitter<Event>();
 
-  public dateMask = {mask: DATEPICKER_DATE_MASK, 'showMaskOnHover': false};
+  public dateMask = {mask: DATEPICKER_DATE_MASK, showMaskOnHover: false};
   public formControl: FormControl;
   public selectedDate: Date;
   public isDisabled = false;
@@ -74,7 +74,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
     @Inject(CALENDAR_MONTH_LABELS) private monthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
     @Inject(CALENDAR_WEEKDAY_LABELS) private weekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
     @Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
-    private calendarService: CalendarService,
+    public calendarService: CalendarService,
     private formBuilder: FormBuilder,
     private ref: ChangeDetectorRef
   ) {
@@ -187,8 +187,8 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   private onChange: (res: any) => void = () => {
-  };
+  }
 
   private onTouched: (_: any) => void = () => {
-  };
+  }
 }

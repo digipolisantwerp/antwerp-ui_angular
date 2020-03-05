@@ -15,13 +15,13 @@ export class UploadZoneComponent {
   @Input() public multiple = true;
   @Input() public id = '';
   @Input() public ariaId = '';
-  @Output() public uploadedFiles: EventEmitter<Object[]> = new EventEmitter<Object[]>();
+  @Output() public uploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
   @Output() public queuedFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
   @Output() public invalidFiles: EventEmitter<InvalidFile[]> = new EventEmitter<InvalidFile[]>();
 
-  public hasDragOver: Boolean = false;
+  public hasDragOver = false;
   public classNames: string;
-  public uploadProgress: Number = 0;
+  public uploadProgress = 0;
   public uploadingFiles: File[];
 
   @HostListener('dragover', ['$event'])
@@ -85,7 +85,7 @@ export class UploadZoneComponent {
     );
   }
 
-  protected fileListToArray(list: FileList): Object[] {
+  protected fileListToArray(list: FileList): object[] {
     return Array.from(list);
   }
 

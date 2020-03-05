@@ -16,11 +16,11 @@ export class UploadComponent implements OnInit {
   @Input() public ariaLabelRemove = 'Verwijder';
   @Input() public disabled = false;
   @Input() public options: UploadOptions = UPLOAD_OPTIONS_DEFAULT;
-  @Output() public selectUploadedFiles: EventEmitter<Object[]> = new EventEmitter<Object[]>();
+  @Output() public selectUploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
 
   public uploader;
   public ariaId;
-  public uploadedFiles: Object[] = [];
+  public uploadedFiles: object[] = [];
   public invalidFiles: InvalidFile[] = [];
   public queuedFiles: File[] = [];
 
@@ -31,7 +31,7 @@ export class UploadComponent implements OnInit {
     this.uploader = new Uploader(this.options);
   }
 
-  public onUploadedFiles(files: Object[]) {
+  public onUploadedFiles(files: object[]) {
     this.uploadedFiles = this.uploadedFiles.concat(files);
     this.selectUploadedFiles.emit(this.uploadedFiles);
   }

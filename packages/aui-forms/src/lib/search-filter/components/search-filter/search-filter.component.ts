@@ -1,5 +1,5 @@
-import {Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges,} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR,} from '@angular/forms';
+import {Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {debounce, get} from 'lodash-es';
 
 import {FlyoutSize} from '@acpaas-ui/ngx-components/flyout';
@@ -38,14 +38,14 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   public loading = false;
   public isDisabled = false;
 
-  public filterDataFromSearch: (_any?) => {};
+  public filterDataFromSearch: () => {};
 
   constructor() {
     this.filterDataFromSearch = debounce(this.filterData.bind(this), this.inputDelay);
   }
 
   public updateModel: (_) => any = () => {
-  };
+  }
 
   public writeValue(value: string[]): void {
     this.selectedItems = Array.isArray(value) ? value : [];

@@ -10,9 +10,9 @@ export class UploadQueueComponent {
   @Input() public files: File[];
   @Input() public uploader: Uploader;
   @Input() public ariaLabelRemove = 'Verwijder';
-  @Output() public uploadedFiles: EventEmitter<Object[]> = new EventEmitter<Object[]>();
+  @Output() public uploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
 
-  public uploadProgress: Number = 0;
+  public uploadProgress = 0;
 
   public remove(index) {
     this.files.splice(index, 1);

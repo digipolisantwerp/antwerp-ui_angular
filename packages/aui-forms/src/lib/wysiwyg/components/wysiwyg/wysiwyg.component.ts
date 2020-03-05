@@ -1,5 +1,5 @@
 import {Component, EventEmitter, forwardRef, HostBinding, Input, OnInit, Output} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR,} from '@angular/forms';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 import {WYSIWYG_DEFAULT_CONFIG} from '../../wysiwyg.conf';
 
@@ -48,7 +48,7 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
     this.blur.emit(value);
   }
 
-  public registerOnChange(onChange: Function): void {
+  public registerOnChange(onChange: () => void): void {
     this.updateModel = onChange;
   }
 
@@ -63,8 +63,7 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
     this.setConfig();
   }
 
-  private updateModel: Function = () => {
-  };
+  private updateModel = (...args: any[]) => undefined;
 
   private setConfig(): void {
     if (this.customConfig) {

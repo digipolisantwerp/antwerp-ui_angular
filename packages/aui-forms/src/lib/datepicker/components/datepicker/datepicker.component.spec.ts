@@ -186,7 +186,7 @@ describe('The Datepicker Component', () => {
       });
 
       it('should return null if the date is valid and outside of the set range', () => {
-        spyOn(picker['calendarService'], 'getRangeForDate').and.callFake(() => []);
+        spyOn(picker.calendarService, 'getRangeForDate').and.callFake(() => []);
         picker.range = [1];
 
         const ctrl = new FormControl((new Date()).toISOString());
@@ -196,7 +196,7 @@ describe('The Datepicker Component', () => {
 
       it('should return the invalid range error if the date was valid and in the set range', () => {
         const range = [(new Date()).getDate()];
-        spyOn(picker['calendarService'], 'getRangeForDate').and.callFake(() => range);
+        spyOn(picker.calendarService, 'getRangeForDate').and.callFake(() => range);
         picker.range = range;
 
         const ctrl = new FormControl((new Date()).toISOString());

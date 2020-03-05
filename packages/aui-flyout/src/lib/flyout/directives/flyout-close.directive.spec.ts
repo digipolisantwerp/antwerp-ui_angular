@@ -52,7 +52,7 @@ describe('Flyout close directive', () => {
     comp = fixture.componentInstance;
     fixture.detectChanges();
     componentDebugElement = fixture.debugElement.query(By.directive(FlyoutCloseDirective));
-    componentElement = <HTMLElement>componentDebugElement.nativeElement;
+    componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
   it('should close onClick', () => {

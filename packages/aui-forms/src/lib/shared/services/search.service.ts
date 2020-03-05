@@ -28,5 +28,5 @@ export class SearchService {
 
   private matchItemWithSearchString = (item: any, searchString): boolean => {
     return String(item).toLowerCase().indexOf(searchString.toLowerCase()) > -1;
-  };
+  }
 }

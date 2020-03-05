@@ -18,7 +18,7 @@ import {RangeSliderRange} from '../../types/range-slider.types';
   ],
 })
 export class RangeSliderComponent implements OnInit, ControlValueAccessor {
-  @HostBinding('class.m-range-slider') core_branding = true;
+  @HostBinding('class.m-range-slider') coreBranding = true;
   @Input() public min = 0;
   @Input() public max = 100;
   @Input() public minimalDistance = 1;
@@ -42,7 +42,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   }
 
   public propagateChange = (value: number | RangeSliderRange) => {
-  };
+  }
 
   public ngOnInit() {
     if (this.step > 0) {
@@ -248,12 +248,12 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
     } as RangeSliderRange);
   }
 
-  public round(number, increment, offset) {
+  public round(n, increment, offset) {
     if (increment > 0) {
-      return Math.round((number - offset) / increment) * increment + offset;
+      return Math.round((n - offset) / increment) * increment + offset;
     }
 
-    return number;
+    return n;
   }
 
   public startToPercentage() {

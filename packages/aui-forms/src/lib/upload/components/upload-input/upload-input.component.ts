@@ -16,8 +16,7 @@ export class UploadInputComponent implements ControlValueAccessor {
   @Input() public options: UploadOptions;
   @Input() public format: any;
 
-  public propagateChange = (_: any) => {
-  };
+  public propagateChange = (_: any) => undefined;
 
   public writeValue(value: any) {
   }

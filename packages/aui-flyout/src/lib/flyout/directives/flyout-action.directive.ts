@@ -21,7 +21,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
 
   constructor(
     @Host() public flyout: FlyoutDirective,
-    @Inject(PLATFORM_ID) platformId: Object,
+    @Inject(PLATFORM_ID) platformId: object,
     @Inject(DOCUMENT) private document: Document,
     private elementRef: ElementRef
   ) {
@@ -123,7 +123,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
     this.document.removeEventListener('focusout', this.onBlur, true);
   }
 
-  private checkIfInClosableZone(event): Boolean {
+  private checkIfInClosableZone(event): boolean {
     const isInClosableZone = this.flyout.isInClosableZone(event.target as HTMLElement);
     const isTarget = event.target === this.elementRef.nativeElement;
     const containsTarget = this.elementRef.nativeElement.contains(event.target);

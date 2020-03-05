@@ -26,19 +26,19 @@ class MockUploader implements Partial<Uploader> {
     };
   }
 
-  public uploadFiles(files) {
-    return Observable.create(observer => {
+  public uploadFiles(files): Observable<{ progress: number, data: object[] }> {
+    return new Observable(observer => {
       observer.next({
         progress: 0.5,
         data: null,
       });
 
-      setTimeout(function () {
+      setTimeout(() => {
         observer.next({
           progress: 1,
           data: {
             test: 'ok',
-          },
+          } as any,
         });
       }, 500);
     });
@@ -87,7 +87,7 @@ describe('The upload queue component', () => {
 
     expect(comp.uploadProgress).toEqual(50);
 
-    setTimeout(function () {
+    setTimeout(() => {
       expect(comp.uploadProgress).toEqual(100);
       expect(comp.uploadedFiles.emit).toHaveBeenCalled();
       done();
