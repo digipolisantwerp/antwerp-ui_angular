@@ -1,17 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Directives} from './directives';
+import {MaskDirective} from './directives/mask.directive';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    ...Directives,
+    MaskDirective,
   ],
   exports: [
-    ...Directives,
+    MaskDirective,
   ],
   providers: [],
 })

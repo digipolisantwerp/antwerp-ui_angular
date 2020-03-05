@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-
-import {Components} from './components';
+import {RangeSliderComponent} from './components/range-slider/range-slider.component';
 
 @NgModule({
   imports: [
@@ -10,10 +9,10 @@ import {Components} from './components';
     FormsModule,
   ],
   declarations: [
-    ...Components,
+    RangeSliderComponent,
   ],
   exports: [
-    ...Components,
+    RangeSliderComponent,
   ],
 })
 export class RangeSliderModule {

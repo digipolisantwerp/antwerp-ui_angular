@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-
-import {Components} from './components';
+import {TimepickerComponent} from './components/timepicker/timepicker.component';
 
 @NgModule({
   imports: [
@@ -10,10 +9,10 @@ import {Components} from './components';
     CommonModule,
   ],
   declarations: [
-    ...Components,
+    TimepickerComponent,
   ],
   exports: [
-    ...Components,
+    TimepickerComponent,
   ],
   providers: [],
 })

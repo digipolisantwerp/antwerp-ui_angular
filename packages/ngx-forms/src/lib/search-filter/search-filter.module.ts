@@ -1,10 +1,8 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-
 import {FlyoutModule} from '@acpaas-ui/ngx-flyout';
-
-import {Components} from './components';
+import {SearchFilterComponent} from './components/search-filter/search-filter.component';
 
 @NgModule({
   imports: [
@@ -13,10 +11,10 @@ import {Components} from './components';
     FlyoutModule,
   ],
   declarations: [
-    ...Components,
+    SearchFilterComponent,
   ],
   exports: [
-    ...Components,
+    SearchFilterComponent,
   ],
 })
 export class SearchFilterModule {

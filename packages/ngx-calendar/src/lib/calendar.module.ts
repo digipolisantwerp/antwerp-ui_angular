@@ -1,9 +1,5 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Components} from './components';
-import {Services} from './services';
-
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -12,19 +8,30 @@ import {
 } from './calendar.conf';
 import {MonthLabelsConfig, WeekdayLabelsConfig} from './types/calendar.types';
 import {CalendarService} from './services/calendar.service';
+import {CalendarComponent} from './components/calendar/calendar.component';
+import {CalendarDecenniaComponent} from './components/decennia/decennia.component';
+import {CalendarMonthComponent} from './components/month/month.component';
+import {CalendarYearComponent} from './components/year/year.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    Components,
+    CalendarComponent,
+    CalendarDecenniaComponent,
+    CalendarMonthComponent,
+    CalendarYearComponent,
   ],
   exports: [
-    Components,
+    CalendarComponent,
+    CalendarDecenniaComponent,
+    CalendarMonthComponent,
+    CalendarYearComponent,
   ],
   providers: [
-    Services,
+    CalendarService,
     {provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS},
     {provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS},
   ],

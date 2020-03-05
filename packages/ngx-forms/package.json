@@ -1,15 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-forms",
   "version": "0.0.1",
-  "acpaas-ui": {
-    "dependencies": [
-      "calendar",
-      "flyout",
-      "progress-bar",
-      "selectable-list"
-    ]
-  },
   "whitelistedNonPeerDependencies": {
+    "@acpaas-ui/ngx-calendar": "^3.0.0",
+    "@acpaas-ui/ngx-flyout": "^3.0.0",
+    "@acpaas-ui/ngx-progress-bar": "^3.0.0",
+    "@acpaas-ui/ngx-selectable-list": "^3.0.0",
     "@acpaas-ui/js-date-utils": "~1.0.1",
     "inputmask": "~3.3.11",
     "lodash-es": "~4.17.10",

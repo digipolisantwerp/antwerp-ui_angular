@@ -1,15 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-
 import {FlyoutModule} from '@acpaas-ui/ngx-flyout';
 import {SelectableListModule} from '@acpaas-ui/ngx-selectable-list';
-
-import {MaskModule} from '../mask';
-
+import {MaskModule} from '../mask/public-api';
 import {SearchService} from '../shared/services/search.service';
-
-import {Components} from './components';
+import {AutoCompleteComponent} from './components/auto-complete/auto-complete.component';
 
 @NgModule({
   imports: [
@@ -20,10 +16,10 @@ import {Components} from './components';
     MaskModule,
   ],
   declarations: [
-    ...Components,
+    AutoCompleteComponent,
   ],
   exports: [
-    ...Components,
+    AutoCompleteComponent,
   ],
   providers: [
     SearchService,

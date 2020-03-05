@@ -6,22 +6,21 @@ import {FlyoutZoneDirective} from './directives/flyout-zone.directive';
 import {FlyoutDirective} from './directives/flyout.directive';
 import {FlyoutService} from './services/flyout.service';
 
-export const Directives = [
-  FlyoutActionDirective,
-  FlyoutCloseDirective,
-  FlyoutZoneDirective,
-  FlyoutDirective,
-];
-
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    Directives,
+    FlyoutActionDirective,
+    FlyoutCloseDirective,
+    FlyoutZoneDirective,
+    FlyoutDirective,
   ],
   exports: [
-    Directives,
+    FlyoutActionDirective,
+    FlyoutCloseDirective,
+    FlyoutZoneDirective,
+    FlyoutDirective,
   ],
   providers: [
     FlyoutService,

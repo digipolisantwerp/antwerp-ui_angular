@@ -1,10 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-import {Components} from './components';
-
 import {CKEditorModule} from 'ng2-ckeditor';
+import {WysiwygComponent} from './components/wysiwyg/wysiwyg.component';
 
 @NgModule({
   imports: [
@@ -14,10 +12,10 @@ import {CKEditorModule} from 'ng2-ckeditor';
     CKEditorModule,
   ],
   declarations: [
-    ...Components,
+    WysiwygComponent,
   ],
   exports: [
-    ...Components,
+    WysiwygComponent,
   ],
 })
 export class WysiwygModule {

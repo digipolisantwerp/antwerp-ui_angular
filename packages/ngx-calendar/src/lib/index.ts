@@ -8,12 +8,10 @@ export {
   DateRangeMap,
 } from './types/calendar.types';
 export {CalendarService} from './services/calendar.service';
-export {
-  CalendarComponent,
-  CalendarMonthComponent,
-  CalendarYearComponent,
-  CalendarDecenniaComponent,
-} from './components';
+export {CalendarComponent} from './components/calendar/calendar.component';
+export {CalendarDecenniaComponent} from './components/decennia/decennia.component';
+export {CalendarMonthComponent} from './components/month/month.component';
+export {CalendarYearComponent} from './components/year/year.component';
 export {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
