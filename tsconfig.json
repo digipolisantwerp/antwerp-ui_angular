@@ -31,29 +31,29 @@
       "ngx-logo/*": [
         "dist/ngx-logo/*"
       ],
-      "aui-logo": [
-        "dist/aui-logo"
+      "ngx-logo": [
+        "dist/ngx-logo"
       ],
-      "aui-logo/*": [
-        "dist/aui-logo/*"
+      "ngx-logo/*": [
+        "dist/ngx-logo/*"
       ],
-      "aui-layout": [
-        "dist/aui-layout"
+      "ngx-layout": [
+        "dist/ngx-layout"
       ],
-      "aui-layout/*": [
-        "dist/aui-layout/*"
+      "ngx-layout/*": [
+        "dist/ngx-layout/*"
       ],
-      "aui-navigation-menu": [
-        "dist/aui-navigation-menu"
+      "ngx-navigation-menu": [
+        "dist/ngx-navigation-menu"
       ],
-      "aui-navigation-menu/*": [
-        "dist/aui-navigation-menu/*"
+      "ngx-navigation-menu/*": [
+        "dist/ngx-navigation-menu/*"
       ],
-      "aui-code-snippet": [
-        "dist/aui-code-snippet"
+      "ngx-code-snippet": [
+        "dist/ngx-code-snippet"
       ],
-      "aui-code-snippet/*": [
-        "dist/aui-code-snippet/*"
+      "ngx-code-snippet/*": [
+        "dist/ngx-code-snippet/*"
       ],
       "analytics": [
         "dist/analytics"
@@ -61,11 +61,11 @@
       "analytics/*": [
         "dist/analytics/*"
       ],
-      "aui-analytics": [
-        "dist/aui-analytics"
+      "ngx-analytics": [
+        "dist/ngx-analytics"
       ],
-      "aui-analytics/*": [
-        "dist/aui-analytics/*"
+      "ngx-analytics/*": [
+        "dist/ngx-analytics/*"
       ],
       "ngx-agenda": [
         "dist/ngx-agenda"
@@ -73,83 +73,83 @@
       "ngx-agenda/*": [
         "dist/ngx-agenda/*"
       ],
-      "aui-avatar": [
-        "dist/aui-avatar"
+      "ngx-avatar": [
+        "dist/ngx-avatar"
       ],
-      "aui-avatar/*": [
-        "dist/aui-avatar/*"
+      "ngx-avatar/*": [
+        "dist/ngx-avatar/*"
       ],
-      "aui-calendar": [
-        "dist/aui-calendar"
+      "ngx-calendar": [
+        "dist/ngx-calendar"
       ],
-      "aui-calendar/*": [
-        "dist/aui-calendar/*"
+      "ngx-calendar/*": [
+        "dist/ngx-calendar/*"
       ],
-      "aui-context": [
-        "dist/aui-context"
+      "ngx-context": [
+        "dist/ngx-context"
       ],
-      "aui-context/*": [
-        "dist/aui-context/*"
+      "ngx-context/*": [
+        "dist/ngx-context/*"
       ],
-      "aui-flyout": [
-        "dist/aui-flyout"
+      "ngx-flyout": [
+        "dist/ngx-flyout"
       ],
-      "aui-flyout/*": [
-        "dist/aui-flyout/*"
+      "ngx-flyout/*": [
+        "dist/ngx-flyout/*"
       ],
-      "aui-localstorage": [
-        "dist/aui-localstorage"
+      "ngx-localstorage": [
+        "dist/ngx-localstorage"
       ],
-      "aui-localstorage/*": [
-        "dist/aui-localstorage/*"
+      "ngx-localstorage/*": [
+        "dist/ngx-localstorage/*"
       ],
-      "aui-map": [
-        "dist/aui-map"
+      "ngx-map": [
+        "dist/ngx-map"
       ],
-      "aui-map/*": [
-        "dist/aui-map/*"
+      "ngx-map/*": [
+        "dist/ngx-map/*"
       ],
-      "aui-notifications": [
-        "dist/aui-notifications"
+      "ngx-notifications": [
+        "dist/ngx-notifications"
       ],
-      "aui-notifications/*": [
-        "dist/aui-notifications/*"
+      "ngx-notifications/*": [
+        "dist/ngx-notifications/*"
       ],
-      "aui-pagination": [
-        "dist/aui-pagination"
+      "ngx-pagination": [
+        "dist/ngx-pagination"
       ],
-      "aui-pagination/*": [
-        "dist/aui-pagination/*"
+      "ngx-pagination/*": [
+        "dist/ngx-pagination/*"
       ],
-      "aui-progress-bar": [
-        "dist/aui-progress-bar"
+      "ngx-progress-bar": [
+        "dist/ngx-progress-bar"
       ],
-      "aui-progress-bar/*": [
-        "dist/aui-progress-bar/*"
+      "ngx-progress-bar/*": [
+        "dist/ngx-progress-bar/*"
       ],
-      "aui-table": [
-        "dist/aui-table"
+      "ngx-table": [
+        "dist/ngx-table"
       ],
-      "aui-table/*": [
-        "dist/aui-table/*"
+      "ngx-table/*": [
+        "dist/ngx-table/*"
       ],
-      "aui-user-menu": [
-        "dist/aui-user-menu"
+      "ngx-user-menu": [
+        "dist/ngx-user-menu"
       ],
-      "aui-user-menu/*": [
-        "dist/aui-user-menu/*"
+      "ngx-user-menu/*": [
+        "dist/ngx-user-menu/*"
       ],
-      "aui-selectable-list": [
-        "dist/aui-selectable-list"
+      "ngx-selectable-list": [
+        "dist/ngx-selectable-list"
       ],
-      "aui-selectable-list/*": [
-        "dist/aui-selectable-list/*"
+      "ngx-selectable-list/*": [
+        "dist/ngx-selectable-list/*"
       ],
-      "aui-forms": [
-        "dist/aui-forms"
+      "ngx-forms": [
+        "dist/ngx-forms"
       ],
-      "aui-forms/*": [
-        "dist/aui-forms/*"
+      "ngx-forms/*": [
+        "dist/ngx-forms/*"
       ],
       "ngx-utils": [
         "dist/ngx-utils"
