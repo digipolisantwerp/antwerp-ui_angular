@@ -1,9 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-code-snippet",
   "version": "0.0.1",
-  "acpaas-ui": {
-    "dependencies": []
-  },
   "devDependencies": {
     "@types/marked": "0.4.0"
   },
