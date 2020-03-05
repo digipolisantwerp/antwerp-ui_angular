@@ -1,5 +1,4 @@
 import {Inject, Injectable} from '@angular/core';
-import {WINDOW} from '@acpaas-ui/ngx-components/utils';
 import {BehaviorSubject} from 'rxjs';
 import {distinctUntilChanged, map} from 'rxjs/operators';
 
@@ -7,6 +6,7 @@ import {LOCALSTORAGE_CONFIG} from '../localstorage.conf';
 import {Comparator, LocalstorageConfig, PathSelector, Selector} from '../types/localstorage.types';
 import {LocalstorageHelper} from '../localstorage.helper';
 import {MemoryStorage} from '../localstorage.polyfill';
+import {WINDOW} from '../../../../aui-utils/src/lib/window';
 
 // @dynamic
 @Injectable()

@@ -1,9 +1,9 @@
 import {async, inject, TestBed} from '@angular/core/testing';
-import {WINDOW} from '@acpaas-ui/ngx-components/utils';
 import {BehaviorSubject} from 'rxjs';
 
 import {LOCALSTORAGE_CONFIG} from '../localstorage.conf';
 import {LocalstorageService} from './localstorage.service';
+import {WINDOW} from '../../../../aui-utils/src/lib/window';
 
 const localstorageConfig = {
   storageType: 'localStorage',

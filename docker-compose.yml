@@ -4,10 +4,8 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        stdin_open: true
-        tty: true
         ports:
             - 4200:4200
         volumes:
-            - .:/code
+            - ./:/code
             - /code/node_modules
