@@ -39,7 +39,7 @@ describe('Flyout action directive without flyout zone', () => {
     comp = fixture.componentInstance;
     fixture.detectChanges();
     componentDebugElement = fixture.debugElement.query(By.directive(SelectableActionsDirective));
-    componentElement = <HTMLElement>componentDebugElement.nativeElement;
+    componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
   it('should open and close onClick', () => {
