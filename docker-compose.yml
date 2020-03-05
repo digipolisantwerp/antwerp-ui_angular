@@ -1,12 +1,11 @@
 version: '3'
 services:
     acpaas-ui:
-        build: 
+        build:
             context: .
             dockerfile: Dockerfile
-        command: sh
         stdin_open: true
-        tty: false
+        tty: true
         ports:
             - 4200:4200
         volumes:
