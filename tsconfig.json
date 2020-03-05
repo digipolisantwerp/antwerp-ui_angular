@@ -151,10 +151,10 @@
       "ngx-forms/*": [
         "dist/ngx-forms/*"
       ],
-      "ngx-utils": [
+      "@acpaas-ui/ngx-utils": [
         "dist/ngx-utils"
       ],
-      "ngx-utils/*": [
+      "@acpaas-ui/ngx-utils/*": [
         "dist/ngx-utils/*"
       ]
     }
