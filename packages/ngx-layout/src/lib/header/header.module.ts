@@ -1,20 +1,25 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Components} from './components';
-import {Directives} from './directives';
+import {HeaderComponent} from './components/header/header.component';
+import {HeaderContentDirective} from './directives/content.directive';
+import {HeaderLogoDirective} from './directives/logo.directive';
+import {HeaderMenuItemDirective} from './directives/menu-item.directive';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    ...Components,
-    ...Directives,
+    HeaderComponent,
+    HeaderContentDirective,
+    HeaderLogoDirective,
+    HeaderMenuItemDirective,
   ],
   exports: [
-    ...Components,
-    ...Directives,
+    HeaderComponent,
+    HeaderContentDirective,
+    HeaderLogoDirective,
+    HeaderMenuItemDirective,
   ],
 })
 export class HeaderModule {

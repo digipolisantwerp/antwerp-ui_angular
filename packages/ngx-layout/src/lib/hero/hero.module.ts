@@ -1,20 +1,22 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Components} from './components';
-import {Directives} from './directives';
+import {HeroComponent} from './components/hero/hero.component';
+import {HeroCardDirective} from './directives/hero-card.directive';
+import {HeroCtaDirective} from './directives/hero-cta.directive';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    ...Components,
-    ...Directives,
+    HeroComponent,
+    HeroCardDirective,
+    HeroCtaDirective,
   ],
   exports: [
-    ...Components,
-    ...Directives,
+    HeroComponent,
+    HeroCardDirective,
+    HeroCtaDirective,
   ],
 })
 export class HeroModule {

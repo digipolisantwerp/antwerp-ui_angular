@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-
-import {Components} from './components';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {SidebarItemComponent} from './components/sidebar-item/sidebar-item.component';
 
 @NgModule({
   imports: [
@@ -10,10 +10,12 @@ import {Components} from './components';
     RouterModule,
   ],
   declarations: [
-    Components,
+    SidebarComponent,
+    SidebarItemComponent,
   ],
   exports: [
-    Components,
+    SidebarComponent,
+    SidebarItemComponent,
   ],
 })
 export class SidebarModule {

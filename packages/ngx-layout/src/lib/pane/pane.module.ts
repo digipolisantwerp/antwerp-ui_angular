@@ -1,17 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Components} from './components';
+import {PaneComponent} from './components/pane/pane.component';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    ...Components,
+    PaneComponent,
   ],
   exports: [
-    ...Components,
+    PaneComponent,
   ],
 })
 export class PaneModule {

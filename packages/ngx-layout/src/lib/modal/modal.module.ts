@@ -1,23 +1,26 @@
 import {NgModule} from '@angular/core';
-
-import {Components, EntryComponents} from './components';
-import {Directives} from './directives';
-import {Services} from './services';
+import {ApproveModalComponent} from './components/approve-modal/approve-modal.component';
+import {ModalOverlayComponent} from './components/modal-overlay/modal-overlay.component';
+import {ApproveModalDirective} from './directives/approve.directive';
+import {ModalService} from './services/modal.service';
 
 @NgModule({
   providers: [
-    ...Services,
+    ModalService,
   ],
   declarations: [
-    ...Components,
-    ...Directives,
+    ApproveModalComponent,
+    ModalOverlayComponent,
+    ApproveModalDirective,
   ],
   exports: [
-    ...Components,
-    ...Directives,
+    ApproveModalComponent,
+    ModalOverlayComponent,
+    ApproveModalDirective,
   ],
   entryComponents: [
-    ...EntryComponents,
+    ApproveModalComponent,
+    ModalOverlayComponent,
   ],
 })
 export class ModalModule {
