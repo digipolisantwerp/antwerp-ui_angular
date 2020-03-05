@@ -1,84 +1,88 @@
-import { async, inject, TestBed } from '@angular/core/testing';
-import { NgRedux } from '@angular-redux/store';
-import { BehaviorSubject } from 'rxjs';
+import {async, inject, TestBed} from '@angular/core/testing';
+import {NgRedux} from '@angular-redux/store';
+import {BehaviorSubject} from 'rxjs';
 
-import { ContextService } from '../../services/context.service';
-import { ContextWriterService } from '../../services/context-writer.service';
-import { ContextActionCreator } from './context.actioncreator';
-import { CONTEXT_LOAD } from './context.actiontypes';
+import {ContextService} from '../../services/context.service';
+import {ContextWriterService} from '../../services/context-writer.service';
+import {ContextActionCreator} from './context.actioncreator';
+import {CONTEXT_LOAD} from './context.actiontypes';
 
 const injectService = cb => inject(
-	[ContextActionCreator],
-	(contextActions: ContextActionCreator) => cb(contextActions)
+  [ContextActionCreator],
+  (contextActions: ContextActionCreator) => cb(contextActions)
 );
 
 const context$ = new BehaviorSubject(null);
 
 describe('The ContextActionCreator', () => {
-	class NgReduxMock {
-		public _store = null;
-		public _store$ = new BehaviorSubject(null);
-		public dispatch() {}
-	}
+  class NgReduxMock {
+    public pStore = null;
+    // tslint:disable-next-line:variable-name
+    public _store$ = new BehaviorSubject(null);
 
-	class ContextServiceMock {
-		public context$ = context$;
-	}
+    public dispatch() {
+    }
+  }
 
-	class ContextWriterServiceMock {
-		public updateMetaTags() {}
-	}
+  class ContextServiceMock {
+    public context$ = context$;
+  }
 
-	// async beforeEach
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			providers: [
-				ContextActionCreator,
-				{ provide: NgRedux, useClass: NgReduxMock },
-				{ provide: ContextService, useClass: ContextServiceMock },
-				{ provide: ContextWriterService, useClass: ContextWriterServiceMock },
-			],
-		});
-	}));
+  class ContextWriterServiceMock {
+    public updateMetaTags() {
+    }
+  }
 
-	it('should subscribe to the ContextService context$', done => {
-		spyOn(context$, 'subscribe');
+  // async beforeEach
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        ContextActionCreator,
+        {provide: NgRedux, useClass: NgReduxMock},
+        {provide: ContextService, useClass: ContextServiceMock},
+        {provide: ContextWriterService, useClass: ContextWriterServiceMock},
+      ],
+    });
+  }));
 
-		injectService(contextActions => {
-			expect(contextActions.contextService.context$.subscribe).toHaveBeenCalled();
-			done();
-		})();
-	});
+  it('should subscribe to the ContextService context$', done => {
+    spyOn(context$, 'subscribe');
 
-	it('should subscribe to the NgRedux store$ if no store is configured yet', injectService(contextActions => {
-		spyOn(contextActions, 'subscribeToStore');
-		spyOn(contextActions.ngRedux, 'dispatch');
+    injectService(contextActions => {
+      expect(contextActions.contextService.context$.subscribe).toHaveBeenCalled();
+      done();
+    })();
+  });
 
-		contextActions.loadContext({});
+  it('should subscribe to the NgRedux store$ if no store is configured yet', injectService(contextActions => {
+    spyOn(contextActions, 'subscribeToStore');
+    spyOn(contextActions.ngRedux, 'dispatch');
 
-		expect(contextActions['subscribeToStore']).toHaveBeenCalled();
-		expect(contextActions.ngRedux.dispatch).not.toHaveBeenCalled();
-	}));
+    contextActions.loadContext({});
 
-	it('should dispatch the CONTEXT_LOAD action if the store is configured', injectService(contextActions => {
-		spyOn(contextActions.ngRedux, 'dispatch');
+    expect(contextActions.subscribeToStore).toHaveBeenCalled();
+    expect(contextActions.ngRedux.dispatch).not.toHaveBeenCalled();
+  }));
 
-		contextActions.ngRedux._store = true;
+  it('should dispatch the CONTEXT_LOAD action if the store is configured', injectService(contextActions => {
+    spyOn(contextActions.ngRedux, 'dispatch');
 
-		contextActions.loadContext({test: 'data'});
+    contextActions.ngRedux._store = true;
 
-		expect(contextActions.ngRedux.dispatch).toHaveBeenCalledWith({
-			type: CONTEXT_LOAD,
-			context: { test: 'data' },
-		});
-	}));
+    contextActions.loadContext({test: 'data'});
 
-	it('should call the ContextWriter if the context is not loaded from a route change', injectService(contextActions => {
-		spyOn(contextActions.contextWriter, 'updateMetaTags');
-		contextActions.ngRedux._store = true;
+    expect(contextActions.ngRedux.dispatch).toHaveBeenCalledWith({
+      type: CONTEXT_LOAD,
+      context: {test: 'data'},
+    });
+  }));
 
-		contextActions.loadContext({test: 'data'});
+  it('should call the ContextWriter if the context is not loaded from a route change', injectService(contextActions => {
+    spyOn(contextActions.contextWriter, 'updateMetaTags');
+    contextActions.ngRedux._store = true;
 
-		expect(contextActions.contextWriter.updateMetaTags).toHaveBeenCalledWith({test: 'data'});
-	}));
+    contextActions.loadContext({test: 'data'});
+
+    expect(contextActions.contextWriter.updateMetaTags).toHaveBeenCalledWith({test: 'data'});
+  }));
 });

@@ -44,16 +44,15 @@ export class CodeSnippetComponent implements OnChanges, AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       const allPreEl = this.el.nativeElement.querySelectorAll('pre');
 
-      for (let i = 0; i < allPreEl.length; i++) {
-        // Add class to pre-elements in markdown files
-        if (!allPreEl[i].classList.contains('a-pre')) {
-          allPreEl[i].className += ' a-pre';
+      for (const preElement of allPreEl) {
+        if (!preElement.classList.contains('a-pre')) {
+          preElement.className += ' a-pre';
           if (this.scrollable) {
-            allPreEl[i].className += ' a-pre--scrollable';
+            preElement.className += ' a-pre--scrollable';
           }
         }
 
-        this.highlightJsService.highlight(allPreEl[i]);
+        this.highlightJsService.highlight(preElement);
       }
     }
   }
