@@ -14,9 +14,7 @@ import {
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {get, isEqual} from 'lodash-es';
-
 import {FlyoutDirective, FlyoutZoneDirective} from '@acpaas-ui/ngx-flyout';
-
 import {SearchService} from '../../../shared/services/search.service';
 
 @Component({
