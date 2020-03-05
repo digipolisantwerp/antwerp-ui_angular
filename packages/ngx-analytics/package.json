@@ -1,7 +1,7 @@
 {
   "name": "@acpaas-ui/ngx-analytics",
   "version": "0.0.1",
-  "peerDependencies": {
+  "whitelistedNonPeerDependencies": {
     "@acpaas-ui/ngx-utils": "^3.0.0"
   }
 }
