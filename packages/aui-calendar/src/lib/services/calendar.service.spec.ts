@@ -34,7 +34,7 @@ describe('The Calendar Service', () => {
 
       expect(calendarService.months[4]).toBeDefined();
       expect(calendarService.months[4].length).toBe(5); // 5 weeks in april 2000
-      expect(calendarService['currentYear']).toEqual(2000);
+      expect(calendarService.currentYear).toEqual(2000);
     }));
 
     it('generates a new month if it was not found in the cache and stores it in the cache', injectService(calendarService => {

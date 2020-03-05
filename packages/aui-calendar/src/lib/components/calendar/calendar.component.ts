@@ -151,8 +151,8 @@ export class CalendarComponent implements OnInit, OnChanges {
     const complete = this.activeView === CALENDAR_VIEW_MONTH;
 
     this.selectDate.emit({
-      date: date,
-      complete: complete,
+      date,
+      complete,
     });
 
     if (!complete) {

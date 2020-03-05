@@ -21,7 +21,7 @@ class TestComponent {
   public selectedDate: Date;
   public range: DateRange;
 
-  selectDate(date) {
+  selectDate() {
   }
 }
 
@@ -233,7 +233,7 @@ describe('The Calendar Component', () => {
       calendar.pickDate(date);
 
       expect(calendar.selectDate.emit).toHaveBeenCalledWith({
-        date: date,
+        date,
         complete: true,
       });
       expect(calendar.switchView).not.toHaveBeenCalled();
@@ -247,7 +247,7 @@ describe('The Calendar Component', () => {
       calendar.pickDate(date);
 
       expect(calendar.selectDate.emit).toHaveBeenCalledWith({
-        date: date,
+        date,
         complete: false,
       });
       expect(calendar.switchView).toHaveBeenCalled();

@@ -70,7 +70,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     this.selectDate.emit(DateHelper.updateDate(selectedDate, day.date));
   }
 
-  private hasChanged(changes: SimpleChanges, prop: string): Boolean {
+  private hasChanged(changes: SimpleChanges, prop: string): boolean {
     const current = get(changes, `${prop}.currentValue`);
     const previous = get(changes, `${prop}.previousValue`);
     const currentValue = current instanceof Date ? current.valueOf() : 0;
@@ -89,7 +89,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     return monthHasChanged ? -1 : current.getDate();
   }
 
-  private dayIsAvailable(day: Day, range: DateRangeMap): Boolean {
+  private dayIsAvailable(day: Day, range: DateRangeMap): boolean {
     let dateRange = range.current;
 
     if (day.padding) {

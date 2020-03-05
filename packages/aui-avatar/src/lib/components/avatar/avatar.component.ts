@@ -1,10 +1,10 @@
 import {Component, Input} from '@angular/core';
 
 export enum sizes {
-  S = <any>'S',
-  M = <any>'M',
-  L = <any>'L',
-  R = <any>'R',
+  S = 'S',
+  M = 'M',
+  L = 'L',
+  R = 'R',
 }
 
 @Component({

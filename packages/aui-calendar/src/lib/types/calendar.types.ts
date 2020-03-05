@@ -7,7 +7,7 @@ export type MonthLabelsConfig = string[];
 
 export interface DatepickerResult {
   date: Date;
-  complete: Boolean;
+  complete: boolean;
 }
 
 export interface DateRangeMap {
