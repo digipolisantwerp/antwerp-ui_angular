@@ -1,0 +1,11 @@
+{
+  "name": "@acpaas-ui/ngx-calendar",
+  "version": "0.0.1",
+  "acpaas-ui": {
+    "dependencies": []
+  },
+  "whitelistedNonPeerDependencies": {
+    "@acpaas-ui/js-date-utils": "~1.0.1",
+    "lodash-es": "~4.17.10"
+  }
+}

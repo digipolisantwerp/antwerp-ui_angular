@@ -1,33 +1,33 @@
 import {NgModule} from '@angular/core';
-import {FooterModule} from '../../../aui-layout/src/lib/footer';
-import {LogoModule} from '../../../aui-logo/src/lib';
-import {HeaderModule} from '../../../aui-layout/src/lib/header';
-import {NavigationMenuModule} from '../../../aui-navigation-menu/src/lib';
-import {CodeSnippetModule} from '../../../aui-code-snippet/src/lib';
-import {AnalyticsModule} from '../../../aui-analytics/src/lib';
+import {FooterModule} from '../../../ngx-layout/src/lib/footer';
+import {LogoModule} from '../../../ngx-logo/src/lib';
+import {HeaderModule} from '../../../ngx-layout/src/lib/header';
+import {NavigationMenuModule} from '../../../ngx-navigation-menu/src/lib';
+import {CodeSnippetModule} from '../../../ngx-code-snippet/src/lib';
+import {AnalyticsModule} from '../../../ngx-analytics/src/lib';
 import {AgendaModule} from '../../../ngx-agenda/src/lib';
-import {AvatarModule} from '../../../aui-avatar/src/lib';
-import {CalendarModule} from '../../../aui-calendar/src/lib';
-import {ContextModule} from '../../../aui-context/src/lib';
-import {FlyoutModule} from '../../../aui-flyout/src/lib/flyout';
-import {FlyoutButtonModule} from '../../../aui-flyout/src/lib/flyout-button';
-import {LocalstorageModule} from '../../../aui-localstorage/src/lib';
-import {LeafletModule} from '../../../aui-map/src/lib/leaflet';
-import {PaginationModule} from '../../../aui-pagination/src/lib/pagination';
-import {ItemCounterModule} from '../../../aui-pagination/src/lib/item-counter';
-import {ProgressBarModule} from '../../../aui-progress-bar/src/lib';
-import {TableModule} from '../../../aui-table/src/lib';
-import {UserMenuModule} from '../../../aui-user-menu/src/lib';
-import {SelectableListModule} from '../../../aui-selectable-list/src/lib';
-import {AutoCompleteModule} from '../../../aui-forms/src/lib/auto-complete';
-import {DatepickerModule} from '../../../aui-forms/src/lib/datepicker';
-import {MaskModule} from '../../../aui-forms/src/lib/mask';
-import {RangeSliderModule} from '../../../aui-forms/src/lib/range-slider';
-import {SearchFilterModule} from '../../../aui-forms/src/lib/search-filter';
-import {TimepickerModule} from '../../../aui-forms/src/lib/timepicker';
-import {UploadModule} from '../../../aui-forms/src/lib/upload';
-import {WysiwygModule} from '../../../aui-forms/src/lib/wysiwyg';
-import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '@acpaas-ui/ngx-components/layout';
+import {AvatarModule} from '../../../ngx-avatar/src/lib';
+import {CalendarModule} from '../../../ngx-calendar/src/lib';
+import {ContextModule} from '../../../ngx-context/src/lib';
+import {FlyoutModule} from '../../../ngx-flyout/src/lib/flyout';
+import {FlyoutButtonModule} from '../../../ngx-flyout/src/lib/flyout-button';
+import {LocalstorageModule} from '../../../ngx-localstorage/src/lib';
+import {LeafletModule} from '../../../ngx-map/src/lib/leaflet';
+import {PaginationModule} from '../../../ngx-pagination/src/lib/pagination';
+import {ItemCounterModule} from '../../../ngx-pagination/src/lib/item-counter';
+import {ProgressBarModule} from '../../../ngx-progress-bar/src/lib';
+import {TableModule} from '../../../ngx-table/src/lib';
+import {UserMenuModule} from '../../../ngx-user-menu/src/lib';
+import {SelectableListModule} from '../../../ngx-selectable-list/src/lib';
+import {AutoCompleteModule} from '../../../ngx-forms/src/lib/auto-complete';
+import {DatepickerModule} from '../../../ngx-forms/src/lib/datepicker';
+import {MaskModule} from '../../../ngx-forms/src/lib/mask';
+import {RangeSliderModule} from '../../../ngx-forms/src/lib/range-slider';
+import {SearchFilterModule} from '../../../ngx-forms/src/lib/search-filter';
+import {TimepickerModule} from '../../../ngx-forms/src/lib/timepicker';
+import {UploadModule} from '../../../ngx-forms/src/lib/upload';
+import {WysiwygModule} from '../../../ngx-forms/src/lib/wysiwyg';
+import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '@acpaas-ui/ngx-layout';
 import {FilterModule} from '@acpaas-ui/ngx-utils';
 import {LabelsModule} from '../../../ngx-utils/src/lib/labels/labels.module';
 import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
@@ -75,7 +75,7 @@ import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
     CookieconsentModule.forRoot({
       autoInit: false,
       content: {
-        message: 'I am the cookie consent aui-logo. Will you allow my cookies?',
+        message: 'I am the cookie consent ngx-logo. Will you allow my cookies?',
         dismiss: 'Allow cookies',
         link: 'Learn more',
         href: 'http://cookiepedia.co.uk/all-about-cookies',

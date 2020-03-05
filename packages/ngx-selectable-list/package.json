@@ -1,0 +1,7 @@
+{
+  "name": "@acpaas-ui/ngx-selectable-list",
+  "version": "0.0.1",
+  "acpaas-ui": {
+    "dependencies": []
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@acpaas-ui/ngx-table",
+  "version": "0.0.1",
+  "acpaas-ui": {
+    "dependencies": []
+  },
+  "whitelistedNonPeerDependencies": {
+    "short-unique-id": "1.1.1"
+  }
+}

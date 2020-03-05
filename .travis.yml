@@ -16,7 +16,7 @@ script:
   - npm run build:prod
 
 deploy:
-  provider: aui-forms
+  provider: ngx-forms
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
