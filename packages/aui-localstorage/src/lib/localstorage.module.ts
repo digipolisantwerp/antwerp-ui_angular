@@ -3,7 +3,7 @@ import {ModuleWithProviders, NgModule} from '@angular/core';
 import {LocalstorageConfig} from './types/localstorage.types';
 import {LocalstorageService} from './services/localstorage.service';
 import {DEFAULT_LOCALSTORAGE_CONFIG, LOCALSTORAGE_CONFIG} from './localstorage.conf';
-import {WINDOW_PROVIDERS, WindowModule} from '../../../aui-utils/src/lib/window';
+import {WINDOW_PROVIDERS, WindowModule} from '@acpaas-ui/ngx-utils';
 
 @NgModule({
   imports: [

@@ -1,11 +1,11 @@
-# @acpaas-ui/ngx-components/utils
+# @acpaas-ui/ngx-utils
 
 The `LabelsModule` exposes `InterpolateLabelPipe`, `PluralizeLabelPipe`, the `interpolate` function and the types `Label` and `ReplaceData` to handle (template) labels in isolated components.
 
 ## Usage
 
 ```typescript
-import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
+import { LabelsModule } from '@acpaas-ui/ngx-utils';
 ```
 
 ## Documentation
@@ -15,7 +15,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ### Examples
 
 ```typescript
-import { LabelsModule } from '@acpaas-ui/ngx-components/utils';
+import { LabelsModule } from '@acpaas-ui/ngx-utils';
 
 @NgModule({
     imports: [
@@ -27,7 +27,7 @@ export class AppModule {};
 ```
 
 ```typescript
-import { Label, interpolate } from '@acpaas-ui/ngx-components/utils';
+import { Label, interpolate } from '@acpaas-ui/ngx-utils';
 ```
 
 #### Interpolate

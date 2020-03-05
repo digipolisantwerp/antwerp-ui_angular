@@ -28,9 +28,9 @@ import {TimepickerModule} from '../../../aui-forms/src/lib/timepicker';
 import {UploadModule} from '../../../aui-forms/src/lib/upload';
 import {WysiwygModule} from '../../../aui-forms/src/lib/wysiwyg';
 import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '@acpaas-ui/ngx-components/layout';
-import {FilterModule} from '@acpaas-ui/ngx-components/utils';
-import {LabelsModule} from '../../../aui-utils/src/lib/labels';
-import {WindowModule} from '../../../aui-utils/src/lib/window';
+import {FilterModule} from '@acpaas-ui/ngx-utils';
+import {LabelsModule} from '../../../ngx-utils/src/lib/labels/labels.module';
+import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
 
 @NgModule({
   imports: [

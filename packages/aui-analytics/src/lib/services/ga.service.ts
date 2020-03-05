@@ -3,7 +3,7 @@ import {Location} from '@angular/common';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 
-import {WINDOW} from '@acpaas-ui/ngx-components/utils';
+import {WINDOW} from '@acpaas-ui/ngx-utils';
 
 @Injectable()
 export class GAService {

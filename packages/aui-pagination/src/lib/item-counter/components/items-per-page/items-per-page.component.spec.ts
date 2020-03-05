@@ -3,7 +3,7 @@ import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
-import {InterpolateLabelPipe, PluralizeLabelPipe} from '@acpaas-ui/ngx-components/utils';
+import {InterpolateLabelPipe, PluralizeLabelPipe} from '@acpaas-ui/ngx-utils';
 
 import {ITEMS_PER_PAGE_LABEL} from '../../item-counter.conf';
 import {ItemsPerPageComponent, sizes} from './items-per-page.component';

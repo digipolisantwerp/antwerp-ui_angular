@@ -3,7 +3,7 @@ import {async, inject, TestBed} from '@angular/core/testing';
 import {Router} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 
-import {WINDOW} from '@acpaas-ui/ngx-components/utils';
+import {WINDOW} from '@acpaas-ui/ngx-utils';
 
 import {GAService} from './ga.service';
 

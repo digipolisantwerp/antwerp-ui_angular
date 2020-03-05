@@ -1,6 +1,6 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 
-import {WindowModule} from '@acpaas-ui/ngx-components/utils';
+import {WindowModule} from '@acpaas-ui/ngx-utils';
 
 import {Services} from './services';
 import {Directives} from './directives';

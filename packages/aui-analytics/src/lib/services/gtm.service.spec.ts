@@ -1,6 +1,6 @@
 import {async, inject, TestBed} from '@angular/core/testing';
 
-import {WINDOW} from '@acpaas-ui/ngx-components/utils';
+import {WINDOW} from '@acpaas-ui/ngx-utils';
 
 import {GTMService} from './gtm.service';
 import {GTM_CONFIG, GTM_CONFIG_DEFAULT} from '../analytics.conf';

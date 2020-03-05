@@ -1,6 +1,6 @@
 import {Inject, ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {WindowModule} from '@acpaas-ui/ngx-components/utils';
+import {WindowModule} from '@acpaas-ui/ngx-utils';
 import {merge} from 'lodash-es';
 import 'cookieconsent';
 

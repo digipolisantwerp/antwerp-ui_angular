@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
-import {Label, LabelsModule} from '@acpaas-ui/ngx-components/utils';
+import {Label, LabelsModule} from '@acpaas-ui/ngx-utils';
 
 import {Components} from './components';
 

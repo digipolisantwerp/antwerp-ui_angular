@@ -3,7 +3,7 @@ import {BehaviorSubject} from 'rxjs';
 
 import {LOCALSTORAGE_CONFIG} from '../localstorage.conf';
 import {LocalstorageService} from './localstorage.service';
-import {WINDOW} from '../../../../aui-utils/src/lib/window';
+import {WINDOW} from '@acpaas-ui/ngx-utils';
 
 const localstorageConfig = {
   storageType: 'localStorage',

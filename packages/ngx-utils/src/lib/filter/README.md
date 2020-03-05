@@ -1,11 +1,11 @@
-# @acpaas-ui/ngx-components/utils
+# @acpaas-ui/ngx-utils
 
 Use the filter module to filter a set of data. The module provides easy to use filter components, a filter entitiy and a filter class.
 
 ## Usage
 
 ```typescript
-import { FilterModule } from '@acpaas-ui/ngx-components/utils';
+import { FilterModule } from '@acpaas-ui/ngx-utils';
 ```
 
 ## Documentation
@@ -55,7 +55,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 ### Examples
 
 ```typescript
-import { FilterModule } from '@acpaas-ui/ngx-components/utils';
+import { FilterModule } from '@acpaas-ui/ngx-utils';
 
 @NgModule({
     imports: [
@@ -67,7 +67,7 @@ export class AppModule {};
 ```
 
 ```typescript
-import { Filter, FilterService } from '@acpaas-ui/ngx-components/utils';
+import { Filter, FilterService } from '@acpaas-ui/ngx-utils';
 
     public searchFilter = new Filter();
     public checkFilter = new Filter();

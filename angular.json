@@ -755,33 +755,33 @@
         }
       }
     },
-    "aui-utils": {
+    "ngx-utils": {
       "projectType": "library",
-      "root": "packages/aui-utils",
-      "sourceRoot": "packages/aui-utils/src",
+      "root": "packages/ngx-utils",
+      "sourceRoot": "packages/ngx-utils/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "packages/aui-utils/tsconfig.lib.json",
-            "project": "packages/aui-utils/ng-package.json"
+            "tsConfig": "packages/ngx-utils/tsconfig.lib.json",
+            "project": "packages/ngx-utils/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "packages/aui-utils/src/test.ts",
-            "tsConfig": "packages/aui-utils/tsconfig.spec.json",
-            "karmaConfig": "packages/aui-utils/karma.conf.js"
+            "main": "packages/ngx-utils/src/test.ts",
+            "tsConfig": "packages/ngx-utils/tsconfig.spec.json",
+            "karmaConfig": "packages/ngx-utils/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "packages/aui-utils/tsconfig.lib.json",
-              "packages/aui-utils/tsconfig.spec.json"
+              "packages/ngx-utils/tsconfig.lib.json",
+              "packages/ngx-utils/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

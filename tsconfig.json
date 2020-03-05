@@ -151,11 +151,11 @@
       "aui-forms/*": [
         "dist/aui-forms/*"
       ],
-      "aui-utils": [
-        "dist/aui-utils"
+      "ngx-utils": [
+        "dist/ngx-utils"
       ],
-      "aui-utils/*": [
-        "dist/aui-utils/*"
+      "ngx-utils/*": [
+        "dist/ngx-utils/*"
       ]
     }
   },

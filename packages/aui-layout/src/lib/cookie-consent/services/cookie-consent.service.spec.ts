@@ -1,7 +1,7 @@
 import {async, inject, TestBed} from '@angular/core/testing';
 
 import {COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG} from '../cookie-consent.conf';
-import {WINDOW} from '@acpaas-ui/ngx-components/utils';
+import {WINDOW} from '@acpaas-ui/ngx-utils';
 import {CookieconsentService} from './cookie-consent.service';
 
 const cookieconsentConfig: any = {};
