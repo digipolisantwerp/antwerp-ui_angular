@@ -2,7 +2,7 @@ import {MenuService} from '../../services/menu.service';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import * as sinon from 'sinon';
 import {MenuComponent} from './menu.component';
-import {COMPONENTS} from '../index';
+import {COMPONENTS} from '../components';
 import {cold, getTestScheduler, hot} from 'jasmine-marbles';
 import {NavigationStart, Router, RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';

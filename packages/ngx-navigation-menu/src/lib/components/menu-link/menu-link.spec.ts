@@ -1,5 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {COMPONENTS} from '../index';
+import {COMPONENTS} from '../components';
 import {MenuLinkComponent} from './menu-link.component';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';

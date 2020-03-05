@@ -1,19 +1,18 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Components} from './components';
 import {PaginationLabels} from './types/pagination.types';
 import {PAGINATION_LABELS, PAGINATION_LABELS_DEFAULT} from './pagination.conf';
+import {PaginationComponent} from './components/pagination/pagination.component';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    ...Components,
+    PaginationComponent,
   ],
   exports: [
-    ...Components,
+    PaginationComponent,
   ],
   providers: [
     {provide: PAGINATION_LABELS, useValue: PAGINATION_LABELS_DEFAULT},

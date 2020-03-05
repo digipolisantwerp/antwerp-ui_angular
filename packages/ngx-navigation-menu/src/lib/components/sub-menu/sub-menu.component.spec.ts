@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {SubMenuComponent} from './sub-menu.component';
-import {COMPONENTS} from '../index';
+import {COMPONENTS} from '../components';
 import * as sinon from 'sinon';
 import {MenuService} from '../../services/menu.service';
 import {RouterModule} from '@angular/router';
