@@ -7,7 +7,7 @@
     The items will be styles (and hidden/shown) using CSS.
     -->
     <aui-menu-tab *ngIf="shouldShowMoreTab$ | async" [icon]="configuration.moreIcon">
-      <aui-menu-link>{{ _translations?.lblMore }}</aui-menu-link>
+      <aui-menu-link>{{ pTranslations?.lblMore }}</aui-menu-link>
       <aui-sub-menu>
         <aui-sub-menu-item (click)="tab.followMenuTab($event)" *ngFor="let tab of (moreMenuItems$ | async)"
                            [forceShowArrow]='!!tab.subMenu'>
@@ -18,7 +18,7 @@
   </nav>
   <div *ngIf="(hasIconsInTabs$ | async)" class="o-menu__hide-cta">
     <a (click)="toggleDocking($event)" *ngIf="(showHideMenuLabel$ | async)"
-       href="#">{{ _translations?.lblHideMenu }}&nbsp;<span
+       href="#">{{ pTranslations?.lblHideMenu }}&nbsp;<span
       class="fa fa-angle-double-left"></span></a>
     <a (click)="toggleDocking($event)" *ngIf="(showRevealMenuLabel$ | async)" href="#"><span
       class="fa fa-angle-double-right"></span></a>

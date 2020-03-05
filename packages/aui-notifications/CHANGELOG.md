@@ -1,5 +1,9 @@
 # Changelog
 
+# Deprecated
+
+This package has been deprecated as of version 5. Use the [Angular Toaster](https://www.npmjs.com/package/ngx-toastr) instead.
+
 # [5.0.0] 2018-03-27
 ### Changed
 - [BREAKING] consistent plurals -> rename all to "notifications"

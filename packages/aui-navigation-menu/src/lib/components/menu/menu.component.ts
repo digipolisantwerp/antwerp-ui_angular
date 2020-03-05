@@ -60,7 +60,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
   @Input()	// Translations coming from the user
   translations: Menu.Translations;
   public configuration: Menu.ModuleConfiguration;
-  public _translations: Menu.Translations;	// Real translations from the service
+  public pTranslations: Menu.Translations;	// Real translations from the service
   /**
    * Helper used to hook observables to the content is init lifecycle hook
    */
@@ -73,7 +73,7 @@ export class MenuComponent implements OnInit, AfterContentChecked, OnDestroy {
   ngOnInit() {
     this.menuService.translations = this.translations;
     this.configuration = this.menuService.configuration;
-    this._translations = this.menuService.translate();
+    this.pTranslations = this.menuService.translate();
     // observable will change css host class of this component‹
     this.isDocked$ = this.menuService.state$.pipe(
       select(state => state.docked)

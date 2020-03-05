@@ -3,9 +3,9 @@ import {ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Inject, I
 import {ITEMS_PER_PAGE_LABEL} from '../../item-counter.conf';
 
 export enum sizes {
-  S = <any>'S',
-  R = <any>'R',
-  L = <any>'L',
+  S = 'S',
+  R = 'R',
+  L = 'L',
 }
 
 @Component({

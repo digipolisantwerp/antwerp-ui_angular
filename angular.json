@@ -545,41 +545,6 @@
         }
       }
     },
-    "aui-notifications": {
-      "projectType": "library",
-      "root": "packages/aui-notifications",
-      "sourceRoot": "packages/aui-notifications/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "packages/aui-notifications/tsconfig.lib.json",
-            "project": "packages/aui-notifications/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/aui-notifications/src/test.ts",
-            "tsConfig": "packages/aui-notifications/tsconfig.spec.json",
-            "karmaConfig": "packages/aui-notifications/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "packages/aui-notifications/tsconfig.lib.json",
-              "packages/aui-notifications/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "aui-pagination": {
       "projectType": "library",
       "root": "packages/aui-pagination",

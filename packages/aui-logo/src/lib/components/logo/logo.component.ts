@@ -9,7 +9,7 @@ export class LogoComponent {
   @Input() title = 'Officieel Logo Antwerpen.';
   @Input() src = 'http://cdn.antwerpen.be/core_branding_scss/4.0.0/assets/images/a-logo.svg';
   @Input() link?: string;
-  @Input() onClick?: Function;
+  @Input() onClick?: (event: MouseEvent) => void;
 
   constructor(
     private router: Router

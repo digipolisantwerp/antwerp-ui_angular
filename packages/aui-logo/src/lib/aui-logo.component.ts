@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'lib-aui-logo',
+  selector: 'aui-logo',
   template: `
     <p>
       aui-logo works!
