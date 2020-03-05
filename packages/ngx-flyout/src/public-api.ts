@@ -1,2 +1,2 @@
-export * from './lib/flyout';
-export * from './lib/flyout-button';
+export * from './lib/flyout/index';
+export * from './lib/flyout-button/index';

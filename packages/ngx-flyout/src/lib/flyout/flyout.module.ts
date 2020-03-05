@@ -1,21 +1,29 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {Directives} from './directives';
-import {Services} from './services';
+import {FlyoutActionDirective} from './directives/flyout-action.directive';
+import {FlyoutCloseDirective} from './directives/flyout-close.directive';
+import {FlyoutZoneDirective} from './directives/flyout-zone.directive';
+import {FlyoutDirective} from './directives/flyout.directive';
+import {FlyoutService} from './services/flyout.service';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    Directives,
+    FlyoutActionDirective,
+    FlyoutCloseDirective,
+    FlyoutZoneDirective,
+    FlyoutDirective,
   ],
   exports: [
-    Directives,
+    FlyoutActionDirective,
+    FlyoutCloseDirective,
+    FlyoutZoneDirective,
+    FlyoutDirective
   ],
   providers: [
-    Services,
+    FlyoutService,
   ],
 })
 export class FlyoutModule {
