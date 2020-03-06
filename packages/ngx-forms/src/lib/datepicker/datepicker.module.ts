@@ -11,7 +11,7 @@ import {
   CalendarModule
 } from '@acpaas-ui/ngx-calendar';
 
-import {MaskModule} from '../mask/public-api';
+import {MaskModule} from '../mask/mask.module';
 
 import {DatepickerComponent} from './components/datepicker/datepicker.component';
 import {DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS} from './datepicker.conf';
