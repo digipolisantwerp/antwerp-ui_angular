@@ -39,7 +39,7 @@ describe('The Month View Event Slots Component', () => {
 
     comp = fixture.componentInstance;
 
-    de = fixture.debugElement.query(By.css('.ngx-agenda-month-view-event-slots'));
+    de = fixture.debugElement.query(By.css('.aui-agenda-month-view-event-slots'));
 
     el = de.nativeElement;
   });
