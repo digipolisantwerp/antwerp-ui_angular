@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Custom scripts for generating new packages were removed
 - All libraries are Angular-standard compliant
 - Redux version locked on 4.0.1 due to lack of support for @angular-redux/store v.10
+- Scope of the packages was changed. Now every package is under @acpaas-ui/ngx-<package-name>
 
 ## [3.3.0] - 2020-01-31
 
