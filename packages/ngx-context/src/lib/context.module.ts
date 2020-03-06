@@ -1,9 +1,6 @@
 import {Inject, ModuleWithProviders, NgModule} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router, RouterModule} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
-
-import {Services} from './services/index';
-
 import {CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT} from './context.conf';
 import {ContextService} from './services/context.service';
 import {ContextWriterService} from './services/context-writer.service';
@@ -15,7 +12,8 @@ import {RouterHelper} from './utils/router.helper';
     RouterModule,
   ],
   providers: [
-    Services,
+    ContextService,
+    ContextWriterService,
     {provide: CONTEXT_CONFIG, useValue: CONTEXT_CONFIG_DEFAULT},
   ],
 })
@@ -53,7 +51,8 @@ export class ContextModule {
       ngModule: ContextModule,
       providers: [
         {provide: CONTEXT_CONFIG, useValue: metaConfig},
-        ...Services,
+        ContextService,
+        ContextWriterService,
       ],
     };
   }

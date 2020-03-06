@@ -4,7 +4,8 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "lodash-es": "lodashEs"
+      "lodash-es": "lodashEs",
+      "@acpaas-ui/ngx-utils": "ngxUtils"
     }
   }
 }

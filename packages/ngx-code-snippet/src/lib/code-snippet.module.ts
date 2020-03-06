@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HighlightJsModule, HighlightJsService} from 'angular2-highlight-js';
-
-import {Components} from './components';
+import {CodeSnippetComponent} from './components/code-snippet/code-snippet.component';
 
 @NgModule({
   imports: [
@@ -10,13 +9,13 @@ import {Components} from './components';
     HighlightJsModule,
   ],
   declarations: [
-    ...Components,
+    CodeSnippetComponent,
   ],
   providers: [
     HighlightJsService,
   ],
   exports: [
-    ...Components,
+    CodeSnippetComponent,
   ],
 })
 export class CodeSnippetModule {
