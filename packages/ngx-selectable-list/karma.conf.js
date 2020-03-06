@@ -22,7 +22,7 @@ module.exports = function (config) {
       }
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../../coverage/ngx-agenda'),
+      dir: require('path').join(__dirname, '../../coverage/ngx-selectable-list'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
