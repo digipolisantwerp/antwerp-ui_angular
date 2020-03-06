@@ -12,7 +12,6 @@ import {ContextModule} from '../../../ngx-context/src/public-api';
 import {FlyoutModule} from '../../../ngx-flyout/src/lib/flyout/flyout.module';
 import {FlyoutButtonModule} from '../../../ngx-flyout/src/lib/flyout-button/flyout-button.module';
 import {LocalstorageModule} from '../../../ngx-localstorage/src/public-api';
-import {LeafletModule} from '../../../ngx-map/src/lib';
 import {PaginationModule} from '../../../ngx-pagination/src/lib/pagination/public-api';
 import {ItemCounterModule} from '../../../ngx-pagination/src/lib/item-counter/public-api';
 import {ProgressBarModule} from '../../../ngx-progress-bar/src/public-api';
@@ -50,7 +49,6 @@ import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
       storageType: 'sessionStorage',
       identifier: 'my-app-v1',
     }),
-    LeafletModule,
     PaginationModule,
     ItemCounterModule,
     ProgressBarModule,
@@ -121,7 +119,6 @@ import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
     FlyoutModule,
     FlyoutButtonModule,
     LocalstorageModule,
-    LeafletModule,
     PaginationModule,
     ItemCounterModule,
     ProgressBarModule,

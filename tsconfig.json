@@ -31,18 +31,6 @@
       "@acpaas-ui/ngx-logo/*": [
         "dist/ngx-logo/*"
       ],
-      "@acpaas-ui/ngx-logo": [
-        "dist/ngx-logo"
-      ],
-      "@acpaas-ui/ngx-logo/*": [
-        "dist/ngx-logo/*"
-      ],
-      "@acpaas-ui/ngx-layout": [
-        "dist/ngx-layout"
-      ],
-      "@acpaas-ui/ngx-layout/*": [
-        "dist/ngx-layout/*"
-      ],
       "@acpaas-ui/ngx-navigation-menu": [
         "dist/ngx-navigation-menu"
       ],
@@ -103,12 +91,6 @@
       "@acpaas-ui/ngx-localstorage/*": [
         "dist/ngx-localstorage/*"
       ],
-      "@acpaas-ui/ngx-map": [
-        "dist/ngx-map"
-      ],
-      "@acpaas-ui/ngx-map/*": [
-        "dist/ngx-map/*"
-      ],
       "@acpaas-ui/ngx-pagination": [
         "dist/ngx-pagination"
       ],
@@ -150,6 +132,12 @@
       ],
       "@acpaas-ui/ngx-utils/*": [
         "dist/ngx-utils/*"
+      ],
+      "ngx-leaflet": [
+        "dist/ngx-leaflet"
+      ],
+      "ngx-leaflet/*": [
+        "dist/ngx-leaflet/*"
       ]
     }
   },

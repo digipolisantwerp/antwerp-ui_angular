@@ -510,41 +510,6 @@
         }
       }
     },
-    "ngx-map": {
-      "projectType": "library",
-      "root": "packages/ngx-map",
-      "sourceRoot": "packages/ngx-map/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "packages/ngx-map/tsconfig.lib.json",
-            "project": "packages/ngx-map/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/ngx-map/src/test.ts",
-            "tsConfig": "packages/ngx-map/tsconfig.spec.json",
-            "karmaConfig": "packages/ngx-map/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "packages/ngx-map/tsconfig.lib.json",
-              "packages/ngx-map/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "ngx-pagination": {
       "projectType": "library",
       "root": "packages/ngx-pagination",
@@ -782,6 +747,41 @@
             "tsConfig": [
               "packages/ngx-utils/tsconfig.lib.json",
               "packages/ngx-utils/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-leaflet": {
+      "projectType": "library",
+      "root": "packages/ngx-leaflet",
+      "sourceRoot": "packages/ngx-leaflet/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/ngx-leaflet/tsconfig.lib.json",
+            "project": "packages/ngx-leaflet/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/ngx-leaflet/src/test.ts",
+            "tsConfig": "packages/ngx-leaflet/tsconfig.spec.json",
+            "karmaConfig": "packages/ngx-leaflet/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/ngx-leaflet/tsconfig.lib.json",
+              "packages/ngx-leaflet/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
