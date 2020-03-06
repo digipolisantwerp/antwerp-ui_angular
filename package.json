@@ -49,7 +49,7 @@
     "ng2-ckeditor": "^1.2.7",
     "redux": "4.0.1",
     "rxjs": "~6.4.0",
-    "short-unique-id": "^2.0.1",
+    "short-unique-id": "^1.1.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

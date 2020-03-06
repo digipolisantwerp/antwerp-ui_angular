@@ -2,13 +2,10 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {FilterService} from './services/filter.service';
-import {CheckboxFilterComponent, InputFilterComponent, SelectFilterComponent} from '../../public-api';
+import {CheckboxFilterComponent} from './components/checkbox-filter/checkbox-filter.component';
+import {InputFilterComponent} from './components/input-filter/input-filter.component';
+import {SelectFilterComponent} from './components/select-filter/select-filter.component';
 
-const COMPONENTS = [
-  CheckboxFilterComponent,
-  InputFilterComponent,
-  SelectFilterComponent,
-];
 
 @NgModule({
   imports: [
@@ -16,13 +13,17 @@ const COMPONENTS = [
     FormsModule,
   ],
   declarations: [
-    ...COMPONENTS,
+    CheckboxFilterComponent,
+    InputFilterComponent,
+    SelectFilterComponent
   ],
   providers: [
     FilterService,
   ],
   exports: [
-    ...COMPONENTS,
+    CheckboxFilterComponent,
+    InputFilterComponent,
+    SelectFilterComponent
   ],
 })
 export class FilterModule {

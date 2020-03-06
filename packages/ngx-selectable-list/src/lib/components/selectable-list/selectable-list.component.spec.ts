@@ -25,7 +25,7 @@ describe('The Selectablelist Component', () => {
     comp = fixture.componentInstance; // BannerComponent test instance
 
     // query for the title <h1> by CSS element selector
-    de = fixture.debugElement.query(By.css('.ngx-selectable-list'));
+    de = fixture.debugElement.query(By.css('.aui-selectable-list'));
     el = de.nativeElement;
   });
 
