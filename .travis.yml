@@ -13,7 +13,7 @@ branches:
 script:
   - npm run lint
   - npm test
-  - npm run build:prod
+  -
 
 deploy:
   provider: ngx-forms
