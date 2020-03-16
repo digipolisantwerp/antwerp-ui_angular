@@ -11,9 +11,10 @@ branches:
     - master
 
 script:
+  - npm run build:all
   - npm run lint
   - npm test
-  -
+  - npm run build:prod
 
 deploy:
   provider: ngx-forms

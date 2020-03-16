@@ -1,5 +1,5 @@
 src
-dist/ngx-components
+dist
 .*
 angular.json
 tsconfig.json

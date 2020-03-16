@@ -1,4 +1,4 @@
-# @acpaas-ui/agenda
+# @acpaas-ui/ngx-agenda
 The `@acpaas-ui/agenda` module provides the `aui-agenda` component which can be used as a calendar to display events. At the moment the component can only display a month view.
 
 ## Installation
