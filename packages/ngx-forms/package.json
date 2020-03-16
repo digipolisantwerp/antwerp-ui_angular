@@ -1,14 +1,22 @@
 {
   "name": "@acpaas-ui/ngx-forms",
   "version": "0.0.1",
-  "whitelistedNonPeerDependencies": {
+  "dependencies": {
     "@acpaas-ui/ngx-calendar": "^3.0.0",
     "@acpaas-ui/ngx-flyout": "^3.0.0",
     "@acpaas-ui/ngx-progress-bar": "^3.0.0",
     "@acpaas-ui/ngx-selectable-list": "^3.0.0",
     "@acpaas-ui/js-date-utils": "~1.0.1",
-    "inputmask": "~3.3.11",
+    "@a-ui/core": "^4.1.0",
+    "@a-ui/acpaas": "^4.1.0",
+    "inputmask": "~5.0.3",
     "lodash-es": "~4.17.10",
     "ng2-ckeditor": "~1.2.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/forms": "~8.2.14"
   }
 }

@@ -7,5 +7,9 @@
       "angular2-highlight-js": "angular2HighlightJs",
       "marked": "_marked"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "angular2-highlight-js",
+    "marked"
+  ]
 }

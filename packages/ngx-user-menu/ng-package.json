@@ -6,5 +6,8 @@
     "umdModuleIds": {
       "@acpaas-ui/ngx-flyout": "flyout"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@acpaas-ui"
+  ]
 }

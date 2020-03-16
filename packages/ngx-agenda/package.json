@@ -1,8 +1,13 @@
 {
   "name": "@acpaas-ui/ngx-agenda",
   "version": "0.0.1",
-  "whitelistedNonPeerDependencies": {
-    "@acpaas-ui/js-date-utils": "1.0.1",
-    "hammerjs": "~2.0.8"
+  "dependencies": {
+    "hammerjs": "~2.0.8",
+    "@acpaas-ui/js-date-utils": "~1.0.1"
+  },
+  "peerDependencies": {
+    "@angular/core": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14"
   }
 }

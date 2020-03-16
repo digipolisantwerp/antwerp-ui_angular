@@ -7,5 +7,9 @@
       "@acpaas-ui/js-date-utils": "jsDateUtils",
       "lodash-es": "lodashEs"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@acpaas-ui",
+    "lodash-"
+  ]
 }

@@ -6,5 +6,9 @@
     "umdModuleIds": {
       "@angular-redux/store": "store"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@angular-stor",
+    "redux"
+  ]
 }

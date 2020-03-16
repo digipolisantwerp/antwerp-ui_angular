@@ -6,5 +6,8 @@
     "umdModuleIds": {
       "short-unique-id": "ShortUniqueId"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "short-unique-id"
+  ]
 }

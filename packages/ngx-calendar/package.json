@@ -1,8 +1,13 @@
 {
   "name": "@acpaas-ui/ngx-calendar",
   "version": "0.0.1",
-  "whitelistedNonPeerDependencies": {
+  "dependencies": {
     "@acpaas-ui/js-date-utils": "~1.0.1",
     "lodash-es": "~4.17.10"
+  },
+  "peerDependencies": {
+    "@angular/core": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14"
   }
 }

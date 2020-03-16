@@ -7,5 +7,11 @@
       "lodash-es": "lodashEs",
       "@acpaas-ui/ngx-utils": "ngxUtils"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@angular-store",
+    "redux",
+    "lodash-es",
+    "@acpaas-ui"
+  ]
 }

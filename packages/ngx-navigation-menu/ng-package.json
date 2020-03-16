@@ -7,5 +7,8 @@
       "@acpaas-ui/ngx-layout": "layout",
       "@acpaas-ui/ngx-logo": "logo"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@acpaas-ui"
+  ]
 }

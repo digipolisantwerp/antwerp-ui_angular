@@ -3,5 +3,10 @@
   "dest": "../../dist/ngx-leaflet",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "leaflet",
+    "esri-leaflet",
+    "leaflet-draw"
+  ]
 }

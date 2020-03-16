@@ -13,5 +13,11 @@
       "@acpaas-ui/ngx-progress-bar": "progressBar",
       "ng2-ckeditor": "ng2Ckeditor"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@acpaas-ui",
+    "ng2-ckeditor",
+    "inputmask",
+    "lodash-es"
+  ]
 }
