@@ -27,6 +27,7 @@ const BUILD_AS_FIRST = [
 const BUILD_AS_LAST = [
   'ngx-forms',
   'ngx-layout',
+  'ngx-leaflet',
   'ngx-navigation-menu' // Menu is dependent on layout, so build as last
 ];
 

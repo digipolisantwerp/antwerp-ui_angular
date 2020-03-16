@@ -30,6 +30,7 @@ import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule}
 import {FilterModule} from '@acpaas-ui/ngx-utils';
 import {LabelsModule} from '../../../ngx-utils/src/lib/labels/labels.module';
 import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
+import {LeafletModule} from '../../../ngx-leaflet/src/lib';
 
 @NgModule({
   imports: [
@@ -103,7 +104,8 @@ import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
     SidebarModule,
     FilterModule,
     LabelsModule,
-    WindowModule
+    WindowModule,
+    LeafletModule
   ],
   exports: [
     FooterModule,
@@ -142,7 +144,8 @@ import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
     SidebarModule,
     FilterModule,
     LabelsModule,
-    WindowModule
+    WindowModule,
+    LeafletModule
   ]
 })
 export class AuiModule {

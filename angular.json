@@ -28,7 +28,9 @@
               "packages/styleguide/src/assets"
             ],
             "styles": [
-              "packages/styleguide/src/styles.scss"
+              "packages/styleguide/src/styles.scss",
+              "./node_modules/leaflet/dist/leaflet.css",
+              "./node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
             "scripts": []
           },
