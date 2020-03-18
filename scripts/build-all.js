@@ -16,7 +16,6 @@ const rimraf = require('rimraf');
  */
 
 const EXCLUDED_DIRS = [
-  'styleguide', // Don't build the styleguide
   'ngx-notifications' // This package was deprecated, but dir still exists
 ];
 
@@ -57,7 +56,7 @@ function buildAngularPackage(packageName) {
 }
 
 function getAllPackages() {
-  const dirs = fs.readdirSync(path.resolve(__dirname, '../packages/'));
+  const dirs = fs.readdirSync(path.resolve(__dirname, '../packages/')).filter(dir => dir.startsWith('ngx-'));
   return dirs;
 }
 
