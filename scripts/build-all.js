@@ -30,18 +30,6 @@ const BUILD_AS_LAST = [
   'ngx-navigation-menu' // Menu is dependent on layout, so build as last
 ];
 
-/**
- * 'startsWith' polyfill for IE
- */
-if (!String.prototype.startsWith) {
-  Object.defineProperty(String.prototype, 'startsWith', {
-    value: function(search, rawPos) {
-      var pos = rawPos > 0 ? rawPos|0 : 0;
-      return this.substring(pos, pos + search.length) === search;
-    }
-  });
-}
-
 function clearDistFolder() {
   console.log(chalk.yellow('\nClearing /dist directory...'));
   return new rxjs.Observable((obs) => rimraf(path.resolve(__dirname, '../dist'), {}, (err) => {
