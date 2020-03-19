@@ -1,0 +1,58 @@
+<h2 class="h3 u-margin-bottom">Flyout</h2>
+
+<h3 class="h4 u-margin-bottom">Basic flyout</h3>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <div auiFlyout data-align="left" size="small">
+    <button auiFlyoutAction class="a-button" type="button">Open flyout</button>
+    <div auiFlyoutZone class="has-padding u-text-center">
+      <div class="u-margin-bottom">
+        <p>Hello world!</p>
+      </div>
+      <div>
+        <button auiFlyoutClose class="a-button" type="button">Close flyout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 class="h4 u-margin-bottom">Flyout Button</h3>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS4"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xx u-text-right">
+  <aui-flyout-button
+    buttonSize="large"
+    data-align="right"
+    flyoutSize="small"
+    icon="fa fa-user"
+    label="Open flyout"
+    outline=true
+    title="Click to open!">
+    <div class="u-margin u-text-center">
+      <p>Hello world!</p>
+    </div>
+  </aui-flyout-button>
+</div>

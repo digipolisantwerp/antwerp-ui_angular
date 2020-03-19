@@ -1,0 +1,55 @@
+<h3 class="h4 u-margin-bottom">Filter</h3>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+
+<h4 class="h5 u-margin-bottom">Checkbox filter</h4>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS3"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <aui-checkbox-filter (update)="changeCheckFilter($event)" [filter]="checkFilter"></aui-checkbox-filter>
+</div>
+<div class="u-margin-bottom">
+  <pre class="a-pre a-pre--scrollable">{{ checkResults | json }}</pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">Input filter</h4>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS4"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML2"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <aui-input-filter (update)="changeSearchFilter($event)" [filter]="searchFilter"></aui-input-filter>
+</div>
+<div class="u-margin-bottom">
+  <pre class="a-pre a-pre--scrollable">{{ searchResults | json }}</pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">Select filter</h4>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS5"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML3"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <aui-select-filter (update)="changeSelectFilter($event)" [filter]="selectFilter"></aui-select-filter>
+</div>
+<div class="u-margin-bottom">
+  <pre class="a-pre a-pre--scrollable">{{ selectResults | json }}</pre>
+</div>

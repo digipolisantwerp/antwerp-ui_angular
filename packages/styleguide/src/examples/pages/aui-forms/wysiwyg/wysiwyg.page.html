@@ -1,0 +1,66 @@
+<h3 class="h4 u-margin-bottom">WYSIWYG</h3>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="wysiwygImportExample1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="wysiwygImportExample2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="wysiwygExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="wysiwygTypescript"></aui-code-snippet>
+</div>
+
+<div class="row u-margin-bottom-lg">
+  <div class="u-margin-bottom col-md-6 col-xs-12">
+    <div class="a-input u-margin-bottom">
+      <aui-wysiwyg
+        (blur)="onBlur($event)"
+        (emitContent)="getContent($event)"
+        (focus)="onFocus($event)"
+        [(ngModel)]="contents"
+        [availableTags]="'h2;h3;h4;h5;h6;p'"
+        [debounce]="500"
+        [disabled]="isDisabled"
+        [uiColour]="'#d8d8d8'">
+      </aui-wysiwyg>
+    </div>
+    <div class="a-input">
+      <div class="a-input__checkbox">
+        <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox"/>
+        <label for="isDisabled">Toggle disabled state</label>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="contents !== ''" class="u-margin-bottom col-md-6 col-xs-12">
+    <pre class="a-pre">{{ contents }}</pre>
+  </div>
+</div>
+
+<div class="u-margin-bottom">
+  <p>By default the following configuration is given to the WYSIWYG editor:</p>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="wysiwygExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <p>If you need to override this configuration, you can do this by passing your custom configuration object to the
+    component:</p>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="wysiwygExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <p>All available configuration options <a
+    class="has-icon-right" href="https://ckeditor.com/docs/ckeditor4/latest/guide/dev_configuration.html"
+    target="_blank">can be found here<span class="fa fa-external-link"></span></a>.</p>
+</div>

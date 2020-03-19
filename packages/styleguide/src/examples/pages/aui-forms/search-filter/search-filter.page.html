@@ -1,0 +1,40 @@
+<h3 class="h4 u-margin-bottom">Search filter</h3>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="searchfilterImportExample"></aui-code-snippet>
+</div>
+
+<h4 class="h5 u-margin-bottom">Basic</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="searchfilterExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="searchfilterExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xx">
+  <div class="u-margin-bottom">
+    <aui-search-filter
+      [(ngModel)]="selectedItems"
+      [choices]="stuff"
+      [disabled]="isDisabled"
+      [showAllByDefault]="true"
+      id="test"
+      inputDelay="0"
+      label="Find stuff"
+      labelDeselect="Clear stuff"
+      labelNoResults="Couldn't find stuff!"
+      labelResults=""
+      name="test"
+      placeholder="Look for stuff">
+    </aui-search-filter>
+  </div>
+  <div class="a-input">
+    <div class="a-input__checkbox">
+      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox"/>
+      <label for="isDisabled">Toggle disabled state</label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<h3 class="h4 u-margin-bottom">Pane</h3>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="pane1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="pane2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="pane3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xx">
+  <button (click)="myPane.togglePane()" [attr.aria-controls]="myPane.id" [attr.aria-expanded]="myPane.opened"
+          class="a-button">Toggle pane
+  </button>
+  <button (click)="myPane.openPane()" [attr.aria-controls]="myPane.id" [attr.aria-expanded]="myPane.opened"
+          class="a-button">Open pane
+  </button>
+  <p class="u-margin-top-xs">The pane is <strong>{{ pane }}</strong>.</p>
+  <aui-pane #myPane
+            (close)="onClose()"
+            (open)="onOpen()"
+            [ariaLabelClose]="'Close pane'"
+            [ariaLabel]="'Demo pane'"
+            [backdrop]="backdrop"
+            [opened]="opened"
+            [side]="'left'"
+            data-id="demoPane">
+    Pane content
+    <button (click)="myPane.closePane()" class="a-button" type="button">Close pane</button>
+  </aui-pane>
+</div>

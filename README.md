@@ -24,6 +24,7 @@ This library is part of [ACPaaS UI][acpaas-ui].
 
 ````shell script
 npm i
+npm run build:all
 npm start
 ````
 

@@ -1,0 +1,156 @@
+<h2 class="h3 u-margin-bottom">Navigation Menu</h2>
+
+<p class="u-margin-bottom">
+  This component provides a generic navigation menu that can be used in your projects,
+  providing an <strong>administrative-like</strong> interface look and feel. The navigation menu
+  features two basic modes: (mode selection is done automatically and cannot be configured manually)
+</p>
+<ul>
+  <li>
+    <strong>Mobile mode:</strong>
+    On mobile, the component will feature a navigation bar that places itself on the bottom of the screen.
+    Navigation links will appear as tabs, making it possible to display a maximum of 3 tabs. If more navigation
+    links are configured, a 'More' tab will automatically be created, embedded the invisible links under that tab.
+    An animation highlights the navigation as the user scrolls though the different menus.
+    <figure class='u-margin-bottom u-margin-top'>
+      <div class='m-image'>
+        <img alt='Mobile Menu' src='assets/navigation-menu/mobile-menu.png'/>
+      </div>
+      <figcaption class='u-text-light'>
+        On mobile, the tabs are featured on the bottom of the screen,
+        leaving space for navigation on
+        borderless screens.
+      </figcaption>
+    </figure>
+  </li>
+  <li>
+    <strong>Desktop mode:</strong>
+    On desktop, the component features a navigation bar that places itself on the outright left border of the
+    screen.
+    The desktop mode integrates two layouts: <strong>docked and undocked</strong>. The default mode can be set
+    through module
+    configuration. When docked, the menu only displays square icons io full navigation links. Clicking on the link
+    will trigger
+    opening up sub menu items in overlay mode. When not docked, the menu features different accordeons, containing
+    the configured
+    navigation links.
+    <figure class='u-margin-bottom u-margin-top'>
+      <div class='m-image'>
+        <img alt='Desktop Menu' src='assets/navigation-menu/desktop-menu.png'/>
+      </div>
+      <figcaption class='u-text-light'>
+        The menu featured on this domain is an instance of the Navigation Menu.
+      </figcaption>
+    </figure>
+  </li>
+</ul>
+
+<h3 class='u-margin-bottom'>Usage</h3>
+
+<h4 class='u-margin-bottom'>Import the Module</h4>
+
+<p class='u-margin-bottom'>
+  The module can be imported using default settings, or you may provide custom settings.
+</p>
+<aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+<aui-code-snippet [codeSnippet]="importModuleCustomSettings"></aui-code-snippet>
+
+<h4 class='u-margin-bottom u-margin-top'>Basic Usage</h4>
+<p class='u-margin-bottom'>
+  The component allows you to use an XML-like syntax to compose your navigation menu. The parent component
+  for using the menu is the <code>aui-menu</code> tag. Main navigation links may be added by using the
+  <code>aui-menu-tab</code>
+  tags.
+</p>
+<blockquote class='u-margin-bottom u-text-light'>
+  Tabs feature the first layer navigation; They may also be reffered to as 'first layer' or 'main navigation links.'
+  To create links, use the <code>aui-menu-link</code> tag. The usage of this tag is mandatory.
+</blockquote>
+
+<figure class='u-margin-top u-margin-bottom'>
+  <div class='m-image'>
+    <img alt='Basic Usage' src="assets/navigation-menu/basic-usage.png"/>
+  </div>
+  <figcaption class='u-text-light'>A simple menu with two tabs.</figcaption>
+</figure>
+
+<aui-code-snippet [codeSnippet]="basicUsage"></aui-code-snippet>
+
+<div class='u-margin-top'>
+  Notice that we can pass a translations input that will override the default labels used in the Navigation Menu.
+</div>
+
+<blockquote class='u-margin-bottom u-margin-top'>
+  <h5>A note about content projection!</h5>
+  <p class='u-text-danger'>
+    To provide you with a component that features this XML-like syntax, Angular content projection is used.
+    However, you are not free to include any content within the tags. Most components only allow text or select
+    aui-menu-* nodes.
+    Not respecting these rules will result in errors and an unrespsive menu.
+  </p>
+</blockquote>
+
+<h4 class='u-margin-bottom'>Creating Links</h4>
+<p class='u-margin-bottom'>
+  Although previous example will display links, the menu doesn't do anything yet. To create navigatable links, we have
+  to bind to properties
+  on the <code>aui-menu-link</code> tag.
+</p>
+
+<aui-code-snippet [codeSnippet]="simpleLinks"></aui-code-snippet>
+
+<p class='u-margin-top u-margin-bottom'>
+  You may also use variable attribute binding:
+</p>
+
+<aui-code-snippet [codeSnippet]="simpleLinksBound"></aui-code-snippet>
+
+<h4 class='u-margin-top u-margin-bottom'>Sub Menus</h4>
+<p class='u-margin-bottom'>
+  The library allows you to create sub menu that will compile recusively. Let's add a submenu to the first menu tab:
+</p>
+
+<figure class='u-margin-top u-margin-bottom'>
+  <div class='m-image'>
+    <img alt='Desktop undocked submenu' src="assets/navigation-menu/desktop-submenu-undocked.png"/>
+  </div>
+  <figcaption class='u-text-light'>A submenu in an undocked menu, on desktop.</figcaption>
+</figure>
+
+<figure class='u-margin-top u-margin-bottom'>
+  <div class='m-image'>
+    <img alt='Desktop docked submenu' src="assets/navigation-menu/desktop-submenu-docked.png"/>
+  </div>
+  <figcaption class='u-text-light'>The same sub menu, docked, on desktop.</figcaption>
+</figure>
+
+<aui-code-snippet [codeSnippet]="firstSubMenu"></aui-code-snippet>
+<blockquote class='u-margin-bottom u-margin-top u-text-light'>
+  Do note that in a <code>aui-sub-menu-item</code> it is not always mandatory to use the <code>aui-menu-link</code>
+  tag,
+  altough we encourage its use.
+</blockquote>
+<p class='u-margin-bottom'>
+  We can now include a submenu within a submenu as well:
+</p>
+<aui-code-snippet [codeSnippet]="secondSubMenu"></aui-code-snippet>
+<p class='u-margin-bottom u-margin-top'>
+  Nested sub menu items shouldn't exceed 3 layers (Main link and 2 sublayers). The application won't allow the use of
+  other tags withing the
+  <code>aui-menu</code> component template inclusion.
+</p>
+
+<h4 class='u-margin-bottom'>Using Icons</h4>
+<p class='u-margin-bottom'>
+  You may specify the use of Font Awesome icons on the <code>aui-menu-tab</code> tags. Bind to the icon attribute.
+</p>
+<aui-code-snippet [codeSnippet]="icons"></aui-code-snippet>
+<p class='u-margin-bottom'>
+  The navigation links will by default display arrow carets, indicating the presence of sub menu's. Depending on the
+  use of these submenu's, these icons will also be animated while the user traverses the navigation menu.
+</p>
+
+<h4 class='u-margin-bottom'>Accessibility</h4>
+<p class='u-margin-bottom'>
+  Using the right components and configuring the module right, the menu is completely keyboard navigatable.
+</p>
