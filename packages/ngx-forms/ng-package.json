@@ -18,6 +18,7 @@
     "@acpaas-ui",
     "ng2-ckeditor",
     "inputmask",
-    "lodash-es"
+    "lodash-es",
+    "@a-ui"
   ]
 }

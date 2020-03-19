@@ -8,6 +8,7 @@
     }
   },
   "whitelistedNonPeerDependencies": [
-    "@acpaas-ui"
+    "@acpaas-ui",
+    "@a-ui"
   ]
 }
