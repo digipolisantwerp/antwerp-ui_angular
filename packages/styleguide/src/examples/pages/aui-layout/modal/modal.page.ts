@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalService} from '@acpaas-ui/ngx-layout';
+import {ModalService} from '../../../../../../ngx-layout/src/public-api';
 import {AUIDemoModalComponent} from './demo-modal.component';
 
 @Component({
@@ -82,7 +82,7 @@ private doSomething() {
     this.modalService.openModal(
       AUIDemoModalComponent,
       {
-        title: 'Modal ngx-logo',
+        title: 'Modal demo',
         text: 'Are you sure you want to see a ngx-logo of this modal?',
       }, {
         confirm: () => this.doSomething(),

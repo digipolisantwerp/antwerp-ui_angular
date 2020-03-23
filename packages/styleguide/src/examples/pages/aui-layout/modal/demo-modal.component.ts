@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalAbstract, ModalService} from '@acpaas-ui/ngx-layout';
+import {ModalAbstract, ModalService} from '../../../../../../ngx-layout/src/public-api';
 
 @Component({
   selector: 'aui-modal',

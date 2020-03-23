@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {CookieconsentService} from '@acpaas-ui/ngx-layout';
+import {CookieconsentService} from '../../../../../../ngx-layout/src/public-api';
 
 @Component({
   templateUrl: './cookie-consent.page.html',
