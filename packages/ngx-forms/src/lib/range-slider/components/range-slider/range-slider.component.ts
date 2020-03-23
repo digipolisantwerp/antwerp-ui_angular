@@ -33,6 +33,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   public active = null;
   public isDisabled = false;
   public hasFocus = false;
+  public click = false;
 
   constructor(private elRef: ElementRef) {
   }
@@ -42,7 +43,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   }
 
   public propagateChange = (value: number | RangeSliderRange) => {
-  }
+  };
 
   public ngOnInit() {
     if (this.step > 0) {
@@ -121,7 +122,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
       down: 40,
     };
 
-    if (Object.keys(keyCodes).map(e => keyCodes[e]).indexOf(key) !== -1) {
+    if (Object.keys(keyCodes).map(e => keyCodes[e]).indexOf(key) === -1) {
       return;
     }
     let increment = this.minimalDistance;
@@ -183,15 +184,19 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
       this.setEnd(this.round(this.end, this.step, 0));
       this.endPercentage = this.endToPercentage();
     }
+    this.click = false;
+  }
 
-    this.active = null;
-    this.hasFocus = false;
+  @HostListener('touchstart', ['$event'])
+  @HostListener('mousedown', ['$event'])
+  mouseDown() {
+    this.click = true;
   }
 
   @HostListener('touchmove', ['$event'])
   @HostListener('mousemove', ['$event'])
   public onMouseMove(event: MouseEvent | TouchEvent) {
-    if (!this.active) {
+    if (!this.active || !this.click) {
       return;
     }
 
