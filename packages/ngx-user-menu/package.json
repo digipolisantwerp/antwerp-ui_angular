@@ -2,8 +2,7 @@
   "name": "@acpaas-ui/ngx-user-menu",
   "version": "0.0.1",
   "dependencies": {
-    "@acpaas-ui/ngx-flyout": "^3.0.0",
-    "@a-ui/core": "^4.1.0"
+    "@acpaas-ui/ngx-flyout": "^3.0.0"
   },
   "peerDependencies": {
     "@angular/core": "~8.2.14",

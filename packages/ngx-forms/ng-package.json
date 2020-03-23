@@ -4,21 +4,20 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "lodash-es": "lodashEs",
       "@acpaas-ui/ngx-flyout": "flyout",
       "@acpaas-ui/ngx-selectable-list": "selectableList",
-      "inputmask": "Inputmask",
       "@acpaas-ui/js-date-utils": "jsDateUtils",
       "@acpaas-ui/ngx-calendar": "calendar",
       "@acpaas-ui/ngx-progress-bar": "progressBar",
+      "inputmask": "Inputmask",
+      "lodash-es": "lodashEs",
       "ng2-ckeditor": "ng2Ckeditor"
     }
   },
   "whitelistedNonPeerDependencies": [
     "@acpaas-ui",
-    "ng2-ckeditor",
     "inputmask",
     "lodash-es",
-    "@a-ui"
+    "ng2-ckeditor"
   ]
 }
