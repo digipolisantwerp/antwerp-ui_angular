@@ -64,21 +64,17 @@ describe('The RangeSlider Component', () => {
   it('should round on mouse up', () => {
     spyOn(comp, 'setStart');
     comp.active = 'start';
+    comp.click = true;
     fixture.detectChanges();
 
     comp.onMouseUp({});
     expect(comp.setStart).toHaveBeenCalled();
-
-    expect(comp.active).toBeNull();
-
     spyOn(comp, 'setEnd');
     comp.active = 'end';
     fixture.detectChanges();
 
     comp.onMouseUp({});
     expect(comp.setEnd).toHaveBeenCalled();
-
-    expect(comp.active).toBeNull();
   });
 
   it('should not call updateHandle on mouse move if there is no active handle', () => {
@@ -95,6 +91,7 @@ describe('The RangeSlider Component', () => {
   it('should call updateHandle on mouse move if there is an active handle', () => {
     spyOn(comp, 'updateHandle');
     comp.active = 'target';
+    comp.click = true;
     comp.onMouseMove({
       x: 0,
       preventDefault: () => {
