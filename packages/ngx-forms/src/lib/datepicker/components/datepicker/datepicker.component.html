@@ -2,7 +2,7 @@
   <input
     (blur)="handleBlur($event)"
     [attr.disabled]="isDisabled ? true : null"
-    [auiMask]="dateMask"
+    [auiMask]="dateMask.mask"
     [autocomplete]="autocomplete"
     [formControl]="formControl"
     id="{{ id }}"

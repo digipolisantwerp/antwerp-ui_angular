@@ -11,7 +11,7 @@ import {map, takeUntil, tap} from 'rxjs/operators';
 export class CheckboxFilterComponent implements OnInit, FilterComponent, OnDestroy {
   @Input() filter;
   @Output() update = new EventEmitter();
-  private form: FormGroup;
+  form: FormGroup;
   public value;
 
   private destroy$ = new Subject();

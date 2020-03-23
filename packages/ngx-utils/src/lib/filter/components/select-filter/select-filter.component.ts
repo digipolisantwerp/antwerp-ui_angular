@@ -11,7 +11,7 @@ import {map, takeUntil, tap} from 'rxjs/operators';
 export class SelectFilterComponent implements OnInit, FilterComponent, OnDestroy {
   @Input() filter;
   @Output() update = new EventEmitter();
-  private select = new FormControl();
+  select = new FormControl();
   public value;
 
   private destroy$ = new Subject();
