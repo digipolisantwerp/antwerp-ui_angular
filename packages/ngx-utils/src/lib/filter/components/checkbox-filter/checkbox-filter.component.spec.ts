@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import {SelectFilterComponent} from '../select-filter/select-filter.component';
 
@@ -22,7 +22,7 @@ describe('The Filter Component', () => {
         SelectFilterComponent,
       ],
       imports: [
-        FormsModule,
+        ReactiveFormsModule,
       ],
     })
       .compileComponents();  // compile template and css
