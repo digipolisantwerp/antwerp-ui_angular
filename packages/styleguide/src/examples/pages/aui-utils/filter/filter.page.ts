@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-
-import {Filter, FilterService} from '@acpaas-ui/ngx-utils';
+import {Filter, FilterService} from '../../../../../../ngx-utils/src/public-api';
 
 @Component({
   templateUrl: './filter.page.html',

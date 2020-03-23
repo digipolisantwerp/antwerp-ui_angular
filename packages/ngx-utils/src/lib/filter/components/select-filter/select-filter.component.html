@@ -2,8 +2,8 @@
   <ng-container *ngIf="filter && filter.options && filter.id">
     <label [for]="filter.id" class="a-input__label a-input__label--inline">{{ filter.name }}: </label>
     <div class="a-input__wrapper a-input__wrapper--inline">
-      <select (ngModelChange)="onFilter(value)" [(ngModel)]="value" [id]="filter.id" [name]="filter.id">
-        <option *ngFor="let option of filter.options; let i = index;" [ngValue]="option">{{ option.name }}</option>
+      <select [formControl]="select" [id]="filter.id" [name]="filter.id">
+        <option *ngFor="let option of filter.options" [value]="option.id">{{ option.name }}</option>
       </select>
       <span class="fa fa-angle-down"></span>
     </div>

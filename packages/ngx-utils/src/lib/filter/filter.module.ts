@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FilterService} from './services/filter.service';
 import {CheckboxFilterComponent} from './components/checkbox-filter/checkbox-filter.component';
 import {InputFilterComponent} from './components/input-filter/input-filter.component';
@@ -11,6 +11,7 @@ import {SelectFilterComponent} from './components/select-filter/select-filter.co
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     CheckboxFilterComponent,

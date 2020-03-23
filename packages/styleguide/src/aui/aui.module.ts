@@ -26,10 +26,8 @@ import {SearchFilterModule} from '../../../ngx-forms/src/lib/search-filter/publi
 import {TimepickerModule} from '../../../ngx-forms/src/lib/timepicker/public-api';
 import {UploadModule} from '../../../ngx-forms/src/lib/upload/public-api';
 import {WysiwygModule} from '../../../ngx-forms/src/lib/wysiwyg/public-api';
-import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '@acpaas-ui/ngx-layout';
-import {FilterModule} from '@acpaas-ui/ngx-utils';
-import {LabelsModule} from '../../../ngx-utils/src/lib/labels/labels.module';
-import {WindowModule} from '../../../ngx-utils/src/lib/window/window.module';
+import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '../../../ngx-layout/src/public-api';
+import {FilterModule, LabelsModule, WindowModule} from '../../../ngx-utils/src/public-api';
 import {LeafletModule} from '../../../ngx-leaflet/src/lib';
 
 @NgModule({
