@@ -189,7 +189,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 
   @HostListener('touchstart', ['$event'])
   @HostListener('mousedown', ['$event'])
-  mouseDown() {
+  mouseDown(event) {
     this.click = true;
   }
 
