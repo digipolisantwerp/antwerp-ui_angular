@@ -43,7 +43,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   }
 
   public propagateChange = (value: number | RangeSliderRange) => {
-  };
+  }
 
   public ngOnInit() {
     if (this.step > 0) {

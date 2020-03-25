@@ -1,30 +1,30 @@
 declare var require: any;
-import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 
 @Injectable()
 export class MapService {
 
-	public L = null;
-	public esri = null;
+  public L = null;
+  public esri = null;
 
-	constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-		this.requireMap();
-	}
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+    this.requireMap();
+  }
 
-	requireMap() {
-		if (isPlatformBrowser(this.platformId)) {
-			this.L = require('leaflet');
-			this.esri = require('esri-leaflet');
-			require('leaflet-draw');
-		}
-	}
+  requireMap() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.L = require('leaflet');
+      this.esri = require('esri-leaflet');
+      require('leaflet-draw');
+    }
+  }
 
-	isAvailable() {
-		if (isPlatformBrowser(this.platformId)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+  isAvailable() {
+    if (isPlatformBrowser(this.platformId)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
