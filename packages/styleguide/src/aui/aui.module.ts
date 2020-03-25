@@ -28,7 +28,7 @@ import {UploadModule} from '../../../ngx-forms/src/lib/upload/public-api';
 import {WysiwygModule} from '../../../ngx-forms/src/lib/wysiwyg/public-api';
 import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '../../../ngx-layout/src/public-api';
 import {FilterModule, LabelsModule, WindowModule} from '../../../ngx-utils/src/public-api';
-import {LeafletModule} from '../../../ngx-leaflet/src/lib';
+import {LeafletModule} from '../../../ngx-leaflet/src/public-api';
 
 @NgModule({
   imports: [

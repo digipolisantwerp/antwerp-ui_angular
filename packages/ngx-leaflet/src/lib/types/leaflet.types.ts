@@ -10,10 +10,10 @@ export interface LeafletMapOptions {
   center: LatLngExpression;
   zoom: number;
   lineColor?: string;
-  onAddLine?: () => void;
+  onAddLine?: (v) => void;
   polygonColor?: string;
-  onAddPolygon?: () => void;
-  onEditFeature?: () => void;
+  onAddPolygon?: (v) => void;
+  onEditFeature?: (v) => void;
 }
 
 export interface LatLngExpression {

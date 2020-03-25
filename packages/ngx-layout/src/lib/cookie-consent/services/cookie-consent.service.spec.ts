@@ -38,17 +38,6 @@ describe('The Cookieconsent Service', () => {
         spyOn(windowStub.cookieconsent, 'initialise');
       });
 
-      describe('without config', () => {
-        it(
-          'should initialise the cookieconsent with the default config if no config was provided',
-          injectService(cookieconsentService => {
-            cookieconsentService.init();
-
-            expect(windowStub.cookieconsent.initialise).toHaveBeenCalledWith(DEFAULT_CONSENT_CONFIG);
-          })
-        );
-      });
-
       describe('with config', () => {
         beforeAll(() => {
           cookieconsentConfig.message = 'We use cookies. Deal with it.';

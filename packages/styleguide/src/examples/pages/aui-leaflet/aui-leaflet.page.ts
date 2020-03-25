@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {baseMapAntwerp, baseMapWorldGray, LeafletMap, MapService} from '../../../../../ngx-leaflet/src/lib';
+import {baseMapAntwerp, baseMapWorldGray, LeafletMap, MapService} from '../../../../../ngx-leaflet/src/public-api';
 
 @Component({
   templateUrl: './aui-leaflet.page.html',

@@ -99,14 +99,6 @@ describe('The Localstorage Redux Plugin', () => {
         expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalled();
       })
     );
-
-    it('subscribes each selector', injectService(localstorageReduxPlugin => {
-      localstorageReduxPlugin.ngRedux._store = {};
-      spyOn(localstorageReduxPlugin, 'subscribeSelector').and.stub();
-      localstorageReduxPlugin.subscribe(['test', ['some', 'data']]);
-
-      expect(localstorageReduxPlugin.subscribeSelector).toHaveBeenCalledTimes(2);
-    }));
   });
 
   describe('subscribeSelector', () => {
