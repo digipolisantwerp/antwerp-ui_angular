@@ -52,8 +52,9 @@ You will need [Node.js](http://nodejs.org) **version 10+**.
 
 After cloning the repo, run:
 
-```shell script
+```shell
 npm install
+npm run build:all
 npm start
 ```
 
@@ -62,14 +63,14 @@ npm start
 Additionally to running this project locally, the repository also offers you the option to develop using Docker containers.
 To start your service, execute:
 
-```shell script
+```shell
 docker-compose build
 docker-compose up -d
 ```
 
 When the service is up, use following commands to execute bash inside your container:
 
-```shell script
+```shell
 docker ps
 docker exec -it ${YOUR_CONTAINER_ID} sh
 ```
@@ -83,12 +84,12 @@ More info on how to create Angular libraries can be found [here](https://angular
 
 To create a new library as part of the ACPAAS UI, run:
 
-````shell script
+````shell
 ng generate library aui-<package>
 ````
 
 To build and test your package, respectively run:
-````shell script
+````shell
 ng build aui-<package>
 ng test aui-<package>
 ````

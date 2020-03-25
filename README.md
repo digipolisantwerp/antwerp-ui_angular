@@ -22,7 +22,7 @@ This library is part of [ACPaaS UI][acpaas-ui].
 
 ### Running the project locally
 
-````shell script
+````shell
 npm i
 npm run build:all
 npm start
@@ -30,7 +30,7 @@ npm start
 
 ### Install the ACPAAS UI
 
-````shell script
+````shell
 npm i @acpaas-ui/ngx-utils
 npm i @acpaas-ui/ngx-forms
 // Other necessary libs for your app...
@@ -64,7 +64,6 @@ This library contains the following components:
 
 | Name               | Description                              | URL                                                           |
 | ------------------ | ---------------------------------------- | ------------------------------------------------------------- |
-| ngx-agenda         | Calendar to display events               | [Documentation](./packages/ngx-agenda/README.md)              |
 | ngx-analytics      | Google Analytics integration             | [Documentation](./packages/ngx-analytics/README.md)           |
 | ngx-avatar         | User avatar icon                         | [Documentation](./packages/ngx-avatar/README.md)              |
 | ngx-calendar       | Calendar to select dates                 | [Documentation](./packages/ngx-calendar/README.md)            |
@@ -88,19 +87,19 @@ This library contains the following components:
 
 The ACPAAS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
 To build or test packages independently, run:
-````shell script
+````shell
 ng build ngx-<packagename>
 ng test ngx-<packagename>
 ````
 
 For example:
-```shell script
+```shell
 ng build ngx-utils
 ng test ngx-utils
 ```
 
 To build all packages, run:
-```shell script
+```shell
 npm run build:all
 ```
 
