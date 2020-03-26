@@ -58,7 +58,7 @@ npm run build:all
 npm start
 ```
 
-The ACPAAS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
+The ACPaaS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
 To build or test packages independently, run:
 ````shell
 ng build ngx-<packagename>
@@ -103,7 +103,7 @@ From there you can run all necessary npm commands for development.
 Packages are essentially Angular libraries that follow Angular standard.
 More info on how to create Angular libraries can be found [here](https://angular.io/guide/libraries).
 
-To create a new library as part of ACPAAS UI, run:
+To create a new library as part of ACPaaS UI, run:
 
 ````shell
 ng generate library ngx-<package>
@@ -123,13 +123,13 @@ After this, add a demo page component to the examples module: `packages/stylegui
 ## Project structure
 - `packages/aui-<package>`: Acpaas UI package/library
 - `packages/styleguide`: Angular application featuring demo's of the packages
-    - `src/aui/aui.module.ts`: Shared module that imports/exports all needed ACPAAS packages for demo purposes
+    - `src/aui/aui.module.ts`: Shared module that imports/exports all needed ACPaaS packages for demo purposes
     - `src/examples`: Example module containing pages and routes for the demos.
 
 ## Releases
 TODO
 
-ACPAAS UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
+ACPaaS UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
 
 The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
 

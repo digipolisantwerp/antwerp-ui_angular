@@ -28,7 +28,7 @@ npm run build:all
 npm start
 ````
 
-### Install ACPAAS UI
+### Install ACPaaS UI
 
 ````shell
 npm i @acpaas-ui/ngx-utils
