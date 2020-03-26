@@ -5,8 +5,8 @@
     "@acpaas-ui/ngx-flyout": "^3.0.0"
   },
   "peerDependencies": {
-    "@angular/core": "~8.2.14",
-    "@angular/common": "~8.2.14",
-    "@angular/platform-browser-dynamic": "~8.2.14"
+    "@angular/core": ">=8.2.14",
+    "@angular/common": ">=8.2.14",
+    "@angular/platform-browser-dynamic": ">=8.2.14"
   }
 }

@@ -5,9 +5,9 @@
     "@acpaas-ui/ngx-utils": "^3.0.0"
   },
   "peerDependencies": {
-    "@angular/core": "~8.2.14",
-    "@angular/common": "~8.2.14",
-    "@angular/forms": "~8.2.14",
-    "@angular/platform-browser": "~8.2.14"
+    "@angular/core": ">=8.2.14",
+    "@angular/common": ">=8.2.14",
+    "@angular/forms": ">=8.2.14",
+    "@angular/platform-browser": ">=8.2.14"
   }
 }

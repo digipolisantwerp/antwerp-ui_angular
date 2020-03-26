@@ -6,9 +6,9 @@
     "redux": "4.0.1"
   },
   "peerDependencies": {
-    "@angular/core": "~8.2.14",
-    "@angular/common": "~8.2.14",
-    "@angular/router": "~8.2.14",
-    "@angular/platform-browser": "~8.2.14"
+    "@angular/core": ">=8.2.14",
+    "@angular/common": ">=8.2.14",
+    "@angular/router": ">=8.2.14",
+    "@angular/platform-browser": ">=8.2.14"
   }
 }
