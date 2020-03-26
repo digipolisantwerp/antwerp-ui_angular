@@ -48,7 +48,7 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
 
 ## Development Setup
 
-You will need [Node.js](http://nodejs.org) **version 10+**.
+You will need [Node.js](http://nodejs.org) **version 12+**.
 
 After cloning the repo, run:
 
@@ -57,6 +57,27 @@ npm install
 npm run build:all
 npm start
 ```
+
+The ACPAAS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
+To build or test packages independently, run:
+````shell
+ng build ngx-<packagename>
+ng test ngx-<packagename>
+````
+
+For example:
+```shell
+ng build ngx-utils
+ng test ngx-utils
+```
+
+To build all packages, run:
+```shell
+npm run build:all
+```
+
+Further documentation about the libraries setup can be found in the [Angular Guide](https://angular.io/guide/libraries)
+
 
 ## Using Docker
 
@@ -82,16 +103,16 @@ From there you can run all necessary npm commands for development.
 Packages are essentially Angular libraries that follow Angular standard.
 More info on how to create Angular libraries can be found [here](https://angular.io/guide/libraries).
 
-To create a new library as part of the ACPAAS UI, run:
+To create a new library as part of ACPAAS UI, run:
 
 ````shell
-ng generate library aui-<package>
+ng generate library ngx-<package>
 ````
 
 To build and test your package, respectively run:
 ````shell
-ng build aui-<package>
-ng test aui-<package>
+ng build ngx-<package>
+ng test ngx-<package>
 ````
 
 Make sure to edit the `package.json` file of the library to set correct library name and publishing settings.
@@ -106,10 +127,9 @@ After this, add a demo page component to the examples module: `packages/stylegui
     - `src/examples`: Example module containing pages and routes for the demos.
 
 ## Releases
+TODO
 
-ACPaaS UI is supplied as a single library on NPM [@acpaas-ui/ngx-components](https://www.npmjs.com/package/@acpaas-ui/ngx-components), although related components (e.g. the [smart widgets](https://github.com/digipolisantwerp/smart-widgets)) may be packaged independently.
-
-It is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
+ACPAAS UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
 
 The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
 

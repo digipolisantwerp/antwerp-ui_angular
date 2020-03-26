@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-analytics",
-  "version": "0.0.1",
+  "version": "4.0.0-rc.1",
   "dependencies": {
     "@acpaas-ui/ngx-utils": "^3.0.0"
   },

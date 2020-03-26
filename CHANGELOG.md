@@ -7,12 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 ### Changed
-- Entire rework of the structure of this project
-- Update to Angular 8
-- Custom scripts for generating new packages were removed
-- All libraries are Angular-standard compliant
+- [BREAKING] Entire rework of the structure of this project
+- [BREAKING] Update minimum Angular version to 8
+- [BREAKING] Custom scripts for generating new packages were removed
+- [BREAKING] All libraries are Angular-standard compliant
 - Redux version locked on 4.0.1 due to lack of support for @angular-redux/store v.10
-- Scope of the packages was changed. Now every package is under @acpaas-ui/ngx-<package-name>
+- [BREAKING] Scope of the packages was changed. Now every package is under @acpaas-ui/ngx-<package-name>
+
+For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 ## [3.3.0] - 2020-01-31
 

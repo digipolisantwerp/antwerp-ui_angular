@@ -28,7 +28,7 @@ npm run build:all
 npm start
 ````
 
-### Install the ACPAAS UI
+### Install ACPAAS UI
 
 ````shell
 npm i @acpaas-ui/ngx-utils
@@ -82,28 +82,6 @@ This library contains the following components:
 | ngx-utils          | Assorted helpers                         | [Documentation](./packages/ngx-utils/README.md)               |
 | ngx-user-menu      | User Menu providing login/logout         | [Documentation](./packages/ngx-user-menu/README.md)           |
 | ngx-navigation-menu| Generic navigation menu                  | [Documentation](./packages/ngx-navigation-menu/README.md)     |
-
-## Development Setup
-
-The ACPAAS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
-To build or test packages independently, run:
-````shell
-ng build ngx-<packagename>
-ng test ngx-<packagename>
-````
-
-For example:
-```shell
-ng build ngx-utils
-ng test ngx-utils
-```
-
-To build all packages, run:
-```shell
-npm run build:all
-```
-
-Further documentation about the libraries setup can be found in the [Angular Guide](https://angular.io/guide/libraries)
 
 ## Testing
 

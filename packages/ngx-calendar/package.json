@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-calendar",
-  "version": "0.0.1",
+  "version": "4.0.0-rc.1",
   "dependencies": {
     "@acpaas-ui/js-date-utils": "~1.0.1",
     "lodash-es": "~4.17.10"

@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-navigation-menu",
-  "version": "0.0.1",
+  "version": "4.0.0-rc.1",
   "dependencies": {
     "@acpaas-ui/ngx-layout": "^3.0.0",
     "@acpaas-ui/ngx-logo": "^3.0.0"

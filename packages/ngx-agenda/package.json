@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-agenda",
-  "version": "0.0.1",
+  "version": "4.0.0-rc.1",
   "dependencies": {
     "hammerjs": "~2.0.8",
     "@acpaas-ui/js-date-utils": "~1.0.1"
