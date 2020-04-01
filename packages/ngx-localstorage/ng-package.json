@@ -9,9 +9,6 @@
     }
   },
   "whitelistedNonPeerDependencies": [
-    "@angular-store",
-    "redux",
-    "lodash-es",
     "@acpaas-ui"
   ]
 }

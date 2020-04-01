@@ -45,8 +45,7 @@ import {LeafletModule} from '../../../ngx-leaflet/src/public-api';
     FlyoutModule,
     FlyoutButtonModule,
     LocalstorageModule.forRoot({
-      storageType: 'sessionStorage',
-      identifier: 'my-app-v1',
+      storageType: 'sessionStorage'
     }),
     PaginationModule,
     ItemCounterModule,
