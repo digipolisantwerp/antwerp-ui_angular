@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 ### Changed
+- [BREAKING] Localstorage package got a major refacotor, where redux and store dependencies are removed
 - [BREAKING] Entire rework of the structure of this project
 - [BREAKING] Update minimum Angular version to 8
 - [BREAKING] Custom scripts for generating new packages were removed
