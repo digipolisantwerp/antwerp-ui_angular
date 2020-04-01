@@ -4,4 +4,4 @@ COPY . /code
 WORKDIR /code
 
 RUN npm i
-CMD npm start
+RUN npm run build:all

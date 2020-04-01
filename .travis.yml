@@ -11,8 +11,8 @@ branches:
     - master
 
 script:
-  - npm run build:all
   - npm run lint
+  - npm run build:all
   - npm test
   - npm run build:prod
 

@@ -3,9 +3,11 @@ services:
     acpaas-ui:
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
+        command: npm start
         ports:
             - 4200:4200
         volumes:
             - ./:/code
             - /code/node_modules
+            - /code/dist
