@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- [BREAKING] Removed redux and store from the package
+- [BREAKING] Deprecate manual methods on the service in favor of getting the storage object directly
 ### Fixed
 - remove Proxy usage from MemoryStorage polyfill (not supported in ie11)
 

@@ -6,17 +6,13 @@ import {LocalstorageService} from '../../../../../ngx-localstorage/src/public-ap
 })
 export class LocalstorageDemoPageComponent {
 
-  public user: any;
-  public item: any;
-  public timesUsed: any;
-
+  public item: number;
   public typescript1 = `import { LocalstorageModule } from '@acpaas-ui/ngx-localstorage';
 
 @NgModule({
 	imports: [
 		LocalstorageModule.forRoot({
-			storageType: 'sessionStorage',
-			identifier: 'my-app-v1',
+			storageType: 'sessionStorage' | 'localStorage' | 'memory'
 		})
 	]
 });
@@ -24,96 +20,42 @@ export class LocalstorageDemoPageComponent {
 export class AppModule {};`;
 
   public typescript2 = `import { LocalstorageService } from '@acpaas-ui/ngx-localstorage';
-
-public user: any;
-public item: any;
-public timesUsed: any;
-
+private storage: Storage;
 constructor(
 	private localstorageService: LocalstorageService
 ) {
-	this.user = this.localstorageService.select('user');
-	this.timesUsed = 0;
-	this.localstorageService.setItem('number', this.timesUsed);
+  this.storage = this.localstorageService.storage;
 }
 
-public loggedIn(): void {
-	this.localstorageService.setItem('user', 'You are logged in');
-}
-
-public loggedOut(): void {
-	this.localstorageService.setItem('user', 'You are logged out');
-}
-
-public init(): void {
-	this.localstorageService.removeItem('user');
-	this.timesUsed = this.timesUsed + 1;
-	this.localstorageService.setItem('number', this.timesUsed);
+public count(): void {
+  const n: number = Number(this.storage.getItem('number'));
+	this.storage.setItem('number', String(n +  1);
 }
 
 public clear(): void {
-	this.localstorageService.clear('user', 'number');
+	this.storage.removeItem('number');
 }
+`;
 
-public getItem(): any {
-	this.item = this.localstorageService.getItem('user');
-	this.timesUsed = this.localstorageService.getItem('number');
-}`;
-
-  public example = `<div class="u-margin-bottom">
-	<button type="button" (click)="loggedIn()" class="a-button u-margin-right">
-		Log in
-	</button>
-	<button type="button" (click)="loggedOut()" class="a-button u-margin-right">
-		Log out
-	</button>
-	<button type="button" (click)="init()" class="a-button u-margin-right">
-		Count clicks
-	</button>
-</div>
-<div class="u-margin-bottom">
-	<button type="button" (click)="getItem()" class="a-button u-margin-right">
-		Get from local storage
-	</button>
-	<button type="button" (click)="clear()" class="a-button">
-		Clear local storage
-	</button>
-</div>
-<div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">{{ this.item }}</label>
-</div>
-<div class="u-margin-bottom">
-	<label class="a-input__label a-input__label--inline">You clicked the count clicks button this many times: {{ this.timesUsed }}</label>
-</div>`;
+  private storage: Storage;
 
   constructor(
     private localstorageService: LocalstorageService
   ) {
-    this.user = this.localstorageService.select('user');
-    this.timesUsed = 0;
-    this.localstorageService.setItem('number', this.timesUsed);
+    this.storage = this.localstorageService.storage;
+    this.storage.setItem('aui-localstorage-demo', '0');
   }
 
-  public loggedIn(): void {
-    this.localstorageService.setItem('user', 'You are logged in');
-  }
-
-  public loggedOut(): void {
-    this.localstorageService.setItem('user', 'You are logged out');
-  }
-
-  public init(): void {
-    this.localstorageService.removeItem('user');
-    this.timesUsed = this.timesUsed + 1;
-    this.localstorageService.setItem('number', this.timesUsed);
+  public count(): void {
+    const n: number = Number(this.storage.getItem('aui-localstorage-test')) + 1;
+    this.storage.setItem('aui-localstorage-test', String(n));
   }
 
   public clear(): void {
-    this.localstorageService.clear('user', 'number');
+    this.storage.setItem('aui-localstorage-demo', '0');
   }
 
-  public getItem(): any {
-    this.item = this.localstorageService.getItem('user');
-    this.timesUsed = this.localstorageService.getItem('number');
+  public getItem() {
+    this.item = Number(this.storage.getItem('aui-localstorage-test'));
   }
 }

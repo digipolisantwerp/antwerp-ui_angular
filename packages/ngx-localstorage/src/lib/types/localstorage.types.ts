@@ -1,11 +1,14 @@
-export interface LocalstorageConfig {
-  storageType?: string;
-  identifier?: string;
+export interface ILocalStorageConfig {
+  storageType?: LocalStorageType;
 }
 
-export type PropertySelector = string | number;
-export type PathSelector = Array<string | number>;
-export type FunctionSelector = (storage: any) => boolean;
-export type Comparator = (x: any, y: any) => boolean;
-export type Selector = PropertySelector | PathSelector | FunctionSelector;
-export type PropertyDecorator = (target: any, propertyKey: string) => void;
+export type LocalStorageType = 'localStorage' | 'sessionStorage' | 'memory';
+
+// tslint:disable-next-line:no-empty-interface
+export interface IStorage extends Storage {
+
+}
+
+// tslint:disable-next-line:no-empty-interface
+export interface IWindow extends Window {
+}

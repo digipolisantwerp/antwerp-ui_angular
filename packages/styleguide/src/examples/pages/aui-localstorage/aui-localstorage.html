@@ -8,19 +8,10 @@
   <aui-code-snippet [codeSnippet]="typescript2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom">
-  <aui-code-snippet [codeSnippet]="example"></aui-code-snippet>
-</div>
 
 <div class="u-margin-bottom">
-  <button (click)="loggedIn()" class="a-button u-margin-right" type="button">
-    Log in
-  </button>
-  <button (click)="loggedOut()" class="a-button u-margin-right" type="button">
-    Log out
-  </button>
-  <button (click)="init()" class="a-button u-margin-right" type="button">
-    Count clicks
+  <button (click)="count()" class="a-button u-margin-right" type="button">
+    Count Up
   </button>
 </div>
 
@@ -34,9 +25,5 @@
 </div>
 
 <div class="u-margin-bottom">
-  <p>{{ this.item }}</p>
-</div>
-
-<div class="u-margin-bottom">
-  <p>You clicked the count clicks button this many times: {{ this.timesUsed }}</p>
+  <p>Counter:{{ this.item }}</p>
 </div>
