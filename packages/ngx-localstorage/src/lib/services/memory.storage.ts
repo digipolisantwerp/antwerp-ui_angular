@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {IStorage} from '../types/localstorage.types';
 
+
 @Injectable()
 export class MemoryStorage implements IStorage {
   [name: string]: any;
