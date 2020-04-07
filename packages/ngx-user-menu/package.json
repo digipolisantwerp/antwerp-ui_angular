@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-user-menu",
-  "version": "4.0.0-rc.1",
+  "version": "3.3.0",
   "dependencies": {
     "@acpaas-ui/ngx-flyout": "^3.0.0"
   },

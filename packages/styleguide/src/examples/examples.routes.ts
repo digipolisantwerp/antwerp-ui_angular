@@ -41,13 +41,13 @@ export const EXAMPLES_ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'modules/agenda'
+    redirectTo: 'modules/analytics'
   },
-  {
-    path: 'modules/agenda',
-    component: AgendaDemoPageComponent,
-    data: {meta: {title: 'Agenda'}}
-  },
+  // {
+  //   path: 'modules/agenda',
+  //   component: AgendaDemoPageComponent,
+  //   data: {meta: {title: 'Agenda'}}
+  // },
   {
     path: 'modules/analytics',
     component: AnalyticsDemoPageComponent,

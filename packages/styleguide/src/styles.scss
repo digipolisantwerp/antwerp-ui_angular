@@ -14,8 +14,14 @@ app-root {
   max-width: 100%;
 }
 
-main:focus {
-  outline: none;
+main {
+  &:focus {
+    outline: none;
+  }
+
+  &#main-content > ng-component {
+    width: 100%;
+  }
 }
 
 .p-acpaas-ui {

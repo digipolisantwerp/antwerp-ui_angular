@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-table",
-  "version": "4.0.0-rc.1",
+  "version": "3.3.0",
   "dependencies": {
     "short-unique-id": "1.1.1"
   },

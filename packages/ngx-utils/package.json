@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-utils",
-  "version": "4.0.0-rc.1",
+  "version": "3.3.0",
   "peerDependencies": {
     "@angular/core": ">=8.2.14",
     "@angular/common": ">=8.2.14",
