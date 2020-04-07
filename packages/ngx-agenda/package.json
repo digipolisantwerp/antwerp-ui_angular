@@ -1,9 +1,9 @@
 {
   "name": "@acpaas-ui/ngx-agenda",
-  "version": "3.3.0",
-	"publishConfig": {
-	  "access": "public"
-	},
+  "version": "4.0.0-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@acpaas-ui/js-date-utils": "~1.0.1",
     "hammerjs": "~2.0.8"

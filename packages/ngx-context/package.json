@@ -1,9 +1,9 @@
 {
   "name": "@acpaas-ui/ngx-context",
-  "version": "3.3.0",
-	"publishConfig": {
-	  "access": "public"
-	},
+  "version": "4.0.0-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@angular-redux/store": "~10.0.0",
     "redux": "4.0.1"

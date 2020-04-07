@@ -1,9 +1,9 @@
 {
   "name": "@acpaas-ui/ngx-code-snippet",
-  "version": "3.3.0",
-	"publishConfig": {
-	  "access": "public"
-	},
+  "version": "4.0.0-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "angular2-highlight-js": "~5.0.2",
     "marked": "~0.8.0"
