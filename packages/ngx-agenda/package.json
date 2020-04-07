@@ -1,13 +1,16 @@
 {
   "name": "@acpaas-ui/ngx-agenda",
   "version": "3.3.0",
+	"publishConfig": {
+	  "access": "public"
+	},
   "dependencies": {
-    "hammerjs": "~2.0.8",
-    "@acpaas-ui/js-date-utils": "~1.0.1"
+    "@acpaas-ui/js-date-utils": "~1.0.1",
+    "hammerjs": "~2.0.8"
   },
   "peerDependencies": {
-    "@angular/core": ">=8.2.14",
     "@angular/common": ">=8.2.14",
+    "@angular/core": ">=8.2.14",
     "@angular/platform-browser": ">=8.2.14"
   }
 }

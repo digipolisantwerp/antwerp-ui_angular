@@ -1,6 +1,9 @@
 {
   "name": "@acpaas-ui/ngx-code-snippet",
   "version": "3.3.0",
+	"publishConfig": {
+	  "access": "public"
+	},
   "dependencies": {
     "angular2-highlight-js": "~5.0.2",
     "marked": "~0.8.0"
@@ -9,8 +12,8 @@
     "@types/marked": "~0.7.0"
   },
   "peerDependencies": {
-    "@angular/core": ">=8.2.14",
     "@angular/common": ">=8.2.14",
+    "@angular/core": ">=8.2.14",
     "@angular/platform-browser": ">=8.2.14",
     "@angular/platform-browser-dynamic": ">=8.2.14"
   }
