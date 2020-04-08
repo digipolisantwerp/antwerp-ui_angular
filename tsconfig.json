@@ -20,124 +20,124 @@
     ],
     "paths": {
       "@acpaas-ui/ngx-layout": [
-        "dist/ngx-layout"
+        "packages/ngx-layout/dist"
       ],
       "@acpaas-ui/ngx-layout/*": [
-        "dist/ngx-layout/*"
+        "packages/ngx-layout/dist/*"
       ],
       "@acpaas-ui/ngx-logo": [
-        "dist/ngx-logo"
+        "packages/ngx-logo/dist"
       ],
       "@acpaas-ui/ngx-logo/*": [
-        "dist/ngx-logo/*"
+        "packages/ngx-logo/dist/*"
       ],
       "@acpaas-ui/ngx-navigation-menu": [
-        "dist/ngx-navigation-menu"
+        "packages/ngx-navigation-menu/dist"
       ],
       "@acpaas-ui/ngx-navigation-menu/*": [
-        "dist/ngx-navigation-menu/*"
+        "packages/ngx-navigation-menu/dist/*"
       ],
       "@acpaas-ui/ngx-code-snippet": [
-        "dist/ngx-code-snippet"
+        "packages/ngx-code-snippet/dist"
       ],
       "@acpaas-ui/ngx-code-snippet/*": [
-        "dist/ngx-code-snippet/*"
+        "packages/ngx-code-snippet/dist/*"
       ],
       "@acpaas-ui/analytics": [
-        "dist/analytics"
+        "packages/analytics/dist"
       ],
       "@acpaas-ui/analytics/*": [
-        "dist/analytics/*"
+        "packages/analytics/dist/*"
       ],
       "@acpaas-ui/ngx-analytics": [
-        "dist/ngx-analytics"
+        "packages/ngx-analytics/dist"
       ],
       "@acpaas-ui/ngx-analytics/*": [
-        "dist/ngx-analytics/*"
+        "packages/ngx-analytics/dist/*"
       ],
       "@acpaas-ui/ngx-agenda": [
-        "dist/ngx-agenda"
+        "packages/ngx-agenda/dist"
       ],
       "@acpaas-ui/ngx-agenda/*": [
-        "dist/ngx-agenda/*"
+        "packages/ngx-agenda/dist/*"
       ],
       "@acpaas-ui/ngx-avatar": [
-        "dist/ngx-avatar"
+        "packages/ngx-avatar/dist"
       ],
       "@acpaas-ui/ngx-avatar/*": [
-        "dist/ngx-avatar/*"
+        "packages/ngx-avatar/dist/*"
       ],
       "@acpaas-ui/ngx-calendar": [
-        "dist/ngx-calendar"
+        "packages/ngx-calendar/dist"
       ],
       "@acpaas-ui/ngx-calendar/*": [
-        "dist/ngx-calendar/*"
+        "packages/ngx-calendar/dist/*"
       ],
       "@acpaas-ui/ngx-context": [
-        "dist/ngx-context"
+        "packages/ngx-context/dist"
       ],
       "@acpaas-ui/ngx-context/*": [
-        "dist/ngx-context/*"
+        "packages/ngx-context/dist/*"
       ],
       "@acpaas-ui/ngx-flyout": [
-        "dist/ngx-flyout"
+        "packages/ngx-flyout/dist"
       ],
       "@acpaas-ui/ngx-flyout/*": [
-        "dist/ngx-flyout/*"
+        "packages/ngx-flyout/dist/*"
       ],
       "@acpaas-ui/ngx-localstorage": [
-        "dist/ngx-localstorage"
+        "packages/ngx-localstorage/dist"
       ],
       "@acpaas-ui/ngx-localstorage/*": [
-        "dist/ngx-localstorage/*"
+        "packages/ngx-localstorage/dist/*"
       ],
       "@acpaas-ui/ngx-pagination": [
-        "dist/ngx-pagination"
+        "packages/ngx-pagination/dist"
       ],
       "@acpaas-ui/ngx-pagination/*": [
-        "dist/ngx-pagination/*"
+        "packages/ngx-pagination/dist/*"
       ],
       "@acpaas-ui/ngx-progress-bar": [
-        "dist/ngx-progress-bar"
+        "packages/ngx-progress-bar/dist"
       ],
       "@acpaas-ui/ngx-progress-bar/*": [
-        "dist/ngx-progress-bar/*"
+        "packages/ngx-progress-bar/dist/*"
       ],
       "@acpaas-ui/ngx-table": [
-        "dist/ngx-table"
+        "packages/ngx-table/dist"
       ],
       "@acpaas-ui/ngx-table/*": [
-        "dist/ngx-table/*"
+        "packages/ngx-table/dist/*"
       ],
       "@acpaas-ui/ngx-user-menu": [
-        "dist/ngx-user-menu"
+        "packages/ngx-user-menu/dist"
       ],
       "@acpaas-ui/ngx-user-menu/*": [
-        "dist/ngx-user-menu/*"
+        "packages/ngx-user-menu/dist/*"
       ],
       "@acpaas-ui/ngx-selectable-list": [
-        "dist/ngx-selectable-list"
+        "packages/ngx-selectable-list/dist"
       ],
       "@acpaas-ui/ngx-selectable-list/*": [
-        "dist/ngx-selectable-list/*"
+        "packages/ngx-selectable-list/dist/*"
       ],
       "@acpaas-ui/ngx-forms": [
-        "dist/ngx-forms"
+        "packages/ngx-forms/dist"
       ],
       "@acpaas-ui/ngx-forms/*": [
-        "dist/ngx-forms/*"
+        "packages/ngx-forms/dist/*"
       ],
       "@acpaas-ui/ngx-utils": [
-        "dist/ngx-utils"
+        "packages/ngx-utils/dist"
       ],
       "@acpaas-ui/ngx-utils/*": [
-        "dist/ngx-utils/*"
+        "packages/ngx-utils/dist/*"
       ],
       "ngx-leaflet": [
-        "dist/ngx-leaflet"
+        "packages/ngx-leaflet/dist"
       ],
       "ngx-leaflet/*": [
-        "dist/ngx-leaflet/*"
+        "packages/ngx-leaflet/dist/*"
       ]
     }
   },
