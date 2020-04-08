@@ -1,6 +1,9 @@
 {
   "name": "@acpaas-ui/ngx-leafet",
   "version": "4.0.0-rc.6",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },

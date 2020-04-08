@@ -1,6 +1,9 @@
 {
   "name": "@acpaas-ui/ngx-code-snippet",
   "version": "4.0.0-rc.6",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
