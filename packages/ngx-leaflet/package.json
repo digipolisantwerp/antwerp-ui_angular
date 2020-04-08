@@ -15,5 +15,6 @@
     "@angular/forms": ">=8.2.14",
     "@angular/platform-browser": ">=8.2.14",
     "@angular/platform-browser-dynamic": ">=8.2.14"
-  }
+  },
+  "gitHead": "96fcec5c28f15a8949d891d2ab8d07bd37ad63fd"
 }
