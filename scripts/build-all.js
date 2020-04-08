@@ -30,17 +30,6 @@ const BUILD_AS_LAST = [
   'ngx-navigation-menu' // Menu is dependent on layout, so build as last
 ];
 
-function clearDistFolder() {
-  console.log(chalk.yellow('\nClearing /dist directory...'));
-  return new rxjs.Observable((obs) => rimraf(path.resolve(__dirname, '../dist'), {}, (err) => {
-    if (err)
-      obs.error(err);
-
-    console.log(chalk.green('Dist directory cleared!'));
-    obs.next();
-  }));
-}
-
 function buildAngularPackage(packageName) {
   return new rxjs.Observable((observer) => {
     console.log(chalk.yellow(`\nBuilding ${packageName}...`));
@@ -90,9 +79,7 @@ function run() {
     ...packages.map(packageName => buildAngularPackage(packageName)),
     ...BUILD_AS_LAST.map(packageName => buildAngularPackage(packageName))
   ];
-  return clearDistFolder().pipe(
-    operators.take(1),
-    operators.switchMap(() => rxjs.concat(...observables)),
+  return rxjs.concat(...observables).pipe(
     operators.tap(() => bar.update(++progress))
   );
 }
