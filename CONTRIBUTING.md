@@ -127,7 +127,14 @@ After this, add a demo page component to the examples module: `packages/stylegui
     - `src/examples`: Example module containing pages and routes for the demos.
 
 ## Releases
-TODO
+
+To publish a new version of ACPAasUI, run:
+````shell
+npm run prepare
+npm run publish:all
+````
+
+Internally, this will use Lerna to publish all the Angular packages.
 
 ACPaaS UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
 
