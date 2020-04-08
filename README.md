@@ -22,19 +22,19 @@ This library is part of [ACPaaS UI][acpaas-ui].
 
 ### Running the project locally
 
-````shell
+```shell
 npm i
 npm run build:all
 npm start
-````
+```
 
 ### Install ACPaaS UI
 
-````shell
+```shell
 npm i @acpaas-ui/ngx-utils
 npm i @acpaas-ui/ngx-forms
 // Other necessary libs for your app...
-````
+```
 
 Edit styles.scss to import the branding look & feel.
 

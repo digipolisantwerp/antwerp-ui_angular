@@ -12,13 +12,13 @@ To succesfully migrate a project:
 - Rename all import occurences of '@acpaas-ui/ngx-components/<package\>' to '@acpaas-ui/ngx-<package\>'
 
 For example, if your application uses the forms and layout packages, run:
-````shell
+```shell
 npm i @acpaas-ui/ngx-forms -S
 npm i @acpaas-ui/ngx-layout -S
-````
+```
 
 Then, rename the imports accordingly
-````typescript
+```typescript
 import * as Forms from '@acpaas-ui/ngx-forms';
 import * as Layout from '@acpaas-ui/ngx-layout';
-````
+```

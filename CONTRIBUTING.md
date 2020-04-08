@@ -60,10 +60,10 @@ npm start
 
 The ACPaaS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
 To build or test packages independently, run:
-````shell
+```shell
 ng build ngx-<packagename>
 ng test ngx-<packagename>
-````
+```
 
 For example:
 ```shell
@@ -105,15 +105,15 @@ More info on how to create Angular libraries can be found [here](https://angular
 
 To create a new library as part of ACPaaS UI, run:
 
-````shell
+```shell
 ng generate library ngx-<package>
-````
+```
 
 To build and test your package, respectively run:
-````shell
+```shell
 ng build ngx-<package>
 ng test ngx-<package>
-````
+```
 
 Make sure to edit the `package.json` file of the library to set correct library name and publishing settings.
 
@@ -128,13 +128,12 @@ After this, add a demo page component to the examples module: `packages/stylegui
 
 ## Releases
 
-To publish a new version of ACPAasUI, run:
-````shell
-npm run prepare
+To publish a new version of ACPaas UI, run:
+```shell
 npm run publish:all
-````
+```
 
-Internally, this will use Lerna to publish all the Angular packages.
+Internally, this will use [Lerna](https://lerna.js.org) to publish all the Angular packages. Note that you'll need the appropriate access to publish.
 
 ACPaaS UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
 

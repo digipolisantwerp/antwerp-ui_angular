@@ -32,16 +32,16 @@ export class AppModule { }
 ```
 
 In your template:
-````html
+```html
 <aui-user-menu [user]="userObject" flyoutSize="Medium" [notificationsCount]="100" (logout$)="logoutUser()" (login$)="loginUser()" [translations]="translations">
     <div class="u-margin-lg u-text-center">
         Your Content Here
     </div>
 </aui-user-menu>
-````
+```
 
 Component inputs:
-````typescript
+```typescript
 public mockUser: UserMenu.IUser = {
 		firstName: 'John',
 		lastName: 'Doe',
@@ -58,7 +58,7 @@ public logoutUser(){
 public loginUser(){
     alert('User is logged in!');
 }
-````
+```
 
 ## Documentation
 
