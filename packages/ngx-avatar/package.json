@@ -2,7 +2,7 @@
   "name": "@acpaas-ui/ngx-avatar",
   "version": "4.0.0-rc.8",
   "files": [
-    "dist/**/*"
+    "**/*"
   ],
   "publishConfig": {
     "access": "public"
