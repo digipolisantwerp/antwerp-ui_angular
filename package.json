@@ -20,7 +20,8 @@
     "build:prod": "ng build --prod --base-href \"https://digipolisantwerp.github.io/acpaas-ui_angular/\"",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prepare": "npm run build:all"
   },
   "private": true,
   "dependencies": {
