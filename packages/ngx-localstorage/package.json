@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-localstorage",
-  "version": "4.0.0-rc.2",
+  "version": "4.0.0-rc.3",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-utils": "^4.0.0-rc.2"
+    "@acpaas-ui/ngx-utils": "^4.0.0-rc.3"
   },
   "peerDependencies": {
     "@angular/core": ">=8.2.14",
