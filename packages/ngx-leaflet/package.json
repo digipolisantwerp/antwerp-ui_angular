@@ -1,5 +1,5 @@
 {
-  "name": "@acpaas-ui/ngx-leafet",
+  "name": "@acpaas-ui/ngx-leaflet",
   "version": "4.0.0-rc.10",
   "publishConfig": {
     "access": "public"
