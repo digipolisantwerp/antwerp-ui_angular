@@ -7,9 +7,6 @@
     "Digipolis",
     "acpaas-ui"
   ],
-  "files": [
-    "dist"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
