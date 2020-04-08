@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-pagination",
-  "version": "4.0.0-rc.4.0",
+  "version": "4.0.0-rc.5",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-utils": "^4.0.0-rc.4.0"
+    "@acpaas-ui/ngx-utils": "^4.0.0-rc.5"
   },
   "peerDependencies": {
     "@angular/common": ">=8.2.14",
