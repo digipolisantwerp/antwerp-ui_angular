@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-navigation-menu",
-  "version": "4.0.0-rc.7",
+  "version": "4.0.0-rc.8",
   "files": [
     "dist/**/*"
   ],
@@ -8,8 +8,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-layout": "^4.0.0-rc.7",
-    "@acpaas-ui/ngx-logo": "^4.0.0-rc.7"
+    "@acpaas-ui/ngx-layout": "^4.0.0-rc.8",
+    "@acpaas-ui/ngx-logo": "^4.0.0-rc.8"
   },
   "peerDependencies": {
     "@angular/common": ">=8.2.14",
