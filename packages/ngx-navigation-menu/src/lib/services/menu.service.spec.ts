@@ -4,10 +4,13 @@ import {Menu} from '../interfaces';
 import {TestBed} from '@angular/core/testing';
 import {select} from './helpers';
 import * as sinon from 'sinon';
+import {SinonStub} from 'sinon';
+import {LocalstorageService} from './localstorage.service';
 
 describe('Menu Service Test', () => {
   let service: MenuService;
   let config: Menu.ModuleConfiguration;
+  let storage: LocalstorageService;
 
   beforeEach(() => {
     config = {
@@ -19,10 +22,15 @@ describe('Menu Service Test', () => {
           provide: 'config',
           useValue: config,
         },
+        {
+          provide: LocalstorageService,
+          useValue: sinon.createStubInstance(LocalstorageService)
+        },
         MenuService,
       ],
     });
     service = TestBed.get(MenuService);
+    storage = TestBed.get(LocalstorageService);
   });
 
   afterEach(() => {
@@ -80,12 +88,22 @@ describe('Menu Service Test', () => {
   });
 
   describe('Module Configuration', () => {
-    it('should not dock', () => {
-      const s = new MenuService({dockedByDefault: false});
+    it('should not dock, not in localstorage', () => {
+      const s = new MenuService({dockedByDefault: false}, storage);
       expect(s.state$.pipe(select(state => state.docked))).toBeObservable(cold('a', {a: false}));
     });
-    it('SHOULD dock', () => {
-      const s = new MenuService({dockedByDefault: true});
+    it('SHOULD dock, not in localstorage', () => {
+      const s = new MenuService({dockedByDefault: true}, storage);
+      expect(s.state$.pipe(select(state => state.docked))).toBeObservable(cold('a', {a: true}));
+    });
+    it('should not dock, in localstorage', () => {
+      (storage.getMenuState as SinonStub).returns({docked: false});
+      const s = new MenuService({dockedByDefault: true, useLocalStorage: true}, storage);
+      expect(s.state$.pipe(select(state => state.docked))).toBeObservable(cold('a', {a: false}));
+    });
+    it('SHOULD dock, in localstorage', () => {
+      (storage.getMenuState as SinonStub).returns({docked: true});
+      const s = new MenuService({dockedByDefault: false, useLocalStorage: true}, storage);
       expect(s.state$.pipe(select(state => state.docked))).toBeObservable(cold('a', {a: true}));
     });
   });

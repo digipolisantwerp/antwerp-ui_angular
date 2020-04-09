@@ -5,9 +5,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import {COMPONENTS} from './components/components';
 import {AuiModule} from './aui/aui.module';
+import {LocalstorageService} from './services/localstorage.service';
 
 const defaultConfiguration: Menu.ModuleConfiguration = {
   dockedByDefault: false,
+  useLocalStorage: true
 };
 
 @NgModule({
@@ -21,6 +23,7 @@ const defaultConfiguration: Menu.ModuleConfiguration = {
   ],
   providers: [
     MenuService,
+    LocalstorageService,
     {
       provide: 'config',
       useValue: defaultConfiguration,
@@ -36,6 +39,8 @@ export class NavigationMenuModule {
     return {
       ngModule: NavigationMenuModule,
       providers: [
+        MenuService,
+        LocalstorageService,
         {
           provide: 'config',
           useValue: configuration,
