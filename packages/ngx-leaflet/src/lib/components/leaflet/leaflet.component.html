@@ -1,0 +1,20 @@
+<div [ngClass]="{'is-full-screen': leafletMap.fullScreen}" class="aui-leaflet o-leaflet">
+  <div #content [ngClass]="{'has-content': hasSidebar}" class="o-leaflet__content">
+    <ng-content></ng-content>
+  </div>
+  <div class="o-leaflet__wrapper">
+    <div #map class="o-leaflet__map"></div>
+    <div class="o-leaflet__controls o-leaflet__controls--top-left">
+      <ng-content select="[controls][top][left]"></ng-content>
+    </div>
+    <div class="o-leaflet__controls o-leaflet__controls--top-right">
+      <ng-content select="[controls][top][right]"></ng-content>
+    </div>
+    <div class="o-leaflet__controls o-leaflet__controls--bottom-right">
+      <ng-content select="[controls][bottom][right]"></ng-content>
+    </div>
+    <div class="o-leaflet__controls o-leaflet__controls--bottom-left">
+      <ng-content select="[controls][bottom][left]"></ng-content>
+    </div>
+  </div>
+</div>

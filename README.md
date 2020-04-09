@@ -15,32 +15,25 @@ This library is part of [ACPaaS UI][acpaas-ui].
 | ----------------- | ---------- | ------- |
 | Schematics        | ES5+       | [![acpaas-ui-schematics-github]][acpaas-ui-schematics] |
 | Javascript        | ES5+       | [![acpaas-ui-js-github]][acpaas-ui-js] |
-| Angular           | Angular 6+ | [![acpaas-ui-angular-github]][acpaas-ui-angular] |
+| Angular           | Angular 8+ | [![acpaas-ui-angular-github]][acpaas-ui-angular] |
 | React             | React 16+  | [![acpaas-ui-react-github]][acpaas-ui-react] |
 
 ## Getting Started
 
-### Building packages
+### Running the project locally
 
-The following will build `<packagename>` and its example.
-
-```sh
-example=<packagename> npm run build:package
+```shell
+npm i
+npm run build:all
+npm start
 ```
 
-For example:
+### Install ACPaaS UI
 
-```sh
-example=forms npm run build:package
-```
-
-Start a new Angular app.
-
-```sh
-npm install -g @angular/cli
-ng new my-app --style=scss
-cd my-app
-npm install @acpaas-ui/ngx-components
+```shell
+npm i @acpaas-ui/ngx-utils
+npm i @acpaas-ui/ngx-forms
+// Other necessary libs for your app...
 ```
 
 Edit styles.scss to import the branding look & feel.
@@ -69,28 +62,26 @@ Check out our [live examples][acpaas-ui-angular-styleguide] or visit the [ACPaaS
 
 This library contains the following components:
 
-| Name           | Description                              | URL                                                       |
-| -------------- | ---------------------------------------- | --------------------------------------------------------- |
-| agenda         | Calendar to display events               | [Documentation](./packages/agenda/lib/README.md)              |
-| analytics      | Google Analytics integration             | [Documentation](./packages/analytics/lib/README.md)           |
-| avatar         | User avatar icon                         | [Documentation](./packages/avatar/lib/README.md)              |
-| calendar       | Calendar to select dates                 | [Documentation](./packages/calendar/lib/README.md)            |
-| code-snippet   | Snippet of source code                   | [Documentation](./packages/code-snippet/lib/README.md)        |
-| context        | Set meta tags for SEO                    | [Documentation](./packages/context/lib/README.md)             |
-| flyout         | Reveal additional content                | [Documentation](./packages/flyout/lib/README.md)              |
-| forms          | Assorted form fields                     | [Documentation](./packages/forms/lib/README.md)               |
-| layout         | Assorted page layout components          | [Documentation](./packages/layout/lib/README.md)              |
-| localstorage   | Interface with localstorage              | [Documentation](./packages/localstorage/lib/README.md)        |
-| logo           | Logo icon                                | [Documentation](./packages/logo/lib/README.md)                |
-| map            | Leaflet-based map                        | [Documentation](./packages/map/lib/README.md)                 |
-| notifications  | Show user notifications                  | [Documentation](./packages/notifications/lib/README.md)       |
-| pagination     | Pagination control                       | [Documentation](./packages/pagination/lib/README.md)          |
-| progress-bar   | Progress bar control                     | [Documentation](./packages/progress-bar/lib/README.md)        |
-| selectable-list| List control with selectable items       | [Documentation](./packages/selectable-list/lib/README.md)     |
-| table          | Interactive table                        | [Documentation](./packages/table/lib/README.md)               |
-| utils          | Assorted helpers                         | [Documentation](./packages/utils/lib/README.md)               |
-| user-menu      | User Menu providing login/logout         | [Documentation](./packages/user-menu/README.md)               |
-| navigation-menu| Generic navigation menu                  | [Documentation](./packages/navigation-menu/README.md)
+| Name               | Description                              | URL                                                           |
+| ------------------ | ---------------------------------------- | ------------------------------------------------------------- |
+| ngx-analytics      | Google Analytics integration             | [Documentation](./packages/ngx-analytics/README.md)           |
+| ngx-avatar         | User avatar icon                         | [Documentation](./packages/ngx-avatar/README.md)              |
+| ngx-calendar       | Calendar to select dates                 | [Documentation](./packages/ngx-calendar/README.md)            |
+| ngx-code-snippet   | Snippet of source code                   | [Documentation](./packages/ngx-code-snippet/README.md)        |
+| ngx-context        | Set meta tags for SEO                    | [Documentation](./packages/ngx-context/README.md)             |
+| ngx-flyout         | Reveal additional content                | [Documentation](./packages/ngx-flyout/README.md)              |
+| ngx-forms          | Assorted form fields                     | [Documentation](./packages/ngx-forms/README.md)               |
+| ngx-layout         | Assorted page layout components          | [Documentation](./packages/ngx-layout/README.md)              |
+| ngx-localstorage   | Interface with localstorage              | [Documentation](./packages/ngx-localstorage/README.md)        |
+| ngx-logo           | Logo icon                                | [Documentation](./packages/ngx-logo/README.md)                |
+| ngx-leaflet        | Leaflet-based map                        | [Documentation](./packages/ngx-leaflet/README.md)             |
+| ngx-pagination     | Pagination control                       | [Documentation](./packages/ngx-pagination/README.md)          |
+| ngx-progress-bar   | Progress bar control                     | [Documentation](./packages/ngx-progress-bar/README.md)        |
+| ngx-selectable-list| List control with selectable items       | [Documentation](./packages/ngx-selectable-list/README.md)     |
+| ngx-table          | Interactive table                        | [Documentation](./packages/ngx-table/README.md)               |
+| ngx-utils          | Assorted helpers                         | [Documentation](./packages/ngx-utils/README.md)               |
+| ngx-user-menu      | User Menu providing login/logout         | [Documentation](./packages/ngx-user-menu/README.md)           |
+| ngx-navigation-menu| Generic navigation menu                  | [Documentation](./packages/ngx-navigation-menu/README.md)     |
 
 ## Testing
 

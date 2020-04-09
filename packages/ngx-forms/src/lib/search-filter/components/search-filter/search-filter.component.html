@@ -1,0 +1,47 @@
+<div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout class="m-search-filter">
+  <div [ngClass]="{'m-search-filter__label--active': selectedItems.length > 0}"
+       aria-haspopup=”true” auiFlyoutAction class="m-search-filter__label has-icon-right">
+    <span id="{{ id + '-label' }}">{{ label }}</span>
+    <span *ngIf="selectedItems.length">({{ selectedItems.length }})</span>
+    <span class="fa fa-angle-down"></span>
+  </div>
+
+  <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
+    <div *ngIf="!isDisabled" class="m-search-filter__input a-input has-icon-right">
+      <div class="a-input__wrapper">
+        <input (input)="filterDataFromSearch()" [(ngModel)]="query" [attr.aria-labelledby]="id + '-label'" [attr.placeholder]="placeholder"
+               aria-autocomplete="list" id="{{ id + '-search' }}" name="{{ name + '-search' }}"
+               type="text">
+        <span class="fa fa-search"></span>
+      </div>
+    </div>
+
+    <div *ngIf="!isDisabled && selectedItems.length > 0" class="m-search-filter__clear">
+      <button (click)="clear()" class="a-button-outline a-button--small a-button--danger has-icon-left" type="button">
+        <span class="fa fa-close"></span>
+        {{ labelDeselect }}
+      </button>
+    </div>
+
+    <p *ngIf="labelResults" class="h6 m-search-filter__results-title">{{ labelResults }}</p>
+    <div *ngIf="loading" class="u-text-center u-padding a-spinner"></div>
+    <ul *ngIf="!loading" class="a-list a-list--lined a-list--unstyled">
+      <li *ngIf="!filteredChoices.length" class="m-search-filter__results-item a-list__item">
+        <p class="u-margin-xs">{{ labelNoResults }}</p>
+      </li>
+      <li *ngFor="let choice of filteredChoices; index as i" class="m-search-filter__results-item a-list__item">
+        <div class="a-input__checkbox">
+          <input
+            (change)="toggleSelected(choice.value)"
+            [attr.disabled]="isDisabled ? true : null"
+            [checked]="selectedItems.indexOf(choice.value) >= 0"
+            id="{{ 'checkbox--' + i + '--' + id }}"
+            name="{{ 'checkbox--' + i + '--' + id }}"
+            type="checkbox"
+          />
+          <label for="{{ 'checkbox--' + i + '--' + id }}">{{ choice.label }}</label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

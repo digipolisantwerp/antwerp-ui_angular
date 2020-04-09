@@ -1,0 +1,132 @@
+@import '~@a-ui/core/dist/assets/styles/quarks';
+@import '~@a-ui/acpaas/dist/assets/styles/quarks/quarks.variables';
+
+/* Need to be included in core branding */
+body {
+  display: flex;
+  min-height: 100vh;
+}
+
+app-root {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+main {
+  &:focus {
+    outline: none;
+  }
+
+  &#main-content > ng-component {
+    width: 100%;
+  }
+}
+
+.p-acpaas-ui {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.a-pre.hljs {
+  border: 1px solid $grey-lighter;
+}
+
+.m-pane--left {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  left: 0;
+  position: fixed !important;
+  top: 0;
+}
+
+.m-overlay__pane {
+  position: fixed !important;
+}
+
+.m-button-group--inline {
+  display: inline-flex;
+}
+
+.m-sidebar {
+  @include to($screen-xs-max) {
+    background-color: $background-color-light;
+    margin-bottom: $spacer;
+    max-height: 15.75rem;
+    overflow: auto;
+    padding-left: $spacer;
+    padding-right: $spacer;
+    width: auto;
+  }
+}
+
+.m-flyout:focus {
+  outline: none;
+}
+
+.u-show-on-mobile {
+  @include at($screen-sm) {
+    display: none;
+  }
+}
+
+.u-hide-on-mobile {
+  @include to($screen-xs-max) {
+    display: none;
+  }
+}
+
+.u-hide-on-tablet {
+  @include to($screen-sm-max) {
+    display: none;
+  }
+}
+
+pre {
+  tab-size: 2;
+}
+
+.u-text-readable {
+  max-width: 28rem;
+}
+
+.aui-footer {
+  background: $black-pearl;
+
+  .u-container {
+    padding-top: $spacer-lg;
+    padding-bottom: $spacer-md;
+  }
+
+  &,
+  a,
+  a:hover,
+  a:active,
+  a:focus {
+    color: $white;
+  }
+
+  h3.h5 {
+    color: $grey-lighter;
+  }
+}
+
+.m-nav-tabs__layout {
+  box-shadow: 0 -1px 0 $border-color inset;
+}
+
+.aui-code-snippet {
+  display: block;
+  overflow-x: auto;
+}
+
+.o-leaflet__wrapper {
+  overflow: visible !important;
+}
+
+.o-leaflet__map:focus {
+  box-shadow: 0 0 0 3px $input-border-focus;
+}

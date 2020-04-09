@@ -1,0 +1,11 @@
+<div auiFlyout>
+  <button auiFlyoutAction class="a-button a-button--small has-icon" type="button">
+    <span class="fa fa-pencil"></span>
+  </button>
+  <div auiFlyoutZone>
+    <ul class="m-selectable-list m-selectable-list--no-border">
+      <li auiFlyoutClose><a (click)="map?.switchToPolygon()" class="m-selectable-list__item">Vorm intekenen</a></li>
+      <li auiFlyoutClose><a (click)="map?.switchToLine()" class="m-selectable-list__item">Lijn/route intekenen</a></li>
+    </ul>
+  </div>
+</div>

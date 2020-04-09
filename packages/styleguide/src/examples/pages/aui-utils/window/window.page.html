@@ -1,0 +1,35 @@
+<h3 class="h4 u-margin-bottom">Window</h3>
+
+<p class="u-margin-bottom">
+  Utility to reference the global window object indirectly.
+</p>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML"></aui-code-snippet>
+</div>
+
+<p class="u-margin-bottom-xs">
+  These are the window's current height and width:
+</p>
+<dl class="a-definition-list u-margin-bottom">
+  <dt>Height:</dt>
+  <dd>
+    <pre class="a-pre a-pre--scrollable">{{ window?.innerHeight }}</pre>
+  </dd>
+  <dt>Width:</dt>
+  <dd>
+    <pre class="a-pre a-pre--scrollable">{{ window?.innerWidth }}</pre>
+  </dd>
+</dl>

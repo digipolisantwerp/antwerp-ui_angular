@@ -1,0 +1,11 @@
+<div class="aui-wysiwyg__inner">
+  <ckeditor
+    (blur)="onBlur($event)"
+    (change)="writeValue($event)"
+    (focus)="onFocus($event)"
+    [(ngModel)]="ckeditorContent"
+    [config]="ckeditorConfig"
+    [debounce]="debounce"
+    [readonly]="isDisabled"
+  ></ckeditor>
+</div>

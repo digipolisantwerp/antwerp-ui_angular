@@ -1,0 +1,8 @@
+<aui-leaflet-control
+  (click)="map?.zoomIn()"
+  [disabled]="map?.zoomInDisabled()" class="o-leaflet__zoom-control"
+  icon="plus"></aui-leaflet-control>
+<aui-leaflet-control
+  (click)="map?.zoomOut()"
+  [disabled]="map?.zoomOutDisabled()" class="o-leaflet__zoom-control"
+  icon="minus"></aui-leaflet-control>

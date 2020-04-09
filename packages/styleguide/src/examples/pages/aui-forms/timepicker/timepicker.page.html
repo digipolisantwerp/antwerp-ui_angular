@@ -1,0 +1,111 @@
+<h3 class="h4 u-margin-bottom">Timepicker</h3>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="timepickerImportExample"></aui-code-snippet>
+</div>
+
+<h4 class="h5 u-margin-bottom">Basic</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="timepickerExampleTypescript"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="timepickerExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <div class="a-input">
+    <label class="a-input__label" for="timepicker1">Time</label>
+    <aui-timepicker
+      [(ngModel)]="time1"
+      ariaLabelHours="Hours"
+      ariaLabelMinutes="Minutes"
+      data-id="timepicker1"
+      hoursPlaceholder="HH">
+    </aui-timepicker>
+  </div>
+</div>
+
+<div *ngIf="time1" class="u-margin-bottom-lg">
+  <pre class="a-pre">{{ time1 }}</pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">Predefined hours and minutes</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="timepickerExampleTypescript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="timepickerExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <div class="a-input">
+    <label class="a-input__label" for="timepicker2">Time</label>
+    <aui-timepicker
+      [(ngModel)]="time2"
+      ariaLabelHours="Hours"
+      ariaLabelMinutes="Minutes"
+      data-id="timepicker2"
+      hoursPlaceholder="HH"
+      size="small">
+    </aui-timepicker>
+  </div>
+</div>
+
+<div *ngIf="time2" class="u-margin-bottom-lg">
+  <pre class="a-pre">{{ time2 }}</pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">Validation</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="timepickerExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <div class="a-input">
+    <label class="a-input__label" for="timepicker3">Time</label>
+    <aui-timepicker
+      [(ngModel)]="time3"
+      ariaLabelHours="Hours"
+      ariaLabelMinutes="Minutes"
+      data-id="timepicker3"
+      hasError="true"
+      hoursPlaceholder="HH"
+      size="large">
+    </aui-timepicker>
+  </div>
+</div>
+
+<div *ngIf="time3" class="u-margin-bottom">
+  <pre class="a-pre">{{ time3 }}</pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">Disabled</h4>
+
+<div class="u-margin-bottom">
+  <div class="a-input u-margin-bottom">
+    <label class="a-input__label" for="timepicker4">Time</label>
+    <aui-timepicker
+      [(ngModel)]="time4"
+      [disabled]="isDisabled"
+      ariaLabelHours="Hours"
+      ariaLabelMinutes="Minutes"
+      data-id="timepicker4"
+      hoursPlaceholder="HH">
+    </aui-timepicker>
+  </div>
+  <div class="a-input">
+    <div class="a-input__checkbox">
+      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox"/>
+      <label for="isDisabled">Toggle disabled state</label>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="time4" class="u-margin-bottom">
+  <pre class="a-pre">{{ time4 }}</pre>
+</div>

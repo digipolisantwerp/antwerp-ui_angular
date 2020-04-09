@@ -1,0 +1,104 @@
+<h3 class="h4 u-margin-bottom">Autocomplete</h3>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="autocompleteImportExample"></aui-code-snippet>
+</div>
+
+<h4 class="h5 u-margin-bottom">Local search</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="autocompleteExampleJS1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="autocompleteExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <div class="a-input">
+    <label class="a-input__label" for="hero-names">Hero</label>
+    <div class="a-input__wrapper">
+      <aui-auto-complete
+        (select)="setSelectedItem1($event)"
+        [data]="heroList"
+        clearInvalid="true"
+        data-id="hero-names"
+        label="name"
+        minCharacters="3"
+        placeholder="Choose your hero…"
+        showAllByDefault="true"
+        value="">
+      </aui-auto-complete>
+    </div>
+  </div>
+  <p class="u-margin-top"><strong>Selected hero</strong>: {{ selectedItem1 }}</p>
+</div>
+
+<h4 class="h5 u-margin-bottom">Remote search with template</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="autocompleteExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="autocompleteExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <div class="a-input">
+    <label class="a-input__label" for="hero">Hero</label>
+    <div class="a-input__wrapper">
+      <aui-auto-complete
+        (search)="searchItems($event)"
+        (select)="setSelectedItem2($event)"
+        [results]="results"
+        data-id="hero"
+        key="id"
+        label="name"
+        loadingText="Loading…"
+        noResultsText="No results found"
+        placeholder="Choose your hero…"
+        remote="true"
+        searchIncentiveText="Type one or more keywords to start searching">
+        <ng-template let-item>
+          <div [innerHTML]="formatLabel(item)" class="has-icon-left"></div>
+        </ng-template>
+      </aui-auto-complete>
+    </div>
+  </div>
+  <p class="u-margin-top"><strong>Selected hero</strong>: {{ selectedItem2 }}</p>
+</div>
+
+<h4 class="h5 u-margin-bottom">Disabled state</h4>
+
+<div class="u-margin-bottom-xx">
+  <div class="a-input u-margin-bottom">
+    <label class="a-input__label" for="hero-disabled">Hero</label>
+    <div class="a-input__wrapper">
+      <aui-auto-complete
+        (search)="searchItems($event)"
+        (select)="setSelectedItem2($event)"
+        [(ngModel)]="disabledModel"
+        [disabled]="isDisabled"
+        [results]="results"
+        data-id="hero-disabled"
+        key="id"
+        label="name"
+        loadingText="Loading…"
+        noResultsText="No results found"
+        placeholder="Choose your hero..."
+        remote="true"
+        searchIncentiveText="Type one or more keywords to start searching">
+        <ng-template let-item>
+          <div [innerHTML]="formatLabel(item)" class="has-icon-left"></div>
+        </ng-template>
+      </aui-auto-complete>
+    </div>
+  </div>
+  <div class="a-input">
+    <div class="a-input__checkbox">
+      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox"/>
+      <label for="isDisabled">Toggle disabled state</label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="m-upload aui-upload">
+  <aui-upload-zone (invalidFiles)="onInvalidFiles($event)" (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" [ariaId]="ariaId"
+                   [disabled]="disabled" [id]="id"
+                   [uploader]="uploader">
+    <div class="m-upload__message">
+      <ng-content select=".m-upload__message"></ng-content>
+    </div>
+    <div class="m-upload__description">
+      <ng-content select=".m-upload__description"></ng-content>
+    </div>
+    <div class="m-upload__button">
+      <ng-content select=".m-upload__button"></ng-content>
+    </div>
+  </aui-upload-zone>
+  <aui-validation-list [ariaLabelRemove]="ariaLabelRemove" [invalidFiles]="invalidFiles"></aui-validation-list>
+  <aui-upload-queue (uploadedFiles)="onUploadedFiles($event)" *ngIf="!options?.autoUpload" [ariaLabelRemove]="ariaLabelRemove"
+                    [files]="queuedFiles" [uploader]="uploader"></aui-upload-queue>
+</div>

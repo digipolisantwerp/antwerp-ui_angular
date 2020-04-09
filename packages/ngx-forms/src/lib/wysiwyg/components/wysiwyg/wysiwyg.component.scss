@@ -1,0 +1,31 @@
+@import '~@a-ui/core/dist/assets/styles/_quarks';
+@import '~@a-ui/acpaas/dist/assets/styles/quarks/quarks.variables';
+
+:host ::ng-deep {
+  .cke {
+    .cke_chrome {
+      border: 1px solid $border-color;
+    }
+
+    .cke_top {
+      border-color: $border-color;
+    }
+
+    .cke_top,
+    .cke_bottom {
+      background-color: $grey-lighter;
+    }
+
+    .cke_wysiwyg_div {
+      padding: $spacer-xs / 3;
+    }
+
+    &.cke_focus {
+      .cke_contents {
+        box-shadow: 0 0 0 1px $border-color, 0 0 0 4px $input-border-focus;
+        position: relative;
+        z-index: layer('base');
+      }
+    }
+  }
+}

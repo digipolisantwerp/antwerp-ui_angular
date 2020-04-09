@@ -1,0 +1,17 @@
+{
+  "name": "@acpaas-ui/ngx-pagination",
+  "version": "4.0.0-rc.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@acpaas-ui/ngx-utils": "^4.0.0-rc.10"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=8.2.14",
+    "@angular/core": ">=8.2.14",
+    "@angular/forms": ">=8.2.14",
+    "@angular/platform-browser": ">=8.2.14"
+  },
+  "gitHead": "3a27c6e12dd878b2ca025ee0016370b6e5e0e5b9"
+}

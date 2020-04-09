@@ -1,0 +1,38 @@
+<div class="m-user-menu-container">
+  <!-- Container showing the login button -->
+  <ng-container *ngIf="!user">
+    <button (click)="login$.next()" [attr.aria-label]="translations.login"
+            class="a-button a-button-login has-icon-left">
+      <span class="fa fa-user"></span>
+      {{ translations.login }}
+    </button>
+  </ng-container>
+
+  <!-- Container with user avatar, actions and logout functionality -->
+  <ng-container *ngIf="user">
+    <div [attr.data-align]="direction" [attr.size]="flyoutSize" auiFlyout class="m-user-menu-flyout">
+      <button auiFlyoutAction class="a-button primary a-button-avatar">
+				<span class="a-avatar u-margin-right-xs">
+					<img *ngIf="user?.avatarUrl" [attr.alt]="translations.userAvatar" [src]="user?.avatarUrl"/>
+					<span *ngIf="!(user?.avatarUrl)" class="a-avatar__icon">
+						<span class="fa fa-user"><span
+              class="u-screen-reader-only">{{ translations.userAvatar }}</span></span>
+					</span>
+					<span *ngIf="notificationsCount > 0"
+                class="a-badge a-badge--warning">{{ !notificationsCount ? 0 : notificationsCount }}</span>
+				</span>
+        {{ user?.firstName }} {{ user?.lastName }}
+      </button>
+      <div auiFlyoutZone>
+        <!-- By using Content Projection, whatever the user iserts in the html tag of this component will get rendered in the flyout element -->
+        <ng-content></ng-content>
+        <button (click)="logout$.next()"
+                *ngIf="showLogoutButton"
+                [attr.aria-label]="translations.logout" auiFlyoutClose class='a-button-logout a-button a-button--danger a-button--block has-icon-left'>
+          <span class="fa fa-power-off"></span>
+          {{ translations.logout }}
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

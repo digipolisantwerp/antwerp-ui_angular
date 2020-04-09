@@ -4,10 +4,7 @@ addons:
   chrome: stable
 language: node_js
 node_js:
-  - "lts/carbon"
-
-before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - 12
 
 branches:
   only:
@@ -15,10 +12,9 @@ branches:
 
 script:
   - npm run lint
-  - npm run build
-  - npm run examples
+  - npm run build:all
   - npm test
-  - ng build --prod --base-href "https://digipolisantwerp.github.io/acpaas-ui_angular/"
+  - npm run build:prod
 
 deploy:
   provider: pages

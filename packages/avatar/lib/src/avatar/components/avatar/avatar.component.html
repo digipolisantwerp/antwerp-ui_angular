@@ -1,6 +1,0 @@
-<div class="a-avatar" [ngClass]="[className, avatarSizes[size]]">
-	<img *ngIf="image" class="a-avatar__image" [alt]="title" [src]="image">
-	<span *ngIf="icon" class="a-avatar__icon" [ngClass]="[icon]"></span>
-	<span *ngIf="letter" class="a-avatar__letter" aria-hidden="true">{{ letter }}</span>
-	<span *ngIf="icon || letter" class="u-screen-reader-only">{{ title }}</span>
-</div>

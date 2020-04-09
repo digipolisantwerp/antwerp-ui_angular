@@ -1,0 +1,28 @@
+<div class="m-timepicker">
+  <div *ngIf="!shouldUseFallback" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }" class="a-input">
+    <input [attr.aria-label]="ariaLabelHours + ':' + ariaLabelMinutes" [formControl]="timeControl" [id]="id"
+           type="time">
+  </div>
+
+  <div *ngIf="shouldUseFallback" [formGroup]="fallbackForm">
+    <div [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }" class="a-input has-icon-right">
+      <div class="a-input__wrapper">
+        <select [attr.aria-label]="ariaLabelHours" [id]="id" formControlName="hours">
+          <option disabled value="null">{{ hoursPlaceholder }}</option>
+          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+        </select>
+        <span class="fa fa-angle-down"></span>
+      </div>
+    </div>
+
+    <div [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }" class="a-input has-icon-right">
+      <div class="a-input__wrapper">
+        <select [attr.aria-label]="ariaLabelMinutes" formControlName="minutes">
+          <option disabled value="null">{{ minutesPlaceholder }}</option>
+          <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+        </select>
+        <span class="fa fa-angle-down"></span>
+      </div>
+    </div>
+  </div>
+</div>

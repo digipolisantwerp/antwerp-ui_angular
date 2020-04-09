@@ -1,0 +1,34 @@
+<div class="m-datepicker__nav">
+  <button (click)="updateActiveDate(-1)" [attr.aria-label]="ariaPreviousLabel" class="a-button has-icon" type="button">
+    <span class="fa fa-angle-left"></span>
+  </button>
+  <button (click)="switchView()" class="m-datepicker__title a-button" type="button">
+    {{ headerLabel | titlecase }}
+  </button>
+
+  <button (click)="updateActiveDate(1)" [attr.aria-label]="ariaNextLabel" class="a-button has-icon" type="button">
+    <span class="fa fa-angle-right"></span>
+  </button>
+</div>
+
+<aui-calendar-month
+  (selectDate)="pickDate($event)"
+  *ngIf="activeView === CALENDAR_VIEW_MONTH"
+  [activeDate]="activeDate"
+  [range]="range"
+  [selectedDate]="selectedDate"
+  [weekdayLabels]="weekdayLabels"
+></aui-calendar-month>
+<aui-calendar-year
+  (selectDate)="pickDate($event)"
+  *ngIf="activeView === CALENDAR_VIEW_YEAR"
+  [activeDate]="activeDate"
+  [monthLabels]="monthLabels"
+  [selectedDate]="selectedDate"
+></aui-calendar-year>
+<aui-calendar-decennia
+  (selectDate)="pickDate($event)"
+  *ngIf="activeView === CALENDAR_VIEW_DECENNIA"
+  [activeDate]="activeDate"
+  [selectedDate]="selectedDate"
+></aui-calendar-decennia>

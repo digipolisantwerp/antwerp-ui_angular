@@ -1,0 +1,42 @@
+<h3 class="u-margin-bottom">Localstorage</h3>
+
+<div class="u-margin-top u-margin-bottom m-alert">
+  <p>
+    <strong>Note:</strong> From version 4 on, the LocalStorage package introduces an important breaking change.
+    Instead of providing an interface depending on a given identifier, saving the state under that identifier,
+    this package now <strong>only provides the raw localStorage or sessionStorage objects.</strong> It is in a sense
+    no more than a wrapper around the <code>window.localStorage</code> and <code>window.sessionStorage</code> objects.
+    It is now every application's responsibility to save the state in localStorage under appropriate identifiers,
+    avoiding mixing up states from different application hosts.
+    Alternatively, you may use one of the many available Angular libraries for binding the localStorage to redux and/or
+    identifiers.
+  </p>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="typescript1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="typescript2"></aui-code-snippet>
+</div>
+
+
+<div class="u-margin-bottom">
+  <button (click)="count()" class="a-button u-margin-right" type="button">
+    Count Up
+  </button>
+</div>
+
+<div class="u-margin-bottom">
+  <button (click)="getItem()" class="a-button u-margin-right" type="button">
+    Get from local storage
+  </button>
+  <button (click)="clear()" class="a-button" type="button">
+    Clear local storage
+  </button>
+</div>
+
+<div class="u-margin-bottom">
+  <p>Counter:{{ this.item }}</p>
+</div>

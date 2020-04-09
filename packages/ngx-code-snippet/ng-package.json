@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "./dist",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "angular2-highlight-js": "angular2HighlightJs",
+      "marked": "_marked"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "angular2-highlight-js",
+    "marked"
+  ]
+}

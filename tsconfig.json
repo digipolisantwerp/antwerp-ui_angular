@@ -5,25 +5,144 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2017",
+      "es2018",
       "dom"
     ],
     "paths": {
-      "@acpaas-ui/ngx-components/*": [
-        "dist/*"
+      "@acpaas-ui/ngx-layout": [
+        "packages/ngx-layout/dist"
       ],
-      "@acpaas-ui/ngx-examples/*": [
-        "examples/*"
+      "@acpaas-ui/ngx-layout/*": [
+        "packages/ngx-layout/dist/*"
+      ],
+      "@acpaas-ui/ngx-logo": [
+        "packages/ngx-logo/dist"
+      ],
+      "@acpaas-ui/ngx-logo/*": [
+        "packages/ngx-logo/dist/*"
+      ],
+      "@acpaas-ui/ngx-navigation-menu": [
+        "packages/ngx-navigation-menu/dist"
+      ],
+      "@acpaas-ui/ngx-navigation-menu/*": [
+        "packages/ngx-navigation-menu/dist/*"
+      ],
+      "@acpaas-ui/ngx-code-snippet": [
+        "packages/ngx-code-snippet/dist"
+      ],
+      "@acpaas-ui/ngx-code-snippet/*": [
+        "packages/ngx-code-snippet/dist/*"
+      ],
+      "@acpaas-ui/analytics": [
+        "packages/analytics/dist"
+      ],
+      "@acpaas-ui/analytics/*": [
+        "packages/analytics/dist/*"
+      ],
+      "@acpaas-ui/ngx-analytics": [
+        "packages/ngx-analytics/dist"
+      ],
+      "@acpaas-ui/ngx-analytics/*": [
+        "packages/ngx-analytics/dist/*"
+      ],
+      "@acpaas-ui/ngx-agenda": [
+        "packages/ngx-agenda/dist"
+      ],
+      "@acpaas-ui/ngx-agenda/*": [
+        "packages/ngx-agenda/dist/*"
+      ],
+      "@acpaas-ui/ngx-avatar": [
+        "packages/ngx-avatar/dist"
+      ],
+      "@acpaas-ui/ngx-avatar/*": [
+        "packages/ngx-avatar/dist/*"
+      ],
+      "@acpaas-ui/ngx-calendar": [
+        "packages/ngx-calendar/dist"
+      ],
+      "@acpaas-ui/ngx-calendar/*": [
+        "packages/ngx-calendar/dist/*"
+      ],
+      "@acpaas-ui/ngx-context": [
+        "packages/ngx-context/dist"
+      ],
+      "@acpaas-ui/ngx-context/*": [
+        "packages/ngx-context/dist/*"
+      ],
+      "@acpaas-ui/ngx-flyout": [
+        "packages/ngx-flyout/dist"
+      ],
+      "@acpaas-ui/ngx-flyout/*": [
+        "packages/ngx-flyout/dist/*"
+      ],
+      "@acpaas-ui/ngx-localstorage": [
+        "packages/ngx-localstorage/dist"
+      ],
+      "@acpaas-ui/ngx-localstorage/*": [
+        "packages/ngx-localstorage/dist/*"
+      ],
+      "@acpaas-ui/ngx-pagination": [
+        "packages/ngx-pagination/dist"
+      ],
+      "@acpaas-ui/ngx-pagination/*": [
+        "packages/ngx-pagination/dist/*"
+      ],
+      "@acpaas-ui/ngx-progress-bar": [
+        "packages/ngx-progress-bar/dist"
+      ],
+      "@acpaas-ui/ngx-progress-bar/*": [
+        "packages/ngx-progress-bar/dist/*"
+      ],
+      "@acpaas-ui/ngx-table": [
+        "packages/ngx-table/dist"
+      ],
+      "@acpaas-ui/ngx-table/*": [
+        "packages/ngx-table/dist/*"
+      ],
+      "@acpaas-ui/ngx-user-menu": [
+        "packages/ngx-user-menu/dist"
+      ],
+      "@acpaas-ui/ngx-user-menu/*": [
+        "packages/ngx-user-menu/dist/*"
+      ],
+      "@acpaas-ui/ngx-selectable-list": [
+        "packages/ngx-selectable-list/dist"
+      ],
+      "@acpaas-ui/ngx-selectable-list/*": [
+        "packages/ngx-selectable-list/dist/*"
+      ],
+      "@acpaas-ui/ngx-forms": [
+        "packages/ngx-forms/dist"
+      ],
+      "@acpaas-ui/ngx-forms/*": [
+        "packages/ngx-forms/dist/*"
+      ],
+      "@acpaas-ui/ngx-utils": [
+        "packages/ngx-utils/dist"
+      ],
+      "@acpaas-ui/ngx-utils/*": [
+        "packages/ngx-utils/dist/*"
+      ],
+      "ngx-leaflet": [
+        "packages/ngx-leaflet/dist"
+      ],
+      "ngx-leaflet/*": [
+        "packages/ngx-leaflet/dist/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

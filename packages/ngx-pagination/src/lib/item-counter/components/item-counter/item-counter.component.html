@@ -1,0 +1,7 @@
+<div class="m-item-counter">
+  {{ label | pluralizeLabel:totalAmount | interpolateLabel:{
+  currentFrom: currentFrom,
+  currentTo: currentTo,
+  totalAmount: totalAmount
+} }}
+</div>

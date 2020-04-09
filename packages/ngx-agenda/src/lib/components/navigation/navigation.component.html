@@ -1,0 +1,22 @@
+<h4>
+  <ng-container *ngIf="view === views.DAY">{{ activeDate | date:'dd/MM/y' }}</ng-container>
+  <ng-container
+    *ngIf="view === views.MONTH">{{ activeDate | date:'M' | monthPipe }} {{ activeDate | date:'y' }}</ng-container>
+  <ng-container *ngIf="view === views.YEAR">{{ activeDate | date:'y' }}</ng-container>
+</h4>
+
+<div class="o-agenda__nav">
+  <button (click)="prev()" aria-label="previous month" class="o-agenda__nav-previous a-button has-icon" tabindex="-1"
+          type="button">
+    <span class="fa fa-angle-left"></span>
+  </button>
+
+  <button (click)="goToToday()" aria-label="today" class="a-button" tabindex="0" type="button">
+    Vandaag
+  </button>
+
+  <button (click)="next()" aria-label="next month" class="o-agenda__nav-next a-button has-icon" tabindex="1"
+          type="button">
+    <span class="fa fa-angle-right"></span>
+  </button>
+</div>

@@ -1,0 +1,7 @@
+<ul class="a-list a-list--reset">
+  <ng-container *ngFor="let item of items">
+    <li *ngIf="!item.redirectTo">
+      <a [routerLinkActive]="['is-active']" [routerLink]="['modules/' + item.path]"> {{ item.data?.meta?.title }}</a>
+    </li>
+  </ng-container>
+</ul>

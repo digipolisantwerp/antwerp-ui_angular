@@ -32,7 +32,7 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
     - `docs/document-cowbell`
     - For a list of suggested keywords, check the [commit message convention](./guidelines/COMMITS.md).
 
-- Work in the `packages` folder and **DO NOT** check in the top-level `dist` and `examples` folders in the commits.
+- Work in the `packages` folder and **DO NOT** check in the top-level `dist` folder in the commits.
 
 - Commits must follow the [commit message convention](./guidelines/COMMITS.md). It's OK to have multiple small commits as you work on the PR - we can let GitHub automatically squash it before merging.
 
@@ -46,76 +46,96 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
     - Provide a detailed description of the bug in the PR or an accompanying [bug report issue](https://github.com/digipolisantwerp/acpaas-ui_angular/issues/new?template=bug_report.md) linked from the PR (recommended).
     - Add appropriate test coverage if applicable.
 
-- For additional guidance while developing, check the [dev guide](./guidelines/DEV_GUIDE.md).
-
 ## Development Setup
 
-You will need [Node.js](http://nodejs.org) **version 8+**.
+You will need [Node.js](http://nodejs.org) **version 12+**.
 
 After cloning the repo, run:
 
-```bash
-# install dependencies needed for the bootstrap command
-$ npm install # or yarn
-# install nested package.json dependencies
-$ npm run bootstrap
-# build into dist folder
-$ npm run build
+```shell
+npm install
+npm run build:all
+npm start
 ```
 
-Additionally, to run the examples locally:
-
-```bash
-# update the styleguide from the individual components
-$ npm run examples
-# run the styleguide examples application
-$ npm run styleguide
+The ACPaaS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
+To build or test packages independently, run:
+```shell
+ng build ngx-<packagename>
+ng test ngx-<packagename>
 ```
+
+For example:
+```shell
+ng build ngx-utils
+ng test ngx-utils
+```
+
+To build all packages, run:
+```shell
+npm run build:all
+```
+
+Further documentation about the libraries setup can be found in the [Angular Guide](https://angular.io/guide/libraries)
+
 
 ## Using Docker
 
 Additionally to running this project locally, the repository also offers you the option to develop using Docker containers.
 To start your service, execute:
 
-```sh
+```shell
 docker-compose build
 docker-compose up -d
 ```
 
 When the service is up, use following commands to execute bash inside your container:
 
-```sh
+```shell
 docker ps
 docker exec -it ${YOUR_CONTAINER_ID} sh
 ```
 
 From there you can run all necessary npm commands for development.
 
-## Project Structure
-
-- `dist`: contains the build output for the components
-- `examples`: contains the build output for the examples
-- `packages`: the component sources
-    - `some-package/`: sources for a component package (one or more components)
-        - `lib/src/some-component/`: sources for a component
-        - `examples/`: examples (documentation) as shown in the styleguide app
-        - `package.json`: dependencies needed by this package
-        - `README.md`: documentation for this package, linked from the main [README.md](README.md)
-- `scripts`: helper shell scripts used by the npm tasks
-- `styleguide`: sources for the examples web app (but not the actual examples)
-
-[github-issues]: https://github.com/digipolisantwerp/acpaas-ui_angular/issues
-
 ## Creating New Packages
 
-Use `npm run package some-other-package` to create a new package folder.
-After making changes to your package, you should run `example=some-other-package npm run build:package` to see your changes.
+Packages are essentially Angular libraries that follow Angular standard.
+More info on how to create Angular libraries can be found [here](https://angular.io/guide/libraries).
+
+To create a new library as part of ACPaaS UI, run:
+
+```shell
+ng generate library ngx-<package>
+```
+
+To build and test your package, respectively run:
+```shell
+ng build ngx-<package>
+ng test ngx-<package>
+```
+
+Make sure to edit the `package.json` file of the library to set correct library name and publishing settings.
+
+Once your library is created, you may import the library module in the `packages/styleguide/src/aui/aui.module.ts`.
+After this, add a demo page component to the examples module: `packages/styleguide/src/examples/pages`
+
+## Project structure
+- `packages/aui-<package>`: Acpaas UI package/library
+- `packages/styleguide`: Angular application featuring demo's of the packages
+    - `src/aui/aui.module.ts`: Shared module that imports/exports all needed ACPaaS packages for demo purposes
+    - `src/examples`: Example module containing pages and routes for the demos.
 
 ## Releases
 
-ACPaaS UI is supplied as a single library on NPM [@acpaas-ui/ngx-components](https://www.npmjs.com/package/@acpaas-ui/ngx-components), although related components (e.g. the [smart widgets](https://github.com/digipolisantwerp/smart-widgets)) may be packaged independently.
+To publish a new version of ACPaas UI, run:
+```shell
+npm run publish:all
+```
 
-It is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release. (Before you do so, check the [dev guide](./guidelines/DEV_GUIDE.md#development-snapshots) for ways to use it without an official release.)
+Internally, this will use [Lerna](https://lerna.js.org) to publish all the Angular packages. Note that you'll need the appropriate access to publish.
+
+ACPaaS UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
 
 The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
 

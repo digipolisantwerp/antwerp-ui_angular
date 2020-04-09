@@ -1,0 +1,22 @@
+<h2 class="h3 u-margin-bottom">Selectable list</h2>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="javascript1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="javascript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="html"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <h3 class="h4 u-margin-bottom">Select your hero</h3>
+  <aui-selectable-list (selected)="onSelect($event)" [index]="index" [items]="heroes">
+    <ng-template let-item="item">
+      Template for: <strong>{{ item.name }}</strong>
+    </ng-template>
+  </aui-selectable-list>
+  <p class="u-margin-top"><strong>Active hero</strong>: {{ activeHero.name }}</p>
+</div>

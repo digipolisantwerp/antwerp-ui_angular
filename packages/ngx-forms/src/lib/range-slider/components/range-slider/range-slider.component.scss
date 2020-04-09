@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  position: relative;
+
+  &.is-disabled {
+    cursor: not-allowed;
+
+    .m-range-slider__handle:hover {
+      cursor: not-allowed;
+    }
+  }
+}

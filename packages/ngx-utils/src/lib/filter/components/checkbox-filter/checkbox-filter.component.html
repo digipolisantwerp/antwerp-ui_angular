@@ -1,0 +1,13 @@
+<ul *ngIf="filter && filter.options && filter.id" class="a-list a-list--reset aui-checkbox-filter">
+  <li *ngFor="let option of options.controls; let i = index;">
+    <form [formGroup]="form">
+      <div class="a-input">
+        <div class="a-input__checkbox">
+          <input [formControl]="option" [id]="filter.options[i].id" [name]="filter.options[i].name"
+                 type="checkbox"/>
+          <label [for]="filter.options[i].id">{{ filter.options[i].name }}</label>
+        </div>
+      </div>
+    </form>
+  </li>
+</ul>

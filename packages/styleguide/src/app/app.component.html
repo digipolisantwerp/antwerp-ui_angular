@@ -1,0 +1,33 @@
+<header aria-label="Main header" role="banner">
+  <a #skipContent (click)="goToMainContent($event)"
+     class="a-button-negative o-header__button o-header__button-skip" href="#main-content">Skip to main content</a>
+  <guide-header></guide-header>
+  <guide-hero description="Components documentation" title="ACPaaS UI Angular"></guide-hero>
+</header>
+<main>
+  <aui-menu>
+    <aui-menu-tab *ngFor="let package of packages">
+      <aui-menu-link *ngIf="!shouldDisplaySubMenu(package)" [routerLink]="[package.path]">
+        {{ package.data?.meta?.title }}
+      </aui-menu-link>
+      <aui-menu-link *ngIf="shouldDisplaySubMenu(package)">
+        {{ package.data?.meta?.title }}
+      </aui-menu-link>
+      <aui-sub-menu *ngIf="shouldDisplaySubMenu(package)">
+        <aui-sub-menu-item *ngFor="let childRoute of getChildrenRoutes(package)">
+          <aui-menu-link [routerLink]="[ package.path, childRoute.path]">
+            {{ childRoute.data?.meta?.title }}
+          </aui-menu-link>
+        </aui-sub-menu-item>
+      </aui-sub-menu>
+    </aui-menu-tab>
+  </aui-menu>
+  <div class="u-container u-margin-top u-margin-bottom p-acpaas-ui">
+    <div class="row">
+      <main #mainContent class="col-xs-12" id="main-content" tabindex="-1">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+</main>
+<guide-footer></guide-footer>

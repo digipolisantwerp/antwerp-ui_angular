@@ -1,0 +1,17 @@
+<div class="o-sidebar {{ open ? 'o-sidebar--open' : '' }}">
+  <div class="o-sidebar__header">
+    <button (click)="toggle(false)" class="a-button a-button-transparent has-icon" type="button">
+      <span class="icon-close"></span>
+    </button>
+    <h1 class="h6">{{ title | uppercase }}</h1>
+  </div>
+  <div class="o-sidebar__items">
+    <aui-sidebar-item (click)="itemClicked()" *ngFor="let item of items" [item]="item"></aui-sidebar-item>
+  </div>
+  <ng-content select=".o-sidebar__footer"></ng-content>
+</div>
+
+<div (click)="toggle(false)"
+     *ngIf="open"
+     class="m-overlay">
+</div>

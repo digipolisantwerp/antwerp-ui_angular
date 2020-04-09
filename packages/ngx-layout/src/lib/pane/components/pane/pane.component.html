@@ -1,0 +1,7 @@
+<div [attr.aria-label]="ariaLabel" [id]="id"
+     [ngClass]="{ 'm-pane--open': opened, 'm-pane--left': side === 'left', 'm-pane--right': side === 'right' }"
+     class="m-pane aui-pane" role="region" tabindex="-1">
+  <ng-content></ng-content>
+</div>
+<div (click)="closePane()" *ngIf="opened && backdrop" class="m-overlay m-overlay__pane is-active" role="button"><span
+  class="u-screen-reader-only">{{ ariaLabelClose }}</span></div>

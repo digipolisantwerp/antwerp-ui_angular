@@ -1,0 +1,5 @@
+<div class="aui-code-snippet__inner">
+  <pre *ngIf="!this.processMarkdown"><code>{{ codeSnippet }}</code></pre>
+
+  <div *ngIf="this.processMarkdown" [innerHTML]="codeSnippet" class="code-snippet-md"></div>
+</div>

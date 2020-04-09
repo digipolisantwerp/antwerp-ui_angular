@@ -1,0 +1,38 @@
+<h2 class="h3 u-margin-bottom">Context</h2>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<h3 class="h4 u-margin-bottom">Set defaults</h3>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<h3 class="h4 u-margin-bottom">Set tags on routes</h3>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <div class="m-alert">
+    The following page properties were defined on the Angular routes.
+  </div>
+</div>
+<dl class="a-definition-list u-margin-bottom">
+  <dt>Page title:</dt>
+  <dd>
+    <pre class="a-pre a-pre--scrollable">{{ pageTitle }}</pre>
+  </dd>
+  <dt>Page description:</dt>
+  <dd>
+    <pre class="a-pre a-pre--scrollable">{{ pageDescription }}</pre>
+  </dd>
+</dl>
+
+<h3 class="h4 u-margin-bottom">Set tags in a component</h3>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS3"></aui-code-snippet>
+</div>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML"></aui-code-snippet>
+</div>
+<button (click)="setTitle()" class="a-button" type="button">Update page title</button>

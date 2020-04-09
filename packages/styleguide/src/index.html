@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ACPaaS UI Angular</title>
+  <base href="/">
+  <link rel="stylesheet" href="https://cdn.antwerpen.be/acpaas_branding_scss/4.1.0/main.min.css">
+  <link rel="stylesheet" href="https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/a11y-light.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.antwerpen.be/acpaas_branding_favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.antwerpen.be/acpaas_branding_favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.antwerpen.be/acpaas_branding_favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://cdn.antwerpen.be/acpaas_branding_favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://cdn.antwerpen.be/acpaas_branding_favicons/safari-pinned-tab.svg" color="#01afb8">
+  <meta name="msapplication-TileColor" content="#322a56">
+  <meta name="description" content="ACPAAS UI Angular"/>
+  <meta name="theme-color" content="#322a56">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+<script>
+  (function () {
+    // Retrieve the URL the user was trying to access when receiving the 404.
+    var redirect = sessionStorage.redirect;
+
+    // Remove the URL from sessionStorage.
+    delete sessionStorage.redirect;
+
+    // Check if we actually need to redirect.
+    if (redirect && redirect != location.href) {
+      // We need to redirect to the URL the user was trying to access.
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
+<!-- /Github Pages hack. -->
+
+<app-root></app-root>
+
+<!-- In order to make the GitHub Pages hack work (see above), make sure it loads before all other scripts -->
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.13.0/standard-all/ckeditor.js"></script>
+</body>
+</html>

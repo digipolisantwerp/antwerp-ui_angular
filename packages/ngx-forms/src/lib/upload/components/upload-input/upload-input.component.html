@@ -1,0 +1,11 @@
+<aui-upload (selectUploadedFiles)="onUpload($event)" [options]="options">
+  <div class="m-upload__message">
+    <ng-content select=".m-upload__message"></ng-content>
+  </div>
+  <div class="m-upload__description">
+    <ng-content select=".m-upload__description"></ng-content>
+  </div>
+  <div class="m-upload__button">
+    <ng-content select=".m-upload__button"></ng-content>
+  </div>
+</aui-upload>

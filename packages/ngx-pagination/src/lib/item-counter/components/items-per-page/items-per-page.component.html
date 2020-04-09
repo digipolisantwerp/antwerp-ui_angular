@@ -1,0 +1,12 @@
+<div class="m-items-per-page">
+  <div [ngClass]="[inputSizes[size]]" class="a-input has-icon-right">
+    <div class="a-input__wrapper">
+      <select (ngModelChange)="setAmount($event)" [id]="id" [name]="id" [ngModel]="amountPerPage">
+        <option *ngFor="let amountOption of selectOptions" [value]="amountOption">{{ amountOption }}</option>
+      </select>
+      <span class="fa fa-angle-down"></span>
+    </div>
+
+    <label [for]="id" class="a-input__label">{{ label | pluralizeLabel:amountPerPage }}</label>
+  </div>
+</div>

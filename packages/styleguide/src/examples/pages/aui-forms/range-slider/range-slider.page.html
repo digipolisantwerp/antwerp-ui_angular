@@ -1,0 +1,67 @@
+<h3 class="h4 u-margin-bottom">Range slider</h3>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="rangesliderImportExample"></aui-code-snippet>
+</div>
+
+<h4 class="h5 u-margin-bottom">Basic</h4>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="rangesliderExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <aui-range-slider></aui-range-slider>
+</div>
+
+<h4 class="h5 u-margin-bottom">Step</h4>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="rangesliderExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <aui-range-slider
+    labelAfter="%"
+    step="20">
+  </aui-range-slider>
+</div>
+
+<h4 class="h5 u-margin-bottom">Min/max</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="rangesliderExampleTypescript3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="rangesliderExampleHTML3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom col-md-6 col-xs-12">
+  <aui-range-slider
+    [(ngModel)]="mySlider"
+    labelBefore="€"
+    max="600"
+    min="300">
+  </aui-range-slider>
+</div>
+
+<h4 class="h5 u-margin-bottom">Disabled</h4>
+
+<div class="u-margin-bottom-xx col-md-6 col-xs-12">
+  <div class="u-margin-bottom">
+    <aui-range-slider
+      [(ngModel)]="disabledSlider"
+      [disabled]="isDisabled"
+      labelBefore="€"
+      max="600"
+      min="300">
+    </aui-range-slider>
+  </div>
+  <div class="a-input u-margin-bottom">
+    <div class="a-input__checkbox">
+      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox"/>
+      <label for="isDisabled">Toggle disabled state</label>
+    </div>
+  </div>
+</div>

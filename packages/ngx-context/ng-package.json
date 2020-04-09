@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "./dist",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@angular-redux/store": "store"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@angular-stor",
+    "redux"
+  ]
+}

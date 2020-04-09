@@ -1,9 +1,0 @@
-{
-  "name": "@acpaas-ui/ngx-components/pagination",
-  "version": "0.0.1",
-  "acpaas-ui": {
-    "dependencies": [
-      "utils"
-    ]
-  }
-}

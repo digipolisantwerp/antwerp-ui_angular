@@ -1,0 +1,15 @@
+<ul class="m-upload__files u-margin-bottom-xs">
+  <li *ngFor="let file of files; let i = index">
+    <span class="fa fa-file-o"></span>
+    <span class="m-upload__filename">{{ file.name }}</span>
+
+    <button (click)="remove(i)" class="m-upload__delete a-button-transparent a-button--default a-button--small has-icon"
+            type="button">
+            <span class="fa fa-close">
+                <span class="u-screen-reader-only">{{ ariaLabelRemove }}</span>
+            </span>
+    </button>
+  </li>
+</ul>
+
+<button (click)="uploadFiles()" *ngIf="files.length > 0" class="a-button" type="button">Upload</button>

@@ -1,0 +1,62 @@
+<nav *ngIf="totalPages > 1" [attr.aria-label]=ariaNavigationLabel>
+  <!-- Basic -->
+  <ul *ngIf="display === 'basic'" [ngClass]="{'m-pagination--outline': styling === 'outlined' }" class="m-pagination">
+    <li class="m-pagination__prev">
+      <a (click)="prev()" [attr.aria-label]=ariaPreviousLabel
+         [href]="currentPage > 1 ? '#' : null" [ngClass]="{'is-disabled': currentPage <= 1 }" id="pagination-{{ instanceId }}-prev-page">
+        <span aria-hidden="true" class="fa fa-angle-left"></span>
+        <span class="u-screen-reader-only">{{ariaPreviousLabel}}</span>
+      </a>
+    </li>
+    <li class="m-pagination__next">
+      <a (click)="next()" [attr.aria-label]=ariaNextLabel
+         [href]="currentPage < totalPages ? '#' : null" [ngClass]="{'is-disabled': currentPage >= totalPages }" id="pagination-{{ instanceId }}-next-page">
+        <span aria-hidden="true" class="fa fa-angle-right"></span>
+        <span class="u-screen-reader-only">{{ariaNextLabel}}</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Text -->
+  <ul *ngIf="display === 'text'" [ngClass]="{'m-pagination--outline': styling === 'outlined' }" class="m-pagination">
+    <li class="m-pagination__prev">
+      <a (click)="prev()" [attr.aria-label]=ariaPreviousLabel
+         [href]="currentPage > 1 ? '#' : null" [ngClass]="{'is-disabled': currentPage <= 1 }" id="pagination-{{ instanceId }}-prev-page">
+        <span aria-hidden="true" class="fa fa-angle-left"></span>
+        <span class="u-screen-reader-only">{{ariaPreviousLabel}}</span>
+      </a>
+    </li>
+    <li class="m-pagination__label">{{ currentPage }} - {{ totalPages }}</li>
+    <li class="m-pagination__next">
+      <a (click)="next()" [attr.aria-label]=ariaNextLabel
+         [href]="currentPage < totalPages ? '#' : null" [ngClass]="{'is-disabled': currentPage >= totalPages }" id="pagination-{{ instanceId }}-next-page">
+        <span aria-hidden="true" class="fa fa-angle-right"></span>
+        <span class="u-screen-reader-only">{{ariaNextLabel}}</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Numbers -->
+  <ul *ngIf="display === 'numbers'" [ngClass]="{'m-pagination--outline': styling === 'outlined' }" class="m-pagination">
+    <li class="m-pagination__prev">
+      <a (click)="prev()" [attr.aria-label]=ariaPreviousLabel
+         [href]="currentPage > 1 ? '#' : null" [ngClass]="{'is-disabled': currentPage <= 1 }" id="pagination-{{ instanceId }}-prev-page">
+        <span aria-hidden="true" class="fa fa-angle-left"></span>
+        <span class="u-screen-reader-only">{{ariaPreviousLabel}}</span>
+      </a>
+    </li>
+    <li *ngFor="let number of numbers; let i = index">
+      <a (click)="onUpdate(number)" [attr.aria-current]="number === currentPage + '' ? 'page' : null"
+         [attr.aria-label]="ariaCurrentLabel + ' ' + number" [ngClass]="{'is-active': number === currentPage + '' }"
+         href="#"
+         id="pagination-{{ instanceId }}-button-{{ i }}">{{ number }}</a>
+    </li>
+    <li class="m-pagination__next">
+      <a (click)="next()" [attr.aria-label]=ariaNextLabel
+         [href]="currentPage < totalPages ? '#' : null" [ngClass]="{'is-disabled': currentPage >= totalPages }" id="pagination-{{ instanceId }}-next-page">
+        <span aria-hidden="true" class="fa fa-angle-right"></span>
+        <span class="u-screen-reader-only">{{ariaNextLabel}}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,11 @@
+<div class="a-input has-icon-right aui-select-filter">
+  <ng-container *ngIf="filter && filter.options && filter.id">
+    <label [for]="filter.id" class="a-input__label a-input__label--inline">{{ filter.name }}: </label>
+    <div class="a-input__wrapper a-input__wrapper--inline">
+      <select [formControl]="select" [id]="filter.id" [name]="filter.id">
+        <option *ngFor="let option of filter.options" [value]="option.id">{{ option.name }}</option>
+      </select>
+      <span class="fa fa-angle-down"></span>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,16 @@
+<ng-container *ngIf="item.href">
+  <a [style.border-color]="item.theme?.color" href="{{item.href}}">
+    <img *ngIf="item.icon" src="{{item.icon}}"/>
+    <h2 class="h5">{{item.label}}</h2>
+  </a>
+</ng-container>
+<ng-container *ngIf="item.routerLink">
+  <a [routerLink]="item.routerLink" [style.border-color]="item.theme?.color">
+    <img *ngIf="item.icon" src="{{item.icon}}"/>
+    <h2 class="h5">{{item.label}}</h2>
+  </a>
+</ng-container>
+
+<ng-container *ngFor="let itm of item.items">
+  <aui-sidebar-item [item]="itm"></aui-sidebar-item>
+</ng-container>

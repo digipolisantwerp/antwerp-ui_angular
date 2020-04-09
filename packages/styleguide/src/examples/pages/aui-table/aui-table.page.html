@@ -1,0 +1,34 @@
+<h2 class="h3 u-margin-bottom">Table</h2>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="exampleCols"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <div class="m-alert">
+    The TableActionComponent is used for actions in the table
+  </div>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="exampleComp"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="exampleHTML"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-xx">
+  <aui-table
+    [columns]="columns"
+    [loading]="loading"
+    [rows]="rows"
+    loadDataMessage="Loading..."
+    noColumsMessage="There are no columns!"
+    noDataMessage="There is no data!">
+  </aui-table>
+</div>

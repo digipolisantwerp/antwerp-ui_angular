@@ -1,0 +1,37 @@
+<div *ngIf="uploader.options.type === 'drop'" [class.is-disabled]="disabled" class="m-upload">
+  <div class="m-upload__inner">
+    <div class="m-upload__dropzone">
+      <input #fileInput (change)="updateFiles()" *ngIf="multiple" [attr.aria-labelledby]="ariaId" [disabled]="disabled" [id]="id"
+             class="m-upload__input" multiple type="file">
+      <input #fileInput (change)="updateFiles()" *ngIf="!multiple" [attr.aria-labelledby]="ariaId" [disabled]="disabled"
+             [id]="id" class="m-upload__input" type="file">
+
+      <div *ngIf="!uploadProgress || uploadProgress === 0" class="m-upload__content">
+        <p [id]="ariaId" class="m-upload__message">
+          <ng-content select=".m-upload__message"></ng-content>
+        </p>
+      </div>
+
+      <ng-container *ngIf="uploadProgress > 0">
+        <p class="m-upload__uploads u-text-bold u-margin-bottom-xs">
+          <ng-container *ngFor="let file of uploadingFiles; let last = last">
+            {{ file.name }}
+            <ng-container *ngIf="!last">,</ng-container>
+          </ng-container>
+        </p>
+        <aui-progress-bar [value]="uploadProgress" max="100"></aui-progress-bar>
+      </ng-container>
+    </div>
+  </div>
+
+  <small class="m-upload__description">
+    <ng-content select=".m-upload__description"></ng-content>
+  </small>
+</div>
+
+<button (click)="triggerFile()" *ngIf="uploader.options.type === 'button'" [disabled]="disabled" class="a-button m-upload__button"
+        type="button">
+  <span [id]="ariaId"><ng-content select=".m-upload__button"></ng-content></span>
+  <input #fileInput (change)="updateFiles()" [attr.aria-labelledby]="ariaId" [disabled]="disabled" [id]="id"
+         class="m-upload__input" multiple="multiple" type="file">
+</button>

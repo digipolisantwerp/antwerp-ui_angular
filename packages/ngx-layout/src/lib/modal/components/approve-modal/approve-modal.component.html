@@ -1,0 +1,17 @@
+<div [attr.aria-describedby]="descId" [attr.aria-labelledby]="titleId" aria-modal="true" class="m-modal" role="dialog">
+  <div class="m-modal__content">
+    <div class="m-modal__header u-margin-bottom-xs">
+      <button (click)="close()" class="m-modal__close a-button-transparent a-button--default has-icon" type="button">
+        <span class="fa fa-close"> {{ modalData.reject }} </span>
+      </button>
+      <h2 [id]="titleId">{{ modalData.question }}</h2>
+    </div>
+    <div class="u-margin-bottom">
+      <p [id]="descId">{{ modalData.description }}</p>
+    </div>
+    <div class="m-modal__footer">
+      <button (click)="close()" class="a-button a-button" type="button">{{ modalData.reject }}</button>
+      <button (click)="submit()" class="a-button-outline" type="button">{{ modalData.approve }}</button>
+    </div>
+  </div>
+</div>

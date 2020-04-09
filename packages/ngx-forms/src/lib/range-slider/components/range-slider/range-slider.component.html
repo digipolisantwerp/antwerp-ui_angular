@@ -1,0 +1,46 @@
+<div class="m-range-slider__inner">
+  <div
+    [style.left]="endPercentage ? startPercentage + '%' : false"
+    [style.width]="endPercentage ? endPercentage - startPercentage + '%' : startPercentage + '%'"
+    class="m-range-slider__bar"
+  ></div>
+  <span
+    (blur)="toggleFocus(false, null, $event)"
+    (dragexit)="onMouseUp($event)"
+    (focus)="toggleFocus(true, 'start', $event)"
+    (mousedown)="onMouseDown('start')"
+    (touchstart)="onMouseDown('start')"
+    [style.left]="startPercentage + '%'"
+    class="m-range-slider__handle"
+    tabindex="0"
+  >
+		<div class="m-range-slider__tooltip a-tooltip a-tooltip--primary a-tooltip--top">
+			<p>{{ labelBefore }}{{ start }}{{ labelAfter }}</p>
+		</div>
+	</span>
+
+  <span
+    (blur)="toggleFocus(false, null, $event)"
+    (dragexit)="onMouseUp($event)"
+    (focus)="toggleFocus(true, 'end', $event)"
+    (mousedown)="onMouseDown('end')"
+    (touchstart)="onMouseDown('end')"
+    *ngIf="end"
+    [style.left]="endPercentage + '%'"
+    class="m-range-slider__handle"
+    name="m-range-slider__handle__end"
+    tabindex="0"
+  >
+		<div class="m-range-slider__tooltip a-tooltip a-tooltip--primary a-tooltip--top">
+			<p>{{ labelBefore }}{{ end }}{{ labelAfter }}</p>
+		</div>
+	</span>
+</div>
+
+<div class="m-range-slider__steps">
+  <div *ngFor="let step of steps; let i = index" class="m-range-slider__step"></div>
+</div>
+
+<div class="m-range-slider__step-labels">
+  <div *ngFor="let step of steps; let i = index" class="m-range-slider__step">{{ step }}</div>
+</div>

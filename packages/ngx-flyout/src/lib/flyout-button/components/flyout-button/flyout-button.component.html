@@ -1,0 +1,13 @@
+<div (closed)="handleFlyoutChanged(false)" (opened)="handleFlyoutChanged(true)" [align]="align" [size]="flyoutSize"
+     auiFlyout>
+  <button [ngClass]="[buttonClassNames[buttonSize], (icon && label) ? 'has-icon-left' : '', (icon && !label) ? 'has-icon' : '', outline ? 'a-button-outline' : 'a-button']" auiFlyoutAction title="{{ title }}"
+          type="button">
+    <span class="{{ icon }}"></span>
+    {{ label }}
+  </button>
+  <div auiFlyoutZone>
+    <ng-container *ngIf="flyoutOpen">
+      <ng-content></ng-content>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+@import '~@a-ui/core/dist/assets/styles/quarks';
+@import '~@a-ui/acpaas/dist/assets/styles/quarks/quarks.variables';
+
+.o-hero {
+  height: 8rem;
+}
+
+.u-margin-top-xxs {
+  margin-top: $spacer-xs / 3;
+}

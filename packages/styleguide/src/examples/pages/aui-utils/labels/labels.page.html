@@ -1,0 +1,73 @@
+<h3 class="h4 u-margin-bottom">Labels</h3>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <aui-code-snippet [codeSnippet]="codeExampleJS1"></aui-code-snippet>
+</div>
+
+<h4 class="h5 u-margin-bottom">Interpolate</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <p class="u-text-bold">String interpolated through function:</p>
+  <pre class="a-pre a-pre--scrollable">{{ interpolateValue() }}</pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">InterpolateLabelPipe</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <p class="u-text-bold">String interpolated through pipe:</p>
+  <pre
+    class="a-pre a-pre--scrollable"><span [innerHTML]="interpolateMessage | interpolateLabel:interpolateString "></span></pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">PluralizeLabelPipe</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS4"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML3"></aui-code-snippet>
+</div>
+
+<button (click)="toggleAmount()" class="a-button u-margin-bottom" type="button">Toggle amount</button>
+
+<div class="u-margin-bottom-lg">
+  <p class="u-text-bold">Interpolated string in {{ amount.description }}:</p>
+  <pre class="a-pre a-pre--scrollable">{{ pluralizeMail | pluralizeLabel:amount.value }}</pre>
+</div>
+
+<h4 class="h5 u-margin-bottom">Combine label pipes</h4>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleJS5"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="codeExampleHTML4"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <p class="u-text-bold">Interpolated and pluralized string:</p>
+  <pre
+    class="a-pre a-pre--scrollable">{{ pluralizeMessage | pluralizeLabel:remainingMessages.remaining | interpolateLabel:interpolateString }}</pre>
+</div>

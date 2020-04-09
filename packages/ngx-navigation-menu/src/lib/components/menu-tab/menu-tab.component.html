@@ -1,0 +1,15 @@
+<div class="o-menu__tab-wrapper">
+  <a [routerLink]="menuLink?.routerLink" class='o-menu__tab-header'>
+    <div class="o-menu__tab-title">
+      <span *ngIf='!!icon' [ngClass]="'o-menu__icon fa fa-' + icon"></span>
+      <div #inclusedContent>
+        <!-- Transcluse only the menu title, this also means the user is forced to use our aui-menu-link component -->
+        <ng-content select="aui-menu-link"></ng-content>
+      </div>
+    </div>
+    <!-- Show a carret icon for navigation if we have a submenu -->
+    <span *ngIf="!!subMenu" class="o-menu__icon o-menu__submenu-icon fa fa-angle-down"></span>
+  </a>
+  <!-- Transcluse the sub menu underneath the tab -->
+  <ng-content select="aui-sub-menu"></ng-content>
+</div>

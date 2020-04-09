@@ -1,0 +1,24 @@
+{
+  "name": "@acpaas-ui/ngx-forms",
+  "version": "4.0.0-rc.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@acpaas-ui/js-date-utils": "~1.0.1",
+    "@acpaas-ui/ngx-calendar": "^4.0.0-rc.10",
+    "@acpaas-ui/ngx-flyout": "^4.0.0-rc.10",
+    "@acpaas-ui/ngx-progress-bar": "^4.0.0-rc.10",
+    "@acpaas-ui/ngx-selectable-list": "^4.0.0-rc.10",
+    "inputmask": "~5.0.3",
+    "lodash-es": "~4.17.10",
+    "ng2-ckeditor": "~1.2.0"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=8.2.14",
+    "@angular/core": ">=8.2.14",
+    "@angular/forms": ">=8.2.14",
+    "@angular/platform-browser": ">=8.2.14"
+  },
+  "gitHead": "3a27c6e12dd878b2ca025ee0016370b6e5e0e5b9"
+}

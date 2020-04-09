@@ -1,0 +1,19 @@
+<!-- Only displayed for mobile layouts -->
+<ng-container>
+  <!-- Overlay casts a 'dark' shadow over the rest of the page to bring focus on the main menu.-->
+  <div (click)='closeMenu()' class='o-navigation-pane__overlay'></div>
+  <div class="o-navigation-pane__wrapper">
+    <div class="o-menu__main-submenu">
+      <!-- Main menu shows the sub menu items -->
+      <ng-container #subMenu></ng-container>
+    </div>
+    <div [ngClass]="{'is-visible' : (slideInSubMenu$ | async)}" class="o-menu__slide-in-submenu">
+      <!--
+        Menu that slides in for a nice animation :) This is only used for the animation,
+        as soon as the animation is done, this container will re-dissapear from the screen,
+        ready for another animation.
+      -->
+      <ng-container #slideInSubMenu></ng-container>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,27 @@
+<ng-template #defaultTemplate let-event="event">
+  <div [ngClass]="{ 'a-event--light': event.fullDay }"
+       [ngStyle]="{ 'background-color': event.fullDay ? event.color : null }"
+       class="a-event">
+    <div *ngIf="!event.fullDay" [ngStyle]="{ 'background-color': event.color }" class="a-event__bar"></div>
+
+    <div class="a-event__content">
+      <div *ngIf="event.iconBefore || event.title" class="a-event__main">
+        <span *ngIf="event.iconBefore" class="{{ event.iconBefore }} a-event__icon"></span><span *ngIf="event.title"
+                                                                                                 class="a-event__title">{{ event.title }}</span>
+      </div>
+
+      <div *ngIf="event.iconAfter || !event.fullDay" class="a-event__extra">
+        <span *ngIf="!event.fullDay" class="a-event__meta">{{ event.startDate | date:'HH:mm' }}</span><span
+        *ngIf="event.iconAfter" class="{{ event.iconAfter }} a-event__icon"></span>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div [ngStyle]="{
+	left: display.left,
+	top: display.top,
+	width: display.width
+}" class="o-agenda__table-event">
+  <ng-container *ngTemplateOutlet="template ? template : defaultTemplate; context: { event: event }"></ng-container>
+</div>

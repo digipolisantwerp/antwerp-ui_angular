@@ -1,0 +1,11 @@
+<div class="aui-agenda-month-view-event-slots">
+  <aui-agenda-month-view-event-slot
+    (click)="emitSelectEvent(slot.event)"
+    *ngFor="let slot of slots"
+    [display]="slot.display"
+    [event]="slot.event"
+    [meta]="slot.meta"
+    [template]="eventItemTemplate"
+  ></aui-agenda-month-view-event-slot>
+</div>
+

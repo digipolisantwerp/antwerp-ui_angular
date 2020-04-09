@@ -1,0 +1,20 @@
+{
+  "name": "@acpaas-ui/ngx-leaflet",
+  "version": "4.0.0-rc.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "esri-leaflet": "^2.1.4",
+    "leaflet": "^1.3.1",
+    "leaflet-draw": "^1.0.2"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=8.2.14",
+    "@angular/core": ">=8.2.14",
+    "@angular/forms": ">=8.2.14",
+    "@angular/platform-browser": ">=8.2.14",
+    "@angular/platform-browser-dynamic": ">=8.2.14"
+  },
+  "gitHead": "3a27c6e12dd878b2ca025ee0016370b6e5e0e5b9"
+}

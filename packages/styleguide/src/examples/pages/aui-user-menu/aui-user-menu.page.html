@@ -1,0 +1,48 @@
+<h2 class="h3 u-margin-bottom">User Menu</h2>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModuleSnippet"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="componentInputs"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="useComponentTagSnippet"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-user-menu (login$)="loginUser()" [translations]="translations"></aui-user-menu>
+</div>
+
+<div class="u-margin-bottom-lg">
+  <aui-user-menu (logout$)="logoutUser()" [notificationsCount]="100" [translations]="translations" [user]="mockUser"
+                 flyoutSize="Medium">
+    <div class="u-margin-lg u-text-center">
+      Your Content Here
+    </div>
+  </aui-user-menu>
+</div>
+
+<p class="u-margin-bottom">
+  The User Menu component can be used on a webpage to provide visual login and logout buttons.
+  If logged out, the component displays a single button enabling the user to login.
+  If logged in, the component provides an avatar button, displaying a flyout where a logout button is featured.
+</p>
+
+<p class="u-margin-bottom">
+  This component uses content projection inside its tag, meaning whatever html is included
+  between the <code>aui-user-menu</code> tag will be inserted in the flyout section. The logout button is displayed
+  by default but can be disabled if you wish to implement your custom logout button.
+</p>
+
+<div class="u-margin-bottom">
+  <p>Two output events may be used to hook to login or logout functionality to the interface:</p>
+  <ul>
+    <li><code>login$</code></li>
+    <li><code>logout$</code></li>
+  </ul>
+  <p>You are responsible for providing login and logout callback functionality, this component only provides
+    visuals.</p>
+</div>

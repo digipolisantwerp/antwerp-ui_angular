@@ -1,0 +1,22 @@
+<ul class="a-list a-list--lined a-table-column-selector">
+  <li *ngFor="let column of columns; let i = index; let isLast = last; let isFirst = first;" [ngClass]="{show: i === currentTarget}"
+      class="animated">
+    <div class="a-input__checkbox a-input__checkbox--small">
+      <input (change)="updateDisplay($event, i)" [checked]="!column.hidden"
+             [disabled]="column.disabled" id="checkbox-{{ id }}-{{ i }}-{{ tableHelper.getValue(column) }}"
+             name="checkbox-{{ tableHelper.getValue(column) }}" type="checkbox">
+      <label
+        for="checkbox-{{ id }}-{{ i }}-{{ tableHelper.getValue(column) }}">{{ tableHelper.getLabel(column) }}</label>
+    </div>
+    <div class="a-table-column-selector__actions">
+      <button (click)="move(column, -1)" [disabled]="isFirst" class="a-button-transparent a-button--tiny has-icon"
+              type="button">
+        <span class="fa fa-angle-up"></span>
+      </button>
+      <button (click)="move(column, 1)" [disabled]="isLast" class="a-button-transparent a-button--tiny has-icon"
+              type="button">
+        <span class="fa fa-angle-down"></span>
+      </button>
+    </div>
+  </li>
+  <ul>

@@ -1,0 +1,39 @@
+<div *ngFor="let week of weeks" class="o-agenda__table-row">
+  <div
+    (press)="touchStart(day.date)"
+    (tap)="emitSelectDay(day.date)"
+    *ngFor="let day of week"
+    [attr.date]="day.date"
+    [class]="day.highlights"
+    [ngClass]="{
+			'is-current': isToday(day.date),
+			'is-selected': isSelected(day.date, range),
+			'is-faded': isCurrentMonth(day.date, weeks[1][0].date)
+		}"
+    class="o-agenda__table-row-cell"
+  >
+
+    <div (dragstart)="dragStart(day.date)" class="o-agenda_drag-select" draggable="true"></div>
+
+    <span class="o-agenda__table-row-cell-header">
+			<span>{{ day.date | date:'d' }}</span>
+		</span>
+
+    <aui-agenda-more-button
+      (clickMore)="onClickMore(day.date)"
+      *ngIf="day.more"
+      [hiddenEvents]="day.more"
+    ></aui-agenda-more-button>
+
+    <aui-month-view-dots
+      *ngIf="day.dots"
+      [dots]="day.dots"
+    ></aui-month-view-dots>
+  </div>
+</div>
+
+<aui-agenda-month-view-event-slots
+  (selectEvent)="onSelectEvent($event)"
+  [eventItemTemplate]="eventItemTemplate"
+  [slots]="slots"
+></aui-agenda-month-view-event-slots>

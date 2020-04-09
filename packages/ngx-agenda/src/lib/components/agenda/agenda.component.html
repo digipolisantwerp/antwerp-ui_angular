@@ -1,0 +1,27 @@
+<div [ngClass]="agendaSize$ | async" class="o-agenda">
+  <div class="o-agenda__inner">
+    <aui-agenda-navigation
+      (navigate)="onNavigate($event)"
+      [activeDate]="activeDate"
+      [today]="today"
+      [view]="view"
+    ></aui-agenda-navigation>
+
+    <aui-agenda-month-view
+      (clickMore)="onClickMore($event)"
+      (displayRange)="onDisplayRange($event)"
+      (selectDay)="onSelectDay($event)"
+      (selectEvent)="onSelectEvent($event)"
+      (selectRange)="onSelectRange($event)"
+      (swipeleft)="swipe($event)"
+      (swiperight)="swipe($event)"
+      *ngIf="view === views.MONTH"
+      [activeDate]="activeDate"
+      [eventItemTemplate]="monthEventItemTemplate"
+      [events]="events"
+      [highlights]="highlights"
+      [startDayOfWeek]="startDayOfWeek"
+      [weekdays]="weekdays"
+    ></aui-agenda-month-view>
+  </div>
+</div>

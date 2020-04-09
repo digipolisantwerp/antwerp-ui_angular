@@ -1,0 +1,58 @@
+<h2 class="h3 u-margin-bottom">Pagination</h2>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="javascript1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="javascript2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="html1"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <h3 class="h5">Heroes</h3>
+  <ul>
+    <li *ngFor="let hero of visibleHeroes">{{ hero.name }}</li>
+  </ul>
+  <aui-pagination
+    (update)="onUpdatePage($event)"
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalValues]="totalValues"
+    display="numbers"
+    styling="basic">
+  </aui-pagination>
+</div>
+
+<h3 class="h4 u-margin-bottom u-margin-top-lg">Item counter &amp; items per page</h3>
+<div class="m-alert u-margin-bottom">
+  <p>Note that the following code is an extension of the code above.</p>
+</div>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="javascript3"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="javascript4"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="html2"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom-x">
+  <aui-items-per-page
+    (returnAmount)="onUpdateItems($event)"
+    [amountPerPage]="itemsPerPage"
+    [selectOptions]="itemsPerPageOptions">
+  </aui-items-per-page>
+</div>
+<div class="u-margin-bottom u-margin-top">
+  <aui-item-counter
+    [amountPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    [totalAmount]="totalValues">
+  </aui-item-counter>
+</div>

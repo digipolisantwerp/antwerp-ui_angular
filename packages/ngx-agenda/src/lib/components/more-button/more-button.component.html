@@ -1,0 +1,5 @@
+<div class="o-agenda__more">
+  <button (click)="emitClickMore($event)" *ngIf="hiddenEvents > 0" class="o-agenda__more-button">
+    {{ hiddenEvents }} {{ label }}
+  </button>
+</div>
