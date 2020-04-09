@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 - Support for using localStorage with the ngx-navigation-menu
+- Export types of localstorage
 
 ### Changed
 - [BREAKING] Localstorage package got a major refacotor, where redux and store dependencies are removed
