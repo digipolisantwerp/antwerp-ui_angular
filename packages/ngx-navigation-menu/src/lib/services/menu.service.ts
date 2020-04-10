@@ -2,6 +2,7 @@ import {Inject, Injectable, TemplateRef} from '@angular/core';
 import {fromEvent, merge, Observable, Subject} from 'rxjs';
 import {filter, first, map, mapTo, mergeMap, scan, share, shareReplay, startWith, takeUntil, tap} from 'rxjs/operators';
 import {Menu} from '../interfaces';
+import {LocalstorageService} from './localstorage.service';
 
 /**
  * Singleton helper service to orchestrate the navigation menu.
@@ -36,13 +37,19 @@ export class MenuService {
 
   private destroy$ = new Subject();
 
-  constructor(@Inject('config') public readonly configuration: Menu.ModuleConfiguration) {
-    const defaultConfig = {
+  constructor(@Inject('config') public readonly configuration: Menu.ModuleConfiguration,
+              private localStorage: LocalstorageService) {
+    let defaultConfig = {
       mode: 'mobile',
       docked: configuration.dockedByDefault,
       activeMenu: null,
     };
-
+    if (configuration.useLocalStorage) {
+      defaultConfig = {
+        ...defaultConfig,
+        ...this.localStorage.getMenuState()
+      };
+    }
     // Scan the update props to populate the state with the new properties coming in
     this.pState$ = this.updateProps$.pipe(
       startWith(null),
@@ -60,6 +67,7 @@ export class MenuService {
           };
         })
       )),
+      tap(state => configuration.useLocalStorage && this.localStorage.setMenuState(state)),
       shareReplay(1)  // Act as a behaviour subject observable
     );
 

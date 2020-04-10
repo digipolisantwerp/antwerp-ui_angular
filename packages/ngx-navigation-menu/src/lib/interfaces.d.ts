@@ -7,11 +7,11 @@ export declare namespace Menu {
   export type MenuMode = 'mobile' | 'desktop';
 
   export interface ActiveMenu {
-    menuItem: (SubMenuItemComponent | MenuTabComponent),
-    type: 'main' | 'submenu' | 'none',
-    templateRef?: TemplateRef<void>,
-    parentMenu?: SubMenuComponent
-    subMenu?: SubMenuComponent
+    menuItem: (SubMenuItemComponent | MenuTabComponent);
+    type: 'main' | 'submenu' | 'none';
+    templateRef?: TemplateRef<void>;
+    parentMenu?: SubMenuComponent;
+    subMenu?: SubMenuComponent;
   }
 
   export interface MenuState {
@@ -23,6 +23,7 @@ export declare namespace Menu {
   export interface ModuleConfiguration {
     dockedByDefault?: boolean;
     moreIcon?: string;
+    useLocalStorage?: boolean;
   }
 
   export interface Translations {

@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
+
+### Added
+- Support for using localStorage with the ngx-navigation-menu
+- Export types of localstorage
+### Fixed
+- Fixed the docked state of the ngx-navigation-menu
+
 ### Changed
 - [BREAKING] Localstorage package got a major refacotor, where redux and store dependencies are removed
 - [BREAKING] Entire rework of the structure of this project
