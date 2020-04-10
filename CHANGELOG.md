@@ -7,33 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [4.1.0] - 2020-04-10
+
 ### Added
-- Support for using localStorage with the ngx-navigation-menu
-- Export types of localstorage
+- `localstorage` Support for using localstorage with the ngx-navigation-menu
+- `localstorage` Export types of localstorage
+
 ### Fixed
-- Fixed the docked state of the ngx-navigation-menu
+- `navigation-menu` Fixed the docked state of the ngx-navigation-menu
+
+
+## [4.0.0] - 2020-04-09
 
 ### Changed
-- [BREAKING] Localstorage package got a major refacotor, where redux and store dependencies are removed
-- [BREAKING] Entire rework of the structure of this project
-- [BREAKING] Update minimum Angular version to 8
-- [BREAKING] Custom scripts for generating new packages were removed
-- [BREAKING] All libraries are Angular-standard compliant
-- Redux version locked on 4.0.1 due to lack of support for @angular-redux/store v.10
-- [BREAKING] Scope of the packages was changed. Now every package is under @acpaas-ui/ngx-<package-name>
+- [BREAKING] `core` Entire rework of the structure of this project
+- [BREAKING] `core` Update minimum Angular version to 8
+- [BREAKING] `core` Custom scripts for generating new packages were removed
+- [BREAKING] `core` All libraries are Angular-standard compliant
+- [BREAKING] `core` Scope of the packages was changed. Now every package is under @acpaas-ui/ngx-<package-name>
+- `core` Redux version locked on 4.0.1 due to lack of support for @angular-redux/store v.10
+- [BREAKING] `localstorage` Localstorage package got a major refacotor, where redux and store dependencies are removed
 
 For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 ## [3.3.0] - 2020-01-31
 
 ### Added
-- Navigation Menu package was added.
+- `navigation-menu` Navigation Menu package was added.
 
 
 ## [3.2.1] - 2020-01-20
 
 ### Fixed
-- Fixed parsing of unregular dates on the date picker component by using `@acpaas-ui/js-date-utils@^1.0.6`
+- `forms` Fixed parsing of unregular dates on the date picker component by using `@acpaas-ui/js-date-utils@^1.0.6`
 
 
 ## [3.2.0] - 2019-12-19
@@ -156,8 +162,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 ## [2.0.0] - 2019-04-02
 
 ### Changed
-- [BREAKING] Removed rxjs-compat dependency.
-- [BREAKING] Updated `@angular-redux/store` and redux dependencies.
+- [BREAKING] `core` Removed rxjs-compat dependency.
+- [BREAKING] `core` Updated `@angular-redux/store` and redux dependencies.
 
 
 ## [1.1.2] - 2019-03-29
@@ -274,7 +280,9 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.3.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.0.0...v4.1.0
+[4.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.3.0...v4.0.0
 [3.3.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.2.1...v3.3.0
 [3.2.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.2.0...v3.2.1
 [3.2.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.1.0...v3.2.0
