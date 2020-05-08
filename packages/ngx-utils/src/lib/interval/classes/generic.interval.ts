@@ -11,14 +11,14 @@ export class GenericInterval extends IntervalModel<number> {
         if (this.bound === 'bounded') {
           return value > this.min && value <= this.max;
         } else if (this.bound === 'unbounded') {
-          return value > -Infinity && value <= this.max;
+          return value <= this.max;
         }
         return false;
       case 'rightopen':
         if (this.bound === 'bounded') {
           return value >= this.min && value < this.max;
         } else if (this.bound === 'unbounded') {
-          return value >= this.min && value < Infinity;
+          return value >= this.min;
         }
         return false;
       default:
