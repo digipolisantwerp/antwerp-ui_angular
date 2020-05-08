@@ -52,6 +52,7 @@
     "leaflet-draw": "^1.0.4",
     "lodash-es": "^4.17.15",
     "marked": "^0.8.0",
+    "moment": "^2.25.3",
     "ng2-ckeditor": "^1.2.7",
     "redux": "4.0.1",
     "rimraf": "^3.0.2",
