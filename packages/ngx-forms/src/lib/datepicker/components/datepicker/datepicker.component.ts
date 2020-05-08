@@ -14,9 +14,7 @@ import {
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
-
 import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
-
 import {FlyoutDirective} from '@acpaas-ui/ngx-flyout';
 
 import {
@@ -35,6 +33,8 @@ import {
   DATEPICKER_SEPARATOR_CHAR
 } from '../../datepicker.conf';
 import {DatepickerValidationErrors} from '../../types/datepicker.types';
+import {Interval} from '@acpaas-ui/ngx-utils';
+import {Moment} from 'moment';
 
 @Component({
   selector: 'aui-datepicker',
@@ -60,6 +60,8 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   @Input() placeholder = 'dd/mm/yyyy';
   @Input() range: DateRange;
   @Input() autocomplete: 'off';
+  @Input()
+  interval?: Interval.IInterval<Date | Moment>;
 
   @Output() blur = new EventEmitter<Event>();
 
@@ -187,8 +189,8 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   private onChange: (res: any) => void = () => {
-  }
+  };
 
   private onTouched: (_: any) => void = () => {
-  }
+  };
 }

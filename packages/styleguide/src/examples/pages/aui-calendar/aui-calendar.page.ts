@@ -1,5 +1,9 @@
 import {Component} from '@angular/core';
 import {DateRange} from '@acpaas-ui/js-date-utils';
+import {IntervalBuilder} from '@acpaas-ui/ngx-utils';
+import * as _moment from 'moment';
+
+const Moment: new () => _moment.Moment = _moment as any;
 
 @Component({
   templateUrl: './aui-calendar.page.html',
@@ -7,6 +11,10 @@ import {DateRange} from '@acpaas-ui/js-date-utils';
 export class CalendarDemoPage {
   public clickedDate: Date = new Date();
   public range: DateRange = [1, 6];
+  public interval = IntervalBuilder
+    .momentInterval(new Moment(), (new Moment()).add(1, 'day'))
+    .closedInterval()
+    .build();
 
   public javascript1 = `import { CalendarModule } from '@acpaas-ui/ngx-calendar;'
 

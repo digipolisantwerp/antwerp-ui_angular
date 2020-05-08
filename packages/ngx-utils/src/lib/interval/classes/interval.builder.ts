@@ -51,6 +51,11 @@ export class IntervalBuilder<T> {
     return this;
   }
 
+  not(): IntervalBuilder<T> {
+    this.model.meaning = 'NOR';
+    return this;
+  }
+
   build(): IInterval<T> {
     return this.model;
   }

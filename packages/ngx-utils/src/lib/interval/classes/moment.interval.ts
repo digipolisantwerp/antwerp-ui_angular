@@ -2,7 +2,7 @@ import {IntervalModel} from './interval.model';
 import {Moment} from 'moment';
 
 export class MomentInterval extends IntervalModel<Moment> {
-  isInRange(value: Moment): boolean {
+  private checkIsInRange(value: Moment): boolean {
     switch (this.type) {
       case 'closed':
         return value.isSameOrAfter(this.min) && value.isSameOrBefore(this.max);
@@ -25,6 +25,10 @@ export class MomentInterval extends IntervalModel<Moment> {
       default:
         return false;
     }
+  }
+
+  isInRange(value: Moment): boolean {
+    return this.meaning === 'OR' ? this.checkIsInRange(value) : !this.checkIsInRange(value);
   }
 
   toString(): string {

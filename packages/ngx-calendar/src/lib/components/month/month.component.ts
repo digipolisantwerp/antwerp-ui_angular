@@ -5,6 +5,8 @@ import {DateHelper, DateRange, Day, Month} from '@acpaas-ui/js-date-utils';
 import {CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS} from '../../calendar.conf';
 import {CalendarService} from '../../services/calendar.service';
 import {DateRangeMap, WeekdayLabelsConfig} from '../../types/calendar.types';
+import {Interval} from '@acpaas-ui/ngx-utils';
+import {Moment} from 'moment';
 
 @Component({
   selector: 'aui-calendar-month',
@@ -15,6 +17,8 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   @Input() selectedDate: Date;
   @Input() activeDate: Date;
   @Input() range: DateRange;
+  @Input()
+  interval?: Interval.IInterval<Date | Moment>;
   @Input() weekdayLabels: WeekdayLabelsConfig = CALENDAR_DEFAULT_WEEKDAY_LABELS;
   @Output() selectDate = new EventEmitter();
 
@@ -51,10 +55,14 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     } else {
       return;
     }
-
-    const range = this.calendarService.getRangesForDate(this.activeDate, this.range);
-
-    this.dates = newDates.map(week => week.map(day => ({...day, available: this.dayIsAvailable(day, range)})));
+    if (this.range && !this.interval) {
+      const range = this.calendarService.getRangesForDate(this.activeDate, this.range);
+      this.dates = newDates.map(week => week.map(day => ({...day, available: this.dayIsAvailable(day, range)})));
+    } else if (this.interval) {
+      console.log(newDates);
+    } else {
+      this.dates = newDates;
+    }
   }
 
   pickDate(event: MouseEvent, day: Day): void {

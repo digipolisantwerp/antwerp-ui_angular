@@ -1,7 +1,7 @@
 import {IntervalModel} from './interval.model';
 
 export class GenericInterval extends IntervalModel<number> {
-  isInRange(value: number): boolean {
+  private checkIsInRange(value: number): boolean {
     switch (this.type) {
       case 'closed':
         return value >= this.min && value <= this.max;
@@ -24,6 +24,10 @@ export class GenericInterval extends IntervalModel<number> {
       default:
         return false;
     }
+  }
+
+  isInRange(value: number): boolean {
+    return this.meaning === 'OR' ? this.checkIsInRange(value) : !this.checkIsInRange(value);
   }
 
   toString(): string {
