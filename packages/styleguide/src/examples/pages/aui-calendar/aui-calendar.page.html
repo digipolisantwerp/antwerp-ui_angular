@@ -19,10 +19,17 @@
 </div>
 
 <div class="u-margin-bottom">
+  <blockquote>
+    For more information about using intervals to (dis)allow date selection, click <a routerLink="/modules/utils/interval/">here</a>.
+  </blockquote>
+</div>
+
+<div class="u-margin-bottom">
   <div class="m-datepicker is-open">
     <aui-calendar
       (selectDate)="changeDate($event)"
       [range]="range"
+      [interval]="interval"
       [selectedDate]="clickedDate">
     </aui-calendar>
   </div>

@@ -6,7 +6,9 @@ import {CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS} from '../../ca
 import {CalendarService} from '../../services/calendar.service';
 import {DateRangeMap, WeekdayLabelsConfig} from '../../types/calendar.types';
 import {Interval} from '@acpaas-ui/ngx-utils';
-import {Moment} from 'moment';
+import * as _moment from 'moment';
+
+const Moment: new (date?) => _moment.Moment = _moment as any;
 
 @Component({
   selector: 'aui-calendar-month',
@@ -18,7 +20,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   @Input() activeDate: Date;
   @Input() range: DateRange;
   @Input()
-  interval?: Interval.IInterval<Date | Moment>;
+  interval?: Interval.IInterval<Date | _moment.Moment>;
   @Input() weekdayLabels: WeekdayLabelsConfig = CALENDAR_DEFAULT_WEEKDAY_LABELS;
   @Output() selectDate = new EventEmitter();
 
@@ -59,7 +61,13 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
       const range = this.calendarService.getRangesForDate(this.activeDate, this.range);
       this.dates = newDates.map(week => week.map(day => ({...day, available: this.dayIsAvailable(day, range)})));
     } else if (this.interval) {
-      console.log(newDates);
+      const date = (new Moment(this.activeDate));
+      this.dates = newDates.map(week => week.map(day => {
+        return {
+          ...day,
+          available: !this.interval.isInRange((new Moment(date).date(day.date)))
+        };
+      }));
     } else {
       this.dates = newDates;
     }

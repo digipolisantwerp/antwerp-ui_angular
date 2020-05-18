@@ -12,7 +12,7 @@ export class CalendarDemoPage {
   public clickedDate: Date = new Date();
   public range: DateRange = [1, 6];
   public interval = IntervalBuilder
-    .momentInterval(new Moment(), (new Moment()).add(1, 'day'))
+    .momentInterval((new Moment()).add(1, 'days'), (new Moment()).add(3, 'day'))
     .closedInterval()
     .build();
 
@@ -52,6 +52,7 @@ selectDate(event) {
 }`;
   public html = `<aui-calendar
 	[range]="range"
+	[interval]="interval"
 	[selectedDate]="clickedDate"
 	(selectDate)="selectDate($event)">
 </aui-calendar>`;

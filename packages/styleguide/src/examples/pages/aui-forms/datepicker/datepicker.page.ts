@@ -4,13 +4,20 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {DateRange} from '@acpaas-ui/js-date-utils';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {IntervalBuilder} from '@acpaas-ui/ngx-utils';
+import * as _moment from 'moment';
+
+const Moment: new () => _moment.Moment = _moment as any;
 
 @Component({
   templateUrl: './datepicker.page.html',
 })
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
-  public dateRange: DateRange = [5, 6];
   public dateForm: FormGroup;
+  public interval = IntervalBuilder.momentInterval(null, (new Moment()))
+    .leftOpenInterval()
+    .unbounded()
+    .build();
   public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-forms';
 
 @NgModule({
@@ -30,10 +37,15 @@ export class AppModule {};`;
   public datepickerExampleTypescript = `import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { DateRange } from '@acpaas-ui/js-date-utils';
+import { IntervalDate } from '@acpaas-ui/ngx-utils';
 
 constructor(private fb: FormBuilder) { }
 
-public dateRange: DateRange = [5, 6];
+// This interval disables the past, optional
+public interval = IntervalBuilder.momentInterval(null, (new Moment()))
+    .leftOpenInterval()
+    .unbounded()
+    .build();
 public dateForm: FormGroup;
 
 this.dateForm = this.fb.group({
@@ -48,7 +60,7 @@ this.dateForm = this.fb.group({
 			autocomplete="off"
 			placeholder="dd/mm/jjjj"
 			formControlName="inputDate"
-			[range]="dateRange">
+			[interval]="interval">
 		</aui-datepicker>
 		<div *ngIf="dateForm.controls['inputDate'].errors">
 			<p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
@@ -63,7 +75,7 @@ this.dateForm = this.fb.group({
 
   public ngOnInit() {
     this.dateForm = this.fb.group({
-      inputDate: ['07/10/2019'],
+      inputDate: [new Date().toISOString()],
       isDisabled: false,
     });
 
