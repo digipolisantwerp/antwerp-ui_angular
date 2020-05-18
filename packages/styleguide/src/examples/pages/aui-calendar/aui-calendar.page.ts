@@ -43,7 +43,10 @@ export class AppModule {};`;
   public javascript3 = `import { DateRange } from '@acpaas-ui/js-date-utils';
 
 public clickedDate: Date = new Date();
-public range: DateRange = [1, 6];
+public interval = IntervalBuilder
+    .momentInterval((new Moment()).add(1, 'days'), (new Moment()).add(3, 'day'))
+    .closedInterval()
+    .build();
 
 selectDate(event) {
 	if (event.complete) {
@@ -51,7 +54,6 @@ selectDate(event) {
 	}
 }`;
   public html = `<aui-calendar
-	[range]="range"
 	[interval]="interval"
 	[selectedDate]="clickedDate"
 	(selectDate)="selectDate($event)">
