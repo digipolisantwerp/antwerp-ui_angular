@@ -189,8 +189,8 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   private onChange: (res: any) => void = () => {
-  };
+  }
 
   private onTouched: (_: any) => void = () => {
-  };
+  }
 }

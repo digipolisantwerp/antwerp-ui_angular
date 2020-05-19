@@ -57,20 +57,16 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     } else {
       return;
     }
-    if (this.range && !this.interval) {
-      const range = this.calendarService.getRangesForDate(this.activeDate, this.range);
-      this.dates = newDates.map(week => week.map(day => ({...day, available: this.dayIsAvailable(day, range)})));
-    } else if (this.interval) {
-      const date = (new Moment(this.activeDate));
-      this.dates = newDates.map(week => week.map(day => {
-        return {
-          ...day,
-          available: !this.interval.isInRange((new Moment(date).date(day.date)))
-        };
-      }));
-    } else {
-      this.dates = newDates;
-    }
+
+    const range: DateRangeMap | null = this.calendarService.getRangesForDate(this.activeDate, this.range);
+    this.dates = newDates.map(week => week.map(day => {
+      const date = (new Moment(this.activeDate)).date(day.date);
+      const available: boolean = this.dayIsAvailableForRange(day, range) && (this.interval ? !this.interval.isInRange(date) : true);
+      return {
+        ...day,
+        available
+      };
+    }));
   }
 
   pickDate(event: MouseEvent, day: Day): void {
@@ -105,7 +101,11 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     return monthHasChanged ? -1 : current.getDate();
   }
 
-  private dayIsAvailable(day: Day, range: DateRangeMap): boolean {
+  private dayIsAvailableForRange(day: Day, range: DateRangeMap): boolean {
+    if (!range) {
+      return true;
+    }
+
     let dateRange = range.current;
 
     if (day.padding) {
