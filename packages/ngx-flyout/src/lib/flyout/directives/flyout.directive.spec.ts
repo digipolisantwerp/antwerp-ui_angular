@@ -123,23 +123,4 @@ describe('Flyout directive without flyout zone', () => {
     flyoutService.close();
     expect(flyout.isOpened).toBeFalsy();
   }));
-
-  it('should close when the escape key is pressed', (done) => {
-    spyOn(flyout, 'close').and.stub();
-    (flyout as any).handleKeyUp = (flyout as any).handleKeyUp.bind(flyout);
-    flyout.open();
-
-    document.dispatchEvent(new KeyboardEvent('keyup', {
-      bubbles: true,
-      cancelable: true,
-      code: 'Escape',
-      keyCode: 27,
-    } as any));
-
-    setTimeout(() => {
-      expect(flyout.close).toHaveBeenCalled();
-
-      done();
-    }, 100);
-  });
 });
