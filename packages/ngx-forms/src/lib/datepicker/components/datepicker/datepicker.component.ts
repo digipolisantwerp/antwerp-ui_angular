@@ -118,17 +118,32 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   private createInterval() {
-    // Create an interval if min/max is filled in
-    if (!!this.min || !!this.max) {
-      let build = IntervalBuilder.momentInterval(this.min ? new Moment(this.min) : null, this.max ? new Moment(this.max) : null);
-      if (!this.min) {
-        build = build.leftOpenInterval();
-      } else if (!this.max) {
-        build = build.rightOpenInterval();
-      }
-      build = (!this.min || !this.max) ? build.unbounded() : build.bounded();
-      this.interval = build.build();
+    if (!this.min && !this.max) {
+      return;
     }
+    // Create an interval if min/max is filled in
+    let interval: Interval.IInterval<Moment>;
+    if (!!this.min && !!this.max) {
+      interval = IntervalBuilder.momentInterval(this.min ? new Moment(this.min) : null, this.max ? new Moment(this.max) : null)
+        .bounded()
+        .closedInterval()
+        .not()
+        .build();
+    } else if (!this.min) {
+      interval = IntervalBuilder.momentInterval(null, new Moment(this.max))
+        .unbounded()
+        .leftOpenInterval()
+        .not()
+        .build();
+    } else if (!this.max) {
+      interval = IntervalBuilder.momentInterval(new Moment(this.min), null)
+        .unbounded()
+        .rightOpenInterval()
+        .not()
+        .build();
+    }
+
+    this.interval = interval;
   }
 
   public writeValue(value: string): void {
