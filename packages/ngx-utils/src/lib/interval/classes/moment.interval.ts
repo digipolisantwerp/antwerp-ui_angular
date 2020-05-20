@@ -2,6 +2,20 @@ import {IntervalModel} from './interval.model';
 import {Moment} from 'moment';
 
 export class MomentInterval extends IntervalModel<Moment> {
+
+  constructor(min, max) {
+    super(min, max);
+    if (!min && !max) {
+      throw new Error('Error creating moment interval, please provide at least min or max.');
+    } else if (!min) {
+      this.bound = 'unbounded';
+      this.type = 'leftopen';
+    } else if (!max) {
+      this.bound = 'unbounded';
+      this.type = 'rightopen';
+    }
+  }
+
   private checkIsInRange(value: Moment): boolean {
     switch (this.type) {
       case 'closed':
