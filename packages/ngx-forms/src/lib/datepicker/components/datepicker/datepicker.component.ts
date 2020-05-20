@@ -16,7 +16,8 @@ import {takeUntil} from 'rxjs/operators';
 import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
 import {FlyoutDirective} from '@acpaas-ui/ngx-flyout';
-
+import * as _moment from 'moment';
+import {Moment} from 'moment';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -33,8 +34,9 @@ import {
   DATEPICKER_SEPARATOR_CHAR
 } from '../../datepicker.conf';
 import {DatepickerValidationErrors} from '../../types/datepicker.types';
-import {Interval} from '@acpaas-ui/ngx-utils';
-import {Moment} from 'moment';
+import {Interval, IntervalBuilder} from '@acpaas-ui/ngx-utils';
+
+const Moment: new (date?) => _moment.Moment = _moment as any;
 
 @Component({
   selector: 'aui-datepicker',
@@ -59,9 +61,11 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   @Input() name: string;
   @Input() placeholder = 'dd/mm/yyyy';
   @Input() range: DateRange;
-  @Input() autocomplete: 'off';
   @Input()
-  interval?: Interval.IInterval<Date | Moment>;
+  min: Date | Moment | null;
+  @Input()
+  max: Date | Moment | null;
+  @Input() autocomplete: 'off';
 
   @Output() blur = new EventEmitter<Event>();
 
@@ -69,6 +73,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   public formControl: FormControl;
   public selectedDate: Date;
   public isDisabled = false;
+  public interval: Interval.IInterval<Moment>;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -83,6 +88,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   public ngOnInit(): void {
+    this.createInterval();
     this.formControl = this.formBuilder.control({value: '', disabled: this.isDisabled});
     this.formControl.valueChanges
       .pipe(
@@ -109,6 +115,20 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   public ngOnDestroy(): void {
     this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
+  }
+
+  private createInterval() {
+    // Create an interval if min/max is filled in
+    if (!!this.min || !!this.max) {
+      let build = IntervalBuilder.momentInterval(this.min ? new Moment(this.min) : null, this.max ? new Moment(this.max) : null);
+      if (!this.min) {
+        build = build.leftOpenInterval();
+      } else if (!this.max) {
+        build = build.rightOpenInterval();
+      }
+      build = (!this.min || !this.max) ? build.unbounded() : build.bounded();
+      this.interval = build.build();
+    }
   }
 
   public writeValue(value: string): void {
@@ -188,9 +208,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
     this.onTouched(e);
   }
 
-  private onChange: (res: any) => void = () => {
-  }
+  private onChange: (res: any) => void = () => undefined;
 
-  private onTouched: (_: any) => void = () => {
-  }
+  private onTouched: (_: any) => void = () => undefined;
 }
