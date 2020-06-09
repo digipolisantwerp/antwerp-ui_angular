@@ -1,0 +1,31 @@
+<h3 class="h4 u-margin-bottom">Interval</h3>
+
+<blockquote>
+  For more information about the theoretical approach of intervals, see <a target="_blank"
+                                                                           href="https://en.wikipedia.org/wiki/Interval_(mathematics)">here</a>.
+</blockquote>
+
+<div class="u-margin-bottom u-margin-top">
+  The utils package allows you to create intervals which can be used in other packages. Ao:
+  <ul>
+    <li>ngx-calendar</li>
+    <li>ngx-forms Datepicker</li>
+  </ul>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="createInterval"></aui-code-snippet>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="dateInterval"></aui-code-snippet>
+</div>
+
+
+<p class="u-margin-bottom">
+  The IntervalBuilder supports left and right open intervals, bounded and unbounded intervals and interval inversion by using the not() method.
+</p>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="notThePast"></aui-code-snippet>
+</div>

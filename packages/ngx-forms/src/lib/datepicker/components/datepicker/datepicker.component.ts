@@ -14,11 +14,8 @@ import {
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
-
 import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
-
 import {FlyoutDirective} from '@acpaas-ui/ngx-flyout';
-
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -35,6 +32,7 @@ import {
   DATEPICKER_SEPARATOR_CHAR
 } from '../../datepicker.conf';
 import {DatepickerValidationErrors} from '../../types/datepicker.types';
+import {Interval, IntervalBuilder} from '@acpaas-ui/ngx-utils';
 
 @Component({
   selector: 'aui-datepicker',
@@ -59,6 +57,10 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   @Input() name: string;
   @Input() placeholder = 'dd/mm/yyyy';
   @Input() range: DateRange;
+  @Input()
+  min: Date | null;
+  @Input()
+  max: Date | null;
   @Input() autocomplete: 'off';
 
   @Output() blur = new EventEmitter<Event>();
@@ -67,6 +69,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   public formControl: FormControl;
   public selectedDate: Date;
   public isDisabled = false;
+  public interval: Interval.IInterval<Date>;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -81,6 +84,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   public ngOnInit(): void {
+    this.createInterval();
     this.formControl = this.formBuilder.control({value: '', disabled: this.isDisabled});
     this.formControl.valueChanges
       .pipe(
@@ -107,6 +111,16 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   public ngOnDestroy(): void {
     this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
+  }
+
+  private createInterval() {
+    if (!this.min && !this.max) {
+      return;
+    }
+    // Create an interval if min/max is filled in
+    this.interval = IntervalBuilder.dateInterval(this.min ? new Date(this.min) : null, this.max ? new Date(this.max) : null)
+      .not()
+      .build();
   }
 
   public writeValue(value: string): void {
@@ -186,9 +200,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
     this.onTouched(e);
   }
 
-  private onChange: (res: any) => void = () => {
-  }
+  private onChange: (res: any) => void = () => undefined;
 
-  private onTouched: (_: any) => void = () => {
-  }
+  private onTouched: (_: any) => void = () => undefined;
 }

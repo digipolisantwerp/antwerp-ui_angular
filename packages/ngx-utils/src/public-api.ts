@@ -23,3 +23,11 @@ WINDOW
  */
 export {WINDOW_PROVIDERS, WINDOW} from './lib/window/services/window.service';
 export {WindowModule} from './lib/window/window.module';
+
+/*
+INTERVAL
+ */
+export {IntervalBuilder} from './lib/interval/classes/interval.builder';
+export {GenericInterval} from './lib/interval/classes/generic.interval';
+export {DateInterval} from './lib/interval/classes/date.interval';
+export {Interval} from './lib/interval/types';

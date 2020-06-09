@@ -27,6 +27,7 @@ import {
   WeekdayLabelsConfig
 } from '../../types/calendar.types';
 import {CalendarService} from '../../services/calendar.service';
+import {Interval} from '@acpaas-ui/ngx-utils';
 
 @Component({
   selector: 'aui-calendar',
@@ -50,6 +51,8 @@ export class CalendarComponent implements OnInit, OnChanges {
 
   @Input() selectedDate: Date;
   @Input() range: DateRange;
+  @Input()
+  interval?: Interval.IInterval<Date>;
   @Input() weekdayLabels: WeekdayLabelsConfig;
   @Input() monthLabels: MonthLabelsConfig;
   @Output() selectDate = new EventEmitter();

@@ -1,10 +1,10 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {get} from 'lodash-es';
 import {DateHelper, DateRange, Day, Month} from '@acpaas-ui/js-date-utils';
-
 import {CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS} from '../../calendar.conf';
 import {CalendarService} from '../../services/calendar.service';
 import {DateRangeMap, WeekdayLabelsConfig} from '../../types/calendar.types';
+import {Interval} from '@acpaas-ui/ngx-utils';
 
 @Component({
   selector: 'aui-calendar-month',
@@ -15,6 +15,8 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   @Input() selectedDate: Date;
   @Input() activeDate: Date;
   @Input() range: DateRange;
+  @Input()
+  interval?: Interval.IInterval<Date>;
   @Input() weekdayLabels: WeekdayLabelsConfig = CALENDAR_DEFAULT_WEEKDAY_LABELS;
   @Output() selectDate = new EventEmitter();
 
@@ -52,9 +54,16 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
       return;
     }
 
-    const range = this.calendarService.getRangesForDate(this.activeDate, this.range);
-
-    this.dates = newDates.map(week => week.map(day => ({...day, available: this.dayIsAvailable(day, range)})));
+    const range: DateRangeMap | null = this.calendarService.getRangesForDate(this.activeDate, this.range);
+    this.dates = newDates.map(week => week.map(day => {
+      const date: Date = (new Date(this.activeDate));
+      date.setDate(day.date);
+      const available: boolean = this.dayIsAvailableForRange(day, range) && (this.interval ? !this.interval.isInRange(date) : true);
+      return {
+        ...day,
+        available
+      };
+    }));
   }
 
   pickDate(event: MouseEvent, day: Day): void {
@@ -89,7 +98,11 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     return monthHasChanged ? -1 : current.getDate();
   }
 
-  private dayIsAvailable(day: Day, range: DateRangeMap): boolean {
+  private dayIsAvailableForRange(day: Day, range: DateRangeMap): boolean {
+    if (!range) {
+      return true;
+    }
+
     let dateRange = range.current;
 
     if (day.padding) {

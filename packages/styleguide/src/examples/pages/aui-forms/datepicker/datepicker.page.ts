@@ -1,7 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-
-import {DateRange} from '@acpaas-ui/js-date-utils';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
@@ -9,8 +7,8 @@ import {takeUntil} from 'rxjs/operators';
   templateUrl: './datepicker.page.html',
 })
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
-  public dateRange: DateRange = [5, 6];
   public dateForm: FormGroup;
+  public min = new Date();
   public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-forms';
 
 @NgModule({
@@ -33,7 +31,8 @@ import { DateRange } from '@acpaas-ui/js-date-utils';
 
 constructor(private fb: FormBuilder) { }
 
-public dateRange: DateRange = [5, 6];
+// Since we only pass through a min date, the past will be disabled
+public min = new Date();
 public dateForm: FormGroup;
 
 this.dateForm = this.fb.group({
@@ -48,7 +47,7 @@ this.dateForm = this.fb.group({
 			autocomplete="off"
 			placeholder="dd/mm/jjjj"
 			formControlName="inputDate"
-			[range]="dateRange">
+			[min]="min">
 		</aui-datepicker>
 		<div *ngIf="dateForm.controls['inputDate'].errors">
 			<p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
@@ -63,7 +62,7 @@ this.dateForm = this.fb.group({
 
   public ngOnInit() {
     this.dateForm = this.fb.group({
-      inputDate: ['07/10/2019'],
+      inputDate: [new Date().toISOString()],
       isDisabled: false,
     });
 

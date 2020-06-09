@@ -43,6 +43,7 @@ import {UtilsFilterDemoPageComponent} from './pages/aui-utils/filter/filter.page
 import {UtilsLabelsDemoPageComponent} from './pages/aui-utils/labels/labels.page';
 import {UtilsWindowDemoPageComponent} from './pages/aui-utils/window/window.page';
 import {LeafletDemoPageComponent} from './pages/aui-leaflet/aui-leaflet.page';
+import {IntervalPageComponent} from './pages/aui-utils/interval/interval.page';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import {LeafletDemoPageComponent} from './pages/aui-leaflet/aui-leaflet.page';
     UtilsFilterDemoPageComponent,
     UtilsLabelsDemoPageComponent,
     UtilsWindowDemoPageComponent,
-    LeafletDemoPageComponent
+    LeafletDemoPageComponent,
+    IntervalPageComponent
   ],
   imports: [
     AuiModule,
