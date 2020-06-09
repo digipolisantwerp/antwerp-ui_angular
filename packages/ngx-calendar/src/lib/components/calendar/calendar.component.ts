@@ -28,7 +28,6 @@ import {
 } from '../../types/calendar.types';
 import {CalendarService} from '../../services/calendar.service';
 import {Interval} from '@acpaas-ui/ngx-utils';
-import {Moment} from 'moment';
 
 @Component({
   selector: 'aui-calendar',

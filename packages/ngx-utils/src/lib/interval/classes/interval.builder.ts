@@ -1,7 +1,6 @@
 import {Interval} from '../types';
 import {GenericInterval} from './generic.interval';
 import {DateInterval} from './date.interval';
-import {Moment} from 'moment';
 import IInterval = Interval.IInterval;
 
 export class IntervalBuilder<T> {

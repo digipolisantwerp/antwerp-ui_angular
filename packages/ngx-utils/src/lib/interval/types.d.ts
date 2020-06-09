@@ -1,5 +1,3 @@
-import {Moment} from 'moment';
-
 // tslint:disable-next-line:no-namespace
 export declare namespace Interval {
   export type IntervalType = 'closed' | 'open' | 'leftopen' | 'rightopen';
@@ -16,5 +14,5 @@ export declare namespace Interval {
     isInRange(value: T): boolean;
   }
 
-  export type DateInterval = IInterval<Date | Moment>;
+  export type DateInterval = IInterval<Date>;
 }
