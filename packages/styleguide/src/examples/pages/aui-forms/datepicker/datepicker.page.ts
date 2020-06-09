@@ -1,13 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-
-import {DateRange} from '@acpaas-ui/js-date-utils';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {IntervalBuilder} from '@acpaas-ui/ngx-utils';
-import * as _moment from 'moment';
-
-const Moment: new () => _moment.Moment = _moment as any;
 
 @Component({
   templateUrl: './datepicker.page.html',
