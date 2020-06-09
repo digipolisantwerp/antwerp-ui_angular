@@ -1,6 +1,6 @@
 import {Interval} from '../types';
 import {GenericInterval} from './generic.interval';
-import {MomentInterval} from './moment.interval';
+import {DateInterval} from './date.interval';
 import {Moment} from 'moment';
 import IInterval = Interval.IInterval;
 
@@ -9,8 +9,8 @@ export class IntervalBuilder<T> {
   constructor(private readonly  model: IInterval<T>) {
   }
 
-  static momentInterval(min: Moment, max: Moment): IntervalBuilder<Moment> {
-    return new IntervalBuilder(new MomentInterval(min, max));
+  static dateInterval(min: Date, max: Date): IntervalBuilder<Date> {
+    return new IntervalBuilder(new DateInterval(min, max));
   }
 
   static genericInterval(min: number, max: number): IntervalBuilder<number> {

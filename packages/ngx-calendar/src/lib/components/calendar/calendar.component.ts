@@ -53,7 +53,7 @@ export class CalendarComponent implements OnInit, OnChanges {
   @Input() selectedDate: Date;
   @Input() range: DateRange;
   @Input()
-  interval?: Interval.IInterval<Date | Moment>;
+  interval?: Interval.IInterval<Date>;
   @Input() weekdayLabels: WeekdayLabelsConfig;
   @Input() monthLabels: MonthLabelsConfig;
   @Output() selectDate = new EventEmitter();

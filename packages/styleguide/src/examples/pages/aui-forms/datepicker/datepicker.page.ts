@@ -14,7 +14,7 @@ const Moment: new () => _moment.Moment = _moment as any;
 })
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
   public dateForm: FormGroup;
-  public min = new Moment();
+  public min = new Date();
   public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-forms';
 
 @NgModule({

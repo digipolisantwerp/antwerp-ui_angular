@@ -1,7 +1,6 @@
 import {IntervalModel} from './interval.model';
-import {Moment} from 'moment';
 
-export class MomentInterval extends IntervalModel<Moment> {
+export class DateInterval extends IntervalModel<Date> {
 
   constructor(min, max) {
     super(min, max);
@@ -16,24 +15,40 @@ export class MomentInterval extends IntervalModel<Moment> {
     }
   }
 
-  private checkIsInRange(value: Moment): boolean {
+  static isSameOrAfter(one: Date, two: Date): boolean {
+    return two.getTime() >= one.getTime();
+  }
+
+  static isSameOrBefore(one: Date, two: Date): boolean {
+    return two.getTime() <= one.getTime();
+  }
+
+  static isAfter(one: Date, two: Date): boolean {
+    return two.getTime() > one.getTime();
+  }
+
+  static isBefore(one: Date, two: Date): boolean {
+    return two.getTime() < one.getTime();
+  }
+
+  private checkIsInRange(value: Date): boolean {
     switch (this.type) {
       case 'closed':
-        return value.isSameOrAfter(this.min) && value.isSameOrBefore(this.max);
+        return DateInterval.isSameOrAfter(this.min, value) && DateInterval.isSameOrBefore(this.max, value);
       case 'open':
-        return value.isAfter(this.min) && value.isBefore(this.max);
+        return DateInterval.isAfter(this.min, value) && DateInterval.isBefore(this.max, value);
       case 'leftopen':
         if (this.bound === 'bounded') {
-          return value.isAfter(this.min) && value.isSameOrBefore(this.max);
+          return DateInterval.isAfter(this.min, value) && DateInterval.isSameOrBefore(this.max, value);
         } else if (this.bound === 'unbounded') {
-          return value.isSameOrBefore(this.max);
+          return DateInterval.isSameOrBefore(this.max, value);
         }
         return false;
       case 'rightopen':
         if (this.bound === 'bounded') {
-          return value.isSameOrAfter(this.min) && value.isBefore(this.max);
+          return DateInterval.isSameOrAfter(this.min, value) && DateInterval.isBefore(this.max, value);
         } else if (this.bound === 'unbounded') {
-          return value.isSameOrAfter(this.min);
+          return DateInterval.isSameOrAfter(this.min, value);
         }
         return false;
       default:
@@ -41,7 +56,7 @@ export class MomentInterval extends IntervalModel<Moment> {
     }
   }
 
-  isInRange(value: Moment): boolean {
+  isInRange(value: Date): boolean {
     return this.meaning === 'OR' ? this.checkIsInRange(value) : !this.checkIsInRange(value);
   }
 

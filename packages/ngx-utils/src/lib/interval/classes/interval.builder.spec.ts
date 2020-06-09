@@ -1,7 +1,7 @@
 import {IntervalBuilder} from './interval.builder';
 import {GenericInterval} from './generic.interval';
 import * as _moment from 'moment';
-import {MomentInterval} from './moment.interval';
+import {DateInterval} from './date.interval';
 
 const Moment: any = _moment;
 
@@ -18,10 +18,10 @@ describe('Interval Builder', () => {
   });
   it('should create a moment interval', () => {
     const interval = IntervalBuilder
-      .momentInterval(new Moment(), new Moment())
+      .dateInterval(new Moment(), new Moment())
       .closedInterval()
       .build();
     expect(interval).toBeDefined();
-    expect(interval instanceof MomentInterval).toBe(true);
+    expect(interval instanceof DateInterval).toBe(true);
   });
 });

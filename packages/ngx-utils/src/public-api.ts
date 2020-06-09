@@ -29,5 +29,5 @@ INTERVAL
  */
 export {IntervalBuilder} from './lib/interval/classes/interval.builder';
 export {GenericInterval} from './lib/interval/classes/generic.interval';
-export {MomentInterval} from './lib/interval/classes/moment.interval';
+export {DateInterval} from './lib/interval/classes/date.interval';
 export {Interval} from './lib/interval/types';

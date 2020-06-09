@@ -16,8 +16,6 @@ import {takeUntil} from 'rxjs/operators';
 import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
 import {FlyoutDirective} from '@acpaas-ui/ngx-flyout';
-import * as _moment from 'moment';
-import {Moment} from 'moment';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -35,8 +33,6 @@ import {
 } from '../../datepicker.conf';
 import {DatepickerValidationErrors} from '../../types/datepicker.types';
 import {Interval, IntervalBuilder} from '@acpaas-ui/ngx-utils';
-
-const Moment: new (date?) => _moment.Moment = _moment as any;
 
 @Component({
   selector: 'aui-datepicker',
@@ -62,9 +58,9 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   @Input() placeholder = 'dd/mm/yyyy';
   @Input() range: DateRange;
   @Input()
-  min: Date | Moment | null;
+  min: Date | null;
   @Input()
-  max: Date | Moment | null;
+  max: Date | null;
   @Input() autocomplete: 'off';
 
   @Output() blur = new EventEmitter<Event>();
@@ -73,7 +69,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   public formControl: FormControl;
   public selectedDate: Date;
   public isDisabled = false;
-  public interval: Interval.IInterval<Moment>;
+  public interval: Interval.IInterval<Date>;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -122,7 +118,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
       return;
     }
     // Create an interval if min/max is filled in
-    this.interval = IntervalBuilder.momentInterval(this.min ? new Moment(this.min) : null, this.max ? new Moment(this.max) : null)
+    this.interval = IntervalBuilder.dateInterval(this.min ? new Date(this.min) : null, this.max ? new Date(this.max) : null)
       .not()
       .build();
   }

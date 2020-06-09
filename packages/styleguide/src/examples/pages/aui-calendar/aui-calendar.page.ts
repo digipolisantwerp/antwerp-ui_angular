@@ -12,7 +12,7 @@ export class CalendarDemoPage {
   public clickedDate: Date = new Date();
   public range: DateRange = [1, 6];
   public interval = IntervalBuilder
-    .momentInterval((new Moment()).add(1, 'days'), (new Moment()).add(3, 'day'))
+    .dateInterval((new Moment()).add(1, 'days').toDate(), (new Moment()).add(3, 'day').toDate())
     .closedInterval()
     .build();
 

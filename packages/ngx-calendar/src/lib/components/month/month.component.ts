@@ -1,14 +1,10 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {get} from 'lodash-es';
 import {DateHelper, DateRange, Day, Month} from '@acpaas-ui/js-date-utils';
-
 import {CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS} from '../../calendar.conf';
 import {CalendarService} from '../../services/calendar.service';
 import {DateRangeMap, WeekdayLabelsConfig} from '../../types/calendar.types';
 import {Interval} from '@acpaas-ui/ngx-utils';
-import * as _moment from 'moment';
-
-const Moment: new (date?) => _moment.Moment = _moment as any;
 
 @Component({
   selector: 'aui-calendar-month',
@@ -20,7 +16,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   @Input() activeDate: Date;
   @Input() range: DateRange;
   @Input()
-  interval?: Interval.IInterval<Date | _moment.Moment>;
+  interval?: Interval.IInterval<Date>;
   @Input() weekdayLabels: WeekdayLabelsConfig = CALENDAR_DEFAULT_WEEKDAY_LABELS;
   @Output() selectDate = new EventEmitter();
 
@@ -60,7 +56,8 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 
     const range: DateRangeMap | null = this.calendarService.getRangesForDate(this.activeDate, this.range);
     this.dates = newDates.map(week => week.map(day => {
-      const date = (new Moment(this.activeDate)).date(day.date);
+      const date: Date = (new Date(this.activeDate));
+      date.setDate(day.date);
       const available: boolean = this.dayIsAvailableForRange(day, range) && (this.interval ? !this.interval.isInRange(date) : true);
       return {
         ...day,
