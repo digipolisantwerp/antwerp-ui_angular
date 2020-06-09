@@ -5,7 +5,7 @@ export class DateInterval extends IntervalModel<Date> {
   constructor(min, max) {
     super(min, max);
     if (!min && !max) {
-      throw new Error('Error creating moment interval, please provide at least min or max.');
+      throw new Error('Error creating date interval, please provide at least min or max.');
     } else if (!min) {
       this.bound = 'unbounded';
       this.type = 'leftopen';
