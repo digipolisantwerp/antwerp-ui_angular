@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [4.2.0] - 2020-06-09
+
+### Added
+- `calendar` Added support for date intervals
+- `form` Added minimum and maximum options to the datepicker
+- `utils` Added new date interval utility
+- `utils` Added new number interval utility
+
+
 ## [4.1.0] - 2020-04-10
 
 ### Added
