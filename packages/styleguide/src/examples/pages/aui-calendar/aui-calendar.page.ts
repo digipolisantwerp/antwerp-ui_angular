@@ -44,8 +44,9 @@ export class AppModule {};`;
 
 public clickedDate: Date = new Date();
 public range: DateRange = [1, 6];
+// Moment is used to created the dates but do note that a Date object is passed through
 public interval = IntervalBuilder
-    .momentInterval((new Moment()).add(1, 'days'), (new Moment()).add(3, 'day'))
+    .dateInterval((new Moment()).add(1, 'days').toDate(), (new Moment()).add(3, 'day').toDate())
     .closedInterval()
     .build();
 
