@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-navigation-menu",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-layout": "^4.2.0",
+    "@acpaas-ui/ngx-layout": "^4.2.1",
     "@acpaas-ui/ngx-logo": "^4.0.0"
   },
   "peerDependencies": {
