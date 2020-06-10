@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## Fixed
+- Have a date interval recognize closed state when constructing
+
 ## [4.2.0] - 2020-06-09
 
 ### Added

@@ -12,6 +12,8 @@ export class DateInterval extends IntervalModel<Date> {
     } else if (!max) {
       this.bound = 'unbounded';
       this.type = 'rightopen';
+    } else {
+      this.type = 'closed';
     }
   }
 
