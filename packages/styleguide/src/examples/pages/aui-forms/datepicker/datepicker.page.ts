@@ -2,6 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import * as _moment from 'moment';
+
+const Moment: new (date?) => _moment.Moment = _moment as any;
 
 @Component({
   templateUrl: './datepicker.page.html',
@@ -9,6 +12,7 @@ import {takeUntil} from 'rxjs/operators';
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
   public dateForm: FormGroup;
   public min = new Date();
+  public max = (new Moment()).add(2, 'weeks').toDate();
   public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-forms';
 
 @NgModule({
@@ -33,6 +37,7 @@ constructor(private fb: FormBuilder) { }
 
 // Since we only pass through a min date, the past will be disabled
 public min = new Date();
+public max = (new Moment()).add(2, 'weeks').toDate();
 public dateForm: FormGroup;
 
 this.dateForm = this.fb.group({
@@ -47,7 +52,8 @@ this.dateForm = this.fb.group({
 			autocomplete="off"
 			placeholder="dd/mm/jjjj"
 			formControlName="inputDate"
-			[min]="min">
+			[min]="min"
+			[max]="max">
 		</aui-datepicker>
 		<div *ngIf="dateForm.controls['inputDate'].errors">
 			<p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
