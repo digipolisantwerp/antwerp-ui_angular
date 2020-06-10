@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [4.2.1] - 2020-06-10
+
 ## Fixed
-- Have a date interval recognize closed state when constructing
+- `utils` Have a date interval recognize closed state when constructing
+
 
 ## [4.2.0] - 2020-06-09
 
@@ -292,7 +296,9 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.1...HEAD
+[4.2.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.0...v4.2.1
+[4.2.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.3.0...v4.0.0
 [3.3.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v3.2.1...v3.3.0
