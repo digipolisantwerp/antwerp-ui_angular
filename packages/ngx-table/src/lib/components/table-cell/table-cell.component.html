@@ -1,2 +1,4 @@
 <ng-template *ngIf="hasComponent()"></ng-template>
-<span *ngIf="!hasComponent()">{{ value }}</span>
+<span *ngIf="!hasComponent() && !hasColumnClass()">{{ value }}</span>
+<span *ngIf="!hasComponent() && hasColumnClass()"
+      [ngClass]="columnClass">{{ value }}</span>

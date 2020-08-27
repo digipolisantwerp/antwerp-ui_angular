@@ -15,18 +15,22 @@ export class TableDemoPageComponent {
     {
       label: '#',
       value: 'id',
+      columnClass: (value, col, row) => this.makeBold(value, col, row)
     },
     {
       label: 'First Name',
       value: 'firstName',
+      columnClass: (value, col, row) => this.makeBold(value, col, row)
     },
     {
       label: 'Last Name',
       value: 'lastName',
+      columnClass: (value, col, row) => this.makeBold(value, col, row)
     },
     {
       label: 'Registered',
       value: 'registeredAt',
+      columnClass: (value, col, row) => this.makeBold(value, col, row),
       format: (value) => this.datePipe.transform(value, 'dd/MM/yyyy'),
     },
     {
@@ -34,6 +38,10 @@ export class TableDemoPageComponent {
       component: TableActionComponent,
     },
   ];
+
+  public makeBold(value, col, row) {
+    return row['firstName'] === "Sonia" ? 'u-text-bold' : '';
+  }
 
   public rows = [
     {
@@ -128,18 +136,22 @@ public columns: TableColumn[] = [
 	{
 		label: '#',
 		value: 'id',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 	},
 	{
 		label: 'First Name',
 		value: 'firstName',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 	},
 	{
 		label: 'Last Name',
 		value: 'lastName',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 	},
 	{
 		label: 'Registered',
 		value: 'registeredAt',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 		format: (value) => this.datePipe.transform(value, 'dd/MM/yyyy'),
 	},
 	{
@@ -147,6 +159,10 @@ public columns: TableColumn[] = [
 		component: TableActionComponent,
 	},
 ];
+
+public makeBold(index, col, row) {
+    return row['firstName'] === "Sonia" ? 'u-text-bold' : '';
+  }
 
 public rows = [
 	{

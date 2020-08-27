@@ -19,4 +19,9 @@ export class TableHelperService {
     const value = item[this.getValue(key)];
     return key.format ? key.format(value, key, item, index) : value;
   }
+
+  public getColumnClass(item, key, index): any {
+    const value = item[this.getValue(key)];
+    return key.columnClass ? key.columnClass(value, key, item) : '';
+  }
 }
