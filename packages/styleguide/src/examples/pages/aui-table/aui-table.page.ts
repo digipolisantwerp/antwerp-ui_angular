@@ -39,10 +39,6 @@ export class TableDemoPageComponent {
     },
   ];
 
-  public makeBold(value, col, row) {
-    return row['firstName'] === "Sonia" ? 'u-text-bold' : '';
-  }
-
   public rows = [
     {
       id: 0,
@@ -161,7 +157,7 @@ public columns: TableColumn[] = [
 ];
 
 public makeBold(index, col, row) {
-    return row['firstName'] === "Sonia" ? 'u-text-bold' : '';
+    return row.firstName === 'Sonia' ? 'u-text-bold' : '';
   }
 
 public rows = [
@@ -249,6 +245,10 @@ constructor(
   constructor(
     private datePipe: DatePipe
   ) {
+  }
+
+  public makeBold(value, col, row) {
+    return row.firstName === 'Sonia' ? 'u-text-bold' : '';
   }
 
 }
