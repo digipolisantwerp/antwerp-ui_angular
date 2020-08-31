@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## Fixed
+
+- `autocomplete` Changed order of `[(ngModel)]` and `(ngModelChange)` so the model value is updated before the modelChange event is triggered.
 
 ## [4.2.1] - 2020-06-10
 
