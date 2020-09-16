@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {DatePipe} from '@angular/common';
 
-import {TableColumn} from '@acpaas-ui/ngx-table';
 import {TableActionComponent} from '../../components/table-action.component';
+import { TableColumn } from '../../../../../ngx-table/src/lib/types/table.types';
 
 @Component({
   templateUrl: './aui-table.page.html',

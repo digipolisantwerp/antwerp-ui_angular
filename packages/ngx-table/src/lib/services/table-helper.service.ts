@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {TableColumn} from '../types/table.types';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TableHelperService {
   public getLabel(key: (TableColumn | string)): string {
     return key.hasOwnProperty('label') ? (key as TableColumn).label : key as string;
