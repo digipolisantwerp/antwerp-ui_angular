@@ -371,4 +371,16 @@ describe('The Autocomplete Component', () => {
     comp.writeValue('test');
     expect(comp.query).toEqual('this is the test label');
   });
+
+  it('should update the model value before change listerer is triggered', (done) => {
+    comp.search.subscribe(val => {
+      expect(val).toBe('test');
+      done();
+    });
+    comp.remote = true;
+    const input = el.querySelector('input[type=text]') as HTMLInputElement;
+    input.value = 'test';
+    input.dispatchEvent(new Event('input'));
+    expect(comp.query).toEqual('test');
+  });
 });
