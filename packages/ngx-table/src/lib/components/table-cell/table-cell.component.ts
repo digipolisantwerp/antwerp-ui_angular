@@ -8,7 +8,7 @@ import {
   Type,
   ViewContainerRef
 } from '@angular/core';
-import {Cell} from '../../types/table.types';
+import { Cell } from '../../types/table.types';
 import { TableHelperService } from '../../services/table-helper.service';
 
 @Component({
@@ -17,7 +17,7 @@ import { TableHelperService } from '../../services/table-helper.service';
 })
 export class TableCellComponent implements OnChanges {
   @Input() component: Type<any>;
-  @Input() columnClass: Type<any>;
+  @Input() columnClass: Function;
   @Input() value: string;
 
   constructor(
@@ -40,10 +40,6 @@ export class TableCellComponent implements OnChanges {
 
   public hasComponent() {
     return !!this.component;
-  }
-
-  public hasColumnClass() {
-    return !!this.columnClass;
   }
 
   public loadComponent() {
