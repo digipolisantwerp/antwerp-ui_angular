@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## Fixed
+- Replaced `BrowserModule` with `CommonModule` in the ngx-navigation-menu component. Importing the `BrowserModule` throws an error when working with lazy-loaded modules. Packages should always make use of `CommonModule` instead.
 
 ## [4.2.1] - 2020-06-10
 
