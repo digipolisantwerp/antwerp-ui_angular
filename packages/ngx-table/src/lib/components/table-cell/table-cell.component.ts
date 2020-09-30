@@ -17,7 +17,7 @@ import { TableHelperService } from '../../services/table-helper.service';
 })
 export class TableCellComponent implements OnChanges {
   @Input() component: Type<any>;
-  @Input() columnClass: Function;
+  @Input() columnClass: () => string;
   @Input() value: string;
 
   constructor(

@@ -40,7 +40,7 @@ describe('The Table Helper Service', () => {
         if (v === 'HELLO WORLD') {
           return 'class-bold';
         }
-        return 'class-normal'
+        return 'class-normal';
       },
       index: null
     })).toEqual('class-bold');
@@ -51,7 +51,7 @@ describe('The Table Helper Service', () => {
         if (v === 'HELLO WORLD') {
           return 'class-bold';
         }
-        return 'class-normal'
+        return 'class-normal';
       },
       index: null
     })).toEqual('class-normal');
