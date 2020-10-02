@@ -5,7 +5,7 @@ import {RouterModule} from '@angular/router';
 import {COMPONENTS} from './components/components';
 import {AuiModule} from './aui/aui.module';
 import {LocalstorageService} from './services/localstorage.service';
-import {CommonModule} from "@angular/common";
+import {CommonModule} from '@angular/common';
 
 const defaultConfiguration: Menu.ModuleConfiguration = {
   dockedByDefault: false,
