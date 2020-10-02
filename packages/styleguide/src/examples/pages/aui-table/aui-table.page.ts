@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {DatePipe} from '@angular/common';
 
-import {TableColumn} from '@acpaas-ui/ngx-table';
 import {TableActionComponent} from '../../components/table-action.component';
+import { TableColumn } from '../../../../../ngx-table/src/lib/types/table.types';
 
 @Component({
   templateUrl: './aui-table.page.html',
@@ -15,18 +15,22 @@ export class TableDemoPageComponent {
     {
       label: '#',
       value: 'id',
+      columnClass: (value, col, row) => this.makeBold(value, col, row)
     },
     {
       label: 'First Name',
       value: 'firstName',
+      columnClass: (value, col, row) => this.makeBold(value, col, row)
     },
     {
       label: 'Last Name',
       value: 'lastName',
+      columnClass: (value, col, row) => this.makeBold(value, col, row)
     },
     {
       label: 'Registered',
       value: 'registeredAt',
+      columnClass: (value, col, row) => this.makeBold(value, col, row),
       format: (value) => this.datePipe.transform(value, 'dd/MM/yyyy'),
     },
     {
@@ -128,18 +132,22 @@ public columns: TableColumn[] = [
 	{
 		label: '#',
 		value: 'id',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 	},
 	{
 		label: 'First Name',
 		value: 'firstName',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 	},
 	{
 		label: 'Last Name',
 		value: 'lastName',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 	},
 	{
 		label: 'Registered',
 		value: 'registeredAt',
+		columnClass: (index, col, row) => this.makeBold(index, col, row)
 		format: (value) => this.datePipe.transform(value, 'dd/MM/yyyy'),
 	},
 	{
@@ -147,6 +155,10 @@ public columns: TableColumn[] = [
 		component: TableActionComponent,
 	},
 ];
+
+public makeBold(index, col, row) {
+    return row.firstName === 'Sonia' ? 'u-text-bold' : '';
+  }
 
 public rows = [
 	{
@@ -233,6 +245,10 @@ constructor(
   constructor(
     private datePipe: DatePipe
   ) {
+  }
+
+  public makeBold(value, col, row) {
+    return row.firstName === 'Sonia' ? 'u-text-bold' : '';
   }
 
 }

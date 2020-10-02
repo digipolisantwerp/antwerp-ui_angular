@@ -8,7 +8,8 @@ import {
   Type,
   ViewContainerRef
 } from '@angular/core';
-import {Cell} from '../../types/table.types';
+import { Cell } from '../../types/table.types';
+import { TableHelperService } from '../../services/table-helper.service';
 
 @Component({
   selector: 'aui-table-cell',
@@ -16,9 +17,11 @@ import {Cell} from '../../types/table.types';
 })
 export class TableCellComponent implements OnChanges {
   @Input() component: Type<any>;
+  @Input() columnClass: () => string;
   @Input() value: string;
 
   constructor(
+    public tableHelper: TableHelperService,
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver,
     private changeDetectionRef: ChangeDetectorRef

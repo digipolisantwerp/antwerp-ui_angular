@@ -12,6 +12,7 @@ export interface TableRecord {
 }
 
 export type TableColumnFormat = (o: string, key?: string, item?: any) => any;
+export type TableColumnClass = (o: string, key?: string, item?: any) => any;
 
 export interface TableColumn {
   label: string;
@@ -23,4 +24,5 @@ export interface TableColumn {
   disabled?: boolean;
   disableSorting?: boolean;
   classList?: string[];
+  columnClass?: TableColumnClass;
 }

@@ -32,4 +32,28 @@ describe('The Table Helper Service', () => {
       },
     })).toEqual('hello-World');
   }));
+
+  it('should return the columnClass', inject([TableHelperService], (tableHelper) => {
+    expect(tableHelper.getColumnClass({test: 'HELLO WORLD'}, {
+      value: 'test',
+      columnClass: (v, k) => {
+        if (v === 'HELLO WORLD') {
+          return 'class-bold';
+        }
+        return 'class-normal';
+      },
+      index: null
+    })).toEqual('class-bold');
+
+    expect(tableHelper.getColumnClass({test: 'hello world'}, {
+      value: 'test',
+      columnClass: (v, k) => {
+        if (v === 'HELLO WORLD') {
+          return 'class-bold';
+        }
+        return 'class-normal';
+      },
+      index: null
+    })).toEqual('class-normal');
+  }));
 });

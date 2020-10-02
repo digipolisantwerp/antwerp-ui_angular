@@ -5,6 +5,7 @@ import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/tes
 
 import {TableCellComponent} from './table-cell.component';
 import {Cell} from '../../types/table.types';
+import { TableHelperService } from '../../services/table-helper.service';
 
 // ---------- DUMMY FILTERS ----------- //
 @Component({
@@ -26,6 +27,9 @@ describe('The Table Cell Component without component', () => {
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [
+        TableHelperService,
+      ],
       declarations: [
         TableCellComponent, // declare the test component
       ],
@@ -62,6 +66,9 @@ describe('The Table Cell Component with component', () => {
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [
+        TableHelperService,
+      ],
       declarations: [
         DummyTestComponent,
         TableCellComponent, // declare the test component
