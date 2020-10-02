@@ -7,8 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [4.3.0] - 2020-10-02
+
+## Added
+- `table` Added a function to add a CSS class dynamically to a table cell
+
 ## Fixed
-- Replaced `BrowserModule` with `CommonModule` in the ngx-navigation-menu component. Importing the `BrowserModule` throws an error when working with lazy-loaded modules. Packages should always make use of `CommonModule` instead.
+- `navigation-menu` Replaced `BrowserModule` with `CommonModule`, so importing `BrowserModule` doesn't throw an error when working with lazy-loaded modules
+- `pagination` Made labels of item counter and items per page components Dutch by default
+
 
 ## [4.2.2] - 2020-09-01
 
@@ -304,7 +312,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.3.0...HEAD
+[4.3.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.2...v4.3.0
 [4.2.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.1...v4.2.2
 [4.2.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.1.0...v4.2.0

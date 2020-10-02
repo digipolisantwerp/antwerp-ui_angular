@@ -38,8 +38,8 @@ export class ItemsPerPageComponent {
       this.label = label;
     } else if (!this.label) {
       this.label = {
-        singular: 'item per page',
-        plural: 'items per page',
+        singular: 'item per pagina',
+        plural: 'items per pagina',
       };
     }
   }

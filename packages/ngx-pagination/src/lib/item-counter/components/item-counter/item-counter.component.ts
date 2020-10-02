@@ -26,8 +26,8 @@ export class ItemCounterComponent implements OnInit, OnChanges {
       this.label = label;
     } else if (!this.label) {
       this.label = {
-        singular: '%{currentFrom} - %{currentTo} of %{totalAmount} item',
-        plural: '%{currentFrom} - %{currentTo} of %{totalAmount} items',
+        singular: '%{currentFrom} - %{currentTo} van %{totalAmount} item',
+        plural: '%{currentFrom} - %{currentTo} van %{totalAmount} items',
       };
     }
   }
