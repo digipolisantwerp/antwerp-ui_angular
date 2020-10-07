@@ -1,4 +1,5 @@
-<div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout class="m-search-filter">
+<div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout class="m-search-filter m-search-filter--small"
+     [ngClass]="{'m-search-filter--small' : size === 'small'}">
   <div [ngClass]="{'m-search-filter__label--active': selectedItems.length > 0}"
        aria-haspopup=”true” auiFlyoutAction class="m-search-filter__label has-icon-right">
     <span id="{{ id + '-label' }}">{{ label }}</span>

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Added
+- 'size' option for the SearchFilterComponent (small & default supported)
 
 ## [4.3.0] - 2020-10-02
 
