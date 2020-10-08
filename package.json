@@ -28,6 +28,7 @@
   "dependencies": {
     "@a-ui/acpaas": "^4.1.0",
     "@a-ui/core": "^4.1.0",
+    "@a-ui/flexboxgrid": "^2.0.0",
     "@acpaas-ui/js-date-utils": "^1.0.6",
     "@acpaas-ui/js-notification-store": "^1.0.4",
     "@angular-redux/store": "^10.0.0",

@@ -29,6 +29,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   @Input() public placeholder = 'Zoeken';
   @Input() public inputDelay = 150;
   @Input() public showAllByDefault = false;
+  @Input() public size: 'large' | 'default' | 'small' | 'tiny' = 'default';
 
   @Output() public search: EventEmitter<string> = new EventEmitter<string>();
 
@@ -45,7 +46,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   }
 
   public updateModel: (_) => any = () => {
-  }
+  };
 
   public writeValue(value: string[]): void {
     this.selectedItems = Array.isArray(value) ? value : [];
