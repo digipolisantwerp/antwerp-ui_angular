@@ -46,7 +46,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   }
 
   public updateModel: (_) => any = () => {
-  };
+  }
 
   public writeValue(value: string[]): void {
     this.selectedItems = Array.isArray(value) ? value : [];
