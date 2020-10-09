@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Changed
+- The SearchFilterComponent now features a button as CTA. (previously: custom div)
 
 ## [4.3.0] - 2020-10-02
 

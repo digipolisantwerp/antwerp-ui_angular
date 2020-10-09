@@ -1,15 +1,23 @@
 <div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout class="m-search-filter">
-  <div [ngClass]="{'m-search-filter__label--active': selectedItems.length > 0}"
-       aria-haspopup=”true” auiFlyoutAction class="m-search-filter__label has-icon-right">
+  <button class="has-icon-right a-button--default" [attr.disabled]="isDisabled ? 'true' : null" aria-haspopup=”true”
+          auiFlyoutAction
+          [ngClass]="{
+          'a-button' : selectedItems.length,
+          'a-button-outline' : !selectedItems.length,
+          'a-button--large' : size === 'large',
+          'a-button--small': size === 'small',
+           'a-button--tiny' : size === 'tiny'
+           }">
     <span id="{{ id + '-label' }}">{{ label }}</span>
     <span *ngIf="selectedItems.length">({{ selectedItems.length }})</span>
     <span class="fa fa-angle-down"></span>
-  </div>
+  </button>
 
   <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
     <div *ngIf="!isDisabled" class="m-search-filter__input a-input has-icon-right">
       <div class="a-input__wrapper">
-        <input (input)="filterDataFromSearch()" [(ngModel)]="query" [attr.aria-labelledby]="id + '-label'" [attr.placeholder]="placeholder"
+        <input (input)="filterDataFromSearch()" [(ngModel)]="query" [attr.aria-labelledby]="id + '-label'"
+               [attr.placeholder]="placeholder"
                aria-autocomplete="list" id="{{ id + '-search' }}" name="{{ name + '-search' }}"
                type="text">
         <span class="fa fa-search"></span>

@@ -36,22 +36,6 @@ describe('The SearchFilter Component', () => {
     el = de.nativeElement;
   });
 
-  it('should set the provided labels and attributes', () => {
-    comp.id = 'test-id';
-    comp.name = 'test-name';
-    comp.label = 'test-label';
-    comp.labelResults = 'test-labelResults';
-    comp.placeholder = 'test-placeholder';
-
-    fixture.detectChanges();
-
-    expect(el.querySelector('#test-id-search')).toBeDefined();
-    expect(el.querySelector('input[name="test-id-search"]')).toBeDefined();
-    expect(el.querySelector('.m-search-filter__label').textContent).toContain('test-label');
-    expect(el.querySelector('.m-search-filter__results-title').textContent).toContain('test-labelResults');
-    expect(el.querySelector('.m-search-filter__input input').getAttribute('placeholder')).toBe('test-placeholder');
-  });
-
   it('should show a spinner when loading results', () => {
     comp.loading = true;
 
