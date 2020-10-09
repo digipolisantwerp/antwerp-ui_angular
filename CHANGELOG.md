@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
 ## [4.4.0] - 2020-10-09
 
-## Added
+### Added
 - `form` Added size variants to the search filter
 
 ### Changed
@@ -18,23 +19,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [4.3.0] - 2020-10-02
 
-## Added
+### Added
 - `table` Added a function to add a CSS class dynamically to a table cell
 
-## Fixed
+### Fixed
 - `navigation-menu` Replaced `BrowserModule` with `CommonModule`, so importing `BrowserModule` doesn't throw an error when working with lazy-loaded modules
 - `pagination` Made labels of item counter and items per page components Dutch by default
 
 
 ## [4.2.2] - 2020-09-01
 
-## Fixed
+### Fixed
 - `form` Changed order of `[(ngModel)]` and `(ngModelChange)` in the autocomplete, so the model value is updated before the modelChange event is triggered.
 
 
 ## [4.2.1] - 2020-06-10
 
-## Fixed
+### Fixed
 - `utils` Have a date interval recognize closed state when constructing
 
 
