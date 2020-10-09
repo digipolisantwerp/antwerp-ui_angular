@@ -7,8 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [4.4.0] - 2020-10-09
+
+## Added
+- `form` Added size variants to the search filter
+
 ### Changed
-- The SearchFilterComponent now features a button as CTA. (previously: custom div)
+- `form` The search filter now adheres better to the branding guidelines
+
 
 ## [4.3.0] - 2020-10-02
 
@@ -23,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [4.2.2] - 2020-09-01
 
 ## Fixed
-- `autocomplete` Changed order of `[(ngModel)]` and `(ngModelChange)` so the model value is updated before the modelChange event is triggered.
+- `form` Changed order of `[(ngModel)]` and `(ngModelChange)` in the autocomplete, so the model value is updated before the modelChange event is triggered.
 
 
 ## [4.2.1] - 2020-06-10
@@ -314,7 +320,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.3.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.4.0...HEAD
+[4.4.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.2...v4.3.0
 [4.2.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.1...v4.2.2
 [4.2.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.0...v4.2.1
