@@ -1,22 +1,25 @@
 import {
   ChangeDetectorRef,
   Component,
+  ComponentFactory,
   ComponentFactoryResolver,
+  ComponentRef,
   Input,
   OnChanges,
   SimpleChanges,
   Type,
   ViewContainerRef
 } from '@angular/core';
-import { Cell } from '../../types/table.types';
-import { TableHelperService } from '../../services/table-helper.service';
+import {Cell, CellWithMetadata, ConstructableCell} from '../../types/table.types';
+import {TableHelperService} from '../../services/table-helper.service';
+import {hasMetadata} from './table-cell.helpers';
 
 @Component({
   selector: 'aui-table-cell',
   templateUrl: './table-cell.component.html',
 })
 export class TableCellComponent implements OnChanges {
-  @Input() component: Type<any>;
+  @Input() component: ConstructableCell;
   @Input() columnClass: () => string;
   @Input() value: string;
 
@@ -34,7 +37,8 @@ export class TableCellComponent implements OnChanges {
     }
 
     if (changes.component.currentValue !== changes.component.previousValue) {
-      this.loadComponent();
+      this.loadComponent(this.component);
+      this.changeDetectionRef.detectChanges();
     }
   }
 
@@ -42,13 +46,17 @@ export class TableCellComponent implements OnChanges {
     return !!this.component;
   }
 
-  public loadComponent() {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.component);
-    const viewContainerRef = this.viewContainerRef;
-    viewContainerRef.clear();
+  public loadComponent(component: ConstructableCell): ComponentRef<Cell> {
+    const componentFactory: ComponentFactory<Cell> = hasMetadata(component) ?
+      this.componentFactoryResolver.resolveComponentFactory((component as CellWithMetadata).instance)
+      : this.componentFactoryResolver.resolveComponentFactory((component) as Type<Cell>);
 
-    const componentRef = viewContainerRef.createComponent(componentFactory);
-    (componentRef.instance as Cell).data = this.value;
-    this.changeDetectionRef.detectChanges();
+    this.viewContainerRef.clear();
+    const componentRef = this.viewContainerRef.createComponent(componentFactory);
+    componentRef.instance.data = this.value;
+    if (hasMetadata(component)) {
+      componentRef.instance.metadata = (component as CellWithMetadata).metadata;
+    }
+    return componentRef;
   }
 }

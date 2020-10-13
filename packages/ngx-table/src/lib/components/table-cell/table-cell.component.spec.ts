@@ -1,109 +1,89 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {Component, DebugElement, Input} from '@angular/core';
-import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
-
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {Component, ComponentFactory, ComponentFactoryResolver, ViewContainerRef} from '@angular/core';
 import {TableCellComponent} from './table-cell.component';
 import {Cell} from '../../types/table.types';
-import { TableHelperService } from '../../services/table-helper.service';
+import {TableHelperService} from '../../services/table-helper.service';
+import * as sinon from 'sinon';
+import {SinonStub} from 'sinon';
 
-// ---------- DUMMY FILTERS ----------- //
+// ---------- DUMMY COMPONENT ----------- //
 @Component({
   selector: 'aui-dummy-test',
   template: '<div class="dummy-test">Test</div>',
 })
 export class DummyTestComponent implements Cell {
-  @Input() data: any;
+  data: any;
 }
 
-// ---------- TABLE Cell TEST ---------- //
-
 describe('The Table Cell Component without component', () => {
-  let comp: TableCellComponent;
+  let component: TableCellComponent;
   let fixture: ComponentFixture<TableCellComponent>;
-  let deSpan: DebugElement;
-  let elSpan: HTMLElement;
+  let factory: ComponentFactoryResolver;
+  let viewContainer: ViewContainerRef;
+  let componentFactory: ComponentFactory<Cell>;
+  let instance: DummyTestComponent;
 
-  // async beforeEach
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       providers: [
         TableHelperService,
+        {
+          provide: ViewContainerRef,
+          useValue: {
+            createComponent: sinon.stub(),
+            clear: sinon.stub()
+          }
+        },
+        {
+          provide: ComponentFactoryResolver,
+          useValue: {
+            resolveComponentFactory: sinon.stub()
+          }
+        }
       ],
       declarations: [
-        TableCellComponent, // declare the test component
+        TableCellComponent,
+        DummyTestComponent
       ],
-    })
-      .compileComponents();  // compile template and css
-  }));
+    }).compileComponents();
 
-  // synchronous beforeEach
-  beforeEach(() => {
+    componentFactory = {name: 'some testing factory'} as any;
+    instance = new DummyTestComponent();
     fixture = TestBed.createComponent(TableCellComponent);
-    comp = fixture.componentInstance; // BannerComponent test instance
-
-    comp.value = 'Test';
-    fixture.detectChanges();
-
-    // query for the title <h1> by CSS element selector
-    deSpan = fixture.debugElement.query(By.css('span'));
-    elSpan = deSpan.nativeElement;
+    component = fixture.componentInstance; // BannerComponent test instance
+    viewContainer = TestBed.get(ViewContainerRef);
+    factory = TestBed.get(ComponentFactoryResolver);
   });
 
-  it('should exist ', () => {
-    fixture.detectChanges();
-    expect(elSpan).not.toBeUndefined();
-  });
-});
+  it('should create a component using only the component constructor type', () => {
 
-describe('The Table Cell Component with component', () => {
-  let comp: TableCellComponent;
-  let fixture: ComponentFixture<TableCellComponent>;
-  let deSpan: DebugElement;
-  // let deComp: DebugElement;
-  // let elComp: HTMLElement;
-
-  // async beforeEach
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        TableHelperService,
-      ],
-      declarations: [
-        DummyTestComponent,
-        TableCellComponent, // declare the test component
-      ],
+    (viewContainer.createComponent as SinonStub).withArgs(componentFactory).returns({
+      instance
     });
-
-    TestBed.overrideModule(BrowserDynamicTestingModule, {
-      set: {
-        entryComponents: [DummyTestComponent],
-      },
-    })
-      .compileComponents();  // compile template and css
-  }));
-
-  // synchronous beforeEach
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TableCellComponent);
-    comp = fixture.componentInstance; // BannerComponent test instance
-
-    comp.value = 'Test';
-    comp.component = DummyTestComponent;
-    fixture.detectChanges();
-
-    // query for the title <h1> by CSS element selector
-    deSpan = fixture.debugElement.query(By.css('span'));
-
-    // elComp = deComp.nativeElement;
+    (factory.resolveComponentFactory as SinonStub).withArgs(DummyTestComponent).returns(componentFactory);
+    component.viewContainerRef = viewContainer;
+    component.value = 'some testing here';
+    const ref = component.loadComponent(DummyTestComponent);
+    expect(ref.instance).toBe(instance);
+    expect(ref.instance.data).toBe('some testing here');
+    expect(ref.instance.metadata).toBeUndefined();
+    expect((viewContainer.clear as SinonStub).calledOnce).toBe(true);
   });
 
-  it('should exist', () => {
-    expect(deSpan).toBeNull();
-
-    // Something goes wrong...
-    // deComp = fixture.debugElement.query(By.all('dummy-test'));
-    // elComp = deComp.nativeElement;
-    // expect(elComp).not.toBeUndefined();
+  it('should create a component using contructor and metadata', () => {
+    (viewContainer.createComponent as SinonStub).withArgs(componentFactory).returns({
+      instance
+    });
+    (factory.resolveComponentFactory as SinonStub).withArgs(DummyTestComponent).returns(componentFactory);
+    component.viewContainerRef = viewContainer;
+    component.value = 'some testing here';
+    const ref = component.loadComponent({
+      instance: DummyTestComponent,
+      metadata: 'some-meta-data'
+    });
+    expect(ref.instance).toBe(instance);
+    expect(ref.instance.data).toBe('some testing here');
+    expect(ref.instance.metadata).toBe('some-meta-data');
+    expect((viewContainer.clear as SinonStub).calledOnce).toBe(true);
   });
 });

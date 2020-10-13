@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
-
+### Added
+- Added the possibility to pass through metadata when configuring table columns with custom components.
 
 ## [4.4.0] - 2020-10-09
 
