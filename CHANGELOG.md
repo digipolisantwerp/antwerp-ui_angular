@@ -6,8 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
+
+
+## [4.5.0] - 2020-10-13
+
 ### Added
-- Added the possibility to pass through metadata when configuring table columns with custom components.
+- `table` Added the possibility to pass through metadata when configuring table columns with custom components
+
 
 ## [4.4.0] - 2020-10-09
 
@@ -322,7 +327,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.4.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.0...HEAD
+[4.5.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.2...v4.3.0
 [4.2.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.1...v4.2.2
