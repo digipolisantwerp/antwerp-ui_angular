@@ -1,6 +1,16 @@
+import {Type} from '@angular/core';
+
 export interface Cell {
   data: any;
+  metadata?: any;
 }
+
+export interface CellWithMetadata {
+  instance: Type<Cell>;
+  metadata: any;
+}
+
+export type ConstructableCell = Type<Cell> | CellWithMetadata;
 
 export interface OrderBy {
   key: string;
@@ -17,7 +27,7 @@ export type TableColumnClass = (o: string, key?: string, item?: any) => any;
 export interface TableColumn {
   label: string;
   value?: string;
-  component?: any;
+  component?: ConstructableCell;
   headerComponent?: any;
   format?: TableColumnFormat;
   hidden?: boolean;
