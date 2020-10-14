@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [4.5.1] - 2020-10-14
+
 #### Changed
- - Exported types `ConstructableCell` and `CellWithMetadata` from @acpaas-ui/ngx-table
+ - `table` Exported types `ConstructableCell` and `CellWithMetadata` from `@acpaas-ui/ngx-table`
+
 
 ## [4.5.0] - 2020-10-13
 
@@ -329,7 +333,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.1...HEAD
+[4.5.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.0...v4.5.1
 [4.5.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.2.2...v4.3.0
