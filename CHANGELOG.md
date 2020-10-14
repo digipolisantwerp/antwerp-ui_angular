@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+#### Changed
+ - Exported types `ConstructableCell` and `CellWithMetadata` from @acpaas-ui/ngx-table
 
 ## [4.5.0] - 2020-10-13
 
