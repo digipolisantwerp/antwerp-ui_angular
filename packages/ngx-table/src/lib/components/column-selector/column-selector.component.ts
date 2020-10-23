@@ -9,8 +9,8 @@ import {TableHelperService} from '../../services/table-helper.service';
 export class ColumnSelectorComponent {
   @Input() columns;
   @Output() update = new EventEmitter();
-  public id: string = Math.random().toString(36).substr(2, 9);
 
+  public id: string = Math.random().toString(36).substr(2, 9);
   public currentTarget;
 
   constructor(public tableHelper: TableHelperService) { }
