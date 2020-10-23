@@ -20,7 +20,7 @@ export class AppModule {};`;
 			Footer content goes here
 		</div>
 		<div auiFooterBottom>
-			<aui-subfooter>
+			<aui-subfooter ariaGoUpLabel="Go back to top">
 				<aui-copyright domain="Digipolis"></aui-copyright>
 			</aui-subfooter>
 		</div>

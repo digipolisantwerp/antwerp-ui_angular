@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+#### Fixed
+ - `layout` Added missing ARIA label for the scroll to top button in the footer
+
 #### Changed
  - `table` Removed `short-unique-id` dependency as it was giving optimization bailouts warnings
 
