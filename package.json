@@ -1,7 +1,7 @@
 {
   "name": "@acpaas-ui/ngx-components",
   "description": "Antwerp City Platform as a Service User Interface (ACPaas UI) is a component interface library for building user interfaces and responsive web apps.",
-  "version": "4.5.1",
+  "version": "4.5.2",
   "keywords": [
     "Angular",
     "Digipolis",
