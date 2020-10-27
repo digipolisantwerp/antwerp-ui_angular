@@ -7,16 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-#### Fixed
+
+## [4.5.2] - 2020-10-27
+
+### Fixed
  - `layout` Added missing ARIA label for the scroll to top button in the footer
 
-#### Changed
+### Changed
  - `table` Removed `short-unique-id` dependency as it was giving optimization bailouts warnings
 
 
 ## [4.5.1] - 2020-10-14
 
-#### Changed
+### Changed
  - `table` Exported types `ConstructableCell` and `CellWithMetadata` from `@acpaas-ui/ngx-table`
 
 
@@ -339,7 +342,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.2...HEAD
+[4.5.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.1...v4.5.2
 [4.5.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.0...v4.5.1
 [4.5.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.3.0...v4.4.0
