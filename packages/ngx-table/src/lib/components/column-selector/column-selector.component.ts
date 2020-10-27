@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import ShortUniqueId from 'short-unique-id';
 
 import {TableHelperService} from '../../services/table-helper.service';
 
@@ -10,14 +9,11 @@ import {TableHelperService} from '../../services/table-helper.service';
 export class ColumnSelectorComponent {
   @Input() columns;
   @Output() update = new EventEmitter();
-  public id: number;
+
+  public id: string = Math.random().toString(36).substr(2, 9);
   public currentTarget;
 
-  private uid = new ShortUniqueId();
-
-  constructor(public tableHelper: TableHelperService) {
-    this.id = this.uid.randomUUID(8);
-  }
+  constructor(public tableHelper: TableHelperService) { }
 
   public updateDisplay(e, index) {
     if (e.target.checked) {
