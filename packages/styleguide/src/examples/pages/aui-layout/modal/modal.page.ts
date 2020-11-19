@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ModalService} from '../../../../../../ngx-layout/src/public-api';
 import {AUIDemoModalComponent} from './demo-modal.component';
+import {ApproveModalComponent} from '../../../../../../ngx-layout/src/lib/modal/components/approve-modal/approve-modal.component';
 
 @Component({
   templateUrl: './modal.page.html',
@@ -73,6 +74,37 @@ private doSomething() {
 	Open modal
 </button>`;
 
+public modal4 = `import { ApproveModalComponent } from '@acpaas-ui/ngx-layout';`;
+
+public modal5 = `public openApproveModal() {
+  this.modalService.openModal(ApproveModalComponent, {
+    question: 'Are you sure you want to close this demo modal?',
+    description: 'This action can be undone.',
+    approve: 'Close demo modal',
+    reject: 'Cancel'
+  }, {
+    approve: () => this.doSomething(),
+    reject: () => this.doSomethingElse()
+  });
+
+  private doSomething() {
+    return new Promise((resolve, reject) => {
+      return resolve();
+    });
+  }
+
+  private doSomethingElse() {
+    return new Promise((resolve, reject) => {
+      return resolve();
+    });
+  }
+}`;
+
+public modal6 = `<button type="button" class="a-button"
+  (click)="openApproveModal()">
+  Open approve modal
+</button>`;
+
   constructor(
     private modalService: ModalService
   ) {
@@ -83,14 +115,32 @@ private doSomething() {
       AUIDemoModalComponent,
       {
         title: 'Modal demo',
-        text: 'Are you sure you want to see a ngx-logo of this modal?',
+        text: 'Are you sure you want to see a demo of this modal?',
       }, {
         confirm: () => this.doSomething(),
       }
     );
   }
 
+  public openApproveModal() {
+    this.modalService.openModal(ApproveModalComponent, {
+			question: 'Are you sure you want to close this demo modal?',
+			description: 'This action can be undone.',
+			approve: 'Close demo modal',
+      reject: 'Cancel'
+		}, {
+			approve: () => this.doSomething(),
+			reject: () => this.doSomethingElse()
+		});
+  }
+
   private doSomething() {
+    return new Promise((resolve, reject) => {
+      return resolve();
+    });
+  }
+
+  private doSomethingElse() {
     return new Promise((resolve, reject) => {
       return resolve();
     });
