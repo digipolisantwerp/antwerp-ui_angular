@@ -2,9 +2,9 @@
   <div class="m-modal__content">
     <div class="m-modal__header u-margin-bottom-xs">
       <button (click)="close()" class="m-modal__close a-button-transparent a-button--default has-icon" type="button">
-        <span class="fa fa-close"> {{ modalData.reject }} </span>
+        <span class="fa fa-close"><span class="u-screen-reader-only">{{ modalData.reject }}</span></span>
       </button>
-      <h2 [id]="titleId">{{ modalData.question }}</h2>
+      <h4 [id]="titleId">{{ modalData.question }}</h4>
     </div>
     <div class="u-margin-bottom">
       <p [id]="descId">{{ modalData.description }}</p>

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+- `layout` Fixed the approve modal's close label that wasn't hidden properly
+
 
 ## [4.5.2] - 2020-10-27
 
