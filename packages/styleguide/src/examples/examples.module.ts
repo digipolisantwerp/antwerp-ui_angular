@@ -44,6 +44,8 @@ import {UtilsLabelsDemoPageComponent} from './pages/aui-utils/labels/labels.page
 import {UtilsWindowDemoPageComponent} from './pages/aui-utils/window/window.page';
 import {LeafletDemoPageComponent} from './pages/aui-leaflet/aui-leaflet.page';
 import {IntervalPageComponent} from './pages/aui-utils/interval/interval.page';
+import {ToastrDemoPageComponent} from './pages/aui-toastr/aui-toastr.page';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -86,14 +88,16 @@ import {IntervalPageComponent} from './pages/aui-utils/interval/interval.page';
     UtilsLabelsDemoPageComponent,
     UtilsWindowDemoPageComponent,
     LeafletDemoPageComponent,
-    IntervalPageComponent
+    IntervalPageComponent,
+    ToastrDemoPageComponent
   ],
   imports: [
     AuiModule,
     RouterModule.forChild(EXAMPLES_ROUTES),
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   exports: [
     LogoDemoPageComponent

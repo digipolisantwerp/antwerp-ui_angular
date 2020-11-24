@@ -29,6 +29,7 @@ import {WysiwygModule} from '../../../ngx-forms/src/lib/wysiwyg/public-api';
 import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '../../../ngx-layout/src/public-api';
 import {FilterModule, LabelsModule, WindowModule} from '../../../ngx-utils/src/public-api';
 import {LeafletModule} from '../../../ngx-leaflet/src/public-api';
+import {AuiToastrModule} from '../../../ngx-toastr/src/public-api';
 
 @NgModule({
   imports: [
@@ -142,7 +143,8 @@ import {LeafletModule} from '../../../ngx-leaflet/src/public-api';
     FilterModule,
     LabelsModule,
     WindowModule,
-    LeafletModule
+    LeafletModule,
+    AuiToastrModule
   ]
 })
 export class AuiModule {

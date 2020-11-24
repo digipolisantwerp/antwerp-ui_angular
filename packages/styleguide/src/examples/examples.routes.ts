@@ -2,7 +2,6 @@ import {Routes} from '@angular/router';
 import {LogoDemoPageComponent} from './pages/aui-logo/aui-logo.page';
 import {CodeSnippetDemoPageComponent} from './pages/aui-code-snippet/aui-snippet.page';
 import {AnalyticsDemoPageComponent} from './pages/aui-analytics/aui-analytics.page';
-import {AgendaDemoPageComponent} from './pages/aui-agenda/aui-agenda.page';
 import {AvatarDemoPageComponent} from './pages/aui-avatar/aui-avatar.page';
 import {NavigationMenuDemoPage} from './pages/aui-navigation-menu/aui-navigation-menu.page';
 import {CalendarDemoPage} from './pages/aui-calendar/aui-calendar.page';
@@ -37,6 +36,7 @@ import {UtilsLabelsDemoPageComponent} from './pages/aui-utils/labels/labels.page
 import {UtilsWindowDemoPageComponent} from './pages/aui-utils/window/window.page';
 import {LeafletDemoPageComponent} from './pages/aui-leaflet/aui-leaflet.page';
 import {IntervalPageComponent} from './pages/aui-utils/interval/interval.page';
+import {ToastrDemoPageComponent} from './pages/aui-toastr/aui-toastr.page';
 
 export const EXAMPLES_ROUTES: Routes = [
   {
@@ -78,6 +78,11 @@ export const EXAMPLES_ROUTES: Routes = [
     path: 'modules/flyout',
     component: FlyoutDemoPage,
     data: {meta: {title: 'Flyout'}}
+  },
+  {
+    path: 'modules/toastr',
+    component: ToastrDemoPageComponent,
+    data: {meta: {title: 'Toastr'}}
   },
   {
     component: FormsDemoPageComponent,

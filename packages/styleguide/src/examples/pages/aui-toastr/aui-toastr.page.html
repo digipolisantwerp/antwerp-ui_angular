@@ -1,0 +1,21 @@
+<h2 class="h3 u-margin-bottom">Toastr</h2>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+<div class="u-margin-top u-margin-bottom m-alert">
+  <p>
+    <strong>Note:</strong> The <code>@acpaas-ui/ngx-toastr</code> module is a replacement for the now deprecated <code>ngx-notification</code>
+    package. It
+    has a hard dependency on <code>ngx-toastr@11</code>, since the package only implements a custom styled toastr to the
+    core branding.
+  </p>
+</div>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="showToastr"></aui-code-snippet>
+</div>
+
+<button class="a-button a-button--default u-margin-bottom-xs" (click)="success()">Show Success Toastr</button>
+<br/>
+<button class="a-button a-button--danger u-margin-bottom-xs" (click)="error()">Show Error Toastr</button>
+<br/>
+<button class="a-button a-button--warning u-margin-bottom-xs" (click)="warning()">Show Warning Toastr</button>

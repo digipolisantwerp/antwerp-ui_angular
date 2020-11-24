@@ -133,11 +133,17 @@
       "@acpaas-ui/ngx-utils/*": [
         "packages/ngx-utils/dist/*"
       ],
-      "ngx-leaflet": [
+      "@acpaas-ui/ngx-leaflet": [
         "packages/ngx-leaflet/dist"
       ],
-      "ngx-leaflet/*": [
+      "@acpaas-ui/ngx-leaflet/*": [
         "packages/ngx-leaflet/dist/*"
+      ],
+      "@acpaas-ui/ngx-toastr": [
+        "packages/ngx-toastr/dist"
+      ],
+      "@acpaas-ui/ngx-toastr/*": [
+        "packages/ngx-toastr/dist/*"
       ]
     }
   },

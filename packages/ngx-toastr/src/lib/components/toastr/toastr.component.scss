@@ -1,0 +1,46 @@
+@import '../../../../../../node_modules/@a-ui/core/src/styles/quarks';
+@import '../../../../../../node_modules/ngx-toastr/toastr';
+
+::ng-deep .toast-container {
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 18.5rem; /* min-width for WCAG (320px) - (2 * $spacer-xs) */
+  position: fixed;
+  right: $spacer-xs;
+  top: $spacer-lg;
+  z-index: layer('statusbar');
+}
+
+:host {
+  margin-top: $spacer-xs;
+
+  &.toast-success {
+    .m-alert {
+      @include m-alert($alert-success);
+
+      .a-button-transparent {
+        @include a-button-outline($btn-success-outline-color, $btn-success-outline-border, true);
+      }
+    }
+  }
+
+  &.toast-warning {
+    .m-alert {
+      @include m-alert($alert-warning);
+
+      .a-button-transparent {
+        @include a-button-outline($btn-warning-outline-color, $btn-warning-outline-border, true);
+      }
+    }
+  }
+
+  &.toast-error {
+    .m-alert {
+      @include m-alert($alert-danger);
+
+      .a-button-transparent {
+        @include a-button-outline($btn-danger-outline-color, $btn-danger-outline-border, true);
+      }
+    }
+  }
+}
