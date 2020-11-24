@@ -1,24 +1,41 @@
-# NgxToastr
+# @acpaas-ui/ngx-toastr
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+Module that allows the use of a simple toastr to display success, error or warning messages.
+This package only implements a custom styled Toastr component and thus has a hard dependency on the `ngx-toastr@11` package.
 
-## Code scaffolding
+> This package is the replacement for the now deprecated ngx-notification package.
 
-Run `ng generate component component-name --project ngx-toastr` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-toastr`.
-> Note: Don't forget to add `--project ngx-toastr` or else it will be added to the default project in your `angular.json` file. 
+## Usage
 
-## Build
+Import the module into your application:
 
-Run `ng build ngx-toastr` to build the project. The build artifacts will be stored in the `dist/` directory.
+````ts
+import { AuiToastrModule} from '@acpaas-ui/ngx-toastr';
 
-## Publishing
+@NgModule({
+    imports: [
+        AuiToastrModule,
+        BrowserAnimationsModule
+    ]
+})
+export class AppModule {}
 
-After building your library with `ng build ngx-toastr`, go to the dist folder `cd dist/ngx-toastr` and run `npm publish`.
+````
 
-## Running unit tests
+> Note that you manually have to import the `BrowserAnimationsModule` in your root application module.
 
-Run `ng test ngx-toastr` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use the toastr in a component:
 
-## Further help
+````ts
+import { ToastrService } from 'ngx-toastr';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@Component({...})
+export class AppComponent {
+    
+    constructor(private toastrService: ToastrService) {}
+
+    showToastr() {
+        this.toastrService.success('Message', 'Title', {/* options */});
+    }
+}
+````
