@@ -15,6 +15,12 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../../coverage/ngx-toastr'),
       reports: ['html', 'lcovonly', 'text-summary'],
@@ -25,7 +31,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
     singleRun: true,
     restartOnFileChange: true
   });
