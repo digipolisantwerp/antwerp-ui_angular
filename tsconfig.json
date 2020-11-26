@@ -134,16 +134,16 @@
       "@acpaas-ui/ngx-utils/*": [
         "packages/ngx-utils/dist/*"
       ],
-      "ngx-leaflet": [
+      "@acpaas-ui/ngx-leaflet": [
         "packages/ngx-leaflet/dist"
       ],
-      "ngx-leaflet/*": [
+      "@acpaas-ui/ngx-leaflet/*": [
         "packages/ngx-leaflet/dist/*"
       ],
-      "ngx-notifications": [
+      "@acpaas-ui/ngx-notifications": [
         "dist/ngx-notifications"
       ],
-      "ngx-notifications/*": [
+      "@acpaas-ui/ngx-notifications/*": [
         "dist/ngx-notifications/*"
       ]
     }
