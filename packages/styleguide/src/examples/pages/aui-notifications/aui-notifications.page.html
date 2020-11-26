@@ -1,0 +1,21 @@
+<h2 class="h3 u-margin-bottom">Notifications</h2>
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="importModule"></aui-code-snippet>
+</div>
+
+<div class="u-margin-top u-margin-bottom m-alert">
+  <p>
+    <strong>Note:</strong> For this package to work properly, it is important to import the <code>BrowserAnimationsModule</code> in the root
+    module of your application.
+  </p>
+</div>
+
+<div class="u-margin-bottom">
+  <aui-code-snippet [codeSnippet]="showNotification"></aui-code-snippet>
+</div>
+
+<button class="a-button a-button--default u-margin-bottom-xs" (click)="success()">Show Success Notification</button>
+<br/>
+<button class="a-button a-button--danger u-margin-bottom-xs" (click)="error()">Show Error Notification</button>
+<br/>
+<button class="a-button a-button--warning u-margin-bottom-xs" (click)="warning()">Show Warning Notification</button>

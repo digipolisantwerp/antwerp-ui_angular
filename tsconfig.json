@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "skipLibCheck": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -138,6 +139,12 @@
       ],
       "ngx-leaflet/*": [
         "packages/ngx-leaflet/dist/*"
+      ],
+      "ngx-notifications": [
+        "dist/ngx-notifications"
+      ],
+      "ngx-notifications/*": [
+        "dist/ngx-notifications/*"
       ]
     }
   },
