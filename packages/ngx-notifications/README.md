@@ -1,24 +1,39 @@
-# NgxNotifications
+# @acpaas-ui/ngx-notifications
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+Module that allows the use of a simple notification to display success, error or warning messages.
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name --project ngx-notifications` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-notifications`.
-> Note: Don't forget to add `--project ngx-notifications` or else it will be added to the default project in your `angular.json` file. 
+Import the module into your application:
 
-## Build
+````ts
+import { NotificationsModule } from '@acpaas-ui/ngx-notifications';
 
-Run `ng build ngx-notifications` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+    imports: [
+        NotificationsModule,
+        BrowserAnimationsModule
+    ]
+})
+export class AppModule {}
 
-## Publishing
+````
 
-After building your library with `ng build ngx-notifications`, go to the dist folder `cd dist/ngx-notifications` and run `npm publish`.
+> Note that you manually have to import the `BrowserAnimationsModule` in your root application module.
 
-## Running unit tests
+Use the notification in a component:
 
-Run `ng test ngx-notifications` to execute the unit tests via [Karma](https://karma-runner.github.io).
+````ts
+import { NotificationsService } from '@acpaas-ui/ngx-notifications';
 
-## Further help
+@Component({...})
+export class AppComponent {
+    
+    constructor(private service: NotificationsService) {}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    showToastr() {
+        this.service.success('Message', 'Title', {/* options */});
+        // also warning() or error()
+    }
+}
+````
