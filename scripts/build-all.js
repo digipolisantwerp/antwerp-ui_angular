@@ -5,7 +5,6 @@ const rxjs = require('rxjs');
 const operators = require('rxjs/operators');
 const cliProgress = require('cli-progress');
 const chalk = require('chalk');
-const rimraf = require('rimraf');
 
 /**
  * This script basically runs 'ng build' for every
@@ -15,9 +14,7 @@ const rimraf = require('rimraf');
  * package.
  */
 
-const EXCLUDED_DIRS = [
-  'ngx-notifications' // This package was deprecated, but dir still exists
-];
+const EXCLUDED_DIRS = [];
 
 const BUILD_AS_FIRST = [
   'ngx-utils' // Basically every lib is dependent on this one, so build first
@@ -33,7 +30,7 @@ const BUILD_AS_LAST = [
 function buildAngularPackage(packageName) {
   return new rxjs.Observable((observer) => {
     console.log(chalk.yellow(`\nBuilding ${packageName}...`));
-    const command = cli.exec(`ng build ${packageName}`, error => {
+    cli.exec(`ng build ${packageName}`, error => {
       if (error) {
         return observer.error(error);
       }
@@ -45,8 +42,7 @@ function buildAngularPackage(packageName) {
 }
 
 function getAllPackages() {
-  const dirs = fs.readdirSync(path.resolve(__dirname, '../packages/')).filter(dir => dir.startsWith('ngx-'));
-  return dirs;
+  return fs.readdirSync(path.resolve(__dirname, '../packages/')).filter(dir => dir.startsWith('ngx-'));
 }
 
 function getMainPackages() {

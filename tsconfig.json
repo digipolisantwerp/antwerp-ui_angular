@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "skipLibCheck": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -133,11 +134,17 @@
       "@acpaas-ui/ngx-utils/*": [
         "packages/ngx-utils/dist/*"
       ],
-      "ngx-leaflet": [
+      "@acpaas-ui/ngx-leaflet": [
         "packages/ngx-leaflet/dist"
       ],
-      "ngx-leaflet/*": [
+      "@acpaas-ui/ngx-leaflet/*": [
         "packages/ngx-leaflet/dist/*"
+      ],
+      "@acpaas-ui/ngx-notifications": [
+        "dist/ngx-notifications"
+      ],
+      "@acpaas-ui/ngx-notifications/*": [
+        "dist/ngx-notifications/*"
       ]
     }
   },
