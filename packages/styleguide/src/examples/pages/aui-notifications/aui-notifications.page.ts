@@ -9,7 +9,7 @@ export class NotificationsPageDemoComponent {
   importModule = `import { NotificationsModule } from '@acpaas-ui/ngx-notifications';
 
 @NgModule({
-  imports: [ NotificationsModule ]
+  imports: [ NotificationsModule, BrowserAnimationsModule ]
 })
 export class AppModule { }
   `;
