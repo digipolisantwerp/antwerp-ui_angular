@@ -1,9 +1,11 @@
 <div class="m-alert" [style.display]="state.value === 'inactive' ? 'none' : ''">
-  <button class="a-button-transparent has-icon m-alert__close" *ngIf="options.closeButton" (click)="remove()"><span class="fa fa-close" aria-label="Close"></span></button>
-  <h1 class="h5 u-margin-bottom-xs" *ngIf="title" [class]="options.titleClass">
+  <button class="a-button-transparent has-icon m-alert__close" *ngIf="options.closeButton" (click)="remove()"><span
+    class="fa fa-close" aria-label="Close"></span></button>
+  <h1 *ngIf="title" [class]="options.titleClass + ' h5 u-margin-bottom-xs'">
     {{ title }}
   </h1>
-  <div *ngIf="message && options.enableHtml" role="alert" aria-live="polite" [class]="options.messageClass" [innerHTML]="message">
+  <div *ngIf="message && options.enableHtml" role="alert" aria-live="polite" [class]="options.messageClass"
+       [innerHTML]="message">
   </div>
   <p *ngIf="message && !options.enableHtml" role="alert" aria-live="polite" [class]="options.messageClass">
     {{ message }}
