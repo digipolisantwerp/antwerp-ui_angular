@@ -14,8 +14,19 @@
   <aui-code-snippet [codeSnippet]="showNotification"></aui-code-snippet>
 </div>
 
-<button class="a-button a-button--default u-margin-bottom-xs" (click)="success()">Show Success Notification</button>
-<br/>
-<button class="a-button a-button--danger u-margin-bottom-xs" (click)="error()">Show Error Notification</button>
-<br/>
-<button class="a-button a-button--warning u-margin-bottom-xs" (click)="warning()">Show Warning Notification</button>
+<div class="u-margin-top u-margin-bottom">
+  <p>Our notifications package is built on ngx-toastr. All available options are listed on the <a href="https://www.npmjs.com/package/ngx-toastr#options" target="_blank" class="has-icon-right">ngx-toastr NPM page<span class="fa fa-external-link"></span></a></p>
+</div>
+
+<div class="u-margin-bottom-xs">
+  <button class="a-button" (click)="showInfoNotification()">Show info notification</button>
+</div>
+<div class="u-margin-bottom-xs">
+  <button class="a-button a-button--success" (click)="showSuccessNotification()">Show success notification</button>
+</div>
+<div class="u-margin-bottom-xs">
+  <button class="a-button a-button--warning" (click)="showWarningNotification()">Show warning notification</button>
+</div>
+<div class="u-margin-bottom">
+  <button class="a-button a-button--danger" (click)="showErrorNotification()">Show error notification</button>
+</div>

@@ -80,11 +80,6 @@ export const EXAMPLES_ROUTES: Routes = [
     data: {meta: {title: 'Flyout'}}
   },
   {
-    path: 'modules/notifications',
-    component: NotificationsPageDemoComponent,
-    data: {meta: {title: 'Notifications'}}
-  },
-  {
     component: FormsDemoPageComponent,
     path: 'modules/forms',
     data: {meta: {title: 'Forms'}},
@@ -220,6 +215,11 @@ export const EXAMPLES_ROUTES: Routes = [
     path: 'modules/navigation-menu',
     component: NavigationMenuDemoPage,
     data: {meta: {title: 'Navigation Menu'}}
+  },
+  {
+    path: 'modules/notifications',
+    component: NotificationsPageDemoComponent,
+    data: {meta: {title: 'Notifications'}}
   },
   {
     path: 'modules/pagination',

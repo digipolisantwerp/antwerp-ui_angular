@@ -21,9 +21,20 @@ export class Component {
 
     constructor(private service: NotificationsService) {}
 
-    showNotification() {
-        this.service.success('Body of the notification', 'Title', { /* extra options */ });
-        // Also: error(...) or warning(...)
+    showInfoNotification() {
+      this.notificationsService.info('This is the body of an info notification.', 'Info', { /* Extra options */ });
+    }
+
+    showSuccessNotification() {
+      this.notificationsService.success('This is the body of a success notification.', 'Success', { /* Extra options */ });
+    }
+
+    showWarningNotification() {
+      this.notificationsService.warning('This is the body of a warning notification', 'Warning', { /* Extra options */ });
+    }
+
+    showErrorNotification() {
+      this.notificationsService.error('This is the body of an error notification', 'Error', { /* Extra options */ });
     }
 }
   `;
@@ -31,15 +42,19 @@ export class Component {
   constructor(private notificationsService: NotificationsService) {
   }
 
-  success() {
+  showInfoNotification() {
+    this.notificationsService.info('This is the body of an info notification.', 'Info');
+  }
+
+  showSuccessNotification() {
     this.notificationsService.success('This is the body of a success notification.', 'Success');
   }
 
-  error() {
-    this.notificationsService.error('This is the body of an error notification', 'Error');
+  showWarningNotification() {
+    this.notificationsService.warning('This is the body of a warning notification', 'Warning');
   }
 
-  warning() {
-    this.notificationsService.warning('This is the body of a warning notification', 'Warning');
+  showErrorNotification() {
+    this.notificationsService.error('This is the body of an error notification', 'Error');
   }
 }
