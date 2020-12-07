@@ -92,8 +92,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     NotificationsPageDemoComponent
   ],
   imports: [
-    AuiModule,
     BrowserAnimationsModule,
+    AuiModule,
     RouterModule.forChild(EXAMPLES_ROUTES),
     BrowserModule,
     FormsModule,

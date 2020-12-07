@@ -29,6 +29,7 @@ import {WysiwygModule} from '../../../ngx-forms/src/lib/wysiwyg/public-api';
 import {CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule} from '../../../ngx-layout/src/public-api';
 import {FilterModule, LabelsModule, WindowModule} from '../../../ngx-utils/src/public-api';
 import {LeafletModule} from '../../../ngx-leaflet/src/public-api';
+import {NotificationsModule} from '../../../ngx-notifications/src/lib/ngx-notifications.module';
 
 @NgModule({
   imports: [
@@ -102,7 +103,8 @@ import {LeafletModule} from '../../../ngx-leaflet/src/public-api';
     FilterModule,
     LabelsModule,
     WindowModule,
-    LeafletModule
+    LeafletModule,
+    NotificationsModule
   ],
   exports: [
     FooterModule,
@@ -142,7 +144,8 @@ import {LeafletModule} from '../../../ngx-leaflet/src/public-api';
     FilterModule,
     LabelsModule,
     WindowModule,
-    LeafletModule
+    LeafletModule,
+    NotificationsModule
   ]
 })
 export class AuiModule {
