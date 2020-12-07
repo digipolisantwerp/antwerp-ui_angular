@@ -7,5 +7,6 @@
   },
   "dependencies": {
     "ngx-toastr": "^11.3.3"
-  }
+  },
+  "gitHead": "e626d267cd3a71ed35172a1a6d6b41e91c175d84"
 }
