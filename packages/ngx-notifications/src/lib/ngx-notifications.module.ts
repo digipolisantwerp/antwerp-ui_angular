@@ -15,9 +15,7 @@ import {CommonModule} from '@angular/common';
     CommonModule,
     ToastrModule.forRoot({
       toastComponent: NotificationComponent,
-      closeButton: true,
-      disableTimeOut: true,
-      autoDismiss: false
+      closeButton: true
     })
   ]
 })
