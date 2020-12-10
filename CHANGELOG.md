@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [3.3.1] - 2020-12-10
+
+### Fixed
+- Support for IE11
 
 ## [3.3.0] - 2020-01-31
 
