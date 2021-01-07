@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
-
+#### Changed
+- Fixed WCAG compliance across the entire library
+- Removed validation-messages.service in the upload.module
 
 ## [4.6.0] - 2020-12-07
 

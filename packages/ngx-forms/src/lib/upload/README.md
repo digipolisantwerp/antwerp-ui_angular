@@ -96,8 +96,21 @@ import { UploadModule } from '@acpaas-ui/ngx-forms';
     imports: [
         UploadModule
     ]
-});
+})
+export class AppModule {};
 
+// Or alternatively
+@NgModule({
+  imports: [
+    UploadModule.forChild({
+      maxFileSizeLabel: 'Max file size:',
+      allowedFileTypesLabel: 'Allowed file types:',
+      INVALID_FILE_TYPE: 'Error: Invalid file type',
+      INVALID_MIME_TYPE: 'Error: Invalid mime type',
+      INVALID_FILE_SIZE: 'Error: Invalid file size'
+    })
+  ]
+})
 export class AppModule {};
 ```
 
