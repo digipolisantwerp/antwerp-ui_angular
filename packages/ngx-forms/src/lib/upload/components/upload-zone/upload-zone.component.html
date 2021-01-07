@@ -1,10 +1,16 @@
 <div *ngIf="uploader.options.type === 'drop'" [class.is-disabled]="disabled" class="m-upload">
+  <small class="m-upload__description u-margin-bottom-xs" id="description">
+    <ng-content select=".m-upload__description"></ng-content>
+    {{ uploader | instructions }}
+  </small>
   <div class="m-upload__inner">
     <div class="m-upload__dropzone">
-      <input #fileInput (change)="updateFiles()" *ngIf="multiple" [attr.aria-labelledby]="ariaId" [disabled]="disabled" [id]="id"
-             class="m-upload__input" multiple type="file">
-      <input #fileInput (change)="updateFiles()" *ngIf="!multiple" [attr.aria-labelledby]="ariaId" [disabled]="disabled"
-             [id]="id" class="m-upload__input" type="file">
+      <input #fileInput (change)="updateFiles()" *ngIf="multiple" [disabled]="disabled"
+             [id]="id" class="m-upload__input" multiple type="file" aria-describedby="description"
+             [attr.aria-invalid]="(invalidFiles | async)?.length > 0">
+      <input #fileInput (change)="updateFiles()" *ngIf="!multiple" [disabled]="disabled"
+             [id]="id" class="m-upload__input" type="file" aria-describedby="description"
+             [attr.aria-invalid]="(invalidFiles | async)?.length > 0">
 
       <div *ngIf="!uploadProgress || uploadProgress === 0" class="m-upload__content">
         <p [id]="ariaId" class="m-upload__message">
@@ -23,15 +29,19 @@
       </ng-container>
     </div>
   </div>
-
-  <small class="m-upload__description">
-    <ng-content select=".m-upload__description"></ng-content>
-  </small>
 </div>
 
-<button (click)="triggerFile()" *ngIf="uploader.options.type === 'button'" [disabled]="disabled" class="a-button m-upload__button"
-        type="button">
-  <span [id]="ariaId"><ng-content select=".m-upload__button"></ng-content></span>
-  <input #fileInput (change)="updateFiles()" [attr.aria-labelledby]="ariaId" [disabled]="disabled" [id]="id"
-         class="m-upload__input" multiple="multiple" type="file">
-</button>
+<ng-container *ngIf="uploader.options.type === 'button'">
+  <button (click)="triggerFile()" [disabled]="disabled"
+          class="a-button m-upload__button"
+          type="button">
+    <span><ng-content select=".m-upload__button"></ng-content></span>
+  </button>
+  <small class="m-upload__description u-margin-bottom-xs" id="description_as_button">
+    <ng-content select=".m-upload__description"></ng-content> {{ uploader | instructions }}
+  </small>
+  <input #fileInput (change)="updateFiles()" [disabled]="disabled" [id]="id"
+         class="m-upload__input" multiple="multiple" type="file"
+         [attr.aria-invalid]="(invalidFiles | async)?.length > 0" aria-describedby="description_as_button">
+</ng-container>
+

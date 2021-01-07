@@ -2,7 +2,7 @@
   <li *ngFor="let invalidFile of invalidFiles; let i = index" class="is-error">
     <span class="fa fa-warning"></span>
     <span class="m-upload__filename">{{ invalidFile.file.name }}</span>
-    <span class="m-upload__error">{{ formatReasons(invalidFile.reasons) }}</span>
+    <span class="m-upload__error">{{ invalidFile.reasons | formatError }}</span>
 
     <button (click)="remove(i)" class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon"
             type="button">

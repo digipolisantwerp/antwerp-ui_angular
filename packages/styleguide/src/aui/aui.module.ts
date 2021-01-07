@@ -67,7 +67,13 @@ import {NotificationsModule} from '../../../ngx-notifications/src/lib/ngx-notifi
     RangeSliderModule,
     SearchFilterModule,
     TimepickerModule,
-    UploadModule,
+    UploadModule.forChild({
+      maxFileSizeLabel: 'Max file size:',
+      allowedFileTypesLabel: 'Allowed file types:',
+      INVALID_FILE_TYPE: 'Error: Invalid file type',
+      INVALID_MIME_TYPE: 'Error: Invalid mime type',
+      INVALID_FILE_SIZE: 'Error: Invalid file size'
+    }),
     WysiwygModule,
     CookieconsentModule.forRoot({
       autoInit: false,

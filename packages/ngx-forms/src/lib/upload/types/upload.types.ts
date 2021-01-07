@@ -17,4 +17,6 @@ export interface ValidationMessages {
   INVALID_FILE_TYPE?: string;
   INVALID_FILE_SIZE?: string;
   INVALID_MIME_TYPE?: string;
+  maxFileSizeLabel?: string;
+  allowedFileTypesLabel?: string;
 }

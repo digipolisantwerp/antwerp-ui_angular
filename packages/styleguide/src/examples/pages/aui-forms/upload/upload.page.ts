@@ -25,7 +25,7 @@ export class FormsUploadDemoPageComponent {
 
   public dropzone2: UploadOptions = {
     type: 'button',
-    allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+    allowedFileTypes: ['jpg', 'jpeg', 'png'],
     autoUpload: true,
     maxFileSize: 2000000,
   };
@@ -63,7 +63,7 @@ export class AppModule {};`;
 
   public uploadExampleJS2 = `public dropzone2: UploadOptions = {
 	type: 'button',
-	allowedFileTypes: ['.jpg', 'jpeg', 'png'],
+	allowedFileTypes: ['jpg', 'jpeg', 'png'],
 	autoUpload: true,
 	maxFileSize: 2000000,
 	url: 'api/upload',
