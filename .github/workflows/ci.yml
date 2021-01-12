@@ -1,10 +1,15 @@
-name: Run CI
+name: Continuous integration
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - '*'
+      - '!master'
+  pull_request:
+    branches:
+      - master
 jobs:
   build:
-    name: Run build
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -13,12 +18,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Install dependencies
+      - name: Install dependencies & build component library
         run: npm ci
       - name: Run linter
         run: npm run lint
-      - name: Build component library
-        run: npm run build:all
       - name: Run tests
         run: npm test
       - name: Build documentation

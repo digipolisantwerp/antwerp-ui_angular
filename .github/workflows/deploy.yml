@@ -5,7 +5,7 @@ on:
       - 'master'
 jobs:
   build:
-    name: Run build
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,10 +14,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Install dependencies
+      - name: Install dependencies & build component library
         run: npm ci
-      - name: Build component library
-        run: npm run build:all
       - name: Build documentation
         run: npm run build:prod
       - name: Archive build
