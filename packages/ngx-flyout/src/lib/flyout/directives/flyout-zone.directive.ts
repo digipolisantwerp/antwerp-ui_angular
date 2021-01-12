@@ -15,10 +15,6 @@ export class FlyoutZoneDirective {
     this.element = this.elementRef.nativeElement;
   }
 
-  @HostBinding('attr.aria-expanded') get flyoutZoneIsExpanded() {
-    return this.isExpanded;
-  }
-
   public contains(element: HTMLElement) {
     if (this.auiFlyoutZone === false) {
       return false;

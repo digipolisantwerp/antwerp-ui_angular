@@ -34,12 +34,16 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
     return this.disabled ? '-1' : '0';
   }
 
+  @HostBinding('attr.aria-expanded')
+  isExpanded = false;
+
   public ngOnInit(): void {
     this.flyout.state$
       .pipe(
         takeUntil(this.destroyed$)
       )
       .subscribe((state: FlyoutState) => {
+        this.isExpanded = state === FlyoutState.OPEN;
         if (state === FlyoutState.OPEN) {
           setTimeout(() => {
             this.addEventListeners();

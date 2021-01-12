@@ -62,6 +62,7 @@ export class FlyoutDirective implements OnDestroy {
         this.isOpened = state === FlyoutState.OPEN;
         if (this.flyoutZone) {
           this.flyoutZone.isExpanded = this.isOpened;
+          this.flyoutZone.element.focus();
         }
 
         if (this.isOpened) {
