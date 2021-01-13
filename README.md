@@ -1,6 +1,6 @@
 # ACPaaS UI - Angular Components
 
-[![acpaas-ui-angular-build]][acpaas-ui-angular-travis]
+![build](https://github.com/digipolisantwerp/acpaas-ui_angular/workflows/CI%20action/badge.svg)[![acpaas-ui-angular-build]][acpaas-ui-angular-travis]
 [![ngx-components-status]][ngx-components-package]
 
 ## Introduction
@@ -126,12 +126,6 @@ Copyright (c) 2016-present, Digipolis
 [acpaas-ui]: https://acpaas-ui.digipolis.be
 [acpaas-ui-slack]: https://digantcafe.slack.com/messages/CDDLYJU65/
 [flexboxgrid]: https://github.com/a-ui/core_flexboxgrid_scss
-
-<!-- Travis -->
-[acpaas-ui-angular-build]: https://img.shields.io/travis/digipolisantwerp/acpaas-ui_angular.svg
-[acpaas-ui-angular-travis]: https://travis-ci.org/digipolisantwerp/acpaas-ui_angular
-
-<!-- Github links -->
 
 <!-- Github URL -->
 [acpaas-ui-schematics]: https://github.com/digipolisantwerp/acpaas-ui_schematics
