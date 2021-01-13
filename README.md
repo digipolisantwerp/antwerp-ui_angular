@@ -1,6 +1,6 @@
 # ACPaaS UI - Angular Components
 
-![build](https://github.com/digipolisantwerp/acpaas-ui_angular/workflows/CI%20action/badge.svg)[![acpaas-ui-angular-build]][acpaas-ui-angular-travis]
+![build](https://github.com/digipolisantwerp/acpaas-ui_angular/workflows/CI%20action/badge.svg)
 [![ngx-components-status]][ngx-components-package]
 
 ## Introduction
