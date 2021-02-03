@@ -91,7 +91,6 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
         takeUntil(this.componentDestroyed$)
       )
       .subscribe((value) => {
-        console.log('value change subscribe');
         if (value) {
           const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
           const date = DateHelper.parseDate(format, 'YYYY-MM-DD', true);
@@ -125,9 +124,16 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   public writeValue(value: string | Date): void {
-    this.selectedDate = typeof value === 'string'
-                ? this.isISODateFormat(value) ? new Date(value) : DateHelper.parseDate(value, 'DD/MM/YYYY', true)
-                : value;
+    if(typeof value === 'string') {
+      if(this.isISODateFormat(value)) {
+        this.selectedDate = new Date(value);
+      } else {
+        this.writeValue(DateHelper.parseDate(value, 'DD/MM/YYYY', true));
+        return;
+      }
+    } else {
+      this.selectedDate = value;
+    }
     const dateString = this.selectedDate ? this.formatDate(this.selectedDate) : '';
     this.formControl.setValue(dateString);
   }
