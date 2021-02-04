@@ -125,8 +125,8 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 
   public writeValue(value: string | Date): void {
     this.selectedDate = typeof value === 'string'
-                ? this.isISODateFormat(value) ? new Date(value) : DateHelper.parseDate(value, 'DD/MM/YYYY', true)
-                : value;
+      ? this.isISODateFormat(value) ? new Date(value) : DateHelper.parseDate(value, 'DD/MM/YYYY', true)
+      : value;
     const dateString = this.selectedDate ? this.formatDate(this.selectedDate) : '';
     this.formControl.setValue(dateString);
   }
