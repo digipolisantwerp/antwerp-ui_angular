@@ -204,7 +204,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 
   private onTouched: (_: any) => void = () => undefined;
 
-  private isISODateFormat(value) {
+  private isISODateFormat(value: string) {
     return value.match(/\d{4}-\d{2}-\d{2}T.*/);
   }
 }
