@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+- `forms` Datepicker now accepts ISO date and custom format date `dd/mm/yyyy` as value
 
 ## [4.6.0] - 2020-12-07
 

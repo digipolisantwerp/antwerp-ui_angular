@@ -123,11 +123,11 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
       .build();
   }
 
-  public writeValue(value: string): void {
-    const date = DateHelper.parseDate(value, 'DD/MM/YYYY', true);
-    const dateString = date ? this.formatDate(date) : '';
-
-    this.selectedDate = date;
+  public writeValue(value: string | Date): void {
+    this.selectedDate = typeof value === 'string'
+      ? this.isISODateFormat(value) ? new Date(value) : DateHelper.parseDate(value, 'DD/MM/YYYY', true)
+      : value;
+    const dateString = this.selectedDate ? this.formatDate(this.selectedDate) : '';
     this.formControl.setValue(dateString);
   }
 
@@ -203,4 +203,11 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   private onChange: (res: any) => void = () => undefined;
 
   private onTouched: (_: any) => void = () => undefined;
+
+  private isISODateFormat(value: string) {
+    if (typeof value !== 'string') {
+      return false;
+    }
+    return value.match(/\d{4}-\d{2}-\d{2}T.*/);
+  }
 }
