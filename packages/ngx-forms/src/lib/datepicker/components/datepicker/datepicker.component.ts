@@ -91,7 +91,6 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
         takeUntil(this.componentDestroyed$)
       )
       .subscribe((value) => {
-        console.log('value change subscribe');
         if (value) {
           const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
           const date = DateHelper.parseDate(format, 'YYYY-MM-DD', true);
