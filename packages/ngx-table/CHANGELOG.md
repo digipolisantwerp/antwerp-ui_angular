@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+- Added table column property to add a title attribute to the table cell
+
 ### Changed
 - Added `TableHeaderComponent`: allow dynamic rendering on table headers
 
