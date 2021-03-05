@@ -15,9 +15,9 @@ export class TableHelperService {
     return key.hasOwnProperty('classList') ? (key as TableColumn).classList.join(' ') : key as string;
   }
 
-  public formatValue(item, key, index): any {
+  public formatValue(item, key, index, fullValue): any {
     const value = item[this.getValue(key)];
-    return key.format ? key.format(value, key, item, index) : value;
+    return key.format ? key.format(value, key, item, index, fullValue) : value;
   }
 
   public getColumnClass(item, key, index): any {

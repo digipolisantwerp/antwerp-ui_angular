@@ -25,7 +25,8 @@ export class TableDemoPageComponent {
     {
       label: 'Last Name',
       value: 'lastName',
-      columnClass: (value, col, row) => this.makeBold(value, col, row)
+      columnClass: (value, col, row) => this.makeBold(value, col, row),
+      addTitleAttribute: true
     },
     {
       label: 'Registered',

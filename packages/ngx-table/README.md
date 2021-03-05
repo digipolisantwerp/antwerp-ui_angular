@@ -83,6 +83,7 @@ public columns: TableColumn[] = [
 	{
 		label: 'Last Name',
 		value: 'lastName',
+    addTitleAttribute: true,
 	},
 	{
 		label: 'Registered',

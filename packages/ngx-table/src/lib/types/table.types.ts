@@ -21,7 +21,7 @@ export interface TableRecord {
   any;
 }
 
-export type TableColumnFormat = (o: string, key?: string, item?: any) => any;
+export type TableColumnFormat = (o: string, key?: string, item?: any, fullValue?: boolean) => any;
 export type TableColumnClass = (o: string, key?: string, item?: any) => any;
 
 export interface TableColumn {
@@ -35,4 +35,5 @@ export interface TableColumn {
   disableSorting?: boolean;
   classList?: string[];
   columnClass?: TableColumnClass;
+  addTitleAttribute?: boolean;
 }

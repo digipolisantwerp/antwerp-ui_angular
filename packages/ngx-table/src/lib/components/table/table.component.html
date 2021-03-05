@@ -52,10 +52,10 @@
     <ng-container *ngIf="!loading && columns.length > 0">
       <tr (click)="clickRow(row)" *ngFor="let row of rows; let rowIndex = index"
           [ngClass]="{'a-table--clickable': hasClickAction}">
-        <td *ngFor="let column of columns" [ngClass]="tableHelper.getClass(column)">
+        <td *ngFor="let column of columns" [ngClass]="tableHelper.getClass(column)" [attr.title]="column.addTitleAttribute ? tableHelper.formatValue(row, column, rowIndex, true) : null">
           <aui-table-cell [component]="column.component"
                           [columnClass]="tableHelper.getColumnClass(row, column, rowIndex)"
-                          [value]="tableHelper.formatValue(row, column, rowIndex)"></aui-table-cell>
+                          [value]="tableHelper.formatValue(row, column, rowIndex, false)"></aui-table-cell>
         </td>
       </tr>
     </ng-container>
