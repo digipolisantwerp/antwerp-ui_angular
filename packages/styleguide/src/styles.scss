@@ -1,5 +1,4 @@
 @import '~@a-ui/core/dist/assets/styles/quarks';
-@import '~@a-ui/acpaas/dist/assets/styles/quarks/quarks.variables';
 
 /* Need to be included in core branding */
 body {
@@ -94,7 +93,7 @@ pre {
 }
 
 .aui-footer {
-  background: $black-pearl;
+  background: $black;
 
   .u-container {
     padding-top: $spacer-lg;

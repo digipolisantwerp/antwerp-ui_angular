@@ -1,6 +1,6 @@
 export const WYSIWYG_DEFAULT_CONFIG = {
   bodyClass: 'a-input ckeditor-editable-body',
-  contentsCss: ['https://cdn.antwerpen.be/core_branding_scss/4.0.0/main.min.css'],
+  contentsCss: ['https://cdn.antwerpen.be/core_branding_scss/5.0.0-beta.5/main.min.css'],
   extraPlugins: 'divarea',
   find_highlight: {
     element: 'span',
