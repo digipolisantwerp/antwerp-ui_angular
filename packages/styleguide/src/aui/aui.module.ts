@@ -11,6 +11,7 @@ import {CalendarModule} from '../../../ngx-calendar/src/public-api';
 import {ContextModule} from '../../../ngx-context/src/public-api';
 import {FlyoutModule} from '../../../ngx-flyout/src/lib/flyout/flyout.module';
 import {FlyoutButtonModule} from '../../../ngx-flyout/src/lib/flyout-button/flyout-button.module';
+import {IconModule} from '../../../ngx-icon/src/public-api';
 import {LocalstorageModule} from '../../../ngx-localstorage/src/public-api';
 import {PaginationModule} from '../../../ngx-pagination/src/lib/pagination/public-api';
 import {ItemCounterModule} from '../../../ngx-pagination/src/lib/item-counter/public-api';
@@ -45,6 +46,7 @@ import {NotificationsModule} from '../../../ngx-notifications/src/lib/ngx-notifi
     ContextModule,
     FlyoutModule,
     FlyoutButtonModule,
+    IconModule,
     LocalstorageModule.forRoot({
       storageType: 'sessionStorage'
     }),
@@ -119,6 +121,7 @@ import {NotificationsModule} from '../../../ngx-notifications/src/lib/ngx-notifi
     ContextModule,
     FlyoutModule,
     FlyoutButtonModule,
+    IconModule,
     LocalstorageModule,
     PaginationModule,
     ItemCounterModule,

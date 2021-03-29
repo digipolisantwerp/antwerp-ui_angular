@@ -7,6 +7,7 @@ import {NavigationMenuDemoPage} from './pages/aui-navigation-menu/aui-navigation
 import {CalendarDemoPage} from './pages/aui-calendar/aui-calendar.page';
 import {ContextDemoPageComponent} from './pages/aui-context/aui-context';
 import {FlyoutDemoPage} from './pages/aui-flyout/aui-flyout';
+import {IconDemoPageComponent} from './pages/aui-icon/aui-icon.page';
 import {LocalstorageDemoPageComponent} from './pages/aui-localstorage/aui-localstorage';
 import {PaginationDemoPageComponent} from './pages/aui-pagination/aui-pagination.page';
 import {ProgressBarDemoPageComponent} from './pages/aui-progress-bar/aui-progress-bar.page';
@@ -141,6 +142,11 @@ export const EXAMPLES_ROUTES: Routes = [
         data: {meta: {title: 'WYSIWYG'}},
       },
     ],
+  },
+  {
+    path: 'modules/icon',
+    component: IconDemoPageComponent,
+    data: {meta: {title: 'Icon'}}
   },
   {
     component: LayoutDemoPageComponent,

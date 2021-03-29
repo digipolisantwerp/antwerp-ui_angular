@@ -115,7 +115,7 @@ ng build ngx-<package>
 ng test ngx-<package>
 ```
 
-Make sure to edit the `package.json` file of the library to set correct library name and publishing settings.
+Make sure to edit the `package.json` file of the library to set correct library name and publishing settings. Also edit the `tsconfig.json` file to reflect these new settings.
 
 Once your library is created, you may import the library module in the `packages/styleguide/src/aui/aui.module.ts`.
 After this, add a demo page component to the examples module: `packages/styleguide/src/examples/pages`

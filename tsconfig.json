@@ -145,6 +145,12 @@
       ],
       "@acpaas-ui/ngx-notifications/*": [
         "dist/ngx-notifications/*"
+      ],
+      "@acpaas-ui/ngx-icon": [
+        "dist/ngx-icon"
+      ],
+      "@acpaas-ui/ngx-icon/*": [
+        "dist/ngx-icon/*"
       ]
     }
   },

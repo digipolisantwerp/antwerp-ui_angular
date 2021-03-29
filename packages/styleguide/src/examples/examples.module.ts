@@ -11,6 +11,7 @@ import {NavigationMenuDemoPage} from './pages/aui-navigation-menu/aui-navigation
 import {CalendarDemoPage} from './pages/aui-calendar/aui-calendar.page';
 import {ContextDemoPageComponent} from './pages/aui-context/aui-context';
 import {FlyoutDemoPage} from './pages/aui-flyout/aui-flyout';
+import {IconDemoPageComponent} from './pages/aui-icon/aui-icon.page';
 import {LocalstorageDemoPageComponent} from './pages/aui-localstorage/aui-localstorage';
 import {PaginationDemoPageComponent} from './pages/aui-pagination/aui-pagination.page';
 import {BrowserModule} from '@angular/platform-browser';
@@ -58,6 +59,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CalendarDemoPage,
     ContextDemoPageComponent,
     FlyoutDemoPage,
+    IconDemoPageComponent,
     LocalstorageDemoPageComponent,
     PaginationDemoPageComponent,
     ProgressBarDemoPageComponent,
@@ -100,7 +102,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule
   ],
   exports: [
-    LogoDemoPageComponent
   ],
   entryComponents: [
     TableActionComponent,
