@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   templateUrl: './aui-icon.page.html',
 })
 export class IconDemoPageComponent {
-  public javascript1 = `import { IconModule } from '@acpaas-ui/ngx-icon';
+  public javascript = `import { IconModule } from '@acpaas-ui/ngx-icon';
 
 @NgModule({
 	imports: [
@@ -14,7 +14,5 @@ export class IconDemoPageComponent {
 
 export class AppModule {};`;
 
-  public javascript2 = `some icon code`;
-
-  public html = `<aui-icon></aui-icon>`;
+  public html = `<aui-icon name="alarm-bell" ariaLabel="This is a bell" style="color: #0057b7; font-size: 2rem;"></aui-icon>`;
 }
