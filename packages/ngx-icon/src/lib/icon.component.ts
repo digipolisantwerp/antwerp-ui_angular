@@ -7,6 +7,7 @@ import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 export class IconComponent implements OnInit {
   @Input() public name: string;
   @Input() public ariaLabel: string;
+  @Input() public className = '';
 
   public href: string;
   private isFetching = false;

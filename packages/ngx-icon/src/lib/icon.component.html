@@ -1,4 +1,4 @@
-<span class="ai">
+<span [ngClass]="['ai', className]">
   <svg aria-hidden="true" *ngIf="true"><use [attr.href]="'#' + href" /></svg>
   <span class="u-screen-reader-only" *ngIf="ariaLabel">{{ ariaLabel }}</span>
 </span>
