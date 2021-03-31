@@ -2,6 +2,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 
+import {IconModule} from '@acpaas-ui/ngx-icon';
+
 import {AvatarComponent, sizes} from './avatar.component';
 
 describe('The Avatar Component', () => {
@@ -13,6 +15,7 @@ describe('The Avatar Component', () => {
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [IconModule],
       declarations: [AvatarComponent], // declare the test component
     })
       .compileComponents();  // compile template and css
@@ -41,10 +44,11 @@ describe('The Avatar Component', () => {
   });
 
   it('should render an icon', () => {
-    comp.icon = 'fa fa-user';
+    comp.icon = 'alarm-bell';
 
     fixture.detectChanges();
-    expect(el.querySelector('.fa-user')).not.toEqual(null);
+    expect(el.querySelector('aui-icon').getAttribute('class')).toContain('a-avatar__icon');
+    expect(el.querySelector('.ai-alarm-bell')).not.toEqual(null);
   });
 
   it('should render a letter', () => {

@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 ### Added
-- [BREAKING] `icon` New component that completely replaces FontAwesome
+- [BREAKING] `icon` New component that completely replaces FontAwesome with Streamline icons
+
+### Changed
+- `avatar` Support for Streamline icons
 
 ### Removed
 - `cookieconsent` Removed component in favor of our new web component: https://github.com/digipolisantwerp/acpaas-ui_web-components
