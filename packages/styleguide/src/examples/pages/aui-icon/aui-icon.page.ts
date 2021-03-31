@@ -14,5 +14,5 @@ export class IconDemoPageComponent {
 
 export class AppModule {};`;
 
-  public html = `<aui-icon name="alarm-bell" ariaLabel="This is a bell" className="u-text-primary" style="font-size: 2rem;"></aui-icon>`;
+  public html = `<aui-icon name="ai-alarm-bell" ariaLabel="This is a bell" className="u-text-primary" style="font-size: 2rem;"></aui-icon>`;
 }

@@ -1,5 +1,6 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -17,6 +18,7 @@ import {CalendarYearComponent} from './components/year/year.component';
 @NgModule({
   imports: [
     CommonModule,
+    IconModule,
   ],
   declarations: [
     CalendarComponent,

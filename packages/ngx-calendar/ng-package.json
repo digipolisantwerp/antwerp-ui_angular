@@ -5,6 +5,7 @@
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
       "@acpaas-ui/js-date-utils": "jsDateUtils",
+      "@acpaas-ui/ngx-icon": "ngxIcon",
       "lodash-es": "lodashEs"
     }
   },

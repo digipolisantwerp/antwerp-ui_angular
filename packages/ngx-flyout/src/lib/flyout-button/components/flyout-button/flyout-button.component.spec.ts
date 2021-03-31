@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {Component, DebugElement, Directive, Input} from '@angular/core';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import {FlyoutButtonComponent} from './flyout-button.component';
 import {FlyoutButtonSize} from '../../types/flyout-button.types';
@@ -37,6 +38,7 @@ describe('The FlyoutButton Component', () => {
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [IconModule],
       declarations: [
         TestComponent,
         MockFlyoutDirective,
@@ -79,14 +81,14 @@ describe('The FlyoutButton Component', () => {
   });
 
   it('should apply the `has-icon` class when no label is present', () => {
-    comp.icon = 'fa-trash';
+    comp.icon = 'ai-alarm-bell';
 
     fixture.detectChanges();
     expect(el.querySelector('.a-button').getAttribute('class')).toContain('has-icon');
   });
 
   it('should apply the `has-icon-left` class when a label is present', () => {
-    comp.icon = 'fa-trash';
+    comp.icon = 'ai-alarm-bell';
     comp.label = 'Hello';
 
     fixture.detectChanges();
