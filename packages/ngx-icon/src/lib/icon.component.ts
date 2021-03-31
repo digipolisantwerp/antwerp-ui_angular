@@ -3,6 +3,7 @@ import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 @Component({
   selector: 'aui-icon',
   templateUrl: './icon.component.html',
+  styles: [':host { display: inline-flex; }'],
 })
 export class IconComponent implements OnInit {
   @Input() public name: string;

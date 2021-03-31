@@ -141,16 +141,16 @@
         "packages/ngx-leaflet/dist/*"
       ],
       "@acpaas-ui/ngx-notifications": [
-        "dist/ngx-notifications"
+        "packages/ngx-notifications/dist"
       ],
       "@acpaas-ui/ngx-notifications/*": [
-        "dist/ngx-notifications/*"
+        "packages/ngx-notifications/dist/*"
       ],
       "@acpaas-ui/ngx-icon": [
-        "dist/ngx-icon"
+        "packages/ngx-icon/dist"
       ],
       "@acpaas-ui/ngx-icon/*": [
-        "dist/ngx-icon/*"
+        "packages/ngx-icon/dist/*"
       ]
     }
   },

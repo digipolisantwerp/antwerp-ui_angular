@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Added
+- [BREAKING] `icon` New component that completely replaces FontAwesome
+
+### Removed
+- `cookieconsent` Removed component in favor of our new web component: https://github.com/digipolisantwerp/acpaas-ui_web-components
+
+
 ## [4.6.1] - 2021-02-04
 
 ### Fixed

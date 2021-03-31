@@ -115,10 +115,13 @@ ng build ngx-<package>
 ng test ngx-<package>
 ```
 
-Make sure to edit the `package.json` file of the library to set correct library name and publishing settings. Also edit the `tsconfig.json` file to reflect these new settings.
+Make sure to edit the following files to set correct publishing settings:
+- Add your package to `paths` in `tsconfig.json`
+- Change `dest` in `packages/<your-component>/ng-package.json` to `./dist`
+- Change `name` and `version` in `packages/<your-component>/package.json` and add `publishConfig` with `{ "access": "public" }`
 
 Once your library is created, you may import the library module in the `packages/styleguide/src/aui/aui.module.ts`.
-After this, add a demo page component to the examples module: `packages/styleguide/src/examples/pages`
+After this, add a demo page component to the examples module: `packages/styleguide/src/examples/pages`.
 
 ## Project structure
 - `packages/aui-<package>`: Acpaas UI package/library

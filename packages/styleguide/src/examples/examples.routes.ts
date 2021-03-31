@@ -158,12 +158,12 @@ export const EXAMPLES_ROUTES: Routes = [
         pathMatch: 'full',
         redirectTo: 'cookie-consent',
       },
-      {
-        path: 'cookie-consent',
-        pathMatch: 'full',
-        component: LayoutCookieconsentDemoPageComponent,
-        data: {meta: {title: 'Cookie Consent'}},
-      },
+      // {
+      //   path: 'cookie-consent',
+      //   pathMatch: 'full',
+      //   component: LayoutCookieconsentDemoPageComponent,
+      //   data: {meta: {title: 'Cookie Consent'}},
+      // },
       {
         path: 'footer',
         pathMatch: 'full',
