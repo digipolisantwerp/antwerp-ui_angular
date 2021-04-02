@@ -8,6 +8,7 @@ import {CommonModule} from '@angular/common';
 import {Observable} from 'rxjs';
 import {Menu} from '../../interfaces';
 import {cold, getTestScheduler, hot} from 'jasmine-marbles';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('Sub Menu Component Test', () => {
   let fixture: ComponentFixture<SubMenuComponent>;
@@ -36,6 +37,7 @@ describe('Sub Menu Component Test', () => {
       imports: [
         RouterModule,
         CommonModule,
+        IconModule,
       ],
     }).compileComponents();
 

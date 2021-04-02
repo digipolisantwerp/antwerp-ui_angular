@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import {ColumnSelectorComponent} from './column-selector.component';
 import {TableHelperService} from '../../services/table-helper.service';
@@ -33,6 +34,9 @@ describe('The Column Selector Component', () => {
     TestBed.configureTestingModule({
       declarations: [
         ColumnSelectorComponent, // declare the test component
+      ],
+      imports: [
+        IconModule
       ],
       providers: [
         {provide: TableHelperService, useClass: DummyTableHelperService},

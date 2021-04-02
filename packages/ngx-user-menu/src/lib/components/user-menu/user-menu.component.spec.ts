@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {FlyoutModule} from '@acpaas-ui/ngx-flyout';
 import * as sinon from 'sinon';
 import {first, tap} from 'rxjs/operators';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('User Menu Test', () => {
 
@@ -19,6 +20,7 @@ describe('User Menu Test', () => {
       imports: [
         CommonModule,
         FlyoutModule,
+        IconModule,
       ],
     }).compileComponents();
 

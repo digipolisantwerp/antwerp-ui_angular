@@ -1,5 +1,6 @@
 import {DebugElement} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import {ModalService} from '../../services/modal.service';
 import {ApproveModalComponent} from './approve-modal.component';
@@ -19,6 +20,9 @@ describe('Modal - ApproveModalComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ApproveModalComponent,
+      ],
+      imports: [
+        IconModule
       ],
       providers: [
         {provide: ModalService, useValue: modalServiceMock},

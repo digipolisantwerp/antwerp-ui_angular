@@ -9,6 +9,7 @@ import {cold, getTestScheduler, hot} from 'jasmine-marbles';
 import {SubMenuItemComponent} from './sub-menu-item.component';
 import {Menu} from '../../interfaces';
 import {SubMenuComponent} from '../sub-menu/sub-menu.component';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('Sub Menu Item Component Test', () => {
   let fixture: ComponentFixture<SubMenuItemComponent>;
@@ -38,6 +39,7 @@ describe('Sub Menu Item Component Test', () => {
       imports: [
         RouterModule,
         CommonModule,
+        IconModule,
       ],
     }).compileComponents();
 

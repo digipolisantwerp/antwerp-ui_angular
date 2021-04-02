@@ -1,6 +1,7 @@
 import {LeafletControlComponent} from './leaflet-control.component';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('The leaflet control component', () => {
   let fixture: ComponentFixture<LeafletControlComponent>;
@@ -10,6 +11,9 @@ describe('The leaflet control component', () => {
     TestBed.configureTestingModule({
       declarations: [
         LeafletControlComponent,
+      ],
+      imports: [
+        IconModule
       ],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletControlComponent);
@@ -22,9 +26,9 @@ describe('The leaflet control component', () => {
   });
 
   it('should have the correct icon', () => {
-    comp.icon = 'check';
+    comp.icon = 'close';
     fixture.detectChanges();
-    expect(fixture.debugElement.query(By.css('.fa')).nativeElement.classList).toContain('fa-check');
+    expect(fixture.debugElement.query(By.css('.ai')).nativeElement.classList).toContain('ai-close');
   });
 
   describe('when disabled', () => {

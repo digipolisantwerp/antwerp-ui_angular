@@ -8,6 +8,7 @@ import {CommonModule} from '@angular/common';
 import {Observable} from 'rxjs';
 import {Menu} from '../../interfaces';
 import {MenuTabComponent} from './menu-tab.component';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('Menu Tab Component Test', () => {
   let service: MenuService;
@@ -40,6 +41,7 @@ describe('Menu Tab Component Test', () => {
       imports: [
         RouterModule.forRoot([]),
         CommonModule,
+        IconModule,
       ],
     }).compileComponents();
 

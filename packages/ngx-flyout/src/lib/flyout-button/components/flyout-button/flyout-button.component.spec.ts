@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {Component, DebugElement, Directive, Input} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Component, DebugElement, Directive, Input } from '@angular/core';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {FlyoutButtonComponent} from './flyout-button.component';
-import {FlyoutButtonSize} from '../../types/flyout-button.types';
+import { FlyoutButtonComponent } from './flyout-button.component';
+import { FlyoutButtonSize } from '../../types/flyout-button.types';
 
 @Directive({
   selector: '[auiFlyout]',

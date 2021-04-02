@@ -8,6 +8,7 @@ import {CommonModule} from '@angular/common';
 import {Observable} from 'rxjs';
 import {NavigationPaneComponent} from './navigation-pane.component';
 import {Menu} from '../../interfaces';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('Navigation Pane Component Test', () => {
   let service: MenuService;
@@ -38,6 +39,7 @@ describe('Navigation Pane Component Test', () => {
       imports: [
         RouterModule,
         CommonModule,
+        IconModule,
       ],
     }).compileComponents();
 

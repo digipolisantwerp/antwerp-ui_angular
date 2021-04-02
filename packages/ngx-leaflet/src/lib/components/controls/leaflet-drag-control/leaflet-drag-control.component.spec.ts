@@ -1,6 +1,7 @@
 import {LeafletDragControlComponent} from './leaflet-drag-control.component';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import {LeafletMap} from '../../../classes/leaflet-map';
 import {LeafletControlComponent} from '../leaflet-control/leaflet-control.component';
@@ -16,6 +17,9 @@ describe('The leaflet drag control component', () => {
       declarations: [
         LeafletDragControlComponent,
         LeafletControlComponent,
+      ],
+      imports: [
+        IconModule
       ],
       providers: [
         MapService,

@@ -2,6 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import {InputFilterComponent} from './input-filter.component';
 
@@ -23,6 +24,7 @@ describe('The Filter Component', () => {
       ],
       imports: [
         FormsModule,
+        IconModule,
       ],
     })
       .compileComponents();  // compile template and css

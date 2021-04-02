@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import {PaginationComponent} from './pagination.component';
 
@@ -15,6 +16,9 @@ describe('PaginationComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         PaginationComponent, // declare the test component
+      ],
+      imports: [
+        IconModule,
       ],
     })
       .compileComponents();  // compile template and css
