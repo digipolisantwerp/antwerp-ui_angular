@@ -52,7 +52,7 @@ export class AppModule {};`
 
 ```html
     <aui-flyout-button
-        icon="fa fa-user"
+        icon="ai-single-neutral"
         label="Open flyout"
         data-align="right"
         title="Click to open!"

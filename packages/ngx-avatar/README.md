@@ -41,7 +41,7 @@ export class AppModule {};
 
 ```
 <aui-avatar image="https://robohash.org/acpaas-ui" title="My image"></aui-avatar>
-<aui-avatar icon="alarm-bell" size="L" title="An alarm bell icon"></aui-avatar>
+<aui-avatar icon="ai-alarm-bell" size="L" title="An alarm bell icon"></aui-avatar>
 <aui-avatar letter="T" title="The letter T" size="S"></aui-avatar>
 ```
 

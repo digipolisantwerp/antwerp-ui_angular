@@ -62,10 +62,6 @@ main {
   }
 }
 
-.m-flyout:focus {
-  outline: none;
-}
-
 .u-show-on-mobile {
   @include at($screen-sm) {
     display: none;
@@ -128,4 +124,10 @@ pre {
 
 .o-leaflet__map:focus {
   box-shadow: 0 0 0 3px $input-border-focus;
+}
+
+.p-fix-position {
+  .o-header__logo {
+    position: static;
+  }
 }
