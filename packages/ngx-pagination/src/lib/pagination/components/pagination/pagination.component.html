@@ -4,15 +4,13 @@
     <li class="m-pagination__prev">
       <a (click)="prev()" [attr.aria-label]=ariaPreviousLabel
          [href]="currentPage > 1 ? '#' : null" [ngClass]="{'is-disabled': currentPage <= 1 }" id="pagination-{{ instanceId }}-prev-page">
-        <span aria-hidden="true" class="fa fa-angle-left"></span>
-        <span class="u-screen-reader-only">{{ariaPreviousLabel}}</span>
+        <aui-icon name="ai-arrow-left-1" [ariaLabel]="ariaPreviousLabel"></aui-icon>
       </a>
     </li>
     <li class="m-pagination__next">
       <a (click)="next()" [attr.aria-label]=ariaNextLabel
          [href]="currentPage < totalPages ? '#' : null" [ngClass]="{'is-disabled': currentPage >= totalPages }" id="pagination-{{ instanceId }}-next-page">
-        <span aria-hidden="true" class="fa fa-angle-right"></span>
-        <span class="u-screen-reader-only">{{ariaNextLabel}}</span>
+        <aui-icon name="ai-arrow-right-1" [ariaLabel]="ariaNextLabel"></aui-icon>
       </a>
     </li>
   </ul>
@@ -22,16 +20,14 @@
     <li class="m-pagination__prev">
       <a (click)="prev()" [attr.aria-label]=ariaPreviousLabel
          [href]="currentPage > 1 ? '#' : null" [ngClass]="{'is-disabled': currentPage <= 1 }" id="pagination-{{ instanceId }}-prev-page">
-        <span aria-hidden="true" class="fa fa-angle-left"></span>
-        <span class="u-screen-reader-only">{{ariaPreviousLabel}}</span>
+        <aui-icon name="ai-arrow-left-1" [ariaLabel]="ariaPreviousLabel"></aui-icon>
       </a>
     </li>
     <li class="m-pagination__label">{{ currentPage }} - {{ totalPages }}</li>
     <li class="m-pagination__next">
       <a (click)="next()" [attr.aria-label]=ariaNextLabel
          [href]="currentPage < totalPages ? '#' : null" [ngClass]="{'is-disabled': currentPage >= totalPages }" id="pagination-{{ instanceId }}-next-page">
-        <span aria-hidden="true" class="fa fa-angle-right"></span>
-        <span class="u-screen-reader-only">{{ariaNextLabel}}</span>
+        <aui-icon name="ai-arrow-right-1" [ariaLabel]="ariaNextLabel"></aui-icon>
       </a>
     </li>
   </ul>
@@ -41,8 +37,7 @@
     <li class="m-pagination__prev">
       <a (click)="prev()" [attr.aria-label]=ariaPreviousLabel
          [href]="currentPage > 1 ? '#' : null" [ngClass]="{'is-disabled': currentPage <= 1 }" id="pagination-{{ instanceId }}-prev-page">
-        <span aria-hidden="true" class="fa fa-angle-left"></span>
-        <span class="u-screen-reader-only">{{ariaPreviousLabel}}</span>
+        <aui-icon name="ai-arrow-left-1" [ariaLabel]="ariaPreviousLabel"></aui-icon>
       </a>
     </li>
     <li *ngFor="let number of numbers; let i = index">
@@ -54,8 +49,7 @@
     <li class="m-pagination__next">
       <a (click)="next()" [attr.aria-label]=ariaNextLabel
          [href]="currentPage < totalPages ? '#' : null" [ngClass]="{'is-disabled': currentPage >= totalPages }" id="pagination-{{ instanceId }}-next-page">
-        <span aria-hidden="true" class="fa fa-angle-right"></span>
-        <span class="u-screen-reader-only">{{ariaNextLabel}}</span>
+        <aui-icon name="ai-arrow-right-1" [ariaLabel]="ariaNextLabel"></aui-icon>
       </a>
     </li>
   </ul>

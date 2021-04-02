@@ -10,6 +10,7 @@ import {
   CALENDAR_WEEKDAY_LABELS,
   CalendarModule
 } from '@acpaas-ui/ngx-calendar';
+import {IconModule} from '@acpaas-ui/ngx-icon';
 
 import {MaskModule} from '../mask/mask.module';
 
@@ -23,6 +24,7 @@ import {DatepickerErrorLabels} from './types/datepicker.types';
     FormsModule,
     ReactiveFormsModule,
     CalendarModule,
+    IconModule,
     FlyoutModule,
     MaskModule,
   ],

@@ -7,7 +7,7 @@ import {ModalAbstract, ModalService} from '../../../../../../ngx-layout/src/publ
 		<div class="m-modal__content">
 			<div class="m-modal__header u-margin-bottom-xs">
 				<button type="button" class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
-					<span class="fa fa-close"></span>
+					<aui-icon name="ai-close" ariaLabel="Close"></aui-icon>
 				</button>
 				<h4 id="myModalTitle">{{ modalData.title }}</h4>
 			</div>

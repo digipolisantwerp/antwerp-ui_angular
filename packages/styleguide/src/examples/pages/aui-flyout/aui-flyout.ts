@@ -42,7 +42,7 @@ export class AppModule {};`;
   public codeExampleJS4 = `import { FlyoutButtonModule } from '@acpaas-ui/ngx-flyout';`;
 
   public codeExampleHTML2 = `<aui-flyout-button
-	icon="fa fa-user"
+	icon="ai-single-neutral"
 	label="Open flyout"
 	data-align="right"
 	title="Click to open!"

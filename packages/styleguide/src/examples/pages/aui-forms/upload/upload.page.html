@@ -80,14 +80,12 @@
 <div *ngIf="showError" class="u-margin-bottom">
   <ul class="m-upload__files">
     <li class="is-error">
-      <span class="fa fa-warning"></span>
+      <aui-icon name="ai-alert-triangle"></aui-icon>
       <span class="m-upload__filename">{{ fileName }}</span>
       <span class="m-upload__error">This file extension is not allowed.</span>
       <button (click)="reloadErrors()" class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon"
               type="button">
-				<span class="fa fa-close">
-					<span class="u-screen-reader-only">Remove</span>
-				</span>
+				<aui-icon name="ai-close" ariaLabel="Remove"></aui-icon>
       </button>
     </li>
   </ul>

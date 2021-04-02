@@ -61,7 +61,7 @@ import { Cell } from '@acpaas-ui/ngx-table';
 @Component({
 	template: `
 		<button type="button" class="a-button has-icon" title="View {{ data?.firstName }}'s profile">
-			<span class="fa fa-eye"></span>
+			<aui-icon name="ai-view-1"></aui-icon>
 		</button>
 	`,
 })

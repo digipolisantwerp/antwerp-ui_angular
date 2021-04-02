@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'aui-icon',
@@ -6,6 +6,14 @@ import { Component, Input, OnInit, Renderer2 } from '@angular/core';
   styles: [':host { display: inline-flex; }'],
 })
 export class IconComponent implements OnInit {
+  @HostBinding('attr.class') get classes(): string {
+    return [
+        'ai',
+        this.className,
+        this.href,
+    ].filter(Boolean).join(' ');
+  };
+
   @Input() public name: string;
   @Input() public ariaLabel: string;
   @Input() public className = '';

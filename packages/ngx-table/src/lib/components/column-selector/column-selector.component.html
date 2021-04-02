@@ -11,11 +11,11 @@
     <div class="a-table-column-selector__actions">
       <button (click)="move(column, -1)" [disabled]="isFirst" class="a-button-transparent a-button--tiny has-icon"
               type="button">
-        <span class="fa fa-angle-up"></span>
+        <aui-icon name="ai-arrow-up-1" ariaLabel="Verplaats naar voor"></aui-icon>
       </button>
       <button (click)="move(column, 1)" [disabled]="isLast" class="a-button-transparent a-button--tiny has-icon"
               type="button">
-        <span class="fa fa-angle-down"></span>
+        <aui-icon name="ai-arrow-down-1" ariaLabel="Verplaats naar achter"></aui-icon>
       </button>
     </div>
   </li>

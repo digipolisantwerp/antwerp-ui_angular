@@ -8,10 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 ### Added
-- [BREAKING] `icon` New component that completely replaces FontAwesome with Streamline icons
-- `avatar` Support for Streamline icons
-- `calendar` Support for Streamline icons
-- `flyout` Support for Streamline icons
+- [BREAKING] `icon` New component that completely replaces FontAwesome icons with Streamline icons
+- `flyout` Improved accessibility for Leaflet component
+
+### Changed
+- [BREAKING] `core` Replaced all FontAwesome icons with Streamline icons
 
 ### Removed
 - `cookieconsent` Removed component in favor of our new web component: https://github.com/digipolisantwerp/acpaas-ui_web-components

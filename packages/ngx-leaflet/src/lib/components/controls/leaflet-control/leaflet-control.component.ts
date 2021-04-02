@@ -7,4 +7,5 @@ import {Component, Input} from '@angular/core';
 export class LeafletControlComponent {
   @Input() icon: string;
   @Input() disabled: boolean;
+  @Input() ariaLabel = '';
 }

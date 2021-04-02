@@ -43,7 +43,7 @@ import { HeaderModule } from '@acpaas-ui/ngx-layout';
 export class AppModule {};
 ```
 
-> Note that the example below makes use of the [ACPaaS UI logo component](../../../../logo/README.md).
+> Note that the example below makes use of the [ACPaaS UI logo component](../../../../logo/README.md) and [ACPaaS UI icon component](../../../../icon/README.md).
 
 ```html
 <aui-header>
@@ -53,7 +53,7 @@ export class AppModule {};
     <div auiHeaderContent><!-- Optional --></div>
     <div auiHeaderMenuItem>
         <a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button-negative o-header__button has-icon-left">
-            <span class="fa fa-github"></span>GitHub
+            <aui-icon name="ai-developer-community-github-1"></aui-icon>GitHub
         </a>
     </div>
 </aui-header>

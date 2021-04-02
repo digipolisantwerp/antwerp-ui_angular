@@ -50,7 +50,7 @@ export class MenuTabComponent implements OnInit, OnDestroy {
 
 
   @Input()
-  public icon = null; // will compile to 'fa fa-bars'
+  public icon = null;
   @Input()
   public isSubMenu = false;
 

@@ -77,7 +77,7 @@ public formatLabel(input: any) {
 	// Highlight searchValue in result
 	const regEx = new RegExp(this.searchValue, 'ig');
 	const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
-	return \`<span class="fa fa-user u-text-light u-margin-right-xs"></span>\${inputStringHighlighted}\`;
+  return \`<aui-icon name="ai-single-neutral" className="u-text-light u-margin-right-xs"></aui-icon>\${inputStringHighlighted}\`;
 }`;
 
   public autocompleteExampleHTML2 = `<div class="a-input">
@@ -162,6 +162,6 @@ public formatLabel(input: any) {
     // Highlight searchValue in result
     const regEx = new RegExp(this.searchValue, 'ig');
     const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
-    return `<span class="fa fa-user u-text-light u-margin-right-xs"></span>${inputStringHighlighted}`;
+    return `<aui-icon name="ai-single-neutral" className="u-text-light u-margin-right-xs"></aui-icon>${inputStringHighlighted}`;
   }
 }

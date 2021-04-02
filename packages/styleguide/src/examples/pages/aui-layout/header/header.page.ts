@@ -20,10 +20,10 @@ export class AppModule {};`;
 	</div>
 	<div auiHeaderContent><!-- Optional --></div>
 	<div auiHeaderMenuItem>
-		<a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button-negative o-header__button has-icon-left">
-			<span class="fa fa-github"></span>GitHub
-		</a>
-	</div>
+    <a class="a-button-negative o-header__button has-icon-left" href="http://github.com/digipolisantwerp/acpaas-ui_angular">
+      <aui-icon name="ai-developer-community-github-1"></aui-icon>GitHub
+    </a>
+  </div>
 </aui-header>
 `;
 }

@@ -86,8 +86,8 @@ export class NavigationMenuDemoPage {
 	`;
 
   icons = `
-	<aui-menu-tab icon="bars">
-    	<!-- compiles to fa fa-bars -->
+	<aui-menu-tab icon="ai-navigation-menu">
+    <!-- Use an icon from the Streamline library -->
 	</aui-menu-tab>
 	`;
 }
