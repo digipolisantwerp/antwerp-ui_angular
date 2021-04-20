@@ -2,7 +2,12 @@
 
 .o-hero {
   background-color: $brand-primary;
-  height: 8rem;
+  height: auto;
+  padding: $spacer;
+
+  div {
+    padding-left: $spacer-md;
+  }
 }
 
 .u-margin-top-xxs {
