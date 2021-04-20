@@ -8,11 +8,11 @@ import { Component, HostBinding, Input, OnInit, Renderer2 } from '@angular/core'
 export class IconComponent implements OnInit {
   @HostBinding('attr.class') get classes(): string {
     return [
-        'ai',
-        this.className,
-        this.href,
+      'ai',
+      this.className,
+      this.href,
     ].filter(Boolean).join(' ');
-  };
+  }
 
   @Input() public name: string;
   @Input() public ariaLabel: string;
@@ -23,10 +23,10 @@ export class IconComponent implements OnInit {
 
   constructor(
     private renderer: Renderer2
-  ) {}
+  ) { }
 
   ngOnInit() {
-    if(!document.getElementById('aiSvg') && !this.isFetching) {
+    if (!document.getElementById('aiSvg') && !this.isFetching) {
       this.isFetching = true;
       this.fetchAntwerpIcons();
     }
@@ -44,10 +44,10 @@ export class IconComponent implements OnInit {
       const svgIcons = new DOMParser().parseFromString(svgText, 'text/html').querySelector('body > svg');
       this.renderer.appendChild(svgWrapper, svgIcons);
 
-      if(!document.getElementById('aiSvg')) {
+      if (!document.getElementById('aiSvg')) {
         this.renderer.appendChild(document.body, svgWrapper);
       }
-    } catch(err) {
+    } catch (err) {
       // Do nothing, just make sure it is executed again
     } finally {
       this.isFetching = false;

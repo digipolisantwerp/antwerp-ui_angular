@@ -118,6 +118,7 @@ ng test ngx-<package>
 Make sure to edit the following files to set correct publishing settings:
 - Add your package to `paths` in `tsconfig.json`
 - Change `dest` in `packages/<your-component>/ng-package.json` to `./dist`
+- Update the contents of `tslint.json` conform the other AUI packages
 - Change `name` and `version` in `packages/<your-component>/package.json` and add `publishConfig` with `{ "access": "public" }`
 - Add `customLaunchers` and change the `browsers` and `singleRun` properties in `packages/<your-component>/karma.conf.js`
 
