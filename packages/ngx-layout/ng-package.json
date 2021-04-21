@@ -13,7 +13,6 @@
     "@acpaas-ui",
     "@angular-store",
     "redux",
-    "cookieconsent",
     "lodash-es"
   ]
 }

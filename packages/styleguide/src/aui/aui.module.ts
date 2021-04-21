@@ -27,7 +27,7 @@ import { SearchFilterModule } from '../../../ngx-forms/src/lib/search-filter/pub
 import { TimepickerModule } from '../../../ngx-forms/src/lib/timepicker/public-api';
 import { UploadModule } from '../../../ngx-forms/src/lib/upload/public-api';
 import { WysiwygModule } from '../../../ngx-forms/src/lib/wysiwyg/public-api';
-import { CookieconsentModule, HeroModule, ModalModule, PaneModule, SidebarModule } from '../../../ngx-layout/src/public-api';
+import { HeroModule, ModalModule, PaneModule, SidebarModule } from '../../../ngx-layout/src/public-api';
 import { FilterModule, LabelsModule, WindowModule } from '../../../ngx-utils/src/public-api';
 import { LeafletModule } from '../../../ngx-leaflet/src/public-api';
 import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-notifications.module';
@@ -71,31 +71,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     TimepickerModule,
     UploadModule,
     WysiwygModule,
-    CookieconsentModule.forRoot({
-      autoInit: false,
-      content: {
-        message: 'I am the cookie consent ngx-logo. Will you allow my cookies?',
-        dismiss: 'Allow cookies',
-        link: 'Learn more',
-        href: 'http://cookiepedia.co.uk/all-about-cookies',
-      },
-      cookie: {
-        name: 'cookieconsent_demo',
-        path: '/',
-        domain: '',
-        expiryDays: 1,
-      },
-      elements: {
-        messagelink: `
-        <p id="cookieconsent:desc">{{message}}
-					<a aria-label="learn more about cookies" tabindex="0" href="{{href}}" target="_blank">{{link}}</a>
-				</p>`,
-        dismiss: `
-        <button type="button" aria-label="Dismiss cookie message" tabindex="0" class="a-button a-button--secondary cc-btn cc-dismiss">
-        {{dismiss}}
-        </button>`
-      },
-    }),
     FooterModule,
     HeaderModule,
     HeroModule,
@@ -137,7 +112,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     TimepickerModule,
     UploadModule,
     WysiwygModule,
-    CookieconsentModule,
     FooterModule,
     HeaderModule,
     HeroModule,

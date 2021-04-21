@@ -31,7 +31,7 @@ export class IconComponent implements OnInit {
       this.fetchAntwerpIcons();
     }
 
-    this.href = this.name ? (this.name.substring(0, 3) === 'ai-' ? this.name : `ai-${this.name}`) : '';
+    this.href = this.name ? (this.name.match(/^ai-/) ? this.name : `ai-${this.name}`) : '';
   }
 
   private fetchAntwerpIcons = async () => {

@@ -1,4 +1,3 @@
-export * from './lib/cookie-consent/public-api';
 export * from './lib/footer/public-api';
 export * from './lib/header/public-api';
 export * from './lib/hero/public-api';

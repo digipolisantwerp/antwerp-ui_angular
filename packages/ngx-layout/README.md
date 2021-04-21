@@ -11,7 +11,6 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 
 | Name         | Description | Documentation |
 | -----------  | ------ | -------------------------- |
-| `CookieconsentModule` | Provides an easy, minimal configuration setup to add a cookie consent. | [Documentation](src/lib/cookie-consent/README.md) |
 | `FooterModule` | A simple footer with go-to-top functionality.  | [Documentation](src/lib/footer/README.md) |
 | `HeaderModule` | A header component with logo that can hide itself when scrolling. | [Documentation](src/lib/header/README.md) |
 | `HeroModule` | A basic hero component to display e.g. a title or action buttons. | [Documentation](src/lib/hero/README.md) |

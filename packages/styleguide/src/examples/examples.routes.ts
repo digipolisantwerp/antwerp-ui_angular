@@ -24,7 +24,6 @@ import { FormsTimepickerDemoPageComponent } from './pages/aui-forms/timepicker/t
 import { FormsUploadDemoPageComponent } from './pages/aui-forms/upload/upload.page';
 import { FormsWysiwygDemoPageComponent } from './pages/aui-forms/wysiwyg/wysiwyg.page';
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
-import { LayoutCookieconsentDemoPageComponent } from './pages/aui-layout/cookie-consent/cookie-consent.page';
 import { LayoutFooterDemoPageComponent } from './pages/aui-layout/footer/footer.page';
 import { LayoutHeaderDemoPageComponent } from './pages/aui-layout/header/header.page';
 import { LayoutHeroDemoPageComponent } from './pages/aui-layout/hero/hero.page';
@@ -156,14 +155,8 @@ export const EXAMPLES_ROUTES: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'cookie-consent',
+        redirectTo: 'footer',
       },
-      // {
-      //   path: 'cookie-consent',
-      //   pathMatch: 'full',
-      //   component: LayoutCookieconsentDemoPageComponent,
-      //   data: {meta: {title: 'Cookie Consent'}},
-      // },
       {
         path: 'footer',
         pathMatch: 'full',

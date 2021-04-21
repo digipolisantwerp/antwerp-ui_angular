@@ -31,7 +31,6 @@ import { FormsWysiwygDemoPageComponent } from './pages/aui-forms/wysiwyg/wysiwyg
 import { FormsDemoPageComponent } from './pages/aui-forms/demo/demo.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
-import { LayoutCookieconsentDemoPageComponent } from './pages/aui-layout/cookie-consent/cookie-consent.page';
 import { LayoutFooterDemoPageComponent } from './pages/aui-layout/footer/footer.page';
 import { LayoutHeaderDemoPageComponent } from './pages/aui-layout/header/header.page';
 import { LayoutHeroDemoPageComponent } from './pages/aui-layout/hero/hero.page';
@@ -77,7 +76,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsUploadDemoPageComponent,
     FormsWysiwygDemoPageComponent,
     LayoutDemoPageComponent,
-    LayoutCookieconsentDemoPageComponent,
     LayoutFooterDemoPageComponent,
     LayoutHeaderDemoPageComponent,
     LayoutHeroDemoPageComponent,
