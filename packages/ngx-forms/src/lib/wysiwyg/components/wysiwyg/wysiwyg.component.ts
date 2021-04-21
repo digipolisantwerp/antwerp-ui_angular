@@ -1,7 +1,7 @@
-import {Component, EventEmitter, forwardRef, HostBinding, Input, OnInit, Output} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, EventEmitter, forwardRef, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import {WYSIWYG_DEFAULT_CONFIG} from '../../wysiwyg.conf';
+import { WYSIWYG_DEFAULT_CONFIG } from '../../wysiwyg.conf';
 
 @Component({
   selector: 'aui-wysiwyg',

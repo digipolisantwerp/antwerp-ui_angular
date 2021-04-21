@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, OnInit, ViewChild} from '@angular/core';
-import {Menu} from '../../interfaces';
-import {lookForIllegalNodes} from '../../services/helpers';
+import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
+import { Menu } from '../../interfaces';
+import { lookForIllegalNodes } from '../../services/helpers';
 
 @Component({
   selector: 'aui-menu-link',

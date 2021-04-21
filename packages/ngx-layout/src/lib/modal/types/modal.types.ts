@@ -1,7 +1,7 @@
-import {ComponentRef} from '@angular/core';
+import { ComponentRef } from '@angular/core';
 
-import {ModalAbstract} from '../classes/modal.abstract';
-import {ModalOverlayComponent} from '../components/modal-overlay/modal-overlay.component';
+import { ModalAbstract } from '../classes/modal.abstract';
+import { ModalOverlayComponent } from '../components/modal-overlay/modal-overlay.component';
 
 export type ModalComponentRef = ComponentRef<ModalAbstract & ModalInstance>;
 

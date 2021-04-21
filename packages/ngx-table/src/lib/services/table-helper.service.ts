@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {TableColumn} from '../types/table.types';
+import { Injectable } from '@angular/core';
+import { TableColumn } from '../types/table.types';
 
 @Injectable()
 export class TableHelperService {

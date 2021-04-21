@@ -1,7 +1,7 @@
-import {TemplateRef} from '@angular/core';
-import {SubMenuItemComponent} from './components/sub-menu-item/sub-menu-item.component';
-import {SubMenuComponent} from './components/sub-menu/sub-menu.component';
-import {MenuTabComponent} from './components/menu-tab/menu-tab.component';
+import { TemplateRef } from '@angular/core';
+import { SubMenuItemComponent } from './components/sub-menu-item/sub-menu-item.component';
+import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
+import { MenuTabComponent } from './components/menu-tab/menu-tab.component';
 
 export declare namespace Menu {
   export type MenuMode = 'mobile' | 'desktop';
@@ -37,7 +37,7 @@ export declare namespace Menu {
   }
 
   export interface ISubMenu {
-    type: 'main' | 'submenu',
+    type: 'main' | 'submenu';
     templateRef: TemplateRef<Menu.ISubMenuContext>;
   }
 

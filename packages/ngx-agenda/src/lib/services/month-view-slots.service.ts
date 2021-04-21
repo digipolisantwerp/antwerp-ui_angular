@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {EventInterface, WeekdayInterface} from '../types/agenda.types';
-import {DateHelperService} from './date-helper.service';
-import {EventMap} from '../classes/event-map.class';
-import {SortingService} from './sorting.service';
+import { EventInterface, WeekdayInterface } from '../types/agenda.types';
+import { DateHelperService } from './date-helper.service';
+import { EventMap } from '../classes/event-map.class';
+import { SortingService } from './sorting.service';
 
 @Injectable()
 export class MonthViewSlotsService {

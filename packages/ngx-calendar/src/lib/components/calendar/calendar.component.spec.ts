@@ -1,11 +1,11 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component} from '@angular/core';
-import {DateRange} from '@acpaas-ui/js-date-utils';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { DateRange } from '@acpaas-ui/js-date-utils';
 
-import {CalendarModule} from '../../calendar.module';
-import {CalendarComponent} from './calendar.component';
+import { CalendarModule } from '../../calendar.module';
+import { CalendarComponent } from './calendar.component';
 import * as views from '../../types/calendar.types';
-import {CALENDAR_DEFAULT_MONTH_LABELS} from '../../calendar.conf';
+import { CALENDAR_DEFAULT_MONTH_LABELS } from '../../calendar.conf';
 
 @Component({
   selector: 'aui-test',

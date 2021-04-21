@@ -1,12 +1,12 @@
-import {Inject, ModuleWithProviders, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {WindowModule} from '@acpaas-ui/ngx-utils';
-import {merge} from 'lodash-es';
+import { Inject, ModuleWithProviders, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { WindowModule } from '@acpaas-ui/ngx-utils';
+import { merge } from 'lodash-es';
 import 'cookieconsent';
 
-import {CookieconsentService} from './services/cookie-consent.service';
-import {COOKIE_CONSENT_CONFIG, COOKIE_CONSENT_CONFIG_ROOT, DEFAULT_CONSENT_CONFIG} from './cookie-consent.conf';
-import {CookieConsentConfig} from './types/cookie-consent.types';
+import { CookieconsentService } from './services/cookie-consent.service';
+import { COOKIE_CONSENT_CONFIG, COOKIE_CONSENT_CONFIG_ROOT, DEFAULT_CONSENT_CONFIG } from './cookie-consent.conf';
+import { CookieConsentConfig } from './types/cookie-consent.types';
 
 export function setConfig(cookieConsentConfig: CookieConsentConfig): CookieConsentConfig {
   return merge(DEFAULT_CONSENT_CONFIG, cookieConsentConfig);

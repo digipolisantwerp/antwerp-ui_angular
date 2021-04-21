@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {SearchOptions} from '../types/search.types';
+import { SearchOptions } from '../types/search.types';
 
 @Injectable()
 export class SearchService {

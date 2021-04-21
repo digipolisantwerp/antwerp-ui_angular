@@ -1,6 +1,6 @@
-import {InjectionToken} from '@angular/core';
+import { InjectionToken } from '@angular/core';
 
-import {ContextConfig} from './types/context.types';
+import { ContextConfig } from './types/context.types';
 
 export const CONTEXT_CONFIG: InjectionToken<ContextConfig> = new InjectionToken<ContextConfig>('contextConfig');
 

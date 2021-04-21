@@ -1,8 +1,8 @@
-import {Component, HostBinding, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
-import {delay, filter, map, mapTo, pairwise, scan, startWith, takeUntil, tap} from 'rxjs/operators';
-import {MenuService} from '../../services/menu.service';
-import {merge, Observable, Subject} from 'rxjs';
-import {Menu} from '../../interfaces';
+import { Component, HostBinding, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { delay, filter, map, mapTo, pairwise, scan, startWith, takeUntil, tap } from 'rxjs/operators';
+import { MenuService } from '../../services/menu.service';
+import { merge, Observable, Subject } from 'rxjs';
+import { Menu } from '../../interfaces';
 
 /**
  * Navigation Pane

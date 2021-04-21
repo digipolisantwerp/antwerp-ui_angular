@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
-import {TableHelperService} from '../../services/table-helper.service';
-import {OrderBy, TableColumn} from '../../types/table.types';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { TableHelperService } from '../../services/table-helper.service';
+import { OrderBy, TableColumn } from '../../types/table.types';
 import * as DEFAULT_MESSAGES from '../table.messages';
 
 @Component({

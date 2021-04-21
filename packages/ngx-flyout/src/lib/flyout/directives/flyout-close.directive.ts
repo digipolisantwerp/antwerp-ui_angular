@@ -1,7 +1,7 @@
-import {Directive, Host, HostListener} from '@angular/core';
+import { Directive, Host, HostListener } from '@angular/core';
 
-import {FlyoutDirective} from './flyout.directive';
-import {isEvent} from '../utils/event';
+import { FlyoutDirective } from './flyout.directive';
+import { isEvent } from '../utils/event';
 
 @Directive({
   selector: '[auiFlyoutClose]',

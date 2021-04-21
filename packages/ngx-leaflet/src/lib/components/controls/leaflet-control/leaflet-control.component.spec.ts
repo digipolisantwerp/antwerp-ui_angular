@@ -1,6 +1,6 @@
-import {LeafletControlComponent} from './leaflet-control.component';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+import { LeafletControlComponent } from './leaflet-control.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('The leaflet control component', () => {

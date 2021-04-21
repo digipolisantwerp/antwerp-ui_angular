@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
+import { Component } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import {WINDOW} from '@acpaas-ui/ngx-utils';
+import { WINDOW } from '@acpaas-ui/ngx-utils';
 
-import {GAService} from './ga.service';
-import {Router} from '@angular/router';
+import { GAService } from './ga.service';
+import { Router } from '@angular/router';
 
 const mockWindow = {
   ga: () => {

@@ -1,4 +1,4 @@
-import {EventInterface, SlotInterface, SlotMapInterface, WeekdayInterface} from '../types/agenda.types';
+import { EventInterface, SlotInterface, SlotMapInterface, WeekdayInterface } from '../types/agenda.types';
 
 export class EventMap {
   public slotMap: SlotMapInterface;

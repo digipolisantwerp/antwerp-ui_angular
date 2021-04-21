@@ -1,5 +1,5 @@
-import {TestBed} from '@angular/core/testing';
-import {MemoryStorage} from './memory.storage';
+import { TestBed } from '@angular/core/testing';
+import { MemoryStorage } from './memory.storage';
 
 describe('Memory Storage Test', () => {
   let storage: MemoryStorage;

@@ -1,4 +1,4 @@
-import {LeafletLayer} from './types/leaflet.types';
+import { LeafletLayer } from './types/leaflet.types';
 
 export const baseMapWorldGray: LeafletLayer = {
   name: 'Base world gray',

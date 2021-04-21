@@ -1,6 +1,6 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {Route, Routes} from '@angular/router';
-import {EXAMPLES_ROUTES} from '../examples/examples.routes';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Route, Routes } from '@angular/router';
+import { EXAMPLES_ROUTES } from '../examples/examples.routes';
 
 @Component({
   selector: 'app-root',

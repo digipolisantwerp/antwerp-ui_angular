@@ -1,7 +1,7 @@
-import {DateHelperService} from './date-helper.service';
-import {SortingService} from './sorting.service';
-import {MonthViewSlotsService} from './month-view-slots.service';
-import {EventInterface} from '../types/agenda.types';
+import { DateHelperService } from './date-helper.service';
+import { SortingService } from './sorting.service';
+import { MonthViewSlotsService } from './month-view-slots.service';
+import { EventInterface } from '../types/agenda.types';
 
 describe('MonthViewSlots Service', () => {
   const dateHelper = new DateHelperService();

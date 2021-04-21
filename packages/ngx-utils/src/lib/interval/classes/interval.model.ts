@@ -1,4 +1,4 @@
-import {Interval} from '../types';
+import { Interval } from '../types';
 import IInterval = Interval.IInterval;
 
 export abstract class IntervalModel<T> implements IInterval<T> {

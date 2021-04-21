@@ -1,10 +1,10 @@
-import {Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {debounce, get} from 'lodash-es';
+import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { debounce, get } from 'lodash-es';
 
-import {FlyoutSize} from '@acpaas-ui/ngx-flyout';
+import { FlyoutSize } from '@acpaas-ui/ngx-flyout';
 
-import {SearchFilterChoice} from '../../types/search-filter.types';
+import { SearchFilterChoice } from '../../types/search-filter.types';
 
 @Component({
   selector: 'aui-search-filter',

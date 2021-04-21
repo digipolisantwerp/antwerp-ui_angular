@@ -9,11 +9,11 @@ import {
   TemplateRef,
   ViewChild
 } from '@angular/core';
-import {Menu} from '../../interfaces';
-import {Subject} from 'rxjs';
-import {MenuService} from '../../services/menu.service';
-import {takeUntil, tap} from 'rxjs/operators';
-import {lookForIllegalNodes, select} from '../../services/helpers';
+import { Menu } from '../../interfaces';
+import { Subject } from 'rxjs';
+import { MenuService } from '../../services/menu.service';
+import { takeUntil, tap } from 'rxjs/operators';
+import { lookForIllegalNodes, select } from '../../services/helpers';
 
 @Component({
   selector: 'aui-sub-menu',

@@ -1,7 +1,7 @@
-import {Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild} from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
 
-import {InvalidFile} from '../../types/upload.types';
-import {Uploader} from '../../classes/uploader.class';
+import { InvalidFile } from '../../types/upload.types';
+import { Uploader } from '../../classes/uploader.class';
 
 @Component({
   selector: 'aui-upload-zone',

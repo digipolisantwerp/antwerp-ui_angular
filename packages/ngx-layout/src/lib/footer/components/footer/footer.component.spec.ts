@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {Component, DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Component, DebugElement } from '@angular/core';
 
-import {FooterComponent} from './footer.component';
-import {FooterContentDirective} from '../../directives/content.directive';
-import {FooterBottomDirective} from '../../directives/bottom.directive';
+import { FooterComponent } from './footer.component';
+import { FooterContentDirective } from '../../directives/content.directive';
+import { FooterBottomDirective } from '../../directives/bottom.directive';
 
 @Component({
   selector: 'aui-test',

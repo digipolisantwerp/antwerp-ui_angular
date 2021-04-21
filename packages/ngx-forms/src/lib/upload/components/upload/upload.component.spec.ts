@@ -1,9 +1,9 @@
-import {Component, DebugElement, Input} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+import { Component, DebugElement, Input } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
-import {UploadComponent} from './upload.component';
-import {InvalidFile} from '../../types/upload.types';
+import { UploadComponent } from './upload.component';
+import { InvalidFile } from '../../types/upload.types';
 
 const mockUploadFiles = [{
   url: 'http://localhost/myfile.jpg',

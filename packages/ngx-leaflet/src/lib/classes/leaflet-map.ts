@@ -1,7 +1,7 @@
-import {EventEmitter} from '@angular/core';
-import {MapService} from '../services/map.service';
+import { EventEmitter } from '@angular/core';
+import { MapService } from '../services/map.service';
 
-import {LeafletLayer, LeafletMapOptions} from '../types/leaflet.types';
+import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
 
 export class LeafletMap {
   public map;

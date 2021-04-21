@@ -1,9 +1,9 @@
-import {Inject, Injectable} from '@angular/core';
-import {WINDOW} from '@acpaas-ui/ngx-utils';
-import {merge} from 'lodash-es';
+import { Inject, Injectable } from '@angular/core';
+import { WINDOW } from '@acpaas-ui/ngx-utils';
+import { merge } from 'lodash-es';
 
-import {COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG} from '../cookie-consent.conf';
-import {CookieConsentConfig} from '../types/cookie-consent.types';
+import { COOKIE_CONSENT_CONFIG, DEFAULT_CONSENT_CONFIG } from '../cookie-consent.conf';
+import { CookieConsentConfig } from '../types/cookie-consent.types';
 
 @Injectable()
 export class CookieconsentService {

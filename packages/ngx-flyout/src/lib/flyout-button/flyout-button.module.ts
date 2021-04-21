@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {FlyoutModule} from '../flyout/flyout.module';
+import { FlyoutModule } from '../flyout/flyout.module';
 
-import {FlyoutButtonComponent} from './components/flyout-button/flyout-button.component';
+import { FlyoutButtonComponent } from './components/flyout-button/flyout-button.component';
 
 @NgModule({
   imports: [

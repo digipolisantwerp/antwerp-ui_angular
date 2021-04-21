@@ -1,4 +1,4 @@
-import {IntervalBuilder} from './interval.builder';
+import { IntervalBuilder } from './interval.builder';
 import * as _moment from 'moment';
 
 const Moment: new () => _moment.Moment = _moment as any;

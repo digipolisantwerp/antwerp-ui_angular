@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {LeafletMap} from '../../../classes/leaflet-map';
+import { Component, Input } from '@angular/core';
+import { LeafletMap } from '../../../classes/leaflet-map';
 
 @Component({
   selector: 'aui-leaflet-locate-control',

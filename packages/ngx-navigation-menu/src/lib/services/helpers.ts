@@ -1,6 +1,6 @@
-import {ElementRef} from '@angular/core';
-import {Observable, OperatorFunction} from 'rxjs';
-import {distinctUntilChanged, map} from 'rxjs/operators';
+import { ElementRef } from '@angular/core';
+import { Observable, OperatorFunction } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 export function lookForIllegalNodes(element: ElementRef, allowedTypes: string[] = []): void {
   const childNodes: HTMLCollection = element.nativeElement.children;

@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import {SidebarItem} from '../../types/sidebar.types';
+import { SidebarItem } from '../../types/sidebar.types';
 
 @Component({
   selector: 'aui-sidebar',

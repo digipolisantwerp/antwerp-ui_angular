@@ -1,5 +1,5 @@
-import {async, inject, TestBed} from '@angular/core/testing';
-import {FlyoutService} from './flyout.service';
+import { async, inject, TestBed } from '@angular/core/testing';
+import { FlyoutService } from './flyout.service';
 
 describe('The Context Writer Service', () => {
   // async beforeEach

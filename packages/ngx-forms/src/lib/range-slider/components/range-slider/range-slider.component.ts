@@ -1,7 +1,7 @@
-import {Component, ElementRef, forwardRef, HostBinding, HostListener, Input, OnInit} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, ElementRef, forwardRef, HostBinding, HostListener, Input, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import {RangeSliderRange} from '../../types/range-slider.types';
+import { RangeSliderRange } from '../../types/range-slider.types';
 
 @Component({
   selector: 'aui-range-slider',

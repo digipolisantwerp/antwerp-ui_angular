@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Inject, Input, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Inject, Input, Output } from '@angular/core';
 
-import {ITEMS_PER_PAGE_LABEL} from '../../item-counter.conf';
+import { ITEMS_PER_PAGE_LABEL } from '../../item-counter.conf';
 
 export enum sizes {
   S = 'S',

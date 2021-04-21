@@ -1,11 +1,11 @@
-import {Directive, ElementRef, Host, HostBinding, HostListener, Inject, Input, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
-import {DOCUMENT, isPlatformBrowser} from '@angular/common';
-import {Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
+import { Directive, ElementRef, Host, HostBinding, HostListener, Inject, Input, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
-import {FlyoutDirective} from './flyout.directive';
-import {FlyoutState} from '../types/flyout.types';
-import {isEvent} from '../utils/event';
+import { FlyoutDirective } from './flyout.directive';
+import { FlyoutState } from '../types/flyout.types';
+import { isEvent } from '../utils/event';
 
 // @dynamic
 @Directive({

@@ -1,6 +1,6 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {AuiLogoComponent} from './aui-logo.component';
+import { AuiLogoComponent } from './aui-logo.component';
 
 describe('AuiLogoComponent', () => {
   let component: AuiLogoComponent;

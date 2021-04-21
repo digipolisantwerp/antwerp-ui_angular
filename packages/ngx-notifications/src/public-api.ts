@@ -3,4 +3,4 @@
  */
 
 export * from './lib/ngx-notifications.module';
-export {ToastrService as NotificationsService} from 'ngx-toastr';
+export { ToastrService as NotificationsService } from 'ngx-toastr';

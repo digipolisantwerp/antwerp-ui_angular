@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement } from '@angular/core';
 
-import {CalendarYearComponent} from './year.component';
-import {CALENDAR_DEFAULT_MONTH_LABELS, CALENDAR_MONTH_LABELS} from '../../calendar.conf';
+import { CalendarYearComponent } from './year.component';
+import { CALENDAR_DEFAULT_MONTH_LABELS, CALENDAR_MONTH_LABELS } from '../../calendar.conf';
 
 @Component({
   selector: 'aui-test',

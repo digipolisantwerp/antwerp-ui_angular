@@ -1,5 +1,5 @@
-import {Context} from '../../types/context.types';
-import {CONTEXT_LOAD} from './context.actiontypes';
+import { Context } from '../../types/context.types';
+import { CONTEXT_LOAD } from './context.actiontypes';
 
 export const contextReducer = (
   state: Context = null,

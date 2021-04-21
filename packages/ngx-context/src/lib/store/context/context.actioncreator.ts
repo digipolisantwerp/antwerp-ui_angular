@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {NgRedux} from '@angular-redux/store';
-import {Observable, Subscription} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { NgRedux } from '@angular-redux/store';
+import { Observable, Subscription } from 'rxjs';
 
-import {Context} from '../../types/context.types';
-import {ContextState} from '../store.types';
-import {CONTEXT_LOAD} from './context.actiontypes';
-import {ContextService} from '../../services/context.service';
-import {ContextWriterService} from '../../services/context-writer.service';
+import { Context } from '../../types/context.types';
+import { ContextState } from '../store.types';
+import { CONTEXT_LOAD } from './context.actiontypes';
+import { ContextService } from '../../services/context.service';
+import { ContextWriterService } from '../../services/context-writer.service';
 
 @Injectable()
 export class ContextActionCreator {

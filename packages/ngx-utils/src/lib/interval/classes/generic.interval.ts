@@ -1,4 +1,4 @@
-import {IntervalModel} from './interval.model';
+import { IntervalModel } from './interval.model';
 
 export class GenericInterval extends IntervalModel<number> {
   private checkIsInRange(value: number): boolean {

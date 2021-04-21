@@ -1,8 +1,8 @@
-import {BehaviorSubject} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-import {Filter} from '@acpaas-ui/ngx-utils';
+import { Filter } from '@acpaas-ui/ngx-utils';
 
-import {OrderBy, TableColumn, TableRecord} from '../types/table.types';
+import { OrderBy, TableColumn, TableRecord } from '../types/table.types';
 
 export class Table {
   // Array of filters

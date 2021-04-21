@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {IStorage} from '../types/localstorage.types';
+import { Injectable } from '@angular/core';
+import { IStorage } from '../types/localstorage.types';
 
 
 @Injectable()

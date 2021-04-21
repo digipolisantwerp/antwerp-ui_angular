@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {UserMenu} from '../../interfaces';
-import {Flyout, FlyoutSize} from '@acpaas-ui/ngx-flyout';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UserMenu } from '../../interfaces';
+import { Flyout, FlyoutSize } from '@acpaas-ui/ngx-flyout';
 
 @Component({
   selector: 'aui-user-menu',

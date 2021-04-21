@@ -1,5 +1,5 @@
-import {InjectionToken} from '@angular/core';
-import {GTMConfig} from './types/analytics.types';
+import { InjectionToken } from '@angular/core';
+import { GTMConfig } from './types/analytics.types';
 
 export const GTM_CONFIG = new InjectionToken('GTM_CONFIG');
 

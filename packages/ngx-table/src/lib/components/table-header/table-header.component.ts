@@ -1,5 +1,5 @@
-import {ChangeDetectorRef, Component, ComponentFactoryResolver, Input, OnChanges, Type, ViewContainerRef} from '@angular/core';
-import {Cell} from '../../types/table.types';
+import { ChangeDetectorRef, Component, ComponentFactoryResolver, Input, OnChanges, Type, ViewContainerRef } from '@angular/core';
+import { Cell } from '../../types/table.types';
 
 @Component({
   selector: 'aui-table-header',

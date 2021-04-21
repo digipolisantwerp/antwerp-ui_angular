@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {DateGenerator, DateHelper, DateRange, Month} from '@acpaas-ui/js-date-utils';
+import { Injectable } from '@angular/core';
+import { DateGenerator, DateHelper, DateRange, Month } from '@acpaas-ui/js-date-utils';
 
-import {DateRangeMap} from '../types/calendar.types';
+import { DateRangeMap } from '../types/calendar.types';
 
 export interface MonthMap {
   [key: number]: Month;

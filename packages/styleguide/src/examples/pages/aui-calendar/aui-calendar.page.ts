@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {DateRange} from '@acpaas-ui/js-date-utils';
-import {IntervalBuilder} from '@acpaas-ui/ngx-utils';
+import { Component } from '@angular/core';
+import { DateRange } from '@acpaas-ui/js-date-utils';
+import { IntervalBuilder } from '@acpaas-ui/ngx-utils';
 import * as _moment from 'moment';
 
 const Moment: new () => _moment.Moment = _moment as any;

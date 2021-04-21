@@ -1,7 +1,7 @@
-import {Directive, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
-import {ApproveModalComponent} from '../components/approve-modal/approve-modal.component';
-import {ModalService} from '../services/modal.service';
+import { ApproveModalComponent } from '../components/approve-modal/approve-modal.component';
+import { ModalService } from '../services/modal.service';
 
 @Directive({
   selector: '[auiApprove]',

@@ -1,11 +1,11 @@
-import {async, inject, TestBed} from '@angular/core/testing';
-import {NgRedux} from '@angular-redux/store';
-import {BehaviorSubject} from 'rxjs';
+import { async, inject, TestBed } from '@angular/core/testing';
+import { NgRedux } from '@angular-redux/store';
+import { BehaviorSubject } from 'rxjs';
 
-import {ContextService} from '../../services/context.service';
-import {ContextWriterService} from '../../services/context-writer.service';
-import {ContextActionCreator} from './context.actioncreator';
-import {CONTEXT_LOAD} from './context.actiontypes';
+import { ContextService } from '../../services/context.service';
+import { ContextWriterService } from '../../services/context-writer.service';
+import { ContextActionCreator } from './context.actioncreator';
+import { CONTEXT_LOAD } from './context.actiontypes';
 
 const injectService = cb => inject(
   [ContextActionCreator],

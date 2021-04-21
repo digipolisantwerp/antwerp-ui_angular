@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {SelectableListComponent} from './components/selectable-list/selectable-list.component';
-import {SelectableActionsDirective} from './directives/selectable-actions.directive';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SelectableListComponent } from './components/selectable-list/selectable-list.component';
+import { SelectableActionsDirective } from './directives/selectable-actions.directive';
 
 @NgModule({
   imports: [

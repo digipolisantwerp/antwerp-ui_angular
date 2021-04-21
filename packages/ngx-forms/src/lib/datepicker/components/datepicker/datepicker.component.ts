@@ -11,11 +11,11 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import {Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
-import {ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
-import {FlyoutDirective} from '@acpaas-ui/ngx-flyout';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
+import { FlyoutDirective } from '@acpaas-ui/ngx-flyout';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -31,8 +31,8 @@ import {
   DATEPICKER_ERROR_LABELS,
   DATEPICKER_SEPARATOR_CHAR
 } from '../../datepicker.conf';
-import {DatepickerValidationErrors} from '../../types/datepicker.types';
-import {Interval, IntervalBuilder} from '@acpaas-ui/ngx-utils';
+import { DatepickerValidationErrors } from '../../types/datepicker.types';
+import { Interval, IntervalBuilder } from '@acpaas-ui/ngx-utils';
 
 @Component({
   selector: 'aui-datepicker',

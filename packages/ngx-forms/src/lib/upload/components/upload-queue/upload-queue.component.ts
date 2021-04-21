@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import {Uploader} from '../../classes/uploader.class';
+import { Uploader } from '../../classes/uploader.class';
 
 @Component({
   selector: 'aui-upload-queue',

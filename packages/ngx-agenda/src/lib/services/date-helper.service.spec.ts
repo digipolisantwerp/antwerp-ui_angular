@@ -1,5 +1,5 @@
-import {DateHelperService} from './date-helper.service';
-import {DAYS} from '../types/agenda.types';
+import { DateHelperService } from './date-helper.service';
+import { DAYS } from '../types/agenda.types';
 
 describe('DateHelper Service', () => {
   let dateHelper;

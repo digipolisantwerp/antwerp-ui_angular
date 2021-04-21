@@ -1,11 +1,11 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {LeafletMap} from '../../../classes/leaflet-map';
-import {LeafletControlComponent} from '../leaflet-control/leaflet-control.component';
-import {LeafletZoomControlComponent} from './leaflet-zoom-control.component';
-import {MapService} from '../../../services/map.service';
+import { LeafletMap } from '../../../classes/leaflet-map';
+import { LeafletControlComponent } from '../leaflet-control/leaflet-control.component';
+import { LeafletZoomControlComponent } from './leaflet-zoom-control.component';
+import { MapService } from '../../../services/map.service';
 
 describe('The leaflet zoom control component', () => {
   let fixture: ComponentFixture<LeafletZoomControlComponent>;

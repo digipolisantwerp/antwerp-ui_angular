@@ -1,6 +1,6 @@
-import {Component, ComponentRef, ElementRef, HostBinding, HostListener} from '@angular/core';
+import { Component, ComponentRef, ElementRef, HostBinding, HostListener } from '@angular/core';
 
-import {ModalAbstract} from '../../classes/modal.abstract';
+import { ModalAbstract } from '../../classes/modal.abstract';
 
 @Component({
   selector: 'aui-modal-overlay',

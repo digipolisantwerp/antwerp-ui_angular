@@ -1,5 +1,5 @@
-import {Table} from './table.class';
-import {Filter} from '@acpaas-ui/ngx-utils';
+import { Table } from './table.class';
+import { Filter } from '@acpaas-ui/ngx-utils';
 
 describe('The Table Class', () => {
   const dummyData = [{

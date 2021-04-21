@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
-import {IconModule} from '@acpaas-ui/ngx-icon';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {AvatarComponent, sizes} from './avatar.component';
+import { AvatarComponent, sizes } from './avatar.component';
 
 describe('The Avatar Component', () => {
   let comp: AvatarComponent;

@@ -1,7 +1,7 @@
-import {Component, DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {ModalOverlayComponent} from './modal-overlay.component';
+import { Component, DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { ModalOverlayComponent } from './modal-overlay.component';
 
 const getByCSSQuery = (query, elm, all?) => {
   return all ? elm.querySelectorAll(query) : elm.querySelector(query);

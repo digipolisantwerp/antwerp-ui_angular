@@ -9,9 +9,9 @@ import {
   OnChanges,
   PLATFORM_ID,
 } from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import * as _marked from 'marked';
-import {HighlightJsService} from 'angular2-highlight-js';
+import { HighlightJsService } from 'angular2-highlight-js';
 
 const marked = _marked;
 

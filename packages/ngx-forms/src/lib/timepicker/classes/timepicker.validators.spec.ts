@@ -1,5 +1,5 @@
-import {FormControl} from '@angular/forms';
-import {TimePickerValidators} from './timepicker.validators';
+import { FormControl } from '@angular/forms';
+import { TimePickerValidators } from './timepicker.validators';
 
 describe('TimePickerValidators', () => {
   describe('minTime', () => {

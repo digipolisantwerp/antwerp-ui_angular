@@ -10,10 +10,10 @@ import {
   Output,
   TemplateRef,
 } from '@angular/core';
-import {Subject, timer} from 'rxjs';
-import {distinctUntilChanged, map, takeUntil} from 'rxjs/operators';
-import {DateHelperService} from '../../services/date-helper.service';
-import {DateRangeInterface, DAYS, EventInterface, HighLightInterface, VIEWS} from '../../types/agenda.types';
+import { Subject, timer } from 'rxjs';
+import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
+import { DateHelperService } from '../../services/date-helper.service';
+import { DateRangeInterface, DAYS, EventInterface, HighLightInterface, VIEWS } from '../../types/agenda.types';
 
 @Component({
   selector: 'aui-agenda',

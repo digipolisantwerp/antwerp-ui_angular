@@ -1,7 +1,7 @@
-import {FactoryProvider, InjectionToken} from '@angular/core';
-import {StorageFactory} from '../factories/storage.factory';
-import {LOCALSTORAGE_CONFIG} from './localstorage.provider';
-import {ILocalStorageConfig} from '../types/localstorage.types';
+import { FactoryProvider, InjectionToken } from '@angular/core';
+import { StorageFactory } from '../factories/storage.factory';
+import { LOCALSTORAGE_CONFIG } from './localstorage.provider';
+import { ILocalStorageConfig } from '../types/localstorage.types';
 
 export const STORAGE_TOKEN = new InjectionToken('Storage_Token');
 

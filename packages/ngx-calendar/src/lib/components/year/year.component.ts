@@ -1,10 +1,10 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {chunk, get} from 'lodash-es';
+import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { chunk, get } from 'lodash-es';
 
-import {DateHelper} from '@acpaas-ui/js-date-utils';
+import { DateHelper } from '@acpaas-ui/js-date-utils';
 
-import {CALENDAR_DEFAULT_MONTH_LABELS, CALENDAR_MONTH_LABELS} from '../../calendar.conf';
-import {MonthLabelsConfig} from '../../types/calendar.types';
+import { CALENDAR_DEFAULT_MONTH_LABELS, CALENDAR_MONTH_LABELS } from '../../calendar.conf';
+import { MonthLabelsConfig } from '../../types/calendar.types';
 
 @Component({
   selector: 'aui-calendar-year',

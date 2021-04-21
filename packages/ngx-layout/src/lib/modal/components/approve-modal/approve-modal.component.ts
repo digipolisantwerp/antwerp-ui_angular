@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {get} from 'lodash-es';
+import { Component, OnInit } from '@angular/core';
+import { get } from 'lodash-es';
 
-import {ModalActions} from '../../types/modal.types';
-import {ModalAbstract} from '../../classes/modal.abstract';
-import {ModalService} from '../../services/modal.service';
+import { ModalActions } from '../../types/modal.types';
+import { ModalAbstract } from '../../classes/modal.abstract';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'aui-approve-modal',

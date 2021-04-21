@@ -1,14 +1,14 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement, ViewChild} from '@angular/core';
-import {By} from '@angular/platform-browser';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement, ViewChild } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
-import {FlyoutService} from '../services/flyout.service';
-import {FlyoutState} from '../types/flyout.types';
+import { FlyoutService } from '../services/flyout.service';
+import { FlyoutState } from '../types/flyout.types';
 
-import {FlyoutDirective} from './flyout.directive';
-import {FlyoutCloseDirective} from './flyout-close.directive';
+import { FlyoutDirective } from './flyout.directive';
+import { FlyoutCloseDirective } from './flyout-close.directive';
 
-import {Subject} from 'rxjs';
+import { Subject } from 'rxjs';
 
 class MockFlyoutService {
   public state$ = new Subject<FlyoutState>();

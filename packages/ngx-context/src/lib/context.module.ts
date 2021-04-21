@@ -1,11 +1,11 @@
-import {Inject, ModuleWithProviders, NgModule} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router, RouterModule} from '@angular/router';
-import {filter, map} from 'rxjs/operators';
-import {CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT} from './context.conf';
-import {ContextService} from './services/context.service';
-import {ContextWriterService} from './services/context-writer.service';
-import {ContextConfig} from './types/context.types';
-import {RouterHelper} from './utils/router.helper';
+import { Inject, ModuleWithProviders, NgModule } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
+import { CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT } from './context.conf';
+import { ContextService } from './services/context.service';
+import { ContextWriterService } from './services/context-writer.service';
+import { ContextConfig } from './types/context.types';
+import { RouterHelper } from './utils/router.helper';
 
 @NgModule({
   imports: [

@@ -1,9 +1,9 @@
-import {ApplicationRef, ComponentFactoryResolver, ComponentRef, Injectable, Injector, Type} from '@angular/core';
-import {cloneDeep, get, last} from 'lodash-es';
+import { ApplicationRef, ComponentFactoryResolver, ComponentRef, Injectable, Injector, Type } from '@angular/core';
+import { cloneDeep, get, last } from 'lodash-es';
 
-import {ModalAbstract} from '../classes/modal.abstract';
-import {ModalActions, ModalComponentRef, ModalOptions, ModalRef} from '../types/modal.types';
-import {ModalOverlayComponent} from '../components/modal-overlay/modal-overlay.component';
+import { ModalAbstract } from '../classes/modal.abstract';
+import { ModalActions, ModalComponentRef, ModalOptions, ModalRef } from '../types/modal.types';
+import { ModalOverlayComponent } from '../components/modal-overlay/modal-overlay.component';
 
 @Injectable()
 export class ModalService {

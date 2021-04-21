@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Meta, Title} from '@angular/platform-browser';
-import {ContextService} from '../../../../../ngx-context/src/public-api';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { ContextService } from '../../../../../ngx-context/src/public-api';
 
 
 @Component({

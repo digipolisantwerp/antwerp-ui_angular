@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, OnChanges} from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 import Inputmask from 'inputmask';
 
 @Directive({

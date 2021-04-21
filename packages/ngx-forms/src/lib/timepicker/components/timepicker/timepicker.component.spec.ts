@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {ReactiveFormsModule} from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {TimepickerComponent} from './timepicker.component';
+import { TimepickerComponent } from './timepicker.component';
 
 describe('The Timepicker Component', () => {
   let comp: TimepickerComponent;

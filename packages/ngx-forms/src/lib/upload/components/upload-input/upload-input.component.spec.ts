@@ -1,7 +1,7 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, Input} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
 
-import {UploadInputComponent} from './upload-input.component';
+import { UploadInputComponent } from './upload-input.component';
 
 @Component({
   template: '<div>Upload</div>',

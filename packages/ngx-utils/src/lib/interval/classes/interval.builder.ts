@@ -1,6 +1,6 @@
-import {Interval} from '../types';
-import {GenericInterval} from './generic.interval';
-import {DateInterval} from './date.interval';
+import { Interval } from '../types';
+import { GenericInterval } from './generic.interval';
+import { DateInterval } from './date.interval';
 import IInterval = Interval.IInterval;
 
 export class IntervalBuilder<T> {

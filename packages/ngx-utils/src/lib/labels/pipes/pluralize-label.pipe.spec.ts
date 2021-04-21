@@ -1,4 +1,4 @@
-import {PluralizeLabelPipe} from './pluralize-label.pipe';
+import { PluralizeLabelPipe } from './pluralize-label.pipe';
 
 describe('The pluralize pipe', () => {
   let pluralizePipe;

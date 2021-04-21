@@ -1,5 +1,5 @@
-import {EventMap} from './event-map.class';
-import {DateHelperService} from '../services/date-helper.service';
+import { EventMap } from './event-map.class';
+import { DateHelperService } from '../services/date-helper.service';
 
 describe('EventMap Class', () => {
   const dateHelperService = new DateHelperService();

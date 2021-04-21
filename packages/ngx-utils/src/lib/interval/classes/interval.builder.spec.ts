@@ -1,7 +1,7 @@
-import {IntervalBuilder} from './interval.builder';
-import {GenericInterval} from './generic.interval';
+import { IntervalBuilder } from './interval.builder';
+import { GenericInterval } from './generic.interval';
 import * as _moment from 'moment';
-import {DateInterval} from './date.interval';
+import { DateInterval } from './date.interval';
 
 const Moment: any = _moment;
 

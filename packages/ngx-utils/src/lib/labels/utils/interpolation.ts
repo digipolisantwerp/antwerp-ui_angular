@@ -1,4 +1,4 @@
-import {ReplaceData} from '../types/labels.types';
+import { ReplaceData } from '../types/labels.types';
 
 export const interpolate = (label: string, replaceData?: ReplaceData): string => {
   if (!replaceData) {

@@ -1,9 +1,9 @@
-import {async, inject, TestBed} from '@angular/core/testing';
+import { async, inject, TestBed } from '@angular/core/testing';
 
-import {WINDOW} from '@acpaas-ui/ngx-utils';
+import { WINDOW } from '@acpaas-ui/ngx-utils';
 
-import {GTMService} from './gtm.service';
-import {GTM_CONFIG, GTM_CONFIG_DEFAULT} from '../analytics.conf';
+import { GTMService } from './gtm.service';
+import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from '../analytics.conf';
 
 const mockWindow = {
   dataLayer: [],

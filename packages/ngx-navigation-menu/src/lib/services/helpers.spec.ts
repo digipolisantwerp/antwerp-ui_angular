@@ -1,5 +1,5 @@
-import {cold, hot} from 'jasmine-marbles';
-import {lookForIllegalNodes, select} from './helpers';
+import { cold, hot } from 'jasmine-marbles';
+import { lookForIllegalNodes, select } from './helpers';
 
 describe('Helpers Test', () => {
   describe('Selector Helper', () => {

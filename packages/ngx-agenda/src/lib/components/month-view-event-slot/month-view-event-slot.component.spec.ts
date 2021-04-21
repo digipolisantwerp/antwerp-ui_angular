@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 
-import {MonthViewEventSlotComponent} from './month-view-event-slot.component';
+import { MonthViewEventSlotComponent } from './month-view-event-slot.component';
 
 describe('The Month View Event Slot Component', () => {
   let comp: MonthViewEventSlotComponent;

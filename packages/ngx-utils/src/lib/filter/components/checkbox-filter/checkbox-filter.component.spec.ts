@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {SelectFilterComponent} from '../select-filter/select-filter.component';
+import { SelectFilterComponent } from '../select-filter/select-filter.component';
 
 // Dummy filter
 export class Filter {

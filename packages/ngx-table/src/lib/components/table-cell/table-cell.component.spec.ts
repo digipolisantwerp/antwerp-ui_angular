@@ -1,10 +1,10 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, ComponentFactory, ComponentFactoryResolver, ViewContainerRef} from '@angular/core';
-import {TableCellComponent} from './table-cell.component';
-import {Cell} from '../../types/table.types';
-import {TableHelperService} from '../../services/table-helper.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, ComponentFactory, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import { TableCellComponent } from './table-cell.component';
+import { Cell } from '../../types/table.types';
+import { TableHelperService } from '../../services/table-helper.service';
 import * as sinon from 'sinon';
-import {SinonStub} from 'sinon';
+import { SinonStub } from 'sinon';
 
 // ---------- DUMMY COMPONENT ----------- //
 @Component({

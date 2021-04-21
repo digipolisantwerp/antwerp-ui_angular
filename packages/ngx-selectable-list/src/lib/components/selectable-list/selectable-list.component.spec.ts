@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
-import {SelectableListComponent} from './selectable-list.component';
+import { SelectableListComponent } from './selectable-list.component';
 
 describe('The Selectablelist Component', () => {
   let comp: SelectableListComponent;

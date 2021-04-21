@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {interpolate, Label} from '../../../../../../ngx-utils/src/public-api';
+import { Component } from '@angular/core';
+import { interpolate, Label } from '../../../../../../ngx-utils/src/public-api';
 
 @Component({
   templateUrl: './labels.page.html',

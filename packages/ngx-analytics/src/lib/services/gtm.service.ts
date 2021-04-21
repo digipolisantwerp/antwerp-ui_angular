@@ -1,9 +1,9 @@
-import {Inject, Injectable} from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
-import {WINDOW} from '@acpaas-ui/ngx-utils';
+import { WINDOW } from '@acpaas-ui/ngx-utils';
 
-import {GTM_CONFIG} from '../analytics.conf';
-import {GTMConfig} from '../types/analytics.types';
+import { GTM_CONFIG } from '../analytics.conf';
+import { GTMConfig } from '../types/analytics.types';
 
 @Injectable()
 export class GTMService {

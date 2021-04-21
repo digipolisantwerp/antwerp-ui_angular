@@ -1,14 +1,14 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {COMPONENTS} from '../components';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { COMPONENTS } from '../components';
 import * as sinon from 'sinon';
-import {MenuService} from '../../services/menu.service';
-import {RouterModule} from '@angular/router';
-import {CommonModule} from '@angular/common';
-import {Observable} from 'rxjs';
-import {cold, getTestScheduler, hot} from 'jasmine-marbles';
-import {SubMenuItemComponent} from './sub-menu-item.component';
-import {Menu} from '../../interfaces';
-import {SubMenuComponent} from '../sub-menu/sub-menu.component';
+import { MenuService } from '../../services/menu.service';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { cold, getTestScheduler, hot } from 'jasmine-marbles';
+import { SubMenuItemComponent } from './sub-menu-item.component';
+import { Menu } from '../../interfaces';
+import { SubMenuComponent } from '../sub-menu/sub-menu.component';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('Sub Menu Item Component Test', () => {

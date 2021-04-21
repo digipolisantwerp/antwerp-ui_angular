@@ -1,6 +1,6 @@
-import {async, inject, TestBed} from '@angular/core/testing';
+import { async, inject, TestBed } from '@angular/core/testing';
 
-import {CalendarService} from './calendar.service';
+import { CalendarService } from './calendar.service';
 
 const injectService = (cb) => {
   return inject(

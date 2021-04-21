@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnChanges, Output, TemplateRef} from '@angular/core';
-import {DateRangeInterface, DAYS, EventInterface, HighLightInterface, SlotInterface, WeekdayInterface} from '../../types/agenda.types';
-import {MonthViewSlotsService} from '../../services/month-view-slots.service';
-import {DateHelperService} from '../../services/date-helper.service';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnChanges, Output, TemplateRef } from '@angular/core';
+import { DateRangeInterface, DAYS, EventInterface, HighLightInterface, SlotInterface, WeekdayInterface } from '../../types/agenda.types';
+import { MonthViewSlotsService } from '../../services/month-view-slots.service';
+import { DateHelperService } from '../../services/date-helper.service';
 
 @Component({
   selector: 'aui-agenda-month-view',

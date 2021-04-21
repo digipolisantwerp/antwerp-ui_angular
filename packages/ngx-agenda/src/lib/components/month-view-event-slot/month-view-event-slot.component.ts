@@ -1,6 +1,6 @@
-import {Component, Input, TemplateRef} from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 
-import {EventInterface, SlotDisplayInterface, SlotMetaInterface} from '../../types/agenda.types';
+import { EventInterface, SlotDisplayInterface, SlotMetaInterface } from '../../types/agenda.types';
 
 @Component({
   selector: 'aui-agenda-month-view-event-slot',

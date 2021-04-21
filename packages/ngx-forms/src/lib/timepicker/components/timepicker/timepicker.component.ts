@@ -1,11 +1,11 @@
-import {ChangeDetectionStrategy, Component, forwardRef, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
-import {ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component, forwardRef, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
-import {DateHelper} from '@acpaas-ui/js-date-utils';
+import { DateHelper } from '@acpaas-ui/js-date-utils';
 
-import {TimepickerInputSize} from '../../types/timepicker.types';
+import { TimepickerInputSize } from '../../types/timepicker.types';
 
 @Component({
   selector: 'aui-timepicker',

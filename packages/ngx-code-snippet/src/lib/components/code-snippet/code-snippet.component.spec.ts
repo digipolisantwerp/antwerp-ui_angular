@@ -1,11 +1,11 @@
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
-import {CommonModule} from '@angular/common';
-import {HighlightJsModule, HighlightJsService} from 'angular2-highlight-js';
+import { CommonModule } from '@angular/common';
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
-import {CodeSnippetComponent} from './code-snippet.component';
+import { CodeSnippetComponent } from './code-snippet.component';
 
 const marked = require('marked');
 
@@ -30,7 +30,7 @@ describe('The Codesnippet Component', () => {
       ],
       declarations: [CodeSnippetComponent],
       providers: [
-        {provide: HighlightJsService, useClass: MockHighlightJsService},
+        { provide: HighlightJsService, useClass: MockHighlightJsService },
       ],
     }).compileComponents();  // compile template and css
   }));

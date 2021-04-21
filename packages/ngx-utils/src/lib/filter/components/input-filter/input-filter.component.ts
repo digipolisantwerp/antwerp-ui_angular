@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FilterComponent} from '../../types/filter.types';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FilterComponent } from '../../types/filter.types';
 
 @Component({
   selector: 'aui-input-filter',

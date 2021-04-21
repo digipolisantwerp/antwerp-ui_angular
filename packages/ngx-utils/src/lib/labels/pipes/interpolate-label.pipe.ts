@@ -1,7 +1,7 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-import {interpolate} from '../utils/interpolation';
-import {ReplaceData} from '../types/labels.types';
+import { interpolate } from '../utils/interpolation';
+import { ReplaceData } from '../types/labels.types';
 
 @Pipe({
   name: 'interpolateLabel',

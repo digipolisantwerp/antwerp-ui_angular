@@ -1,7 +1,7 @@
-import {async, inject, TestBed} from '@angular/core/testing';
+import { async, inject, TestBed } from '@angular/core/testing';
 
-import {FilterService} from './filter.service';
-import {Filter} from '../classes/filter.class';
+import { FilterService } from './filter.service';
+import { Filter } from '../classes/filter.class';
 
 describe('The Filter service', () => {
   // async beforeEach

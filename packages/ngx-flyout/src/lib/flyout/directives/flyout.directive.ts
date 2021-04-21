@@ -10,14 +10,14 @@ import {
   OnDestroy,
   Output,
 } from '@angular/core';
-import {merge, Subject} from 'rxjs';
-import {DOCUMENT} from '@angular/common';
-import {distinctUntilChanged, takeUntil} from 'rxjs/operators';
+import { merge, Subject } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import {FlyoutZoneDirective} from './flyout-zone.directive';
-import {FlyoutService} from '../services/flyout.service';
-import {FlyoutSize, FlyoutState} from '../types/flyout.types';
-import {isEvent} from '../utils/event';
+import { FlyoutZoneDirective } from './flyout-zone.directive';
+import { FlyoutService } from '../services/flyout.service';
+import { FlyoutSize, FlyoutState } from '../types/flyout.types';
+import { isEvent } from '../utils/event';
 
 // @dynamic
 @Directive({

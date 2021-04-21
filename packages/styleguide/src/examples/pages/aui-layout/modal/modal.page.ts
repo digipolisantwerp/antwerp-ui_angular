@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {ModalService} from '../../../../../../ngx-layout/src/public-api';
-import {AUIDemoModalComponent} from './demo-modal.component';
-import {ApproveModalComponent} from '../../../../../../ngx-layout/src/lib/modal/components/approve-modal/approve-modal.component';
+import { Component } from '@angular/core';
+import { ModalService } from '../../../../../../ngx-layout/src/public-api';
+import { AUIDemoModalComponent } from './demo-modal.component';
+import { ApproveModalComponent } from '../../../../../../ngx-layout/src/lib/modal/components/approve-modal/approve-modal.component';
 
 @Component({
   templateUrl: './modal.page.html',

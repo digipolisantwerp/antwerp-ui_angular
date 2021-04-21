@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {InvalidFile, Uploader, UploadOptions} from '../../../../../../ngx-forms/src/public-api';
+import { Component } from '@angular/core';
+import { InvalidFile, Uploader, UploadOptions } from '../../../../../../ngx-forms/src/public-api';
 
 @Component({
   templateUrl: './upload.page.html',

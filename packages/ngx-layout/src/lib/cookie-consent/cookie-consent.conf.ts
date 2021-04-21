@@ -1,5 +1,5 @@
-import {InjectionToken} from '@angular/core';
-import {CookieConsentConfig} from './types/cookie-consent.types';
+import { InjectionToken } from '@angular/core';
+import { CookieConsentConfig } from './types/cookie-consent.types';
 
 export const DEFAULT_CONSENT_CONFIG: CookieConsentConfig = {
   autoInit: true,

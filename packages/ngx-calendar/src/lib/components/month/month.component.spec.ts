@@ -1,9 +1,9 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement } from '@angular/core';
 
-import {CalendarMonthComponent} from './month.component';
-import {CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS} from '../../calendar.conf';
-import {CalendarService} from '../../services/calendar.service';
+import { CalendarMonthComponent } from './month.component';
+import { CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS } from '../../calendar.conf';
+import { CalendarService } from '../../services/calendar.service';
 
 @Component({
   selector: 'aui-test',

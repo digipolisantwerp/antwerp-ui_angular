@@ -10,13 +10,13 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {SubMenuComponent} from '../sub-menu/sub-menu.component';
-import {MenuService} from '../../services/menu.service';
-import {filter, map, mapTo, repeat, scan, share, startWith, takeUntil, tap} from 'rxjs/operators';
-import {combineLatest, merge, Observable, Subject} from 'rxjs';
-import {select} from '../../services/helpers';
-import {MenuLinkComponent} from '../menu-link/menu-link.component';
-import {Router} from '@angular/router';
+import { SubMenuComponent } from '../sub-menu/sub-menu.component';
+import { MenuService } from '../../services/menu.service';
+import { filter, map, mapTo, repeat, scan, share, startWith, takeUntil, tap } from 'rxjs/operators';
+import { combineLatest, merge, Observable, Subject } from 'rxjs';
+import { select } from '../../services/helpers';
+import { MenuLinkComponent } from '../menu-link/menu-link.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'aui-menu-tab',

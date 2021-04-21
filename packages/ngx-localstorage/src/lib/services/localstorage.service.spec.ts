@@ -1,9 +1,9 @@
-import {LocalstorageService} from './localstorage.service';
-import {TestBed} from '@angular/core/testing';
-import {STORAGE_TOKEN} from '../providers/storage.provider';
+import { LocalstorageService } from './localstorage.service';
+import { TestBed } from '@angular/core/testing';
+import { STORAGE_TOKEN } from '../providers/storage.provider';
 import * as sinon from 'sinon';
-import {SinonStub} from 'sinon';
-import {MemoryStorage} from './memory.storage';
+import { SinonStub } from 'sinon';
+import { MemoryStorage } from './memory.storage';
 
 describe('Localstorage Service Test', () => {
   let service: LocalstorageService;
