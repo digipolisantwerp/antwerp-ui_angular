@@ -31,7 +31,7 @@
       </button>
     </div>
 
-    <p *ngIf="labelResults" class="h6 m-search-filter__results-title">{{ labelResults }}</p>
+    <p *ngIf="labelResults" class="h6 m-search-filter__results-title u-margin-bottom-xs">{{ labelResults }}</p>
     <div *ngIf="loading" class="u-text-center u-padding a-spinner"></div>
     <ul *ngIf="!loading" class="a-list a-list--lined a-list--unstyled">
       <li *ngIf="!filteredChoices.length" class="m-search-filter__results-item a-list__item">

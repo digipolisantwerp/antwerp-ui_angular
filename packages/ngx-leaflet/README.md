@@ -25,7 +25,7 @@ Add the leaflet CSS styles to the `src/angular.json` file.
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-### Selectable list module
+### Leaflet module
 
 #### API
 

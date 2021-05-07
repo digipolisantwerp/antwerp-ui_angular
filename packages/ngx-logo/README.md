@@ -12,7 +12,7 @@ import { LogoModule } from '@acpaas-ui/ngx-logo';
 
 Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
 
-### Selectable list module
+### Logo module
 
 #### API
 
