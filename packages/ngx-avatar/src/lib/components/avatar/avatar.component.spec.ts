@@ -47,7 +47,7 @@ describe('The Avatar Component', () => {
     comp.icon = 'alarm-bell';
 
     fixture.detectChanges();
-    expect(el.querySelector('aui-icon').getAttribute('class')).toContain('a-avatar__icon');
+    expect(el.querySelector('aui-icon').getAttribute('class')).toContain('ai');
     expect(el.querySelector('.ai-alarm-bell')).not.toEqual(null);
   });
 
