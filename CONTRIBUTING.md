@@ -1,8 +1,8 @@
-# ACPaaS UI Contributing Guide
+# Antwerp UI Contributing Guide
 
-Hi! We're really excited that you are interested in contributing to ACPaaS UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
+Hi! We're really excited that you are interested in contributing to Antwerp UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
-- [ACPaaS UI Contributing Guide](#acpaas-ui-contributing-guide)
+- [Antwerp UI Contributing Guide](#acpaas-ui-contributing-guide)
   - [Issue Reporting Guidelines](#issue-reporting-guidelines)
   - [Pull Request Guidelines](#pull-request-guidelines)
   - [Development Setup](#development-setup)
@@ -14,11 +14,11 @@ Hi! We're really excited that you are interested in contributing to ACPaaS UI. B
 ## Issue Reporting Guidelines
 
 - If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
-- Use the [#acpaas-ui channel](https://digantcafe.slack.com/messages/CDDLYJU65/) on slack to ask questions about using ACPaaS UI.
-- Use the [#acpaas-ui-ngx channel][acpaas-ui-ngx] on slack to discuss changes to the ACPaaS UI code itself.
+- Use the [#acpaas-ui channel](https://digantcafe.slack.com/messages/CDDLYJU65/) on slack to ask questions about using Antwerp UI.
+- Use the [#acpaas-ui-ngx channel][acpaas-ui-ngx] on slack to discuss changes to the Antwerp UI code itself.
 - Use [GitHub Issues][github-issues] to report bugs, request features, ask policy questions or propose policy changes.
 
-> Note: policy questions are about the way ACPaaS UI is developed and released, or about its architecture. We use github issues to have a public archive of these discussions.
+> Note: policy questions are about the way Antwerp UI is developed and released, or about its architecture. We use github issues to have a public archive of these discussions.
 >
 > Maintainers: check the [issue handling guidelines](./guidelines/ISSUES.md) for how to handle reported issues.
 
@@ -58,7 +58,7 @@ npm run build:all
 npm start
 ```
 
-The ACPaaS UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
+The Antwerp UI components are based on an Angular 8 environment. Every package is a standard Angular library, scoped under `@acpaas-ui`.
 To build or test packages independently, run:
 ```shell
 ng build ngx-<packagename>
@@ -103,7 +103,7 @@ From there you can run all necessary npm commands for development.
 Packages are essentially Angular libraries that follow Angular standard.
 More info on how to create Angular libraries can be found [here](https://angular.io/guide/libraries).
 
-To create a new library as part of ACPaaS UI, run:
+To create a new library as part of Antwerp UI, run:
 
 ```shell
 ng generate library ngx-<package>
@@ -126,21 +126,21 @@ Once your library is created, you may import the library module in the `packages
 After this, add a demo page component to the examples module: `packages/styleguide/src/examples/pages`.
 
 ## Project structure
-- `packages/aui-<package>`: Acpaas UI package/library
+- `packages/aui-<package>`: Antwerp UI package/library
 - `packages/styleguide`: Angular application featuring demo's of the packages
     - `src/aui/aui.module.ts`: Shared module that imports/exports all needed ACPaaS packages for demo purposes
     - `src/examples`: Example module containing pages and routes for the demos.
 
 ## Releases
 
-To publish a new version of ACPaas UI, run:
+To publish a new version of Antwerp UI, run:
 ```shell
 npm run publish:all
 ```
 
 Internally, this will use [Lerna](https://lerna.js.org) to publish all the Angular packages. Note that you'll need the appropriate access to publish.
 
-ACPaaS UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
+Antwerp UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
 
 The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
 

@@ -40,7 +40,7 @@ export class ContextDemoPageComponent implements OnInit, OnDestroy {
 				page: 'Context example page',
 				title: 'Context',
 				description: 'Description of the context example page',
-				metatags: 'ACPaaS UI, Angular, context',
+				metatags: 'Antwerp UI, Angular, context',
 			},
 		},
 	},
@@ -83,7 +83,7 @@ export class ContextDemoPageComponent {
 
   ngOnDestroy() {
     this.contextService.updateContext({
-      title: 'ACPaaS UI Angular',
+      title: 'Antwerp UI Angular',
     });
   }
 }

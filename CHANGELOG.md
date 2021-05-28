@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 - [BREAKING] `core` Replaced all FontAwesome icons with Streamline icons
+- Antwerp UI
 
 ### Removed
 - `cookieconsent` Removed component in favor of our new web component: https://github.com/digipolisantwerp/acpaas-ui_web-components

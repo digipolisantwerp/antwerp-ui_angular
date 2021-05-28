@@ -43,12 +43,12 @@ import { HeaderModule } from '@acpaas-ui/ngx-layout';
 export class AppModule {};
 ```
 
-> Note that the example below makes use of the [ACPaaS UI logo component](../../../../logo/README.md) and [ACPaaS UI icon component](../../../../icon/README.md).
+> Note that the example below makes use of the [Antwerp UI logo component](../../../../logo/README.md) and [Antwerp UI icon component](../../../../icon/README.md).
 
 ```html
 <aui-header>
     <div auiHeaderLogo>
-        <aui-logo title="ACPaaS UI logo." src="./assets/acpaas-ui-logo.svg" [link]="'/'"></aui-logo>
+        <aui-logo title="Antwerp logo." src="./assets/a-logo.svg" [link]="'/'"></aui-logo>
     </div>
     <div auiHeaderContent><!-- Optional --></div>
     <div auiHeaderMenuItem>

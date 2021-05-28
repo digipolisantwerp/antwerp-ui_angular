@@ -16,7 +16,7 @@ export class AppModule {};`;
 
   public header2 = `<aui-header>
 	<div auiHeaderLogo>
-		<aui-logo title="ACPaaS UI logo." src="./assets/acpaas-ui-logo.svg" [link]="'/'"></aui-logo>
+		<aui-logo title="Antwerp logo." src="./assets/acpaas-ui-logo.svg" [link]="'/'"></aui-logo>
 	</div>
 	<div auiHeaderContent><!-- Optional --></div>
 	<div auiHeaderMenuItem>

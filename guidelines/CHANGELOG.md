@@ -1,4 +1,4 @@
-# ACPaaS UI NGX - changelog guidelines
+# Antwerp UI Angular - changelog guidelines
 
 All notable changes to this project will be documented in a `CHANGELOG.md` file. A changelog makes it easier for users and contributors to see precisely what notable changes have been made between each release (or version) of the project.
 

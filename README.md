@@ -1,15 +1,15 @@
-# ACPaaS UI - Angular Components
+# Antwerp UI - Angular Components
 
 ![build](https://github.com/digipolisantwerp/acpaas-ui_angular/workflows/CI%20action/badge.svg)
 [![ngx-components-status]][ngx-components-package]
 
 ## Introduction
 
-Antwerp City Platform as a Service User Interface (ACPaas UI) is a **component interface library** for building user interfaces and responsive web apps. It's designed to provide developers with functionality and UI/UX patterns that matches the Antwerpen styleguide.
+Antwerp City Platform as a Service User Interface (Antwerp UI) is a **component interface library** for building user interfaces and responsive web apps. It's designed to provide developers with functionality and UI/UX patterns that matches the Antwerpen styleguide.
 
 ## Ecosystem
 
-This library is part of [ACPaaS UI][acpaas-ui].
+This library is part of [Antwerp UI][acpaas-ui].
 
 | Name              | Framework  | Status  |
 | ----------------- | ---------- | ------- |
@@ -28,7 +28,7 @@ npm run build:all
 npm start
 ```
 
-### Install ACPaaS UI
+### Install Antwerp UI
 
 ```shell
 npm i @acpaas-ui/ngx-utils
@@ -58,7 +58,7 @@ Note that you are free to use your own grid, as long as it meets our branding gu
 
 ## Documentation
 
-Check out our [live examples][acpaas-ui-angular-styleguide] or visit the [ACPaaS UI site][acpaas-ui].
+Check out our [live examples][acpaas-ui-angular-styleguide] or visit the [Antwerp UI site][acpaas-ui].
 
 This library contains the following components:
 
@@ -110,7 +110,7 @@ Detailed changes for each release are documented in the [changelog](./CHANGELOG.
 
 Your contributions are most welcome as pull requests, both code changes and documentation updates. However, to keep a high quality standard, please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request.
 
-Thank you to all the people [who already contributed][acpaas-ui-angular-contributors] to ACPaaS UI!
+Thank you to all the people [who already contributed][acpaas-ui-angular-contributors] to Antwerp UI!
 
 ## Support
 

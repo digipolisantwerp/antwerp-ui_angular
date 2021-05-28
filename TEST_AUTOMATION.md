@@ -1,17 +1,17 @@
-# ACPaaS UI Test Automation Guide
+# Antwerp UI Test Automation Guide
 
 When automating tests, one of the challenges is to keep the test resilient to code changes.
 Using [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help you with that, by creating unique selectors for your tests.
 
-## Using unique data attributes with ACPaaS UI
+## Using unique data attributes with Antwerp UI
 
-It's not possible to add unique data attributes to the ACPaaS UI component library for the simple reason that the attribute won't be unique anymore when you use the component multiple times on the same page.
+It's not possible to add unique data attributes to the Antwerp UI component library for the simple reason that the attribute won't be unique anymore when you use the component multiple times on the same page.
 
-But in your app you can simply add a data attribute to each individual ACPaaS UI component so you can target the component that you want to test.
+But in your app you can simply add a data attribute to each individual Antwerp UI component so you can target the component that you want to test.
 
 #### Example
 
-The following example shows the ACPaaS UI datepicker with the unique `qa` data attribute `id-1234`.
+The following example shows the Antwerp UI datepicker with the unique `qa` data attribute `id-1234`.
 
 ```html
 <aui-datepicker
@@ -55,7 +55,7 @@ In this example the calendar of the datepicker component can be opened or closed
 
 #### Overview
 
-To help you locate a specific element of a component, we've made an overview of all ACPaaS UI components and the CSS classes they use. When an element doesn't have a class set, you can still target it by selecting the element type or its custom attribute.
+To help you locate a specific element of a component, we've made an overview of all Antwerp UI components and the CSS classes they use. When an element doesn't have a class set, you can still target it by selecting the element type or its custom attribute.
 
 | Component | Class | Element / Attribute | Description |
 | --------  | ----- | ------- | ----------- |

@@ -1,4 +1,4 @@
-# ACPaaS UI **&lt;component&gt;**
+# Antwerp UI **&lt;component&gt;**
 
 > **&lt;short component description&gt;**
 
@@ -83,7 +83,7 @@ Visit our [documentation site](http://www.google.be) for usage examples and full
 
 Please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request.
 
-Thank you to all the people who already contributed to ACPaaS UI!
+Thank you to all the people who already contributed to Antwerp UI!
 
 **List of contributors here**
 

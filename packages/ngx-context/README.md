@@ -59,7 +59,7 @@ export const CONTEXT_EXAMPLES_ROUTES: Routes = [
                 page: 'Context example page',
                 title: 'Context',
                 description: 'Description of the context example page',
-                metatags: 'ACPaaS UI, Angular, context',
+                metatags: 'Antwerp UI, Angular, context',
             },
         },
     },
