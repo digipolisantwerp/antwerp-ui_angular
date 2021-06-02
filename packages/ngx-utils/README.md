@@ -5,7 +5,7 @@ You can find an overview in the [Modules](#modules) section below.
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ## <a name="modules"></a>Modules
 

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 })
 export class LogoDemoPageComponent {
   public imgTitle = 'Title for logo';
-  public imgSrc = 'https://robohash.org/acpaas-ui';
+  public imgSrc = 'https://robohash.org/antwerp-ui';
   public imgLink = '#';
 
   public javascript1 = `import { LogoModule } from '@acpaas-ui/ngx-logo';
@@ -19,7 +19,7 @@ export class LogoDemoPageComponent {
 export class AppModule {};`;
 
   public javascript2 = `public imgTitle = 'Title for logo';
-public imgSrc = 'https://robohash.org/acpaas-ui';
+public imgSrc = 'https://robohash.org/antwerp-ui';
 public imgLink = '#';
 
 public imgClicked(event) {

@@ -5,19 +5,19 @@
   "keywords": [
     "Angular",
     "Digipolis",
-    "acpaas-ui"
+    "antwerp-ui"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/digipolisantwerp/acpaas-ui_angular"
+    "url": "https://github.com/digipolisantwerp/antwerp-ui_angular"
   },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --aot",
     "build": "ng build",
     "build:all": "node ./scripts/build-all.js",
-    "build:prod": "ng build --prod --base-href \"https://digipolisantwerp.github.io/acpaas-ui_angular/\"",
+    "build:prod": "ng build --prod --base-href \"https://digipolisantwerp.github.io/antwerp-ui_angular/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -29,10 +29,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@a-ui/acpaas": "^4.2.1",
-    "@a-ui/core": "^4.2.2",
+    "@a-ui/core": "^5.0.0",
     "@a-ui/flexboxgrid": "^2.0.0",
-    "@acpaas-ui/js-date-utils": "^2.0.0",
+    "@acpaas-ui/js-date-utils": "^2.0.1",
     "@acpaas-ui/js-notification-store": "^1.0.4",
     "@angular-redux/store": "^10.0.0",
     "@angular/animations": "~8.2.14",

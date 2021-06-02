@@ -14,7 +14,7 @@ export class AvatarDemoPageComponent {
 
 export class AppModule {};`;
 
-  public example1 = '<aui-avatar image="https://robohash.org/acpaas-ui" title="A robot avatar"></aui-avatar>';
+  public example1 = '<aui-avatar image="https://robohash.org/antwerp-ui" title="A robot avatar"></aui-avatar>';
 
   public example2 = '<aui-avatar icon="ai-alarm-bell" size="L" title="An alarm bell icon"></aui-avatar>';
 

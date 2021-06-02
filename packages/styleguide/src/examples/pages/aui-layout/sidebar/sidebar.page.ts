@@ -12,7 +12,7 @@ export class LayoutSidebarDemoPageComponent {
       theme: {
         slug: 'test',
         color: 'black',
-        logo: 'https://robohash.org/acpaas-ui',
+        logo: 'https://robohash.org/antwerp-ui',
       },
       // items?: SidebarItem[],
       classList: 'sidebarClass',

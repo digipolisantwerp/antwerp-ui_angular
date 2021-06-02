@@ -59,10 +59,10 @@ To help you locate a specific element of a component, we've made an overview of 
 
 | Component | Class | Element / Attribute | Description |
 | --------  | ----- | ------- | ----------- |
-| [Autocomplete](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/forms/autocomplete) | `aui-flyout-action` | input | text input field |
+| [Autocomplete](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/forms/autocomplete) | `aui-flyout-action` | input | text input field |
 | | `aui-selectable-list` | ul | selectable list |
 | | `m-selectable-list__item` | > li | selectable list item |
-| [Datepicker](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/forms/datepicker) | *no classname* | input | text input field |
+| [Datepicker](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/forms/datepicker) | *no classname* | input | text input field |
 | | `aui-flyout-action` | span | open/close toggle |
 | | `m-datepicker__nav` | div | navigation bar |
 | | `fa-angle-left` | > button > i | previous |
@@ -70,44 +70,44 @@ To help you locate a specific element of a component, we've made an overview of 
 | | `m-datepicker__title` | > button | view toggle |
 | | `m-datepicker__calendar` | tbody | calendar field |
 | | *no classname* | > td > button | calendar element, depending on the selected view: day, month, year |
-| [Filter](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/utils/filter) (checkbox) | `a-list` | ul | filter list |
+| [Filter](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/utils/filter) (checkbox) | `a-list` | ul | filter list |
 | | *no classname* | > li | filter element
 | | *no classname* | > > input | checkbox |
-| [Filter](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/utils/filter) (input) | *no classname* | input | text input field |
-| [Filter](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/utils/filter) (select)  | *no classname*  | > select | select |
-| [Flyout](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/flyout) | `aui-flyout-action` | button | open/close toggle |
+| [Filter](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/utils/filter) (input) | *no classname* | input | text input field |
+| [Filter](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/utils/filter) (select)  | *no classname*  | > select | select |
+| [Flyout](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/flyout) | `aui-flyout-action` | button | open/close toggle |
 | | `m-flyout__content` | content | content of the flyout |
 | | *no classname* | `auiflyoutclose` | close button in content field |
-| [Footer](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/layout/footer) | `aui-footer` | footer | footer wrapper |
+| [Footer](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/footer) | `aui-footer` | footer | footer wrapper |
 | | `o-footer` | > div | subfooter wrapper |
-| [Header](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/layout/header) | `o-header` | header | header wrapper |
+| [Header](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/header) | `o-header` | header | header wrapper |
 | | `o-header__menu-items` | > div | header element wrapper |
 | | `o-header__menu-item` | > > div | header element |
-| [Hero](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/layout/hero) | `o-hero` | div | hero wrapper |
+| [Hero](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/hero) | `o-hero` | div | hero wrapper |
 | | `o-hero__card` | div | hero text wrapper |
 | | `o-hero__cta` | div | call to action wrapper |
-| [Logo](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/logo) | `o-header__logo` | a | logo link |
-| [Map](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/map) | `o-leaflet` | div | map component wrapper |
+| [Logo](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/logo) | `o-header__logo` | a | logo link |
+| [Map](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/map) | `o-leaflet` | div | map component wrapper |
 | | `o-leaflet__content` | > div | map pane |
 | | `o-leaflet__wrapper` | > div | Leaflet map wrapper |
 | | `o-leaflet__controls` | > > div | Leaflet action buttons wrapper |
-| [Modal](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/layout/modal) | `m-overlay` | `aui-modal-overlay` | overlay |
+| [Modal](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/modal) | `m-overlay` | `aui-modal-overlay` | overlay |
 | | `m-modal` | > div | modal |
 | | `m-modal__header` | > > div | modal header wrapper |
 | | `m-modal__close` | > > > button | close button |
 | | `m-modal__footer` | > > div | modal footer wrapper |
 | | *no classname*  | > > > button | modal action button(s) |
-| [Pagination](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/pagination) (default) | `m-pagination` | ul | pagination wrapper |
+| [Pagination](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/pagination) (default) | `m-pagination` | ul | pagination wrapper |
 | | `m-pagination__prev` | > li | element to previous page|
 | | `m-pagination__next` | > li | element to next page |
-| [Pagination](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/pagination) (items per page) | `aui-items-per-page` | div | pagination wrapper |
+| [Pagination](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/pagination) (items per page) | `aui-items-per-page` | div | pagination wrapper |
 | | *no classname*  | > select | select |
-| [Pane](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/layout/pane) | `m-pane` | div | pane |
+| [Pane](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/pane) | `m-pane` | div | pane |
 | | `m-overlay` | div | overlay |
-| [Range slider](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/forms/range-slider) | `m-range-slider__inner` | div | range slider selection wrapper |
+| [Range slider](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/forms/range-slider) | `m-range-slider__inner` | div | range slider selection wrapper |
 | | `m-range-slider__bar` | > div | range slider selection bar |
 | | `m-range-slider__handle` | > span | range slider selection button |
-| [Search filter](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/forms/search-filter) | `aui-flyout-action` | button | open/close toggle |
+| [Search filter](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/forms/search-filter) | `aui-flyout-action` | button | open/close toggle |
 | | `m-search-filter__search` | button | open/close toggle |
 | | *no classname* | button | open/close toggle |
 | | `m-search-filter__results-title` | button | open/close toggle |
@@ -115,12 +115,12 @@ To help you locate a specific element of a component, we've made an overview of 
 | | `m-search-filter__results-item` | > > li | list item |
 | | `a-input__checkbox` | > > > div | checkbox wrapper |
 | |  *no classname* | > > > > input | checkbox |
-| [Selectable list](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/selectable-list) | `m-selectable-list` | ul | selectable list |
+| [Selectable list](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/selectable-list) | `m-selectable-list` | ul | selectable list |
 | | `m-selectable-list__item` | li | selectable list item |
-| [Table](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/table) | `a-table` | table | table wrapper |
-| [Time picker](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/forms/timepicker) | `m-timepicker` | div | select boxes wrapper |
+| [Table](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/table) | `a-table` | table | table wrapper |
+| [Time picker](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/forms/timepicker) | `m-timepicker` | div | select boxes wrapper |
 | | *no classname* | formcontrolname `hours` / `minutes` | hour / minute selection |
-| [Upload](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/forms/upload) | `m-upload` | div | upload input field wrapper |
+| [Upload](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/forms/upload) | `m-upload` | div | upload input field wrapper |
 | | `m-upload__input` | > input | input field |
 | | `a-upload-queue__wrapper` | `aui-upload-queue` | files to upload and upload button wrapper |
 | | `m-upload__files` | > ul | list of files to upload |

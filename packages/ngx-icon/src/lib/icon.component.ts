@@ -36,7 +36,7 @@ export class IconComponent implements OnInit {
 
   private fetchAntwerpIcons = async () => {
     try {
-      const xlinkHref = 'https://cdn.antwerpen.be/core_branding_scss/5.0.0-beta.7/assets/images/ai.svg';
+      const xlinkHref = 'https://cdn.antwerpen.be/core_branding_scss/5.0.0/assets/images/ai.svg';
       const response = await fetch(xlinkHref);
       const svgText = await response.text();
       const svgWrapper = this.renderer.createElement('svg');

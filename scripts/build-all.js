@@ -57,7 +57,7 @@ function getMainPackages() {
 
 function welcomeMessage() {
   console.log(chalk.cyan(`
-  ----------------ACPAAS-UI---------------
+  ---------------Antwerp UI---------------
   Angular Components Build
   ----------------------------------------
   `));

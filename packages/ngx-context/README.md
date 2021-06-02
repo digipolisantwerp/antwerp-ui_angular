@@ -10,7 +10,7 @@ import { ContextModule, ContextService } from '@acpaas-ui/ngx-context';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Different ways to set tags and other SEO properties.
 

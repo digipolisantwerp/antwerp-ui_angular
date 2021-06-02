@@ -10,7 +10,7 @@ import { HeaderModule } from '@acpaas-ui/ngx-layout';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### API
 
@@ -52,7 +52,7 @@ export class AppModule {};
     </div>
     <div auiHeaderContent><!-- Optional --></div>
     <div auiHeaderMenuItem>
-        <a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button-negative o-header__button has-icon-left">
+        <a href="http://github.com/digipolisantwerp/antwerp-ui_angular" class="a-button-negative o-header__button has-icon-left">
             <aui-icon name="ai-developer-community-github-1"></aui-icon>GitHub
         </a>
     </div>

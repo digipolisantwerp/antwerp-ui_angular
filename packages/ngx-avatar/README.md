@@ -10,7 +10,7 @@ import { AvatarModule } from '@acpaas-ui/ngx-avatar';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Avatar module
 
@@ -40,7 +40,7 @@ export class AppModule {};
 ```
 
 ```
-<aui-avatar image="https://robohash.org/acpaas-ui" title="My image"></aui-avatar>
+<aui-avatar image="https://robohash.org/antwerp-ui" title="My image"></aui-avatar>
 <aui-avatar icon="ai-alarm-bell" size="L" title="An alarm bell icon"></aui-avatar>
 <aui-avatar letter="T" title="The letter T" size="S"></aui-avatar>
 ```

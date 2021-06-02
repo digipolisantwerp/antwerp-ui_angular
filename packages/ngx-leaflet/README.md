@@ -23,7 +23,7 @@ Add the leaflet CSS styles to the `src/angular.json` file.
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Leaflet module
 

@@ -10,7 +10,7 @@ import { LogoModule } from '@acpaas-ui/ngx-logo';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Logo module
 
@@ -39,7 +39,7 @@ export class AppModule {};
 
 ```
 public imgTitle = 'Title for logo';
-public imgSrc = 'https://robohash.org/acpaas-ui';
+public imgSrc = 'https://robohash.org/antwerp-ui';
 public imgLink = '#';
 
 public imgClicked(event) {

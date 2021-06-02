@@ -2,7 +2,7 @@
 
 Hi! We're really excited that you are interested in contributing to Antwerp UI. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
-- [Antwerp UI Contributing Guide](#acpaas-ui-contributing-guide)
+- [Antwerp UI Contributing Guide](#antwerp-ui-contributing-guide)
   - [Issue Reporting Guidelines](#issue-reporting-guidelines)
   - [Pull Request Guidelines](#pull-request-guidelines)
   - [Development Setup](#development-setup)
@@ -14,8 +14,8 @@ Hi! We're really excited that you are interested in contributing to Antwerp UI. 
 ## Issue Reporting Guidelines
 
 - If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
-- Use the [#acpaas-ui channel](https://digantcafe.slack.com/messages/CDDLYJU65/) on slack to ask questions about using Antwerp UI.
-- Use the [#acpaas-ui-ngx channel][acpaas-ui-ngx] on slack to discuss changes to the Antwerp UI code itself.
+- Use the [#antwerp-ui channel](https://digantcafe.slack.com/messages/CDDLYJU65/) on slack to ask questions about using Antwerp UI.
+- Use the [#antwerp-ui-ngx channel][antwerp-ui-ngx] on slack to discuss changes to the Antwerp UI code itself.
 - Use [GitHub Issues][github-issues] to report bugs, request features, ask policy questions or propose policy changes.
 
 > Note: policy questions are about the way Antwerp UI is developed and released, or about its architecture. We use github issues to have a public archive of these discussions.
@@ -40,10 +40,10 @@ Hi! We're really excited that you are interested in contributing to Antwerp UI. 
 
 - If adding a new feature:
     - Add an accompanying test case.
-    - Provide a convincing reason to add this feature. Ideally you should open a [feature request issue](https://github.com/digipolisantwerp/acpaas-ui_angular/issues/new?template=feature_request.md) first and have it greenlighted before working on it.
+    - Provide a convincing reason to add this feature. Ideally you should open a [feature request issue](https://github.com/digipolisantwerp/antwerp-ui_angular/issues/new?template=feature_request.md) first and have it greenlighted before working on it.
 
 - If fixing a bug:
-    - Provide a detailed description of the bug in the PR or an accompanying [bug report issue](https://github.com/digipolisantwerp/acpaas-ui_angular/issues/new?template=bug_report.md) linked from the PR (recommended).
+    - Provide a detailed description of the bug in the PR or an accompanying [bug report issue](https://github.com/digipolisantwerp/antwerp-ui_angular/issues/new?template=bug_report.md) linked from the PR (recommended).
     - Add appropriate test coverage if applicable.
 
 ## Development Setup
@@ -128,7 +128,7 @@ After this, add a demo page component to the examples module: `packages/stylegui
 ## Project structure
 - `packages/aui-<package>`: Antwerp UI package/library
 - `packages/styleguide`: Angular application featuring demo's of the packages
-    - `src/aui/aui.module.ts`: Shared module that imports/exports all needed ACPaaS packages for demo purposes
+    - `src/aui/aui.module.ts`: Shared module that imports/exports all needed Antwerp UI packages for demo purposes
     - `src/examples`: Example module containing pages and routes for the demos.
 
 ## Releases
@@ -140,7 +140,7 @@ npm run publish:all
 
 Internally, this will use [Lerna](https://lerna.js.org) to publish all the Angular packages. Note that you'll need the appropriate access to publish.
 
-Antwerp UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#acpaas-ui-ngx channel][acpaas-ui-ngx] to ask for an out-of-band release.
+Antwerp UI is released at least once a month, and more often if there are high priority changes. If your PR has been merged but not yet released, and it is high priority, please ping the [#antwerp-ui-ngx channel][antwerp-ui-ngx] to ask for an out-of-band release.
 
 The project follows [Semantic Versioning](https://semver.org/). The latest stable major version is developed on the `master` branch. For other major versions there are separate `vX-dev` branches. For more info on the exact versioning policy, see the [versioning guide](./guidelines/VERSIONING.md).
 
@@ -148,4 +148,4 @@ A [changelog](CHANGELOG.md) is provided for your convenience.
 
 > Maintainers: see the [release guide](./guidelines/RELEASE.md) for guidance on releases and versioning.
 
-[acpaas-ui-ngx]: https://digantcafe.slack.com/messages/CDF95H5B7/
+[antwerp-ui-ngx]: https://digantcafe.slack.com/messages/CDF95H5B7/
