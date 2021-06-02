@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class IntervalPageComponent {
   createInterval = `
-  import {IntervalBuilder} from '@acpaas-ui/ngx-utils';
+  import { IntervalBuilder } from '@acpaas-ui/ngx-utils';
 
   const interval = IntervalBuilder.numberInterval(0, 10)
                                   .closedInterval()
@@ -15,24 +15,23 @@ export class IntervalPageComponent {
 `;
 
   dateInterval = `
-  import {IntervalBuilder} from '@acpaas-ui/ngx-utils';
-  import {Moment} from 'moment';
+  import { IntervalBuilder } from '@acpaas-ui/ngx-utils';
+  import { subDays } from 'date-fns';
 
-  const today = new Moment();
-  const yesterday = (new Moment()).substract(1, 'days');
-  const interval = IntervalBuilder.momentInterval(yesterday, today)
+  const today = new Date();
+  const yesterday = subDays(new Date(), 1);
+  const interval = IntervalBuilder.dateInterval(yesterday, today)
                                   .openInterval()
                                   .build();
   `;
 
   notThePast = `
-  import {IntervalBuilder} from '@acpaas-ui/ngx-utils';
-  import {Moment} from 'moment';
+  import { IntervalBuilder } from '@acpaas-ui/ngx-utils';
 
-  const today = new Moment();
+  const today = new Date();
 
   // This interval amounts to ]-infinity, today], so the past will be disabled
-  const interval = IntervalBuilder.momentInterval(null, today)
+  const interval = IntervalBuilder.dateInterval(null, today)
                                   .leftOpenInterval()
                                   .unbounded()
                                   .not()
