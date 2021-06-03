@@ -26,7 +26,7 @@ describe('The leaflet control component', () => {
   });
 
   it('should have the correct icon', () => {
-    comp.icon = 'close';
+    comp.icon = 'ai-close';
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('.ai')).nativeElement.classList).toContain('ai-close');
   });

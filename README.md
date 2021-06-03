@@ -1,6 +1,6 @@
 # Antwerp UI - Angular Components
 
-![build](https://github.com/digipolisantwerp/antwerp-ui_angular/workflows/CI%20action/badge.svg)
+![build][antwerp-ui-github-ci]
 [![ngx-components-status]][ngx-components-package]
 
 ## Introduction
@@ -143,6 +143,9 @@ Copyright (c) 2016-present, Digipolis
 [antwerp-ui-angular-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/antwerp-ui_angular.svg
 [antwerp-ui-js-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/antwerp-ui_js.svg
 [antwerp-ui-react-github]: https://img.shields.io/github/package-json/v/digipolisantwerp/antwerp-ui_react.svg
+
+<!-- Github Actions Badge -->
+[antwerp-ui-github-ci]: https://github.com/digipolisantwerp/antwerp-ui_angular/workflows/CI/badge.svg
 
 <!-- NPM Package links -->
 [ngx-components-package]: https://www.npmjs.com/package/@acpaas-ui/ngx-components

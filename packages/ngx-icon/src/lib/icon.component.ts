@@ -10,7 +10,7 @@ export class IconComponent implements OnInit {
     return [
       'ai',
       this.className,
-      this.href,
+      this.name,
     ].filter(Boolean).join(' ');
   }
 
@@ -18,20 +18,14 @@ export class IconComponent implements OnInit {
   @Input() public ariaLabel: string;
   @Input() public className = '';
 
-  public href: string;
-  private isFetching = false;
-
   constructor(
     private renderer: Renderer2
   ) { }
 
   ngOnInit() {
-    if (!document.getElementById('aiSvg') && !this.isFetching) {
-      this.isFetching = true;
+    if (!document.getElementById('aiSvg')) {
       this.fetchAntwerpIcons();
     }
-
-    this.href = this.name ? (this.name.match(/^ai-/) ? this.name : `ai-${this.name}`) : '';
   }
 
   private fetchAntwerpIcons = async () => {
@@ -49,8 +43,6 @@ export class IconComponent implements OnInit {
       }
     } catch (err) {
       throw new Error(err);
-    } finally {
-      this.isFetching = false;
     }
   }
 

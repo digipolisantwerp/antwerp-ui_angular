@@ -44,7 +44,7 @@ describe('The Avatar Component', () => {
   });
 
   it('should render an icon', () => {
-    comp.icon = 'alarm-bell';
+    comp.icon = 'ai-alarm-bell';
 
     fixture.detectChanges();
     expect(el.querySelector('aui-icon').getAttribute('class')).toContain('ai');
