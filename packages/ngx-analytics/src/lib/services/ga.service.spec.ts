@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -54,7 +54,6 @@ describe('The Analytics Service', () => {
   let fixture;
   let gaService: GAService;
   let router: Router;
-  let zone: NgZone;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -74,7 +73,6 @@ describe('The Analytics Service', () => {
     fixture = TestBed.createComponent(AppComponent);
     gaService = TestBed.get(GAService);
     router = TestBed.get(Router);
-    zone = TestBed.get(NgZone);
   });
 
   it('should trigger an event', () => {
@@ -105,10 +103,8 @@ describe('The Analytics Service', () => {
 
   it('should be possible to disable autoTriggerPageView', () => {
     spyOn(gaService, 'triggerPageView');
-    zone.run(() => {
-      router.navigate(['/test']).then(() => {
-        expect(gaService.triggerPageView).not.toHaveBeenCalled();
-      });
+    router.navigate(['/test']).then(() => {
+      expect(gaService.triggerPageView).not.toHaveBeenCalled();
     });
   });
 });
