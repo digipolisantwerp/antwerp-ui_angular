@@ -1,15 +1,15 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "4.6.1",
+  "version": "5.0.0",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-calendar": "^4.6.1",
-    "@acpaas-ui/ngx-flyout": "^4.6.1",
-    "@acpaas-ui/ngx-progress-bar": "^4.6.1",
-    "@acpaas-ui/ngx-selectable-list": "^4.6.1",
-    "@acpaas-ui/ngx-utils": "^4.6.1",
+    "@acpaas-ui/ngx-calendar": "^5.0.0",
+    "@acpaas-ui/ngx-flyout": "^5.0.0",
+    "@acpaas-ui/ngx-progress-bar": "^5.0.0",
+    "@acpaas-ui/ngx-selectable-list": "^5.0.0",
+    "@acpaas-ui/ngx-utils": "^5.0.0",
     "@angular-redux/store": "~10.0.0",
     "lodash-es": "~4.17.10",
     "redux": "4.0.1"
