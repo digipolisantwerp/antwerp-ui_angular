@@ -4,6 +4,7 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
+      "@acpaas-ui/ngx-icon": "ngxIcon",
       "@acpaas-ui/ngx-flyout": "flyout"
     }
   },

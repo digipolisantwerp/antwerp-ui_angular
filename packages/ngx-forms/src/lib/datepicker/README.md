@@ -12,7 +12,7 @@ import { DatepickerModule } from '@acpaas-ui/ngx-forms';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Flyout module
 
@@ -24,7 +24,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | `@Input() name: string;` | - | The name to use on the input field. |
 | `@Input() placeholder: string;` | `'dd/mm/yyyy'`| The placeholder to use on the input field. |
 | `@Input() autocomplete: string;` | `'off'` |  Turn the browsers autocompletion on or off. |
-| `@Input() range: DateRange;` | - | A range of dates or weekdays to disable (see the [@acpaas-ui/js-date-utils](https://github.com/digipolisantwerp/acpaas-ui_js/blob/master/packages/date-utils/README.md) package for more info on date ranges). |
+| `@Input() range: DateRange;` | - | A range of dates or weekdays to disable (see the [@acpaas-ui/js-date-utils](https://github.com/digipolisantwerp/antwerp-ui_js/blob/master/packages/date-utils/README.md) package for more info on date ranges). |
 
 #### Example
 

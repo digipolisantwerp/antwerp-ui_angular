@@ -4,10 +4,12 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
+      "@acpaas-ui/ngx-icon": "ngxIcon",
       "ngx-toastr": "ngxToastr"
     }
   },
   "whitelistedNonPeerDependencies": [
+    "@acpaas-ui",
     "ngx-toastr"
   ]
 }

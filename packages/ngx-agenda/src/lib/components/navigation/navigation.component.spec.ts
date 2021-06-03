@@ -1,12 +1,12 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
-import {MonthPipe} from '../../pipes/month.pipe';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
+import { MonthPipe } from '../../pipes/month.pipe';
 
-import {VIEWS} from '../../types/agenda.types';
-import {NavigationComponent} from './navigation.component';
-import {DateHelperService} from '../../services/date-helper.service';
-import {DEFAULT_MONTH_LABELS, MONTH_LABELS} from '../../agenda.conf';
+import { VIEWS } from '../../types/agenda.types';
+import { NavigationComponent } from './navigation.component';
+import { DateHelperService } from '../../services/date-helper.service';
+import { DEFAULT_MONTH_LABELS, MONTH_LABELS } from '../../agenda.conf';
 
 describe('The Navigation Component', () => {
   let comp: NavigationComponent;

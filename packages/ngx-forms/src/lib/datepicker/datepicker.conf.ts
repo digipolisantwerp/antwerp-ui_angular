@@ -1,5 +1,5 @@
-import {InjectionToken} from '@angular/core';
-import {DatepickerErrorLabels} from './types/datepicker.types';
+import { InjectionToken } from '@angular/core';
+import { DatepickerErrorLabels } from './types/datepicker.types';
 
 export const DATEPICKER_ERROR_LABELS = new InjectionToken<DatepickerErrorLabels>('errorLabels');
 

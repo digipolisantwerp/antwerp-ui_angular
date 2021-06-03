@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement, ViewChild} from '@angular/core';
-import {By} from '@angular/platform-browser';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement, ViewChild } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
-import {SelectableActionsDirective} from './selectable-actions.directive';
+import { SelectableActionsDirective } from './selectable-actions.directive';
 
 const mockKeyDownEvent = (key) => {
   const event: any = document.createEvent('Event');

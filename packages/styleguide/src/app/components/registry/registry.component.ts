@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Routes} from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'guide-registry',

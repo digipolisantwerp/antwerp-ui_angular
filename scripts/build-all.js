@@ -17,7 +17,8 @@ const chalk = require('chalk');
 const EXCLUDED_DIRS = [];
 
 const BUILD_AS_FIRST = [
-  'ngx-utils' // Basically every lib is dependent on this one, so build first
+  'ngx-icon',
+  'ngx-utils',
 ];
 
 const BUILD_AS_LAST = [
@@ -56,7 +57,7 @@ function getMainPackages() {
 
 function welcomeMessage() {
   console.log(chalk.cyan(`
-  ----------------ACPAAS-UI---------------
+  ---------------Antwerp UI---------------
   Angular Components Build
   ----------------------------------------
   `));

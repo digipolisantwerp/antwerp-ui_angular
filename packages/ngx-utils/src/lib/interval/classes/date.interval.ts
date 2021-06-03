@@ -1,4 +1,4 @@
-import {IntervalModel} from './interval.model';
+import { IntervalModel } from './interval.model';
 
 export class DateInterval extends IntervalModel<Date> {
 

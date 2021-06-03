@@ -1,13 +1,13 @@
-import {Component, Input} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'aui-logo',
   templateUrl: './logo.component.html',
 })
 export class LogoComponent {
-  @Input() title = 'Officieel Logo Antwerpen.';
-  @Input() src = 'http://cdn.antwerpen.be/core_branding_scss/4.0.0/assets/images/a-logo.svg';
+  @Input() title = 'Ga naar homepage.';
+  @Input() src = 'https://cdn.antwerpen.be/core_branding_scss/5.0.0/assets/images/a-logo.svg';
   @Input() link?: string;
   @Input() onClick?: (event: MouseEvent) => void;
 

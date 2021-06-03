@@ -1,8 +1,8 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-import {FlyoutModule} from '@acpaas-ui/ngx-flyout';
+import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -10,12 +10,13 @@ import {
   CALENDAR_WEEKDAY_LABELS,
   CalendarModule
 } from '@acpaas-ui/ngx-calendar';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {MaskModule} from '../mask/mask.module';
+import { MaskModule } from '../mask/mask.module';
 
-import {DatepickerComponent} from './components/datepicker/datepicker.component';
-import {DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS} from './datepicker.conf';
-import {DatepickerErrorLabels} from './types/datepicker.types';
+import { DatepickerComponent } from './components/datepicker/datepicker.component';
+import { DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS } from './datepicker.conf';
+import { DatepickerErrorLabels } from './types/datepicker.types';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import {DatepickerErrorLabels} from './types/datepicker.types';
     FormsModule,
     ReactiveFormsModule,
     CalendarModule,
+    IconModule,
     FlyoutModule,
     MaskModule,
   ],

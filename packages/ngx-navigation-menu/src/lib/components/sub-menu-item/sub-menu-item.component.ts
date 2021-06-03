@@ -11,13 +11,13 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {SubMenuComponent} from '../sub-menu/sub-menu.component';
-import {MenuService} from '../../services/menu.service';
-import {Menu} from '../../interfaces';
-import {lookForIllegalNodes, select} from '../../services/helpers';
-import {filter, map, mapTo, repeat, scan, share, startWith, takeUntil, tap} from 'rxjs/operators';
-import {combineLatest, merge, Observable, of, Subject} from 'rxjs';
-import {MenuLinkComponent} from '../menu-link/menu-link.component';
+import { SubMenuComponent } from '../sub-menu/sub-menu.component';
+import { MenuService } from '../../services/menu.service';
+import { Menu } from '../../interfaces';
+import { lookForIllegalNodes, select } from '../../services/helpers';
+import { filter, map, mapTo, repeat, scan, share, startWith, takeUntil, tap } from 'rxjs/operators';
+import { combineLatest, merge, Observable, of, Subject } from 'rxjs';
+import { MenuLinkComponent } from '../menu-link/menu-link.component';
 
 @Component({
   selector: 'aui-sub-menu-item',

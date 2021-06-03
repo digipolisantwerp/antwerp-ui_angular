@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import {InvalidFile, UploadOptions} from '../../types/upload.types';
-import {UPLOAD_OPTIONS_DEFAULT} from '../../upload.conf';
-import {Uploader} from '../../classes/uploader.class';
+import { InvalidFile, UploadOptions } from '../../types/upload.types';
+import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.conf';
+import { Uploader } from '../../classes/uploader.class';
 
 @Component({
   selector: 'aui-upload',

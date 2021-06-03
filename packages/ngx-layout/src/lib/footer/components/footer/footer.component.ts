@@ -1,6 +1,6 @@
-import {AfterContentChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild} from '@angular/core';
+import { AfterContentChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild } from '@angular/core';
 
-import {FooterContentDirective} from '../../directives/content.directive';
+import { FooterContentDirective } from '../../directives/content.directive';
 
 @Component({
   selector: 'aui-footer',

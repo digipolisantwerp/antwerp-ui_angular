@@ -2,7 +2,7 @@
   <div class="m-modal__content">
     <div class="m-modal__header u-margin-bottom-xs">
       <button (click)="close()" class="m-modal__close a-button-transparent a-button--default has-icon" type="button">
-        <span class="fa fa-close"><span class="u-screen-reader-only">{{ modalData.reject }}</span></span>
+        <aui-icon name="ai-close" [ariaLabel]="modalData.reject"></aui-icon>
       </button>
       <h4 [id]="titleId">{{ modalData.question }}</h4>
     </div>

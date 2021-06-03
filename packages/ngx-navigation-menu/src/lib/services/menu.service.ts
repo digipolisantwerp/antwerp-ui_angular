@@ -1,8 +1,8 @@
-import {Inject, Injectable, TemplateRef} from '@angular/core';
-import {fromEvent, merge, Observable, Subject} from 'rxjs';
-import {filter, first, map, mapTo, mergeMap, scan, share, shareReplay, startWith, takeUntil, tap} from 'rxjs/operators';
-import {Menu} from '../interfaces';
-import {LocalstorageService} from './localstorage.service';
+import { Inject, Injectable, TemplateRef } from '@angular/core';
+import { fromEvent, merge, Observable, Subject } from 'rxjs';
+import { filter, first, map, mapTo, mergeMap, scan, share, shareReplay, startWith, takeUntil, tap } from 'rxjs/operators';
+import { Menu } from '../interfaces';
+import { LocalstorageService } from './localstorage.service';
 
 /**
  * Singleton helper service to orchestrate the navigation menu.

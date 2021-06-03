@@ -1,5 +1,5 @@
-import {async, inject, TestBed} from '@angular/core/testing';
-import {TableHelperService} from './table-helper.service';
+import { async, inject, TestBed } from '@angular/core/testing';
+import { TableHelperService } from './table-helper.service';
 
 describe('The Table Helper Service', () => {
 

@@ -20,7 +20,7 @@ import { TableModule } from '@acpaas-ui/ngx-table';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Table module
 
@@ -61,7 +61,7 @@ import { Cell } from '@acpaas-ui/ngx-table';
 @Component({
 	template: `
 		<button type="button" class="a-button has-icon" title="View {{ data?.firstName }}'s profile">
-			<span class="fa fa-eye"></span>
+			<aui-icon name="ai-view-1"></aui-icon>
 		</button>
 	`,
 })

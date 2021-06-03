@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aui-leaflet-control',
@@ -7,4 +7,5 @@ import {Component, Input} from '@angular/core';
 export class LeafletControlComponent {
   @Input() icon: string;
   @Input() disabled: boolean;
+  @Input() ariaLabel = '';
 }

@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {InvalidFile, Uploader, UploadOptions} from '../../../../../../ngx-forms/src/public-api';
+import { Component } from '@angular/core';
+import { InvalidFile, Uploader, UploadOptions } from '../../../../../../ngx-forms/src/public-api';
 
 @Component({
   templateUrl: './upload.page.html',
@@ -184,14 +184,14 @@ public uploadFiles(): void {
 <div *ngIf="showError" class="u-margin-bottom">
 	<ul class="m-upload__files">
 		<li class="is-error">
-			<span class="fa fa-warning"></span>
+			<aui-icon name="ai-alert-triangle"></aui-icon>
 			<span class="m-upload__filename">{{ fileName }}</span>
 			<span class="m-upload__error">This file extension is not allowed.</span>
 			<button
 				type="button"
 				(click)="reloadErrors()"
 				class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-				<span class="u-screen-reader-only">Remove</span>
+				<aui-icon name="ai-close" ariaLabel="Remove"></aui-icon>
 			</button>
 		</li>
 	</ul>

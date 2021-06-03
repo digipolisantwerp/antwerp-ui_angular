@@ -1,9 +1,9 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
-import {MonthViewSlotsService} from '../../services/month-view-slots.service';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
+import { MonthViewSlotsService } from '../../services/month-view-slots.service';
 
-import {MonthViewEventSlotsComponent} from './month-view-event-slots.component';
+import { MonthViewEventSlotsComponent } from './month-view-event-slots.component';
 
 class MockMonthViewSlotsService {
   public generateSlotRendering() {

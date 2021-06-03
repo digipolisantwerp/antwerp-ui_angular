@@ -1,14 +1,14 @@
-import {Component, NgModule} from '@angular/core';
-import {Router} from '@angular/router';
-import {async, inject, TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
-import {NgRedux, NgReduxModule} from '@angular-redux/store';
-import {combineReducers, createStore, Store} from 'redux';
+import { Component, NgModule } from '@angular/core';
+import { Router } from '@angular/router';
+import { async, inject, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { combineReducers, createStore, Store } from 'redux';
 
-import {ContextModule} from './context.module';
-import {ContextService} from './services/context.service';
-import {ContextActionCreator} from './store/context/context.actioncreator';
-import {contextReducer} from './store/context/context.reducer';
+import { ContextModule } from './context.module';
+import { ContextService } from './services/context.service';
+import { ContextActionCreator } from './store/context/context.actioncreator';
+import { contextReducer } from './store/context/context.reducer';
 
 @Component({
   template: '<router-outlet></router-outlet>',

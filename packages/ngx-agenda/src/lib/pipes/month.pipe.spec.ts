@@ -1,4 +1,4 @@
-import {MonthPipe} from './month.pipe';
+import { MonthPipe } from './month.pipe';
 
 const defaultMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  // tslint:disable-line
 const customMonths = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december']; // tslint:disable-line

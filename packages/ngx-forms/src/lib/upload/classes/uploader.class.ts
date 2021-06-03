@@ -1,7 +1,7 @@
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
-import {UPLOAD_OPTIONS_DEFAULT} from '../upload.conf';
-import {InvalidFile, UploadOptions} from '../types/upload.types';
+import { UPLOAD_OPTIONS_DEFAULT } from '../upload.conf';
+import { InvalidFile, UploadOptions } from '../types/upload.types';
 
 export class Uploader {
   public options: UploadOptions = UPLOAD_OPTIONS_DEFAULT;

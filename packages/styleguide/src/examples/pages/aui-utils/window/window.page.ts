@@ -1,5 +1,5 @@
-import {Component, Inject} from '@angular/core';
-import {WINDOW} from '../../../../../../ngx-utils/src/public-api';
+import { Component, Inject } from '@angular/core';
+import { WINDOW } from '../../../../../../ngx-utils/src/public-api';
 
 @Component({
   templateUrl: './window.page.html',

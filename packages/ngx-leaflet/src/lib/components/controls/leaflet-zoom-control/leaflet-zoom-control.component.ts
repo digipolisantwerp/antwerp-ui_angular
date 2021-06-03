@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {LeafletMap} from '../../../classes/leaflet-map';
+import { LeafletMap } from '../../../classes/leaflet-map';
 
 @Component({
   selector: 'aui-leaflet-zoom-control',

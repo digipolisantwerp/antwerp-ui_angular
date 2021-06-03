@@ -1,5 +1,4 @@
 @import '~@a-ui/core/dist/assets/styles/quarks';
-@import '~@a-ui/acpaas/dist/assets/styles/quarks/quarks.variables';
 
 /* Need to be included in core branding */
 body {
@@ -24,7 +23,7 @@ main {
   }
 }
 
-.p-acpaas-ui {
+.p-antwerp-ui {
   flex: 1 1 auto;
   overflow: auto;
 }
@@ -63,10 +62,6 @@ main {
   }
 }
 
-.m-flyout:focus {
-  outline: none;
-}
-
 .u-show-on-mobile {
   @include at($screen-sm) {
     display: none;
@@ -94,7 +89,7 @@ pre {
 }
 
 .aui-footer {
-  background: $black-pearl;
+  background: $black;
 
   .u-container {
     padding-top: $spacer-lg;
@@ -129,4 +124,10 @@ pre {
 
 .o-leaflet__map:focus {
   box-shadow: 0 0 0 3px $input-border-focus;
+}
+
+.p-fix-position {
+  .o-header__logo {
+    position: static;
+  }
 }

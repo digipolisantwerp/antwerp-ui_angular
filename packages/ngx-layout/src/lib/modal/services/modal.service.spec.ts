@@ -1,10 +1,10 @@
-import {async, inject, TestBed} from '@angular/core/testing';
-import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
-import {Component} from '@angular/core';
+import { async, inject, TestBed } from '@angular/core/testing';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { Component } from '@angular/core';
 
-import {ModalAbstract} from '../classes/modal.abstract';
-import {ModalOverlayComponent} from '../components/modal-overlay/modal-overlay.component';
-import {ModalService} from './modal.service';
+import { ModalAbstract } from '../classes/modal.abstract';
+import { ModalOverlayComponent } from '../components/modal-overlay/modal-overlay.component';
+import { ModalService } from './modal.service';
 
 @Component({
   selector: 'aui-test-modal',

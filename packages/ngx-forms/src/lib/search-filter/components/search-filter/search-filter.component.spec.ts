@@ -1,10 +1,11 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {FlyoutModule} from '@acpaas-ui/ngx-flyout';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {SearchFilterComponent} from './search-filter.component';
+import { SearchFilterComponent } from './search-filter.component';
 
 describe('The SearchFilter Component', () => {
   let comp: SearchFilterComponent;
@@ -18,6 +19,7 @@ describe('The SearchFilter Component', () => {
       imports: [
         FormsModule,
         FlyoutModule,
+        IconModule,
       ],
       declarations: [
         SearchFilterComponent,

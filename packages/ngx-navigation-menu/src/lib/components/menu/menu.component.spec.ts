@@ -1,13 +1,14 @@
-import {MenuService} from '../../services/menu.service';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { MenuService } from '../../services/menu.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import * as sinon from 'sinon';
-import {MenuComponent} from './menu.component';
-import {COMPONENTS} from '../components';
-import {cold, getTestScheduler, hot} from 'jasmine-marbles';
-import {NavigationStart, Router, RouterModule} from '@angular/router';
-import {CommonModule} from '@angular/common';
-import {Observable} from 'rxjs';
-import {Menu} from '../../interfaces';
+import { MenuComponent } from './menu.component';
+import { COMPONENTS } from '../components';
+import { cold, getTestScheduler, hot } from 'jasmine-marbles';
+import { NavigationStart, Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { Menu } from '../../interfaces';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('Menu Component Test', () => {
   let service: MenuService;
@@ -40,6 +41,7 @@ describe('Menu Component Test', () => {
       imports: [
         RouterModule.forRoot([]),
         CommonModule,
+        IconModule,
       ],
     }).compileComponents();
 

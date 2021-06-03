@@ -1,4 +1,4 @@
-import {Filter} from './filter.class';
+import { Filter } from './filter.class';
 
 describe('The Filter Class', () => {
   it('should parse data', () => {

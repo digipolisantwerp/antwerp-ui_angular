@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, Routes} from '@angular/router';
-import {APP_ROUTES} from '../../app.routes';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Routes } from '@angular/router';
+import { APP_ROUTES } from '../../app.routes';
 
 @Component({
   templateUrl: './modules.page.html',

@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Menu} from '../interfaces';
-import {LocalstorageService as LS} from '@acpaas-ui/ngx-localstorage';
+import { Injectable } from '@angular/core';
+import { Menu } from '../interfaces';
+import { LocalstorageService as LS } from '@acpaas-ui/ngx-localstorage';
 
 @Injectable()
 export class LocalstorageService {

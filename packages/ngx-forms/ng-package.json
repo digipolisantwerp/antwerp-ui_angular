@@ -4,11 +4,13 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "@acpaas-ui/ngx-flyout": "flyout",
-      "@acpaas-ui/ngx-selectable-list": "selectableList",
+      "@acpaas-ui/ngx-flyout": "ngxFlyout",
+      "@acpaas-ui/ngx-icon": "ngxIcon",
+      "@acpaas-ui/ngx-selectable-list": "ngxSelectableList",
+      "@acpaas-ui/ngx-calendar": "ngxCalendar",
+      "@acpaas-ui/ngx-progress-bar": "ngxProgressBar",
+      "@acpaas-ui/ngx-utils": "ngxUtils",
       "@acpaas-ui/js-date-utils": "jsDateUtils",
-      "@acpaas-ui/ngx-calendar": "calendar",
-      "@acpaas-ui/ngx-progress-bar": "progressBar",
       "inputmask": "Inputmask",
       "lodash-es": "lodashEs",
       "ng2-ckeditor": "ng2Ckeditor"

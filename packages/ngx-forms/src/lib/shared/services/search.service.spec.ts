@@ -1,6 +1,6 @@
-import {async, inject, TestBed} from '@angular/core/testing';
+import { async, inject, TestBed } from '@angular/core/testing';
 
-import {SearchService} from './search.service';
+import { SearchService } from './search.service';
 
 const injectService = cb => inject([SearchService], (searchService: SearchService) => cb(searchService));
 

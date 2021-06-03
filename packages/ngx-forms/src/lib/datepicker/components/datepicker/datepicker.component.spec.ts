@@ -1,13 +1,14 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {DateRange} from '@acpaas-ui/js-date-utils';
-import {CalendarModule} from '@acpaas-ui/ngx-calendar';
-import {FlyoutModule} from '@acpaas-ui/ngx-flyout';
-import {MaskModule} from '@acpaas-ui/ngx-forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DateRange } from '@acpaas-ui/js-date-utils';
+import { CalendarModule } from '@acpaas-ui/ngx-calendar';
+import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
+import { IconModule } from '@acpaas-ui/ngx-icon';
+import { MaskModule } from '@acpaas-ui/ngx-forms';
 
-import {DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS} from '../../datepicker.conf';
-import {DatepickerComponent} from './datepicker.component';
+import { DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS } from '../../datepicker.conf';
+import { DatepickerComponent } from './datepicker.component';
 
 @Component({
   selector: 'aui-test-one',
@@ -75,6 +76,7 @@ describe('The Datepicker Component', () => {
         FormsModule,
         ReactiveFormsModule,
         FlyoutModule,
+        IconModule,
         MaskModule,
         CalendarModule,
       ],

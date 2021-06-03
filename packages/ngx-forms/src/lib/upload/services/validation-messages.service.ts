@@ -1,6 +1,6 @@
-import {Inject, Injectable} from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
-import {UPLOAD_VALIDATION_MESSAGES} from '../upload.conf';
+import { UPLOAD_VALIDATION_MESSAGES } from '../upload.conf';
 
 @Injectable()
 export class ValidationMessagesService {

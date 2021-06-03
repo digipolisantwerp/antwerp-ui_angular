@@ -3,10 +3,10 @@
 This PR fulfills the following requirements:
 <!-- Please put "[x]" for requirements that this PR satisfies. -->
 
-- [ ] The commit message follows our guidelines: [Contributing guidelines](https://github.com/digipolisantwerp/acpaas-ui_angular/blob/master/CONTRIBUTING.md)
+- [ ] The commit message follows our guidelines: [Contributing guidelines](https://github.com/digipolisantwerp/antwerp-ui_angular/blob/master/CONTRIBUTING.md)
 - [ ] Tests for the changes have been added (for bug fixes / features)
 - [ ] Docs have been added / updated (for bug fixes / features)
-- [ ] A [changelog entry](https://github.com/digipolisantwerp/acpaas-ui_angular/blob/master/guidelines/CHANGELOG.md) was added
+- [ ] A [changelog entry](https://github.com/digipolisantwerp/antwerp-ui_angular/blob/master/guidelines/CHANGELOG.md) was added
 
 ## PR Type
 

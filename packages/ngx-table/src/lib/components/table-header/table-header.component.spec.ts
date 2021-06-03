@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {Component, DebugElement, Input} from '@angular/core';
-import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Component, DebugElement, Input } from '@angular/core';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
-import {TableHeaderComponent} from './table-header.component';
-import {Cell} from '../../types/table.types';
+import { TableHeaderComponent } from './table-header.component';
+import { Cell } from '../../types/table.types';
 
 // ---------- DUMMY FILTERS ----------- //
 @Component({

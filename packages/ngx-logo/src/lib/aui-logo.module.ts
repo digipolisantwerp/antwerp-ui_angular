@@ -1,5 +1,5 @@
-import {NgModule} from '@angular/core';
-import {AuiLogoComponent} from './aui-logo.component';
+import { NgModule } from '@angular/core';
+import { AuiLogoComponent } from './aui-logo.component';
 
 
 @NgModule({

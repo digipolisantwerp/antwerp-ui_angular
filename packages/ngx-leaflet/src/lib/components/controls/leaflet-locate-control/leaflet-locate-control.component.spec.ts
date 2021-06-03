@@ -1,10 +1,11 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {LeafletMap} from '../../../classes/leaflet-map';
-import {LeafletControlComponent} from '../leaflet-control/leaflet-control.component';
-import {LeafletLocateControlComponent} from './leaflet-locate-control.component';
-import {MapService} from '../../../services/map.service';
+import { LeafletMap } from '../../../classes/leaflet-map';
+import { LeafletControlComponent } from '../leaflet-control/leaflet-control.component';
+import { LeafletLocateControlComponent } from './leaflet-locate-control.component';
+import { MapService } from '../../../services/map.service';
 
 describe('The leaflet locate control component', () => {
   let fixture: ComponentFixture<LeafletLocateControlComponent>;
@@ -16,6 +17,9 @@ describe('The leaflet locate control component', () => {
       declarations: [
         LeafletLocateControlComponent,
         LeafletControlComponent,
+      ],
+      imports: [
+        IconModule
       ],
       providers: [
         MapService,

@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {UserMenu} from '@acpaas-ui/ngx-user-menu';
+import { Component } from '@angular/core';
+import { UserMenu } from '@acpaas-ui/ngx-user-menu';
 
 @Component({
   templateUrl: './aui-user-menu.page.html',

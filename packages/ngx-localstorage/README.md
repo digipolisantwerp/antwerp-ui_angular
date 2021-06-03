@@ -1,6 +1,6 @@
 # @acpaas-ui/ngx-localstorage
 
-The `acpaas-ui localstorage` service allows you to easily store and retrieve data in and from your browsers storage.
+The `antwerp-ui localstorage` service allows you to easily store and retrieve data in and from your browsers storage.
 
 ## Usage
 
@@ -10,7 +10,7 @@ import { LocalstorageModule } from '@acpaas-ui/ngx-localstorage';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Localstorage service
 

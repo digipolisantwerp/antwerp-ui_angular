@@ -1,12 +1,13 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {DebugElement} from '@angular/core';
-import {By} from '@angular/platform-browser';
-import {Observable} from 'rxjs';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {UPLOAD_OPTIONS_DEFAULT} from '../../upload.conf';
-import {Uploader} from '../../classes/uploader.class';
+import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.conf';
+import { Uploader } from '../../classes/uploader.class';
 
-import {UploadQueueComponent} from './upload-queue.component';
+import { UploadQueueComponent } from './upload-queue.component';
 
 const mockFile1 = new File(['file1'], 'filename1.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
 const mockFile2 = new File(['file2'], 'filename2.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
@@ -56,6 +57,9 @@ describe('The upload queue component', () => {
     TestBed.configureTestingModule({
       declarations: [
         UploadQueueComponent,
+      ],
+      imports: [
+        IconModule
       ],
     })
       .compileComponents(); // compile template and css

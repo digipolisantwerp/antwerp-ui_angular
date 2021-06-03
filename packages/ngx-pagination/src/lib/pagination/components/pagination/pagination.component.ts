@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
-import {PaginationDisplay} from '../../types/pagination.types';
+import { PaginationDisplay } from '../../types/pagination.types';
 
 @Component({
   selector: 'aui-pagination',

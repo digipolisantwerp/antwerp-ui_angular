@@ -1,22 +1,24 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
   CALENDAR_MONTH_LABELS,
   CALENDAR_WEEKDAY_LABELS
 } from './calendar.conf';
-import {MonthLabelsConfig, WeekdayLabelsConfig} from './types/calendar.types';
-import {CalendarService} from './services/calendar.service';
-import {CalendarComponent} from './components/calendar/calendar.component';
-import {CalendarDecenniaComponent} from './components/decennia/decennia.component';
-import {CalendarMonthComponent} from './components/month/month.component';
-import {CalendarYearComponent} from './components/year/year.component';
+import { MonthLabelsConfig, WeekdayLabelsConfig } from './types/calendar.types';
+import { CalendarService } from './services/calendar.service';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarDecenniaComponent } from './components/decennia/decennia.component';
+import { CalendarMonthComponent } from './components/month/month.component';
+import { CalendarYearComponent } from './components/year/year.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    IconModule,
   ],
   declarations: [
     CalendarComponent,

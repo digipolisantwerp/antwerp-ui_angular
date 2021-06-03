@@ -1,7 +1,7 @@
-import {Inject, Injectable} from '@angular/core';
-import {WINDOW} from '@acpaas-ui/ngx-utils';
-import {MemoryStorage} from '../services/memory.storage';
-import {IStorage, IWindow, LocalStorageType} from '../types/localstorage.types';
+import { Inject, Injectable } from '@angular/core';
+import { WINDOW } from '@acpaas-ui/ngx-utils';
+import { MemoryStorage } from '../services/memory.storage';
+import { IStorage, IWindow, LocalStorageType } from '../types/localstorage.types';
 
 @Injectable()
 export class StorageFactory {

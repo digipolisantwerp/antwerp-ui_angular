@@ -1,5 +1,5 @@
-import {NgModule} from '@angular/core';
-import {AUI_IMPORTS} from './aui.imports';
+import { NgModule } from '@angular/core';
+import { AUI_IMPORTS } from './aui.imports';
 
 
 @NgModule({

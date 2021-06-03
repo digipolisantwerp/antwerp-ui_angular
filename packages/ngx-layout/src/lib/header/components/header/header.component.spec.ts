@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement } from '@angular/core';
 
-import {HeaderComponent} from './header.component';
-import {HeaderContentDirective} from '../../directives/content.directive';
-import {HeaderLogoDirective} from '../../directives/logo.directive';
-import {HeaderMenuItemDirective} from '../../directives/menu-item.directive';
+import { HeaderComponent } from './header.component';
+import { HeaderContentDirective } from '../../directives/content.directive';
+import { HeaderLogoDirective } from '../../directives/logo.directive';
+import { HeaderMenuItemDirective } from '../../directives/menu-item.directive';
 
 @Component({
   selector: 'aui-test',

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './wysiwyg.page.html',
@@ -42,7 +42,7 @@ public getContent(event) {
 
   public wysiwygExampleHTML2 = `{
 	bodyClass: 'a-input ckeditor-editable-body',
-	contentsCss: ['https://cdn.antwerpen.be/core_branding_scss/4.0.0/main.min.css'],
+	contentsCss: ['https://cdn.antwerpen.be/core_branding_scss/5.0.0/main.min.css'],
 	extraPlugins: 'divarea',
 	find_highlight: {
 		element: 'span',

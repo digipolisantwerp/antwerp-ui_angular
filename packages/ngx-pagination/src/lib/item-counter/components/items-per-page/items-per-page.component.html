@@ -4,7 +4,7 @@
       <select (ngModelChange)="setAmount($event)" [id]="id" [name]="id" [ngModel]="amountPerPage">
         <option *ngFor="let amountOption of selectOptions" [value]="amountOption">{{ amountOption }}</option>
       </select>
-      <span class="fa fa-angle-down"></span>
+      <aui-icon name="ai-arrow-down-1"></aui-icon>
     </div>
 
     <label [for]="id" class="a-input__label">{{ label | pluralizeLabel:amountPerPage }}</label>

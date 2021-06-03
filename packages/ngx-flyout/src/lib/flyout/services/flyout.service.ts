@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
-import {FlyoutState} from '../types/flyout.types';
+import { FlyoutState } from '../types/flyout.types';
 
 @Injectable()
 export class FlyoutService {

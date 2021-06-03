@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {async, inject, TestBed} from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { async, inject, TestBed } from '@angular/core/testing';
 
-import {ContextWriterService} from './context-writer.service';
-import {ContextConfig} from '../types/context.types';
+import { ContextWriterService } from './context-writer.service';
+import { ContextConfig } from '../types/context.types';
 
-import {CONTEXT_CONFIG} from '../context.conf';
+import { CONTEXT_CONFIG } from '../context.conf';
 
 const injectService = cb => inject([ContextWriterService], (contextService: ContextWriterService) => cb(contextService));
 

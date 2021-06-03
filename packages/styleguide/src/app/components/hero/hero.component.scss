@@ -1,8 +1,13 @@
 @import '~@a-ui/core/dist/assets/styles/quarks';
-@import '~@a-ui/acpaas/dist/assets/styles/quarks/quarks.variables';
 
 .o-hero {
-  height: 8rem;
+  background-color: $brand-primary;
+  height: auto;
+  padding: $spacer;
+
+  div {
+    padding-left: $spacer-md;
+  }
 }
 
 .u-margin-top-xxs {

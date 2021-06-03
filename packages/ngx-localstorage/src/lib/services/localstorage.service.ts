@@ -1,6 +1,6 @@
-import {Inject, Injectable} from '@angular/core';
-import {STORAGE_TOKEN} from '../providers/storage.provider';
-import {IStorage} from '../types/localstorage.types';
+import { Inject, Injectable } from '@angular/core';
+import { STORAGE_TOKEN } from '../providers/storage.provider';
+import { IStorage } from '../types/localstorage.types';
 
 /**
  * Wrapper service that provides

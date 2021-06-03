@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {Component, DebugElement} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Component, DebugElement } from '@angular/core';
 
-import {HeroComponent} from './hero.component';
-import {HeroCardDirective} from '../../directives/hero-card.directive';
-import {HeroCtaDirective} from '../../directives/hero-cta.directive';
+import { HeroComponent } from './hero.component';
+import { HeroCardDirective } from '../../directives/hero-card.directive';
+import { HeroCtaDirective } from '../../directives/hero-cta.directive';
 
 @Component({
   selector: 'aui-test',

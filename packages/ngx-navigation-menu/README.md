@@ -10,4 +10,4 @@ This component provides a generic navigation menu that can be used in your proje
 
 ## Usage and Documentation
 
-Visit our [documentation site](https://digipolisantwerp.github.io/acpaas-ui_angular/modules/navigation-menu) for full how-to docs and guidelines
+Visit our [documentation site](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/navigation-menu) for full how-to docs and guidelines

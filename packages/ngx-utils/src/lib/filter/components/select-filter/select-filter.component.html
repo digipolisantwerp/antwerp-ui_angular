@@ -5,7 +5,7 @@
       <select [formControl]="select" [id]="filter.id" [name]="filter.id">
         <option *ngFor="let option of filter.options" [value]="option.id">{{ option.name }}</option>
       </select>
-      <span class="fa fa-angle-down"></span>
+      <aui-icon name="ai-arrow-down-1"></aui-icon>
     </div>
   </ng-container>
 </div>

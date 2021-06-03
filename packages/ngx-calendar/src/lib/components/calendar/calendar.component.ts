@@ -11,7 +11,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 
-import {DateHelper, DateRange} from '@acpaas-ui/js-date-utils';
+import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
 
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
@@ -26,8 +26,8 @@ import {
   MonthLabelsConfig,
   WeekdayLabelsConfig
 } from '../../types/calendar.types';
-import {CalendarService} from '../../services/calendar.service';
-import {Interval} from '@acpaas-ui/ngx-utils';
+import { CalendarService } from '../../services/calendar.service';
+import { Interval } from '@acpaas-ui/ngx-utils';
 
 @Component({
   selector: 'aui-calendar',

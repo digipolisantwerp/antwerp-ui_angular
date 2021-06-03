@@ -1,6 +1,6 @@
-import {DateHelperService} from './date-helper.service';
-import {SortingService} from './sorting.service';
-import {EventInterface} from '../types/agenda.types';
+import { DateHelperService } from './date-helper.service';
+import { SortingService } from './sorting.service';
+import { EventInterface } from '../types/agenda.types';
 
 describe('Sorting Service', () => {
   const dateHelper = new DateHelperService();

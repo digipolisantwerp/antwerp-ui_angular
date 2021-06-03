@@ -1,11 +1,11 @@
-import {MenuService} from './menu.service';
-import {cold, getTestScheduler} from 'jasmine-marbles';
-import {Menu} from '../interfaces';
-import {TestBed} from '@angular/core/testing';
-import {select} from './helpers';
+import { MenuService } from './menu.service';
+import { cold, getTestScheduler } from 'jasmine-marbles';
+import { Menu } from '../interfaces';
+import { TestBed } from '@angular/core/testing';
+import { select } from './helpers';
 import * as sinon from 'sinon';
-import {SinonStub} from 'sinon';
-import {LocalstorageService} from './localstorage.service';
+import { SinonStub } from 'sinon';
+import { LocalstorageService } from './localstorage.service';
 
 describe('Menu Service Test', () => {
   let service: MenuService;

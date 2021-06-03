@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {NotificationsService} from '../../../../../ngx-notifications/src/public-api';
+import { Component } from '@angular/core';
+import { NotificationsService } from '../../../../../ngx-notifications/src/public-api';
 
 @Component({
   selector: 'app-notifications-demo',

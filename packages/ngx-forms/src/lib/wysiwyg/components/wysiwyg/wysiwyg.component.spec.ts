@@ -1,10 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {CKEditorModule} from 'ng2-ckeditor';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ng2-ckeditor';
 
-import {WysiwygComponent} from './wysiwyg.component';
+import { WysiwygComponent } from './wysiwyg.component';
 
 describe('The Wysiwyg Component', () => {
   let comp: WysiwygComponent;

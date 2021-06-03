@@ -77,7 +77,7 @@ It's possible to define a template for the event-item in the month view.
 
 ```
 <ng-template #itemTemplate let-event="event">
-    <span class="fa fa-calendar"></span> {{event.title}}
+    <aui-icon name="ai-calendar-3"></aui-icon> {{event.title}}
 </ng-template>
 
 <aui-agenda

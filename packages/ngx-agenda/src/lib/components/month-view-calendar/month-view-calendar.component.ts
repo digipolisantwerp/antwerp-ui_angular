@@ -10,12 +10,12 @@ import {
   Output,
   TemplateRef,
 } from '@angular/core';
-import {Observable, Subject, timer} from 'rxjs';
-import {distinctUntilChanged, takeUntil} from 'rxjs/operators';
+import { Observable, Subject, timer } from 'rxjs';
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import {DateHelper} from '@acpaas-ui/js-date-utils';
+import { DateHelper } from '@acpaas-ui/js-date-utils';
 
-import {DateRangeInterface, DayRangeInterface, EventInterface, SlotInterface, WeekdayInterface} from '../../types/agenda.types';
+import { DateRangeInterface, DayRangeInterface, EventInterface, SlotInterface, WeekdayInterface } from '../../types/agenda.types';
 
 @Component({
   selector: 'aui-agenda-month-view-calendar',

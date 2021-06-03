@@ -1,8 +1,9 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {COMPONENTS} from '../components';
-import {MenuLinkComponent} from './menu-link.component';
-import {RouterModule} from '@angular/router';
-import {CommonModule} from '@angular/common';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { COMPONENTS } from '../components';
+import { MenuLinkComponent } from './menu-link.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('Menu Link Test', () => {
   let fixture: ComponentFixture<MenuLinkComponent>;
@@ -16,6 +17,7 @@ describe('Menu Link Test', () => {
       imports: [
         RouterModule,
         CommonModule,
+        IconModule,
       ],
     }).compileComponents();
 

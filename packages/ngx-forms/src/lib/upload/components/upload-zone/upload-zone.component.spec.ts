@@ -1,11 +1,11 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement, Input} from '@angular/core';
-import {By} from '@angular/platform-browser';
-import {Observable} from 'rxjs';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement, Input } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 
-import {UploadZoneComponent} from './upload-zone.component';
-import {UPLOAD_OPTIONS_DEFAULT} from '../../upload.conf';
-import {Uploader} from '../../classes/uploader.class';
+import { UploadZoneComponent } from './upload-zone.component';
+import { UPLOAD_OPTIONS_DEFAULT } from '../../upload.conf';
+import { Uploader } from '../../classes/uploader.class';
 
 @Component({
   template: '<progress></progress>',

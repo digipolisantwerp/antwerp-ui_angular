@@ -1,11 +1,11 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import {Filter} from '@acpaas-ui/ngx-utils';
+import { Filter } from '@acpaas-ui/ngx-utils';
 
-import {TableBarComponent} from './table-bar.component';
+import { TableBarComponent } from './table-bar.component';
 
 // ---------- DUMMY FILTERS ----------- //
 const filters = [];

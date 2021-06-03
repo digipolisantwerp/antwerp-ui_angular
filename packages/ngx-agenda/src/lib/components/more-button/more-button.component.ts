@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Inject, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
 
-import {MORE_LABEL} from '../../agenda.conf';
+import { MORE_LABEL } from '../../agenda.conf';
 
 @Component({
   selector: 'aui-agenda-more-button',

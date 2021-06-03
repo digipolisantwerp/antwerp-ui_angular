@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {FilterComponent} from '../../types/filter.types';
-import {FormControl} from '@angular/forms';
-import {Subject} from 'rxjs';
-import {map, takeUntil, tap} from 'rxjs/operators';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { FilterComponent } from '../../types/filter.types';
+import { FormControl } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { map, takeUntil, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'aui-select-filter',

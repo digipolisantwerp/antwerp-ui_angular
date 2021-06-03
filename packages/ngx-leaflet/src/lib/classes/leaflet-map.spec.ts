@@ -1,9 +1,10 @@
-import {LeafletMap} from './leaflet-map';
-import {LeafletLayer, LeafletMapOptions} from '../types/leaflet.types';
-import {MapService} from '../services/map.service';
-import {fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {PLATFORM_ID} from '@angular/core';
-import {LeafletControlComponent, LeafletDragControlComponent} from '../../public-api';
+import { LeafletMap } from './leaflet-map';
+import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
+import { MapService } from '../services/map.service';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { PLATFORM_ID } from '@angular/core';
+import { LeafletControlComponent, LeafletDragControlComponent } from '../../public-api';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('The leaflet map', () => {
   const element = document.body;
@@ -30,6 +31,9 @@ describe('The leaflet map', () => {
       declarations: [
         LeafletDragControlComponent,
         LeafletControlComponent,
+      ],
+      imports: [
+        IconModule
       ],
       providers: [
         MapService,

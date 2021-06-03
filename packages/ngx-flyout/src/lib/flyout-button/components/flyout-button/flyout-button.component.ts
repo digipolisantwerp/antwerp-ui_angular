@@ -1,6 +1,6 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {FlyoutButtonSize} from '../../types/flyout-button.types';
+import { FlyoutButtonSize } from '../../types/flyout-button.types';
 
 @Component({
   selector: 'aui-flyout-button',

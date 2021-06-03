@@ -25,7 +25,7 @@ UploadModule.forChild({
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### API
 
@@ -263,14 +263,14 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 <div *ngIf="showError" class="u-margin-bottom">
     <ul class="m-upload__files">
         <li class="is-error">
-            <span class="fa fa-warning"></span>
+            <aui-icon name="ai-alert-triangle"></aui-icon>
             <span class="m-upload__filename">{{ fileName }}</span>
             <span class="m-upload__error">This file extension is not allowed.</span>
             <button
                 type="button"
                 (click)="reloadErrors()"
                 class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-                <span class="fa fa-close"></span>
+                <aui-icon name="ai-remove"></aui-icon>
             </button>
         </li>
     </ul>

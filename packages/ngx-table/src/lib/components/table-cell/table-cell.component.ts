@@ -10,9 +10,9 @@ import {
   Type,
   ViewContainerRef
 } from '@angular/core';
-import {Cell, CellWithMetadata, ConstructableCell} from '../../types/table.types';
-import {TableHelperService} from '../../services/table-helper.service';
-import {hasMetadata} from './table-cell.helpers';
+import { Cell, CellWithMetadata, ConstructableCell } from '../../types/table.types';
+import { TableHelperService } from '../../services/table-helper.service';
+import { hasMetadata } from './table-cell.helpers';
 
 @Component({
   selector: 'aui-table-cell',

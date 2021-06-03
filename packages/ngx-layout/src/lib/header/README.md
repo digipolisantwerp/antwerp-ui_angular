@@ -10,7 +10,7 @@ import { HeaderModule } from '@acpaas-ui/ngx-layout';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### API
 
@@ -43,17 +43,17 @@ import { HeaderModule } from '@acpaas-ui/ngx-layout';
 export class AppModule {};
 ```
 
-> Note that the example below makes use of the [ACPaaS UI logo component](../../../../logo/README.md).
+> Note that the example below makes use of the [Antwerp UI logo component](../../../../logo/README.md) and [Antwerp UI icon component](../../../../icon/README.md).
 
 ```html
 <aui-header>
     <div auiHeaderLogo>
-        <aui-logo title="ACPaaS UI logo." src="./assets/acpaas-ui-logo.svg" [link]="'/'"></aui-logo>
+        <aui-logo title="Antwerp logo." src="./assets/a-logo.svg" [link]="'/'"></aui-logo>
     </div>
     <div auiHeaderContent><!-- Optional --></div>
     <div auiHeaderMenuItem>
-        <a href="http://github.com/digipolisantwerp/acpaas-ui_angular" class="a-button-negative o-header__button has-icon-left">
-            <span class="fa fa-github"></span>GitHub
+        <a href="http://github.com/digipolisantwerp/antwerp-ui_angular" class="a-button-negative o-header__button has-icon-left">
+            <aui-icon name="ai-developer-community-github-1"></aui-icon>GitHub
         </a>
     </div>
 </aui-header>

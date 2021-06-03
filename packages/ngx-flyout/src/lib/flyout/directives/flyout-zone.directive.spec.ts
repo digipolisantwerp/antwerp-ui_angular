@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement, ViewChild} from '@angular/core';
-import {By} from '@angular/platform-browser';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement, ViewChild } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
-import {FlyoutZoneDirective} from './flyout-zone.directive';
+import { FlyoutZoneDirective } from './flyout-zone.directive';
 
 @Component({
   selector: 'aui-app',

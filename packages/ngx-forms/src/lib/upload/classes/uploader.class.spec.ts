@@ -1,7 +1,7 @@
-import {UPLOAD_OPTIONS_DEFAULT} from '../upload.conf';
-import {UploadOptions} from '../types/upload.types';
+import { UPLOAD_OPTIONS_DEFAULT } from '../upload.conf';
+import { UploadOptions } from '../types/upload.types';
 
-import {Uploader} from './uploader.class';
+import { Uploader } from './uploader.class';
 
 describe('Uploader', () => {
 

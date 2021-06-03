@@ -1,6 +1,6 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
-import {GAService} from '../services/ga.service';
+import { GAService } from '../services/ga.service';
 
 @Directive({selector: '[auiGaEvent]'})
 export class GaEventDirective {

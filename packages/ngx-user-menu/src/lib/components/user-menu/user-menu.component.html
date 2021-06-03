@@ -3,7 +3,7 @@
   <ng-container *ngIf="!user">
     <button (click)="login$.next()" [attr.aria-label]="translations.login"
             class="a-button a-button-login has-icon-left">
-      <span class="fa fa-user"></span>
+      <aui-icon name="ai-single-neutral"></aui-icon>
       {{ translations.login }}
     </button>
   </ng-container>
@@ -15,8 +15,7 @@
 				<span class="a-avatar u-margin-right-xs">
 					<img *ngIf="user?.avatarUrl" [attr.alt]="translations.userAvatar" [src]="user?.avatarUrl"/>
 					<span *ngIf="!(user?.avatarUrl)" class="a-avatar__icon">
-						<span class="fa fa-user"><span
-              class="u-screen-reader-only">{{ translations.userAvatar }}</span></span>
+            <aui-icon name="ai-single-neutral" [ariaLabel]="translations.userAvatar"></aui-icon>
 					</span>
 					<span *ngIf="notificationsCount > 0"
                 class="a-badge a-badge--warning">{{ !notificationsCount ? 0 : notificationsCount }}</span>
@@ -29,7 +28,7 @@
         <button (click)="logout$.next()"
                 *ngIf="showLogoutButton"
                 [attr.aria-label]="translations.logout" auiFlyoutClose class='a-button-logout a-button a-button--danger a-button--block has-icon-left'>
-          <span class="fa fa-power-off"></span>
+          <aui-icon name="ai-power-button"></aui-icon>
           {{ translations.logout }}
         </button>
       </div>

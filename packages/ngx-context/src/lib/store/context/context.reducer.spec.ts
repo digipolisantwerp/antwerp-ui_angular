@@ -1,4 +1,4 @@
-import {contextReducer} from './context.reducer';
+import { contextReducer } from './context.reducer';
 import * as actionTypes from './context.actiontypes';
 
 describe('Context Reducer', () => {

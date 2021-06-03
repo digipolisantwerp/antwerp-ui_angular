@@ -1,6 +1,6 @@
-import {InjectionToken} from '@angular/core';
+import { InjectionToken } from '@angular/core';
 
-import {UploadOptions, ValidationMessages} from './types/upload.types';
+import { UploadOptions, ValidationMessages } from './types/upload.types';
 
 export const UPLOAD_OPTIONS_DEFAULT: UploadOptions = {
   allowedMimeTypes: [],

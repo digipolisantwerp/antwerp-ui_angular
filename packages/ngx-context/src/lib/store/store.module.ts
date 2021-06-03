@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {NgReduxModule} from '@angular-redux/store';
+import { NgModule } from '@angular/core';
+import { NgReduxModule } from '@angular-redux/store';
 
-import {ContextActionCreator} from './context/context.actioncreator';
+import { ContextActionCreator } from './context/context.actioncreator';
 
 @NgModule({
   imports: [

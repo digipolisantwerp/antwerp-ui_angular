@@ -10,7 +10,7 @@ import { AutoCompleteModule } from '@acpaas-ui/ngx-forms';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### API
 
@@ -115,7 +115,7 @@ public formatLabel(input: any) {
     // Highlight searchValue in result
     const regEx = new RegExp(this.searchValue, 'ig');
     const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
-    return \`<span class="fa fa-user u-text-light u-margin-right-xs"></span>\${inputStringHighlighted}\`;
+    return \`<aui-icon name="ai-single-neutral" className="u-text-light u-margin-right-xs"></aui-icon>\${inputStringHighlighted}\`;
 }
 ```
 

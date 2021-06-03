@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {SearchFilterChoice} from '../../../../../../ngx-forms/src/public-api';
+import { Component } from '@angular/core';
+import { SearchFilterChoice } from '../../../../../../ngx-forms/src/public-api';
 
 @Component({
   templateUrl: './search-filter.page.html',

@@ -1,4 +1,4 @@
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 export class RouterHelper {
   public static getParentTitle(route, titles: string[] = []): string[] {

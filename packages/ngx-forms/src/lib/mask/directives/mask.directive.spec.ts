@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {By} from '@angular/platform-browser';
-import {MaskDirective} from './mask.directive';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { MaskDirective } from './mask.directive';
 
 @Component({
   selector: 'aui-test',

@@ -1,9 +1,9 @@
-import {Inject, Injectable} from '@angular/core';
-import {Title} from '@angular/platform-browser';
-import {DOCUMENT} from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
-import {CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT} from '../context.conf';
-import {ContextConfig} from '../types/context.types';
+import { CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT } from '../context.conf';
+import { ContextConfig } from '../types/context.types';
 
 @Injectable()
 export class ContextWriterService {

@@ -1,4 +1,4 @@
-import {WeekdayPipe} from './weekday.pipe';
+import { WeekdayPipe } from './weekday.pipe';
 
 let defaultWeekdays;
 let customWeekdays;

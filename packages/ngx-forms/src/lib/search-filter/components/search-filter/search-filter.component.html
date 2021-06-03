@@ -9,8 +9,8 @@
            'a-button--tiny' : size === 'tiny'
            }">
     <span id="{{ id + '-label' }}">{{ label }}</span>
-    <span *ngIf="selectedItems.length">({{ selectedItems.length }})</span>
-    <span class="fa fa-angle-down"></span>
+    <span *ngIf="selectedItems.length"> ({{ selectedItems.length }})</span>
+    <aui-icon name="ai-arrow-down-1"></aui-icon>
   </button>
 
   <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
@@ -20,18 +20,18 @@
                [attr.placeholder]="placeholder"
                aria-autocomplete="list" id="{{ id + '-search' }}" name="{{ name + '-search' }}"
                type="text">
-        <span class="fa fa-search"></span>
+        <aui-icon name="ai-search"></aui-icon>
       </div>
     </div>
 
     <div *ngIf="!isDisabled && selectedItems.length > 0" class="m-search-filter__clear">
       <button (click)="clear()" class="a-button-outline a-button--small a-button--danger has-icon-left" type="button">
-        <span class="fa fa-close"></span>
+        <aui-icon name="ai-close"></aui-icon>
         {{ labelDeselect }}
       </button>
     </div>
 
-    <p *ngIf="labelResults" class="h6 m-search-filter__results-title">{{ labelResults }}</p>
+    <p *ngIf="labelResults" class="h6 m-search-filter__results-title u-margin-bottom-xs">{{ labelResults }}</p>
     <div *ngIf="loading" class="u-text-center u-padding a-spinner"></div>
     <ul *ngIf="!loading" class="a-list a-list--lined a-list--unstyled">
       <li *ngIf="!filteredChoices.length" class="m-search-filter__results-item a-list__item">

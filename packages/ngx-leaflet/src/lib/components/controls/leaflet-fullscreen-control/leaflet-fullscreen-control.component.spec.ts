@@ -1,10 +1,11 @@
-import {LeafletFullscreenControlComponent} from './leaflet-fullscreen-control.component';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+import { LeafletFullscreenControlComponent } from './leaflet-fullscreen-control.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {LeafletMap} from '../../../classes/leaflet-map';
-import {LeafletControlComponent} from '../leaflet-control/leaflet-control.component';
-import {MapService} from '../../../services/map.service';
+import { LeafletMap } from '../../../classes/leaflet-map';
+import { LeafletControlComponent } from '../leaflet-control/leaflet-control.component';
+import { MapService } from '../../../services/map.service';
 
 describe('The leaflet full screen control component', () => {
   let fixture: ComponentFixture<LeafletFullscreenControlComponent>;
@@ -16,6 +17,9 @@ describe('The leaflet full screen control component', () => {
       declarations: [
         LeafletFullscreenControlComponent,
         LeafletControlComponent,
+      ],
+      imports: [
+        IconModule
       ],
       providers: [
         MapService,

@@ -1,7 +1,7 @@
-import {async, inject, TestBed} from '@angular/core/testing';
+import { async, inject, TestBed } from '@angular/core/testing';
 
-import {ValidationMessagesService} from './validation-messages.service';
-import {UPLOAD_VALIDATION_MESSAGES} from '../upload.conf';
+import { ValidationMessagesService } from './validation-messages.service';
+import { UPLOAD_VALIDATION_MESSAGES } from '../upload.conf';
 
 describe('The Validation messages Service', () => {
 

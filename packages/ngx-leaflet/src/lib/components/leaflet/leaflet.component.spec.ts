@@ -1,18 +1,18 @@
-import {Component} from '@angular/core';
-import {By} from '@angular/platform-browser';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {LeafletComponent} from './leaflet.component';
-import {LeafletMap} from '../../classes/leaflet-map';
+import { LeafletComponent } from './leaflet.component';
+import { LeafletMap } from '../../classes/leaflet-map';
 
-import {LeafletFullscreenControlComponent} from '../controls/leaflet-fullscreen-control/leaflet-fullscreen-control.component';
-import {LeafletDragControlComponent} from '../controls/leaflet-drag-control/leaflet-drag-control.component';
-import {LeafletDrawControlComponent} from '../controls/leaflet-draw-control/leaflet-draw-control.component';
-import {LeafletZoomControlComponent} from '../controls/leaflet-zoom-control/leaflet-zoom-control.component';
-import {LeafletLocateControlComponent} from '../controls/leaflet-locate-control/leaflet-locate-control.component';
+import { LeafletFullscreenControlComponent } from '../controls/leaflet-fullscreen-control/leaflet-fullscreen-control.component';
+import { LeafletDragControlComponent } from '../controls/leaflet-drag-control/leaflet-drag-control.component';
+import { LeafletDrawControlComponent } from '../controls/leaflet-draw-control/leaflet-draw-control.component';
+import { LeafletZoomControlComponent } from '../controls/leaflet-zoom-control/leaflet-zoom-control.component';
+import { LeafletLocateControlComponent } from '../controls/leaflet-locate-control/leaflet-locate-control.component';
 
-import {LeafletModule} from '../../leaflet.module';
-import {MapService} from '../../services/map.service';
+import { LeafletModule } from '../../leaflet.module';
+import { MapService } from '../../services/map.service';
 
 @Component({
   template: `

@@ -1,4 +1,4 @@
-import {IntervalBuilder} from './interval.builder';
+import { IntervalBuilder } from './interval.builder';
 
 describe('Generic Interval', () => {
   it('Open Interval', () => {

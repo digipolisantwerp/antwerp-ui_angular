@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {ModalService} from '../../../../../../ngx-layout/src/public-api';
-import {AUIDemoModalComponent} from './demo-modal.component';
-import {ApproveModalComponent} from '../../../../../../ngx-layout/src/lib/modal/components/approve-modal/approve-modal.component';
+import { Component } from '@angular/core';
+import { ModalService } from '../../../../../../ngx-layout/src/public-api';
+import { AUIDemoModalComponent } from './demo-modal.component';
+import { ApproveModalComponent } from '../../../../../../ngx-layout/src/lib/modal/components/approve-modal/approve-modal.component';
 
 @Component({
   templateUrl: './modal.page.html',
@@ -17,7 +17,7 @@ import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-layout';
     <div class="m-modal__content">
       <div class="m-modal__header u-margin-bottom-xs">
         <button type="button" class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
-          <span class="fa fa-close"></span>
+          <aui-icon name="ai-close" ariaLabel="Close"></aui-icon>
         </button>
         <h4 id="myModalTitle">{{ modalData.title }}</h4>
       </div>

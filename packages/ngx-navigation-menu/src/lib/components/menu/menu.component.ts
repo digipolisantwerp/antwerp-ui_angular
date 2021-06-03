@@ -9,13 +9,13 @@ import {
   OnInit,
   QueryList
 } from '@angular/core';
-import {MenuTabComponent} from '../menu-tab/menu-tab.component';
-import {merge, Observable, Subject} from 'rxjs';
-import {delay, filter, first, map, mapTo, pairwise, shareReplay, startWith, take, takeUntil, tap} from 'rxjs/operators';
-import {MenuService} from '../../services/menu.service';
-import {select} from '../../services/helpers';
-import {NavigationStart, Router} from '@angular/router';
-import {Menu} from '../../interfaces';
+import { MenuTabComponent } from '../menu-tab/menu-tab.component';
+import { merge, Observable, Subject } from 'rxjs';
+import { delay, filter, first, map, mapTo, pairwise, shareReplay, startWith, take, takeUntil, tap } from 'rxjs/operators';
+import { MenuService } from '../../services/menu.service';
+import { select } from '../../services/helpers';
+import { NavigationStart, Router } from '@angular/router';
+import { Menu } from '../../interfaces';
 
 /**
  * Main wrapper container that will orchestrate the menu.

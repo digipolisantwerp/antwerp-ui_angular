@@ -1,4 +1,4 @@
-import {InterpolateLabelPipe} from './interpolate-label.pipe';
+import { InterpolateLabelPipe } from './interpolate-label.pipe';
 
 describe('The interpolate pipe', () => {
   let interpolatePipe;

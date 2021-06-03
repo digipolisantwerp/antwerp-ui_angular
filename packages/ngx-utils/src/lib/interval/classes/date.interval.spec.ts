@@ -1,16 +1,14 @@
-import {IntervalBuilder} from './interval.builder';
-import * as _moment from 'moment';
+import { IntervalBuilder } from './interval.builder';
+import { addDays, addWeeks, subDays, subWeeks } from 'date-fns';
 
-const Moment: new () => _moment.Moment = _moment as any;
-
-describe('Moment Interval', () => {
-  const today = (new Moment()).toDate();
-  const yesterday = (new Moment()).subtract(1, 'day').toDate();
-  const tomorrow = (new Moment()).add(1, 'day').toDate();
-  const nextWeek = (new Moment()).add(1, 'week').toDate();
-  const lastWeek = (new Moment()).subtract(1, 'week').toDate();
-  const theDayBefore = (new Moment()).subtract(2, 'days').toDate();
-  const theDayAfter = (new Moment()).add(2, 'days').toDate();
+describe('date-fns Interval', () => {
+  const today = new Date();
+  const yesterday = subDays(new Date(), 1);
+  const tomorrow = addDays(new Date(), 1);
+  const nextWeek = addWeeks(new Date(), 1);
+  const lastWeek = subWeeks(new Date(), 1);
+  const theDayBefore = subDays(new Date(), 2);
+  const theDayAfter = addDays(new Date(), 2);
 
 
   it('Open Interval', () => {

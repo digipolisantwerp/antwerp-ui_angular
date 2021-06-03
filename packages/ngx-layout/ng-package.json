@@ -4,7 +4,8 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "@acpaas-ui/ngx-utils": "utils",
+      "@acpaas-ui/ngx-icon": "ngxIcon",
+      "@acpaas-ui/ngx-utils": "ngxUtils",
       "lodash-es": "lodashEs"
     }
   },
@@ -12,7 +13,6 @@
     "@acpaas-ui",
     "@angular-store",
     "redux",
-    "cookieconsent",
     "lodash-es"
   ]
 }

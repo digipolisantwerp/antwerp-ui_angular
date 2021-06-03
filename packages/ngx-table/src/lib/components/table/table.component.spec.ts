@@ -1,9 +1,9 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
-import {TableHelperService} from '../../services/table-helper.service';
-import {TableComponent} from './table.component';
+import { TableHelperService } from '../../services/table-helper.service';
+import { TableComponent } from './table.component';
 
 export class DummyTableHelperService {
   public getLabel(key) {

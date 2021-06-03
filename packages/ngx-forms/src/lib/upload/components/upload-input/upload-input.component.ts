@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import {UploadOptions} from '../../types/upload.types';
+import { UploadOptions } from '../../types/upload.types';
 
 @Component({
   selector: 'aui-upload-input',

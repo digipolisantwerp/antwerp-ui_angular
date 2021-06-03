@@ -1,6 +1,6 @@
 version: '3'
 services:
-    acpaas-ui:
+    antwerp-ui:
         build:
             context: .
             dockerfile: Dockerfile.dev

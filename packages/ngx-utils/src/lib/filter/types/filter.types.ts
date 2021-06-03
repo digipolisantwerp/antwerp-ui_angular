@@ -1,5 +1,5 @@
-import {EventEmitter, OnInit} from '@angular/core';
-import {Filter} from '../classes/filter.class';
+import { EventEmitter, OnInit } from '@angular/core';
+import { Filter } from '../classes/filter.class';
 
 export interface FilterComponent extends OnInit {
   filter: Filter;

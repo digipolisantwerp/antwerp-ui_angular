@@ -1,9 +1,9 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {WindowModule} from '@acpaas-ui/ngx-utils';
-import {GTM_CONFIG, GTM_CONFIG_DEFAULT} from './analytics.conf';
-import {GaEventDirective} from './directives/event.directive';
-import {GAService} from './services/ga.service';
-import {GTMService} from './services/gtm.service';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { WindowModule } from '@acpaas-ui/ngx-utils';
+import { GTM_CONFIG, GTM_CONFIG_DEFAULT } from './analytics.conf';
+import { GaEventDirective } from './directives/event.directive';
+import { GAService } from './services/ga.service';
+import { GTMService } from './services/gtm.service';
 
 @NgModule({
   imports: [

@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {Filter} from '../classes/filter.class';
+import { Filter } from '../classes/filter.class';
 
 @Injectable()
 export class FilterService {

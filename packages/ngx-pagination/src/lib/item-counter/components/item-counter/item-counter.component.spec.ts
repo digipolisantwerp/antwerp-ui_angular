@@ -1,13 +1,13 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import {InterpolateLabelPipe, PluralizeLabelPipe} from '@acpaas-ui/ngx-utils';
+import { InterpolateLabelPipe, PluralizeLabelPipe } from '@acpaas-ui/ngx-utils';
 
-import {ITEM_COUNTER_LABEL} from '../../item-counter.conf';
+import { ITEM_COUNTER_LABEL } from '../../item-counter.conf';
 
-import {ItemCounterComponent} from './item-counter.component';
+import { ItemCounterComponent } from './item-counter.component';
 
 describe('The ItemCounterComponent', () => {
   let comp: ItemCounterComponent;

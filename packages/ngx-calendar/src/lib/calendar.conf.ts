@@ -1,5 +1,5 @@
-import {InjectionToken} from '@angular/core';
-import {MonthLabelsConfig, WeekdayLabelsConfig} from './types/calendar.types';
+import { InjectionToken } from '@angular/core';
+import { MonthLabelsConfig, WeekdayLabelsConfig } from './types/calendar.types';
 
 export const CALENDAR_DEFAULT_WEEKDAY_LABELS = [
   'Maandag',

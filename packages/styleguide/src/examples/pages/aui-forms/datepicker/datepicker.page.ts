@@ -1,10 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
-import * as _moment from 'moment';
-
-const Moment: new (date?) => _moment.Moment = _moment as any;
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { addWeeks } from 'date-fns';
 
 @Component({
   templateUrl: './datepicker.page.html',
@@ -12,7 +10,7 @@ const Moment: new (date?) => _moment.Moment = _moment as any;
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
   public dateForm: FormGroup;
   public min = new Date();
-  public max = (new Moment()).add(2, 'weeks').toDate();
+  public max = addWeeks(new Date(), 2);
   public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-forms';
 
 @NgModule({
@@ -32,12 +30,13 @@ export class AppModule {};`;
   public datepickerExampleTypescript = `import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { DateRange } from '@acpaas-ui/js-date-utils';
+import { addWeeks } from 'date-fns'; // date-fns is an external library and can be replaced by a library of your choice
 
 constructor(private fb: FormBuilder) { }
 
 // Since we only pass through a min date, the past will be disabled
 public min = new Date();
-public max = (new Moment()).add(2, 'weeks').toDate();
+public max = addWeeks(new Date(), 2);
 public dateForm: FormGroup;
 
 this.dateForm = this.fb.group({

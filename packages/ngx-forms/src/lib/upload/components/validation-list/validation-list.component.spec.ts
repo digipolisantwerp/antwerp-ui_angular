@@ -1,9 +1,10 @@
-import {DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import {ValidationListComponent} from './validation-list.component';
-import {ValidationMessagesService} from '../../services/validation-messages.service';
+import { ValidationListComponent } from './validation-list.component';
+import { ValidationMessagesService } from '../../services/validation-messages.service';
 
 class MockValidationMessagesService {
   public INVALID_FILE_TYPE = 'INVALID_FILE_TYPE_test';
@@ -20,6 +21,9 @@ describe('The validation list Component', () => {
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        IconModule
+      ],
       declarations: [
         ValidationListComponent,
       ],

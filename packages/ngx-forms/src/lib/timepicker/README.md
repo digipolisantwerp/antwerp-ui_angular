@@ -10,7 +10,7 @@ import { TimepickerModule } from '@acpaas-ui/ngx-forms';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### API
 

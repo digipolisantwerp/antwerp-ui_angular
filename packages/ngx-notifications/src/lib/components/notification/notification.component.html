@@ -1,6 +1,7 @@
 <div class="m-alert" [style.display]="state.value === 'inactive' ? 'none' : ''">
-  <button class="a-button-transparent has-icon m-alert__close" *ngIf="options.closeButton" (click)="remove()"><span
-    class="fa fa-close" aria-label="Close"></span></button>
+  <button class="a-button-transparent has-icon m-alert__close" *ngIf="options.closeButton" (click)="remove()">
+    <aui-icon name="ai-close" ariaLabel="Sluiten"></aui-icon>
+  </button>
   <h1 *ngIf="title" [class]="options.titleClass + ' h5 u-margin-bottom-xs'">
     {{ title }}
   </h1>

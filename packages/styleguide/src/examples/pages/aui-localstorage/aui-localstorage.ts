@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {LocalstorageService} from '../../../../../ngx-localstorage/src/public-api';
+import { Component } from '@angular/core';
+import { LocalstorageService } from '../../../../../ngx-localstorage/src/public-api';
 
 @Component({
   templateUrl: './aui-localstorage.html',

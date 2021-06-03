@@ -10,7 +10,7 @@ import { FlyoutButtonModule } from '@acpaas-ui/ngx-flyout';
 
 ## Documentation
 
-Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to docs and guidelines
+Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ### Flyout button module
 
@@ -19,7 +19,7 @@ Visit our [documentation site](https://acpaas-ui.digipolis.be/) for full how-to 
 | Name         | Default value | Description |
 | -----------  | ------ | -------------------------- |
 | `@Input() align: string;` | `'left'` | The alignment of the flyout-zone. This can be `'left'` or `'right'` |
-| `@Input() icon: string;` | empty | Add a Font Awesome icon to the button. |
+| `@Input() icon: string;` | empty | Add a Streamline icon to the button. |
 | `@Input() label: string;` | empty | Add a label to the button. |
 | `@Input() title: string;` | empty | Add a title attribute to the button. |
 | `@Input() buttonSize: FlyoutButtonSize;` | `FlyoutButtonSize.Auto` | Defines the size of the flyout button, use it with a string or with the ButtonSize enum. Available options are `FlyoutButtonSize.Tiny`, `FlyoutButtonSize.Small`, `FlyoutButtonSize.Regular` and `FlyoutButtonSize.Large`. |
@@ -52,7 +52,7 @@ export class AppModule {};`
 
 ```html
     <aui-flyout-button
-        icon="fa fa-user"
+        icon="ai-single-neutral"
         label="Open flyout"
         data-align="right"
         title="Click to open!"

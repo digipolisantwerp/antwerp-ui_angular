@@ -1,6 +1,6 @@
-import {Inject, Pipe, PipeTransform} from '@angular/core';
+import { Inject, Pipe, PipeTransform } from '@angular/core';
 
-import {DEFAULT_MONTH_LABELS, MONTH_LABELS} from '../agenda.conf';
+import { DEFAULT_MONTH_LABELS, MONTH_LABELS } from '../agenda.conf';
 
 @Pipe({
   name: 'monthPipe',

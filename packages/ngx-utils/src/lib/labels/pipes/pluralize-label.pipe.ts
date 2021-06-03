@@ -1,6 +1,6 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-import {Label} from '../types/labels.types';
+import { Label } from '../types/labels.types';
 
 @Pipe({
   name: 'pluralizeLabel',

@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, HostBinding, Inject, Input, OnChanges, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Inject, Input, OnChanges, OnInit } from '@angular/core';
 
-import {ITEM_COUNTER_LABEL} from '../../item-counter.conf';
+import { ITEM_COUNTER_LABEL } from '../../item-counter.conf';
 
 @Component({
   selector: 'aui-item-counter',
