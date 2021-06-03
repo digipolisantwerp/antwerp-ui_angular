@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [5.0.0] - 2021-06-02
+
 ### Added
 - [BREAKING] `icon` New component that completely replaces FontAwesome icons with Streamline icons
 - `flyout` Improved accessibility for Leaflet component
@@ -368,7 +371,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.1...v5.0.0
 [4.6.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.5.2...v4.6.0
 [4.6.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.5.2...v4.6.0
