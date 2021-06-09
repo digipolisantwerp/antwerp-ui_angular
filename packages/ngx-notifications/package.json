@@ -6,6 +6,7 @@
     "@angular/core": "^8.2.14"
   },
   "dependencies": {
+    "@acpaas-ui/ngx-icon": "^5.0.0",
     "ngx-toastr": "^11.3.3"
   },
   "gitHead": "e626d267cd3a71ed35172a1a6d6b41e91c175d84"

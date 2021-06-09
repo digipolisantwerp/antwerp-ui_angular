@@ -5,6 +5,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@acpaas-ui/ngx-icon": "^5.0.0",
     "@acpaas-ui/ngx-utils": "^5.0.0"
   },
   "peerDependencies": {

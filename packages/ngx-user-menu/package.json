@@ -5,7 +5,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-flyout": "^5.0.0"
+    "@acpaas-ui/ngx-flyout": "^5.0.0",
+    "@acpaas-ui/ngx-icon": "^5.0.0"
   },
   "peerDependencies": {
     "@angular/common": ">=8.2.14",
