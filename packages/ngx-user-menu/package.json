@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-user-menu",
-  "version": "5.0.1",
+  "version": "5.0.0",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-flyout": "^5.0.1",
+    "@acpaas-ui/ngx-flyout": "^5.0.0",
     "@acpaas-ui/ngx-icon": "^5.0.0"
   },
   "peerDependencies": {
