@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
-## [5.0.1] - 2021-06-xx
+## [5.0.1] - 2021-06-10
 
 ### Fixed
 - Added missing dependencies in some packages
@@ -377,7 +377,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.1...HEAD
+[5.0.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.1...v5.0.0
 [4.6.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.5.2...v4.6.0
