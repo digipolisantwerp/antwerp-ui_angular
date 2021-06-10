@@ -5,7 +5,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/js-date-utils": "~1.0.1",
+    "@acpaas-ui/js-date-utils": "~2.0.0",
+    "@acpaas-ui/ngx-icon": "^5.0.0",
     "lodash-es": "~4.17.10"
   },
   "peerDependencies": {

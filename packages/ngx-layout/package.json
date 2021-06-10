@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@acpaas-ui/ngx-calendar": "^5.0.0",
+    "@acpaas-ui/ngx-icon": "^5.0.0",
     "@acpaas-ui/ngx-flyout": "^5.0.0",
     "@acpaas-ui/ngx-progress-bar": "^5.0.0",
     "@acpaas-ui/ngx-selectable-list": "^5.0.0",

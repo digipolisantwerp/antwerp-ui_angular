@@ -4,6 +4,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "@acpaas-ui/ngx-icon": "^5.0.0"
+  },
   "peerDependencies": {
     "@angular/common": ">=8.2.14",
     "@angular/core": ">=8.2.14",

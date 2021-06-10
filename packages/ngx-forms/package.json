@@ -5,11 +5,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/js-date-utils": "~1.0.1",
+    "@acpaas-ui/js-date-utils": "~2.0.0",
     "@acpaas-ui/ngx-calendar": "^5.0.0",
     "@acpaas-ui/ngx-flyout": "^5.0.0",
+    "@acpaas-ui/ngx-icon": "^5.0.0",
     "@acpaas-ui/ngx-progress-bar": "^5.0.0",
     "@acpaas-ui/ngx-selectable-list": "^5.0.0",
+    "@acpaas-ui/ngx-utils": "^5.0.0",
     "inputmask": "~5.0.3",
     "lodash-es": "~4.17.10",
     "ng2-ckeditor": "~1.2.0"
