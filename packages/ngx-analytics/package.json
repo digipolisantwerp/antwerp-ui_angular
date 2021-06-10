@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-analytics",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-utils": "^5.0.0"
+    "@acpaas-ui/ngx-utils": "^5.0.1"
   },
   "peerDependencies": {
     "@angular/common": ">=8.2.14",
