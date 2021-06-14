@@ -5,6 +5,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@acpaas-ui/ngx-flyout": "^5.0.0",
     "@acpaas-ui/ngx-icon": "^5.0.0",
     "esri-leaflet": "^2.1.4",
     "leaflet": "^1.3.1",
