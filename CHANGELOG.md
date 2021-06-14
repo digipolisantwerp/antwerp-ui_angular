@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [5.0.2] - 2021-06-14
+
+### Fixed
+- Added missing flyout dependency in ngx-leaflet component
+
+
 ## [5.0.1] - 2021-06-10
 
 ### Fixed
@@ -377,7 +383,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.2...HEAD
+[5.0.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.1...v5.0.0
 [4.6.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.0...v4.6.1
