@@ -8,16 +8,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [5.0.3] - 2021-07-30
+
+### Fixed
+- `forms` Fixed an issue where the same file couldn't be added again after removing it from the upload queue.
+
+
 ## [5.0.2] - 2021-06-14
 
 ### Fixed
-- Added missing flyout dependency in ngx-leaflet component
+- `leaflet` Added missing flyout dependency in ngx-leaflet component
 
 
 ## [5.0.1] - 2021-06-10
 
 ### Fixed
-- Added missing dependencies in some packages
+- `core` Added missing dependencies in some packages
 
 
 ## [5.0.0] - 2021-06-02
@@ -383,7 +389,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.3...HEAD
+[5.0.3]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.2...v5.0.3
 [5.0.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v4.6.1...v5.0.0
