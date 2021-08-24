@@ -2,9 +2,9 @@
   <div class="m-upload__inner">
     <div class="m-upload__dropzone">
       <input #fileInput (change)="updateFiles()" *ngIf="multiple" [attr.aria-labelledby]="ariaId" [disabled]="disabled" [id]="id"
-             class="m-upload__input" multiple type="file">
+             class="m-upload__input" multiple type="file" (click)="onFileClick($event)">
       <input #fileInput (change)="updateFiles()" *ngIf="!multiple" [attr.aria-labelledby]="ariaId" [disabled]="disabled"
-             [id]="id" class="m-upload__input" type="file">
+             [id]="id" class="m-upload__input" type="file" (click)="onFileClick($event)">
 
       <div *ngIf="!uploadProgress || uploadProgress === 0" class="m-upload__content">
         <p [id]="ariaId" class="m-upload__message">

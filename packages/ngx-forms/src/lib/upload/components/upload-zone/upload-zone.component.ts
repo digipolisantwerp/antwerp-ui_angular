@@ -53,6 +53,12 @@ export class UploadZoneComponent {
     this.handleFiles(files);
   }
 
+  public onFileClick(event) {
+    // When removing a file make sure you can add it again later
+    // See: https://stackoverflow.com/questions/59870335/ng2-file-upload-not-allowing-me-to-add-same-doc-after-ive-removed-it-from-que
+    event.target.value = '';
+  }
+
   protected handleFiles(files) {
     const response = this.uploader.validateFiles(files);
     this.invalidFiles.emit(response.invalidFiles);
