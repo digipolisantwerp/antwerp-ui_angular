@@ -65,9 +65,9 @@ export class UploadZoneComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if (this.multiple !== false) this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', 'multiple');
-    if (this.accept) this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join());
-    if (this.disabled) this.renderer.setProperty(this.fileInput.nativeElement, 'disabled', 'disabled');
+    if (this.multiple !== false) { this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', 'multiple'); }
+    if (this.accept) { this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join()); }
+    if (this.disabled) { this.renderer.setProperty(this.fileInput.nativeElement, 'disabled', 'disabled'); }
   }
 
   protected handleFiles(files) {
