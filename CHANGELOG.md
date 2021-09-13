@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [5.1.0] - 2021-09-14
+
+### Added
+- `forms` Added the 'accept' attribute for file inputs.
+
+### Fixed
+- `forms` Fixed an issue where some input properties weren't passed by the main upload component.
+
+
 ## [5.0.3] - 2021-07-30
 
 ### Fixed
@@ -389,7 +398,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.3...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.0...HEAD
+[5.1.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.3...v5.1.0
 [5.0.3]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.2...v5.0.3
 [5.0.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.0...v5.0.1
