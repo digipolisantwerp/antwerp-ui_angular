@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [4.6.2] - 2021-09-29
+
+### Added
+- `forms` Added the 'accept' attribute for file inputs.
+
+### Fixed
+- `forms` Fixed an issue where some input properties weren't passed by the main upload component.
+
+
 ## [4.6.1] - 2021-02-04
 
 ### Fixed
@@ -356,7 +365,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.2...HEAD
+[4.6.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.1...v4.6.2
 [4.6.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.2...v4.6.0
 [4.6.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.2...v4.6.0

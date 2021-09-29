@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2, ViewChild} from '@angular/core';
 
 import {InvalidFile} from '../../types/upload.types';
 import {Uploader} from '../../classes/uploader.class';
@@ -7,7 +7,7 @@ import {Uploader} from '../../classes/uploader.class';
   selector: 'aui-upload-zone',
   templateUrl: './upload-zone.component.html',
 })
-export class UploadZoneComponent {
+export class UploadZoneComponent implements AfterViewInit {
   @ViewChild('fileInput', {static: false}) fileInput: ElementRef;
 
   @Input() public uploader: Uploader;
@@ -15,6 +15,7 @@ export class UploadZoneComponent {
   @Input() public multiple = true;
   @Input() public id = '';
   @Input() public ariaId = '';
+  @Input() public accept = [];
   @Output() public uploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
   @Output() public queuedFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
   @Output() public invalidFiles: EventEmitter<InvalidFile[]> = new EventEmitter<InvalidFile[]>();
@@ -23,6 +24,10 @@ export class UploadZoneComponent {
   public classNames: string;
   public uploadProgress = 0;
   public uploadingFiles: File[];
+
+  constructor(
+    private renderer: Renderer2,
+  ) {}
 
   @HostListener('dragover', ['$event'])
   public onDragOver(event: any): void {
@@ -51,6 +56,12 @@ export class UploadZoneComponent {
   public updateFiles() {
     const files: any[] = this.fileListToArray(this.fileInput.nativeElement.files);
     this.handleFiles(files);
+  }
+  
+  ngAfterViewInit() {
+    if (this.multiple !== false) { this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', 'multiple'); }
+    if (this.accept) { this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join()); }
+    if (this.disabled) { this.renderer.setProperty(this.fileInput.nativeElement, 'disabled', 'disabled'); }
   }
 
   protected handleFiles(files) {
