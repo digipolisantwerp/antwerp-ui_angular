@@ -8,7 +8,8 @@
         class="m-upload__input"
         [id]="id"
         [attr.aria-labelledby]="ariaId"
-        (change)="updateFiles()">
+        (change)="updateFiles()"
+        (click)="onFileClick($event)">
 
       <div *ngIf="!uploadProgress || uploadProgress === 0" class="m-upload__content">
         <p [id]="ariaId" class="m-upload__message">
@@ -42,5 +43,6 @@
     class="m-upload__input"
     [id]="id"
     [attr.aria-labelledby]="ariaId"
-    (change)="updateFiles()">
+    (change)="updateFiles()"
+    (click)="onFileClick($event)">
 </button>

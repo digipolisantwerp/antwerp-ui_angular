@@ -40,9 +40,6 @@ export class FormsUploadDemoPageComponent {
 });
 
 export class AppModule {};`;
-
-//   public uploadExampleJS1 = `public dropzone1: UploadOptions = {
-// 	allowedMimeTypes: ['image/jpeg'],
 	public uploadExampleJS1 = `public accept = ['image/*'];
 	public dropzone1: UploadOptions = {
 	allowedMimeTypes: ['image/jpeg', 'image/gif', 'image/png'],
