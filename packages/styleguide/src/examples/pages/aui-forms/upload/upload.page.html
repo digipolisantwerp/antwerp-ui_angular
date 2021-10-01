@@ -20,7 +20,7 @@
 
 <div class="u-margin-bottom-lg">
   <label class="a-input__label" for="my-upload">Upload files</label>
-  <aui-upload (selectUploadedFiles)="onUpload($event)" [options]="dropzone1" data-id="my-upload">
+  <aui-upload (selectUploadedFiles)="onUpload($event)" [options]="dropzone1" data-id="my-upload" [accept]="accept">
     <div class="m-upload__message">
       Drag your files here or click to upload
     </div>

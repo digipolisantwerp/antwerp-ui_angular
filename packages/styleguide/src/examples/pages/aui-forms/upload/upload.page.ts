@@ -6,6 +6,7 @@ import { InvalidFile, Uploader, UploadOptions } from '../../../../../../ngx-form
 })
 export class FormsUploadDemoPageComponent {
   public files = [];
+  public accept = ['image/*'];
   public invalidFiles: InvalidFile[] = [];
   public queuedFiles: File[] = [];
   public uploadedFiles: File[] = [];
@@ -17,7 +18,7 @@ export class FormsUploadDemoPageComponent {
   public fileName = '';
 
   public dropzone1: UploadOptions = {
-    allowedMimeTypes: ['image/jpeg'],
+    allowedMimeTypes: ['image/jpeg', 'image/gif', 'image/png'],
     maxFileSize: 10000000,
     queueLimit: 2,
     type: 'drop',
@@ -40,8 +41,9 @@ export class FormsUploadDemoPageComponent {
 
 export class AppModule {};`;
 
-  public uploadExampleJS1 = `public dropzone1: UploadOptions = {
-	allowedMimeTypes: ['image/jpeg'],
+  public uploadExampleJS1 = `public accept = ['image/*'];
+public dropzone1: UploadOptions = {
+	allowedMimeTypes: ['image/jpeg', 'image/gif', 'image/png'],
 	maxFileSize: 10000000,
 	queueLimit: 2,
 	type: 'drop',
@@ -51,6 +53,7 @@ export class AppModule {};`;
   public uploadExampleHTML1 = `<label class="a-input__label" for="my-upload">Upload files</label>
 <aui-upload
 	data-id="my-upload"
+  [accept]="accept"
 	[options]="dropzone1"
 	(selectUploadedFiles)="onUpload($event)">
 	<div class="m-upload__message">
