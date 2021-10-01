@@ -38,6 +38,8 @@ This component wraps the `upload-zone`, `upload-queue` and `validation-list`, it
 | `@Input() data-id: string;` | `''` | An id that can be used in combination with a label's for attribute. |
 | `@Input() ariaLabelRemove: string;` | `'Verwijder'` | The 'delete' text that is used for screenreaders. |
 | `@Input() disabled: boolean;` | `false` | Optional attribute to set the upload and the upload zone disabled. |
+| `@Input() multiple: boolean;` | `true` | Optional attribute to restrict the number of uploaded files to be selected. |
+| `@Input() accept: boolean;` | `true` | Optional accept attribute to define the type of files that can be selected. |
 | `@Output() selectUploadedFiles: EventEmitter<Object[]>` | - | On a successful upload, this will emit the response of the backend. This should be an array of objects with the uploaded filename and url. |
 
 #### `<aui-upload-zone>`
@@ -50,6 +52,8 @@ This component provides the upload functionality.
 | `@Input() id: string;` | `''` | An id that can be used in combination with a label's for attribute. |
 | `@Input() ariaId: string;` | `[random id when no id was given]` | An id that can be used when you don't want a visible label. |
 | `@Input() disabled: boolean;` | `false` | Optional attribute to set the upload zone disabled. |
+| `@Input() multiple: boolean;` | `true` | Optional attribute to restrict the number of uploaded files to be selected. |
+| `@Input() accept: boolean;` | `true` | Optional accept attribute to define the type of files that can be selected. |
 | `@Output() uploadedFiles: EventEmitter<Object[]>;` | - | Emits an array of files that were uploaded. |
 | `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of file objects that have past the validation and are ready to be uploaded. |
 | `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | - | Emits an array of invalid files and the reason why they are invalid. |

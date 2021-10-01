@@ -13,8 +13,10 @@ import {Uploader} from '../../classes/uploader.class';
 })
 export class UploadComponent implements OnInit {
   @Input() public id = '';
+  @Input() public accept = [];
   @Input() public ariaLabelRemove = 'Verwijder';
   @Input() public disabled = false;
+  @Input() public multiple = true;
   @Input() public options: UploadOptions = UPLOAD_OPTIONS_DEFAULT;
   @Output() public selectUploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
 
