@@ -57,7 +57,13 @@ export class UploadZoneComponent implements AfterViewInit {
     const files: any[] = this.fileListToArray(this.fileInput.nativeElement.files);
     this.handleFiles(files);
   }
-  
+
+  public onFileClick(event) {
+    // When removing a file make sure you can add it again later
+    // See: https://stackoverflow.com/questions/59870335/ng2-file-upload-not-allowing-me-to-add-same-doc-after-ive-removed-it-from-que
+    event.target.value = '';
+  }
+
   ngAfterViewInit() {
     if (this.multiple !== false) { this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', 'multiple'); }
     if (this.accept) { this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join()); }
