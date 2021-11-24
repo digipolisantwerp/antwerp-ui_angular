@@ -66,14 +66,14 @@ describe('Flyout action directive without flyout zone', () => {
 
   it('should open and close on mousedown', () => {
     spyOn(comp.element, 'open');
-    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation: function() {}});
+    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation() {}});
     expect(comp.element.open).toHaveBeenCalled();
 
     comp.element.flyout.open();
     comp.element.flyout.toggleClick = true;
 
     spyOn(comp.element, 'close');
-    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation: function() {}});
+    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation() {}});
     expect(comp.element.close).toHaveBeenCalled();
 
     const response = comp.element.onFocus();
@@ -100,7 +100,7 @@ describe('Flyout action directive without flyout zone', () => {
     comp.element.open();
     componentDebugElement.triggerEventHandler('mousedown', {
       relatedTarget: fixture.debugElement.query(By.css('.dummyButton')).nativeElement,
-      stopImmediatePropagation: function() {},
+      stopImmediatePropagation() {},
     });
     expect(comp.element.flyout.close).toHaveBeenCalled();
   });
