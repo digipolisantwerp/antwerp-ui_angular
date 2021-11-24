@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+- `flyout` Fixed flyouts being closed when another one was already open.
+- `flyout` Fixed flyouts being closed when long-pressing its trigger.
+
 
 ## [5.1.0] - 2021-09-14
 
