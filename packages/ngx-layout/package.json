@@ -1,12 +1,12 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "5.0.1",
+  "version": "5.1.1",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "@acpaas-ui/ngx-calendar": "^5.0.1",
-    "@acpaas-ui/ngx-flyout": "^5.0.1",
+    "@acpaas-ui/ngx-flyout": "^5.1.1",
     "@acpaas-ui/ngx-icon": "^5.0.0",
     "@acpaas-ui/ngx-progress-bar": "^5.0.0",
     "@acpaas-ui/ngx-selectable-list": "^5.0.0",
