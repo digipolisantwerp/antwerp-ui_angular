@@ -64,16 +64,16 @@ describe('Flyout action directive without flyout zone', () => {
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
-  it('should open and close onClick', () => {
+  it('should open and close on mousedown', () => {
     spyOn(comp.element, 'open');
-    comp.element.onClick();
+    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation() {}});
     expect(comp.element.open).toHaveBeenCalled();
 
     comp.element.flyout.open();
     comp.element.flyout.toggleClick = true;
 
     spyOn(comp.element, 'close');
-    comp.element.onClick();
+    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation() {}});
     expect(comp.element.close).toHaveBeenCalled();
 
     const response = comp.element.onFocus();
@@ -98,8 +98,9 @@ describe('Flyout action directive without flyout zone', () => {
   it('should close on blur if relatedTarget is outside closable zone', () => {
     spyOn(comp.element.flyout, 'close');
     comp.element.open();
-    componentDebugElement.triggerEventHandler('click', {
+    componentDebugElement.triggerEventHandler('mousedown', {
       relatedTarget: fixture.debugElement.query(By.css('.dummyButton')).nativeElement,
+      stopImmediatePropagation() {},
     });
     expect(comp.element.flyout.close).toHaveBeenCalled();
   });
