@@ -1,0 +1,30 @@
+@import '~@a-ui/core/dist/assets/styles/quarks';
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+}
+
+.selected {
+  background-color: $selection-color;
+  overflow: hidden;
+  border: 3px solid $brand-primary;
+
+  .selectable-image {
+    opacity: 0.3;
+  }
+}
+
+.selectable-image {
+  object-fit: cover;
+  max-width: 100%;
+}

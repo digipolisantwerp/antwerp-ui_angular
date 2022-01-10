@@ -1,0 +1,10 @@
+<div class="grid-container">
+  <div class="choice"
+    (click)="toggleSelected(choice.key)"
+    *ngFor="let choice of choices;"
+    [ngClass]="selectedImageKeys.indexOf(choice.key) >= 0 ? 'selected' : ''"
+  >
+    <img [src]="choice.url" [alt]="choice.alt" class="m-image selectable-image">
+    <p>{{ choice.label }}</p>
+  </div>
+</div>
