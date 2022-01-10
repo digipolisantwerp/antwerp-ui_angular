@@ -37,6 +37,7 @@ import { UtilsWindowDemoPageComponent } from './pages/aui-utils/window/window.pa
 import { LeafletDemoPageComponent } from './pages/aui-leaflet/aui-leaflet.page';
 import { IntervalPageComponent } from './pages/aui-utils/interval/interval.page';
 import { NotificationsPageDemoComponent } from './pages/aui-notifications/aui-notifications.page';
+import { ImageSelectDemoPageComponent } from './pages/aui-forms/image-select/image-select.page';
 
 export const EXAMPLES_ROUTES: Routes = [
   {
@@ -139,6 +140,12 @@ export const EXAMPLES_ROUTES: Routes = [
         pathMatch: 'full',
         component: FormsWysiwygDemoPageComponent,
         data: {meta: {title: 'WYSIWYG'}},
+      },
+      {
+        path: 'image-select',
+        pathMatch: 'full',
+        component: ImageSelectDemoPageComponent,
+        data: {meta: {title: 'Image Select'}},
       },
     ],
   },

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [5.1.0] - 2022-01-10
+
+### Added
+- `forms: image-select` Added the image-select component.
+
 
 ## [5.1.1] - 2021-11-30
 
