@@ -24,15 +24,21 @@ export class AppModule {};`;
       url: 'url to image here'
     },
     {
-      label: 'Apple',
-      key: 'apple',
-      alt: 'Apple',
+      label: 'Lemon',
+      key: 'lemon',
+      alt: 'Lemon',
       url: 'url to image here'
       },
     {
-      label: 'Raspberry',
-      key: 'raspberry',
-      alt: 'Raspberry',
+      label: 'Orange',
+      key: 'orange',
+      alt: 'Orange',
+      url: 'url to image here'
+     },
+     {
+      label: 'Watermelon',
+      key: 'watermelon',
+      alt: 'Watermelon',
       url: 'url to image here'
      },
   ];
@@ -59,21 +65,28 @@ export class AppModule {};`;
       key: 'kiwi',
       alt: 'Kiwi',
       // tslint:disable-next-line:max-line-length
-      url: 'https://images.unsplash.com/photo-1591796079433-7f41b45eb95c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2004&q=80'
+      url: 'https://images.unsplash.com/photo-1587334106914-b90ecebe9845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80'
     },
     {
-      label: 'Apple',
-      key: 'apple',
-      alt: 'Apple',
+      label: 'Lemon',
+      key: 'lemon',
+      alt: 'lemon',
       // tslint:disable-next-line:max-line-length
-      url: 'https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+      url: 'https://images.unsplash.com/flagged/photo-1587302164675-820fe61bbd55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80'
     },
     {
-      label: 'Raspberry',
-      key: 'raspberry',
-      alt: 'Raspberry',
+      label: 'Orange',
+      key: 'orange',
+      alt: 'Orange',
       // tslint:disable-next-line:max-line-length
-      url: 'https://images.unsplash.com/photo-1577069861033-55d04cec4ef5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
+      url: 'https://images.unsplash.com/photo-1587735243615-c03f25aaff15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80'
+    },
+    {
+      label: 'Watermelon',
+      key: 'watermelon',
+      alt: 'Watermelon',
+      // tslint:disable-next-line:max-line-length
+      url: 'https://images.unsplash.com/photo-1581074817932-af423ba4566e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80'
     }
   ];
   public selectedImageKeys: string[] = [];
@@ -82,6 +95,6 @@ export class AppModule {};`;
   prettyPrint(selectedImageKeys: string[]): string {
     return selectedImageKeys
       .map(selected => this.fruits.find(fruit => fruit.key === selected).label)
-      .toString();
+      .join(', ');
   }
 }

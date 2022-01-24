@@ -1,10 +1,15 @@
-<div class="grid-container">
-  <div class="choice"
-    (click)="toggleSelected(choice.key)"
-    *ngFor="let choice of choices;"
-    [ngClass]="selectedImageKeys.indexOf(choice.key) >= 0 ? 'selected' : ''"
-  >
-    <img [src]="choice.url" [alt]="choice.alt" class="m-image selectable-image">
-    <p>{{ choice.label }}</p>
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 u-margin-bottom-xs"
+       *ngFor="let choice of choices; let i = index">
+
+    <input [id]="'option-' + i"
+           type="checkbox"
+           (change)="toggleSelected(choice, $event)"
+           [disabled]="isDisabled"/>
+    <label [for]="'option-' + i">
+      <img [src]="choice.url" [alt]="choice.alt" class="m-image">
+      <p>{{ choice.label }}</p>
+    </label>
+
   </div>
 </div>

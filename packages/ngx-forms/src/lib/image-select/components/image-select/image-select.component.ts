@@ -1,13 +1,11 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, HostBinding, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ImageSelectChoice } from '../../types/image-select.types';
 
 @Component({
   selector: 'aui-image-select',
   templateUrl: './image-select.component.html',
-  styleUrls: [
-    './image-select.component.scss',
-  ],
+  styleUrls: ['./image-select.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => ImageSelectComponent),
@@ -25,6 +23,10 @@ export class ImageSelectComponent implements ControlValueAccessor, OnInit {
     if (this.maxSelectable === undefined) {
       this.maxSelectable = this.choices.length;
     }
+  }
+
+  @HostBinding('class.is-max-checked') get maxCheckedClass(): boolean {
+    return this.isMaxNumberSelected();
   }
 
   public updateModel: (_) => any = () => {
@@ -45,20 +47,36 @@ export class ImageSelectComponent implements ControlValueAccessor, OnInit {
     this.selectedImageKeys = Array.isArray(value) ? value : [];
   }
 
-  toggleSelected(keyOfChoice: string) {
-    if (!this.isDisabled) {
-      const selected = this.selectedImageKeys.indexOf(keyOfChoice);
-      if (selected < 0 && this.selectedImageKeys.length < this.maxSelectable) {
-        this.selectedImageKeys = this.selectedImageKeys.concat(keyOfChoice);
-        this.updateModel(this.selectedImageKeys);
-      } else if (selected >= 0) {
-        this.selectedImageKeys = [
-          ...this.selectedImageKeys.slice(0, selected),
-          ...this.selectedImageKeys.slice(selected + 1),
-        ];
-        this.updateModel(this.selectedImageKeys);
-      }
+  toggleSelected(choice: ImageSelectChoice, $event: any): void {
+    if (this.isSelected(choice)) {
+      this.unselect(choice);
+    } else if (!this.isMaxNumberSelected()) {
+      this.select(choice);
+    } else {
+      // Uncheck checkbox when max number of selections made
+      $event.target.checked = false;
     }
   }
 
+  private isSelected(choice: ImageSelectChoice): boolean {
+    return !!this.selectedImageKeys.find(selectedKey => selectedKey === choice.key);
+  }
+
+  private isMaxNumberSelected(): boolean {
+    return this.selectedImageKeys.length === this.maxSelectable;
+  }
+
+  private unselect(choice: ImageSelectChoice): void {
+    const index = this.selectedImageKeys.indexOf(choice.key);
+    this.selectedImageKeys = [
+      ...this.selectedImageKeys.slice(0, index),
+      ...this.selectedImageKeys.slice(index + 1),
+    ];
+    this.updateModel(this.selectedImageKeys);
+  }
+
+  private select(choice: ImageSelectChoice): void {
+    this.selectedImageKeys = this.selectedImageKeys.concat(choice.key);
+    this.updateModel(this.selectedImageKeys);
+  }
 }
