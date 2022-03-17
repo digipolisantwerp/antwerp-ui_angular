@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
-
+### Fixed
+- `leaflet` Fixed webpack 5 import errors on esri-leaflet package.
 
 ## [5.1.1] - 2021-11-30
 

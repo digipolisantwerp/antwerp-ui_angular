@@ -45,7 +45,7 @@
     "@ngrx/store": "^8.6.0",
     "@ngrx/store-devtools": "^8.6.0",
     "angular2-highlight-js": "^5.0.2",
-    "esri-leaflet": "^2.5.1",
+    "esri-leaflet": "^3.0.2",
     "hammerjs": "^2.0.8",
     "highlight.js": "^10.7.2",
     "inputmask": "^5.0.5",
