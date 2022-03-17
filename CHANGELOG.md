@@ -6,8 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
+
+
+## [4.6.3] - 2022-03-17
+
+### Fixed
 - `flyout` Being closed when another one was already open.
 - `flyout` Being closed when long-pressing its trigger.
+- `leaflet` Fixed webpack 5 import errors on esri-leaflet package.
+
 
 ## [4.6.2] - 2021-09-29
 
