@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-leaflet",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "publishConfig": {
     "access": "public"
   },
