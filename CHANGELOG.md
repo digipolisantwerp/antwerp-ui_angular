@@ -6,8 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
+
+
+## [5.1.2] - 2022-03-17
+
 ### Fixed
 - `leaflet` Fixed webpack 5 import errors on esri-leaflet package.
+
 
 ## [5.1.1] - 2021-11-30
 
@@ -406,7 +411,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.2...HEAD
+[5.1.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.1...v5.1.2
 [5.1.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.3...v5.1.0
 [5.0.3]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.2...v5.0.3
