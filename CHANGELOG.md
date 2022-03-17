@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
+- `flyout` Being closed when another one was already open.
+- `flyout` Being closed when long-pressing its trigger.
 
 ## [4.6.2] - 2021-09-29
 

@@ -43,7 +43,7 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
         if (state === FlyoutState.OPEN) {
           setTimeout(() => {
             this.addEventListeners();
-          }, 300); // flyout open delay
+          }, 100); // flyout open delay
         } else {
           this.removeEventListeners();
         }
@@ -59,8 +59,9 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
     }
   }
 
-  @HostListener('click')
-  public onClick(): void {
+  @HostListener('mousedown', ['$event'])
+  public onMousedown(event: MouseEvent): void {
+    event.stopImmediatePropagation();
     if (this.flyout.isOpened && this.flyout.toggleClick) {
       this.close();
     } else {
