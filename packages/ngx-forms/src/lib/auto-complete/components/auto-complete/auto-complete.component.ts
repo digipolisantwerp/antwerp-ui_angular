@@ -44,6 +44,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
   @Input() loadingText: string;
   @Input() noResultsText: string;
   @Input() showAllByDefault = false;
+  @Input() autoComplete = 'off';
 
   // specify which label/value props to use
   @Input() label: string;
