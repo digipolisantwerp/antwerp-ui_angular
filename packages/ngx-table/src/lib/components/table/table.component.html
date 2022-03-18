@@ -11,7 +11,7 @@
           <ng-container *ngIf="activeSorting">
             <button (click)="sort(column, 'asc')" *ngIf="!column.disableSorting && tableHelper.getValue(column) !== activeSorting?.key"
                     class="a-button a-button--tiny a-button--transparent has-icon-right" type="button">
-              {{ tableHelper.getLabel(column) }} <aui-icon name="ai-expand-vertical"></aui-icon>
+              {{ tableHelper.getLabel(column) }} <aui-icon name="ai-expand-vertical-1"></aui-icon>
             </button>
             <button (click)="sort(column, 'asc')"
                     *ngIf="!column.disableSorting && tableHelper.getValue(column) === activeSorting?.key && activeSorting?.order === 'desc'"

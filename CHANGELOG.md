@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+- `table` Fixed wrong reference to sorting icon
+
 
 ## [5.1.2] - 2022-03-17
 
