@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [5.2.0] - 2022-03-18
+
+### Added
+- `autocomplete` Improved accessibility for autocomplete component by making the autocomplete attribute dynamic
+
+### Fixed
+- `table` Fixed wrong reference to sorting icon
+
+
 ## [5.1.2] - 2022-03-17
 
 ### Fixed
@@ -411,7 +420,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.2.0...HEAD
+[5.2.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.2...v5.2.0
 [5.1.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.1...v5.1.2
 [5.1.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.0.3...v5.1.0
