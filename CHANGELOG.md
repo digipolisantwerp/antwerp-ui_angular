@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [4.7.0] - 2022-03-18
+
+### Added
+- `autocomplete` Improved accessibility for autocomplete component by making the autocomplete attribute dynamic
+
+
 ## [4.6.3] - 2022-03-17
 
 ### Fixed
@@ -374,7 +380,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.7.0...HEAD
+[4.7.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.2...v4.7.0
 [4.6.2]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.1...v4.6.2
 [4.6.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.5.2...v4.6.0
