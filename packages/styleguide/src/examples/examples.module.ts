@@ -46,6 +46,7 @@ import { LeafletDemoPageComponent } from './pages/aui-leaflet/aui-leaflet.page';
 import { IntervalPageComponent } from './pages/aui-utils/interval/interval.page';
 import { NotificationsPageDemoComponent } from './pages/aui-notifications/aui-notifications.page';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImageSelectDemoPageComponent } from './pages/aui-forms/image-select/image-select.page';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UtilsWindowDemoPageComponent,
     LeafletDemoPageComponent,
     IntervalPageComponent,
-    NotificationsPageDemoComponent
+    NotificationsPageDemoComponent,
+    ImageSelectDemoPageComponent,
   ],
   imports: [
     AuiModule,

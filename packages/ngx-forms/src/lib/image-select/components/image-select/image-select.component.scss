@@ -1,0 +1,50 @@
+@import '~@a-ui/core/dist/assets/styles/quarks';
+@import '~@a-ui/flexboxgrid/dist/flexboxgrid.min.css';
+
+@keyframes o-image-select__selection-animation {
+  from {
+    border: 3px solid transparent;
+  }
+  to {
+    border: 3px solid $brand-primary;
+    background-color: $selection-color;
+  }
+}
+
+:host {
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    border: 3px solid transparent;
+
+    cursor: pointer;
+
+    img {
+      object-fit: cover;
+      max-width: 100%;
+    }
+  }
+
+  :checked + label {
+    animation: o-image-select__selection-animation $animation-normal;
+
+    border: 3px solid $brand-primary;
+    background-color: $selection-color;
+  }
+
+  :disabled + label,
+  &.is-max-checked :not(:checked) + label{
+    cursor: default;
+  }
+}

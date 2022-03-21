@@ -31,6 +31,7 @@ import { HeroModule, ModalModule, PaneModule, SidebarModule } from '../../../ngx
 import { FilterModule, LabelsModule, WindowModule } from '../../../ngx-utils/src/public-api';
 import { LeafletModule } from '../../../ngx-leaflet/src/public-api';
 import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-notifications.module';
+import { ImageSelectModule } from '../../../ngx-forms/src/lib/image-select/image-select.module';
 
 @NgModule({
   imports: [
@@ -71,6 +72,7 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     TimepickerModule,
     UploadModule,
     WysiwygModule,
+    ImageSelectModule,
     FooterModule,
     HeaderModule,
     HeroModule,
@@ -112,6 +114,7 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     TimepickerModule,
     UploadModule,
     WysiwygModule,
+    ImageSelectModule,
     FooterModule,
     HeaderModule,
     HeroModule,
