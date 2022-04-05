@@ -35,7 +35,9 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+
     const selectedDateChanged = this.hasChanged(changes, 'selectedDate');
+    const intervalChanged = !!changes.interval && changes.interval.currentValue !== changes.interval.previousValue;
     const activeDateChanged = this.hasChanged(changes, 'activeDate');
     const monthChanged = activeDateChanged && !DateHelper.datesAreEqual([
       changes.activeDate.currentValue,
@@ -48,7 +50,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 
     let newDates = [];
 
-    if (selectedDateChanged || (activeDateChanged && monthChanged)) {
+    if (selectedDateChanged || intervalChanged || (activeDateChanged && monthChanged)) {
       newDates = this.calendarService.getMonthForDate(this.activeDate);
     } else {
       return;
