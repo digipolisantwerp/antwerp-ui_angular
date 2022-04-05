@@ -102,7 +102,7 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
             this.onChange(value);
           }
         } else {
-          this.selectedDate = null;
+          this.selectedDate = this.min;
           this.onChange('');
         }
       });
