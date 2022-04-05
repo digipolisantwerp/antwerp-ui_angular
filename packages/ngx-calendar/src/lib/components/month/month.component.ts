@@ -56,7 +56,15 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 
     const range: DateRangeMap | null = this.calendarService.getRangesForDate(this.activeDate, this.range);
     this.dates = newDates.map(week => week.map(day => {
-      const date: Date = (new Date(this.activeDate));
+      const date: Date = new Date(this.activeDate);
+      if (day.padding) {
+        if (day.date > 20) {
+          date.setMonth(this.activeDate.getMonth() - 1);
+        } else {
+          date.setMonth(this.activeDate.getMonth() + 1);
+        }
+      }
+
       date.setDate(day.date);
       const available: boolean = this.dayIsAvailableForRange(day, range) && (this.interval ? !this.interval.isInRange(date) : true);
       return {
