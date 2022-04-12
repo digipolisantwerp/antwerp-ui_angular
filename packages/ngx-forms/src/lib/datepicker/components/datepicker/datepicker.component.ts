@@ -104,7 +104,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
             this.onChange(value);
           }
         } else {
-          this.selectedDate = this.min;
+          this.selectedDate = null;
           this.onChange('');
         }
       });
@@ -113,10 +113,6 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes.min || changes.max) {
        this.createInterval();
-       const hasValue = this.formControl && !!this.formControl.value && this.formControl.value.length > 0;
-       if (!hasValue && changes.min.currentValue) {
-         this.selectedDate = changes.min.currentValue;
-       }
     }
   }
 
