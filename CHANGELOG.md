@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [5.2.1] - 2022-04-13
+
+- `forms` Fixed datepicker min/max interval issues
 
 ## [5.2.0] - 2022-03-18
 
@@ -420,7 +423,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.2.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.2.1...HEAD
+[5.2.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.2.0...v5.2.1
 [5.2.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.2...v5.2.0
 [5.1.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.1...v5.1.2
 [5.1.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.0...v5.1.1
