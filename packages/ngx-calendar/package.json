@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-calendar",
-  "version": "5.0.1",
+  "version": "5.2.1",
   "publishConfig": {
     "access": "public"
   },
