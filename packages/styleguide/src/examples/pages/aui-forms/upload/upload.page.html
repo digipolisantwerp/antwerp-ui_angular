@@ -67,7 +67,7 @@
 </div>
 
 <aui-upload-zone (invalidFiles)="onInvalidFiles($event)" (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" [uploader]="uploader"
-                 ariaId="my-other-upload" multiple=false>
+                 ariaId="my-other-upload" multiple=false [capture]="capture">
   <div class="m-upload__message">
     Drag your files here or click to upload
   </div>

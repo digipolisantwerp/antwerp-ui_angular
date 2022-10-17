@@ -14,6 +14,7 @@ import {Uploader} from '../../classes/uploader.class';
 export class UploadComponent implements OnInit {
   @Input() public id = '';
   @Input() public accept = [];
+  @Input() public capture = '';
   @Input() public ariaLabelRemove = 'Verwijder';
   @Input() public disabled = false;
   @Input() public multiple = true;

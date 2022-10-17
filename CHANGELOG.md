@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [4.8.0] - 2022-03-18
+
+### Added
+- `forms` Added the 'capture' attribute for file inputs.
+
+### Fixed
+- `forms` Improved the working of the 'accept' attribute for file inputs.
+
+
 ## [4.7.1] - 2022-04-12
 
 ### Fixed
@@ -387,7 +396,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.7.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.8.0...HEAD
+[4.8.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.7.1...v4.8.0
 [4.7.1]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.7.0...v4.7.1
 [4.7.0]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.3...v4.7.0
 [4.6.3]: https://github.com/digipolisantwerp/acpaas-ui_angular/compare/v4.6.2...v4.6.3

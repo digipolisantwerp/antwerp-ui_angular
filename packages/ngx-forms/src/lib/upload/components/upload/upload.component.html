@@ -1,6 +1,6 @@
 <div class="m-upload aui-upload">
   <aui-upload-zone (invalidFiles)="onInvalidFiles($event)" (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" [ariaId]="ariaId"
-                   [disabled]="disabled" [id]="id" [accept]="accept" [multiple]="multiple"
+                   [disabled]="disabled" [id]="id" [accept]="accept" [multiple]="multiple" [capture]="capture"
                    [uploader]="uploader">
     <div class="m-upload__message">
       <ng-content select=".m-upload__message"></ng-content>
