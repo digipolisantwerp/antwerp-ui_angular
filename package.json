@@ -51,7 +51,7 @@
     "inputmask": "^5.0.5",
     "leaflet": "^1.7.1",
     "leaflet-draw": "^1.0.4",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "marked": "^0.8.2",
     "ng2-ckeditor": "^1.2.9",
     "ngx-toastr": "^11.3.3",

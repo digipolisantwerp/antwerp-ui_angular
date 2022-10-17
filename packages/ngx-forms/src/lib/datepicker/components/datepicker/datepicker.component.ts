@@ -6,9 +6,11 @@ import {
   forwardRef,
   Inject,
   Input,
+  OnChanges,
   OnDestroy,
   OnInit,
   Output,
+  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -51,7 +53,7 @@ import { Interval, IntervalBuilder } from '@acpaas-ui/ngx-utils';
     multi: true,
   }],
 })
-export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, ControlValueAccessor {
   @ViewChild(FlyoutDirective, {static: true}) flyout: FlyoutDirective;
   @Input() id: string;
   @Input() name: string;
@@ -106,6 +108,12 @@ export class DatepickerComponent implements OnInit, OnDestroy, ControlValueAcces
           this.onChange('');
         }
       });
+  }
+
+  public ngOnChanges(changes: SimpleChanges): void {
+    if (changes.min || changes.max) {
+       this.createInterval();
+    }
   }
 
   public ngOnDestroy(): void {
