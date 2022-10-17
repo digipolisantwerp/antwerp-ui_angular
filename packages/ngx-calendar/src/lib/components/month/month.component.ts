@@ -35,7 +35,9 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+
     const selectedDateChanged = this.hasChanged(changes, 'selectedDate');
+    const intervalChanged = !!changes.interval && changes.interval.currentValue !== changes.interval.previousValue;
     const activeDateChanged = this.hasChanged(changes, 'activeDate');
     const monthChanged = activeDateChanged && !DateHelper.datesAreEqual([
       changes.activeDate.currentValue,
@@ -48,7 +50,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 
     let newDates = [];
 
-    if (selectedDateChanged || (activeDateChanged && monthChanged)) {
+    if (selectedDateChanged || intervalChanged || (activeDateChanged && monthChanged)) {
       newDates = this.calendarService.getMonthForDate(this.activeDate);
     } else {
       return;
@@ -56,8 +58,20 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 
     const range: DateRangeMap | null = this.calendarService.getRangesForDate(this.activeDate, this.range);
     this.dates = newDates.map(week => week.map(day => {
-      const date: Date = (new Date(this.activeDate));
+      const currentDate = new Date();
+      this.activeDate.setHours(currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds());
+      const date: Date = new Date(this.activeDate);
+
+      if (day.padding) {
+        if (day.date > 20) {
+          date.setMonth(this.activeDate.getMonth() - 1);
+        } else {
+          date.setMonth(this.activeDate.getMonth() + 1);
+        }
+      }
+
       date.setDate(day.date);
+
       const available: boolean = this.dayIsAvailableForRange(day, range) && (this.interval ? !this.interval.isInRange(date) : true);
       return {
         ...day,

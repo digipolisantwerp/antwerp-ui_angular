@@ -88,7 +88,14 @@ export class CalendarComponent implements OnInit, OnChanges {
       this.activeDate = this.selectedDate;
       this.updateHeaderLabel();
     } else {
-      this.activeDate = DateHelper.parseDate(new Date());
+      let activeDateToSet = new Date();
+
+      if (this.interval && this.interval.isInRange(activeDateToSet)) {
+        activeDateToSet = this.interval.min;
+      }
+
+      this.activeDate = DateHelper.parseDate(activeDateToSet);
+
       this.initControl();
     }
   }

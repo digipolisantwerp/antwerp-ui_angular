@@ -1,12 +1,12 @@
 {
   "name": "@acpaas-ui/ngx-forms",
-  "version": "4.7.0",
+  "version": "4.7.1",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "@acpaas-ui/js-date-utils": "~1.0.1",
-    "@acpaas-ui/ngx-calendar": "^4.6.1",
+    "@acpaas-ui/ngx-calendar": "^4.7.1",
     "@acpaas-ui/ngx-flyout": "^4.6.3",
     "@acpaas-ui/ngx-progress-bar": "^4.6.1",
     "@acpaas-ui/ngx-selectable-list": "^4.6.1",
