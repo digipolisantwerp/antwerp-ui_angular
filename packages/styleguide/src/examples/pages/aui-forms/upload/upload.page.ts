@@ -174,7 +174,7 @@ public uploadFiles(): void {
   public uploadExampleHTML3 = `<aui-upload-zone
 	ariaId="my-other-upload"
 	[uploader]="uploader"
-  [capture]="camera"
+	[capture]="camera"
 	(queuedFiles)="onQueuedFiles($event)"
 	(uploadedFiles)="onUploadedFiles($event)"
 	(invalidFiles)="onInvalidFiles($event)">
