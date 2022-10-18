@@ -5,7 +5,6 @@ const rxjs = require('rxjs');
 const operators = require('rxjs/operators');
 const cliProgress = require('cli-progress');
 const chalk = require('chalk');
-const { exit } = require('process');
 
 /**
  * This script basically runs 'ng build' for every
