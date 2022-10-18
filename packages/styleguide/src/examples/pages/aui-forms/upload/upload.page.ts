@@ -7,7 +7,7 @@ import {InvalidFile, Uploader, UploadOptions} from '../../../../../../ngx-forms/
 export class FormsUploadDemoPageComponent {
   public files = [];
   public accept = ['image/*'];
-  public capture = 'camera';
+  public capture = 'environment';
   public invalidFiles: InvalidFile[] = [];
   public queuedFiles: File[] = [];
   public uploadedFiles: File[] = [];
@@ -92,7 +92,7 @@ public uploader = new Uploader({
 });
 public showError = false;
 public fileName = '';
-public capture = 'camera';
+public capture = 'environment';
 });`;
 
   public uploadExampleJS4 = `public onQueuedFiles(files: File[]) {
@@ -173,7 +173,7 @@ public uploadFiles(): void {
   public uploadExampleHTML3 = `<aui-upload-zone
   ariaId="my-other-upload"
   [uploader]="uploader"
-  [capture]="camera"
+  [capture]="capture"
   (queuedFiles)="onQueuedFiles($event)"
   (uploadedFiles)="onUploadedFiles($event)"
   (invalidFiles)="onInvalidFiles($event)">
