@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [5.3.0] - 2022-10-18
+
+### Added
+- `forms` Added the 'capture' attribute for file inputs.
+
+### Fixed
+- `forms` Improved the working of the 'accept' attribute for file inputs.
+
+
 ## [5.2.1] - 2022-04-13
 
 - `forms` Fixed datepicker min/max interval issues
+
 
 ## [5.2.0] - 2022-03-18
 

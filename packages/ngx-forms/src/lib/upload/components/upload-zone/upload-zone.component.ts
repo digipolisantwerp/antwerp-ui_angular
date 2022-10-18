@@ -13,6 +13,7 @@ export class UploadZoneComponent implements AfterViewInit {
   @Input() public uploader: Uploader;
   @Input() public id = '';
   @Input() public accept = [];
+  @Input() public capture = '';
   @Input() public ariaId = '';
   @Input() public disabled = false;
   @Input() public multiple = true;
@@ -66,8 +67,9 @@ export class UploadZoneComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     if (this.multiple !== false) { this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', 'multiple'); }
-    if (this.accept) { this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join()); }
+    if (!!this.accept.length) { this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join()); }
     if (this.disabled) { this.renderer.setProperty(this.fileInput.nativeElement, 'disabled', 'disabled'); }
+    if (this.capture !== '') { this.renderer.setAttribute(this.fileInput.nativeElement, 'capture', this.capture); }
   }
 
   protected handleFiles(files) {
