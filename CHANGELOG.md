@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [5.4.0] - 2022-11-07
+
 ### Added
-- `datepicker` Added the ability to dynamic translate the labels for the datepicker.
+- `datepicker` Added the ability to dynamic translate the labels of the datepicker.
+
 
 ## [5.3.0] - 2022-10-18
 
@@ -436,7 +440,9 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.2.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.4.0...HEAD
+[5.4.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.3.0...v5.4.0
+[5.3.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.2.1...v5.3.0
 [5.2.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.2.0...v5.2.1
 [5.2.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.2...v5.2.0
 [5.1.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.1.1...v5.1.2
