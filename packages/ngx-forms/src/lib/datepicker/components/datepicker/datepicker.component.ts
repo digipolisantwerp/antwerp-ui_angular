@@ -25,6 +25,8 @@ import {
   CALENDAR_WEEKDAY_LABELS,
   CalendarService,
   DatepickerResult,
+  WeekdayLabelsConfig,
+  MonthLabelsConfig,
 } from '@acpaas-ui/ngx-calendar';
 
 import {
@@ -64,6 +66,8 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   @Input()
   max: Date | null;
   @Input() autocomplete: 'off';
+  @Input() weekdayLabels: WeekdayLabelsConfig;
+  @Input() monthLabels: MonthLabelsConfig;
 
   @Output() blur = new EventEmitter<Event>();
 
@@ -76,8 +80,8 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
-    @Inject(CALENDAR_MONTH_LABELS) private monthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
-    @Inject(CALENDAR_WEEKDAY_LABELS) private weekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
+    @Inject(CALENDAR_MONTH_LABELS) private moduleMonthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
+    @Inject(CALENDAR_WEEKDAY_LABELS) private moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
     @Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
     public calendarService: CalendarService,
     private formBuilder: FormBuilder,
@@ -86,6 +90,8 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   }
 
   public ngOnInit(): void {
+    this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
+    this.monthLabels = this.monthLabels || this.moduleMonthLabels;
     this.createInterval();
     this.formControl = this.formBuilder.control({value: '', disabled: this.isDisabled});
     this.formControl.valueChanges

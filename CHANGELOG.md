@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Added
+- `datepicker` Added the ability to dynamic translate the labels for the datepicker.
 
 ## [5.3.0] - 2022-10-18
 

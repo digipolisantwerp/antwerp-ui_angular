@@ -18,8 +18,14 @@
 
   <ng-container *ngIf="!isDisabled">
     <div auiFlyoutZone class="m-datepicker m-datepicker--fixed" role="dialog">
-      <aui-calendar (selectDate)="selectDateFromCalendar($event)" [range]="range"
-                    [selectedDate]="selectedDate" [interval]="interval"></aui-calendar>
+      <aui-calendar
+        (selectDate)="selectDateFromCalendar($event)"
+        [range]="range"
+        [selectedDate]="selectedDate"
+        [interval]="interval"
+        [weekdayLabels]="weekdayLabels"
+        [monthLabels]="monthLabels"
+      ></aui-calendar>
     </div>
   </ng-container>
 </div>
