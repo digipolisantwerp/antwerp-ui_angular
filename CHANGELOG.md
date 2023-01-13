@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Ensure that repo is running with Node version 18.
 - Update from 8 to 9 https://update.angular.io/?v=8.2-9.0.
+  - Fixing following problem for build: https://stackoverflow.com/questions/60121962/this-class-is-visible-to-consumers-via-somemodule-somecomponent-but-is-not-e
 
 ## [5.4.0] - 2022-11-07
 
