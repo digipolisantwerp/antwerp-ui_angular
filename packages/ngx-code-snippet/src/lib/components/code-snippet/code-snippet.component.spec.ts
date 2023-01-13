@@ -1,4 +1,10 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import {
+  waitForAsync,
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -22,17 +28,14 @@ describe('The Codesnippet Component', () => {
   let el: HTMLElement;
 
   // async beforeEach
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        CommonModule,
-        HighlightJsModule,
-      ],
+      imports: [CommonModule, HighlightJsModule],
       declarations: [CodeSnippetComponent],
       providers: [
         { provide: HighlightJsService, useClass: MockHighlightJsService },
       ],
-    }).compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

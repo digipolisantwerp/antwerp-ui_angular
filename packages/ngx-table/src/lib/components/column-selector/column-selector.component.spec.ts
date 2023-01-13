@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { IconModule } from '@acpaas-ui/ngx-icon';
@@ -29,20 +29,17 @@ describe('The Column Selector Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         ColumnSelectorComponent, // declare the test component
       ],
-      imports: [
-        IconModule
-      ],
+      imports: [IconModule],
       providers: [
-        {provide: TableHelperService, useClass: DummyTableHelperService},
+        { provide: TableHelperService, useClass: DummyTableHelperService },
       ],
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -61,18 +58,22 @@ describe('The Column Selector Component', () => {
   });
 
   it('should update display', () => {
-    comp.columns = [{value: 'firstname'}, {value: 'lastname', hidden: true}, {value: 'email'}];
+    comp.columns = [
+      { value: 'firstname' },
+      { value: 'lastname', hidden: true },
+      { value: 'email' },
+    ];
     fixture.detectChanges();
 
     // Spy
     spyOn(comp.update, 'emit');
 
     // hide item
-    comp.updateDisplay({target: {checked: false}}, 0);
+    comp.updateDisplay({ target: { checked: false } }, 0);
     expect(comp.columns[0].hidden).toBeTruthy();
 
     // show item
-    comp.updateDisplay({target: {checked: true}}, 1);
+    comp.updateDisplay({ target: { checked: true } }, 1);
     expect(comp.columns[1].hidden).toBeFalsy();
 
     // Spy
@@ -117,109 +118,134 @@ describe('The Column Selector Component', () => {
 
   it('Should disable child columns 1 level', () => {
     comp.columns = [
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname']},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      { value: 'email', parent: ['firstname'] },
     ];
     fixture.detectChanges();
 
     comp.disableChildren(comp.columns[0]);
     expect(comp.columns).toEqual([
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname'], disabled: true, hidden: true},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      { value: 'email', parent: ['firstname'], disabled: true, hidden: true },
     ]);
   });
 
   it('Should enable child columns 1 level', () => {
     comp.columns = [
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname'], disabled: true, hidden: true},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      { value: 'email', parent: ['firstname'], disabled: true, hidden: true },
     ];
     fixture.detectChanges();
 
     comp.enableChildren(comp.columns[0]);
     expect(comp.columns).toEqual([
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname'], disabled: false, hidden: true},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      { value: 'email', parent: ['firstname'], disabled: false, hidden: true },
     ]);
   });
 
   it('Should disable child columns multiple levels', () => {
     comp.columns = [
-      {value: 'firstname'},
-      {value: 'lastname', parent: ['firstname']},
-      {value: 'email', parent: ['lastname']},
+      { value: 'firstname' },
+      { value: 'lastname', parent: ['firstname'] },
+      { value: 'email', parent: ['lastname'] },
     ];
     fixture.detectChanges();
 
     comp.disableChildren(comp.columns[1]);
     expect(comp.columns).toEqual([
-      {value: 'firstname'},
-      {value: 'lastname', parent: ['firstname']},
-      {value: 'email', parent: ['lastname'], disabled: true, hidden: true},
+      { value: 'firstname' },
+      { value: 'lastname', parent: ['firstname'] },
+      { value: 'email', parent: ['lastname'], disabled: true, hidden: true },
     ]);
 
     comp.columns = [
-      {value: 'firstname'},
-      {value: 'lastname', parent: ['firstname']},
-      {value: 'email', parent: ['lastname']},
+      { value: 'firstname' },
+      { value: 'lastname', parent: ['firstname'] },
+      { value: 'email', parent: ['lastname'] },
     ];
     fixture.detectChanges();
 
     comp.disableChildren(comp.columns[0]);
     expect(comp.columns).toEqual([
-      {value: 'firstname'},
-      {value: 'lastname', parent: ['firstname'], disabled: true, hidden: true},
-      {value: 'email', parent: ['lastname'], disabled: true, hidden: true},
+      { value: 'firstname' },
+      {
+        value: 'lastname',
+        parent: ['firstname'],
+        disabled: true,
+        hidden: true,
+      },
+      { value: 'email', parent: ['lastname'], disabled: true, hidden: true },
     ]);
   });
 
   it('Should ensable child columns multiple levels', () => {
     comp.columns = [
-      {value: 'firstname'},
-      {value: 'lastname', parent: ['firstname'], disabled: true, hidden: true},
-      {value: 'email', parent: ['lastname'], disabled: true, hidden: true},
+      { value: 'firstname' },
+      {
+        value: 'lastname',
+        parent: ['firstname'],
+        disabled: true,
+        hidden: true,
+      },
+      { value: 'email', parent: ['lastname'], disabled: true, hidden: true },
     ];
     fixture.detectChanges();
 
     comp.enableChildren(comp.columns[0]);
     expect(comp.columns).toEqual([
-      {value: 'firstname'},
-      {value: 'lastname', parent: ['firstname'], disabled: false, hidden: true},
-      {value: 'email', parent: ['lastname'], disabled: false, hidden: true},
+      { value: 'firstname' },
+      {
+        value: 'lastname',
+        parent: ['firstname'],
+        disabled: false,
+        hidden: true,
+      },
+      { value: 'email', parent: ['lastname'], disabled: false, hidden: true },
     ]);
   });
 
   it('Should disable child columns with multiple parents', () => {
     comp.columns = [
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname', 'lastname']},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      { value: 'email', parent: ['firstname', 'lastname'] },
     ];
     fixture.detectChanges();
 
     comp.disableChildren(comp.columns[0]);
     expect(comp.columns).toEqual([
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname', 'lastname'], disabled: true, hidden: true},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      {
+        value: 'email',
+        parent: ['firstname', 'lastname'],
+        disabled: true,
+        hidden: true,
+      },
     ]);
 
     comp.columns = [
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname', 'lastname']},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      { value: 'email', parent: ['firstname', 'lastname'] },
     ];
     fixture.detectChanges();
 
     comp.disableChildren(comp.columns[1]);
     expect(comp.columns).toEqual([
-      {value: 'firstname'},
-      {value: 'lastname'},
-      {value: 'email', parent: ['firstname', 'lastname'], disabled: true, hidden: true},
+      { value: 'firstname' },
+      { value: 'lastname' },
+      {
+        value: 'email',
+        parent: ['firstname', 'lastname'],
+        disabled: true,
+        hidden: true,
+      },
     ]);
   });
 });

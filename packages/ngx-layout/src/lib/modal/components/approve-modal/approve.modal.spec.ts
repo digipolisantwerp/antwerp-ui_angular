@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import { ModalService } from '../../services/modal.service';
@@ -15,18 +15,12 @@ describe('Modal - ApproveModalComponent', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ApproveModalComponent,
-      ],
-      imports: [
-        IconModule
-      ],
-      providers: [
-        {provide: ModalService, useValue: modalServiceMock},
-      ],
+      declarations: [ApproveModalComponent],
+      imports: [IconModule],
+      providers: [{ provide: ModalService, useValue: modalServiceMock }],
     }).compileComponents(); // compile template and css
   }));
 
@@ -44,13 +38,15 @@ describe('Modal - ApproveModalComponent', () => {
   it('should set the default modalData on init', () => {
     comp.ngOnInit();
 
-    expect(comp.modalData).toEqual(jasmine.objectContaining({
-      question: 'Vraag?',
-      description: 'Beschrijving…',
-    }));
+    expect(comp.modalData).toEqual(
+      jasmine.objectContaining({
+        question: 'Vraag?',
+        description: 'Beschrijving…',
+      })
+    );
   });
 
-  it('should call the approve action if it is available and close the modal on resolve', done => {
+  it('should call the approve action if it is available and close the modal on resolve', (done) => {
     comp.modalActions = {
       approve: () => Promise.resolve(),
     };
@@ -67,7 +63,7 @@ describe('Modal - ApproveModalComponent', () => {
     }, 10);
   });
 
-  it('should close the modal if no approve action is available', done => {
+  it('should close the modal if no approve action is available', (done) => {
     spyOn(comp, 'closeModal');
 
     comp.submit();
@@ -78,7 +74,7 @@ describe('Modal - ApproveModalComponent', () => {
     }, 10);
   });
 
-  it('should call the reject action if it is available and close the modal on resolve', done => {
+  it('should call the reject action if it is available and close the modal on resolve', (done) => {
     comp.modalActions = {
       reject: () => Promise.resolve(),
     };
@@ -95,7 +91,7 @@ describe('Modal - ApproveModalComponent', () => {
     }, 10);
   });
 
-  it('should close the modal if no reject action is available', done => {
+  it('should close the modal if no reject action is available', (done) => {
     spyOn(comp, 'closeModal');
 
     comp.close();

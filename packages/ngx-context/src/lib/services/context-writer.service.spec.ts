@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { async, inject, TestBed } from '@angular/core/testing';
+import { waitForAsync, inject, TestBed } from '@angular/core/testing';
 
 import { ContextWriterService } from './context-writer.service';
 import { ContextConfig } from '../types/context.types';
@@ -31,8 +31,8 @@ describe('The Context Writer Service', () => {
     },
   };
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       providers: [
         { provide: CONTEXT_CONFIG, useValue: metaConfig },

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -6,19 +6,17 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { LogoComponent } from './logo.component';
 
 describe('LogoComponent (templateUrl)', () => {
-
   let logo: LogoComponent;
   let fixture: ComponentFixture<LogoComponent>;
   let de: DebugElement;
   let element: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [LogoComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   it('Should not throw an error if no input is provided', () => {
@@ -39,7 +37,8 @@ describe('LogoComponent (templateUrl)', () => {
     });
 
     it('Should render a logo', () => {
-      logo.title = 'Klik op de A om terug naar de startpagina van antwerpen.be te gaan.';
+      logo.title =
+        'Klik op de A om terug naar de startpagina van antwerpen.be te gaan.';
       logo.src = 'https://www.antwerpen.be/assets/aOS/gfx/gui/a-logo.svg';
       logo.link = '/home';
 

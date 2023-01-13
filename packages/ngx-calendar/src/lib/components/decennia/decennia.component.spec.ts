@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 
 import { CalendarDecenniaComponent } from './decennia.component';
@@ -6,20 +6,18 @@ import { CalendarDecenniaComponent } from './decennia.component';
 @Component({
   selector: 'aui-test',
   template: `
-		<aui-calendar-decennia
-			[selectedDate]="selectedDate"
-			[activeDate]="activeDate"
-			(selectDate)="selectDate($event)"
-		></aui-calendar-decennia>
-	`,
+    <aui-calendar-decennia
+      [selectedDate]="selectedDate"
+      [activeDate]="activeDate"
+      (selectDate)="selectDate($event)"
+    ></aui-calendar-decennia>
+  `,
 })
 class TestComponent {
   public selectedDate: Date;
   public activeDate: Date;
 
-  selectDate(date) {
-
-  }
+  selectDate(date) {}
 }
 
 describe('The Calendar Decennia Component', () => {
@@ -29,15 +27,11 @@ describe('The Calendar Decennia Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TestComponent,
-        CalendarDecenniaComponent,
-      ],
-    })
-      .compileComponents();
+      declarations: [TestComponent, CalendarDecenniaComponent],
+    }).compileComponents();
   }));
 
   // synchronous beforeEach
@@ -53,7 +47,7 @@ describe('The Calendar Decennia Component', () => {
   });
 
   it('should set the current prop to the current year', () => {
-    const expected = (new Date()).getFullYear();
+    const expected = new Date().getFullYear();
 
     expect(comp.current).toEqual(expected);
   });
@@ -66,7 +60,7 @@ describe('The Calendar Decennia Component', () => {
     wrapper.selectedDate = new Date();
 
     fixture.detectChanges();
-    expect(comp.selectedYear).toEqual((new Date()).getFullYear());
+    expect(comp.selectedYear).toEqual(new Date().getFullYear());
   });
 
   it('should update the years prop with the new activeDate', () => {

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,18 +12,12 @@ describe('The Wysiwyg Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FormsModule,
-        CKEditorModule,
-      ],
-      declarations: [
-        WysiwygComponent,
-      ], // declare the test component
-    })
-      .compileComponents();  // compile template and css
+      imports: [FormsModule, CKEditorModule],
+      declarations: [WysiwygComponent], // declare the test component
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

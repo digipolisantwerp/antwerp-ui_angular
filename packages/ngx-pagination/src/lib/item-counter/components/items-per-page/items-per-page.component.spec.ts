@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,23 +15,17 @@ describe('The ItemsPerPageComponent', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FormsModule,
-        IconModule,
-      ],
+      imports: [FormsModule, IconModule],
       declarations: [
         ItemsPerPageComponent,
         InterpolateLabelPipe,
         PluralizeLabelPipe,
       ],
-      providers: [
-        {provide: ITEMS_PER_PAGE_LABEL, useValue: {}},
-      ],
-    })
-      .compileComponents();  // compile template and css
+      providers: [{ provide: ITEMS_PER_PAGE_LABEL, useValue: {} }],
+    }).compileComponents(); // compile template and css
   }));
 
   beforeEach(() => {
@@ -60,6 +54,8 @@ describe('The ItemsPerPageComponent', () => {
     comp.size = sizes.S;
 
     fixture.detectChanges();
-    expect(el.querySelector('.a-input').getAttribute('class')).toContain('a-input--small');
+    expect(el.querySelector('.a-input').getAttribute('class')).toContain(
+      'a-input--small'
+    );
   });
 });

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -10,12 +10,11 @@ describe('The Selectablelist Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [SelectableListComponent], // declare the test component
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -35,7 +34,7 @@ describe('The Selectablelist Component', () => {
   });
 
   it('should emit selected item', () => {
-    const item = {test: 'this is a test'};
+    const item = { test: 'this is a test' };
     spyOn(comp.selected, 'emit');
     comp.selectItem(item);
     expect(comp.selected.emit).toHaveBeenCalledWith(item);
@@ -55,7 +54,7 @@ describe('The Selectablelist Component', () => {
     comp.search = 'te';
     comp.label = 'test';
     fixture.detectChanges();
-    const res4 = comp.formatLabel({test: 'this is a test'});
+    const res4 = comp.formatLabel({ test: 'this is a test' });
 
     expect(res1).toEqual('this is a test');
     expect(res2).toEqual('this is a <strong>test</strong>');
@@ -63,4 +62,3 @@ describe('The Selectablelist Component', () => {
     expect(res4).toEqual('this is a <strong>te</strong>st');
   });
 });
-

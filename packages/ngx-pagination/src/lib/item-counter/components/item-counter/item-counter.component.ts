@@ -21,7 +21,7 @@ export class ItemCounterComponent implements OnInit, OnChanges {
 
   @Input() currentPage: number;
   @Input() totalAmount: number;
-  @Input() amountPerPage: number = 0;
+  @Input() amountPerPage = 0;
   @Input() label: any;
 
   public currentFrom = 1;

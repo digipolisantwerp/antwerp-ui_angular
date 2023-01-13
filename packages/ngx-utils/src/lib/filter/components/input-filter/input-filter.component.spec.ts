@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -7,8 +7,7 @@ import { IconModule } from '@acpaas-ui/ngx-icon';
 import { InputFilterComponent } from './input-filter.component';
 
 // Dummy filter
-export class Filter {
-}
+export class Filter {}
 
 describe('The Filter Component', () => {
   let comp: InputFilterComponent;
@@ -16,18 +15,12 @@ describe('The Filter Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        InputFilterComponent,
-      ],
-      imports: [
-        FormsModule,
-        IconModule,
-      ],
-    })
-      .compileComponents();  // compile template and css
+      declarations: [InputFilterComponent],
+      imports: [FormsModule, IconModule],
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

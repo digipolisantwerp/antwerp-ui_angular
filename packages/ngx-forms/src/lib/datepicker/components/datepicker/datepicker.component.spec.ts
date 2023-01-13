@@ -1,62 +1,67 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { DateRange } from '@acpaas-ui/js-date-utils';
 import { CalendarModule } from '@acpaas-ui/ngx-calendar';
 import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 import { MaskModule } from '@acpaas-ui/ngx-forms';
 
-import { DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS } from '../../datepicker.conf';
+import {
+  DATEPICKER_DEFAULT_ERROR_LABELS,
+  DATEPICKER_ERROR_LABELS,
+} from '../../datepicker.conf';
 import { DatepickerComponent } from './datepicker.component';
 
 @Component({
   selector: 'aui-test-one',
   template: `
-		<form #testForm='ngForm' (ngSubmit)='submit(testForm.value)'>
-			<aui-datepicker
-				id='test'
-				name='test'
-				placeholder='dd/mm/jjjj'
-				autocomplete='off'
-				[range]='range'
-				[(ngModel)]='dateModel'
-			></aui-datepicker>
-		</form>
-	`,
+    <form #testForm="ngForm" (ngSubmit)="submit(testForm.value)">
+      <aui-datepicker
+        id="test"
+        name="test"
+        placeholder="dd/mm/jjjj"
+        autocomplete="off"
+        [range]="range"
+        [(ngModel)]="dateModel"
+      ></aui-datepicker>
+    </form>
+  `,
 })
 export class TestComponent {
   public range: DateRange;
   public dateModel: Date;
 
-  submit(form) {
-  }
+  submit(form) {}
 }
 
 @Component({
   selector: 'aui-test-two',
   template: `
-		<form [formGroup]='testForm' (ngSubmit)='submit(testForm.value)'>
-			<aui-datepicker
-				id='test'
-				name='test'
-				placeholder='dd/mm/jjjj'
-				autocomplete='off'
-				[range]='range'
-				formControlName='date'
-			></aui-datepicker>
-		</form>
-	`,
+    <form [formGroup]="testForm" (ngSubmit)="submit(testForm.value)">
+      <aui-datepicker
+        id="test"
+        name="test"
+        placeholder="dd/mm/jjjj"
+        autocomplete="off"
+        [range]="range"
+        formControlName="date"
+      ></aui-datepicker>
+    </form>
+  `,
 })
 export class ReactiveTestComponent implements OnInit {
   public range: DateRange;
   public dateModel: Date;
   public testForm: FormGroup;
 
-  constructor(
-    private fb: FormBuilder
-  ) {
-  }
+  constructor(private fb: FormBuilder) {}
 
   public ngOnInit() {
     this.testForm = this.fb.group({
@@ -64,13 +69,12 @@ export class ReactiveTestComponent implements OnInit {
     });
   }
 
-  submit(form) {
-  }
+  submit(form) {}
 }
 
 describe('The Datepicker Component', () => {
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,
@@ -80,16 +84,14 @@ describe('The Datepicker Component', () => {
         MaskModule,
         CalendarModule,
       ],
-      declarations: [
-        TestComponent,
-        ReactiveTestComponent,
-        DatepickerComponent,
-      ],
+      declarations: [TestComponent, ReactiveTestComponent, DatepickerComponent],
       providers: [
-        {provide: DATEPICKER_ERROR_LABELS, useValue: DATEPICKER_DEFAULT_ERROR_LABELS},
+        {
+          provide: DATEPICKER_ERROR_LABELS,
+          useValue: DATEPICKER_DEFAULT_ERROR_LABELS,
+        },
       ],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   describe('Template driven', () => {
@@ -132,8 +134,7 @@ describe('The Datepicker Component', () => {
 
       beforeEach(() => {
         accessor = {
-          update: () => {
-          },
+          update: () => {},
         };
 
         spyOn(accessor, 'update');
@@ -191,17 +192,19 @@ describe('The Datepicker Component', () => {
         spyOn(picker.calendarService, 'getRangeForDate').and.callFake(() => []);
         picker.range = [1];
 
-        const ctrl = new FormControl((new Date()).toISOString());
+        const ctrl = new FormControl(new Date().toISOString());
 
         expect(picker.validate(ctrl)).toEqual(null);
       });
 
       it('should return the invalid range error if the date was valid and in the set range', () => {
-        const range = [(new Date()).getDate()];
-        spyOn(picker.calendarService, 'getRangeForDate').and.callFake(() => range);
+        const range = [new Date().getDate()];
+        spyOn(picker.calendarService, 'getRangeForDate').and.callFake(
+          () => range
+        );
         picker.range = range;
 
-        const ctrl = new FormControl((new Date()).toISOString());
+        const ctrl = new FormControl(new Date().toISOString());
 
         expect(picker.validate(ctrl)).toEqual({
           range: DATEPICKER_DEFAULT_ERROR_LABELS.ERRORS_INVALID_RANGE,

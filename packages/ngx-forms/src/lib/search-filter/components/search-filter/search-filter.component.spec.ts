@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -13,19 +13,12 @@ describe('The SearchFilter Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FormsModule,
-        FlyoutModule,
-        IconModule,
-      ],
-      declarations: [
-        SearchFilterComponent,
-      ],
-    })
-      .compileComponents();
+      imports: [FormsModule, FlyoutModule, IconModule],
+      declarations: [SearchFilterComponent],
+    }).compileComponents();
   }));
 
   // synchronous beforeEach
@@ -52,8 +45,12 @@ describe('The SearchFilter Component', () => {
 
     fixture.detectChanges();
 
-    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(1);
-    expect(el.querySelector('.m-search-filter__results-item').textContent).toContain('test-noResults');
+    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(
+      1
+    );
+    expect(
+      el.querySelector('.m-search-filter__results-item').textContent
+    ).toContain('test-noResults');
   });
 
   it('should show the clear button when there are selected items', () => {
@@ -63,24 +60,33 @@ describe('The SearchFilter Component', () => {
     fixture.detectChanges();
 
     expect(el.querySelector('.m-search-filter__clear')).toBeDefined();
-    expect(el.querySelector('.m-search-filter__clear').textContent).toContain('test-deselect');
+    expect(el.querySelector('.m-search-filter__clear').textContent).toContain(
+      'test-deselect'
+    );
   });
 
   it('should show the available choices', () => {
     comp.selectedItems = ['2'];
-    comp.filteredChoices = [{
-      label: 'one',
-      value: '1',
-    }, {
-      label: 'two',
-      value: '2',
-    }];
+    comp.filteredChoices = [
+      {
+        label: 'one',
+        value: '1',
+      },
+      {
+        label: 'two',
+        value: '2',
+      },
+    ];
 
     fixture.detectChanges();
 
-    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(2);
+    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(
+      2
+    );
 
-    const items = Array.from(el.querySelectorAll('.m-search-filter__results-item'));
+    const items = Array.from(
+      el.querySelectorAll('.m-search-filter__results-item')
+    );
 
     expect(items[0].querySelector('label').textContent).toBe('one');
     expect(items[0].querySelector('input').checked).toBeFalsy();
@@ -114,17 +120,21 @@ describe('The SearchFilter Component', () => {
 
     comp.ngOnChanges({
       choices: {
-        currentValue: [{
-          label: 'one',
-          value: '1',
-        }],
+        currentValue: [
+          {
+            label: 'one',
+            value: '1',
+          },
+        ],
       },
     } as any);
 
-    expect(comp.filteredChoices).toEqual([{
-      label: 'one',
-      value: '1',
-    }]);
+    expect(comp.filteredChoices).toEqual([
+      {
+        label: 'one',
+        value: '1',
+      },
+    ]);
     expect(comp.loading).toBeFalsy();
   });
 
@@ -135,10 +145,12 @@ describe('The SearchFilter Component', () => {
 
     comp.ngOnChanges({
       choices: {
-        currentValue: [{
-          label: 'one',
-          value: '1',
-        }],
+        currentValue: [
+          {
+            label: 'one',
+            value: '1',
+          },
+        ],
       },
     } as any);
 
@@ -184,7 +196,7 @@ describe('The SearchFilter Component', () => {
 
   it('should call filterChoices if filterData is called when remote is false', () => {
     spyOn(comp.search, 'emit').and.stub();
-    spyOn((comp as any), 'filterChoices').and.stub();
+    spyOn(comp as any, 'filterChoices').and.stub();
 
     fixture.detectChanges();
 
@@ -239,22 +251,28 @@ describe('The SearchFilter Component', () => {
   });
 
   it('should update the filteredChoices with choices that match the query', () => {
-    comp.choices = [{
-      label: 'First item',
-      value: 'one',
-    }, {
-      label: 'Second item',
-      value: 'two',
-    }, {
-      label: 'Third item',
-      value: 'three',
-    }, {
-      label: 'Fourth item',
-      value: 'four',
-    }, {
-      label: 'Fifth item',
-      value: 'five',
-    }];
+    comp.choices = [
+      {
+        label: 'First item',
+        value: 'one',
+      },
+      {
+        label: 'Second item',
+        value: 'two',
+      },
+      {
+        label: 'Third item',
+        value: 'three',
+      },
+      {
+        label: 'Fourth item',
+        value: 'four',
+      },
+      {
+        label: 'Fifth item',
+        value: 'five',
+      },
+    ];
     comp.query = 'fi';
 
     fixture.detectChanges();

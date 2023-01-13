@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
 import { RangeSliderComponent } from './range-slider.component';
@@ -9,12 +9,11 @@ describe('The RangeSlider Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [RangeSliderComponent], // declare the test component
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -50,11 +49,11 @@ describe('The RangeSlider Component', () => {
     expect(comp.start).toEqual(30);
     expect(comp.startPercentage).toEqual(50);
 
-    comp.writeValue({start: 20});
+    comp.writeValue({ start: 20 });
     expect(comp.start).toEqual(20);
     expect(comp.startPercentage).toEqual(25);
 
-    comp.writeValue({start: 20, end: 50});
+    comp.writeValue({ start: 20, end: 50 });
     expect(comp.start).toEqual(20);
     expect(comp.startPercentage).toEqual(25);
     expect(comp.end).toEqual(50);

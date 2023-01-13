@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 
@@ -9,18 +9,17 @@ import { FooterBottomDirective } from '../../directives/bottom.directive';
 @Component({
   selector: 'aui-test',
   template: `
-        <aui-footer>
-            <div auiFooterContent>
-                <span>this is the footer</span>
-            </div>
-            <div auiFooterBottom>
-                <span>this is the bottom</span>
-            </div>
-        </aui-footer>
-    `,
+    <aui-footer>
+      <div auiFooterContent>
+        <span>this is the footer</span>
+      </div>
+      <div auiFooterBottom>
+        <span>this is the bottom</span>
+      </div>
+    </aui-footer>
+  `,
 })
-class TestComponent {
-}
+class TestComponent {}
 
 describe('FooterComponent (templateUrl)', () => {
   let footer: TestComponent;
@@ -28,17 +27,15 @@ describe('FooterComponent (templateUrl)', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  beforeEach(async(() => {
-    TestBed
-      .configureTestingModule({
-        declarations: [
-          FooterComponent,
-          FooterBottomDirective,
-          FooterContentDirective,
-          TestComponent,
-        ],
-      })
-      .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        FooterComponent,
+        FooterBottomDirective,
+        FooterContentDirective,
+        TestComponent,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

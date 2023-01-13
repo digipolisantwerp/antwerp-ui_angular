@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -13,11 +13,18 @@ const mockKeyDownEvent = (key) => {
 
 @Component({
   selector: 'aui-test-component',
-  template: `<button type="button" class="button" auiSelectableActions #auiSelectableActions="auiSelectableActions">Open me</button>`,
+  template: `<button
+    type="button"
+    class="button"
+    auiSelectableActions
+    #auiSelectableActions="auiSelectableActions"
+  >
+    Open me
+  </button>`,
 })
 class TestComponent {
   // Access directive
-  @ViewChild('auiSelectableActions', {static: true}) element;
+  @ViewChild('auiSelectableActions', { static: true }) element;
 }
 
 describe('Flyout action directive without flyout zone', () => {
@@ -26,19 +33,18 @@ describe('Flyout action directive without flyout zone', () => {
   let componentDebugElement: DebugElement;
   let componentElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        SelectableActionsDirective,
-        TestComponent,
-      ],
+      declarations: [SelectableActionsDirective, TestComponent],
     });
 
     TestBed.compileComponents();
     fixture = TestBed.createComponent(TestComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(By.directive(SelectableActionsDirective));
+    componentDebugElement = fixture.debugElement.query(
+      By.directive(SelectableActionsDirective)
+    );
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 

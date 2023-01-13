@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
@@ -9,8 +9,14 @@ import { Uploader } from '../../classes/uploader.class';
 
 import { UploadQueueComponent } from './upload-queue.component';
 
-const mockFile1 = new File(['file1'], 'filename1.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
-const mockFile2 = new File(['file2'], 'filename2.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
+const mockFile1 = new File(['file1'], 'filename1.txt', {
+  type: 'text/plain',
+  lastModified: new Date().getTime(),
+});
+const mockFile2 = new File(['file2'], 'filename2.txt', {
+  type: 'text/plain',
+  lastModified: new Date().getTime(),
+});
 const mockFileList = [mockFile1, mockFile2];
 
 class MockUploader implements Partial<Uploader> {
@@ -27,8 +33,8 @@ class MockUploader implements Partial<Uploader> {
     };
   }
 
-  public uploadFiles(files): Observable<{ progress: number, data: object[] }> {
-    return new Observable(observer => {
+  public uploadFiles(files): Observable<{ progress: number; data: object[] }> {
+    return new Observable((observer) => {
       observer.next({
         progress: 0.5,
         data: null,
@@ -52,17 +58,12 @@ describe('The upload queue component', () => {
   let de: DebugElement;
   const el: HTMLElement = undefined;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        UploadQueueComponent,
-      ],
-      imports: [
-        IconModule
-      ],
-    })
-      .compileComponents(); // compile template and css
+      declarations: [UploadQueueComponent],
+      imports: [IconModule],
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

@@ -1,39 +1,78 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 
 import { CalendarMonthComponent } from './month.component';
-import { CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS } from '../../calendar.conf';
+import {
+  CALENDAR_DEFAULT_WEEKDAY_LABELS,
+  CALENDAR_WEEKDAY_LABELS,
+} from '../../calendar.conf';
 import { CalendarService } from '../../services/calendar.service';
 
 @Component({
   selector: 'aui-test',
   template: `
-		<aui-calendar-month
-			[selectedDate]="selectedDate"
-			[activeDate]="activeDate"
-			[range]="range"
-			(selectDate)="selectDate($event)"
-		></aui-calendar-month>
-	`,
+    <aui-calendar-month
+      [selectedDate]="selectedDate"
+      [activeDate]="activeDate"
+      [range]="range"
+      (selectDate)="selectDate($event)"
+    ></aui-calendar-month>
+  `,
 })
 class TestComponent {
   public selectedDate: Date;
   public activeDate = new Date();
   public range: Array<Date | number>;
 
-  selectDate(date) {
-
-  }
+  selectDate(date) {}
 }
 
 class CalendarMock {
   getMonthForDate(date) {
     return [
-      [{date: 29, padding: true}, {date: 1}, {date: 2}, {date: 3}, {date: 4}, {date: 5}, {date: 6}],
-      [{date: 7}, {date: 8}, {date: 9}, {date: 10}, {date: 11}, {date: 12}, {date: 13}],
-      [{date: 14}, {date: 15}, {date: 16}, {date: 17}, {date: 18}, {date: 19}, {date: 20}],
-      [{date: 21}, {date: 22}, {date: 23}, {date: 24}, {date: 25}, {date: 26}, {date: 27}],
-      [{date: 28}, {date: 29}, {date: 30}, {date: 1, padding: true}, {date: 2, padding: true}],
+      [
+        { date: 29, padding: true },
+        { date: 1 },
+        { date: 2 },
+        { date: 3 },
+        { date: 4 },
+        { date: 5 },
+        { date: 6 },
+      ],
+      [
+        { date: 7 },
+        { date: 8 },
+        { date: 9 },
+        { date: 10 },
+        { date: 11 },
+        { date: 12 },
+        { date: 13 },
+      ],
+      [
+        { date: 14 },
+        { date: 15 },
+        { date: 16 },
+        { date: 17 },
+        { date: 18 },
+        { date: 19 },
+        { date: 20 },
+      ],
+      [
+        { date: 21 },
+        { date: 22 },
+        { date: 23 },
+        { date: 24 },
+        { date: 25 },
+        { date: 26 },
+        { date: 27 },
+      ],
+      [
+        { date: 28 },
+        { date: 29 },
+        { date: 30 },
+        { date: 1, padding: true },
+        { date: 2, padding: true },
+      ],
     ];
   }
 
@@ -59,25 +98,30 @@ describe('The Calendar Month Component', () => {
   let monthSpy;
   let rangeSpy;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TestComponent,
-        CalendarMonthComponent,
-      ],
+      declarations: [TestComponent, CalendarMonthComponent],
       providers: [
-        {provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS},
-        {provide: CalendarService, useClass: CalendarMock},
+        {
+          provide: CALENDAR_WEEKDAY_LABELS,
+          useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS,
+        },
+        { provide: CalendarService, useClass: CalendarMock },
       ],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   // synchronous beforeEach
   beforeEach(() => {
-    monthSpy = spyOn(CalendarMock.prototype, 'getMonthForDate').and.callThrough();
-    rangeSpy = spyOn(CalendarMock.prototype, 'getRangesForDate').and.callThrough();
+    monthSpy = spyOn(
+      CalendarMock.prototype,
+      'getMonthForDate'
+    ).and.callThrough();
+    rangeSpy = spyOn(
+      CalendarMock.prototype,
+      'getRangesForDate'
+    ).and.callThrough();
 
     fixture = TestBed.createComponent(TestComponent);
     wrapper = fixture.componentInstance;
@@ -189,43 +233,37 @@ describe('The Calendar Month Component', () => {
     });
   }));
 
-  it(
-    'should emit the activeDate with the date set to the selected date and the correct month when selecting a padded date at the start of the month', // tslint:disable-line:max-line-length
-    async(() => {
-      const now = new Date('2017-10-03');
-      wrapper.activeDate = now;
-      fixture.detectChanges();
+  it('should emit the activeDate with the date set to the selected date and the correct month when selecting a padded date at the start of the month', async(() => { // tslint:disable-line:max-line-length
+    const now = new Date('2017-10-03');
+    wrapper.activeDate = now;
+    fixture.detectChanges();
 
-      spyOn(wrapper, 'selectDate');
-      const button = el.querySelectorAll('button')[0];
-      button.click();
+    spyOn(wrapper, 'selectDate');
+    const button = el.querySelectorAll('button')[0];
+    button.click();
 
-      fixture.whenStable().then(() => {
-        const expected = new Date(now);
-        expected.setMonth(8);
-        expected.setDate(29);
-        expect(wrapper.selectDate).toHaveBeenCalledWith(expected);
-      });
-    })
-  );
+    fixture.whenStable().then(() => {
+      const expected = new Date(now);
+      expected.setMonth(8);
+      expected.setDate(29);
+      expect(wrapper.selectDate).toHaveBeenCalledWith(expected);
+    });
+  }));
 
-  it(
-    'should emit the activeDate with the date set to the selected date and the correct month when selecting a padded date at the end of the month', // tslint:disable-line:max-line-length
-    async(() => {
-      const now = new Date('2017-10-03');
-      wrapper.activeDate = now;
-      fixture.detectChanges();
+  it('should emit the activeDate with the date set to the selected date and the correct month when selecting a padded date at the end of the month', async(() => { // tslint:disable-line:max-line-length
+    const now = new Date('2017-10-03');
+    wrapper.activeDate = now;
+    fixture.detectChanges();
 
-      spyOn(wrapper, 'selectDate');
-      const button = el.querySelectorAll('button')[31];
-      button.click();
+    spyOn(wrapper, 'selectDate');
+    const button = el.querySelectorAll('button')[31];
+    button.click();
 
-      fixture.whenStable().then(() => {
-        const expected = new Date(now);
-        expected.setMonth(10);
-        expected.setDate(1);
-        expect(wrapper.selectDate).toHaveBeenCalledWith(expected);
-      });
-    })
-  );
+    fixture.whenStable().then(() => {
+      const expected = new Date(now);
+      expected.setMonth(10);
+      expected.setDate(1);
+      expect(wrapper.selectDate).toHaveBeenCalledWith(expected);
+    });
+  }));
 });

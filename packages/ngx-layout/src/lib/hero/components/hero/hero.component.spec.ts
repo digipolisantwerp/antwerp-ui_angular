@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 
@@ -9,18 +9,17 @@ import { HeroCtaDirective } from '../../directives/hero-cta.directive';
 @Component({
   selector: 'aui-test',
   template: `
-        <aui-hero>
-            <div auiHeroCard>
-                <h1>Test</h1>
-            </div>
-            <div auiHeroCta>
-                <a href="/test">test</a>
-            </div>
-        </aui-hero>
-    `,
+    <aui-hero>
+      <div auiHeroCard>
+        <h1>Test</h1>
+      </div>
+      <div auiHeroCta>
+        <a href="/test">test</a>
+      </div>
+    </aui-hero>
+  `,
 })
-class TestComponent {
-}
+class TestComponent {}
 
 describe('The Hero Component', () => {
   let comp: HeroComponent;
@@ -28,7 +27,7 @@ describe('The Hero Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         HeroComponent,
@@ -36,8 +35,7 @@ describe('The Hero Component', () => {
         HeroCtaDirective,
         TestComponent,
       ],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -54,8 +52,12 @@ describe('The Hero Component', () => {
   });
 
   it('should render the card and cta sections', () => {
-    expect(fixture.debugElement.query(By.css('o-hero__card h1'))).not.toBeUndefined();
-    expect(fixture.debugElement.query(By.css('o-hero__cta a'))).not.toBeUndefined();
+    expect(
+      fixture.debugElement.query(By.css('o-hero__card h1'))
+    ).not.toBeUndefined();
+    expect(
+      fixture.debugElement.query(By.css('o-hero__cta a'))
+    ).not.toBeUndefined();
   });
 
   // it('should have the "cta" class if there is a call to action section', () => {

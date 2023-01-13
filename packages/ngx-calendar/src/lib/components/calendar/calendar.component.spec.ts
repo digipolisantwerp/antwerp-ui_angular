@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { DateRange } from '@acpaas-ui/js-date-utils';
 
@@ -10,19 +10,18 @@ import { CALENDAR_DEFAULT_MONTH_LABELS } from '../../calendar.conf';
 @Component({
   selector: 'aui-test',
   template: `
-		<aui-calendar
-			[selectedDate]="selectedDate"
-			[range]="range"
-			(selectDate)="selectDate($event)"
-		></aui-calendar>
-	`,
+    <aui-calendar
+      [selectedDate]="selectedDate"
+      [range]="range"
+      (selectDate)="selectDate($event)"
+    ></aui-calendar>
+  `,
 })
 class TestComponent {
   public selectedDate: Date;
   public range: DateRange;
 
-  selectDate() {
-  }
+  selectDate() {}
 }
 
 describe('The Calendar Component', () => {
@@ -30,17 +29,12 @@ describe('The Calendar Component', () => {
   let fixture: ComponentFixture<TestComponent>;
   let calendar: CalendarComponent;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        CalendarModule,
-      ],
-      declarations: [
-        TestComponent,
-      ],
-    })
-      .compileComponents();
+      imports: [CalendarModule],
+      declarations: [TestComponent],
+    }).compileComponents();
   }));
 
   // synchronous beforeEach
@@ -169,23 +163,20 @@ describe('The Calendar Component', () => {
       expect(calendar.activeView).toEqual(views.CALENDAR_VIEW_DECENNIA);
     });
 
-    it(
-      'resets the date to the selectedDate (if it is set) when returning to the inital view with factor 1 (i.e. cycle has ended)',
-      () => {
-        calendar.activeView = views.CALENDAR_VIEW_DECENNIA;
+    it('resets the date to the selectedDate (if it is set) when returning to the inital view with factor 1 (i.e. cycle has ended)', () => {
+      calendar.activeView = views.CALENDAR_VIEW_DECENNIA;
 
-        const activeDate = new Date('2018-03-09');
-        const selectedDate = new Date('2017-10-03');
+      const activeDate = new Date('2018-03-09');
+      const selectedDate = new Date('2017-10-03');
 
-        calendar.activeDate = activeDate;
-        comp.selectedDate = selectedDate;
-        fixture.detectChanges();
+      calendar.activeDate = activeDate;
+      comp.selectedDate = selectedDate;
+      fixture.detectChanges();
 
-        calendar.switchView(1);
+      calendar.switchView(1);
 
-        expect(calendar.activeDate).toEqual(selectedDate);
-      }
-    );
+      expect(calendar.activeDate).toEqual(selectedDate);
+    });
   });
 
   describe('updateHeaderLabel', () => {
@@ -196,8 +187,11 @@ describe('The Calendar Component', () => {
     it('sets the monthLabel for the active month if the activeView is the month view', () => {
       calendar.updateHeaderLabel();
 
-      const monthLabel = CALENDAR_DEFAULT_MONTH_LABELS[calendar.activeDate.getMonth()];
-      expect(calendar.headerLabel).toEqual(monthLabel + ` ` + calendar.activeDate.getFullYear());
+      const monthLabel =
+        CALENDAR_DEFAULT_MONTH_LABELS[calendar.activeDate.getMonth()];
+      expect(calendar.headerLabel).toEqual(
+        monthLabel + ` ` + calendar.activeDate.getFullYear()
+      );
     });
 
     it('sets the activeDates year as the headerLabel if the activeView is the year view', () => {
@@ -206,8 +200,9 @@ describe('The Calendar Component', () => {
 
       calendar.updateHeaderLabel();
 
-      expect(calendar.headerLabel).toEqual(calendar.activeDate.getFullYear().toString());
-
+      expect(calendar.headerLabel).toEqual(
+        calendar.activeDate.getFullYear().toString()
+      );
     });
 
     it('sets the year range for the activeDate as the headerLabel if the activeView is the decennia view', () => {
@@ -216,7 +211,10 @@ describe('The Calendar Component', () => {
 
       calendar.updateHeaderLabel();
 
-      const viewDecennia = calendar.activeDate.getFullYear().toString() + ' - ' + (calendar.activeDate.getFullYear() + 11).toString();
+      const viewDecennia =
+        calendar.activeDate.getFullYear().toString() +
+        ' - ' +
+        (calendar.activeDate.getFullYear() + 11).toString();
       expect(calendar.headerLabel).toEqual(viewDecennia);
     });
   });

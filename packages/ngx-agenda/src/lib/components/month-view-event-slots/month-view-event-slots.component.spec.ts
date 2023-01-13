@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { MonthViewSlotsService } from '../../services/month-view-slots.service';
@@ -7,9 +7,11 @@ import { MonthViewEventSlotsComponent } from './month-view-event-slots.component
 
 class MockMonthViewSlotsService {
   public generateSlotRendering() {
-    return [{
-      display: {left: '0px', top: '0px', span: '10%'},
-    }];
+    return [
+      {
+        display: { left: '0px', top: '0px', span: '10%' },
+      },
+    ];
   }
 }
 
@@ -19,18 +21,15 @@ describe('The Month View Event Slots Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        MonthViewEventSlotsComponent,
-      ],
+      declarations: [MonthViewEventSlotsComponent],
       providers: [
-        {provide: MonthViewSlotsService, useClass: MockMonthViewSlotsService},
+        { provide: MonthViewSlotsService, useClass: MockMonthViewSlotsService },
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   // synchronous beforeEach
@@ -39,7 +38,9 @@ describe('The Month View Event Slots Component', () => {
 
     comp = fixture.componentInstance;
 
-    de = fixture.debugElement.query(By.css('.aui-agenda-month-view-event-slots'));
+    de = fixture.debugElement.query(
+      By.css('.aui-agenda-month-view-event-slots')
+    );
 
     el = de.nativeElement;
   });

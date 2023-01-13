@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Update from 9 to 10 https://update.angular.io/?v=8.2-9.0.
   - Fix some typing issues (ModuleWithProviders)
   - Outcommented some test that were not working (Navigation menu that should be deleted UPCO-72 and Context component which has low priority UPCO-18)
+  - Fix deprecations (async => waitForAsync)
 
 ## [5.4.0] - 2022-11-07
 

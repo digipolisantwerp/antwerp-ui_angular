@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { MonthPipe } from '../../pipes/month.pipe';
@@ -14,20 +14,16 @@ describe('The Navigation Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        NavigationComponent,
-        MonthPipe,
-      ],
+      declarations: [NavigationComponent, MonthPipe],
       providers: [
         DateHelperService,
-        {provide: MONTH_LABELS, useValue: DEFAULT_MONTH_LABELS},
+        { provide: MONTH_LABELS, useValue: DEFAULT_MONTH_LABELS },
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   // synchronous beforeEach

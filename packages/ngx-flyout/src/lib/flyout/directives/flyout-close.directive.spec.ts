@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -21,12 +21,19 @@ class MockFlyoutService {
 @Component({
   selector: 'aui-app',
   template: `<div auiFlyout>
-		<button type="button" class="button danger" auiFlyoutClose #auiFlyoutClose="auiFlyoutClose">Close</button>
-	</div>`,
+    <button
+      type="button"
+      class="button danger"
+      auiFlyoutClose
+      #auiFlyoutClose="auiFlyoutClose"
+    >
+      Close
+    </button>
+  </div>`,
 })
 class FlyoutComponent {
   // Access directive
-  @ViewChild('auiFlyoutClose', {static: true}) element;
+  @ViewChild('auiFlyoutClose', { static: true }) element;
 }
 
 describe('Flyout close directive', () => {
@@ -35,23 +42,19 @@ describe('Flyout close directive', () => {
   let componentDebugElement: DebugElement;
   let componentElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutDirective,
-        FlyoutComponent,
-        FlyoutCloseDirective,
-      ],
-      providers: [
-        {provide: FlyoutService, useClass: MockFlyoutService},
-      ],
+      declarations: [FlyoutDirective, FlyoutComponent, FlyoutCloseDirective],
+      providers: [{ provide: FlyoutService, useClass: MockFlyoutService }],
     });
 
     TestBed.compileComponents();
     fixture = TestBed.createComponent(FlyoutComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutCloseDirective));
+    componentDebugElement = fixture.debugElement.query(
+      By.directive(FlyoutCloseDirective)
+    );
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 

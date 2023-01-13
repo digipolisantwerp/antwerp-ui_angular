@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -13,19 +13,19 @@ const filters = [];
 const monthFilter = new Filter();
 monthFilter.name = 'Geboorte maand';
 monthFilter.options = [
-  {name: 'Alle'},
-  {name: 'Januari', value: 1},
-  {name: 'Februari', value: 2},
-  {name: 'Maart', value: 3},
-  {name: 'April', value: 4},
-  {name: 'Mei', value: 5},
-  {name: 'Juni', value: 6},
-  {name: 'Juli', value: 7},
-  {name: 'Augustus', value: 8},
-  {name: 'September', value: 9},
-  {name: 'Oktober', value: 10},
-  {name: 'November', value: 11},
-  {name: 'December', value: 12},
+  { name: 'Alle' },
+  { name: 'Januari', value: 1 },
+  { name: 'Februari', value: 2 },
+  { name: 'Maart', value: 3 },
+  { name: 'April', value: 4 },
+  { name: 'Mei', value: 5 },
+  { name: 'Juni', value: 6 },
+  { name: 'Juli', value: 7 },
+  { name: 'Augustus', value: 8 },
+  { name: 'September', value: 9 },
+  { name: 'Oktober', value: 10 },
+  { name: 'November', value: 11 },
+  { name: 'December', value: 12 },
 ];
 monthFilter.value = monthFilter.options[0];
 monthFilter.parse = (data, option) => {
@@ -42,11 +42,11 @@ filters.push(monthFilter);
 const dummy1 = new Filter();
 dummy1.name = 'Dummy one';
 dummy1.options = [
-  {name: 'Alle'},
-  {name: '2000', value: {from: '2000/01/01', until: '2009/12/31'}},
-  {name: '1990', value: {from: '1990/01/01', until: '1999/12/31'}},
-  {name: '1980', value: {from: '1980/01/01', until: '1989/12/31'}},
-  {name: '1970', value: {from: '1970/01/01', until: '1979/12/31'}},
+  { name: 'Alle' },
+  { name: '2000', value: { from: '2000/01/01', until: '2009/12/31' } },
+  { name: '1990', value: { from: '1990/01/01', until: '1999/12/31' } },
+  { name: '1980', value: { from: '1980/01/01', until: '1989/12/31' } },
+  { name: '1970', value: { from: '1970/01/01', until: '1979/12/31' } },
 ];
 dummy1.value = dummy1.options[0];
 dummy1.parse = (data, option) => data;
@@ -55,11 +55,11 @@ filters.push(dummy1);
 const dummy2 = new Filter();
 dummy2.name = 'Dummy two';
 dummy2.options = [
-  {name: 'Alle'},
-  {name: '2000', value: {from: '2000/01/01', until: '2009/12/31'}},
-  {name: '1990', value: {from: '1990/01/01', until: '1999/12/31'}},
-  {name: '1980', value: {from: '1980/01/01', until: '1989/12/31'}},
-  {name: '1970', value: {from: '1970/01/01', until: '1979/12/31'}},
+  { name: 'Alle' },
+  { name: '2000', value: { from: '2000/01/01', until: '2009/12/31' } },
+  { name: '1990', value: { from: '1990/01/01', until: '1999/12/31' } },
+  { name: '1980', value: { from: '1980/01/01', until: '1989/12/31' } },
+  { name: '1970', value: { from: '1970/01/01', until: '1979/12/31' } },
 ];
 dummy2.value = dummy2.options[0];
 dummy2.parse = (data, option) => data;
@@ -68,11 +68,11 @@ filters.push(dummy2);
 const dummy3 = new Filter();
 dummy3.name = 'Dummy three';
 dummy3.options = [
-  {name: 'Alle'},
-  {name: '2000', value: {from: '2000/01/01', until: '2009/12/31'}},
-  {name: '1990', value: {from: '1990/01/01', until: '1999/12/31'}},
-  {name: '1980', value: {from: '1980/01/01', until: '1989/12/31'}},
-  {name: '1970', value: {from: '1970/01/01', until: '1979/12/31'}},
+  { name: 'Alle' },
+  { name: '2000', value: { from: '2000/01/01', until: '2009/12/31' } },
+  { name: '1990', value: { from: '1990/01/01', until: '1999/12/31' } },
+  { name: '1980', value: { from: '1980/01/01', until: '1989/12/31' } },
+  { name: '1970', value: { from: '1970/01/01', until: '1979/12/31' } },
 ];
 dummy3.value = dummy3.options[0];
 dummy3.parse = (data, option) => data;
@@ -86,17 +86,14 @@ describe('The Table Bar Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FormsModule,
-      ],
+      imports: [FormsModule],
       declarations: [
         TableBarComponent, // declare the test component
       ],
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

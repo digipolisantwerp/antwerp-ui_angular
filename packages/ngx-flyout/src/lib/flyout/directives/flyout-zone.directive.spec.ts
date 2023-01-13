@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -6,25 +6,23 @@ import { FlyoutZoneDirective } from './flyout-zone.directive';
 
 @Component({
   selector: 'aui-app',
-  template: `
-    <div class="dummyElement"></div>
-    <div auiFlyoutZone #auiFlyoutZone=auiFlyoutZone></div>`,
+  template: ` <div class="dummyElement"></div>
+    <div auiFlyoutZone #auiFlyoutZone="auiFlyoutZone"></div>`,
 })
 class TestComponent {
   // Access directive
-  @ViewChild('auiFlyoutZone', {static: true}) element;
+  @ViewChild('auiFlyoutZone', { static: true }) element;
 }
 
 @Component({
   selector: 'aui-app',
-  template: `
-    <div [auiFlyoutZone]="false" #auiFlyoutZone=auiFlyoutZone>
-      <div class="dummyElement"></div>
-    </div>`,
+  template: ` <div [auiFlyoutZone]="false" #auiFlyoutZone="auiFlyoutZone">
+    <div class="dummyElement"></div>
+  </div>`,
 })
 class TestIsFalseComponent {
   // Access directive
-  @ViewChild('auiFlyoutZone', {static: true}) element;
+  @ViewChild('auiFlyoutZone', { static: true }) element;
 }
 
 describe('Flyout zone directive', () => {
@@ -33,19 +31,18 @@ describe('Flyout zone directive', () => {
   let componentDebugElement: DebugElement;
   let componentElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutZoneDirective,
-        TestComponent,
-      ],
+      declarations: [FlyoutZoneDirective, TestComponent],
     });
 
     TestBed.compileComponents();
     fixture = TestBed.createComponent(TestComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutZoneDirective));
+    componentDebugElement = fixture.debugElement.query(
+      By.directive(FlyoutZoneDirective)
+    );
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
@@ -63,17 +60,16 @@ describe('Flyout zone directive with false zone', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutZoneDirective,
-        TestIsFalseComponent,
-      ],
+      declarations: [FlyoutZoneDirective, TestIsFalseComponent],
     });
 
     TestBed.compileComponents();
     fixture = TestBed.createComponent(TestIsFalseComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutZoneDirective));
+    componentDebugElement = fixture.debugElement.query(
+      By.directive(FlyoutZoneDirective)
+    );
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
