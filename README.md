@@ -29,6 +29,10 @@ npm run build:all
 npm start
 ```
 
+### Troubleshooting
+
+- If `Error: error:0308010C:digital envelope routines::unsupported` -> `export NODE_OPTIONS=--openssl-legacy-provider`
+
 ### Install Antwerp UI
 
 ```shell
