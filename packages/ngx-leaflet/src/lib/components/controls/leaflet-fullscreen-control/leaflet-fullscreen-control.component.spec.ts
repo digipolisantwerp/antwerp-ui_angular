@@ -18,25 +18,26 @@ describe('The leaflet full screen control component', () => {
         LeafletFullscreenControlComponent,
         LeafletControlComponent,
       ],
-      imports: [
-        IconModule
-      ],
-      providers: [
-        MapService,
-      ],
+      imports: [IconModule],
+      providers: [MapService],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletFullscreenControlComponent);
     comp = fixture.componentInstance;
-    mapService = TestBed.get(MapService);
-    comp.map = new LeafletMap({
-      zoom: 13,
-      center: [51.215, 4.425],
-    }, mapService);
+    mapService = TestBed.inject(MapService);
+    comp.map = new LeafletMap(
+      {
+        zoom: 13,
+        center: [51.215, 4.425],
+      },
+      mapService
+    );
   });
 
   it('should switch to the full screen control', () => {
     const switchSpy = spyOn(comp.map, 'toggleFullScreen');
-    fixture.debugElement.query(By.directive(LeafletControlComponent)).triggerEventHandler('click', null);
+    fixture.debugElement
+      .query(By.directive(LeafletControlComponent))
+      .triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 });

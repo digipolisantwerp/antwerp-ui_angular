@@ -20,9 +20,7 @@ describe('Sub Menu Item Component Test', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        ...COMPONENTS,
-      ],
+      declarations: [...COMPONENTS],
       providers: [
         {
           provide: 'config',
@@ -36,14 +34,10 @@ describe('Sub Menu Item Component Test', () => {
         },
         SubMenuComponent,
       ],
-      imports: [
-        RouterModule,
-        CommonModule,
-        IconModule,
-      ],
+      imports: [RouterModule, CommonModule, IconModule],
     }).compileComponents();
 
-    service = TestBed.get(MenuService);
+    service = TestBed.inject(MenuService);
 
     /*
     DEFAULT CONFIG
@@ -56,7 +50,7 @@ describe('Sub Menu Item Component Test', () => {
     sinon.stub(service, 'onCloseMenu$').get(() => closeAllMenus$);
     sinon.stub(service, 'rootTemplateRef$').get(() => cold('-'));
     sinon.stub(service, 'currentMenuIsNestedSubMenu$').get(() => cold('a'));
-    (service as any).configuration = {dockedByDefault: false};  // Overwrite prop
+    (service as any).configuration = { dockedByDefault: false }; // Overwrite prop
 
     fixture = TestBed.createComponent(SubMenuItemComponent);
     component = fixture.componentInstance;
@@ -71,7 +65,7 @@ describe('Sub Menu Item Component Test', () => {
 
   describe('Events', () => {
     it('should stop propagation on click event', () => {
-      const event = {stopPropagation: sinon.stub()};
+      const event = { stopPropagation: sinon.stub() };
       component.openSubMenu(event as any);
       expect(event.stopPropagation.called).toBe(true);
     });
@@ -80,29 +74,37 @@ describe('Sub Menu Item Component Test', () => {
   describe('Active State', () => {
     it('should have default inactive state', () => {
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('a', {a: false}));
+      expect(component.isActive$).toBeObservable(cold('a', { a: false }));
     });
     it('should become active on click', () => {
       component.itemClicked$ = hot('---a');
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('a--b', {a: false, b: true}));
+      expect(component.isActive$).toBeObservable(
+        cold('a--b', { a: false, b: true })
+      );
     });
     it('should toggle active on multiple clicks', () => {
       component.itemClicked$ = hot('----a---b');
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('a---b---c', {a: false, b: true, c: false}));
+      expect(component.isActive$).toBeObservable(
+        cold('a---b---c', { a: false, b: true, c: false })
+      );
     });
     it('should become inactive on close all menus', () => {
       component.itemClicked$ = hot('a');
       closeAllMenus$ = hot('-----a');
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('(ab)-c', {a: false, b: true, c: false}));
+      expect(component.isActive$).toBeObservable(
+        cold('(ab)-c', { a: false, b: true, c: false })
+      );
     });
     it('should become re-active when clicking after closing all menus', () => {
       component.itemClicked$ = hot('---a-------c');
       closeAllMenus$ = hot('------a');
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('a--b--c----d', {a: false, b: true, c: false, d: true}));
+      expect(component.isActive$).toBeObservable(
+        cold('a--b--c----d', { a: false, b: true, c: false, d: true })
+      );
     });
 
     it('should become inactive when opening up another main tab', () => {
@@ -117,11 +119,13 @@ describe('Sub Menu Item Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('(ab)-c', {a: false, b: true, c: false}));
+      expect(component.isActive$).toBeObservable(
+        cold('(ab)-c', { a: false, b: true, c: false })
+      );
     });
     it('should close if we are opening up another submenu in the same parent menu item', () => {
       component.itemClicked$ = hot('a');
-      const parent = {id: 'parent'};
+      const parent = { id: 'parent' };
       component.parent = parent as any;
       state$ = hot('------a', {
         a: {
@@ -133,11 +137,13 @@ describe('Sub Menu Item Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('(ab)--c', {a: false, b: true, c: false}));
+      expect(component.isActive$).toBeObservable(
+        cold('(ab)--c', { a: false, b: true, c: false })
+      );
     });
     it('should not close based on active menu if the submenu item is the same', () => {
       component.itemClicked$ = hot('a');
-      const parent = {id: 'parent'};
+      const parent = { id: 'parent' };
       component.parent = parent as any;
       state$ = hot('----a', {
         a: {
@@ -149,75 +155,89 @@ describe('Sub Menu Item Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('(ab)--', {a: false, b: true}));
+      expect(component.isActive$).toBeObservable(
+        cold('(ab)--', { a: false, b: true })
+      );
     });
     it('should close if the parent orders us to close', () => {
       component.itemClicked$ = hot('a');
-      const parent = {onClose$: hot('------a', {a: true})};
+      const parent = { onClose$: hot('------a', { a: true }) };
       component.parent = parent as any;
       fixture.detectChanges();
-      expect(component.isActive$).toBeObservable(cold('(ab)--a', {a: false, b: true}));
+      expect(component.isActive$).toBeObservable(
+        cold('(ab)--a', { a: false, b: true })
+      );
     });
-    it('should cascasde the close event down to our submenu, if any', () => getTestScheduler().run((helpers) => {
-      const submenu = {onClose$: {next: sinon.stub()}};
-      const parent = {onClose$: hot('------a', {a: true})};
-      component.itemClicked$ = hot('a');
-      component.parent = parent as any;
-      component.subMenu = submenu as any;
+    it('should cascasde the close event down to our submenu, if any', () =>
+      getTestScheduler().run((helpers) => {
+        const submenu = { onClose$: { next: sinon.stub() } };
+        const parent = { onClose$: hot('------a', { a: true }) };
+        component.itemClicked$ = hot('a');
+        component.parent = parent as any;
+        component.subMenu = submenu as any;
 
-      fixture.detectChanges();
-      helpers.flush();
-      expect(submenu.onClose$.next.withArgs(true).calledOnce).toBe(true);
-    }));
+        fixture.detectChanges();
+        helpers.flush();
+        expect(submenu.onClose$.next.withArgs(true).calledOnce).toBe(true);
+      }));
   });
 
   describe('Active Menu', () => {
-    it('should update the state whenever active', () => getTestScheduler().run((helpers) => {
-      component.itemClicked$ = hot('a');
-      component.subMenu = {id: 'sub-menu'} as any;
-      component.parent = {id: 'parent-menu'} as any;
-      fixture.detectChanges();
-      helpers.flush();
-      expect((service.updateState as sinon.SinonStub).called).toBe(true);
-    }));
+    it('should update the state whenever active', () =>
+      getTestScheduler().run((helpers) => {
+        component.itemClicked$ = hot('a');
+        component.subMenu = { id: 'sub-menu' } as any;
+        component.parent = { id: 'parent-menu' } as any;
+        fixture.detectChanges();
+        helpers.flush();
+        expect((service.updateState as sinon.SinonStub).called).toBe(true);
+      }));
   });
 
   describe('Mobile Menu', () => {
-    it('should open the submenu on mobile', () => getTestScheduler().run((helpers) => {
-      component.subMenu = {templateRef: 'template'} as any;
-      state$ = hot('--a', {
-        a: {
-          mode: 'mobile',
-        },
-      });
-      component.itemClicked$ = hot('----a');
-      fixture.detectChanges();
-      helpers.flush();
-      expect((service.displaySubMenu as sinon.SinonStub).withArgs({type: 'submenu', templateRef: 'template'}).called).toBe(true);
-    }));
-    it('should not open the state menu on desktop mode', () => getTestScheduler().run((helpers) => {
-      component.subMenu = {templateRef: 'template'} as any;
-      state$ = hot('--a', {
-        a: {
-          mode: 'desktop',
-        },
-      });
-      component.itemClicked$ = hot('----a');
-      fixture.detectChanges();
-      helpers.flush();
-      expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
-    }));
-    it('should not open submenu if submenu is undefined', () => getTestScheduler().run((helpers) => {
-      component.subMenu = undefined;
-      state$ = hot('--a', {
-        a: {
-          mode: 'mobile',
-        },
-      });
-      component.itemClicked$ = hot('----a');
-      fixture.detectChanges();
-      helpers.flush();
-      expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
-    }));
+    it('should open the submenu on mobile', () =>
+      getTestScheduler().run((helpers) => {
+        component.subMenu = { templateRef: 'template' } as any;
+        state$ = hot('--a', {
+          a: {
+            mode: 'mobile',
+          },
+        });
+        component.itemClicked$ = hot('----a');
+        fixture.detectChanges();
+        helpers.flush();
+        expect(
+          (service.displaySubMenu as sinon.SinonStub).withArgs({
+            type: 'submenu',
+            templateRef: 'template',
+          }).called
+        ).toBe(true);
+      }));
+    it('should not open the state menu on desktop mode', () =>
+      getTestScheduler().run((helpers) => {
+        component.subMenu = { templateRef: 'template' } as any;
+        state$ = hot('--a', {
+          a: {
+            mode: 'desktop',
+          },
+        });
+        component.itemClicked$ = hot('----a');
+        fixture.detectChanges();
+        helpers.flush();
+        expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
+      }));
+    it('should not open submenu if submenu is undefined', () =>
+      getTestScheduler().run((helpers) => {
+        component.subMenu = undefined;
+        state$ = hot('--a', {
+          a: {
+            mode: 'mobile',
+          },
+        });
+        component.itemClicked$ = hot('----a');
+        fixture.detectChanges();
+        helpers.flush();
+        expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
+      }));
   });
 });

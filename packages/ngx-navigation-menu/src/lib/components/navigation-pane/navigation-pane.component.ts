@@ -1,5 +1,23 @@
-import { Component, HostBinding, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { delay, filter, map, mapTo, pairwise, scan, startWith, takeUntil, tap } from 'rxjs/operators';
+import {
+  Component,
+  HostBinding,
+  OnDestroy,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
+import {
+  delay,
+  filter,
+  map,
+  mapTo,
+  pairwise,
+  scan,
+  startWith,
+  takeUntil,
+  tap,
+} from 'rxjs/operators';
 import { MenuService } from '../../services/menu.service';
 import { merge, Observable, Subject } from 'rxjs';
 import { Menu } from '../../interfaces';
@@ -35,36 +53,36 @@ export class NavigationPaneComponent implements OnInit, OnDestroy {
   /**
    * Container reference where we will inject the submenu
    */
-  @ViewChild('subMenu', {read: ViewContainerRef, static: true})
+  @ViewChild('subMenu', { read: ViewContainerRef, static: true })
   private container: ViewContainerRef;
   /**
    * Container reference used for sliding in a submenu.
    */
-  @ViewChild('slideInSubMenu', {read: ViewContainerRef, static: true})
+  @ViewChild('slideInSubMenu', { read: ViewContainerRef, static: true })
   private slideInContainer: ViewContainerRef;
   private destroy$ = new Subject();
 
-  constructor(private menuService: MenuService) {
-
-  }
+  constructor(private menuService: MenuService) {}
 
   ngOnInit() {
     // Helper observable that emits when we need to display a submenu (NOT A MAIN MENU)
-    const subMenuComesIn$: Observable<TemplateRef<Menu.ISubMenuContext>> = this.menuService.displaySubMenu$.pipe(
-      takeUntil(this.destroy$),
-      filter(menu => menu && menu.type === 'submenu'),
-      map(menu => menu.templateRef)
-    );
+    const subMenuComesIn$: Observable<TemplateRef<Menu.ISubMenuContext>> =
+      this.menuService.displaySubMenu$.pipe(
+        takeUntil(this.destroy$),
+        filter((menu) => menu && menu.type === 'submenu'),
+        map((menu) => menu.templateRef)
+      );
 
     // Helper observable that emits whetever we should show the panel
     this.paneIsVisible$ = merge(
       this.menuService.displaySubMenu$.pipe(
-        startWith(undefined),
+        startWith(undefined as any),
         pairwise(),
         scan((accumulator: any, currentValue) => {
           const [previous, current] = currentValue;
           // Should we toggle displaying the current menu?
-          const isSame = (previous && current && previous.templateRef === current.templateRef);
+          const isSame =
+            previous && current && previous.templateRef === current.templateRef;
           if (isSame) {
             // if we open up the same value, we'll toggle the menu
             return !accumulator;
@@ -73,7 +91,7 @@ export class NavigationPaneComponent implements OnInit, OnDestroy {
           return currentValue;
         }, false),
         takeUntil(this.destroy$),
-        map(ref => !!ref),
+        map((ref) => !!ref),
         startWith(false)
       ),
       // If we close all menus, close the navigation pane
@@ -82,11 +100,11 @@ export class NavigationPaneComponent implements OnInit, OnDestroy {
 
     // Show main menu in the panel, without animation
     const showMainMenu$ = this.menuService.displaySubMenu$.pipe(
-      filter(menu => menu && menu.type === 'main'),
-      map(menu => menu.templateRef),
+      filter((menu) => menu && menu.type === 'main'),
+      map((menu) => menu.templateRef),
       tap((ref: TemplateRef<Menu.ISubMenuContext>) => {
         this.container.clear();
-        if (ref && (typeof ref.createEmbeddedView === 'function')) {
+        if (ref && typeof ref.createEmbeddedView === 'function') {
           this.container.createEmbeddedView(ref);
         }
       })
@@ -96,14 +114,14 @@ export class NavigationPaneComponent implements OnInit, OnDestroy {
     const showSlideInMenu$ = subMenuComesIn$.pipe(
       tap((ref: TemplateRef<Menu.ISubMenuContext>) => {
         this.slideInContainer.clear();
-        if (ref && (typeof ref.createEmbeddedView === 'function')) {
+        if (ref && typeof ref.createEmbeddedView === 'function') {
           this.slideInContainer.createEmbeddedView(ref);
         }
       }),
       delay(150),
       tap((ref: TemplateRef<Menu.ISubMenuContext>) => {
         this.container.clear();
-        if (ref && (typeof ref.createEmbeddedView === 'function')) {
+        if (ref && typeof ref.createEmbeddedView === 'function') {
           this.container.createEmbeddedView(ref);
         }
       })
@@ -111,12 +129,14 @@ export class NavigationPaneComponent implements OnInit, OnDestroy {
 
     // When do we need to slide in the menu?
     this.slideInSubMenu$ = merge(
-      subMenuComesIn$.pipe(mapTo(true)),  // When we have a submenu coming in
-      subMenuComesIn$.pipe(delay(150), mapTo(false)),  // After 100ms, hide the side panel again, sice the animation is done
-      this.paneIsVisible$.pipe(filter(v => !v)) // And of course, if we close the panel, hide it as well
+      subMenuComesIn$.pipe(mapTo(true)), // When we have a submenu coming in
+      subMenuComesIn$.pipe(delay(150), mapTo(false)), // After 100ms, hide the side panel again, sice the animation is done
+      this.paneIsVisible$.pipe(filter((v) => !v)) // And of course, if we close the panel, hide it as well
     );
 
-    this.paneIsVisible$.pipe(takeUntil(this.destroy$)).subscribe(v => this.paneIsVisible = v);
+    this.paneIsVisible$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((v) => (this.paneIsVisible = v));
 
     // Start the show!
     showMainMenu$.pipe(takeUntil(this.destroy$)).subscribe();

@@ -19,9 +19,7 @@ describe('Sub Menu Component Test', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        ...COMPONENTS,
-      ],
+      declarations: [...COMPONENTS],
       providers: [
         {
           provide: 'config',
@@ -34,14 +32,10 @@ describe('Sub Menu Component Test', () => {
           useValue: sinon.createStubInstance(MenuService),
         },
       ],
-      imports: [
-        RouterModule,
-        CommonModule,
-        IconModule,
-      ],
+      imports: [RouterModule, CommonModule, IconModule],
     }).compileComponents();
 
-    service = TestBed.get(MenuService);
+    service = TestBed.inject(MenuService);
 
     /*
     DEFAULT CONFIG
@@ -53,8 +47,10 @@ describe('Sub Menu Component Test', () => {
     sinon.stub(service, 'displaySubMenu$').get(() => cold('-'));
     sinon.stub(service, 'onCloseMenu$').get(() => cold('-'));
     sinon.stub(service, 'rootTemplateRef$').get(() => cold('-'));
-    sinon.stub(service, 'currentMenuIsNestedSubMenu$').get(() => nestedSubMenu$);
-    (service as any).configuration = {dockedByDefault: false};  // Overwrite prop
+    sinon
+      .stub(service, 'currentMenuIsNestedSubMenu$')
+      .get(() => nestedSubMenu$);
+    (service as any).configuration = { dockedByDefault: false }; // Overwrite prop
 
     fixture = TestBed.createComponent(SubMenuComponent);
     component = fixture.componentInstance;
@@ -68,40 +64,44 @@ describe('Sub Menu Component Test', () => {
   });
 
   describe('Dock and Undock', () => {
-    it('should should apply css class if docked', () => getTestScheduler().run((helpers) => {
-      state$ = hot('a', {
-        a: {
-          docked: true,
-        },
-      });
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.isDocked).toBe(true);
-    }));
-    it('should remove css class if not docked', () => getTestScheduler().run((helpers) => {
-      state$ = hot('a', {
-        a: {
-          docked: false,
-        },
-      });
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.isDocked).toBe(false);
-    }));
+    it('should should apply css class if docked', () =>
+      getTestScheduler().run((helpers) => {
+        state$ = hot('a', {
+          a: {
+            docked: true,
+          },
+        });
+        fixture.detectChanges();
+        helpers.flush();
+        expect(component.isDocked).toBe(true);
+      }));
+    it('should remove css class if not docked', () =>
+      getTestScheduler().run((helpers) => {
+        state$ = hot('a', {
+          a: {
+            docked: false,
+          },
+        });
+        fixture.detectChanges();
+        helpers.flush();
+        expect(component.isDocked).toBe(false);
+      }));
   });
 
   describe('Nested Submenu', () => {
-    it('should apply nested submenu rule by state', () => getTestScheduler().run((helpers) => {
-      nestedSubMenu$ = hot('a', {a: true});
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.isNestedSubMenu).toBe(true);
-    }));
-    it('should remove nested submenu rule by state', () => getTestScheduler().run((helpers) => {
-      nestedSubMenu$ = hot('a', {a: false});
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.isNestedSubMenu).toBe(false);
-    }));
+    it('should apply nested submenu rule by state', () =>
+      getTestScheduler().run((helpers) => {
+        nestedSubMenu$ = hot('a', { a: true });
+        fixture.detectChanges();
+        helpers.flush();
+        expect(component.isNestedSubMenu).toBe(true);
+      }));
+    it('should remove nested submenu rule by state', () =>
+      getTestScheduler().run((helpers) => {
+        nestedSubMenu$ = hot('a', { a: false });
+        fixture.detectChanges();
+        helpers.flush();
+        expect(component.isNestedSubMenu).toBe(false);
+      }));
   });
 });

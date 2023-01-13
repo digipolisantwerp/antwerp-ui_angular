@@ -21,9 +21,7 @@ describe('Navigation Pane Component Test', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        ...COMPONENTS,
-      ],
+      declarations: [...COMPONENTS],
       providers: [
         {
           provide: 'config',
@@ -36,14 +34,10 @@ describe('Navigation Pane Component Test', () => {
           useValue: sinon.createStubInstance(MenuService),
         },
       ],
-      imports: [
-        RouterModule,
-        CommonModule,
-        IconModule,
-      ],
+      imports: [RouterModule, CommonModule, IconModule],
     }).compileComponents();
 
-    service = TestBed.get(MenuService);
+    service = TestBed.inject(MenuService);
 
     /*
     DEFAULT CONFIG
@@ -57,7 +51,7 @@ describe('Navigation Pane Component Test', () => {
     sinon.stub(service, 'onCloseMenu$').get(() => closeAllMenus$);
     sinon.stub(service, 'rootTemplateRef$').get(() => cold('-'));
     sinon.stub(service, 'currentMenuIsNestedSubMenu$').get(() => cold('-'));
-    (service as any).configuration = {dockedByDefault: false};  // Overwrite prop
+    (service as any).configuration = { dockedByDefault: false }; // Overwrite prop
 
     fixture = TestBed.createComponent(NavigationPaneComponent);
     component = fixture.componentInstance;
@@ -73,7 +67,7 @@ describe('Navigation Pane Component Test', () => {
   describe('Pane Visibility', () => {
     it('should by default not be visible', () => {
       fixture.detectChanges();
-      expect(component.paneIsVisible$).toBeObservable(cold('a', {a: false}));
+      expect(component.paneIsVisible$).toBeObservable(cold('a', { a: false }));
     });
     it('should display pane (without slide animation) when submenu comes in for the first time', () => {
       displaySubMenu$ = hot('----a', {
@@ -83,7 +77,9 @@ describe('Navigation Pane Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.paneIsVisible$).toBeObservable(cold('a---b', {a: false, b: true}));
+      expect(component.paneIsVisible$).toBeObservable(
+        cold('a---b', { a: false, b: true })
+      );
     });
     it('should display slide animation on second level sub menu', () => {
       displaySubMenu$ = hot('--a-----b--c', {
@@ -101,16 +97,20 @@ describe('Navigation Pane Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.paneIsVisible$).toBeObservable(cold('f-t-----t--t', {f: false, t: true}));
+      expect(component.paneIsVisible$).toBeObservable(
+        cold('f-t-----t--t', { f: false, t: true })
+      );
     });
     it('should toggle visibility on displaying the same sub menu', () => {
       const submenu = {
         type: 'main',
         templateRef: 'a',
       };
-      displaySubMenu$ = hot('---a----a', {a: submenu});
+      displaySubMenu$ = hot('---a----a', { a: submenu });
       fixture.detectChanges();
-      expect(component.paneIsVisible$).toBeObservable(cold('f--t----f', {f: false, t: true}));
+      expect(component.paneIsVisible$).toBeObservable(
+        cold('f--t----f', { f: false, t: true })
+      );
     });
     it('should hide pane when closing all menus', () => {
       displaySubMenu$ = hot('--a', {
@@ -121,24 +121,28 @@ describe('Navigation Pane Component Test', () => {
       });
       closeAllMenus$ = hot('-----a');
       fixture.detectChanges();
-      expect(component.paneIsVisible$).toBeObservable(cold('f-t--f', {f: false, t: true}));
+      expect(component.paneIsVisible$).toBeObservable(
+        cold('f-t--f', { f: false, t: true })
+      );
     });
   });
 
   describe('Visibility State', () => {
-    it('should set visibility state if visible', () => getTestScheduler().run((helpers) => {
-      displaySubMenu$ = hot('-a', {a: {type: 'main', templateRef: 'a'}});
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.paneIsVisible).toBe(true);
-    }));
-    it('should set visibility state if not visible', () => getTestScheduler().run(helpers => {
-      displaySubMenu$ = hot('-a', {a: {type: 'main', templateRef: 'a'}});
-      closeAllMenus$ = hot('---a');
-      fixture.detectChanges();
-      helpers.flush();
-      expect(component.paneIsVisible).toBe(false);
-    }));
+    it('should set visibility state if visible', () =>
+      getTestScheduler().run((helpers) => {
+        displaySubMenu$ = hot('-a', { a: { type: 'main', templateRef: 'a' } });
+        fixture.detectChanges();
+        helpers.flush();
+        expect(component.paneIsVisible).toBe(true);
+      }));
+    it('should set visibility state if not visible', () =>
+      getTestScheduler().run((helpers) => {
+        displaySubMenu$ = hot('-a', { a: { type: 'main', templateRef: 'a' } });
+        closeAllMenus$ = hot('---a');
+        fixture.detectChanges();
+        helpers.flush();
+        expect(component.paneIsVisible).toBe(false);
+      }));
   });
 
   describe('Slide In Animation', () => {
@@ -158,7 +162,9 @@ describe('Navigation Pane Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.slideInSubMenu$).toBeObservable(cold('f------t--t', {f: false, t: true}));
+      expect(component.slideInSubMenu$).toBeObservable(
+        cold('f------t--t', { f: false, t: true })
+      );
     });
   });
 });

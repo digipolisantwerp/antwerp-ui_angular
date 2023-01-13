@@ -16,12 +16,12 @@ describe('Localstorage Service Test', () => {
         LocalstorageService,
         {
           provide: STORAGE_TOKEN,
-          useValue: storage
-        }
-      ]
+          useValue: storage,
+        },
+      ],
     });
 
-    service = TestBed.get(LocalstorageService);
+    service = TestBed.inject(LocalstorageService);
   });
 
   describe('Creation', () => {

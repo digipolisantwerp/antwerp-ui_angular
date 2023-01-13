@@ -14,29 +14,27 @@ describe('The leaflet locate control component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletLocateControlComponent,
-        LeafletControlComponent,
-      ],
-      imports: [
-        IconModule
-      ],
-      providers: [
-        MapService,
-      ],
+      declarations: [LeafletLocateControlComponent, LeafletControlComponent],
+      imports: [IconModule],
+      providers: [MapService],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletLocateControlComponent);
     comp = fixture.componentInstance;
-    mapService = TestBed.get(MapService);
-    comp.map = new LeafletMap({
-      zoom: 13,
-      center: [51.215, 4.425],
-    }, mapService);
+    mapService = TestBed.inject(MapService);
+    comp.map = new LeafletMap(
+      {
+        zoom: 13,
+        center: [51.215, 4.425],
+      },
+      mapService
+    );
   });
 
   it('should search for the current location', () => {
     const locateSpy = spyOn(comp.map, 'locate');
-    fixture.debugElement.query(By.directive(LeafletControlComponent)).triggerEventHandler('click', null);
+    fixture.debugElement
+      .query(By.directive(LeafletControlComponent))
+      .triggerEventHandler('click', null);
     expect(locateSpy).toHaveBeenCalled();
   });
 });

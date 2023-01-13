@@ -8,9 +8,7 @@ import { GAService } from './ga.service';
 import { Router } from '@angular/router';
 
 const mockWindow = {
-  ga: () => {
-
-  },
+  ga: () => {},
   document: {
     title: 'title',
   },
@@ -27,14 +25,12 @@ const mockGa = () => {
 @Component({
   template: '<router-outlet></router-outlet>',
 })
-class AppComponent {
-}
+class AppComponent {}
 
 @Component({
   template: '<h1>Home</h1>',
 })
-class HomeComponent {
-}
+class HomeComponent {}
 
 const routes = [
   {
@@ -57,22 +53,14 @@ describe('The Analytics Service', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [
-        {provide: WINDOW, useValue: mockWindow},
-        GAService,
-      ],
-      imports: [
-        RouterTestingModule.withRoutes(routes),
-      ],
-      declarations: [
-        AppComponent,
-        HomeComponent,
-      ],
+      providers: [{ provide: WINDOW, useValue: mockWindow }, GAService],
+      imports: [RouterTestingModule.withRoutes(routes)],
+      declarations: [AppComponent, HomeComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
-    gaService = TestBed.get(GAService);
-    router = TestBed.get(Router);
+    gaService = TestBed.inject(GAService);
+    router = TestBed.inject(Router);
   });
 
   it('should trigger an event', () => {
@@ -85,8 +73,12 @@ describe('The Analytics Service', () => {
 
     // It would be better to spy on windowService.ga but it is private...
     expect(gaService.triggerEvent('category', 'click')).toBeUndefined();
-    expect(gaService.triggerEvent('category', 'click', 'label')).toBeUndefined();
-    expect(gaService.triggerEvent('category', 'click', 'label', 10)).toBeUndefined();
+    expect(
+      gaService.triggerEvent('category', 'click', 'label')
+    ).toBeUndefined();
+    expect(
+      gaService.triggerEvent('category', 'click', 'label', 10)
+    ).toBeUndefined();
   });
 
   it('should trigger a page view', () => {
@@ -97,7 +89,11 @@ describe('The Analytics Service', () => {
   it('should autoTriggerPageView', () => {
     spyOn(gaService, 'triggerPageView');
     router.navigate(['/home']).then(() => {
-      expect(gaService.triggerPageView).toHaveBeenCalledWith('title', 'href', '/home');
+      expect(gaService.triggerPageView).toHaveBeenCalledWith(
+        'title',
+        'href',
+        '/home'
+      );
     });
   });
 

@@ -3,7 +3,10 @@ import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
 import { MapService } from '../services/map.service';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { PLATFORM_ID } from '@angular/core';
-import { LeafletControlComponent, LeafletDragControlComponent } from '../../public-api';
+import {
+  LeafletControlComponent,
+  LeafletDragControlComponent,
+} from '../../public-api';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('The leaflet map', () => {
@@ -14,10 +17,8 @@ describe('The leaflet map', () => {
   const options: LeafletMapOptions = {
     zoom: 13,
     center: [51.215, 4.425],
-    onAddLine: () => {
-    },
-    onAddPolygon: () => {
-    },
+    onAddLine: () => {},
+    onAddPolygon: () => {},
   };
   let map: LeafletMap;
   const fakeLayer: LeafletLayer = {
@@ -28,13 +29,8 @@ describe('The leaflet map', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletDragControlComponent,
-        LeafletControlComponent,
-      ],
-      imports: [
-        IconModule
-      ],
+      declarations: [LeafletDragControlComponent, LeafletControlComponent],
+      imports: [IconModule],
       providers: [
         MapService,
         {
@@ -43,12 +39,11 @@ describe('The leaflet map', () => {
         },
       ],
     }).compileComponents();
-    mapService = TestBed.get(MapService);
+    mapService = TestBed.inject(MapService);
     map = new LeafletMap(options, mapService);
     mapSpy = spyOn(mapService.L, 'map').and.callThrough();
     const fake = {
-      onInit: () => {
-      },
+      onInit: () => {},
     };
     onInitSpy = spyOn(fake, 'onInit');
     map.onInit.subscribe(fake.onInit);
@@ -65,16 +60,13 @@ describe('The leaflet map', () => {
 
   describe('when initialized', () => {
     it('should create a leaflet map', () => {
-      expect(mapSpy).toHaveBeenCalledWith(
-        element,
-        {
-          center: options.center,
-          zoom: options.zoom,
-          attributionControl: false,
-          zoomControl: false,
-          scrollWheelZoom: false,
-        }
-      );
+      expect(mapSpy).toHaveBeenCalledWith(element, {
+        center: options.center,
+        zoom: options.zoom,
+        attributionControl: false,
+        zoomControl: false,
+        scrollWheelZoom: false,
+      });
     });
 
     it('should emit the init event', () => {
@@ -88,9 +80,11 @@ describe('The leaflet map', () => {
     let returnedLayer;
 
     beforeEach(() => {
-      mapService = TestBed.get(MapService);
+      mapService = TestBed.inject(MapService);
       addLayerSpy = spyOn(map.map, 'addLayer').and.callFake(() => fakeLayer);
-      tileLayerSpy = spyOn(mapService.L, 'TileLayer').and.callFake(() => fakeLayer);
+      tileLayerSpy = spyOn(mapService.L, 'TileLayer').and.callFake(
+        () => fakeLayer
+      );
       returnedLayer = map.addTileLayer(fakeLayer);
     });
 
@@ -99,7 +93,10 @@ describe('The leaflet map', () => {
     });
 
     it('should create a new tile layer', () => {
-      expect(tileLayerSpy).toHaveBeenCalledWith(fakeLayer.url, fakeLayer.options);
+      expect(tileLayerSpy).toHaveBeenCalledWith(
+        fakeLayer.url,
+        fakeLayer.options
+      );
     });
 
     it('should add the tile layer to the map', () => {
@@ -113,10 +110,14 @@ describe('The leaflet map', () => {
     let returnedLayer;
 
     beforeEach(() => {
-      mapService = TestBed.get(MapService);
+      mapService = TestBed.inject(MapService);
       addLayerSpy = spyOn(map.map, 'addLayer').and.callFake(() => fakeLayer);
-      featureLayerSpy = jasmine.createSpy('featureLayer').and.returnValue(fakeLayer);
-      spyOnProperty(mapService.esri, 'featureLayer', 'get').and.returnValue(featureLayerSpy);
+      featureLayerSpy = jasmine
+        .createSpy('featureLayer')
+        .and.returnValue(fakeLayer);
+      spyOnProperty(mapService.esri, 'featureLayer', 'get').and.returnValue(
+        featureLayerSpy
+      );
       returnedLayer = map.addFeatureLayer(fakeLayer);
     });
 
@@ -154,15 +155,11 @@ describe('The leaflet map', () => {
       return options.center;
     };
     const eachFeature = (cb) => {
-      [
-        {getBounds},
-        {getBounds},
-        {getBounds},
-      ].forEach(cb);
+      [{ getBounds }, { getBounds }, { getBounds }].forEach(cb);
     };
     const featureLayers = [
-      {once, eachFeature},
-      {once, eachFeature},
+      { once, eachFeature },
+      { once, eachFeature },
     ];
     let fitBoundsSpy;
 
@@ -173,7 +170,9 @@ describe('The leaflet map', () => {
     it('should fit all features in the viewport', () => {
       map.fitFeatureLayers(featureLayers);
       expect(fitBoundsSpy).toHaveBeenCalledTimes(1);
-      expect(fitBoundsSpy).toHaveBeenCalledWith(mapService.L.latLngBounds(([getBounds()])));
+      expect(fitBoundsSpy).toHaveBeenCalledWith(
+        mapService.L.latLngBounds([getBounds()])
+      );
     });
   });
 
@@ -274,7 +273,7 @@ describe('The leaflet map', () => {
       const onAddPolygonSpy = spyOn(map.options, 'onAddPolygon');
       const switchToDraggingSpy = spyOn(map, 'switchToDragging');
       map.switchToPolygon();
-      map.handleDrawPolygon({layer: fakeLayer});
+      map.handleDrawPolygon({ layer: fakeLayer });
       expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
       expect(onAddPolygonSpy).toHaveBeenCalledWith(fakeLayer);
       expect(switchToDraggingSpy).toHaveBeenCalledTimes(2);
@@ -292,7 +291,7 @@ describe('The leaflet map', () => {
       const onAddLineSpy = spyOn(map.options, 'onAddLine');
       const switchToDraggingSpy = spyOn(map, 'switchToDragging');
       map.switchToLine();
-      map.handleDrawLine({layer: fakeLayer});
+      map.handleDrawLine({ layer: fakeLayer });
       expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
       expect(onAddLineSpy).toHaveBeenCalledWith(fakeLayer);
       expect(switchToDraggingSpy).toHaveBeenCalledTimes(2);
@@ -302,16 +301,12 @@ describe('The leaflet map', () => {
   describe('when editing a layer', () => {
     const editingLayer = {
       editing: {
-        enable: () => {
-        },
-        disable: () => {
-        },
+        enable: () => {},
+        disable: () => {},
       },
       options: {},
-      on: () => {
-      },
-      off: () => {
-      },
+      on: () => {},
+      off: () => {},
     };
 
     it('should enable the layers editing mode', () => {
@@ -343,7 +338,10 @@ describe('The leaflet map', () => {
       const divIconSpy = spyOn(mapService.L, 'divIcon').and.callThrough();
       const markerSpy = spyOn(mapService.L, 'marker').and.callThrough();
       map.addHtmlMarker(options.center, '<p>Test</p>');
-      expect(divIconSpy).toHaveBeenCalledWith({html: '<p>Test</p>', className: 'aui-leaflet__html-icon'});
+      expect(divIconSpy).toHaveBeenCalledWith({
+        html: '<p>Test</p>',
+        className: 'aui-leaflet__html-icon',
+      });
       expect(markerSpy).toHaveBeenCalled();
     });
   });

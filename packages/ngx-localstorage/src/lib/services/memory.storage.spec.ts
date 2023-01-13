@@ -5,12 +5,10 @@ describe('Memory Storage Test', () => {
   let storage: MemoryStorage;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        MemoryStorage
-      ]
+      providers: [MemoryStorage],
     });
 
-    storage = TestBed.get(MemoryStorage);
+    storage = TestBed.inject(MemoryStorage);
   });
 
   describe('Creation', () => {

@@ -23,9 +23,7 @@ describe('Menu Tab Component Test', () => {
   beforeEach(async () => {
     sandbox = sinon.createSandbox();
     await TestBed.configureTestingModule({
-      declarations: [
-        ...COMPONENTS,
-      ],
+      declarations: [...COMPONENTS],
       providers: [
         {
           provide: 'config',
@@ -38,14 +36,10 @@ describe('Menu Tab Component Test', () => {
           useValue: sinon.createStubInstance(MenuService),
         },
       ],
-      imports: [
-        RouterModule.forRoot([]),
-        CommonModule,
-        IconModule,
-      ],
+      imports: [RouterModule.forRoot([]), CommonModule, IconModule],
     }).compileComponents();
 
-    service = TestBed.get(MenuService);
+    service = TestBed.inject(MenuService);
 
     /*
     DEFAULT CONFIG
@@ -58,7 +52,7 @@ describe('Menu Tab Component Test', () => {
     sinon.stub(service, 'onCloseMenu$').get(() => closeAllMenus$);
     sinon.stub(service, 'rootTemplateRef$').get(() => cold('-'));
     sinon.stub(service, 'currentMenuIsNestedSubMenu$').get(() => cold('-'));
-    (service as any).configuration = {dockedByDefault: false};  // Overwrite prop
+    (service as any).configuration = { dockedByDefault: false }; // Overwrite prop
 
     fixture = TestBed.createComponent(MenuTabComponent);
     component = fixture.componentInstance;
@@ -82,25 +76,31 @@ describe('Menu Tab Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.tabIsActive$).toBeObservable(cold('a', {a: false}));
+      expect(component.tabIsActive$).toBeObservable(cold('a', { a: false }));
     });
     it('should become active on click', () => {
       component.headerClicked$ = hot('--a');
       fixture.detectChanges();
-      expect(component.tabIsActive$).toBeObservable(cold('a-b', {a: false, b: true}));
+      expect(component.tabIsActive$).toBeObservable(
+        cold('a-b', { a: false, b: true })
+      );
     });
 
     it('should toggle active on multiple clicks', () => {
       component.headerClicked$ = hot('---a----b');
       fixture.detectChanges();
-      expect(component.tabIsActive$).toBeObservable(cold('a--b----c', {a: false, b: true, c: false}));
+      expect(component.tabIsActive$).toBeObservable(
+        cold('a--b----c', { a: false, b: true, c: false })
+      );
     });
 
     it('should become inactive on close all menus', () => {
       component.headerClicked$ = hot('a');
       closeAllMenus$ = hot('------a');
       fixture.detectChanges();
-      expect(component.tabIsActive$).toBeObservable(cold('(ab)--c', {a: false, b: true, c: false}));
+      expect(component.tabIsActive$).toBeObservable(
+        cold('(ab)--c', { a: false, b: true, c: false })
+      );
     });
 
     it('should become inactive when opening up another (main) tab', () => {
@@ -116,7 +116,9 @@ describe('Menu Tab Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.tabIsActive$).toBeObservable(cold('(ab)---c', {a: false, b: true, c: false}));
+      expect(component.tabIsActive$).toBeObservable(
+        cold('(ab)---c', { a: false, b: true, c: false })
+      );
     });
     it('should NOT become inactive when opening a submenu', () => {
       component.headerClicked$ = hot('a');
@@ -131,21 +133,26 @@ describe('Menu Tab Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.tabIsActive$).toBeObservable(cold('(ab)----', {a: false, b: true}));
+      expect(component.tabIsActive$).toBeObservable(
+        cold('(ab)----', { a: false, b: true })
+      );
     });
   });
 
   describe('Active Menu', () => {
-    it('should set the active menu to main type when clicked', () => getTestScheduler().run((helpers) => {
-      component.headerClicked$ = hot('a');
-      fixture.detectChanges();
-      component.subMenu = {id: 'some-submenu'} as any;
-      helpers.flush();
-      expect((service.updateState as sinon.SinonStub).withArgs('activeMenu', {
-        type: 'main',
-        menuItem: component,
-      }).calledOnce).toBe(true);
-    }));
+    it('should set the active menu to main type when clicked', () =>
+      getTestScheduler().run((helpers) => {
+        component.headerClicked$ = hot('a');
+        fixture.detectChanges();
+        component.subMenu = { id: 'some-submenu' } as any;
+        helpers.flush();
+        expect(
+          (service.updateState as sinon.SinonStub).withArgs('activeMenu', {
+            type: 'main',
+            menuItem: component,
+          }).calledOnce
+        ).toBe(true);
+      }));
     it('should not become inactive when active menu is same as current tab', () => {
       component.headerClicked$ = hot('a');
       state$ = hot('-----a', {
@@ -155,76 +162,93 @@ describe('Menu Tab Component Test', () => {
         },
       });
       fixture.detectChanges();
-      expect(component.tabIsActive$).toBeObservable(cold('(ab)--', {a: false, b: true}));
+      expect(component.tabIsActive$).toBeObservable(
+        cold('(ab)--', { a: false, b: true })
+      );
     });
   });
 
   describe('Mobile Menu', () => {
-    it('should open main mobile menu on click', () => getTestScheduler().run((helpers) => {
-      state$ = hot('a', {
-        a: {
-          mode: 'mobile',
-        },
-      });
-      component.headerClicked$ = hot('--a', {a: false});
-      fixture.detectChanges();
-      component.subMenu = {templateRef: 'template' as any} as any;
-      helpers.flush();
+    it('should open main mobile menu on click', () =>
+      getTestScheduler().run((helpers) => {
+        state$ = hot('a', {
+          a: {
+            mode: 'mobile',
+          },
+        });
+        component.headerClicked$ = hot('--a', { a: false });
+        fixture.detectChanges();
+        component.subMenu = { templateRef: 'template' as any } as any;
+        helpers.flush();
 
-      expect((service.displaySubMenu as sinon.SinonStub).withArgs({type: 'main', templateRef: 'template'}).calledOnce).toBe(true);
-    }));
+        expect(
+          (service.displaySubMenu as sinon.SinonStub).withArgs({
+            type: 'main',
+            templateRef: 'template',
+          }).calledOnce
+        ).toBe(true);
+      }));
 
-    it('should open a submenu on click', () => getTestScheduler().run((helpers) => {
-      state$ = hot('a', {
-        a: {
-          mode: 'mobile',
-        },
-      });
-      component.headerClicked$ = hot('--a', {a: true});
-      fixture.detectChanges();
-      component.subMenu = {templateRef: 'template' as any} as any;
-      helpers.flush();
+    it('should open a submenu on click', () =>
+      getTestScheduler().run((helpers) => {
+        state$ = hot('a', {
+          a: {
+            mode: 'mobile',
+          },
+        });
+        component.headerClicked$ = hot('--a', { a: true });
+        fixture.detectChanges();
+        component.subMenu = { templateRef: 'template' as any } as any;
+        helpers.flush();
 
-      expect((service.displaySubMenu as sinon.SinonStub).withArgs({type: 'submenu', templateRef: 'template'}).calledOnce).toBe(true);
-    }));
+        expect(
+          (service.displaySubMenu as sinon.SinonStub).withArgs({
+            type: 'submenu',
+            templateRef: 'template',
+          }).calledOnce
+        ).toBe(true);
+      }));
 
-    it('should not open mobile menu in desktop mode', () => getTestScheduler().run((helpers) => {
-      state$ = hot('a', {
-        a: {
-          mode: 'desktop',
-        },
-      });
-      component.headerClicked$ = hot('--a', {a: false});
-      component.subMenu = {templateRef: 'template' as any} as any;
-      fixture.detectChanges();
-      helpers.flush();
+    it('should not open mobile menu in desktop mode', () =>
+      getTestScheduler().run((helpers) => {
+        state$ = hot('a', {
+          a: {
+            mode: 'desktop',
+          },
+        });
+        component.headerClicked$ = hot('--a', { a: false });
+        component.subMenu = { templateRef: 'template' as any } as any;
+        fixture.detectChanges();
+        helpers.flush();
 
-      expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
-    }));
+        expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
+      }));
 
-    it('should not open a menu if no submenu is present', () => getTestScheduler().run((helpers) => {
-      state$ = hot('a', {
-        a: {
-          mode: 'mobile',
-        },
-      });
-      component.headerClicked$ = hot('a');
-      component.subMenu = undefined;
-      fixture.detectChanges();
-      helpers.flush();
-      expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
-    }));
-    it('should not open a menu if no templateRef is present', () => getTestScheduler().run((helpers) => {
-      state$ = hot('a', {
-        a: {
-          mode: 'mobile',
-        },
-      });
-      component.headerClicked$ = hot('a');
-      component.subMenu = {templateRef: undefined} as any;
-      fixture.detectChanges();
-      helpers.flush();
-      expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
-    }));
+    it('should not open a menu if no submenu is present', () =>
+      getTestScheduler().run((helpers) => {
+        state$ = hot('a', {
+          a: {
+            mode: 'mobile',
+          },
+        });
+        component.headerClicked$ = hot('a');
+        component.subMenu = undefined;
+        fixture.detectChanges();
+        helpers.flush();
+        expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
+      }));
+    it('should not open a menu if no templateRef is present', () =>
+      getTestScheduler().run((helpers) => {
+        state$ = hot('a', {
+          a: {
+            mode: 'mobile',
+          },
+        });
+        component.headerClicked$ = hot('a');
+        component.subMenu = { templateRef: undefined } as any;
+        fixture.detectChanges();
+        helpers.flush();
+        expect((service.displaySubMenu as sinon.SinonStub).called).toBe(false);
+      }));
   });
 });

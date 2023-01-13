@@ -14,35 +14,35 @@ describe('The leaflet zoom control component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletZoomControlComponent,
-        LeafletControlComponent,
-      ],
-      imports: [
-        IconModule
-      ],
-      providers: [
-        MapService,
-      ],
+      declarations: [LeafletZoomControlComponent, LeafletControlComponent],
+      imports: [IconModule],
+      providers: [MapService],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletZoomControlComponent);
     comp = fixture.componentInstance;
-    mapService = TestBed.get(MapService);
-    comp.map = new LeafletMap({
-      zoom: 13,
-      center: [51.215, 4.425],
-    }, mapService);
+    mapService = TestBed.inject(MapService);
+    comp.map = new LeafletMap(
+      {
+        zoom: 13,
+        center: [51.215, 4.425],
+      },
+      mapService
+    );
   });
 
   it('should zoom in', () => {
     const switchSpy = spyOn(comp.map, 'zoomIn');
-    fixture.debugElement.queryAll(By.directive(LeafletControlComponent))[0].triggerEventHandler('click', null);
+    fixture.debugElement
+      .queryAll(By.directive(LeafletControlComponent))[0]
+      .triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 
   it('should zoom out', () => {
     const switchSpy = spyOn(comp.map, 'zoomOut');
-    fixture.debugElement.queryAll(By.directive(LeafletControlComponent))[1].triggerEventHandler('click', null);
+    fixture.debugElement
+      .queryAll(By.directive(LeafletControlComponent))[1]
+      .triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 });

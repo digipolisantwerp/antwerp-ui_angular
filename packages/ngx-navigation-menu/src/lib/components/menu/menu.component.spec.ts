@@ -45,8 +45,8 @@ describe('Menu Component Test', () => {
       ],
     }).compileComponents();
 
-    service = TestBed.get(MenuService);
-    router = TestBed.get(Router);
+    service = TestBed.inject(MenuService);
+    router = TestBed.inject(Router);
 
     /*
     DEFAULT CONFIG

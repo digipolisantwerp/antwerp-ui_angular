@@ -1,6 +1,18 @@
 import { Inject, Injectable, TemplateRef } from '@angular/core';
 import { fromEvent, merge, Observable, Subject } from 'rxjs';
-import { filter, first, map, mapTo, mergeMap, scan, share, shareReplay, startWith, takeUntil, tap } from 'rxjs/operators';
+import {
+  filter,
+  first,
+  map,
+  mapTo,
+  mergeMap,
+  scan,
+  share,
+  shareReplay,
+  startWith,
+  takeUntil,
+  tap,
+} from 'rxjs/operators';
 import { Menu } from '../interfaces';
 import { LocalstorageService } from './localstorage.service';
 
@@ -24,7 +36,7 @@ export class MenuService {
   private tree$: Observable<Array<Menu.ISubMenu>>;
 
   // Internal subject used to update the state of the menu
-  private updateProps$: Subject<{ prop: string, value: any }> = new Subject();
+  private updateProps$: Subject<{ prop: string; value: any }> = new Subject();
 
   // Internal observable representing the state of the menu
   private pState$: Observable<Menu.MenuState>;
@@ -37,8 +49,10 @@ export class MenuService {
 
   private destroy$ = new Subject();
 
-  constructor(@Inject('config') public readonly configuration: Menu.ModuleConfiguration,
-              private localStorage: LocalstorageService) {
+  constructor(
+    @Inject('config') public readonly configuration: Menu.ModuleConfiguration,
+    private localStorage: LocalstorageService
+  ) {
     let defaultConfig = {
       mode: 'mobile',
       docked: configuration.dockedByDefault,
@@ -47,37 +61,50 @@ export class MenuService {
     if (configuration.useLocalStorage) {
       defaultConfig = {
         ...defaultConfig,
-        ...this.localStorage.getMenuState()
+        ...this.localStorage.getMenuState(),
       };
     }
     // Scan the update props to populate the state with the new properties coming in
     this.pState$ = this.updateProps$.pipe(
-      startWith(null),
-      scan((acc: Menu.MenuState, current: { prop: string, value: any }) => {
-        return current && current.prop ? {
-          ...acc,
-          [current.prop]: current.value,
-        } : acc;
-      }, defaultConfig),  // Start off with the default state
-      mergeMap(state => this.isMobile$.pipe(  // Internally also subscribe to the isMobile$
-        map(isMobile => {
-          return {
-            ...state, // and update the state accordingly
-            mode: isMobile ? ('mobile' as Menu.MenuMode) : ('desktop' as Menu.MenuMode),
-          };
-        })
-      )),
-      tap(state => configuration.useLocalStorage && this.localStorage.setMenuState(state)),
-      shareReplay(1)  // Act as a behaviour subject observable
+      startWith(null as any),
+      scan((acc: Menu.MenuState, current: { prop: string; value: any }) => {
+        return current && current.prop
+          ? {
+              ...acc,
+              [current.prop]: current.value,
+            }
+          : acc;
+      }, defaultConfig), // Start off with the default state
+      mergeMap((state) =>
+        this.isMobile$.pipe(
+          // Internally also subscribe to the isMobile$
+          map((isMobile) => {
+            return {
+              ...state, // and update the state accordingly
+              mode: isMobile
+                ? ('mobile' as Menu.MenuMode)
+                : ('desktop' as Menu.MenuMode),
+            };
+          })
+        )
+      ),
+      tap(
+        (state) =>
+          configuration.useLocalStorage && this.localStorage.setMenuState(state)
+      ),
+      shareReplay(1) // Act as a behaviour subject observable
     );
 
-    this.tree$ = merge(
-      this.pDisplaySubMenu$,
-      this.onCloseMenu$
-    ).pipe(
+    this.tree$ = merge(this.pDisplaySubMenu$, this.onCloseMenu$).pipe(
       takeUntil(this.destroy$),
       scan((acc: Array<Menu.ISubMenu>, value: Menu.ISubMenu) => {
-        if (value && acc[0] && value.type === 'main' && acc[0].type === 'main' && value.templateRef !== acc[0].templateRef) {
+        if (
+          value &&
+          acc[0] &&
+          value.type === 'main' &&
+          acc[0].type === 'main' &&
+          value.templateRef !== acc[0].templateRef
+        ) {
           return [value];
         } else if (value) {
           return [...acc, value];
@@ -88,7 +115,7 @@ export class MenuService {
       shareReplay(1)
     );
 
-    this.tree$.subscribe();  // Start watching the tree immediately on construction
+    this.tree$.subscribe(); // Start watching the tree immediately on construction
   }
 
   set translations(value: Menu.Translations) {
@@ -112,7 +139,7 @@ export class MenuService {
    */
   get currentMenuIsNestedSubMenu$(): Observable<boolean> {
     return this.pDisplaySubMenu$.pipe(
-      map(menu => menu && menu.type === 'submenu')
+      map((menu) => menu && menu.type === 'submenu')
     );
   }
 
@@ -122,7 +149,7 @@ export class MenuService {
    */
   get rootTemplateRef$(): Observable<TemplateRef<Menu.ISubMenuContext>> {
     return this.tree$.pipe(
-      map(tree => tree && tree[0] ? tree[0].templateRef : undefined)
+      map((tree) => (tree && tree[0] ? tree[0].templateRef : undefined))
     );
   }
 
@@ -130,11 +157,14 @@ export class MenuService {
    * Observable emits when closing all menus
    */
   get onCloseMenu$(): Observable<void> {
-    return this.pDisplaySubMenu$.pipe(filter(v => !v), mapTo(undefined));
+    return this.pDisplaySubMenu$.pipe(
+      filter((v) => !v),
+      mapTo(undefined)
+    );
   }
 
   get treeLength$(): Observable<number> {
-    return this.tree$.pipe(map(tree => tree.length));
+    return this.tree$.pipe(map((tree) => tree.length));
   }
 
   /**
@@ -150,9 +180,9 @@ export class MenuService {
    */
   private get isMobile$(): Observable<boolean> {
     return fromEvent(window, 'resize').pipe(
-      map(event => window.innerWidth),
+      map((event) => window.innerWidth),
       startWith(window.innerWidth),
-      map(width => width < MenuService.MOBILE_VIEWPORT)
+      map((width) => width < MenuService.MOBILE_VIEWPORT)
     );
   }
 
@@ -163,21 +193,27 @@ export class MenuService {
   /**
    * Update the state with known properties using patch system.
    */
-  updateState<T extends keyof Menu.MenuState>(property: T, value: Menu.MenuState[T]): void {
-    return this.updateProps$.next({prop: property, value});
+  updateState<T extends keyof Menu.MenuState>(
+    property: T,
+    value: Menu.MenuState[T]
+  ): void {
+    return this.updateProps$.next({ prop: property, value });
   }
 
   /**
    * Navigate back in the tree, used for mobile navigation only
    */
   navigateBack() {
-    this.tree$.pipe(
-      first(),
-      map(tree => tree.length >= 2 ? tree.pop() && tree.pop() : null),
-      tap(menu => !menu ? this.closeAllMenus() : this.displaySubMenu(menu))
-    ).subscribe();
+    this.tree$
+      .pipe(
+        first(),
+        map((tree) => (tree.length >= 2 ? tree.pop() && tree.pop() : null)),
+        tap((menu) =>
+          !menu ? this.closeAllMenus() : this.displaySubMenu(menu)
+        )
+      )
+      .subscribe();
   }
-
 
   public closeAllMenus() {
     (this.pDisplaySubMenu$ as Subject<Menu.ISubMenu>).next();

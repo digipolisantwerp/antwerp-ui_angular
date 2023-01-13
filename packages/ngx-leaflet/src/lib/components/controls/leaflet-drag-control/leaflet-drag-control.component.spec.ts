@@ -14,29 +14,27 @@ describe('The leaflet drag control component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletDragControlComponent,
-        LeafletControlComponent,
-      ],
-      imports: [
-        IconModule
-      ],
-      providers: [
-        MapService,
-      ],
+      declarations: [LeafletDragControlComponent, LeafletControlComponent],
+      imports: [IconModule],
+      providers: [MapService],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletDragControlComponent);
     comp = fixture.componentInstance;
-    mapService = TestBed.get(MapService);
-    comp.map = new LeafletMap({
-      zoom: 13,
-      center: [51.215, 4.425],
-    }, mapService);
+    mapService = TestBed.inject(MapService);
+    comp.map = new LeafletMap(
+      {
+        zoom: 13,
+        center: [51.215, 4.425],
+      },
+      mapService
+    );
   });
 
   it('should switch to the drag control', () => {
     const switchSpy = spyOn(comp.map, 'switchToDragging');
-    fixture.debugElement.query(By.directive(LeafletControlComponent)).triggerEventHandler('click', null);
+    fixture.debugElement
+      .query(By.directive(LeafletControlComponent))
+      .triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 });

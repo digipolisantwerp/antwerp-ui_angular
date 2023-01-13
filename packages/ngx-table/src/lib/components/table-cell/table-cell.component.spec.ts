@@ -1,5 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component, ComponentFactory, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import {
+  Component,
+  ComponentFactory,
+  ComponentFactoryResolver,
+  ViewContainerRef,
+} from '@angular/core';
 import { TableCellComponent } from './table-cell.component';
 import { Cell } from '../../types/table.types';
 import { TableHelperService } from '../../services/table-helper.service';
@@ -31,36 +36,36 @@ describe('The Table Cell Component without component', () => {
           provide: ViewContainerRef,
           useValue: {
             createComponent: sinon.stub(),
-            clear: sinon.stub()
-          }
+            clear: sinon.stub(),
+          },
         },
         {
           provide: ComponentFactoryResolver,
           useValue: {
-            resolveComponentFactory: sinon.stub()
-          }
-        }
+            resolveComponentFactory: sinon.stub(),
+          },
+        },
       ],
-      declarations: [
-        TableCellComponent,
-        DummyTestComponent
-      ],
+      declarations: [TableCellComponent, DummyTestComponent],
     }).compileComponents();
 
-    componentFactory = {name: 'some testing factory'} as any;
+    componentFactory = { name: 'some testing factory' } as any;
     instance = new DummyTestComponent();
     fixture = TestBed.createComponent(TableCellComponent);
     component = fixture.componentInstance; // BannerComponent test instance
-    viewContainer = TestBed.get(ViewContainerRef);
-    factory = TestBed.get(ComponentFactoryResolver);
+    viewContainer = TestBed.inject(ViewContainerRef);
+    factory = TestBed.inject(ComponentFactoryResolver);
   });
 
   it('should create a component using only the component constructor type', () => {
-
-    (viewContainer.createComponent as SinonStub).withArgs(componentFactory).returns({
-      instance
-    });
-    (factory.resolveComponentFactory as SinonStub).withArgs(DummyTestComponent).returns(componentFactory);
+    (viewContainer.createComponent as SinonStub)
+      .withArgs(componentFactory)
+      .returns({
+        instance,
+      });
+    (factory.resolveComponentFactory as SinonStub)
+      .withArgs(DummyTestComponent)
+      .returns(componentFactory);
     component.viewContainerRef = viewContainer;
     component.value = 'some testing here';
     const ref = component.loadComponent(DummyTestComponent);
@@ -71,15 +76,19 @@ describe('The Table Cell Component without component', () => {
   });
 
   it('should create a component using contructor and metadata', () => {
-    (viewContainer.createComponent as SinonStub).withArgs(componentFactory).returns({
-      instance
-    });
-    (factory.resolveComponentFactory as SinonStub).withArgs(DummyTestComponent).returns(componentFactory);
+    (viewContainer.createComponent as SinonStub)
+      .withArgs(componentFactory)
+      .returns({
+        instance,
+      });
+    (factory.resolveComponentFactory as SinonStub)
+      .withArgs(DummyTestComponent)
+      .returns(componentFactory);
     component.viewContainerRef = viewContainer;
     component.value = 'some testing here';
     const ref = component.loadComponent({
       instance: DummyTestComponent,
-      metadata: 'some-meta-data'
+      metadata: 'some-meta-data',
     });
     expect(ref.instance).toBe(instance);
     expect(ref.instance.data).toBe('some testing here');

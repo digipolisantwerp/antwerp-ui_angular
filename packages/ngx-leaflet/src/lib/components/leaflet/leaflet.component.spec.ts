@@ -35,12 +35,15 @@ import { MapService } from '../../services/map.service';
   `,
 })
 class TestLeafletComponent {
-  mapService = TestBed.get(MapService);
+  mapService = TestBed.inject(MapService);
   shouldHaveContent = false;
-  leafletMap = new LeafletMap({
-    zoom: 13,
-    center: [51.215, 4.425],
-  }, this.mapService);
+  leafletMap = new LeafletMap(
+    {
+      zoom: 13,
+      center: [51.215, 4.425],
+    },
+    this.mapService
+  );
 }
 
 // Mock timeout
@@ -56,20 +59,15 @@ describe('The leaflet component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        LeafletModule,
-      ],
-      declarations: [
-        TestLeafletComponent,
-      ],
-      providers: [
-        MapService,
-      ],
-    })
-      .compileComponents();
+      imports: [LeafletModule],
+      declarations: [TestLeafletComponent],
+      providers: [MapService],
+    }).compileComponents();
     fixture = TestBed.createComponent(TestLeafletComponent);
     wrapperComp = fixture.componentInstance;
-    comp = fixture.debugElement.query(By.directive(LeafletComponent)).injector.get(LeafletComponent);
+    comp = fixture.debugElement
+      .query(By.directive(LeafletComponent))
+      .injector.get(LeafletComponent);
   });
 
   it('should initialize the map', (done) => {
@@ -96,19 +94,25 @@ describe('The leaflet component', () => {
   it('should display the controls at the correct position', () => {
     fixture.detectChanges(false);
     expect(
-      fixture.debugElement.query(By.directive(LeafletFullscreenControlComponent)).parent.nativeElement.parentNode.classList
+      fixture.debugElement.query(
+        By.directive(LeafletFullscreenControlComponent)
+      ).parent.nativeElement.parentNode.classList
     ).toContain('o-leaflet__controls--top-left');
     expect(
-      fixture.debugElement.query(By.directive(LeafletDragControlComponent)).parent.nativeElement.parentNode.classList
+      fixture.debugElement.query(By.directive(LeafletDragControlComponent))
+        .parent.nativeElement.parentNode.classList
     ).toContain('o-leaflet__controls--top-right');
     expect(
-      fixture.debugElement.query(By.directive(LeafletDrawControlComponent)).parent.nativeElement.parentNode.classList
+      fixture.debugElement.query(By.directive(LeafletDrawControlComponent))
+        .parent.nativeElement.parentNode.classList
     ).toContain('o-leaflet__controls--top-right');
     expect(
-      fixture.debugElement.query(By.directive(LeafletZoomControlComponent)).parent.nativeElement.parentNode.classList
+      fixture.debugElement.query(By.directive(LeafletZoomControlComponent))
+        .parent.nativeElement.parentNode.classList
     ).toContain('o-leaflet__controls--bottom-left');
     expect(
-      fixture.debugElement.query(By.directive(LeafletLocateControlComponent)).parent.nativeElement.parentNode.classList
+      fixture.debugElement.query(By.directive(LeafletLocateControlComponent))
+        .parent.nativeElement.parentNode.classList
     ).toContain('o-leaflet__controls--bottom-right');
   });
 
