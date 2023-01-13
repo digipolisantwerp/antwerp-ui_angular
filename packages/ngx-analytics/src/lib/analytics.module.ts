@@ -6,23 +6,17 @@ import { GAService } from './services/ga.service';
 import { GTMService } from './services/gtm.service';
 
 @NgModule({
-  imports: [
-    WindowModule,
-  ],
+  imports: [WindowModule],
   providers: [
-    {provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT},
+    { provide: GTM_CONFIG, useValue: GTM_CONFIG_DEFAULT },
     GAService,
     GTMService,
   ],
-  declarations: [
-    GaEventDirective,
-  ],
-  exports: [
-    GaEventDirective,
-  ],
+  declarations: [GaEventDirective],
+  exports: [GaEventDirective],
 })
 export class AnalyticsModule {
-  static forChild(config = {}): ModuleWithProviders {
+  static forChild(config = {}): ModuleWithProviders<any> {
     config = {
       ...GTM_CONFIG_DEFAULT,
       ...config,
@@ -31,7 +25,7 @@ export class AnalyticsModule {
     return {
       ngModule: AnalyticsModule,
       providers: [
-        {provide: GTM_CONFIG, useValue: config},
+        { provide: GTM_CONFIG, useValue: config },
         GAService,
         GTMService,
       ],

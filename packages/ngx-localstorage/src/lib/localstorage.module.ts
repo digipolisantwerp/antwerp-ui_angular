@@ -9,13 +9,11 @@ import { storageProvider } from './providers/storage.provider';
 import { MemoryStorage } from './services/memory.storage';
 
 @NgModule({
-  imports: [
-    WindowModule
-  ],
+  imports: [WindowModule],
   providers: [
     {
       provide: LOCALSTORAGE_CONFIG,
-      useValue: DEFAULT_LOCALSTORAGE_CONFIG
+      useValue: DEFAULT_LOCALSTORAGE_CONFIG,
     },
     ...WINDOW_PROVIDERS,
     MemoryStorage,
@@ -27,13 +25,13 @@ import { MemoryStorage } from './services/memory.storage';
 export class LocalstorageModule {
   static forRoot(
     localstorageConfig: ILocalStorageConfig = DEFAULT_LOCALSTORAGE_CONFIG
-  ): ModuleWithProviders {
+  ): ModuleWithProviders<any> {
     return {
       ngModule: LocalstorageModule,
       providers: [
         {
           provide: LOCALSTORAGE_CONFIG,
-          useValue: localstorageConfig
+          useValue: localstorageConfig,
         },
         ...WINDOW_PROVIDERS,
         MemoryStorage,

@@ -10,19 +10,12 @@ import { CommonModule } from '@angular/common';
 
 const defaultConfiguration: Menu.ModuleConfiguration = {
   dockedByDefault: false,
-  useLocalStorage: true
+  useLocalStorage: true,
 };
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    IconModule,
-    AuiModule,
-  ],
-  declarations: [
-    ...COMPONENTS,
-  ],
+  imports: [CommonModule, RouterModule, IconModule, AuiModule],
+  declarations: [...COMPONENTS],
   providers: [
     MenuService,
     LocalstorageService,
@@ -31,13 +24,12 @@ const defaultConfiguration: Menu.ModuleConfiguration = {
       useValue: defaultConfiguration,
     },
   ],
-  exports: [
-    ...COMPONENTS,
-  ],
+  exports: [...COMPONENTS],
 })
 export class NavigationMenuModule {
-
-  public static configure(configuration: Menu.ModuleConfiguration = defaultConfiguration): ModuleWithProviders {
+  public static configure(
+    configuration: Menu.ModuleConfiguration = defaultConfiguration
+  ): ModuleWithProviders<any> {
     return {
       ngModule: NavigationMenuModule,
       providers: [

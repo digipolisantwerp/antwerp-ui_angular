@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Inject, Input, OnChanges, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Inject,
+  Input,
+  OnChanges,
+  OnInit,
+} from '@angular/core';
 
 import { ITEM_COUNTER_LABEL } from '../../item-counter.conf';
 
@@ -6,16 +14,14 @@ import { ITEM_COUNTER_LABEL } from '../../item-counter.conf';
   selector: 'aui-item-counter',
   templateUrl: './item-counter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: [
-    './item-counter.component.scss',
-  ],
+  styleUrls: ['./item-counter.component.scss'],
 })
 export class ItemCounterComponent implements OnInit, OnChanges {
   @HostBinding('class.aui-item-counter') setClass = true;
 
   @Input() currentPage: number;
   @Input() totalAmount: number;
-  @Input() amountPerPage: number;
+  @Input() amountPerPage: number = 0;
   @Input() label: any;
 
   public currentFrom = 1;
@@ -33,9 +39,12 @@ export class ItemCounterComponent implements OnInit, OnChanges {
   }
 
   public setFromTo() {
-    this.currentFrom = (this.amountPerPage * (this.currentPage - 1)) + 1;
+    this.currentFrom = this.amountPerPage * (this.currentPage - 1) + 1;
     /* tslint:disable:max-line-length */
-    this.currentTo = (this.amountPerPage * this.currentPage) <= this.totalAmount ? this.amountPerPage * this.currentPage : this.totalAmount;
+    this.currentTo =
+      this.amountPerPage * this.currentPage <= this.totalAmount
+        ? this.amountPerPage * this.currentPage
+        : this.totalAmount;
     /* tslint:enable:max-line-length */
   }
 

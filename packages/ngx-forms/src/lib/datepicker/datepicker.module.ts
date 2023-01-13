@@ -8,14 +8,17 @@ import {
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
   CALENDAR_MONTH_LABELS,
   CALENDAR_WEEKDAY_LABELS,
-  CalendarModule
+  CalendarModule,
 } from '@acpaas-ui/ngx-calendar';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
 import { MaskModule } from '../mask/mask.module';
 
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
-import { DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS } from './datepicker.conf';
+import {
+  DATEPICKER_DEFAULT_ERROR_LABELS,
+  DATEPICKER_ERROR_LABELS,
+} from './datepicker.conf';
 import { DatepickerErrorLabels } from './types/datepicker.types';
 
 @NgModule({
@@ -28,16 +31,18 @@ import { DatepickerErrorLabels } from './types/datepicker.types';
     FlyoutModule,
     MaskModule,
   ],
-  declarations: [
-    DatepickerComponent,
-  ],
-  exports: [
-    DatepickerComponent,
-  ],
+  declarations: [DatepickerComponent],
+  exports: [DatepickerComponent],
   providers: [
-    {provide: CALENDAR_WEEKDAY_LABELS, useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS},
-    {provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS},
-    {provide: DATEPICKER_ERROR_LABELS, useValue: DATEPICKER_DEFAULT_ERROR_LABELS},
+    {
+      provide: CALENDAR_WEEKDAY_LABELS,
+      useValue: CALENDAR_DEFAULT_WEEKDAY_LABELS,
+    },
+    { provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS },
+    {
+      provide: DATEPICKER_ERROR_LABELS,
+      useValue: DATEPICKER_DEFAULT_ERROR_LABELS,
+    },
   ],
 })
 export class DatepickerModule {
@@ -45,13 +50,13 @@ export class DatepickerModule {
     weekdayLabels: string[],
     monthLabels: string[],
     errorLabels: DatepickerErrorLabels
-  ): ModuleWithProviders {
+  ): ModuleWithProviders<any> {
     return {
       ngModule: DatepickerModule,
       providers: [
-        {provide: CALENDAR_WEEKDAY_LABELS, useValue: weekdayLabels},
-        {provide: CALENDAR_MONTH_LABELS, useValue: monthLabels},
-        {provide: DATEPICKER_ERROR_LABELS, useValue: errorLabels},
+        { provide: CALENDAR_WEEKDAY_LABELS, useValue: weekdayLabels },
+        { provide: CALENDAR_MONTH_LABELS, useValue: monthLabels },
+        { provide: DATEPICKER_ERROR_LABELS, useValue: errorLabels },
       ],
     };
   }
