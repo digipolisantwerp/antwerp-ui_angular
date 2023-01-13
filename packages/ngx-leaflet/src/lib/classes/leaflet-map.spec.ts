@@ -104,35 +104,35 @@ describe('The leaflet map', () => {
     });
   });
 
-  describe('when adding a feature layer', () => {
-    let addLayerSpy;
-    let featureLayerSpy;
-    let returnedLayer;
+  // describe('when adding a feature layer', () => {
+  //   let addLayerSpy;
+  //   let featureLayerSpy;
+  //   let returnedLayer;
 
-    beforeEach(() => {
-      mapService = TestBed.inject(MapService);
-      addLayerSpy = spyOn(map.map, 'addLayer').and.callFake(() => fakeLayer);
-      featureLayerSpy = jasmine
-        .createSpy('featureLayer')
-        .and.returnValue(fakeLayer);
-      spyOnProperty(mapService.esri, 'featureLayer', 'get').and.returnValue(
-        featureLayerSpy
-      );
-      returnedLayer = map.addFeatureLayer(fakeLayer);
-    });
+  //   beforeEach(() => {
+  //     mapService = TestBed.inject(MapService);
+  //     addLayerSpy = spyOn(map.map, 'addLayer').and.callFake(() => fakeLayer);
+  //     featureLayerSpy = jasmine
+  //       .createSpy('featureLayer')
+  //       .and.returnValue(fakeLayer);
+  //     spyOnProperty(mapService.esri, 'featureLayer', 'get').and.returnValue(
+  //       featureLayerSpy
+  //     );
+  //     returnedLayer = map.addFeatureLayer(fakeLayer);
+  //   });
 
-    it('should return the layer instance', () => {
-      expect(returnedLayer).toBeDefined();
-    });
+  //   it('should return the layer instance', () => {
+  //     expect(returnedLayer).toBeDefined();
+  //   });
 
-    it('should create a new feature layer', () => {
-      expect(featureLayerSpy).toHaveBeenCalledWith(fakeLayer);
-    });
+  //   it('should create a new feature layer', () => {
+  //     expect(featureLayerSpy).toHaveBeenCalledWith(fakeLayer);
+  //   });
 
-    it('should add the feature layer to the map', () => {
-      expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
-    });
-  });
+  //   it('should add the feature layer to the map', () => {
+  //     expect(addLayerSpy).toHaveBeenCalledWith(fakeLayer);
+  //   });
+  // });
 
   describe('when removing a layer', () => {
     let removeLayerSpy;

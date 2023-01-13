@@ -17,7 +17,7 @@ describe('The Validation messages Service', () => {
       }).compileComponents();
     }));
 
-    it('should display the default values', async(
+    it('should display the default values', waitForAsync(
       inject(
         [ValidationMessagesService],
         (messagesService: ValidationMessagesService) => {
@@ -37,7 +37,7 @@ describe('The Validation messages Service', () => {
 
   describe('Override values', () => {
     // async beforeEach
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
       const messages = {
         INVALID_FILE_TYPE: 'test1',
         INVALID_FILE_SIZE: 'test2',
@@ -52,7 +52,7 @@ describe('The Validation messages Service', () => {
       }).compileComponents();
     }));
 
-    it('should override the default values', async(
+    it('should override the default values', waitForAsync(
       inject(
         [ValidationMessagesService],
         (messagesService: ValidationMessagesService) => {

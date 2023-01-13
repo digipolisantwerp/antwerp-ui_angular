@@ -85,7 +85,7 @@ describe('Flyout directive without flyout zone', () => {
   let componentDebugElement: DebugElement;
   let componentElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [FlyoutDirective, FlyoutComponent],
       providers: [{ provide: FlyoutService, useClass: MockFlyoutService }],

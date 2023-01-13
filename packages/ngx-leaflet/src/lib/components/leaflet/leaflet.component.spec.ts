@@ -47,7 +47,8 @@ class TestLeafletComponent {
 }
 
 // Mock timeout
-window.setTimeout = (cb: () => void, tm): number => {
+// @ts-ignore
+window.setTimeout = (cb: any, tm): number => {
   cb();
   return 0;
 };

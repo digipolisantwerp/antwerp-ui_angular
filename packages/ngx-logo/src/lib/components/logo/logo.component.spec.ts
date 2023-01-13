@@ -49,7 +49,7 @@ describe('LogoComponent (templateUrl)', () => {
       expect(element.getAttribute('href')).toBe('#'); // Introducing new behaviour
     });
 
-    it('Should have a callback', async(() => {
+    it('Should have a callback', waitForAsync(() => {
       logo.link = '#'; // Do not reload page!
       logo.onClick = () => {
         return 'OK';

@@ -58,7 +58,7 @@ describe('Flyout zone directive with false zone', () => {
   let componentDebugElement: DebugElement;
   let componentElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [FlyoutZoneDirective, TestIsFalseComponent],
     });

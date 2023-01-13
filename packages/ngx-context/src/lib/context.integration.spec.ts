@@ -82,7 +82,7 @@ describe('The Context Service', () => {
     const fixture = TestBed.createComponent(AppComponent);
   }));
 
-  it('should select tags from router config', async(
+  it('should select tags from router config', waitForAsync(
     inject(
       [Router, ContextService],
       (router: Router, contextService: ContextService) => {
@@ -95,7 +95,7 @@ describe('The Context Service', () => {
     )
   ));
 
-  it('should provide defaults if no route data or metadata was found', async(
+  it('should provide defaults if no route data or metadata was found', waitForAsync(
     inject(
       [Router, ContextService],
       (router: Router, contextService: ContextService) => {
@@ -110,7 +110,7 @@ describe('The Context Service', () => {
     )
   ));
 
-  it('should update the parent titles if it is a child route', async(
+  it('should update the parent titles if it is a child route', waitForAsync(
     inject(
       [Router, ContextService],
       (router: Router, contextService: ContextService) => {

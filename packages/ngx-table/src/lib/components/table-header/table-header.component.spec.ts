@@ -59,7 +59,7 @@ describe('The Table Header Component with component', () => {
   // let elComp: HTMLElement;
 
   // async beforeEach
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         DummyTestComponent,
