@@ -4,7 +4,7 @@ import { HeaderLogoDirective } from '../../directives/logo.directive';
 import { HeaderContentDirective } from '../../directives/content.directive';
 
 @Component({
-  // tslint:disable-next-line:component-selector
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'aui-header',
   templateUrl: './header.component.html',
 })

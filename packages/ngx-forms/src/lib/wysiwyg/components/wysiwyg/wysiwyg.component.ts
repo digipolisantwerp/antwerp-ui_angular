@@ -6,14 +6,14 @@ import { WYSIWYG_DEFAULT_CONFIG } from '../../wysiwyg.conf';
 @Component({
   selector: 'aui-wysiwyg',
   templateUrl: './wysiwyg.component.html',
-  styleUrls: [
-    './wysiwyg.component.scss',
+  styleUrls: ['./wysiwyg.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => WysiwygComponent), // eslint-disable-line @angular-eslint/no-forward-ref
+      multi: true,
+    },
   ],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => WysiwygComponent), // tslint:disable-line:no-forward-ref
-    multi: true,
-  }],
 })
 export class WysiwygComponent implements OnInit, ControlValueAccessor {
   @HostBinding('class.aui-wysiwyg') setClass = true;
@@ -25,9 +25,11 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
   @Input() customConfig: any;
   @Input() debounce: number;
 
+  /* eslint-enable */
   @Output() emitContent: EventEmitter<string> = new EventEmitter();
   @Output() focus: EventEmitter<string> = new EventEmitter();
   @Output() blur: EventEmitter<string> = new EventEmitter();
+  /* eslint-enable */
 
   public ckeditorContent: string;
   public ckeditorConfig = WYSIWYG_DEFAULT_CONFIG;
@@ -52,8 +54,7 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
     this.updateModel = onChange;
   }
 
-  public registerOnTouched(): void {
-  }
+  public registerOnTouched(): void {}
 
   public setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;

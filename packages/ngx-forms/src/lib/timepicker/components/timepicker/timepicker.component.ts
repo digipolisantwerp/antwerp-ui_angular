@@ -16,7 +16,7 @@ import { TimepickerInputSize } from '../../types/timepicker.types';
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TimepickerComponent), // tslint:disable-line:no-forward-ref
+    useExisting: forwardRef(() => TimepickerComponent), // eslint-disable-line @angular-eslint/no-forward-ref
     multi: true,
   }],
 })

@@ -17,7 +17,7 @@ const context$ = new BehaviorSubject(null);
 describe('The ContextActionCreator', () => {
   class NgReduxMock {
     public pStore = null;
-    // tslint:disable-next-line:variable-name
+    // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-blacklist, id-match
     public _store$ = new BehaviorSubject(null);
 
     public dispatch() {}

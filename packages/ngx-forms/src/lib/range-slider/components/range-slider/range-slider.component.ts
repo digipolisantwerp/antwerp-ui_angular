@@ -12,7 +12,7 @@ import { RangeSliderRange } from '../../types/range-slider.types';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => RangeSliderComponent), // tslint:disable-line
+      useExisting: forwardRef(() => RangeSliderComponent), // eslint-disable-line
       multi: true,
     },
   ],

@@ -11,11 +11,13 @@ export class PaneComponent {
   @Input() backdrop = true;
   @Input() ariaLabel = 'Paneel';
   @Input() ariaLabelClose = 'Sluit paneel';
+  /* eslint-disable */
   @Output() open = new EventEmitter();
   @Output() close = new EventEmitter();
+  /* eslint-enable */
 
   public togglePane() {
-    (this.opened ? this.closePane() : this.openPane());
+    this.opened ? this.closePane() : this.openPane();
   }
 
   public openPane() {

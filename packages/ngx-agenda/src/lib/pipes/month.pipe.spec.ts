@@ -1,7 +1,7 @@
 import { MonthPipe } from './month.pipe';
 
-const defaultMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  // tslint:disable-line
-const customMonths = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december']; // tslint:disable-line
+const defaultMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  // eslint-disable-line
+const customMonths = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december']; // eslint-disable-line
 
 describe('TitleCasePipe', () => {
   it('Should transform month number (1 - 12) to default month strings', () => {

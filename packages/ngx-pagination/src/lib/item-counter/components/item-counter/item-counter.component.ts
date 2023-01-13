@@ -40,12 +40,12 @@ export class ItemCounterComponent implements OnInit, OnChanges {
 
   public setFromTo() {
     this.currentFrom = this.amountPerPage * (this.currentPage - 1) + 1;
-    /* tslint:disable:max-line-length */
+    /* eslint-disable max-len */
     this.currentTo =
       this.amountPerPage * this.currentPage <= this.totalAmount
         ? this.amountPerPage * this.currentPage
         : this.totalAmount;
-    /* tslint:enable:max-line-length */
+    /* eslint-enable max-len */
   }
 
   public ngOnInit() {

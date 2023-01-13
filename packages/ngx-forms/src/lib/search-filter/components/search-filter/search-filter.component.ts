@@ -11,7 +11,7 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
   templateUrl: './search-filter.component.html',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => SearchFilterComponent), // tslint:disable-line:no-forward-ref
+    useExisting: forwardRef(() => SearchFilterComponent), // eslint-disable-line @angular-eslint/no-forward-ref
     multi: true,
   }],
 })

@@ -84,7 +84,7 @@ describe('EventMap Class', () => {
     eventMap.fillSlot(1, 3, 0, 2, {title: 'test 1', startDate: new Date(2018, 0, 10), endDate: new Date(2018, 0, 11)});
     eventMap.fillSlot(1, 4, 1, 1, {title: 'test 2', startDate: new Date(2018, 0, 10), endDate: new Date(2018, 0, 11)});
 
-    // tslint:disable:max-line-length
+    /* eslint-disable max-len */
     expect(eventMap.getEventsMap(availableSlots)).toEqual([
       [
         {

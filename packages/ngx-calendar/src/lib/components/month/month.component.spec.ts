@@ -234,7 +234,7 @@ describe('The Calendar Month Component', () => {
   }));
 
   it('should emit the activeDate with the date set to the selected date and the correct month when selecting a padded date at the start of the month', waitForAsync(() => {
-    // tslint:disable-line:max-line-length
+    // eslint-disable-line max-len
     const now = new Date('2017-10-03');
     wrapper.activeDate = now;
     fixture.detectChanges();
@@ -252,7 +252,7 @@ describe('The Calendar Month Component', () => {
   }));
 
   it('should emit the activeDate with the date set to the selected date and the correct month when selecting a padded date at the end of the month', waitForAsync(() => {
-    // tslint:disable-line:max-line-length
+    // eslint-disable-line max-len
     const now = new Date('2017-10-03');
     wrapper.activeDate = now;
     fixture.detectChanges();

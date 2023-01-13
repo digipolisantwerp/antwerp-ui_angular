@@ -79,7 +79,7 @@ describe('Modal - ModalService', () => {
       'should do nothing if there are no active modals',
       injectService((modalService: ModalService) => {
         const modal = {
-          destroy: () => {}, // tslint:disable-line:no-empty
+          destroy: () => {}, // eslint-disable-line no-empty, @typescript-eslint/no-empty-function
         };
 
         spyOn(modal, 'destroy');

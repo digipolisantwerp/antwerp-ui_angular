@@ -16,7 +16,7 @@ export function lookForIllegalNodes(element: ElementRef, allowedTypes: string[] 
     return;
   }
 
-  // tslint:disable-next-line: max-line-length
+  // eslint-disable-next-line max-len
   const errorMessage = `Error! Only following types are supported: ${allowedTypes.length > 0 ? allowedTypes.join(' ') : 'Text'}, found: ${illegalNodes.join(' ')}`;
   throw new Error(errorMessage);
 }

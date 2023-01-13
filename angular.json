@@ -104,15 +104,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/styleguide/tsconfig.app.json",
-              "packages/styleguide/tsconfig.spec.json",
-              "packages/styleguide/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/styleguide/**/*.ts",
+              "packages/styleguide/**/*.html"
             ]
           }
         },
@@ -134,7 +130,7 @@
       "projectType": "library",
       "root": "packages/ngx-logo",
       "sourceRoot": "packages/ngx-logo/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -152,14 +148,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-logo/tsconfig.lib.json",
-              "packages/ngx-logo/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-logo/**/*.ts",
+              "packages/ngx-logo/**/*.html"
             ]
           }
         }
@@ -169,7 +162,7 @@
       "projectType": "library",
       "root": "packages/ngx-layout",
       "sourceRoot": "packages/ngx-layout/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -187,14 +180,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-layout/tsconfig.lib.json",
-              "packages/ngx-layout/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-layout/**/*.ts",
+              "packages/ngx-layout/**/*.html"
             ]
           }
         }
@@ -204,7 +194,7 @@
       "projectType": "library",
       "root": "packages/ngx-navigation-menu",
       "sourceRoot": "packages/ngx-navigation-menu/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -222,14 +212,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-navigation-menu/tsconfig.lib.json",
-              "packages/ngx-navigation-menu/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-navigation-menu/**/*.ts",
+              "packages/ngx-navigation-menu/**/*.html"
             ]
           }
         }
@@ -239,7 +226,7 @@
       "projectType": "library",
       "root": "packages/ngx-code-snippet",
       "sourceRoot": "packages/ngx-code-snippet/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -257,14 +244,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-code-snippet/tsconfig.lib.json",
-              "packages/ngx-code-snippet/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-code-snippet/**/*.ts",
+              "packages/ngx-code-snippet/**/*.html"
             ]
           }
         }
@@ -274,7 +258,7 @@
       "projectType": "library",
       "root": "packages/ngx-analytics",
       "sourceRoot": "packages/ngx-analytics/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -292,14 +276,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-analytics/tsconfig.lib.json",
-              "packages/ngx-analytics/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-analytics/**/*.ts",
+              "packages/ngx-analytics/**/*.html"
             ]
           }
         }
@@ -309,7 +290,7 @@
       "projectType": "library",
       "root": "packages/ngx-agenda",
       "sourceRoot": "packages/ngx-agenda/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -327,14 +308,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-agenda/tsconfig.lib.json",
-              "packages/ngx-agenda/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-agenda/**/*.ts",
+              "packages/ngx-agenda/**/*.html"
             ]
           }
         }
@@ -344,7 +322,7 @@
       "projectType": "library",
       "root": "packages/ngx-avatar",
       "sourceRoot": "packages/ngx-avatar/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -362,14 +340,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-avatar/tsconfig.lib.json",
-              "packages/ngx-avatar/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-avatar/**/*.ts",
+              "packages/ngx-avatar/**/*.html"
             ]
           }
         }
@@ -379,7 +354,7 @@
       "projectType": "library",
       "root": "packages/ngx-calendar",
       "sourceRoot": "packages/ngx-calendar/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -397,14 +372,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-calendar/tsconfig.lib.json",
-              "packages/ngx-calendar/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-calendar/**/*.ts",
+              "packages/ngx-calendar/**/*.html"
             ]
           }
         }
@@ -414,7 +386,7 @@
       "projectType": "library",
       "root": "packages/ngx-context",
       "sourceRoot": "packages/ngx-context/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -432,14 +404,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-context/tsconfig.lib.json",
-              "packages/ngx-context/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-context/**/*.ts",
+              "packages/ngx-context/**/*.html"
             ]
           }
         }
@@ -449,7 +418,7 @@
       "projectType": "library",
       "root": "packages/ngx-flyout",
       "sourceRoot": "packages/ngx-flyout/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -467,14 +436,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-flyout/tsconfig.lib.json",
-              "packages/ngx-flyout/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-flyout/**/*.ts",
+              "packages/ngx-flyout/**/*.html"
             ]
           }
         }
@@ -484,7 +450,7 @@
       "projectType": "library",
       "root": "packages/ngx-localstorage",
       "sourceRoot": "packages/ngx-localstorage/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -502,14 +468,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-localstorage/tsconfig.lib.json",
-              "packages/ngx-localstorage/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-localstorage/**/*.ts",
+              "packages/ngx-localstorage/**/*.html"
             ]
           }
         }
@@ -519,7 +482,7 @@
       "projectType": "library",
       "root": "packages/ngx-pagination",
       "sourceRoot": "packages/ngx-pagination/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -537,14 +500,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-pagination/tsconfig.lib.json",
-              "packages/ngx-pagination/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-pagination/**/*.ts",
+              "packages/ngx-pagination/**/*.html"
             ]
           }
         }
@@ -554,7 +514,7 @@
       "projectType": "library",
       "root": "packages/ngx-progress-bar",
       "sourceRoot": "packages/ngx-progress-bar/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -572,14 +532,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-progress-bar/tsconfig.lib.json",
-              "packages/ngx-progress-bar/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-progress-bar/**/*.ts",
+              "packages/ngx-progress-bar/**/*.html"
             ]
           }
         }
@@ -589,7 +546,7 @@
       "projectType": "library",
       "root": "packages/ngx-table",
       "sourceRoot": "packages/ngx-table/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -607,14 +564,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-table/tsconfig.lib.json",
-              "packages/ngx-table/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-table/**/*.ts",
+              "packages/ngx-table/**/*.html"
             ]
           }
         }
@@ -624,7 +578,7 @@
       "projectType": "library",
       "root": "packages/ngx-user-menu",
       "sourceRoot": "packages/ngx-user-menu/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -642,14 +596,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-user-menu/tsconfig.lib.json",
-              "packages/ngx-user-menu/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-user-menu/**/*.ts",
+              "packages/ngx-user-menu/**/*.html"
             ]
           }
         }
@@ -659,7 +610,7 @@
       "projectType": "library",
       "root": "packages/ngx-selectable-list",
       "sourceRoot": "packages/ngx-selectable-list/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -677,14 +628,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-selectable-list/tsconfig.lib.json",
-              "packages/ngx-selectable-list/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-selectable-list/**/*.ts",
+              "packages/ngx-selectable-list/**/*.html"
             ]
           }
         }
@@ -694,7 +642,7 @@
       "projectType": "library",
       "root": "packages/ngx-forms",
       "sourceRoot": "packages/ngx-forms/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -712,14 +660,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-forms/tsconfig.lib.json",
-              "packages/ngx-forms/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-forms/**/*.ts",
+              "packages/ngx-forms/**/*.html"
             ]
           }
         }
@@ -729,7 +674,7 @@
       "projectType": "library",
       "root": "packages/ngx-utils",
       "sourceRoot": "packages/ngx-utils/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -747,14 +692,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-utils/tsconfig.lib.json",
-              "packages/ngx-utils/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-utils/**/*.ts",
+              "packages/ngx-utils/**/*.html"
             ]
           }
         }
@@ -764,7 +706,7 @@
       "projectType": "library",
       "root": "packages/ngx-leaflet",
       "sourceRoot": "packages/ngx-leaflet/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -782,14 +724,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-leaflet/tsconfig.lib.json",
-              "packages/ngx-leaflet/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-leaflet/**/*.ts",
+              "packages/ngx-leaflet/**/*.html"
             ]
           }
         }
@@ -799,7 +738,7 @@
       "projectType": "library",
       "root": "packages/ngx-notifications",
       "sourceRoot": "packages/ngx-notifications/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -817,14 +756,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-notifications/tsconfig.lib.json",
-              "packages/ngx-notifications/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-notifications/**/*.ts",
+              "packages/ngx-notifications/**/*.html"
             ]
           }
         }
@@ -834,7 +770,7 @@
       "projectType": "library",
       "root": "packages/ngx-icon",
       "sourceRoot": "packages/ngx-icon/src",
-      "prefix": "lib",
+      "prefix": "aui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -852,19 +788,21 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "packages/ngx-icon/tsconfig.lib.json",
-              "packages/ngx-icon/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "packages/ngx-icon/**/*.ts",
+              "packages/ngx-icon/**/*.html"
             ]
           }
         }
       }
     }
   },
-  "defaultProject": "styleguide"
+  "defaultProject": "styleguide",
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
+  }
 }

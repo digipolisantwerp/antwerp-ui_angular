@@ -8,7 +8,7 @@ export class MapService {
   public L = null;
   public esri = null;
 
-  // tslint:disable-next-line:ban-types
+  // eslint-disable-next-line @typescript-eslint/ban-types
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.requireMap();
   }

@@ -52,7 +52,7 @@ describe('The Timepicker Component', () => {
         '21',
         '22',
         '23',
-      ]); // tslint:disable-line:max-line-length
+      ]); // eslint-disable-line max-len
       expect(comp.minutes).toEqual([
         '00',
         '01',
@@ -114,7 +114,7 @@ describe('The Timepicker Component', () => {
         '57',
         '58',
         '59',
-      ]); // tslint:disable-line:max-line-length
+      ]); // eslint-disable-line max-len
     });
   });
 
