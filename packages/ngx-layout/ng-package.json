@@ -2,14 +2,9 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "./dist",
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdModuleIds": {
-      "@acpaas-ui/ngx-icon": "ngxIcon",
-      "@acpaas-ui/ngx-utils": "ngxUtils",
-      "lodash-es": "lodashEs"
-    }
+    "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "@acpaas-ui",
     "@angular-store",
     "redux",

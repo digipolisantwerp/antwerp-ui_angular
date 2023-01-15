@@ -2,14 +2,9 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "./dist",
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdModuleIds": {
-      "@acpaas-ui/ngx-icon": "ngxIcon",
-      "@acpaas-ui/js-date-utils": "jsDateUtils",
-      "hammerjs": "hammerjs"
-    }
+    "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "hammerjs",
     "@acpaas-ui"
   ]
