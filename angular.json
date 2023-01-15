@@ -806,7 +806,6 @@
       }
     }
   },
-  "defaultProject": "styleguide",
   "cli": {
     "schematicCollections": [
       "@angular-eslint/schematics"
