@@ -20,6 +20,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Fix deprecations (async => waitForAsync)
 - Update from 10 to 11 https://update.angular.io/?v=10.0-11.0
   - TSLint deprecated => Migrate to ESLint
+  - ESLint memory problems -> TO FIX!
+- Update from 11 to 12 https://update.angular.io/?v=11.0-12.0
+  - Fix Linting problems ESLint
+  - Fix resolve typing
+  - Start/Build/Lint (Memory issues!)/Test OK
+  - aot option deprecated
 
 ## [5.4.0] - 2022-11-07
 

@@ -70,9 +70,8 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   @Input() weekdayLabels: WeekdayLabelsConfig;
   @Input() monthLabels: MonthLabelsConfig;
 
-  /* eslint-enable */
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() blur = new EventEmitter<Event>();
-  /* eslint-enable */
 
   public dateMask = { mask: DATEPICKER_DATE_MASK, showMaskOnHover: false };
   public formControl: FormControl;

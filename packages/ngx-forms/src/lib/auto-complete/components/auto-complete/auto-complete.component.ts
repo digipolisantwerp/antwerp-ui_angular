@@ -50,9 +50,8 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 
   // Eventemitter for searchvalue (parent object should update the results with this param)
   @Output() search: EventEmitter<string> = new EventEmitter();
-  /* eslint-enable */
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() select: EventEmitter<any> = new EventEmitter();
-  /* eslint-enable */
 
   @ViewChild(FlyoutDirective, { static: true }) flyout: FlyoutDirective;
   @ViewChild(FlyoutZoneDirective, { static: true }) flyoutZone: FlyoutZoneDirective;

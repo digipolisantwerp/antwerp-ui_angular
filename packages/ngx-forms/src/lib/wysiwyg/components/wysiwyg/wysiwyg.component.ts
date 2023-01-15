@@ -25,11 +25,11 @@ export class WysiwygComponent implements OnInit, ControlValueAccessor {
   @Input() customConfig: any;
   @Input() debounce: number;
 
-  /* eslint-enable */
   @Output() emitContent: EventEmitter<string> = new EventEmitter();
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() focus: EventEmitter<string> = new EventEmitter();
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() blur: EventEmitter<string> = new EventEmitter();
-  /* eslint-enable */
 
   public ckeditorContent: string;
   public ckeditorConfig = WYSIWYG_DEFAULT_CONFIG;

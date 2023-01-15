@@ -7,7 +7,6 @@ import { ApproveModalComponent } from '../../../../../../ngx-layout/src/lib/moda
   templateUrl: './modal.page.html',
 })
 export class LayoutModalDemoPageComponent {
-
   public modal1 = `import { Component, Input } from '@angular/core';
 import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-layout';
 
@@ -74,9 +73,9 @@ private doSomething() {
   Open modal
 </button>`;
 
-public modal4 = `import { ApproveModalComponent } from '@acpaas-ui/ngx-layout';`;
+  public modal4 = `import { ApproveModalComponent } from '@acpaas-ui/ngx-layout';`;
 
-public modal5 = `public openApproveModal() {
+  public modal5 = `public openApproveModal() {
   this.modalService.openModal(ApproveModalComponent, {
     question: 'Are you sure you want to close this demo modal?',
     description: 'This action can be undone.',
@@ -100,15 +99,12 @@ public modal5 = `public openApproveModal() {
   }
 }`;
 
-public modal6 = `<button type="button" class="a-button"
+  public modal6 = `<button type="button" class="a-button"
   (click)="openApproveModal()">
   Open approve modal
 </button>`;
 
-  constructor(
-    private modalService: ModalService
-  ) {
-  }
+  constructor(private modalService: ModalService) {}
 
   public openModal() {
     this.modalService.openModal(
@@ -116,33 +112,38 @@ public modal6 = `<button type="button" class="a-button"
       {
         title: 'Modal demo',
         text: 'Are you sure you want to see a demo of this modal?',
-      }, {
+      },
+      {
         confirm: () => this.doSomething(),
       }
     );
   }
 
   public openApproveModal() {
-    this.modalService.openModal(ApproveModalComponent, {
-      question: 'Are you sure you want to close this demo modal?',
-      description: 'This action can be undone.',
-      approve: 'Close demo modal',
-      reject: 'Cancel'
-    }, {
-      approve: () => this.doSomething(),
-      reject: () => this.doSomethingElse()
-    });
+    this.modalService.openModal(
+      ApproveModalComponent,
+      {
+        question: 'Are you sure you want to close this demo modal?',
+        description: 'This action can be undone.',
+        approve: 'Close demo modal',
+        reject: 'Cancel',
+      },
+      {
+        approve: () => this.doSomething(),
+        reject: () => this.doSomethingElse(),
+      }
+    );
   }
 
   private doSomething() {
     return new Promise((resolve, reject) => {
-      return resolve();
+      return resolve(null);
     });
   }
 
   private doSomethingElse() {
     return new Promise((resolve, reject) => {
-      return resolve();
+      return resolve(null);
     });
   }
 }
