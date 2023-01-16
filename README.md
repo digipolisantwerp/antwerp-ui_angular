@@ -11,11 +11,11 @@ Antwerp City Platform as a Service User Interface (Antwerp UI) is a **component 
 
 This library is part of [Antwerp UI][antwerp-ui].
 
-| Name       | Framework  | Status                                             |
-| ---------- | ---------- | -------------------------------------------------- |
-| Javascript | ES5+       | [![antwerp-ui-js-github]][antwerp-ui-js]           |
-| Angular    | Angular 8+ | [![antwerp-ui-angular-github]][antwerp-ui-angular] |
-| React      | React 16+  | [![antwerp-ui-react-github]][antwerp-ui-react]     |
+| Name       | Framework   | Status                                             |
+| ---------- | ----------- | -------------------------------------------------- |
+| Javascript | ES5+        | [![antwerp-ui-js-github]][antwerp-ui-js]           |
+| Angular    | Angular 15+ | [![antwerp-ui-angular-github]][antwerp-ui-angular] |
+| React      | React 16+   | [![antwerp-ui-react-github]][antwerp-ui-react]     |
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ npm i @acpaas-ui/ngx-forms
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-@import url("https://cdn.antwerpen.be/core_branding_scss/5.0.0/main.min.css");
+@import url('https://cdn.antwerpen.be/core_branding_scss/5.0.0/main.min.css');
 ```
 
 You can also modify `index.html` to reference the [favicons for the city of Antwerp][branding-favicons].
@@ -54,7 +54,7 @@ Then start using the components in your pages. Look at the component documentati
 You can also add a branding-compatible [flexbox grid layout system][flexboxgrid]:
 
 ```scss
-@import url("https://cdn.antwerpen.be/core_flexboxgrid_scss/2.0.0/flexboxgrid.min.css");
+@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/2.0.0/flexboxgrid.min.css');
 ```
 
 Note that you are free to use your own grid, as long as it meets our branding guidelines.
