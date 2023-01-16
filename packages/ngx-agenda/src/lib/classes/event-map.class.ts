@@ -33,7 +33,6 @@ export class EventMap {
       for (let i = 1; i < span; i += 1) {
         this.fillSlot(week, day + i, slot);
       }
-
     } else {
       this.slotMap[week][day].slots[slot] = true;
     }
@@ -61,11 +60,9 @@ export class EventMap {
 
   public getSlots(eventHeight: number, weekHeight: number, heightOffset: number): SlotInterface[] {
     const numberOfDays = this.slotMap[0].length;
-    const dayWidth = ((1 / numberOfDays) * 100);
+    const dayWidth = (1 / numberOfDays) * 100;
 
-    const flatten = list => list.reduce(
-      (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
-    );
+    const flatten = (list) => list.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []);
 
     const slots = this.slotMap.map((o) => {
       return o.map((p) => {
@@ -73,18 +70,20 @@ export class EventMap {
       });
     });
 
-    return flatten(slots).filter((slot: SlotInterface) => {
-      return slot !== null && slot !== true;
-    }).map((slot: SlotInterface) => {
-      return {
-        ...slot,
-        display: {
-          left: 'calc(' + dayWidth * slot.meta.day + '% + 4px)',
-          top: heightOffset + (weekHeight * slot.meta.week) + (slot.meta.slot * eventHeight) + 'px',
-          width: 'calc(' + dayWidth * slot.meta.span + '% - 8px)',
-        },
-      };
-    });
+    return flatten(slots)
+      .filter((slot: SlotInterface) => {
+        return slot !== null;
+      })
+      .map((slot: SlotInterface) => {
+        return {
+          ...slot,
+          display: {
+            left: 'calc(' + dayWidth * slot.meta.day + '% + 4px)',
+            top: heightOffset + weekHeight * slot.meta.week + slot.meta.slot * eventHeight + 'px',
+            width: 'calc(' + dayWidth * slot.meta.span + '% - 8px)',
+          },
+        };
+      });
   }
 
   public getEventsMap(availableSlots: number): any {
@@ -93,11 +92,14 @@ export class EventMap {
         return Object.assign({}, day, {
           total: day.events.length,
           more: day.events.length - availableSlots,
-          dots: day.events.map((event: EventInterface): string => {
-            return event.color;
-          }).filter((color: string, pos: number, array: string[]): boolean => {
-            return array.indexOf(color) === pos;
-          }).slice(0, 3),
+          dots: day.events
+            .map((event: EventInterface): string => {
+              return event.color;
+            })
+            .filter((color: string, pos: number, array: string[]): boolean => {
+              return array.indexOf(color) === pos;
+            })
+            .slice(0, 3),
         });
       });
     });

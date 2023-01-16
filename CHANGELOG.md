@@ -30,9 +30,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Update ng-package.json (Rename `whitelistedNonPeerDependencies` to `allowedNonPeerDependencies`)
   - Remove umdModuleIds (`UMD bundles are no longer generated`)
 - Update from 13 to 14 https://update.angular.io/?v=13.0-14.0
-  - SCSS some small changes (warnings on build)
+  - SCSS some small changes (warnings on build and imports)
   - Add .angular to .gitignore
-  
+- Update from 14 to 15 https://update.angular.io/?v=14.0-15.0
+  - SCSS import fixes
+  - Fix require.context (see https://stackoverflow.com/questions/74546242/karma-jasmine-uncaught-typeerror-webpack-require-context-is-not-a-fu/74572172#74572172)
+  - Remove non-working tests of deprecated components
 
 ## [5.4.0] - 2022-11-07
 
