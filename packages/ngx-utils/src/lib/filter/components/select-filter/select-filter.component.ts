@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FilterComponent } from '../../types/filter.types';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
 
@@ -11,7 +11,7 @@ import { map, takeUntil, tap } from 'rxjs/operators';
 export class SelectFilterComponent implements OnInit, FilterComponent, OnDestroy {
   @Input() filter;
   @Output() update = new EventEmitter();
-  select = new FormControl();
+  select = new UntypedFormControl();
   public value;
 
   private destroy$ = new Subject();

@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
 import { FlyoutDirective } from '@acpaas-ui/ngx-flyout';
 import {
@@ -74,7 +74,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   @Output() blur = new EventEmitter<Event>();
 
   public dateMask = { mask: DATEPICKER_DATE_MASK, showMaskOnHover: false };
-  public formControl: FormControl;
+  public formControl: UntypedFormControl;
   public selectedDate: Date;
   public isDisabled = false;
   public interval: Interval.IInterval<Date>;
@@ -86,7 +86,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     @Inject(CALENDAR_WEEKDAY_LABELS) private moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
     @Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
     public calendarService: CalendarService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private ref: ChangeDetectorRef
   ) {}
 
@@ -185,7 +185,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     });
   }
 
-  public validate(ctrl: FormControl): DatepickerValidationErrors {
+  public validate(ctrl: UntypedFormControl): DatepickerValidationErrors {
     // no error on empty value (add required validator in app)
     if (ctrl.value === '' || ctrl.value === null) {
       return null;

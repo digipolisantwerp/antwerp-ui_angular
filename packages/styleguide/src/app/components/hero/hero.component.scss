@@ -11,5 +11,5 @@
 }
 
 .u-margin-top-xxs {
-  margin-top: $spacer-xs / 3;
+  margin-top: calc(#{$spacer-xs} / 3);
 }

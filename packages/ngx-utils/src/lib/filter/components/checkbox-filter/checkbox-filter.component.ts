@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FilterComponent } from '../../types/filter.types';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
 
@@ -11,12 +11,12 @@ import { map, takeUntil, tap } from 'rxjs/operators';
 export class CheckboxFilterComponent implements OnInit, FilterComponent, OnDestroy {
   @Input() filter;
   @Output() update = new EventEmitter();
-  form: FormGroup;
+  form: UntypedFormGroup;
   public value;
 
   private destroy$ = new Subject();
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
   }
 
   public ngOnInit() {
@@ -37,12 +37,12 @@ export class CheckboxFilterComponent implements OnInit, FilterComponent, OnDestr
     ).subscribe();
   }
 
-  private buildCheckboxes(options: Array<any>): FormArray {
-    return new FormArray([...options.map(option => this.formBuilder.control(option.checked))]);
+  private buildCheckboxes(options: Array<any>): UntypedFormArray {
+    return new UntypedFormArray([...options.map(option => this.formBuilder.control(option.checked))]);
   }
 
-  get options(): FormArray {
-    return this.form.get('options') as FormArray;
+  get options(): UntypedFormArray {
+    return this.form.get('options') as UntypedFormArray;
   }
 
   public onFilter(value: any) {

@@ -21,7 +21,7 @@
     position: relative;
 
     .a-badge {
-      bottom: -$badge-height/2;
+      bottom: calc(-#{$badge-height} / 2);
       position: absolute;
       z-index: layer('tooltip');
     }

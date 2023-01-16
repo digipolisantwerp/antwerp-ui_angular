@@ -6,26 +6,22 @@ import { ApproveModalDirective } from './directives/approve.directive';
 import { ModalService } from './services/modal.service';
 
 @NgModule({
-  imports: [
-    IconModule
-  ],
-  providers: [
-    ModalService,
-  ],
-  declarations: [
-    ApproveModalComponent,
-    ModalOverlayComponent,
-    ApproveModalDirective,
-  ],
-  exports: [
-    ApproveModalComponent,
-    ModalOverlayComponent,
-    ApproveModalDirective,
-  ],
-  entryComponents: [
-    ApproveModalComponent,
-    ModalOverlayComponent,
-  ],
+    imports: [
+        IconModule
+    ],
+    providers: [
+        ModalService,
+    ],
+    declarations: [
+        ApproveModalComponent,
+        ModalOverlayComponent,
+        ApproveModalDirective,
+    ],
+    exports: [
+        ApproveModalComponent,
+        ModalOverlayComponent,
+        ApproveModalDirective,
+    ]
 })
 export class ModalModule {
 }

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { addWeeks } from 'date-fns';
@@ -8,7 +8,7 @@ import { addWeeks } from 'date-fns';
   templateUrl: './datepicker.page.html',
 })
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
-  public dateForm: FormGroup;
+  public dateForm: UntypedFormGroup;
   public min = new Date();
   public max = addWeeks(new Date(), 2);
   public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-forms';
@@ -62,7 +62,7 @@ this.dateForm = this.fb.group({
 </form>`;
   private destroyed$ = new Subject<boolean>();
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
   }
 
   public ngOnInit() {

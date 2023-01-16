@@ -16,7 +16,7 @@
     }
 
     .cke_wysiwyg_div {
-      padding: $spacer-xs / 3;
+      padding: calc(#{$spacer-xs} / 3);
     }
 
     &.cke_focus {

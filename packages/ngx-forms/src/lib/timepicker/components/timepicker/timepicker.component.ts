@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -34,13 +34,13 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   public hours: string[] = [];
   public updateModel: (value: string) => any;
 
-  public timeControl = new FormControl();
-  public fallbackForm: FormGroup;
+  public timeControl = new UntypedFormControl();
+  public fallbackForm: UntypedFormGroup;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private renderer: Renderer2
   ) {
   }

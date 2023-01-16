@@ -47,3 +47,5 @@ Thumbs.db
 
 /lerna-debug.log
 packages/**/dist
+
+.angular

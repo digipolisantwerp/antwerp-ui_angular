@@ -26,10 +26,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Fix resolve typing
   - Start/Build/Lint (Memory issues!)/Test OK
   - aot option deprecated
-- Update from 12 to 13
-  - https://update.angular.io/?v=12.0-13.0
+- Update from 12 to 13 https://update.angular.io/?v=12.0-13.0
   - Update ng-package.json (Rename `whitelistedNonPeerDependencies` to `allowedNonPeerDependencies`)
   - Remove umdModuleIds (`UMD bundles are no longer generated`)
+- Update from 13 to 14 https://update.angular.io/?v=13.0-14.0
+  - SCSS some small changes (warnings on build)
+  - Add .angular to .gitignore
+  
 
 ## [5.4.0] - 2022-11-07
 
