@@ -13,12 +13,7 @@ const mockKeyDownEvent = (key) => {
 
 @Component({
   selector: 'aui-test-component',
-  template: `<button
-    type="button"
-    class="button"
-    auiSelectableActions
-    #auiSelectableActions="auiSelectableActions"
-  >
+  template: `<button type="button" class="button" auiSelectableActions #auiSelectableActions="auiSelectableActions">
     Open me
   </button>`,
 })
@@ -42,9 +37,7 @@ describe('Flyout action directive without flyout zone', () => {
     fixture = TestBed.createComponent(TestComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(
-      By.directive(SelectableActionsDirective)
-    );
+    componentDebugElement = fixture.debugElement.query(By.directive(SelectableActionsDirective));
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
