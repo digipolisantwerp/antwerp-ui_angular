@@ -33,9 +33,7 @@ class MockFlyoutService {
         Open me
       </button>
       <div auiFlyoutZone>
-        <button type="button" class="dummyButtonInside">
-          dummyButtonInside
-        </button>
+        <button type="button" class="dummyButtonInside">dummyButtonInside</button>
       </div>
     </div>`,
 })
@@ -53,12 +51,7 @@ describe('Flyout action directive without flyout zone', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutDirective,
-        FlyoutActionDirective,
-        FlyoutComponent,
-        FlyoutZoneDirective,
-      ],
+      declarations: [FlyoutDirective, FlyoutActionDirective, FlyoutComponent, FlyoutZoneDirective],
       providers: [{ provide: FlyoutService, useClass: MockFlyoutService }],
     });
 
@@ -66,9 +59,7 @@ describe('Flyout action directive without flyout zone', () => {
     fixture = TestBed.createComponent(FlyoutComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(
-      By.directive(FlyoutActionDirective)
-    );
+    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutActionDirective));
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
@@ -111,8 +102,7 @@ describe('Flyout action directive without flyout zone', () => {
     spyOn(comp.element.flyout, 'close');
     comp.element.open();
     componentDebugElement.triggerEventHandler('mousedown', {
-      relatedTarget: fixture.debugElement.query(By.css('.dummyButton'))
-        .nativeElement,
+      relatedTarget: fixture.debugElement.query(By.css('.dummyButton')).nativeElement,
       stopImmediatePropagation() {},
     });
     expect(comp.element.flyout.close).toHaveBeenCalled();
@@ -122,8 +112,7 @@ describe('Flyout action directive without flyout zone', () => {
     spyOn(comp.element.flyout, 'close');
     comp.element.open();
     componentDebugElement.triggerEventHandler('focusout', {
-      relatedTarget: fixture.debugElement.query(By.css('.dummyButtonInside'))
-        .nativeElement,
+      relatedTarget: fixture.debugElement.query(By.css('.dummyButtonInside')).nativeElement,
     });
     expect(comp.element.flyout.close).not.toHaveBeenCalled();
   });

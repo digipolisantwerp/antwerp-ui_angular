@@ -8,11 +8,7 @@ import { isEvent } from '../utils/event';
   exportAs: 'auiFlyoutClose',
 })
 export class FlyoutCloseDirective {
-
-  constructor(
-    @Host() public flyout: FlyoutDirective
-  ) {
-  }
+  constructor(@Host() public flyout: FlyoutDirective) {}
 
   @HostListener('click')
   public onClick(): void {

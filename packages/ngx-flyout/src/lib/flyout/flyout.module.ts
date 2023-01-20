@@ -7,24 +7,9 @@ import { FlyoutDirective } from './directives/flyout.directive';
 import { FlyoutService } from './services/flyout.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    FlyoutActionDirective,
-    FlyoutCloseDirective,
-    FlyoutZoneDirective,
-    FlyoutDirective,
-  ],
-  exports: [
-    FlyoutActionDirective,
-    FlyoutCloseDirective,
-    FlyoutZoneDirective,
-    FlyoutDirective,
-  ],
-  providers: [
-    FlyoutService,
-  ],
+  imports: [CommonModule],
+  declarations: [FlyoutActionDirective, FlyoutCloseDirective, FlyoutZoneDirective, FlyoutDirective],
+  exports: [FlyoutActionDirective, FlyoutCloseDirective, FlyoutZoneDirective, FlyoutDirective],
+  providers: [FlyoutService],
 })
-export class FlyoutModule {
-}
+export class FlyoutModule {}
