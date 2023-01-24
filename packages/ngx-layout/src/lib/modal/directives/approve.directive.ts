@@ -14,25 +14,28 @@ export class ApproveModalDirective {
   @Output() public approve = new EventEmitter();
   @Output() public cancel = new EventEmitter();
 
-  constructor(private modalService: ModalService) {
-  }
+  constructor(private modalService: ModalService) {}
 
   @HostListener('click', ['$event'])
   public onClick() {
-    this.modalService.openModal(ApproveModalComponent, {
-      question: this.question,
-      description: this.description,
-      approve: this.submitMessage,
-      reject: this.cancelMessage,
-    }, {
-      approve: () => {
-        this.approve.emit();
-        return Promise.resolve();
+    this.modalService.openModal(
+      ApproveModalComponent,
+      {
+        question: this.question,
+        description: this.description,
+        approve: this.submitMessage,
+        reject: this.cancelMessage,
       },
-      reject: () => {
-        this.cancel.emit();
-        return Promise.resolve();
-      },
-    });
+      {
+        approve: () => {
+          this.approve.emit();
+          return Promise.resolve();
+        },
+        reject: () => {
+          this.cancel.emit();
+          return Promise.resolve();
+        },
+      }
+    );
   }
 }

@@ -65,9 +65,7 @@ describe('Modal - ModalOverlayComponent', () => {
   });
 
   it('should set the overlay classes on the host element', () => {
-    expect(
-      getByCSSQuery('.m-overlay.is-active', de.nativeElement)
-    ).toBeDefined();
+    expect(getByCSSQuery('.m-overlay.is-active', de.nativeElement)).toBeDefined();
   });
 
   it('should do nothing if the modal inside the overlay is clicked', () => {
