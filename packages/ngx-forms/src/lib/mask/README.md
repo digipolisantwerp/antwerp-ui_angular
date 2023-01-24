@@ -13,13 +13,14 @@ import { MaskModule } from '@acpaas-ui/ngx-forms';
 Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to docs and guidelines
 
 ## Dependencies
+
 [RobinHerbots/Inputmask](https://github.com/RobinHerbots/Inputmask)
 
 ### API
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() auiMask: string;` | - | Use the auiMask input to apply config. [View documentation](https://github.com/RobinHerbots/Inputmask#masking-types)|
+| Name                        | Default value | Description                                                                                                          |
+| --------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `@Input() auiMask: string;` | -             | Use the auiMask input to apply config. [View documentation](https://github.com/RobinHerbots/Inputmask#masking-types) |
 
 ### Example
 
@@ -37,11 +38,7 @@ export class AppModule {};
 
 ```html
 <div class="a-input">
-    <input
-        type="text"
-        placeholder="BE99 9999 9999 9999"
-        auiMask="BE99 9999 9999 9999"
-    />
+  <input type="text" placeholder="BE99 9999 9999 9999" auiMask="BE99 9999 9999 9999" />
 </div>
 ```
 

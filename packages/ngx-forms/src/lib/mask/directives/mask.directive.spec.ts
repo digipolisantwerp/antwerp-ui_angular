@@ -8,11 +8,7 @@ import { MaskDirective } from './mask.directive';
   selector: 'aui-test',
   template: `
     <form [formGroup]="form">
-      <input
-        type="text"
-        [auiMask]="{ mask: '(999) 999-9999' }"
-        formControlName="masked"
-      />
+      <input type="text" [auiMask]="{ mask: '(999) 999-9999' }" formControlName="masked" />
     </form>
   `,
 })
