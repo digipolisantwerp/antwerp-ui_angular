@@ -229,8 +229,8 @@ constructor(
 	`;
 
   public exampleHTML = `<aui-table
-  open="true"
-  striped="true"
+  [open]="true"
+  [striped]="true"
   [columns]="columns"
   [loading]="loading"
   [rows]="rows"
