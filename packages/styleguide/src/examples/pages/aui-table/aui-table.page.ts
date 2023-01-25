@@ -6,26 +6,24 @@ import { TableColumn } from '../../../../../ngx-table/src/lib/types/table.types'
 
 @Component({
   templateUrl: './aui-table.page.html',
-  providers: [
-    DatePipe,
-  ],
+  providers: [DatePipe],
 })
 export class TableDemoPageComponent {
   public columns: TableColumn[] = [
     {
       label: '#',
       value: 'id',
-      columnClass: (value, col, row) => this.makeBold(value, col, row)
+      columnClass: (value, col, row) => this.makeBold(value, col, row),
     },
     {
       label: 'First Name',
       value: 'firstName',
-      columnClass: (value, col, row) => this.makeBold(value, col, row)
+      columnClass: (value, col, row) => this.makeBold(value, col, row),
     },
     {
       label: 'Last Name',
       value: 'lastName',
-      columnClass: (value, col, row) => this.makeBold(value, col, row)
+      columnClass: (value, col, row) => this.makeBold(value, col, row),
     },
     {
       label: 'Registered',
@@ -231,24 +229,23 @@ constructor(
 	`;
 
   public exampleHTML = `<aui-table
-	noDataMessage="There is no data!"
-	loadDataMessage="Loading..."
-	noColumsMessage="There are no columns!"
-	[loading]="loading"
-	[columns]="columns"
-	[rows]="rows">
+  open="true"
+  striped="true"
+  [columns]="columns"
+  [loading]="loading"
+  [rows]="rows"
+  loadDataMessage="Loading..."
+  noColumsMessage="There are no columns!"
+  noDataMessage="There is no data!"
+>
 </aui-table>
 	`;
 
   public loading = false;
 
-  constructor(
-    private datePipe: DatePipe
-  ) {
-  }
+  constructor(private datePipe: DatePipe) {}
 
   public makeBold(value, col, row) {
     return row.firstName === 'Sonia' ? 'u-text-bold' : '';
   }
-
 }
