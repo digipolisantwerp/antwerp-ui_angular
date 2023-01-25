@@ -1,11 +1,15 @@
 <div auiFlyout>
-  <button auiFlyoutAction class="a-button a-button--small has-icon" type="button">
+  <button auiFlyoutAction class="a-button a-button--small has-icon" type="button" aria-label="Tekenen">
     <aui-icon name="ai-pencil-1" ariaLabel="Tekenen"></aui-icon>
   </button>
   <div auiFlyoutZone>
-    <ul class="m-selectable-list m-selectable-list--no-border">
-      <li auiFlyoutClose><a (click)="map?.switchToPolygon()" class="m-selectable-list__item">Vorm intekenen</a></li>
-      <li auiFlyoutClose><a (click)="map?.switchToLine()" class="m-selectable-list__item">Lijn/route intekenen</a></li>
+    <ul class="a-list a-list--lined">
+      <li auiFlyoutClose class="a-list__item">
+        <a (click)="map?.switchToPolygon()" class="a-list__content">Vorm intekenen</a>
+      </li>
+      <li auiFlyoutClose class="a-list__item">
+        <a (click)="map?.switchToLine()" class="a-list__content">Lijn/route intekenen</a>
+      </li>
     </ul>
   </div>
 </div>

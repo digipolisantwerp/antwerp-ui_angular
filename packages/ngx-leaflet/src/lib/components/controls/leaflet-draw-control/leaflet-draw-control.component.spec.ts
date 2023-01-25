@@ -33,17 +33,13 @@ describe('The leaflet draw control component', () => {
 
   it('should switch to polygons', () => {
     const polygonSpy = spyOn(comp.map, 'switchToPolygon');
-    fixture.debugElement
-      .query(By.css('li:first-child a'))
-      .triggerEventHandler('click', null);
+    fixture.debugElement.query(By.css('li:first-child a')).triggerEventHandler('click', null);
     expect(polygonSpy).toHaveBeenCalled();
   });
 
   it('should switch to lines', () => {
     const lineSpy = spyOn(comp.map, 'switchToLine');
-    fixture.debugElement
-      .query(By.css('li:last-child a'))
-      .triggerEventHandler('click', null);
+    fixture.debugElement.query(By.css('li:last-child a')).triggerEventHandler('click', null);
     expect(lineSpy).toHaveBeenCalled();
   });
 });

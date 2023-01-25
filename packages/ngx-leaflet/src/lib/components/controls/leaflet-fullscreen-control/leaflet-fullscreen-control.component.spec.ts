@@ -14,10 +14,7 @@ describe('The leaflet full screen control component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletFullscreenControlComponent,
-        LeafletControlComponent,
-      ],
+      declarations: [LeafletFullscreenControlComponent, LeafletControlComponent],
       imports: [IconModule],
       providers: [MapService],
     }).compileComponents();
@@ -35,9 +32,7 @@ describe('The leaflet full screen control component', () => {
 
   it('should switch to the full screen control', () => {
     const switchSpy = spyOn(comp.map, 'toggleFullScreen');
-    fixture.debugElement
-      .query(By.directive(LeafletControlComponent))
-      .triggerEventHandler('click', null);
+    fixture.debugElement.query(By.directive(LeafletControlComponent)).triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 });

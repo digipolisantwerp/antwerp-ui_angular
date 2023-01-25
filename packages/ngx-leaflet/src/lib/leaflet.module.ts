@@ -12,13 +12,7 @@ import { LeafletZoomControlComponent } from './components/controls/leaflet-zoom-
 import { LeafletComponent } from './components/leaflet/leaflet.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    IconModule,
-    FlyoutModule,
-  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, IconModule, FlyoutModule],
   declarations: [
     LeafletControlComponent,
     LeafletDragControlComponent,
@@ -38,5 +32,4 @@ import { LeafletComponent } from './components/leaflet/leaflet.component';
     LeafletComponent,
   ],
 })
-export class LeafletModule {
-}
+export class LeafletModule {}

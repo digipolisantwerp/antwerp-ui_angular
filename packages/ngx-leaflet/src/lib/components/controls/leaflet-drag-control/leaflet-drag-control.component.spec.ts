@@ -32,9 +32,7 @@ describe('The leaflet drag control component', () => {
 
   it('should switch to the drag control', () => {
     const switchSpy = spyOn(comp.map, 'switchToDragging');
-    fixture.debugElement
-      .query(By.directive(LeafletControlComponent))
-      .triggerEventHandler('click', null);
+    fixture.debugElement.query(By.directive(LeafletControlComponent)).triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 });
