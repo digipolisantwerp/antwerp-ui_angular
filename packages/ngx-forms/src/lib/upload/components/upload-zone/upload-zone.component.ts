@@ -1,4 +1,14 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 
 import { InvalidFile } from '../../types/upload.types';
 import { Uploader } from '../../classes/uploader.class';
@@ -8,7 +18,7 @@ import { Uploader } from '../../classes/uploader.class';
   templateUrl: './upload-zone.component.html',
 })
 export class UploadZoneComponent implements AfterViewInit {
-  @ViewChild('fileInput', {static: false}) fileInput: ElementRef;
+  @ViewChild('fileInput', { static: false }) fileInput: ElementRef;
 
   @Input() public uploader: Uploader;
   @Input() public id = '';
@@ -17,6 +27,8 @@ export class UploadZoneComponent implements AfterViewInit {
   @Input() public ariaId = '';
   @Input() public disabled = false;
   @Input() public multiple = true;
+  @Input() public label = '';
+  @Input() public description = '';
   @Output() public uploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
   @Output() public queuedFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
   @Output() public invalidFiles: EventEmitter<InvalidFile[]> = new EventEmitter<InvalidFile[]>();
@@ -46,9 +58,7 @@ export class UploadZoneComponent implements AfterViewInit {
     this.handleFiles(files);
   }
 
-  constructor(
-    private renderer: Renderer2,
-  ) {}
+  constructor(private renderer: Renderer2) {}
 
   public triggerFile() {
     this.fileInput.nativeElement.click();
@@ -66,10 +76,18 @@ export class UploadZoneComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if (this.multiple !== false) { this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', 'multiple'); }
-    if (!!this.accept.length) { this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join()); }
-    if (this.disabled) { this.renderer.setProperty(this.fileInput.nativeElement, 'disabled', 'disabled'); }
-    if (this.capture !== '') { this.renderer.setAttribute(this.fileInput.nativeElement, 'capture', this.capture); }
+    if (this.multiple !== false) {
+      this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', 'multiple');
+    }
+    if (!!this.accept.length) {
+      this.renderer.setProperty(this.fileInput.nativeElement, 'accept', this.accept.join());
+    }
+    if (this.disabled) {
+      this.renderer.setProperty(this.fileInput.nativeElement, 'disabled', 'disabled');
+    }
+    if (this.capture !== '') {
+      this.renderer.setAttribute(this.fileInput.nativeElement, 'capture', this.capture);
+    }
   }
 
   protected handleFiles(files) {

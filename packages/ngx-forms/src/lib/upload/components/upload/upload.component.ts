@@ -6,9 +6,7 @@ import { Uploader } from '../../classes/uploader.class';
 
 @Component({
   selector: 'aui-upload',
-  styleUrls: [
-    './upload.component.scss',
-  ],
+  styleUrls: ['./upload.component.scss'],
   templateUrl: './upload.component.html',
 })
 export class UploadComponent implements OnInit {
@@ -18,6 +16,8 @@ export class UploadComponent implements OnInit {
   @Input() public ariaLabelRemove = 'Verwijder';
   @Input() public disabled = false;
   @Input() public multiple = true;
+  @Input() public label = '';
+  @Input() public description = '';
   @Input() public options: UploadOptions = UPLOAD_OPTIONS_DEFAULT;
   @Output() public selectUploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
 
@@ -30,6 +30,7 @@ export class UploadComponent implements OnInit {
   public ngOnInit() {
     if (!this.id) {
       this.ariaId = 'aui-upload-' + Math.random().toString(36).substring(2);
+      this.id = this.ariaId;
     }
     this.uploader = new Uploader(this.options);
   }
