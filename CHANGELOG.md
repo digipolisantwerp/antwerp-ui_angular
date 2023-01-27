@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 
 ## Unreleased
-
+### Fixed
+- `leaflet`: fixes type conflict with local declaration of 'LatLngExpression'
 
 ## [5.4.0] - 2022-11-07
 
