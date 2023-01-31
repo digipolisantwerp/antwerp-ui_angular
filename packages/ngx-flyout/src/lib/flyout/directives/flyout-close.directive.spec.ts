@@ -21,14 +21,7 @@ class MockFlyoutService {
 @Component({
   selector: 'aui-app',
   template: `<div auiFlyout>
-    <button
-      type="button"
-      class="button danger"
-      auiFlyoutClose
-      #auiFlyoutClose="auiFlyoutClose"
-    >
-      Close
-    </button>
+    <button type="button" class="button danger" auiFlyoutClose #auiFlyoutClose="auiFlyoutClose">Close</button>
   </div>`,
 })
 class FlyoutComponent {
@@ -52,9 +45,7 @@ describe('Flyout close directive', () => {
     fixture = TestBed.createComponent(FlyoutComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(
-      By.directive(FlyoutCloseDirective)
-    );
+    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutCloseDirective));
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 

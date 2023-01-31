@@ -40,9 +40,7 @@ describe('Flyout zone directive', () => {
     fixture = TestBed.createComponent(TestComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(
-      By.directive(FlyoutZoneDirective)
-    );
+    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutZoneDirective));
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 
@@ -67,9 +65,7 @@ describe('Flyout zone directive with false zone', () => {
     fixture = TestBed.createComponent(TestIsFalseComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(
-      By.directive(FlyoutZoneDirective)
-    );
+    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutZoneDirective));
     componentElement = componentDebugElement.nativeElement as HTMLElement;
   }));
 

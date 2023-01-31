@@ -1,9 +1,4 @@
-import {
-  waitForAsync,
-  ComponentFixture,
-  inject,
-  TestBed,
-} from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -50,11 +45,7 @@ describe('Flyout directive with flyout zone', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutDirective,
-        FlyoutWithZoneComponent,
-        FlyoutZoneDirective,
-      ],
+      declarations: [FlyoutDirective, FlyoutWithZoneComponent, FlyoutZoneDirective],
       providers: [{ provide: FlyoutService, useClass: MockFlyoutService }],
     });
 
@@ -62,9 +53,7 @@ describe('Flyout directive with flyout zone', () => {
     fixture = TestBed.createComponent(FlyoutWithZoneComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(
-      By.directive(FlyoutDirective)
-    );
+    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutDirective));
     flyout = componentDebugElement.injector.get(FlyoutDirective);
   }));
 
@@ -94,9 +83,7 @@ describe('Flyout directive without flyout zone', () => {
     TestBed.compileComponents();
     fixture = TestBed.createComponent(FlyoutComponent);
     fixture.detectChanges();
-    componentDebugElement = fixture.debugElement.query(
-      By.directive(FlyoutDirective)
-    );
+    componentDebugElement = fixture.debugElement.query(By.directive(FlyoutDirective));
     componentElement = componentDebugElement.nativeElement as HTMLElement;
     flyout = componentDebugElement.injector.get(FlyoutDirective);
   }));
@@ -120,11 +107,8 @@ describe('Flyout directive without flyout zone', () => {
     expect(flyout.isInClosableZone(element.nativeElement)).toBeFalsy();
   });
 
-  it('should subscribe on flyoutService', inject(
-    [FlyoutService],
-    (flyoutService: FlyoutService) => {
-      flyoutService.close();
-      expect(flyout.isOpened).toBeFalsy();
-    }
-  ));
+  it('should subscribe on flyoutService', inject([FlyoutService], (flyoutService: FlyoutService) => {
+    flyoutService.close();
+    expect(flyout.isOpened).toBeFalsy();
+  }));
 });

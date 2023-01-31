@@ -5,7 +5,6 @@ import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
   exportAs: 'auiFlyoutZone',
 })
 export class FlyoutZoneDirective {
-
   @HostBinding('class.m-flyout__content') class = true;
   @Input() public auiFlyoutZone: boolean;
   public isExpanded = false;
