@@ -27,7 +27,6 @@ import { FormsRangeSliderDemoPageComponent } from './pages/aui-forms/range-slide
 import { FormsSearchFilterDemoPageComponent } from './pages/aui-forms/search-filter/search-filter.page';
 import { FormsTimepickerDemoPageComponent } from './pages/aui-forms/timepicker/timepicker.page';
 import { FormsUploadDemoPageComponent } from './pages/aui-forms/upload/upload.page';
-import { FormsWysiwygDemoPageComponent } from './pages/aui-forms/wysiwyg/wysiwyg.page';
 import { FormsDemoPageComponent } from './pages/aui-forms/demo/demo.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
@@ -74,7 +73,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsSearchFilterDemoPageComponent,
         FormsTimepickerDemoPageComponent,
         FormsUploadDemoPageComponent,
-        FormsWysiwygDemoPageComponent,
         LayoutDemoPageComponent,
         LayoutFooterDemoPageComponent,
         LayoutHeaderDemoPageComponent,

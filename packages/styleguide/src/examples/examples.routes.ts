@@ -22,7 +22,6 @@ import { FormsRangeSliderDemoPageComponent } from './pages/aui-forms/range-slide
 import { FormsSearchFilterDemoPageComponent } from './pages/aui-forms/search-filter/search-filter.page';
 import { FormsTimepickerDemoPageComponent } from './pages/aui-forms/timepicker/timepicker.page';
 import { FormsUploadDemoPageComponent } from './pages/aui-forms/upload/upload.page';
-import { FormsWysiwygDemoPageComponent } from './pages/aui-forms/wysiwyg/wysiwyg.page';
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
 import { LayoutFooterDemoPageComponent } from './pages/aui-layout/footer/footer.page';
 import { LayoutHeaderDemoPageComponent } from './pages/aui-layout/header/header.page';
@@ -133,12 +132,6 @@ export const EXAMPLES_ROUTES: Routes = [
         pathMatch: 'full',
         component: FormsUploadDemoPageComponent,
         data: {meta: {title: 'Upload'}},
-      },
-      {
-        path: 'wysiwyg',
-        pathMatch: 'full',
-        component: FormsWysiwygDemoPageComponent,
-        data: {meta: {title: 'WYSIWYG'}},
       },
     ],
   },
