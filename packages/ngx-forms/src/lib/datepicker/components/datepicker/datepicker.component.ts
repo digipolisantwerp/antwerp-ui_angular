@@ -15,7 +15,13 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
 import { FlyoutDirective } from '@acpaas-ui/ngx-flyout';
 import {
@@ -61,6 +67,8 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   @Input() id: string;
   @Input() name: string;
   @Input() placeholder = 'dd/mm/yyyy';
+  @Input() label: string;
+  @Input() description: string;
   @Input() range: DateRange;
   @Input()
   min: Date | null;
