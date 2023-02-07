@@ -5,7 +5,6 @@
     <input
       (blur)="handleBlur($event)"
       [attr.disabled]="isDisabled ? true : null"
-      [auiMask]="dateMask.mask"
       [autocomplete]="autocomplete"
       [formControl]="formControl"
       id="{{ id }}"
@@ -15,7 +14,7 @@
       placeholder="{{ placeholder }}"
       type="text"
     />
-    <aui-icon *ngIf="isDisabled" name="ai-calendar-3" role="button" tabindex="0"></aui-icon>
+    <aui-icon *ngIf="isDisabled" name="ai-calendar-3" role="button" tabindex="0"/>
     <ng-container *ngIf="!isDisabled">
       <aui-icon
         auiFlyoutAction

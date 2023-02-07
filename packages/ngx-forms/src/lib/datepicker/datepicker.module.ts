@@ -12,25 +12,12 @@ import {
 } from '@acpaas-ui/ngx-calendar';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
-import { MaskModule } from '../mask/mask.module';
-
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
-import {
-  DATEPICKER_DEFAULT_ERROR_LABELS,
-  DATEPICKER_ERROR_LABELS,
-} from './datepicker.conf';
+import { DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS } from './datepicker.conf';
 import { DatepickerErrorLabels } from './types/datepicker.types';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CalendarModule,
-    IconModule,
-    FlyoutModule,
-    MaskModule,
-  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, CalendarModule, IconModule, FlyoutModule],
   declarations: [DatepickerComponent],
   exports: [DatepickerComponent],
   providers: [

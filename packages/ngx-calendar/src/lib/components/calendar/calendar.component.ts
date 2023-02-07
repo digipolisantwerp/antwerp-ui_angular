@@ -8,7 +8,7 @@ import {
   OnChanges,
   OnInit,
   Output,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 
 import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
@@ -17,14 +17,14 @@ import {
   CALENDAR_DEFAULT_MONTH_LABELS,
   CALENDAR_DEFAULT_WEEKDAY_LABELS,
   CALENDAR_MONTH_LABELS,
-  CALENDAR_WEEKDAY_LABELS
+  CALENDAR_WEEKDAY_LABELS,
 } from '../../calendar.conf';
 import {
   CALENDAR_VIEW_DECENNIA,
   CALENDAR_VIEW_MONTH,
   CALENDAR_VIEW_YEAR,
   MonthLabelsConfig,
-  WeekdayLabelsConfig
+  WeekdayLabelsConfig,
 } from '../../types/calendar.types';
 import { CalendarService } from '../../services/calendar.service';
 import { Interval } from '@acpaas-ui/ngx-utils';
@@ -38,16 +38,8 @@ export class CalendarComponent implements OnInit, OnChanges {
   @HostBinding('attr.role') role = 'application';
   @HostBinding('attr.aria-hidden') ariahidden = 'false';
 
-  @Input() ariaPreviousLabels = [
-    'Ga naar vorige maand',
-    'Ga naar vorig jaar',
-    'Ga naar vorige 12 jaren',
-  ];
-  @Input() ariaNextLabels = [
-    'Ga naar volgende maand',
-    'Ga naar volgend jaar',
-    'Ga naar volgende 12 jaren',
-  ];
+  @Input() ariaPreviousLabels = ['Ga naar vorige maand', 'Ga naar vorig jaar', 'Ga naar vorige 12 jaren'];
+  @Input() ariaNextLabels = ['Ga naar volgende maand', 'Ga naar volgend jaar', 'Ga naar volgende 12 jaren'];
 
   @Input() selectedDate: Date;
   @Input() range: DateRange;
@@ -70,8 +62,7 @@ export class CalendarComponent implements OnInit, OnChanges {
     @Inject(CALENDAR_MONTH_LABELS) public moduleMonthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
     @Inject(CALENDAR_WEEKDAY_LABELS) public moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
     private calendarService: CalendarService
-  ) {
-  }
+  ) {}
 
   public ngOnInit() {
     this.initControl();
@@ -111,7 +102,7 @@ export class CalendarComponent implements OnInit, OnChanges {
         activeDate.setFullYear(activeDate.getFullYear() + factor);
         break;
       case CALENDAR_VIEW_DECENNIA:
-        activeDate.setFullYear(activeDate.getFullYear() + (12 * factor));
+        activeDate.setFullYear(activeDate.getFullYear() + 12 * factor);
         break;
     }
 
@@ -123,7 +114,7 @@ export class CalendarComponent implements OnInit, OnChanges {
     const views = [CALENDAR_VIEW_MONTH, CALENDAR_VIEW_YEAR, CALENDAR_VIEW_DECENNIA];
 
     const currView = views.indexOf(this.activeView);
-    let nextView = (currView + factor) >= views.length ? 0 : currView + factor;
+    let nextView = currView + factor >= views.length ? 0 : currView + factor;
     nextView = nextView < 0 ? views.length - 1 : nextView;
 
     this.activeView = views[nextView];
