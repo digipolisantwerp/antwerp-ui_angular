@@ -9,11 +9,13 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
 @Component({
   selector: 'aui-search-filter',
   templateUrl: './search-filter.component.html',
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => SearchFilterComponent), // eslint-disable-line @angular-eslint/no-forward-ref
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SearchFilterComponent), // eslint-disable-line @angular-eslint/no-forward-ref
+      multi: true,
+    },
+  ],
 })
 export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAccessor {
   @Input() public id: string;
@@ -45,8 +47,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     this.filterDataFromSearch = debounce(this.filterData.bind(this), this.inputDelay);
   }
 
-  public updateModel: (_) => any = () => {
-  }
+  public updateModel: (_) => any = () => {};
 
   public writeValue(value: string[]): void {
     this.selectedItems = Array.isArray(value) ? value : [];
@@ -56,8 +57,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     this.updateModel = onChange;
   }
 
-  public registerOnTouched(): void {
-  }
+  public registerOnTouched(): void {}
 
   public setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
@@ -108,10 +108,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     if (selected < 0) {
       this.selectedItems = this.selectedItems.concat(choice);
     } else {
-      this.selectedItems = [
-        ...this.selectedItems.slice(0, selected),
-        ...this.selectedItems.slice(selected + 1),
-      ];
+      this.selectedItems = [...this.selectedItems.slice(0, selected), ...this.selectedItems.slice(selected + 1)];
     }
 
     this.updateModel(this.selectedItems);

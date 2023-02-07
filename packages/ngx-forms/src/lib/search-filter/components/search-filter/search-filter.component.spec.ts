@@ -45,12 +45,8 @@ describe('The SearchFilter Component', () => {
 
     fixture.detectChanges();
 
-    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(
-      1
-    );
-    expect(
-      el.querySelector('.m-search-filter__results-item').textContent
-    ).toContain('test-noResults');
+    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(1);
+    expect(el.querySelector('.m-search-filter__results-item').textContent).toContain('test-noResults');
   });
 
   it('should show the clear button when there are selected items', () => {
@@ -60,9 +56,7 @@ describe('The SearchFilter Component', () => {
     fixture.detectChanges();
 
     expect(el.querySelector('.m-search-filter__clear')).toBeDefined();
-    expect(el.querySelector('.m-search-filter__clear').textContent).toContain(
-      'test-deselect'
-    );
+    expect(el.querySelector('.m-search-filter__clear').textContent).toContain('test-deselect');
   });
 
   it('should show the available choices', () => {
@@ -80,13 +74,9 @@ describe('The SearchFilter Component', () => {
 
     fixture.detectChanges();
 
-    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(
-      2
-    );
+    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(2);
 
-    const items = Array.from(
-      el.querySelectorAll('.m-search-filter__results-item')
-    );
+    const items = Array.from(el.querySelectorAll('.m-search-filter__results-item'));
 
     expect(items[0].querySelector('label').textContent).toBe('one');
     expect(items[0].querySelector('input').checked).toBeFalsy();
