@@ -17,7 +17,6 @@ import { SelectableListDemoPageComponent } from './pages/aui-selectable-list/aui
 import { FormsDemoPageComponent } from './pages/aui-forms/demo/demo.page';
 import { FormsAutocompleteDemoPageComponent } from './pages/aui-forms/autocomplete/autocomplete.page';
 import { FormsDatepickerDemoPageComponent } from './pages/aui-forms/datepicker/datepicker.page';
-import { FormsMaskDemoPageComponent } from './pages/aui-forms/mask/mask.page';
 import { FormsRangeSliderDemoPageComponent } from './pages/aui-forms/range-slider/range-slider.page';
 import { FormsSearchFilterDemoPageComponent } from './pages/aui-forms/search-filter/search-filter.page';
 import { FormsTimepickerDemoPageComponent } from './pages/aui-forms/timepicker/timepicker.page';
@@ -101,13 +100,6 @@ export const EXAMPLES_ROUTES: Routes = [
         pathMatch: 'full',
         component: FormsDatepickerDemoPageComponent,
         data: {meta: {title: 'Datepicker'}},
-
-      },
-      {
-        path: 'mask',
-        pathMatch: 'full',
-        component: FormsMaskDemoPageComponent,
-        data: {meta: {title: 'Mask'}},
 
       },
       {
