@@ -14,15 +14,17 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 
 ### API
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() hoursPlaceholder: string;` | `'uu'` | Optional placeholder used in the hour picker. |
-| `@Input() minutesPlaceholder: string;` | `'mm'` | Optional placeholder used in the minutes picker. |
-| `@Input() ariaLabelHours: string;` | `'Uur'` | Optional ARIA label used in the hour picker. |
-| `@Input() ariaLabelMinutes: string;` | `'Minuten'` | Optional ARIA label used in the minutes picker. |
-| `@Input() hasError: boolean;` | `false` | Add optional `has-error` class to input fields inside timepicker. |
-| `@Input() hasError: boolean;` | `false` | Add optional `has-error` class to input fields inside timepicker. |
-| `@Input() size: TimepickerInputSize;` | `auto` | Enum sizes of the timepicker input fields inside the timepicker. |
+| Name                                   | Default value | Description                                                       |
+| -------------------------------------- | ------------- | ----------------------------------------------------------------- |
+| `@Input() label: string;`              | `''`          | Label for the tim picker input field.                             |
+| `@Input() description: string;`        | `''`          | Description for the time picker input field.                      |
+| `@Input() hoursPlaceholder: string;`   | `'uu'`        | Optional placeholder used in the hour picker.                     |
+| `@Input() minutesPlaceholder: string;` | `'mm'`        | Optional placeholder used in the minutes picker.                  |
+| `@Input() ariaLabelHours: string;`     | `'Uur'`       | Optional ARIA label used in the hour picker.                      |
+| `@Input() ariaLabelMinutes: string;`   | `'Minuten'`   | Optional ARIA label used in the minutes picker.                   |
+| `@Input() hasError: boolean;`          | `false`       | Add optional `has-error` class to input fields inside timepicker. |
+| `@Input() hasError: boolean;`          | `false`       | Add optional `has-error` class to input fields inside timepicker. |
+| `@Input() size: TimepickerInputSize;`  | `auto`        | Enum sizes of the timepicker input fields inside the timepicker.  |
 
 ### Example
 
@@ -45,10 +47,7 @@ public time1 = "10:30";
 ```
 
 ```html
-<aui-timepicker
-    size="small"
-    [(ngModel)]="time1">
-</aui-timepicker>
+<aui-timepicker label="time" description="Pick a time" size="small" [(ngModel)]="time1"> </aui-timepicker>
 ```
 
 #### Predefined hours and minutes
@@ -59,10 +58,13 @@ public time2 = "20:30";
 
 ```html
 <aui-timepicker
-    hoursPlaceholder="20"
-    minutesPlaceholder="30"
-    size="small"
-    [(ngModel)]="time2">
+  label="time"
+  description="Pick a time"
+  hoursPlaceholder="20"
+  minutesPlaceholder="30"
+  size="small"
+  [(ngModel)]="time2"
+>
 </aui-timepicker>
 ```
 
@@ -73,10 +75,7 @@ public time3 = "";
 ```
 
 ```html
-<aui-timepicker
-    hasError="true"
-    size="large"
-    [(ngModel)]="time3">
+<aui-timepicker label="time" description="Pick a time" hasError="true" size="large" [(ngModel)]="time3">
 </aui-timepicker>
 ```
 

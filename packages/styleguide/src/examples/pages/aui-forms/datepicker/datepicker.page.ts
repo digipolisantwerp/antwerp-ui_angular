@@ -49,6 +49,8 @@ this.dateForm = this.fb.group({
 			data-id="input-datepicker"
 			name="input-datepicker"
 			autocomplete="off"
+      label="Pick date"
+      description="description"
 			placeholder="dd/mm/jjjj"
 			formControlName="inputDate"
 			[min]="min"
@@ -62,8 +64,7 @@ this.dateForm = this.fb.group({
 </form>`;
   private destroyed$ = new Subject<boolean>();
 
-  constructor(private fb: UntypedFormBuilder) {
-  }
+  constructor(private fb: UntypedFormBuilder) {}
 
   public ngOnInit() {
     this.dateForm = this.fb.group({
@@ -71,10 +72,9 @@ this.dateForm = this.fb.group({
       isDisabled: false,
     });
 
-    this.dateForm.get('isDisabled').valueChanges
-      .pipe(
-        takeUntil(this.destroyed$),
-      )
+    this.dateForm
+      .get('isDisabled')
+      .valueChanges.pipe(takeUntil(this.destroyed$))
       .subscribe((isDisabled: boolean) => {
         if (isDisabled) {
           this.dateForm.get('inputDate').disable();

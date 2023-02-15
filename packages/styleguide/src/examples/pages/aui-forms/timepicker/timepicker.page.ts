@@ -23,6 +23,8 @@ export class AppModule {};`;
   public timepickerExampleHTML1 = `<div class="a-input">
 	<label class="a-input__label" for="timepicker1">Time</label>
 	<aui-timepicker
+		label="time" 
+		description="Pick a time"
 		data-id="timepicker1"
 		hoursPlaceholder="HH"
 		ariaLabelHours="Hours"
@@ -36,6 +38,8 @@ export class AppModule {};`;
   public timepickerExampleHTML2 = `<div class="a-input">
 	<label class="a-input__label" for="timepicker2">Time</label>
 	<aui-timepicker
+		label="time" 
+		description="Pick a time"
 		data-id="timepicker2"
 		hoursPlaceholder="HH"
 		ariaLabelHours="Hours"
@@ -48,6 +52,8 @@ export class AppModule {};`;
   public timepickerExampleHTML3 = `<div class="a-input">
 	<label class="a-input__label" for="timepicker3">Time</label>
 	<aui-timepicker
+		label="time" 
+		description="Pick a time"
 		data-id="timepicker3"
 		hoursPlaceholder="HH"
 		ariaLabelHours="Hours"
@@ -61,6 +67,8 @@ export class AppModule {};`;
   public timepickerExampleHTML4 = `<div class="a-input u-margin-bottom">
 	<label class="a-input__label" for="timepicker4">Time</label>
 	<aui-timepicker
+		label="time" 
+		description="Pick a time"
 		data-id="timepicker4"
 		hoursPlaceholder="HH"
 		ariaLabelHours="Hours"
