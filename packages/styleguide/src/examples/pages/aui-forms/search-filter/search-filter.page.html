@@ -14,7 +14,8 @@
   <aui-code-snippet [codeSnippet]="searchfilterExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-xx">
+<div class="u-margin-bottom">
+  <h4 class="u-margin-bottom-xs">Normal search filter</h4>
   <div class="u-margin-bottom">
     <aui-search-filter
       [(ngModel)]="selectedItems"
@@ -28,12 +29,13 @@
       labelNoResults="Couldn't find stuff!"
       labelResults=""
       name="test"
-      placeholder="Look for stuff">
+      placeholder="Look for stuff"
+    >
     </aui-search-filter>
   </div>
   <div class="a-input">
     <div class="a-input__checkbox">
-      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox"/>
+      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox" />
       <label for="isDisabled">Toggle disabled state</label>
     </div>
   </div>

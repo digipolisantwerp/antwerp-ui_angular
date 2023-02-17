@@ -9,6 +9,9 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
 @Component({
   selector: 'aui-search-filter',
   templateUrl: './search-filter.component.html',
+  styleUrls: [
+    './search-filter.component.scss',
+  ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -17,12 +20,13 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
     },
   ],
 })
-export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAccessor {
+export class SearchFilterComponent implements  OnChanges, ControlValueAccessor {
   @Input() public id: string;
   @Input() public name: string;
   @Input() public flyoutSize = FlyoutSize.Small;
   @Input() public flyoutAlign;
-  @Input() public label = 'Filter';
+  @Input() public label: string;
+  @Input() public description: string;
   @Input() public labelDeselect = 'Alles deselecteren';
   @Input() public labelResults = 'Resultaten';
   @Input() public labelNoResults = 'Geen resultaten gevonden.';
@@ -30,7 +34,8 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   @Input() public remote: boolean;
   @Input() public placeholder = 'Zoeken';
   @Input() public inputDelay = 150;
-  @Input() public showAllByDefault = false;
+  @Input() public onSelect: () => void;
+  @Input() public onClear: () => void;
   @Input() public size: 'large' | 'default' | 'small' | 'tiny' = 'default';
 
   @Output() public search: EventEmitter<string> = new EventEmitter<string>();
@@ -63,12 +68,6 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     this.isDisabled = isDisabled;
   }
 
-  public ngOnInit(): void {
-    if (this.showAllByDefault) {
-      this.filterData();
-    }
-  }
-
   public ngOnChanges(changes: SimpleChanges): void {
     const choices = get(changes, 'choices.currentValue', null);
 
@@ -97,9 +96,9 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   public clear(): void {
     this.selectedItems = [];
     this.query = '';
-
     this.filterData();
     this.updateModel(this.selectedItems);
+    this.onClear();
   }
 
   public toggleSelected(choice: string): void {
@@ -112,6 +111,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     }
 
     this.updateModel(this.selectedItems);
+    this.onSelect();
   }
 
   private filterChoices(): void {
@@ -121,5 +121,14 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
         choice.label.toLowerCase().indexOf(this.query.toLowerCase()) >= 0
       );
     });
+  }
+
+  public hasClose(): boolean {
+    return this.filteredChoices?.length && this.query?.length > 1 
+  }
+
+  public getSelectedLabels(): string {
+    console.log('SELECTED ITEMS: ', this.selectedItems)
+    return this.selectedItems.length ? this.selectedItems.map(el => el).join(', ') : null
   }
 }

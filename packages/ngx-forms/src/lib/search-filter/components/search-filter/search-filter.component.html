@@ -1,48 +1,75 @@
-<div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout>
-  <button
-    class="a-button has-icon-right"
-    [attr.disabled]="isDisabled ? 'true' : null"
-    aria-haspopup="true"
-    auiFlyoutAction
+<div [align]="flyoutAlign" [size]="flyoutSize" aria-haspopup="listbox" auiFlyout class="m-search-filter">
+  <div
+    class="a-input"
     [ngClass]="{
-      'a-button--outlined': !selectedItems.length,
-      'a-button--large': size === 'large',
-      'a-button--small': size === 'small',
-      'a-button--tiny': size === 'tiny'
+      'a-input--l': size === 'large',
+      'a-input--s': size === 'small',
+      'has-icon-right': hasClose
     }"
   >
-    <span id="{{ id + '-label' }}">{{ label }}</span>
-    <span *ngIf="selectedItems.length"> ({{ selectedItems.length }})</span>
-    <aui-icon name="ai-arrow-down-1"></aui-icon>
-  </button>
-
-  <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
-    <div *ngIf="!isDisabled" class="m-search-filter__input a-input has-icon-right">
-      <div class="a-input__wrapper">
-        <input
-          (input)="filterDataFromSearch()"
-          [(ngModel)]="query"
-          [attr.aria-labelledby]="id + '-label'"
-          [attr.placeholder]="placeholder"
-          aria-autocomplete="list"
-          id="{{ id + '-search' }}"
-          name="{{ name + '-search' }}"
-          type="text"
-        />
-        <aui-icon name="ai-search"></aui-icon>
-      </div>
-    </div>
-
-    <div *ngIf="!isDisabled && selectedItems.length > 0" class="m-search-filter__clear">
+    <label class="a-input__label" for="{{ id + '-search' }}">{{ label }}</label>
+    <small class="a-input__description" id="{{ id + '-description' }}">Input description</small>
+    <div class="m-search-filter__input">
+      <input
+        (input)="filterDataFromSearch()"
+        [(ngModel)]="query"
+        [attr.aria-labelledby]="id + '-label'"
+        [attr.placeholder]="placeholder"
+        [attr.disabled]="isDisabled ? '' : null"
+        aria-autocomplete="list"
+        id="{{ id + '-search' }}"
+        name="{{ name + '-search' }}"
+        value="{{ getSelectedLabels() }}"
+        type="text"
+        auiFlyoutAction
+      />
       <button
-        (click)="clear()"
-        class="a-button a-button--outlined a-button--small a-button--danger has-icon-left"
+        *ngIf="hasClose"
+        [ngClass]="{
+          'a-button--l': size === 'large',
+          'a-button--s': size === 'small'
+        }"
+        class="a-button a-button--outlined has-icon m-search-filter__button a-button--danger"
+        aria-label="Zoekopdracht wissen"
         type="button"
+        (click)="clear()"
+        [attr.disabled]="isDisabled ? '' : null"
       >
         <aui-icon name="ai-close"></aui-icon>
-        {{ labelDeselect }}
       </button>
+      <aui-icon *ngIf="!hasClose" name="ai-close"></aui-icon>
     </div>
+  </div>
+  <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
+    <p *ngIf="labelResults" class="h6 m-search-filter__results-title u-margin-bottom-xs">{{ labelResults }}</p>
+    <div *ngIf="loading" class="u-text-center u-padding a-spinner"></div>
+    <ul *ngIf="!loading" class="a-list a-list--lined a-list--unstyled">
+      <li *ngIf="!filteredChoices.length" class="m-search-filter__results-item a-list__item">
+        <p class="u-margin-xs">{{ labelNoResults }}</p>
+      </li>
+      <li *ngFor="let choice of filteredChoices; index as i" class="m-search-filter__results-item a-list__item">
+        <div class="a-input__checkbox">
+          <input
+            (change)="toggleSelected(choice.label)"
+            [attr.disabled]="isDisabled ? true : null"
+            [checked]="selectedItems.indexOf(choice.label) >= 0"
+            id="{{ 'checkbox--' + i + '--' + id }}"
+            name="{{ 'checkbox--' + i + '--' + id }}"
+            type="checkbox"
+          />
+          <label for="{{ 'checkbox--' + i + '--' + id }}">{{ choice.label }}</label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout>
+
+
+  <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
+
+
 
     <p *ngIf="labelResults" class="h6 m-search-filter__results-title u-margin-bottom-xs">{{ labelResults }}</p>
     <div *ngIf="loading" class="u-text-center u-padding a-spinner"></div>
@@ -65,4 +92,4 @@
       </li>
     </ul>
   </div>
-</div>
+</div> -->
