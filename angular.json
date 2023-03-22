@@ -140,7 +140,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-logo/tsconfig.lib.json",
             "project": "packages/ngx-logo/ng-package.json"
@@ -172,7 +172,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-layout/tsconfig.lib.json",
             "project": "packages/ngx-layout/ng-package.json"
@@ -204,7 +204,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-navigation-menu/tsconfig.lib.json",
             "project": "packages/ngx-navigation-menu/ng-package.json"
@@ -236,7 +236,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-code-snippet/tsconfig.lib.json",
             "project": "packages/ngx-code-snippet/ng-package.json"
@@ -268,7 +268,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-analytics/tsconfig.lib.json",
             "project": "packages/ngx-analytics/ng-package.json"
@@ -300,7 +300,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-agenda/tsconfig.lib.json",
             "project": "packages/ngx-agenda/ng-package.json"
@@ -332,7 +332,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-avatar/tsconfig.lib.json",
             "project": "packages/ngx-avatar/ng-package.json"
@@ -364,7 +364,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-calendar/tsconfig.lib.json",
             "project": "packages/ngx-calendar/ng-package.json"
@@ -396,7 +396,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-context/tsconfig.lib.json",
             "project": "packages/ngx-context/ng-package.json"
@@ -428,7 +428,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-flyout/tsconfig.lib.json",
             "project": "packages/ngx-flyout/ng-package.json"
@@ -460,7 +460,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-localstorage/tsconfig.lib.json",
             "project": "packages/ngx-localstorage/ng-package.json"
@@ -492,7 +492,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-pagination/tsconfig.lib.json",
             "project": "packages/ngx-pagination/ng-package.json"
@@ -524,7 +524,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-progress-bar/tsconfig.lib.json",
             "project": "packages/ngx-progress-bar/ng-package.json"
@@ -556,7 +556,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-table/tsconfig.lib.json",
             "project": "packages/ngx-table/ng-package.json"
@@ -588,7 +588,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-user-menu/tsconfig.lib.json",
             "project": "packages/ngx-user-menu/ng-package.json"
@@ -620,7 +620,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-selectable-list/tsconfig.lib.json",
             "project": "packages/ngx-selectable-list/ng-package.json"
@@ -652,7 +652,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-forms/tsconfig.lib.json",
             "project": "packages/ngx-forms/ng-package.json"
@@ -684,7 +684,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-utils/tsconfig.lib.json",
             "project": "packages/ngx-utils/ng-package.json"
@@ -716,7 +716,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-leaflet/tsconfig.lib.json",
             "project": "packages/ngx-leaflet/ng-package.json"
@@ -748,7 +748,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-notifications/tsconfig.lib.json",
             "project": "packages/ngx-notifications/ng-package.json"
@@ -780,7 +780,7 @@
       "prefix": "aui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "packages/ngx-icon/tsconfig.lib.json",
             "project": "packages/ngx-icon/ng-package.json"

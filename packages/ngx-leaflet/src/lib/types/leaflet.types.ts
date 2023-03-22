@@ -16,6 +16,6 @@ export interface LeafletMapOptions {
   onEditFeature?: (v) => void;
 }
 
-export interface LatLngExpression {
+export interface LeafletLatLngExpression {
   latLng: any;
 }

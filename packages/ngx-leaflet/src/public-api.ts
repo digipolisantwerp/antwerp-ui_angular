@@ -9,6 +9,6 @@ export {
 export { LeafletLocateControlComponent } from './lib/components/controls/leaflet-locate-control/leaflet-locate-control.component';
 export { LeafletZoomControlComponent } from './lib/components/controls/leaflet-zoom-control/leaflet-zoom-control.component';
 export { LeafletComponent } from './lib/components/leaflet/leaflet.component';
-export { LeafletLayer, LeafletMapOptions, LatLngExpression } from './lib/types/leaflet.types';
+export { LeafletLayer, LeafletMapOptions, LeafletLatLngExpression } from './lib/types/leaflet.types';
 export { baseMapAntwerp, baseMapWorldGray } from './lib/leaflet.conf';
 export { LeafletModule } from './lib/leaflet.module';

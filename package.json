@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@acpaas-ui/js-date-utils": "^2.0.1",
-    "@acpaas-ui/js-notification-store": "^1.0.4",
     "@angular-eslint/builder": "^15.1.0",
     "@angular-eslint/schematics": "^15.1.0",
     "@angular-eslint/template-parser": "^15.1.0",
@@ -70,7 +69,6 @@
     "@a-ui/core": "^5.0.1",
     "@a-ui/flexboxgrid": "^2.0.0",
     "@angular-devkit/build-angular": "^15.1.1",
-    "@angular-devkit/build-ng-packagr": "^0.1002.4",
     "@angular/cli": "^15.1.1",
     "@angular/compiler-cli": "^15.1.0",
     "@angular/language-service": "^15.1.0",
