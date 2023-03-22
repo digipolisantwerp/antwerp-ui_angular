@@ -16,7 +16,7 @@
 
   &.toast-success {
     .m-alert {
-      @include m-alert($alert-success);
+      // @include m-alert($alert-success);
 
       .a-button-transparent {
         @include a-button-outline($btn-success-outline-color, $btn-success-outline-border, true);
@@ -26,7 +26,7 @@
 
   &.toast-warning {
     .m-alert {
-      @include m-alert($alert-warning);
+      // @include m-alert($alert-warning);
 
       .a-button-transparent {
         @include a-button-outline($btn-warning-outline-color, $btn-warning-outline-border, true);
@@ -36,7 +36,7 @@
 
   &.toast-error {
     .m-alert {
-      @include m-alert($alert-danger);
+      // @include m-alert($alert-danger);
 
       .a-button-transparent {
         @include a-button-outline($btn-danger-outline-color, $btn-danger-outline-border, true);
