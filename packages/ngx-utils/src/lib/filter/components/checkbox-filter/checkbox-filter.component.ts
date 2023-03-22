@@ -50,7 +50,7 @@ export class CheckboxFilterComponent implements OnInit, FilterComponent, OnDestr
   }
 
   ngOnDestroy(): void {
-    this.destroy$.next();
+    this.destroy$.next(true);
     this.destroy$.complete();
   }
 }
