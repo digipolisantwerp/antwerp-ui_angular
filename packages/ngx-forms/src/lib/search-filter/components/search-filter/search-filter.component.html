@@ -1,13 +1,16 @@
-<div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout class="m-search-filter">
-  <button class="has-icon-right a-button--default" [attr.disabled]="isDisabled ? 'true' : null" aria-haspopup=”true”
-          auiFlyoutAction
-          [ngClass]="{
-          'a-button' : selectedItems.length,
-          'a-button-outline' : !selectedItems.length,
-          'a-button--large' : size === 'large',
-          'a-button--small': size === 'small',
-           'a-button--tiny' : size === 'tiny'
-           }">
+<div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout>
+  <button
+    class="a-button has-icon-right"
+    [attr.disabled]="isDisabled ? 'true' : null"
+    aria-haspopup="true"
+    auiFlyoutAction
+    [ngClass]="{
+      'a-button--outlined': !selectedItems.length,
+      'a-button--large': size === 'large',
+      'a-button--small': size === 'small',
+      'a-button--tiny': size === 'tiny'
+    }"
+  >
     <span id="{{ id + '-label' }}">{{ label }}</span>
     <span *ngIf="selectedItems.length"> ({{ selectedItems.length }})</span>
     <aui-icon name="ai-arrow-down-1"></aui-icon>
@@ -16,16 +19,26 @@
   <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
     <div *ngIf="!isDisabled" class="m-search-filter__input a-input has-icon-right">
       <div class="a-input__wrapper">
-        <input (input)="filterDataFromSearch()" [(ngModel)]="query" [attr.aria-labelledby]="id + '-label'"
-               [attr.placeholder]="placeholder"
-               aria-autocomplete="list" id="{{ id + '-search' }}" name="{{ name + '-search' }}"
-               type="text">
+        <input
+          (input)="filterDataFromSearch()"
+          [(ngModel)]="query"
+          [attr.aria-labelledby]="id + '-label'"
+          [attr.placeholder]="placeholder"
+          aria-autocomplete="list"
+          id="{{ id + '-search' }}"
+          name="{{ name + '-search' }}"
+          type="text"
+        />
         <aui-icon name="ai-search"></aui-icon>
       </div>
     </div>
 
     <div *ngIf="!isDisabled && selectedItems.length > 0" class="m-search-filter__clear">
-      <button (click)="clear()" class="a-button-outline a-button--small a-button--danger has-icon-left" type="button">
+      <button
+        (click)="clear()"
+        class="a-button a-button--outlined a-button--small a-button--danger has-icon-left"
+        type="button"
+      >
         <aui-icon name="ai-close"></aui-icon>
         {{ labelDeselect }}
       </button>

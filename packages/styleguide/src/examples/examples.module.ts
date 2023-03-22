@@ -22,7 +22,6 @@ import { UserMenuDemoPageComponent } from './pages/aui-user-menu/aui-user-menu.p
 import { SelectableListDemoPageComponent } from './pages/aui-selectable-list/aui-selectable-list.page';
 import { FormsAutocompleteDemoPageComponent } from './pages/aui-forms/autocomplete/autocomplete.page';
 import { FormsDatepickerDemoPageComponent } from './pages/aui-forms/datepicker/datepicker.page';
-import { FormsMaskDemoPageComponent } from './pages/aui-forms/mask/mask.page';
 import { FormsRangeSliderDemoPageComponent } from './pages/aui-forms/range-slider/range-slider.page';
 import { FormsSearchFilterDemoPageComponent } from './pages/aui-forms/search-filter/search-filter.page';
 import { FormsTimepickerDemoPageComponent } from './pages/aui-forms/timepicker/timepicker.page';
@@ -69,7 +68,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsDemoPageComponent,
         FormsAutocompleteDemoPageComponent,
         FormsDatepickerDemoPageComponent,
-        FormsMaskDemoPageComponent,
         FormsRangeSliderDemoPageComponent,
         FormsSearchFilterDemoPageComponent,
         FormsTimepickerDemoPageComponent,

@@ -1,5 +1,11 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -10,15 +16,15 @@ import { TimepickerInputSize } from '../../types/timepicker.types';
 @Component({
   selector: 'aui-timepicker',
   templateUrl: './timepicker.component.html',
-  styleUrls: [
-    './timepicker.component.scss',
-  ],
+  styleUrls: ['./timepicker.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TimepickerComponent), // eslint-disable-line @angular-eslint/no-forward-ref
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TimepickerComponent), // eslint-disable-line @angular-eslint/no-forward-ref
+      multi: true,
+    },
+  ],
 })
 export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() public id = 'aui-timepicker-' + Math.random().toString(36).substring(2);
@@ -28,6 +34,8 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   @Input() public size: TimepickerInputSize = TimepickerInputSize.Auto;
   @Input() public ariaLabelHours = 'Uur';
   @Input() public ariaLabelMinutes = 'Minuten';
+  @Input() public label: string;
+  @Input() public description: string;
 
   public shouldUseFallback = false;
   public minutes: string[] = [];
@@ -39,11 +47,7 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(
-    private formBuilder: UntypedFormBuilder,
-    private renderer: Renderer2
-  ) {
-  }
+  constructor(private formBuilder: UntypedFormBuilder, private renderer: Renderer2) {}
 
   public ngOnInit() {
     this.shouldUseFallback = this.supportsNativeTimepicker();
@@ -55,21 +59,17 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
       minutes: null,
     });
 
-    this.fallbackForm.valueChanges
-      .pipe(takeUntil(this.componentDestroyed$))
-      .subscribe((formData) => {
-        if (formData.hours && formData.minutes) {
-          this.updateModel(`${formData.hours}:${formData.minutes}`);
-        } else {
-          this.updateModel('');
-        }
-      });
+    this.fallbackForm.valueChanges.pipe(takeUntil(this.componentDestroyed$)).subscribe((formData) => {
+      if (formData.hours && formData.minutes) {
+        this.updateModel(`${formData.hours}:${formData.minutes}`);
+      } else {
+        this.updateModel('');
+      }
+    });
 
-    this.timeControl.valueChanges
-      .pipe(takeUntil(this.componentDestroyed$))
-      .subscribe((time) => {
-        this.updateModel(time);
-      });
+    this.timeControl.valueChanges.pipe(takeUntil(this.componentDestroyed$)).subscribe((time) => {
+      this.updateModel(time);
+    });
   }
 
   public ngOnDestroy() {
@@ -78,12 +78,12 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   public writeValue(value: any): void {
-    this.timeControl.setValue(value, {emitEvent: false});
+    this.timeControl.setValue(value, { emitEvent: false });
 
     if (value) {
       const splitted = value.split(':');
-      this.fallbackForm.get('hours').setValue(splitted[0], {emitEvent: false});
-      this.fallbackForm.get('minutes').setValue(splitted[1], {emitEvent: false});
+      this.fallbackForm.get('hours').setValue(splitted[0], { emitEvent: false });
+      this.fallbackForm.get('minutes').setValue(splitted[1], { emitEvent: false });
     }
   }
 
@@ -91,16 +91,15 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
     this.updateModel = onChange;
   }
 
-  public registerOnTouched(): void {
-  }
+  public registerOnTouched(): void {}
 
   public setDisabledState(isDisabled: boolean) {
     if (isDisabled) {
-      this.timeControl.disable({emitEvent: false});
-      this.fallbackForm.disable({emitEvent: false});
+      this.timeControl.disable({ emitEvent: false });
+      this.fallbackForm.disable({ emitEvent: false });
     } else {
-      this.timeControl.enable({emitEvent: false});
-      this.fallbackForm.enable({emitEvent: false});
+      this.timeControl.enable({ emitEvent: false });
+      this.fallbackForm.enable({ emitEvent: false });
     }
   }
 
@@ -112,14 +111,18 @@ export class TimepickerComponent implements OnInit, OnDestroy, ControlValueAcces
   }
 
   private getMinutes(): string[] {
-    return Array(60).fill('').map((value, index) => {
-      return DateHelper.addLeadingZero(index);
-    });
+    return Array(60)
+      .fill('')
+      .map((value, index) => {
+        return DateHelper.addLeadingZero(index);
+      });
   }
 
   private getHours(): string[] {
-    return Array(24).fill('').map((value, index) => {
-      return DateHelper.addLeadingZero(index);
-    });
+    return Array(24)
+      .fill('')
+      .map((value, index) => {
+        return DateHelper.addLeadingZero(index);
+      });
   }
 }

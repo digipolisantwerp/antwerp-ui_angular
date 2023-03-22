@@ -5,18 +5,9 @@ import { IconModule } from '@acpaas-ui/ngx-icon';
 import { TimepickerComponent } from './components/timepicker/timepicker.component';
 
 @NgModule({
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    IconModule,
-  ],
-  declarations: [
-    TimepickerComponent,
-  ],
-  exports: [
-    TimepickerComponent,
-  ],
+  imports: [ReactiveFormsModule, CommonModule, IconModule],
+  declarations: [TimepickerComponent],
+  exports: [TimepickerComponent],
   providers: [],
 })
-export class TimepickerModule {
-}
+export class TimepickerModule {}

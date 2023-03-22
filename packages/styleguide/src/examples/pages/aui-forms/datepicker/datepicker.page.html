@@ -14,17 +14,21 @@
 
 <div class="u-margin-bottom-lg">
   <div [formGroup]="dateForm">
-    <div [ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}"
-         class="a-input has-icon-right u-margin-bottom">
-      <label class="a-input__label" for="input-datepicker">Pick a date</label>
+    <div
+      [ngClass]="{'has-error': dateForm.controls.inputDate.dirty && dateForm.controls.inputDate.invalid}"
+      class="a-input has-icon-right u-margin-bottom"
+    >
       <aui-datepicker
         [min]="min"
         [max]="max"
         autocomplete="off"
+        label="Pick date"
+        description="description"
         data-id="input-datepicker"
         formControlName="inputDate"
         name="input-datepicker"
-        placeholder="dd/mm/jjjj">
+        placeholder="dd/mm/jjjj"
+      >
       </aui-datepicker>
       <div *ngIf="dateForm.controls['inputDate'].errors" class="u-text-danger u-margin-top-xs u-margin-bottom">
         <p *ngIf="dateForm.controls['inputDate'].errors.format">{{ dateForm.controls['inputDate'].errors.format }}</p>
@@ -33,7 +37,7 @@
     </div>
     <div class="a-input u-margin-bottom">
       <div class="a-input__checkbox">
-        <input formControlName="isDisabled" id="isDisabled" type="checkbox"/>
+        <input formControlName="isDisabled" id="isDisabled" type="checkbox" />
         <label for="isDisabled">Toggle disabled state</label>
       </div>
     </div>

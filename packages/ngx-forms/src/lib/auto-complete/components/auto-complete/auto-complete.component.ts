@@ -32,6 +32,8 @@ import { SearchService } from '../../../shared/services/search.service';
 export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input() id: string;
   @Input() placeholder: string;
+  @Input() description: string;
+  @Input() inputLabel: string;
   @Input() results: any[] = []; // The values for the selectable list
   @Input() data: any[] = []; // The values to search in when remote search is disabled
   @Input() remote = false; // Disable or enamble remote search
