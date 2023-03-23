@@ -34,7 +34,7 @@ export class FlyoutDirective implements OnDestroy {
   @Input() public activateOnFocus = false;
   @Output() public opened = new EventEmitter();
   @Output() public closed = new EventEmitter();
-  @ContentChild(FlyoutZoneDirective, {static: true}) public flyoutZone: FlyoutZoneDirective;
+  @ContentChild(FlyoutZoneDirective, { static: true }) public flyoutZone: FlyoutZoneDirective;
   public isOpened = false;
   public state$ = new Subject<FlyoutState>();
   private destroyed$: Subject<boolean> = new Subject<boolean>();
@@ -49,15 +49,8 @@ export class FlyoutDirective implements OnDestroy {
 
     this.state$.next(FlyoutState.CLOSED);
 
-
-    merge(
-      this.state$,
-      this.flyoutService.state$
-    )
-      .pipe(
-        takeUntil(this.destroyed$),
-        distinctUntilChanged()
-      )
+    merge(this.state$, this.flyoutService.state$)
+      .pipe(takeUntil(this.destroyed$), distinctUntilChanged())
       .subscribe((state: FlyoutState) => {
         this.isOpened = state === FlyoutState.OPEN;
         if (this.flyoutZone) {

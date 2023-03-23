@@ -64,27 +64,21 @@ describe('The FlyoutButton Component', () => {
     comp.buttonSize = FlyoutButtonSize.Small;
 
     fixture.detectChanges();
-    expect(el.querySelector('.a-button').getAttribute('class')).toContain(
-      'a-button--small'
-    );
+    expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--small');
   });
 
   it('should have an outline option', () => {
     comp.outline = true;
 
     fixture.detectChanges();
-    expect(
-      el.getElementsByTagName('button')[0].getAttribute('class')
-    ).toContain('a-button-outline');
+    expect(el.getElementsByTagName('button')[0].getAttribute('class')).toContain('a-button-outline');
   });
 
   it('should apply the `has-icon` class when no label is present', () => {
     comp.icon = 'ai-alarm-bell';
 
     fixture.detectChanges();
-    expect(el.querySelector('.a-button').getAttribute('class')).toContain(
-      'has-icon'
-    );
+    expect(el.querySelector('.a-button').getAttribute('class')).toContain('has-icon');
   });
 
   it('should apply the `has-icon-left` class when a label is present', () => {
@@ -92,9 +86,7 @@ describe('The FlyoutButton Component', () => {
     comp.label = 'Hello';
 
     fixture.detectChanges();
-    expect(el.querySelector('.a-button').getAttribute('class')).toContain(
-      'has-icon-left'
-    );
+    expect(el.querySelector('.a-button').getAttribute('class')).toContain('has-icon-left');
   });
 
   it('should toggle the flyoutOpen if handleFlyoutChanged is called', () => {

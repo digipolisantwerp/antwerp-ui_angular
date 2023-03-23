@@ -1,4 +1,15 @@
-import { Directive, ElementRef, Host, HostBinding, HostListener, Inject, Input, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Host,
+  HostBinding,
+  HostListener,
+  Inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -35,19 +46,15 @@ export class FlyoutActionDirective implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.flyout.state$
-      .pipe(
-        takeUntil(this.destroyed$)
-      )
-      .subscribe((state: FlyoutState) => {
-        if (state === FlyoutState.OPEN) {
-          setTimeout(() => {
-            this.addEventListeners();
-          }, 100); // flyout open delay
-        } else {
-          this.removeEventListeners();
-        }
-      });
+    this.flyout.state$.pipe(takeUntil(this.destroyed$)).subscribe((state: FlyoutState) => {
+      if (state === FlyoutState.OPEN) {
+        setTimeout(() => {
+          this.addEventListeners();
+        }, 100); // flyout open delay
+      } else {
+        this.removeEventListeners();
+      }
+    });
   }
 
   public ngOnDestroy(): void {

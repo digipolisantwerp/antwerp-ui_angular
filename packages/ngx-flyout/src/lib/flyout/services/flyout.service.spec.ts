@@ -9,12 +9,9 @@ describe('The Context Writer Service', () => {
     }).compileComponents();
   }));
 
-  it('should update state on close', inject(
-    [FlyoutService],
-    (flyoutService: FlyoutService) => {
-      spyOn(flyoutService.state$, 'next');
-      flyoutService.close();
-      expect(flyoutService.state$.next).toHaveBeenCalled();
-    }
-  ));
+  it('should update state on close', inject([FlyoutService], (flyoutService: FlyoutService) => {
+    spyOn(flyoutService.state$, 'next');
+    flyoutService.close();
+    expect(flyoutService.state$.next).toHaveBeenCalled();
+  }));
 });
