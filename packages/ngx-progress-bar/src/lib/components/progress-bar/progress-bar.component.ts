@@ -10,7 +10,7 @@ export class ProgressBarComponent {
 
   public calcProgress() {
     if (this.max > 0 && this.value > 0) {
-      const res = (this.value / this.max);
+      const res = this.value / this.max;
       return Math.floor(res * 100) + '%';
     }
 
