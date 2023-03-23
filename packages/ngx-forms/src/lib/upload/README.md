@@ -2,11 +2,11 @@
 
 The upload module provides a couple of upload components and an `Uploader` class.
 
-* `<aui-upload>` component
-* `<aui-upload-zone>` component
-* `<aui-upload-queue>` component
-* `<aui-validation-list>` component
-* `Uploader` class (non-angular service)
+- `<aui-upload>` component
+- `<aui-upload-zone>` component
+- `<aui-upload-queue>` component
+- `<aui-validation-list>` component
+- `Uploader` class (non-angular service)
 
 ## Usage
 
@@ -15,12 +15,13 @@ import { UploadModule } from '@acpaas-ui/ngx-forms';
 ```
 
 Add a map with error messages for the validation
+
 ```typescript
 UploadModule.forChild({
-    INVALID_FILE_TYPE: 'Ongeldig bestandstype',
-    INVALID_FILE_SIZE: 'Ongeldige bestandsgrootte',
-    INVALID_MIME_TYPE: 'Ongeldig mime type'
-})
+  INVALID_FILE_TYPE: 'Ongeldig bestandstype',
+  INVALID_FILE_SIZE: 'Ongeldige bestandsgrootte',
+  INVALID_MIME_TYPE: 'Ongeldig mime type',
+});
 ```
 
 ## Documentation
@@ -30,66 +31,71 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 ### API
 
 #### `<aui-upload>`
+
 This component wraps the `upload-zone`, `upload-queue` and `validation-list`, it is recommended to use this component instead of the individual `upload-zone` and `upload-queue` but it's not required.
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() options: UploadOptions;` | `UPLOAD_OPTIONS_DEFAULT` | An instance of the UploadOptions interface that is part of the Uploader class. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
-| `@Input() data-id: string;` | `''` | An id that can be used in combination with a label's for attribute. |
-| `@Input() ariaLabelRemove: string;` | `'Verwijder'` | The 'delete' text that is used for screenreaders. |
-| `@Input() disabled: boolean;` | `false` | Optional attribute to set the upload and the upload zone disabled. |
-| `@Input() multiple: boolean;` | `true` | Optional attribute to restrict the number of uploaded files to be selected. |
-| `@Input() accept: boolean;` | `true` | Optional accept attribute to define the type of files that can be selected. |
-| `@Output() selectUploadedFiles: EventEmitter<Object[]>` | - | On a successful upload, this will emit the response of the backend. This should be an array of objects with the uploaded filename and url. |
+| Name                                                    | Default value            | Description                                                                                                                                                                                               |
+| ------------------------------------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@Input() options: UploadOptions;`                      | `UPLOAD_OPTIONS_DEFAULT` | An instance of the UploadOptions interface that is part of the Uploader class. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
+| `@Input() data-id: string;`                             | `''`                     | An id that can be used in combination with a label's for attribute.                                                                                                                                       |
+| `@Input() ariaLabelRemove: string;`                     | `'Verwijder'`            | The 'delete' text that is used for screenreaders.                                                                                                                                                         |
+| `@Input() disabled: boolean;`                           | `false`                  | Optional attribute to set the upload and the upload zone disabled.                                                                                                                                        |
+| `@Input() multiple: boolean;`                           | `true`                   | Optional attribute to restrict the number of uploaded files to be selected.                                                                                                                               |
+| `@Input() accept: boolean;`                             | `true`                   | Optional accept attribute to define the type of files that can be selected.                                                                                                                               |
+| `@Output() selectUploadedFiles: EventEmitter<Object[]>` | -                        | On a successful upload, this will emit the response of the backend. This should be an array of objects with the uploaded filename and url.                                                                |
 
 #### `<aui-upload-zone>`
+
 This component provides the upload functionality.
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
-| `@Input() multiple: boolean;` | `true` | Enable the HTML `multiple` attribute so the user can select multiple files to upload. |
-| `@Input() id: string;` | `''` | An id that can be used in combination with a label's for attribute. |
-| `@Input() ariaId: string;` | `[random id when no id was given]` | An id that can be used when you don't want a visible label. |
-| `@Input() disabled: boolean;` | `false` | Optional attribute to set the upload zone disabled. |
-| `@Input() multiple: boolean;` | `true` | Optional attribute to restrict the number of uploaded files to be selected. |
-| `@Input() accept: boolean;` | `true` | Optional accept attribute to define the type of files that can be selected. |
-| `@Output() uploadedFiles: EventEmitter<Object[]>;` | - | Emits an array of files that were uploaded. |
-| `@Output() queuedFiles: EventEmitter<File[]>;` | - | Emits an array of file objects that have past the validation and are ready to be uploaded. |
-| `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | - | Emits an array of invalid files and the reason why they are invalid. |
+| Name                                                   | Default value                      | Description                                                                                                                                                                                                           |
+| ------------------------------------------------------ | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@Input() uploader: Uploader;`                         | -                                  | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
+| `@Input() multiple: boolean;`                          | `true`                             | Enable the HTML `multiple` attribute so the user can select multiple files to upload.                                                                                                                                 |
+| `@Input() id: string;`                                 | `''`                               | An id that can be used in combination with a label's for attribute.                                                                                                                                                   |
+| `@Input() ariaId: string;`                             | `[random id when no id was given]` | An id that can be used when you don't want a visible label.                                                                                                                                                           |
+| `@Input() disabled: boolean;`                          | `false`                            | Optional attribute to set the upload zone disabled.                                                                                                                                                                   |
+| `@Input() multiple: boolean;`                          | `true`                             | Optional attribute to restrict the number of uploaded files to be selected.                                                                                                                                           |
+| `@Input() accept: boolean;`                            | `true`                             | Optional accept attribute to define the type of files that can be selected.                                                                                                                                           |
+| `@Output() uploadedFiles: EventEmitter<Object[]>;`     | -                                  | Emits an array of files that were uploaded.                                                                                                                                                                           |
+| `@Output() queuedFiles: EventEmitter<File[]>;`         | -                                  | Emits an array of file objects that have past the validation and are ready to be uploaded.                                                                                                                            |
+| `@Output() invalidFiles: EventEmitter<InvalidFile[]>;` | -                                  | Emits an array of invalid files and the reason why they are invalid.                                                                                                                                                  |
 
 #### `<aui-upload-queue>`
+
 This component provides a list of queued files.
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() files: File[];` | - | An array of files. |
-| `@Input() uploader: Uploader;` | - | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
-| `@Input() ariaLabelRemove: string;` | `'Verwijder'` | The 'delete' text that is used for screenreaders. |
-| `@Output() uploadedFiles: EventEmitter<Object[]>` | - | Emits an array of files that were uploaded. |
+| Name                                              | Default value | Description                                                                                                                                                                                                           |
+| ------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@Input() files: File[];`                         | -             | An array of files.                                                                                                                                                                                                    |
+| `@Input() uploader: Uploader;`                    | -             | An instance of the Uploader class. This class handles the validation and upload of a file. Its different options and there default values that are defined in `UPLOAD_OPTIONS_DEFAULT` are explained in detail below. |
+| `@Input() ariaLabelRemove: string;`               | `'Verwijder'` | The 'delete' text that is used for screenreaders.                                                                                                                                                                     |
+| `@Output() uploadedFiles: EventEmitter<Object[]>` | -             | Emits an array of files that were uploaded.                                                                                                                                                                           |
 
 #### `<aui-validation-list>`
+
 This component displays possible error messages.
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() invalidFiles: InvalidFile[];` | `[]` | An array of invalid files and the reason why they are invalid. |
-| `@Input() ariaLabelRemove: string;` | `'Verwijder'` | The 'delete' text that is used for screenreaders. |
+| Name                                    | Default value | Description                                                    |
+| --------------------------------------- | ------------- | -------------------------------------------------------------- |
+| `@Input() invalidFiles: InvalidFile[];` | `[]`          | An array of invalid files and the reason why they are invalid. |
+| `@Input() ariaLabelRemove: string;`     | `'Verwijder'` | The 'delete' text that is used for screenreaders.              |
 
 #### `Uploader`
+
 This class handles the validation and upload of a file.
 
 ##### `UploadOptions`
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `allowedMimeTypes: string[];` | `[]` | The MIME types that are allowed to be uploaded. |
-| `allowedFileTypes: string[];` | `[]` | The file extensions that are allowed to be uploaded. |
-| `autoUpload: boolean;` | `false` | Upload the file automatically without confirmation. |
-| `maxFileSize: number;` | `0` | The maximum file size that is allowed. The value is expressed in Bytes. The value 0 equals infinite. |
-| `queueLimit: number;` | `0` | The maximum number of files that can be selected at the same time. The value 0 equals infinite. |
-| `type: string;` | `'drop'` | By default an upload has an `upload-zone` but with the option `'button'`, you can set it as an uploadbutton. |
-| `url: string;` | `''` | The upload url. |
+| Name                          | Default value | Description                                                                                                  |
+| ----------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `allowedMimeTypes: string[];` | `[]`          | The MIME types that are allowed to be uploaded.                                                              |
+| `allowedFileTypes: string[];` | `[]`          | The file extensions that are allowed to be uploaded.                                                         |
+| `autoUpload: boolean;`        | `false`       | Upload the file automatically without confirmation.                                                          |
+| `maxFileSize: number;`        | `0`           | The maximum file size that is allowed. The value is expressed in Bytes. The value 0 equals infinite.         |
+| `queueLimit: number;`         | `0`           | The maximum number of files that can be selected at the same time. The value 0 equals infinite.              |
+| `type: string;`               | `'drop'`      | By default an upload has an `upload-zone` but with the option `'button'`, you can set it as an uploadbutton. |
+| `url: string;`                | `''`          | The upload url.                                                                                              |
 
 #### Example
 
@@ -119,12 +125,8 @@ public dropzone1: UploadOptions = {
 
 ```html
 <aui-upload [options]="dropzone1" (selectUploadedFiles)="onUpload($event)">
-    <div class="m-upload__message">
-        Drag your files here or click to upload
-    </div>
-    <div class="m-upload__description">
-        Optional description message
-    </div>
+  <div class="m-upload__message">Drag your files here or click to upload</div>
+  <div class="m-upload__description">Optional description message</div>
 </aui-upload>
 ```
 
@@ -142,11 +144,9 @@ public dropzone2: UploadOptions = {
 
 ```html
 <div class="u-margin-bottom">
-    <aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
-        <div class="m-upload__button">
-            Select your files to upload
-        </div>
-    </aui-upload>
+  <aui-upload [options]="dropzone2" (selectUploadedFiles)="onUpload($event)">
+    <div class="m-upload__button">Select your files to upload</div>
+  </aui-upload>
 </div>
 ```
 
@@ -243,44 +243,40 @@ this.uploader.uploadFiles(this.queuedFiles).subscribe(
 
 ```scss
 ::ng-deep .a-upload-queue__wrapper {
-    .a-button {
-        display: none;
-    }
+  .a-button {
+    display: none;
+  }
 }
 ```
 
 ```html
 <aui-upload-zone
-    [uploader]="uploader"
-    (queuedFiles)="onQueuedFiles($event)"
-    (uploadedFiles)="onUploadedFiles($event)"
-    (invalidFiles)="onInvalidFiles($event)">
-    <div class="m-upload__message">
-        Drag your files here or click to upload
-    </div>
-    <div class="m-upload__description">
-        Maximum filesize: 10 MB,
-        File extension: jpg, jpeg, png
-    </div>
+  [uploader]="uploader"
+  (queuedFiles)="onQueuedFiles($event)"
+  (uploadedFiles)="onUploadedFiles($event)"
+  (invalidFiles)="onInvalidFiles($event)"
+>
+  <div class="m-upload__message">Drag your files here or click to upload</div>
+  <div class="m-upload__description">Maximum filesize: 10 MB, File extension: jpg, jpeg, png</div>
 </aui-upload-zone>
 <aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
 <div *ngIf="showError" class="u-margin-bottom">
-    <ul class="m-upload__files">
-        <li class="is-error">
-            <aui-icon name="ai-alert-triangle"></aui-icon>
-            <span class="m-upload__filename">{{ fileName }}</span>
-            <span class="m-upload__error">This file extension is not allowed.</span>
-            <button
-                type="button"
-                (click)="reloadErrors()"
-                class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-                <aui-icon name="ai-remove"></aui-icon>
-            </button>
-        </li>
-    </ul>
+  <ul class="m-upload__files">
+    <li class="is-error">
+      <aui-icon name="ai-alert-triangle"></aui-icon>
+      <span class="m-upload__filename">{{ fileName }}</span>
+      <span class="m-upload__error">This file extension is not allowed.</span>
+      <button
+        type="button"
+        (click)="reloadErrors()"
+        class="m-upload__delete a-button a-button--text a-button--danger a-button--s has-icon"
+      >
+        <aui-icon name="ai-remove"></aui-icon>
+      </button>
+    </li>
+  </ul>
 </div>
 ```
-
 
 ## Contributing
 

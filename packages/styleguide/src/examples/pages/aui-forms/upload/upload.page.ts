@@ -53,16 +53,13 @@ public dropzone1: UploadOptions = {
 
   public uploadExampleHTML1 = `<label class="a-input__label" for="my-upload">Upload files</label>
 <aui-upload
-	data-id="my-upload"
+  (selectUploadedFiles)="onUpload($event)"
+  [options]="dropzone1"
+  data-id="my-upload"
   [accept]="accept"
-	[options]="dropzone1"
-	(selectUploadedFiles)="onUpload($event)">
-	<div class="m-upload__message">
-		Drag your files here or click to upload
-	</div>
-	<div class="m-upload__description">
-		Optional description message
-	</div>
+  label="Drag your files here or click upload"
+  description="Optional description message"
+>
 </aui-upload>`;
 
   public uploadExampleJS2 = `public dropzone2: UploadOptions = {
@@ -172,35 +169,33 @@ public uploadFiles(): void {
 }`;
 
   public uploadExampleHTML3 = `<aui-upload-zone
-	ariaId="my-other-upload"
-	[uploader]="uploader"
-	[capture]="capture"
-	(queuedFiles)="onQueuedFiles($event)"
-	(uploadedFiles)="onUploadedFiles($event)"
-	(invalidFiles)="onInvalidFiles($event)">
-	<div class="m-upload__message">
-		Drag your files here or click to upload
-	</div>
-	<div class="m-upload__description">
-		Maximum filesize: 10 MB,
-		File extension: jpg, jpeg, png
-	</div>
+  (invalidFiles)="onInvalidFiles($event)"
+  (queuedFiles)="onQueuedFiles($event)"
+  (uploadedFiles)="onUploadedFiles($event)"
+  [uploader]="uploader"
+  ariaId="my-other-upload"
+  multiple="false"
+  [capture]="capture"
+  label="Drag your files here or click to upload"
+  description="Maximum filesize: 10 MB, File extension: jps, jpeg, png"
+>
 </aui-upload-zone>
-<aui-upload-queue [files]="queuedFiles"></aui-upload-queue>
-<div *ngIf="showError" class="u-margin-bottom">
-	<ul class="m-upload__files">
-		<li class="is-error">
-			<aui-icon name="ai-alert-triangle"></aui-icon>
-			<span class="m-upload__filename">{{ fileName }}</span>
-			<span class="m-upload__error">This file extension is not allowed.</span>
-			<button
-				type="button"
-				(click)="reloadErrors()"
-				class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon">
-				<aui-icon name="ai-close" ariaLabel="Remove"></aui-icon>
-			</button>
-		</li>
-	</ul>
+<aui-upload-queue [files]="queuedFiles" class="a-upload-queue__wrapper"></aui-upload-queue>
+<div *ngIf="showError" class="m-upload u-margin-bottom">
+  <ul class="m-upload__files">
+    <li class="is-error">
+      <aui-icon name="ai-alert-triangle"></aui-icon>
+      <span class="m-upload__filename">{{ fileName }}</span>
+      <span class="m-upload__error">This file extension is not allowed.</span>
+      <button
+        (click)="reloadErrors()"
+        class="m-upload__delete a-button a-button--text a-button--danger a-button--s has-icon"
+        type="button"
+      >
+        <aui-icon name="ai-close" ariaLabel="Remove"></aui-icon>
+      </button>
+    </li>
+  </ul>
 </div>`;
 
   public onUpload(files) {
@@ -253,6 +248,7 @@ public uploadFiles(): void {
       },
       (err) => {
         console.log('HTTP Error', err);
-      });
+      }
+    );
   }
 }

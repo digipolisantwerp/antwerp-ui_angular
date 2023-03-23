@@ -4,8 +4,11 @@
     <span class="m-upload__filename">{{ invalidFile.file.name }}</span>
     <span class="m-upload__error">{{ formatReasons(invalidFile.reasons) }}</span>
 
-    <button (click)="remove(i)" class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon"
-            type="button">
+    <button
+      (click)="remove(i)"
+      class="m-upload__delete a-button a-button--text a-button--danger a-button--s has-icon"
+      type="button"
+    >
       <aui-icon name="ai-close" [ariaLabel]="ariaLabelRemove"></aui-icon>
     </button>
   </li>
