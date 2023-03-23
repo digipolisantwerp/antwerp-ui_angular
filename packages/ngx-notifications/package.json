@@ -2,8 +2,8 @@
   "name": "@acpaas-ui/ngx-notifications",
   "version": "5.0.1",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0"
   },
   "dependencies": {
     "@acpaas-ui/ngx-icon": "^5.0.0",
