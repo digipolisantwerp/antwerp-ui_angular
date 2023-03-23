@@ -7,8 +7,7 @@ import Inputmask from 'inputmask';
 export class MaskDirective implements OnChanges {
   @Input() public auiMask: string;
 
-  constructor(private ref: ElementRef) {
-  }
+  constructor(private ref: ElementRef) {}
 
   public ngOnChanges(): void {
     this.setMask(this.auiMask);
