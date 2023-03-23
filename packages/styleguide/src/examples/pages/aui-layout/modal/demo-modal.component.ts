@@ -6,17 +6,17 @@ import { ModalAbstract, ModalService } from '../../../../../../ngx-layout/src/pu
   template: `<div class="m-modal" role="dialog" aria-modal="true" aria-labelledby="myModalTitle" aria-describedby="myModelDesc">
 		<div class="m-modal__content">
 			<div class="m-modal__header u-margin-bottom-xs">
-				<button type="button" class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
-					<aui-icon name="ai-close" ariaLabel="Close"></aui-icon>
+				<button type="button" class="m-modal__close a-button a-button--text a-button--neutral has-icon" (click)="closeModal()" aria-label="close">
+					<aui-icon name="ai-close"></aui-icon>
 				</button>
-				<h4 id="myModalTitle">{{ modalData.title }}</h4>
+				<h4 id="myModalTitle" class="h6">{{ modalData.title }}</h4>
 			</div>
 			<div class="u-margin-bottom">
 				<p id="myModelDesc">{{ modalData.text }}</p>
 			</div>
 			<div class="m-modal__footer">
 				<button type="button" class="a-button" (click)="submitAndCloseModal()">Close Modal</button>
-				<button type="button" class="a-button-outline" (click)="closeModal()">Cancel</button>
+				<button type="button" class="a-button a-button--outlined" (click)="closeModal()">Cancel</button>
 			</div>
 		</div>
 	</div>`,

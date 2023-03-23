@@ -15,9 +15,7 @@ export class ApproveModalComponent extends ModalAbstract implements OnInit {
   public titleId: string;
   public descId: string;
 
-  constructor(
-    protected modalService: ModalService
-  ) {
+  constructor(protected modalService: ModalService) {
     super(modalService);
   }
 

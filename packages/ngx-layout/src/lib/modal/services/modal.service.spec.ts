@@ -20,9 +20,7 @@ class TestModalComponent extends ModalAbstract {
 }
 
 const injectService = (cb) => {
-  return inject([ModalService], (modalService: ModalService) =>
-    cb(modalService)
-  );
+  return inject([ModalService], (modalService: ModalService) => cb(modalService));
 };
 
 describe('Modal - ModalService', () => {
@@ -47,14 +45,8 @@ describe('Modal - ModalService', () => {
         modalService.openModal(TestModalComponent);
 
         expect(modalService.activeModals.length).toBe(1);
-        expect(
-          modalService.activeModals[0].modal.instance instanceof
-            TestModalComponent
-        ).toBe(true);
-        expect(
-          modalService.activeModals[0].overlay.instance instanceof
-            ModalOverlayComponent
-        ).toBe(true);
+        expect(modalService.activeModals[0].modal.instance instanceof TestModalComponent).toBe(true);
+        expect(modalService.activeModals[0].overlay.instance instanceof ModalOverlayComponent).toBe(true);
       })
     );
 
