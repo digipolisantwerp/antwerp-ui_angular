@@ -11,7 +11,6 @@ import { DateRange } from '@acpaas-ui/js-date-utils';
 import { CalendarModule } from '@acpaas-ui/ngx-calendar';
 import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
 import { IconModule } from '@acpaas-ui/ngx-icon';
-import { MaskModule } from '@acpaas-ui/ngx-forms';
 
 import { DATEPICKER_DEFAULT_ERROR_LABELS, DATEPICKER_ERROR_LABELS } from '../../datepicker.conf';
 import { DatepickerComponent } from './datepicker.component';
@@ -73,7 +72,7 @@ describe('The Datepicker Component', () => {
   // waitForAsync beforeEach
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule, FlyoutModule, IconModule, MaskModule, CalendarModule],
+      imports: [FormsModule, ReactiveFormsModule, FlyoutModule, IconModule, CalendarModule],
       declarations: [TestComponent, ReactiveTestComponent, DatepickerComponent],
       providers: [
         {

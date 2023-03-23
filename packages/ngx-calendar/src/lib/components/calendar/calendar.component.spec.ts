@@ -10,11 +10,7 @@ import { CALENDAR_DEFAULT_MONTH_LABELS } from '../../calendar.conf';
 @Component({
   selector: 'aui-test',
   template: `
-    <aui-calendar
-      [selectedDate]="selectedDate"
-      [range]="range"
-      (selectDate)="selectDate($event)"
-    ></aui-calendar>
+    <aui-calendar [selectedDate]="selectedDate" [range]="range" (selectDate)="selectDate($event)"></aui-calendar>
   `,
 })
 class TestComponent {
@@ -187,11 +183,8 @@ describe('The Calendar Component', () => {
     it('sets the monthLabel for the active month if the activeView is the month view', () => {
       calendar.updateHeaderLabel();
 
-      const monthLabel =
-        CALENDAR_DEFAULT_MONTH_LABELS[calendar.activeDate.getMonth()];
-      expect(calendar.headerLabel).toEqual(
-        monthLabel + ` ` + calendar.activeDate.getFullYear()
-      );
+      const monthLabel = CALENDAR_DEFAULT_MONTH_LABELS[calendar.activeDate.getMonth()];
+      expect(calendar.headerLabel).toEqual(monthLabel + ` ` + calendar.activeDate.getFullYear());
     });
 
     it('sets the activeDates year as the headerLabel if the activeView is the year view', () => {
@@ -200,9 +193,7 @@ describe('The Calendar Component', () => {
 
       calendar.updateHeaderLabel();
 
-      expect(calendar.headerLabel).toEqual(
-        calendar.activeDate.getFullYear().toString()
-      );
+      expect(calendar.headerLabel).toEqual(calendar.activeDate.getFullYear().toString());
     });
 
     it('sets the year range for the activeDate as the headerLabel if the activeView is the decennia view', () => {
@@ -212,9 +203,7 @@ describe('The Calendar Component', () => {
       calendar.updateHeaderLabel();
 
       const viewDecennia =
-        calendar.activeDate.getFullYear().toString() +
-        ' - ' +
-        (calendar.activeDate.getFullYear() + 11).toString();
+        calendar.activeDate.getFullYear().toString() + ' - ' + (calendar.activeDate.getFullYear() + 11).toString();
       expect(calendar.headerLabel).toEqual(viewDecennia);
     });
   });
