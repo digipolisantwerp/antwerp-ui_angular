@@ -17,7 +17,6 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 | `SearchFilterModule` | This package allows the user to use a JIRA-like filter component with remote search capabilities. | [Documentation](src/lib/search-filter/README.md) |
 | `TimepickerModule` | This package allows the user set the time either by choosing a slot in the dropdown or by typing in the autocomplete field. | [Documentation](src/lib/timepicker/README.md) |
 | `UploadModule` | This module provides a couple of upload components and a specific `Uploader` class. | [Documentation](src/lib/upload/README.md) |
-| `WysiwygModule` | This module provides a wysiwyg that can be used on a page or a form. | [Documentation](src/lib/wysiwyg/README.md) |
 
 ## Contributing
 
