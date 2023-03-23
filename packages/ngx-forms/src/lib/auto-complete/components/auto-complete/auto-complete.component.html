@@ -3,49 +3,47 @@
   [toggleClick]="false"
   aria-haspopup="listbox"
   auiFlyout
-  class="m-flyout--scrollable m-flyout--full o-auto-complete"
+  class="m-flyout m-flyout--scrollable m-flyout--full o-auto-complete"
 >
-  <div class="a-input">
-    <label class="a-input__label" for="id">{{ inputLabel }}</label>
-    <small class="a-input__description" id="id"> {{ description }}</small>
-    <input
-      (focus)="onFocus()"
-      (keyArrowDown)="onKeyArrowDown()"
-      (keyArrowUp)="onKeyArrowUp()"
-      (keyEnter)="onKeyEnter($event)"
-      (keyEscape)="onKeyEscape()"
-      [(ngModel)]="query"
-      (ngModelChange)="doSearch()"
-      *ngIf="!mask"
-      [disabled]="isDisabled ? true : null"
-      [id]="id"
-      [placeholder]="placeholder"
-      aria-autocomplete="list"
-      auiFlyoutAction
-      auiSelectableActions
-      [autocomplete]="autoComplete"
-      type="text"
-    />
-    <input
-      (focus)="onFocus()"
-      (keyArrowDown)="onKeyArrowDown()"
-      (keyArrowUp)="onKeyArrowUp()"
-      (keyEnter)="onKeyEnter($event)"
-      (keyEscape)="onKeyEscape()"
-      [(ngModel)]="query"
-      (ngModelChange)="doSearch()"
-      *ngIf="mask"
-      [auiMask]="mask"
-      [disabled]="isDisabled ? true : null"
-      [id]="id"
-      [placeholder]="placeholder"
-      aria-autocomplete="list"
-      auiFlyoutAction
-      auiSelectableActions
-      [autocomplete]="autoComplete"
-      type="text"
-    />
-  </div>
+  <input
+    (focus)="onFocus()"
+    (keyArrowDown)="onKeyArrowDown()"
+    (keyArrowUp)="onKeyArrowUp()"
+    (keyEnter)="onKeyEnter($event)"
+    (keyEscape)="onKeyEscape()"
+    [(ngModel)]="query"
+    (ngModelChange)="doSearch()"
+    *ngIf="!mask"
+    [disabled]="isDisabled ? true : null"
+    [id]="id"
+    [placeholder]="placeholder"
+    aria-autocomplete="list"
+    auiFlyoutAction
+    auiSelectableActions
+    [autocomplete]="autoComplete"
+    type="text"
+    class="a-input"
+  />
+  <input
+    (focus)="onFocus()"
+    (keyArrowDown)="onKeyArrowDown()"
+    (keyArrowUp)="onKeyArrowUp()"
+    (keyEnter)="onKeyEnter($event)"
+    (keyEscape)="onKeyEscape()"
+    [(ngModel)]="query"
+    (ngModelChange)="doSearch()"
+    *ngIf="mask"
+    [auiMask]="mask"
+    [disabled]="isDisabled ? true : null"
+    [id]="id"
+    [placeholder]="placeholder"
+    aria-autocomplete="list"
+    auiFlyoutAction
+    auiSelectableActions
+    [autocomplete]="autoComplete"
+    type="text"
+    class="a-input"
+  />
   <div *ngIf="!isDisabled" auiFlyoutZone>
     <span *ngIf="focused && loadingText && searching" class="o-auto-complete__info u-text-light u-margin-xs">
       <span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span>
