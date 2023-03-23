@@ -32,9 +32,7 @@ describe('The leaflet locate control component', () => {
 
   it('should search for the current location', () => {
     const locateSpy = spyOn(comp.map, 'locate');
-    fixture.debugElement
-      .query(By.directive(LeafletControlComponent))
-      .triggerEventHandler('click', null);
+    fixture.debugElement.query(By.directive(LeafletControlComponent)).triggerEventHandler('click', null);
     expect(locateSpy).toHaveBeenCalled();
   });
 });

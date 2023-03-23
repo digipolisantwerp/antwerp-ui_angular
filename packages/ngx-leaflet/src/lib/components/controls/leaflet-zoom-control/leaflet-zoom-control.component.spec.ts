@@ -32,17 +32,13 @@ describe('The leaflet zoom control component', () => {
 
   it('should zoom in', () => {
     const switchSpy = spyOn(comp.map, 'zoomIn');
-    fixture.debugElement
-      .queryAll(By.directive(LeafletControlComponent))[0]
-      .triggerEventHandler('click', null);
+    fixture.debugElement.queryAll(By.directive(LeafletControlComponent))[0].triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 
   it('should zoom out', () => {
     const switchSpy = spyOn(comp.map, 'zoomOut');
-    fixture.debugElement
-      .queryAll(By.directive(LeafletControlComponent))[1]
-      .triggerEventHandler('click', null);
+    fixture.debugElement.queryAll(By.directive(LeafletControlComponent))[1].triggerEventHandler('click', null);
     expect(switchSpy).toHaveBeenCalled();
   });
 });

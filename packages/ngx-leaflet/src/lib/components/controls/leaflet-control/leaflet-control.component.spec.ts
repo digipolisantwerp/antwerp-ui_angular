@@ -9,12 +9,8 @@ describe('The leaflet control component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletControlComponent,
-      ],
-      imports: [
-        IconModule
-      ],
+      declarations: [LeafletControlComponent],
+      imports: [IconModule],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletControlComponent);
     comp = fixture.componentInstance;

@@ -4,7 +4,6 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Injectable()
 export class MapService {
-
   public L = null;
   public esri = null;
 
