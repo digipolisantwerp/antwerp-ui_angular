@@ -15,6 +15,8 @@ export class TableComponent {
   @Input() striped = false;
   @Input() open = false;
   @Input() responsive = true;
+  @Input() fixedColumnLeft = false;
+  @Input() fixedColumnRight = false;
   @Input() hasClickAction = false;
   @Input() activeSorting: OrderBy; // Just a property to use in the template, not functional
   @Input() noDataMessage = DEFAULT_MESSAGES.NO_DATA;
