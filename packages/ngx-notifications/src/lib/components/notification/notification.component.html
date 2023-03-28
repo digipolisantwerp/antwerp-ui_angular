@@ -1,5 +1,5 @@
 <div class="m-alert" [style.display]="state.value === 'inactive' ? 'none' : ''">
-  <button class="a-button-transparent has-icon m-alert__close" *ngIf="options.closeButton" (click)="remove()">
+  <button class="a-button a-button--text has-icon m-alert__close" *ngIf="options.closeButton" (click)="remove()">
     <aui-icon name="ai-close" ariaLabel="Sluiten"></aui-icon>
   </button>
   <h1 *ngIf="title" [class]="options.titleClass + ' h5 u-margin-bottom-xs'">

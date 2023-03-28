@@ -8,7 +8,7 @@ import { FlyoutButtonSize } from '../../types/flyout-button.types';
 })
 export class FlyoutButtonComponent {
   public buttonClassNames = {
-    tiny: 'a-button--tiny',
+    tiny: 'a-button--s',
     small: 'a-button--small',
     auto: '',
     large: 'a-button--large',

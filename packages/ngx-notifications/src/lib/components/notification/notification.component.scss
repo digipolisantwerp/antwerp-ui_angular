@@ -16,30 +16,39 @@
 
   &.toast-success {
     .m-alert {
-      // @include m-alert($alert-success);
+      --alert-color: var(--alert-success-color);
+      --alert-border-color: var(--alert-success-border-color);
 
-      .a-button-transparent {
-        @include a-button-outline($btn-success-outline-color, $btn-success-outline-border, true);
+      .a-button--text {
+        --btn-color: var(--btn-text-success-color);
+        --btn-hover-color: var(--btn-text-success-hover-color);
+        --btn-hover-bg-color: var(--btn-text-success-hover-bg-color);
       }
     }
   }
 
   &.toast-warning {
     .m-alert {
-      // @include m-alert($alert-warning);
+      --alert-color: var(--alert-warning-color);
+      --alert-border-color: var(--alert-warning-border-color);
 
-      .a-button-transparent {
-        @include a-button-outline($btn-warning-outline-color, $btn-warning-outline-border, true);
+      .a-button--text {
+        --btn-color: var(--btn-text-warning-color);
+        --btn-hover-color: var(--btn-text-warning-hover-color);
+        --btn-hover-bg-color: var(--btn-text-warning-hover-bg-color);
       }
     }
   }
 
   &.toast-error {
     .m-alert {
-      // @include m-alert($alert-danger);
+      --alert-color: var(--alert-danger-color);
+      --alert-border-color: var(--alert-danger-border-color);
 
-      .a-button-transparent {
-        @include a-button-outline($btn-danger-outline-color, $btn-danger-outline-border, true);
+      .a-button--text {
+        --btn-color: var(--btn-text-danger-color);
+        --btn-hover-color: var(--btn-text-danger-hover-color);
+        --btn-hover-bg-color: var(--btn-text-danger-hover-bg-color);
       }
     }
   }

@@ -21,7 +21,9 @@
     position: relative;
 
     .a-badge {
-      bottom: calc(-#{$badge-height} / 2);
+      --badge-bg-color: var(--theme2-400);
+      --badge-border-color: var(--theme2-400);
+      bottom: calc(var(--badge-size) / -2);
       position: absolute;
       z-index: layer('tooltip');
     }

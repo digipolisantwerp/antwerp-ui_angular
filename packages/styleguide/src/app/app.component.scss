@@ -8,7 +8,7 @@ main {
     width: 100%;
     z-index: layer('pane');
     @include at($screen-sm) {
-      height: calc(100% + #{$header-height} + 2px); // Leave room for the dock/undock labels
+      height: calc(100% + var(--header-height) + 2px); // Leave room for the dock/undock labels
       position: static;
       width: auto;
     }
