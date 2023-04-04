@@ -27,7 +27,7 @@
         <ng-content></ng-content>
         <button (click)="logout$.next()"
                 *ngIf="showLogoutButton"
-                [attr.aria-label]="translations.logout" auiFlyoutClose class='a-button-logout a-button a-button--danger a-button--block has-icon-left'>
+                [attr.aria-label]="translations.logout" auiFlyoutClose class='a-button-logout a-button a-button--danger a-button--full has-icon-left'>
           <aui-icon name="ai-power-button"></aui-icon>
           {{ translations.logout }}
         </button>
