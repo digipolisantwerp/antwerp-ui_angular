@@ -38,12 +38,6 @@
       "@acpaas-ui/ngx-code-snippet/*": [
         "packages/ngx-code-snippet/dist/*"
       ],
-      "@acpaas-ui/ngx-agenda": [
-        "packages/ngx-agenda/dist"
-      ],
-      "@acpaas-ui/ngx-agenda/*": [
-        "packages/ngx-agenda/dist/*"
-      ],
       "@acpaas-ui/ngx-avatar": [
         "packages/ngx-avatar/dist"
       ],

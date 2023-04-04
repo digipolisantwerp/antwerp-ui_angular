@@ -3,7 +3,6 @@ import { FooterModule } from '../../../ngx-layout/src/lib/footer/public-api';
 import { LogoModule } from '../../../ngx-logo/src/public-api';
 import { HeaderModule } from '../../../ngx-layout/src/lib/header/public-api';
 import { CodeSnippetModule } from '../../../ngx-code-snippet/src/public-api';
-import { AgendaModule } from '../../../ngx-agenda/src/public-api';
 import { AvatarModule } from '../../../ngx-avatar/src/public-api';
 import { CalendarModule } from '../../../ngx-calendar/src/public-api';
 import { ContextModule } from '../../../ngx-context/src/public-api';
@@ -34,7 +33,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     LogoModule,
     HeaderModule,
     CodeSnippetModule,
-    AgendaModule,
     AvatarModule,
     CalendarModule,
     ContextModule,
@@ -75,7 +73,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     CodeSnippetModule,
     LogoModule,
     HeaderModule,
-    AgendaModule,
     AvatarModule,
     CalendarModule,
     ContextModule,

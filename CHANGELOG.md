@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Remove non-working tests of deprecated components
 
 ### Removed
+- Removed `ngx-agenda`
 - Removed `ngx-analytics`
 - Removed `ngx-layout/hero`
 - Removed `ngx-layout/pane`

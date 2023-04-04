@@ -36,11 +36,6 @@ export const EXAMPLES_ROUTES: Routes = [
     pathMatch: 'full',
     redirectTo: 'modules/avatar'
   },
-  // {
-  //   path: 'modules/agenda',
-  //   component: AgendaDemoPageComponent,
-  //   data: {meta: {title: 'Agenda'}}
-  // },
   {
     path: 'modules/avatar',
     component: AvatarDemoPageComponent,

@@ -9,7 +9,6 @@ import { AuiModule } from '../aui/aui.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
-import { RegistryComponent } from './components/registry/registry.component';
 import { ModulesPageComponent } from './pages/modules/modules.page';
 import { NotFoundPageComponent } from './pages/not-found/not-found.page';
 
@@ -19,7 +18,6 @@ import { NotFoundPageComponent } from './pages/not-found/not-found.page';
     FooterComponent,
     HeaderComponent,
     HeroComponent,
-    RegistryComponent,
     ModulesPageComponent,
     NotFoundPageComponent,
   ],
