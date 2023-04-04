@@ -28,10 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
 import { LayoutFooterDemoPageComponent } from './pages/aui-layout/footer/footer.page';
 import { LayoutHeaderDemoPageComponent } from './pages/aui-layout/header/header.page';
-import { LayoutHeroDemoPageComponent } from './pages/aui-layout/hero/hero.page';
 import { LayoutModalDemoPageComponent } from './pages/aui-layout/modal/modal.page';
-import { LayoutPaneDemoPageComponent } from './pages/aui-layout/pane/pane.page';
-import { LayoutSidebarDemoPageComponent } from './pages/aui-layout/sidebar/sidebar.page';
 import { AUIDemoModalComponent } from './pages/aui-layout/modal/demo-modal.component';
 import { UtilsDemoPageComponent } from './pages/aui-utils/demo/demo.page';
 import { UtilsFilterDemoPageComponent } from './pages/aui-utils/filter/filter.page';
@@ -68,10 +65,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         LayoutDemoPageComponent,
         LayoutFooterDemoPageComponent,
         LayoutHeaderDemoPageComponent,
-        LayoutHeroDemoPageComponent,
         LayoutModalDemoPageComponent,
-        LayoutPaneDemoPageComponent,
-        LayoutSidebarDemoPageComponent,
         AUIDemoModalComponent,
         UtilsDemoPageComponent,
         UtilsFilterDemoPageComponent,

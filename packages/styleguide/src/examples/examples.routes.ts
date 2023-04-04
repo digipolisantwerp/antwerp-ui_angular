@@ -21,10 +21,7 @@ import { FormsUploadDemoPageComponent } from './pages/aui-forms/upload/upload.pa
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
 import { LayoutFooterDemoPageComponent } from './pages/aui-layout/footer/footer.page';
 import { LayoutHeaderDemoPageComponent } from './pages/aui-layout/header/header.page';
-import { LayoutHeroDemoPageComponent } from './pages/aui-layout/hero/hero.page';
 import { LayoutModalDemoPageComponent } from './pages/aui-layout/modal/modal.page';
-import { LayoutPaneDemoPageComponent } from './pages/aui-layout/pane/pane.page';
-import { LayoutSidebarDemoPageComponent } from './pages/aui-layout/sidebar/sidebar.page';
 import { UtilsDemoPageComponent } from './pages/aui-utils/demo/demo.page';
 import { UtilsFilterDemoPageComponent } from './pages/aui-utils/filter/filter.page';
 import { UtilsLabelsDemoPageComponent } from './pages/aui-utils/labels/labels.page';
@@ -147,28 +144,10 @@ export const EXAMPLES_ROUTES: Routes = [
         data: {meta: {title: 'Header'}},
       },
       {
-        path: 'hero',
-        pathMatch: 'full',
-        component: LayoutHeroDemoPageComponent,
-        data: {meta: {title: 'Hero'}},
-      },
-      {
         path: 'modal',
         pathMatch: 'full',
         component: LayoutModalDemoPageComponent,
         data: {meta: {title: 'Modal'}},
-      },
-      {
-        path: 'pane',
-        pathMatch: 'full',
-        component: LayoutPaneDemoPageComponent,
-        data: {meta: {title: 'Pane'}},
-      },
-      {
-        path: 'sidebar',
-        pathMatch: 'full',
-        component: LayoutSidebarDemoPageComponent,
-        data: {meta: {title: 'Sidebar'}},
       },
     ],
   },

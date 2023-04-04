@@ -13,10 +13,7 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 | -----------  | ------ | -------------------------- |
 | `FooterModule` | A simple footer with go-to-top functionality.  | [Documentation](src/lib/footer/README.md) |
 | `HeaderModule` | A header component with logo that can hide itself when scrolling. | [Documentation](src/lib/header/README.md) |
-| `HeroModule` | A basic hero component to display e.g. a title or action buttons. | [Documentation](src/lib/hero/README.md) |
 | `ModalModule` | A service and a basic class to create modals in your app. | [Documentation](src/lib/modal/README.md) |
-| `PaneModule` | An easy way to open a pane. | [Documentation](src/lib/pane/README.md) |
-| `SidebarModule` | An easy way to create a sidebar in your app. | [Documentation](src/lib/sidebar/README.md) |
 
 ## Contributing
 

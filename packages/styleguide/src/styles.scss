@@ -32,34 +32,8 @@ main {
   border: 1px solid $gray-100;
 }
 
-.m-pane--left {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  left: 0;
-  position: fixed !important;
-  top: 0;
-}
-
-.m-overlay__pane {
-  position: fixed !important;
-}
-
 .m-button-group--inline {
   display: inline-flex;
-}
-
-.m-sidebar {
-  @include to($screen-xs-max) {
-    background-color: $background-color-light;
-    margin-bottom: $spacer;
-    max-height: 15.75rem;
-    overflow: auto;
-    padding-left: $spacer;
-    padding-right: $spacer;
-    width: auto;
-  }
 }
 
 .u-show-on-mobile {

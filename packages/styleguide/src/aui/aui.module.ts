@@ -23,7 +23,7 @@ import { RangeSliderModule } from '../../../ngx-forms/src/lib/range-slider/publi
 import { SearchFilterModule } from '../../../ngx-forms/src/lib/search-filter/public-api';
 import { TimepickerModule } from '../../../ngx-forms/src/lib/timepicker/public-api';
 import { UploadModule } from '../../../ngx-forms/src/lib/upload/public-api';
-import { HeroModule, ModalModule, PaneModule, SidebarModule } from '../../../ngx-layout/src/public-api';
+import { ModalModule } from '../../../ngx-layout/src/public-api';
 import { FilterModule, LabelsModule, WindowModule } from '../../../ngx-utils/src/public-api';
 import { LeafletModule } from '../../../ngx-leaflet/src/public-api';
 import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-notifications.module';
@@ -63,10 +63,7 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     UploadModule,
     FooterModule,
     HeaderModule,
-    HeroModule,
     ModalModule,
-    PaneModule,
-    SidebarModule,
     FilterModule,
     LabelsModule,
     WindowModule,
@@ -100,10 +97,7 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     UploadModule,
     FooterModule,
     HeaderModule,
-    HeroModule,
     ModalModule,
-    PaneModule,
-    SidebarModule,
     FilterModule,
     LabelsModule,
     WindowModule,

@@ -39,6 +39,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Removed
 - Removed `ngx-analytics`
+- Removed `ngx-layout/hero`
+- Removed `ngx-layout/pane`
+- Removed `ngx-layout/sidebar`
 - Removed `ngx-localstorage`
 - Removed `ngx-navigation-menu`
 
