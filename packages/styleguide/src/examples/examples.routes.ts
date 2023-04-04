@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { LogoDemoPageComponent } from './pages/aui-logo/aui-logo.page';
 import { CodeSnippetDemoPageComponent } from './pages/aui-code-snippet/aui-snippet.page';
-import { AnalyticsDemoPageComponent } from './pages/aui-analytics/aui-analytics.page';
 import { AvatarDemoPageComponent } from './pages/aui-avatar/aui-avatar.page';
 import { CalendarDemoPage } from './pages/aui-calendar/aui-calendar.page';
 import { ContextDemoPageComponent } from './pages/aui-context/aui-context';
@@ -38,18 +37,13 @@ export const EXAMPLES_ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'modules/analytics'
+    redirectTo: 'modules/avatar'
   },
   // {
   //   path: 'modules/agenda',
   //   component: AgendaDemoPageComponent,
   //   data: {meta: {title: 'Agenda'}}
   // },
-  {
-    path: 'modules/analytics',
-    component: AnalyticsDemoPageComponent,
-    data: {meta: {title: 'Analytics'}}
-  },
   {
     path: 'modules/avatar',
     component: AvatarDemoPageComponent,

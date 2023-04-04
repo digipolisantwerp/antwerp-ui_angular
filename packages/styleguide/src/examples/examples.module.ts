@@ -4,7 +4,6 @@ import { AuiModule } from '../aui/aui.module';
 import { RouterModule } from '@angular/router';
 import { EXAMPLES_ROUTES } from './examples.routes';
 import { CodeSnippetDemoPageComponent } from './pages/aui-code-snippet/aui-snippet.page';
-import { AnalyticsDemoPageComponent } from './pages/aui-analytics/aui-analytics.page';
 import { AgendaDemoPageComponent } from './pages/aui-agenda/aui-agenda.page';
 import { AvatarDemoPageComponent } from './pages/aui-avatar/aui-avatar.page';
 import { CalendarDemoPage } from './pages/aui-calendar/aui-calendar.page';
@@ -47,7 +46,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     declarations: [
         LogoDemoPageComponent,
         CodeSnippetDemoPageComponent,
-        AnalyticsDemoPageComponent,
         AgendaDemoPageComponent,
         AvatarDemoPageComponent,
         CalendarDemoPage,

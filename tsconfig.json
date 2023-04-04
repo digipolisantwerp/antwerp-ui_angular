@@ -38,18 +38,6 @@
       "@acpaas-ui/ngx-code-snippet/*": [
         "packages/ngx-code-snippet/dist/*"
       ],
-      "@acpaas-ui/analytics": [
-        "packages/analytics/dist"
-      ],
-      "@acpaas-ui/analytics/*": [
-        "packages/analytics/dist/*"
-      ],
-      "@acpaas-ui/ngx-analytics": [
-        "packages/ngx-analytics/dist"
-      ],
-      "@acpaas-ui/ngx-analytics/*": [
-        "packages/ngx-analytics/dist/*"
-      ],
       "@acpaas-ui/ngx-agenda": [
         "packages/ngx-agenda/dist"
       ],

@@ -69,7 +69,6 @@ This library contains the following components:
 
 | Name                | Description                        | URL                                                       |
 | ------------------- | ---------------------------------- | --------------------------------------------------------- |
-| ngx-analytics       | Google Analytics integration       | [Documentation](./packages/ngx-analytics/README.md)       |
 | ngx-avatar          | User avatar icon                   | [Documentation](./packages/ngx-avatar/README.md)          |
 | ngx-calendar        | Calendar to select dates           | [Documentation](./packages/ngx-calendar/README.md)        |
 | ngx-code-snippet    | Snippet of source code             | [Documentation](./packages/ngx-code-snippet/README.md)    |

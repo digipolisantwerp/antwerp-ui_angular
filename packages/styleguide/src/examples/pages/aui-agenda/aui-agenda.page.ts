@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   templateUrl: './aui-agenda.page.html',
 })
 export class AgendaDemoPageComponent {
-  public javascript1 = `import { AgendaModule } from '@acpaas-ui/ngx-analytics';
+  public javascript1 = `import { AgendaModule } from '@acpaas-ui/ngx-agenda';
 
 @NgModule({
 	imports: [
