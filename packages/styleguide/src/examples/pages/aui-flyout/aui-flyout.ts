@@ -44,7 +44,7 @@ export class AppModule {};`;
   public codeExampleHTML2 = `<aui-flyout-button
 	icon="ai-single-neutral"
 	label="Open flyout"
-	data-align="right"
+	align="right"
 	title="Click to open!"
 	outline=true
 	flyoutSize="small"
