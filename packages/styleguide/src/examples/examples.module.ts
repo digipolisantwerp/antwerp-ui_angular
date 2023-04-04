@@ -7,12 +7,10 @@ import { CodeSnippetDemoPageComponent } from './pages/aui-code-snippet/aui-snipp
 import { AnalyticsDemoPageComponent } from './pages/aui-analytics/aui-analytics.page';
 import { AgendaDemoPageComponent } from './pages/aui-agenda/aui-agenda.page';
 import { AvatarDemoPageComponent } from './pages/aui-avatar/aui-avatar.page';
-import { NavigationMenuDemoPage } from './pages/aui-navigation-menu/aui-navigation-menu.page';
 import { CalendarDemoPage } from './pages/aui-calendar/aui-calendar.page';
 import { ContextDemoPageComponent } from './pages/aui-context/aui-context';
 import { FlyoutDemoPage } from './pages/aui-flyout/aui-flyout';
 import { IconDemoPageComponent } from './pages/aui-icon/aui-icon.page';
-import { LocalstorageDemoPageComponent } from './pages/aui-localstorage/aui-localstorage';
 import { PaginationDemoPageComponent } from './pages/aui-pagination/aui-pagination.page';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProgressBarDemoPageComponent } from './pages/aui-progress-bar/aui-progress-bar.page';
@@ -52,12 +50,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         AnalyticsDemoPageComponent,
         AgendaDemoPageComponent,
         AvatarDemoPageComponent,
-        NavigationMenuDemoPage,
         CalendarDemoPage,
         ContextDemoPageComponent,
         FlyoutDemoPage,
         IconDemoPageComponent,
-        LocalstorageDemoPageComponent,
         PaginationDemoPageComponent,
         ProgressBarDemoPageComponent,
         TableDemoPageComponent,

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { FooterModule } from '../../../ngx-layout/src/lib/footer/public-api';
 import { LogoModule } from '../../../ngx-logo/src/public-api';
 import { HeaderModule } from '../../../ngx-layout/src/lib/header/public-api';
-import { NavigationMenuModule } from '../../../ngx-navigation-menu/src/public-api';
 import { CodeSnippetModule } from '../../../ngx-code-snippet/src/public-api';
 import { AnalyticsModule } from '../../../ngx-analytics/src/public-api';
 import { AgendaModule } from '../../../ngx-agenda/src/public-api';
@@ -12,7 +11,6 @@ import { ContextModule } from '../../../ngx-context/src/public-api';
 import { FlyoutModule } from '../../../ngx-flyout/src/lib/flyout/flyout.module';
 import { FlyoutButtonModule } from '../../../ngx-flyout/src/lib/flyout-button/flyout-button.module';
 import { IconModule } from '../../../ngx-icon/src/public-api';
-import { LocalstorageModule } from '../../../ngx-localstorage/src/public-api';
 import { PaginationModule } from '../../../ngx-pagination/src/lib/pagination/public-api';
 import { ItemCounterModule } from '../../../ngx-pagination/src/lib/item-counter/public-api';
 import { ProgressBarModule } from '../../../ngx-progress-bar/src/public-api';
@@ -37,7 +35,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     LogoModule,
     HeaderModule,
     CodeSnippetModule,
-    NavigationMenuModule.configure(),
     AnalyticsModule,
     AgendaModule,
     AvatarModule,
@@ -46,9 +43,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     FlyoutModule,
     FlyoutButtonModule,
     IconModule,
-    LocalstorageModule.forRoot({
-      storageType: 'sessionStorage'
-    }),
     PaginationModule,
     ItemCounterModule,
     ProgressBarModule,
@@ -85,7 +79,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     FooterModule,
     CodeSnippetModule,
     LogoModule,
-    NavigationMenuModule,
     HeaderModule,
     AnalyticsModule,
     AgendaModule,
@@ -95,7 +88,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     FlyoutModule,
     FlyoutButtonModule,
     IconModule,
-    LocalstorageModule,
     PaginationModule,
     ItemCounterModule,
     ProgressBarModule,

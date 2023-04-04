@@ -77,7 +77,6 @@ This library contains the following components:
 | ngx-flyout          | Reveal additional content          | [Documentation](./packages/ngx-flyout/README.md)          |
 | ngx-forms           | Assorted form fields               | [Documentation](./packages/ngx-forms/README.md)           |
 | ngx-layout          | Assorted page layout components    | [Documentation](./packages/ngx-layout/README.md)          |
-| ngx-localstorage    | Interface with localstorage        | [Documentation](./packages/ngx-localstorage/README.md)    |
 | ngx-logo            | Logo icon                          | [Documentation](./packages/ngx-logo/README.md)            |
 | ngx-leaflet         | Leaflet-based map                  | [Documentation](./packages/ngx-leaflet/README.md)         |
 | ngx-pagination      | Pagination control                 | [Documentation](./packages/ngx-pagination/README.md)      |
@@ -86,7 +85,6 @@ This library contains the following components:
 | ngx-table           | Interactive table                  | [Documentation](./packages/ngx-table/README.md)           |
 | ngx-utils           | Assorted helpers                   | [Documentation](./packages/ngx-utils/README.md)           |
 | ngx-user-menu       | User Menu providing login/logout   | [Documentation](./packages/ngx-user-menu/README.md)       |
-| ngx-navigation-menu | Generic navigation menu            | [Documentation](./packages/ngx-navigation-menu/README.md) |
 
 ## Testing
 

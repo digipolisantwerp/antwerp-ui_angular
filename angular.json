@@ -197,38 +197,6 @@
         }
       }
     },
-    "ngx-navigation-menu": {
-      "projectType": "library",
-      "root": "packages/ngx-navigation-menu",
-      "sourceRoot": "packages/ngx-navigation-menu/src",
-      "prefix": "aui",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "packages/ngx-navigation-menu/tsconfig.lib.json",
-            "project": "packages/ngx-navigation-menu/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/ngx-navigation-menu/src/test.ts",
-            "tsConfig": "packages/ngx-navigation-menu/tsconfig.spec.json",
-            "karmaConfig": "packages/ngx-navigation-menu/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "packages/ngx-navigation-menu/**/*.ts",
-              "packages/ngx-navigation-menu/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "ngx-code-snippet": {
       "projectType": "library",
       "root": "packages/ngx-code-snippet",
@@ -448,38 +416,6 @@
             "lintFilePatterns": [
               "packages/ngx-flyout/**/*.ts",
               "packages/ngx-flyout/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "ngx-localstorage": {
-      "projectType": "library",
-      "root": "packages/ngx-localstorage",
-      "sourceRoot": "packages/ngx-localstorage/src",
-      "prefix": "aui",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "packages/ngx-localstorage/tsconfig.lib.json",
-            "project": "packages/ngx-localstorage/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/ngx-localstorage/src/test.ts",
-            "tsConfig": "packages/ngx-localstorage/tsconfig.spec.json",
-            "karmaConfig": "packages/ngx-localstorage/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "packages/ngx-localstorage/**/*.ts",
-              "packages/ngx-localstorage/**/*.html"
             ]
           }
         }

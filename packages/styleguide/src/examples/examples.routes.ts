@@ -3,12 +3,10 @@ import { LogoDemoPageComponent } from './pages/aui-logo/aui-logo.page';
 import { CodeSnippetDemoPageComponent } from './pages/aui-code-snippet/aui-snippet.page';
 import { AnalyticsDemoPageComponent } from './pages/aui-analytics/aui-analytics.page';
 import { AvatarDemoPageComponent } from './pages/aui-avatar/aui-avatar.page';
-import { NavigationMenuDemoPage } from './pages/aui-navigation-menu/aui-navigation-menu.page';
 import { CalendarDemoPage } from './pages/aui-calendar/aui-calendar.page';
 import { ContextDemoPageComponent } from './pages/aui-context/aui-context';
 import { FlyoutDemoPage } from './pages/aui-flyout/aui-flyout';
 import { IconDemoPageComponent } from './pages/aui-icon/aui-icon.page';
-import { LocalstorageDemoPageComponent } from './pages/aui-localstorage/aui-localstorage';
 import { PaginationDemoPageComponent } from './pages/aui-pagination/aui-pagination.page';
 import { ProgressBarDemoPageComponent } from './pages/aui-progress-bar/aui-progress-bar.page';
 import { TableDemoPageComponent } from './pages/aui-table/aui-table.page';
@@ -186,19 +184,9 @@ export const EXAMPLES_ROUTES: Routes = [
     data: {meta: {title: 'Leaflet'}}
   },
   {
-    path: 'modules/localstorage',
-    component: LocalstorageDemoPageComponent,
-    data: {meta: {title: 'Local Storage'}}
-  },
-  {
     path: 'modules/logo',
     component: LogoDemoPageComponent,
     data: {meta: {title: 'Logo'}}
-  },
-  {
-    path: 'modules/navigation-menu',
-    component: NavigationMenuDemoPage,
-    data: {meta: {title: 'Navigation Menu'}}
   },
   {
     path: 'modules/notifications',
