@@ -61,6 +61,6 @@ describe('The Avatar Component', () => {
     comp.size = sizes.L;
 
     fixture.detectChanges();
-    expect(el.getAttribute('class')).toContain('a-avatar--large');
+    expect(el.getAttribute('class')).toContain('a-avatar--l');
   });
 });

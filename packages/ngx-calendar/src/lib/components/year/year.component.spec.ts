@@ -60,9 +60,12 @@ describe('The Calendar Year Component', () => {
     comp.ngOnChanges({ monthLabels: true } as any);
 
     expect(comp.months).toEqual([
-      CALENDAR_DEFAULT_MONTH_LABELS.slice(0, 4),
-      CALENDAR_DEFAULT_MONTH_LABELS.slice(4, 8),
-      CALENDAR_DEFAULT_MONTH_LABELS.slice(8, 12),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(0, 2),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(2, 4),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(4, 6),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(6, 8),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(8, 10),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(10, 12),
     ]);
   });
 
