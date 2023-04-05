@@ -63,22 +63,24 @@ pre {
 }
 
 .aui-footer {
-  background: $black;
+  background: $gray-600;
 
   .u-container {
-    padding-top: $spacer-lg;
-    padding-bottom: $spacer-md;
+    padding-bottom: $spacer;
+    padding-top: $spacer;
   }
 
-  &,
-  a,
-  a:hover,
-  a:active,
-  a:focus {
-    color: $white;
+  .a-list {
+    list-style: none;
+    padding-left: 0;
+
+    a {
+      --link-color: #{$white};
+      --link-hover-color: var(--theme1-050);
+    }
   }
 
-  h3.h5 {
+  h3.h4 {
     color: $gray-100;
   }
 }

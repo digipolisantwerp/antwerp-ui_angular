@@ -43,7 +43,7 @@
   <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
     <p *ngIf="labelResults" class="h6 m-search-filter__results-title u-margin-bottom-xs">{{ labelResults }}</p>
     <div *ngIf="loading" class="u-text-center u-padding a-spinner"></div>
-    <ul *ngIf="!loading" class="a-list a-list--lined a-list--unstyled">
+    <ul *ngIf="!loading" class="a-list a-list--lined">
       <li *ngIf="!filteredChoices.length" class="m-search-filter__results-item a-list__item">
         <p class="u-margin-xs">{{ labelNoResults }}</p>
       </li>
@@ -63,33 +63,3 @@
     </ul>
   </div>
 </div>
-
-<!-- <div [align]="flyoutAlign" [size]="flyoutSize" auiFlyout>
-
-
-  <div auiFlyoutZone class="m-search-filter__search m-search-filter__search--scroll">
-
-
-
-    <p *ngIf="labelResults" class="h6 m-search-filter__results-title u-margin-bottom-xs">{{ labelResults }}</p>
-    <div *ngIf="loading" class="u-text-center u-padding a-spinner"></div>
-    <ul *ngIf="!loading" class="a-list a-list--lined a-list--unstyled">
-      <li *ngIf="!filteredChoices.length" class="m-search-filter__results-item a-list__item">
-        <p class="u-margin-xs">{{ labelNoResults }}</p>
-      </li>
-      <li *ngFor="let choice of filteredChoices; index as i" class="m-search-filter__results-item a-list__item">
-        <div class="a-input__checkbox">
-          <input
-            (change)="toggleSelected(choice.value)"
-            [attr.disabled]="isDisabled ? true : null"
-            [checked]="selectedItems.indexOf(choice.value) >= 0"
-            id="{{ 'checkbox--' + i + '--' + id }}"
-            name="{{ 'checkbox--' + i + '--' + id }}"
-            type="checkbox"
-          />
-          <label for="{{ 'checkbox--' + i + '--' + id }}">{{ choice.label }}</label>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div> -->
