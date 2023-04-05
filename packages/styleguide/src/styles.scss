@@ -13,14 +13,15 @@ app-root {
   max-width: 100%;
 }
 
+.u-main
 main {
   &:focus {
     outline: none;
   }
+}
 
-  &#main-content > ng-component {
-    width: 100%;
-  }
+#main-content > ng-component {
+  width: 100%;
 }
 
 .p-antwerp-ui {
@@ -107,4 +108,8 @@ pre {
   .o-header__logo {
     position: static;
   }
+}
+
+.u-datepicker {
+  margin-bottom: 15rem;
 }

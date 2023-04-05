@@ -38,8 +38,8 @@ export class CalendarComponent implements OnInit, OnChanges {
   @HostBinding('attr.role') role = 'application';
   @HostBinding('attr.aria-hidden') ariahidden = 'false';
 
-  @Input() ariaPreviousLabels = ['Ga naar vorige maand', 'Ga naar vorig jaar', 'Ga naar vorige 12 jaren'];
-  @Input() ariaNextLabels = ['Ga naar volgende maand', 'Ga naar volgend jaar', 'Ga naar volgende 12 jaren'];
+  @Input() ariaPreviousLabels = ['Ga naar vorige maand', 'Ga naar vorig jaar', 'Ga naar vorige 18 jaren'];
+  @Input() ariaNextLabels = ['Ga naar volgende maand', 'Ga naar volgend jaar', 'Ga naar volgende 18 jaren'];
 
   @Input() selectedDate: Date;
   @Input() range: DateRange;
@@ -102,7 +102,7 @@ export class CalendarComponent implements OnInit, OnChanges {
         activeDate.setFullYear(activeDate.getFullYear() + factor);
         break;
       case CALENDAR_VIEW_DECENNIA:
-        activeDate.setFullYear(activeDate.getFullYear() + 12 * factor);
+        activeDate.setFullYear(activeDate.getFullYear() + 18 * factor);
         break;
     }
 
@@ -141,7 +141,7 @@ export class CalendarComponent implements OnInit, OnChanges {
         break;
       case CALENDAR_VIEW_DECENNIA:
         const startYear = this.activeDate.getFullYear();
-        this.headerLabel = `${startYear} - ${startYear + 11}`;
+        this.headerLabel = `${startYear} - ${startYear + 17}`;
         this.ariaPreviousLabel = this.ariaPreviousLabels[2];
         this.ariaNextLabel = this.ariaNextLabels[2];
         break;

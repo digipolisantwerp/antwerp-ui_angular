@@ -1,23 +1,24 @@
 @import "../styles.scss";
 
+.u-main,
 main {
   display: flex;
   flex-direction: column;
 
-  .u-main-menu {
-    @include to($screen-xs-max) {
-      border-bottom: 1px solid $border-color;
-      height: 50vh;
-      overflow: auto;
-    }
+  @include at($screen-sm) {
+    flex-direction: row;
+  }
+}
 
-    @include at($screen-sm) {
-      border-right: 1px solid $border-color;
-      flex: 0 1 320px
-    }
+.u-main-menu {
+  @include to($screen-xs-max) {
+    border-bottom: 1px solid $border-color;
+    height: 50vh;
+    overflow: auto;
   }
 
   @include at($screen-sm) {
-    flex-direction: row;
+    border-right: 1px solid $border-color;
+    flex: 0 1 320px
   }
 }

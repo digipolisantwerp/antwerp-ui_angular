@@ -38,7 +38,7 @@ export class CalendarYearComponent implements OnChanges {
 
     if (changes.monthLabels) {
       this.monthLabels = this.monthLabels || this.moduleMonthLabels;
-      this.months = chunk(this.monthLabels, 4);
+      this.months = chunk(this.monthLabels, 2);
     }
   }
 
