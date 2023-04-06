@@ -37,6 +37,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Fix require.context (see https://stackoverflow.com/questions/74546242/karma-jasmine-uncaught-typeerror-webpack-require-context-is-not-a-fu/74572172#74572172)
   - Remove non-working tests of deprecated components
 
+### Removed
+- Removed `ngx-agenda`
+- Removed `ngx-analytics`
+- Removed `ngx-layout/hero`
+- Removed `ngx-layout/pane`
+- Removed `ngx-layout/sidebar`
+- Removed `ngx-localstorage`
+- Removed `ngx-navigation-menu`
+
+
 ## [5.4.1] - 2023-01-27
 
 ### Fixed

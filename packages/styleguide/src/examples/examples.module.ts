@@ -4,15 +4,11 @@ import { AuiModule } from '../aui/aui.module';
 import { RouterModule } from '@angular/router';
 import { EXAMPLES_ROUTES } from './examples.routes';
 import { CodeSnippetDemoPageComponent } from './pages/aui-code-snippet/aui-snippet.page';
-import { AnalyticsDemoPageComponent } from './pages/aui-analytics/aui-analytics.page';
-import { AgendaDemoPageComponent } from './pages/aui-agenda/aui-agenda.page';
 import { AvatarDemoPageComponent } from './pages/aui-avatar/aui-avatar.page';
-import { NavigationMenuDemoPage } from './pages/aui-navigation-menu/aui-navigation-menu.page';
 import { CalendarDemoPage } from './pages/aui-calendar/aui-calendar.page';
 import { ContextDemoPageComponent } from './pages/aui-context/aui-context';
 import { FlyoutDemoPage } from './pages/aui-flyout/aui-flyout';
 import { IconDemoPageComponent } from './pages/aui-icon/aui-icon.page';
-import { LocalstorageDemoPageComponent } from './pages/aui-localstorage/aui-localstorage';
 import { PaginationDemoPageComponent } from './pages/aui-pagination/aui-pagination.page';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProgressBarDemoPageComponent } from './pages/aui-progress-bar/aui-progress-bar.page';
@@ -31,10 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
 import { LayoutFooterDemoPageComponent } from './pages/aui-layout/footer/footer.page';
 import { LayoutHeaderDemoPageComponent } from './pages/aui-layout/header/header.page';
-import { LayoutHeroDemoPageComponent } from './pages/aui-layout/hero/hero.page';
 import { LayoutModalDemoPageComponent } from './pages/aui-layout/modal/modal.page';
-import { LayoutPaneDemoPageComponent } from './pages/aui-layout/pane/pane.page';
-import { LayoutSidebarDemoPageComponent } from './pages/aui-layout/sidebar/sidebar.page';
 import { AUIDemoModalComponent } from './pages/aui-layout/modal/demo-modal.component';
 import { UtilsDemoPageComponent } from './pages/aui-utils/demo/demo.page';
 import { UtilsFilterDemoPageComponent } from './pages/aui-utils/filter/filter.page';
@@ -49,15 +42,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     declarations: [
         LogoDemoPageComponent,
         CodeSnippetDemoPageComponent,
-        AnalyticsDemoPageComponent,
-        AgendaDemoPageComponent,
         AvatarDemoPageComponent,
-        NavigationMenuDemoPage,
         CalendarDemoPage,
         ContextDemoPageComponent,
         FlyoutDemoPage,
         IconDemoPageComponent,
-        LocalstorageDemoPageComponent,
         PaginationDemoPageComponent,
         ProgressBarDemoPageComponent,
         TableDemoPageComponent,
@@ -74,10 +63,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         LayoutDemoPageComponent,
         LayoutFooterDemoPageComponent,
         LayoutHeaderDemoPageComponent,
-        LayoutHeroDemoPageComponent,
         LayoutModalDemoPageComponent,
-        LayoutPaneDemoPageComponent,
-        LayoutSidebarDemoPageComponent,
         AUIDemoModalComponent,
         UtilsDemoPageComponent,
         UtilsFilterDemoPageComponent,

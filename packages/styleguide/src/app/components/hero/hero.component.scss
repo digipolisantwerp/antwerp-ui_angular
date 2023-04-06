@@ -3,7 +3,8 @@
 .o-hero {
   background-color: $brand-primary;
   height: auto;
-  padding: $spacer;
+  min-height: $spacer * 3;
+  padding-left: $spacer;
 
   div {
     padding-left: $spacer-md;

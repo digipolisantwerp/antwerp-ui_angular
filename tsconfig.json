@@ -32,35 +32,11 @@
       "@acpaas-ui/ngx-logo/*": [
         "packages/ngx-logo/dist/*"
       ],
-      "@acpaas-ui/ngx-navigation-menu": [
-        "packages/ngx-navigation-menu/dist"
-      ],
-      "@acpaas-ui/ngx-navigation-menu/*": [
-        "packages/ngx-navigation-menu/dist/*"
-      ],
       "@acpaas-ui/ngx-code-snippet": [
         "packages/ngx-code-snippet/dist"
       ],
       "@acpaas-ui/ngx-code-snippet/*": [
         "packages/ngx-code-snippet/dist/*"
-      ],
-      "@acpaas-ui/analytics": [
-        "packages/analytics/dist"
-      ],
-      "@acpaas-ui/analytics/*": [
-        "packages/analytics/dist/*"
-      ],
-      "@acpaas-ui/ngx-analytics": [
-        "packages/ngx-analytics/dist"
-      ],
-      "@acpaas-ui/ngx-analytics/*": [
-        "packages/ngx-analytics/dist/*"
-      ],
-      "@acpaas-ui/ngx-agenda": [
-        "packages/ngx-agenda/dist"
-      ],
-      "@acpaas-ui/ngx-agenda/*": [
-        "packages/ngx-agenda/dist/*"
       ],
       "@acpaas-ui/ngx-avatar": [
         "packages/ngx-avatar/dist"
@@ -85,12 +61,6 @@
       ],
       "@acpaas-ui/ngx-flyout/*": [
         "packages/ngx-flyout/dist/*"
-      ],
-      "@acpaas-ui/ngx-localstorage": [
-        "packages/ngx-localstorage/dist"
-      ],
-      "@acpaas-ui/ngx-localstorage/*": [
-        "packages/ngx-localstorage/dist/*"
       ],
       "@acpaas-ui/ngx-pagination": [
         "packages/ngx-pagination/dist"

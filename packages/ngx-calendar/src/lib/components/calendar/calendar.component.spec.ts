@@ -110,7 +110,7 @@ describe('The Calendar Component', () => {
       expect(calendar.activeDate.getFullYear()).toEqual(2018);
     });
 
-    it('updates the activeDates year with a factor 12 if the activeView is the decennia view', () => {
+    it('updates the activeDates year with a factor 18 if the activeView is the decennia view', () => {
       calendar.activeView = views.CALENDAR_VIEW_DECENNIA;
       fixture.detectChanges();
 
@@ -118,7 +118,7 @@ describe('The Calendar Component', () => {
 
       expect(calendar.updateHeaderLabel).toHaveBeenCalled();
 
-      expect(calendar.activeDate.getFullYear()).toEqual(2029);
+      expect(calendar.activeDate.getFullYear()).toEqual(2035);
     });
 
     it('uses today if there is no activeDate', () => {
@@ -203,7 +203,7 @@ describe('The Calendar Component', () => {
       calendar.updateHeaderLabel();
 
       const viewDecennia =
-        calendar.activeDate.getFullYear().toString() + ' - ' + (calendar.activeDate.getFullYear() + 11).toString();
+        calendar.activeDate.getFullYear().toString() + ' - ' + (calendar.activeDate.getFullYear() + 17).toString();
       expect(calendar.headerLabel).toEqual(viewDecennia);
     });
   });

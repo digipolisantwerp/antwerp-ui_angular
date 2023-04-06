@@ -1,7 +1,9 @@
 <div
   (closed)="handleFlyoutChanged(false)"
   (opened)="handleFlyoutChanged(true)"
-  [align]="align"
+  [ngClass]="[
+    align === 'right' ? 'm-flyout--bottom-right' : ''
+  ]"
   [size]="flyoutSize"
   auiFlyout
 >

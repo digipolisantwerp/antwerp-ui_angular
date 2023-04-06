@@ -45,9 +45,9 @@
     class="a-input"
   />
   <div *ngIf="!isDisabled" auiFlyoutZone>
-    <span *ngIf="focused && loadingText && searching" class="o-auto-complete__info u-text-light u-margin-xs">
-      <span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span>
-      {{ loadingText }}
+    <span *ngIf="focused && loadingText && searching" class="a-spinner a-spinner--s u-margin-xs" role="alert">
+      <span class="a-spinner__circle"></span>
+      <span class="a-spinner__text">{{ loadingText }}</span>
     </span>
     <span
       *ngIf="focused && searchIncentiveText && !searching && !query && !results.length"

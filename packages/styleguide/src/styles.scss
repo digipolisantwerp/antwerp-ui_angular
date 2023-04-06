@@ -13,14 +13,15 @@ app-root {
   max-width: 100%;
 }
 
+.u-main
 main {
   &:focus {
     outline: none;
   }
+}
 
-  &#main-content > ng-component {
-    width: 100%;
-  }
+#main-content > ng-component {
+  width: 100%;
 }
 
 .p-antwerp-ui {
@@ -32,34 +33,8 @@ main {
   border: 1px solid $gray-100;
 }
 
-.m-pane--left {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  left: 0;
-  position: fixed !important;
-  top: 0;
-}
-
-.m-overlay__pane {
-  position: fixed !important;
-}
-
 .m-button-group--inline {
   display: inline-flex;
-}
-
-.m-sidebar {
-  @include to($screen-xs-max) {
-    background-color: $background-color-light;
-    margin-bottom: $spacer;
-    max-height: 15.75rem;
-    overflow: auto;
-    padding-left: $spacer;
-    padding-right: $spacer;
-    width: auto;
-  }
 }
 
 .u-show-on-mobile {
@@ -89,22 +64,24 @@ pre {
 }
 
 .aui-footer {
-  background: $black;
+  background: $gray-600;
 
   .u-container {
-    padding-top: $spacer-lg;
-    padding-bottom: $spacer-md;
+    padding-bottom: $spacer;
+    padding-top: $spacer;
   }
 
-  &,
-  a,
-  a:hover,
-  a:active,
-  a:focus {
-    color: $white;
+  .a-list {
+    list-style: none;
+    padding-left: 0;
+
+    a {
+      --link-color: #{$white};
+      --link-hover-color: var(--theme1-050);
+    }
   }
 
-  h3.h5 {
+  h3.h4 {
     color: $gray-100;
   }
 }
@@ -131,4 +108,8 @@ pre {
   .o-header__logo {
     position: static;
   }
+}
+
+.u-datepicker {
+  margin-bottom: 15rem;
 }

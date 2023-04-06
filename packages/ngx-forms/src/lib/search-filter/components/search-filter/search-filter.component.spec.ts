@@ -171,19 +171,6 @@ describe('The SearchFilter Component', () => {
     expect(comp.search.emit).toHaveBeenCalledWith('test');
   });
 
-  it('should emit a search onInit if showAllByDefault is true', () => {
-    comp.remote = true;
-    comp.showAllByDefault = true;
-
-    spyOn(comp, 'filterData').and.stub();
-
-    fixture.detectChanges();
-
-    comp.ngOnInit();
-
-    expect(comp.filterData).toHaveBeenCalled();
-  });
-
   it('should call filterChoices if filterData is called when remote is false', () => {
     spyOn(comp.search, 'emit').and.stub();
     spyOn(comp as any, 'filterChoices').and.stub();

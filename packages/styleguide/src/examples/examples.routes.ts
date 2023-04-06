@@ -1,14 +1,11 @@
 import { Routes } from '@angular/router';
 import { LogoDemoPageComponent } from './pages/aui-logo/aui-logo.page';
 import { CodeSnippetDemoPageComponent } from './pages/aui-code-snippet/aui-snippet.page';
-import { AnalyticsDemoPageComponent } from './pages/aui-analytics/aui-analytics.page';
 import { AvatarDemoPageComponent } from './pages/aui-avatar/aui-avatar.page';
-import { NavigationMenuDemoPage } from './pages/aui-navigation-menu/aui-navigation-menu.page';
 import { CalendarDemoPage } from './pages/aui-calendar/aui-calendar.page';
 import { ContextDemoPageComponent } from './pages/aui-context/aui-context';
 import { FlyoutDemoPage } from './pages/aui-flyout/aui-flyout';
 import { IconDemoPageComponent } from './pages/aui-icon/aui-icon.page';
-import { LocalstorageDemoPageComponent } from './pages/aui-localstorage/aui-localstorage';
 import { PaginationDemoPageComponent } from './pages/aui-pagination/aui-pagination.page';
 import { ProgressBarDemoPageComponent } from './pages/aui-progress-bar/aui-progress-bar.page';
 import { TableDemoPageComponent } from './pages/aui-table/aui-table.page';
@@ -24,10 +21,7 @@ import { FormsUploadDemoPageComponent } from './pages/aui-forms/upload/upload.pa
 import { LayoutDemoPageComponent } from './pages/aui-layout/demo/demo.page';
 import { LayoutFooterDemoPageComponent } from './pages/aui-layout/footer/footer.page';
 import { LayoutHeaderDemoPageComponent } from './pages/aui-layout/header/header.page';
-import { LayoutHeroDemoPageComponent } from './pages/aui-layout/hero/hero.page';
 import { LayoutModalDemoPageComponent } from './pages/aui-layout/modal/modal.page';
-import { LayoutPaneDemoPageComponent } from './pages/aui-layout/pane/pane.page';
-import { LayoutSidebarDemoPageComponent } from './pages/aui-layout/sidebar/sidebar.page';
 import { UtilsDemoPageComponent } from './pages/aui-utils/demo/demo.page';
 import { UtilsFilterDemoPageComponent } from './pages/aui-utils/filter/filter.page';
 import { UtilsLabelsDemoPageComponent } from './pages/aui-utils/labels/labels.page';
@@ -40,17 +34,7 @@ export const EXAMPLES_ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'modules/analytics'
-  },
-  // {
-  //   path: 'modules/agenda',
-  //   component: AgendaDemoPageComponent,
-  //   data: {meta: {title: 'Agenda'}}
-  // },
-  {
-    path: 'modules/analytics',
-    component: AnalyticsDemoPageComponent,
-    data: {meta: {title: 'Analytics'}}
+    redirectTo: 'modules/avatar'
   },
   {
     path: 'modules/avatar',
@@ -155,28 +139,10 @@ export const EXAMPLES_ROUTES: Routes = [
         data: {meta: {title: 'Header'}},
       },
       {
-        path: 'hero',
-        pathMatch: 'full',
-        component: LayoutHeroDemoPageComponent,
-        data: {meta: {title: 'Hero'}},
-      },
-      {
         path: 'modal',
         pathMatch: 'full',
         component: LayoutModalDemoPageComponent,
         data: {meta: {title: 'Modal'}},
-      },
-      {
-        path: 'pane',
-        pathMatch: 'full',
-        component: LayoutPaneDemoPageComponent,
-        data: {meta: {title: 'Pane'}},
-      },
-      {
-        path: 'sidebar',
-        pathMatch: 'full',
-        component: LayoutSidebarDemoPageComponent,
-        data: {meta: {title: 'Sidebar'}},
       },
     ],
   },
@@ -186,19 +152,9 @@ export const EXAMPLES_ROUTES: Routes = [
     data: {meta: {title: 'Leaflet'}}
   },
   {
-    path: 'modules/localstorage',
-    component: LocalstorageDemoPageComponent,
-    data: {meta: {title: 'Local Storage'}}
-  },
-  {
     path: 'modules/logo',
     component: LogoDemoPageComponent,
     data: {meta: {title: 'Logo'}}
-  },
-  {
-    path: 'modules/navigation-menu',
-    component: NavigationMenuDemoPage,
-    data: {meta: {title: 'Navigation Menu'}}
   },
   {
     path: 'modules/notifications',

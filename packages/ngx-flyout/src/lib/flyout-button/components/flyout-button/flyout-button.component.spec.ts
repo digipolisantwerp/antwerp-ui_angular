@@ -64,7 +64,7 @@ describe('The FlyoutButton Component', () => {
     comp.buttonSize = FlyoutButtonSize.Small;
 
     fixture.detectChanges();
-    expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--small');
+    expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--s');
   });
 
   it('should have an outline option', () => {

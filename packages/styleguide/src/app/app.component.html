@@ -4,24 +4,27 @@
   <guide-header></guide-header>
   <guide-hero title="Angular core components"></guide-hero>
 </header>
-<main>
-  <aui-menu>
-    <aui-menu-tab *ngFor="let package of packages">
-      <aui-menu-link *ngIf="!shouldDisplaySubMenu(package)" [routerLink]="[package.path]">
-        {{ package.data?.meta?.title }}
-      </aui-menu-link>
-      <aui-menu-link *ngIf="shouldDisplaySubMenu(package)">
-        {{ package.data?.meta?.title }}
-      </aui-menu-link>
-      <aui-sub-menu *ngIf="shouldDisplaySubMenu(package)">
-        <aui-sub-menu-item *ngFor="let childRoute of getChildrenRoutes(package)">
-          <aui-menu-link [routerLink]="[ package.path, childRoute.path]">
-            {{ childRoute.data?.meta?.title }}
-          </aui-menu-link>
-        </aui-sub-menu-item>
-      </aui-sub-menu>
-    </aui-menu-tab>
-  </aui-menu>
+<div class="u-main">
+  <div class="u-main-menu">
+    <ul class="a-list a-list--lined a-list--flushed">
+      <li class="a-list__item" *ngFor="let package of packages">
+        <a class="a-list__content" *ngIf="!shouldDisplaySubMenu(package)" [routerLink]="[package.path]" routerLinkActive="is-active">
+          <span class="a-list__text">{{ package.data?.meta?.title }}</span>
+        </a>
+        <span class="a-list__content" *ngIf="shouldDisplaySubMenu(package)">
+          <span class="a-list__text">{{ package.data?.meta?.title }}</span>
+          <aui-icon name="ai-arrow-down-1"></aui-icon>
+        </span>
+        <ul class="a-list a-list--lined" *ngIf="shouldDisplaySubMenu(package)">
+          <li class="a-list__item" *ngFor="let childRoute of getChildrenRoutes(package)">
+            <a class="a-list__content" [routerLink]="[package.path, childRoute.path]" routerLinkActive="is-active">
+              <span class="a-list__text">{{ childRoute.data?.meta?.title }}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <div class="u-container u-margin-top u-margin-bottom p-antwerp-ui">
     <div class="row">
       <div class="col-xs-12">
@@ -38,5 +41,5 @@
       </main>
     </div>
   </div>
-</main>
+</div>
 <guide-footer></guide-footer>

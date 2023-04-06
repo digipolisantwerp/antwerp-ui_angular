@@ -69,7 +69,7 @@ export class FlyoutDirective implements OnDestroy {
     return this.align === 'right';
   }
 
-  @HostBinding('class.m-flyout--sm') get flyoutSmall() {
+  @HostBinding('class.m-flyout--s') get flyoutSmall() {
     return this.size === 'small';
   }
 
@@ -77,7 +77,7 @@ export class FlyoutDirective implements OnDestroy {
     return this.size === 'medium';
   }
 
-  @HostBinding('class.m-flyout--lg') get flyoutLarge() {
+  @HostBinding('class.m-flyout--l') get flyoutLarge() {
     return this.size === 'large';
   }
 
