@@ -1,4 +1,7 @@
 <div class="a-range-slider">
+  <div class="a-range-slider__labels">
+    <div class="a-range-slider__label">{{ label }}</div>
+  </div>
   <div class="a-range-slider__inner">
     <div class="a-range-slider__tickmarks">
       <div *ngFor="let step of steps; let i = index" class="a-range-slider__tickmark"></div>
@@ -16,6 +19,7 @@
       (touchstart)="onMouseDown('start')"
       [style.left]="startPercentage + '%'"
       class="a-range-slider__handle"
+      [attr.aria-label]="ariaLabelMin"
       tabindex="0"
     >
     </span>
@@ -30,6 +34,7 @@
       [style.left]="endPercentage + '%'"
       class="a-range-slider__handle"
       name="a-range-slider__handle__end"
+      [attr.aria-label]="ariaLabelMax"
       tabindex="0"
     >
     </span>

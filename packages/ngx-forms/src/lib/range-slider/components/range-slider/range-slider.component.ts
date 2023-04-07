@@ -21,8 +21,11 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   @Input() public max = 100;
   @Input() public minimalDistance = 1;
   @Input() public step = 0;
+  @Input() public label = '';
   @Input() public labelBefore = '';
   @Input() public labelAfter = '';
+  @Input() public ariaLabelMin = 'Minimum';
+  @Input() public ariaLabelMax = 'Maximum';
   public start = 0;
   public end: number | boolean = false;
   public steps = [];

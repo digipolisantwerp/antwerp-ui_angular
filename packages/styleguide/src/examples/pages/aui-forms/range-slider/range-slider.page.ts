@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   templateUrl: './range-slider.page.html',
 })
 export class FormsRangeSliderDemoPageComponent {
-  public mySlider = {start: 400, end: 500};
+  public mySlider = { start: 400, end: 500 };
 
   public rangesliderImportExample = `import { RangeSliderModule } from '@acpaas-ui/ngx-forms';
 import { FormsModule } from '@angular/forms';
@@ -16,9 +16,10 @@ import { FormsModule } from '@angular/forms';
 	});
 export class AppModule {};`;
 
-  public rangesliderExampleHTML1 = `<aui-range-slider></aui-range-slider>`;
+  public rangesliderExampleHTML1 = `<aui-range-slider label="Basic"></aui-range-slider>`;
 
   public rangesliderExampleHTML2 = `<aui-range-slider
+	label="Change in increments of 20"
 	step="20"
 	labelAfter="%">
 </aui-range-slider>`;
@@ -26,6 +27,7 @@ export class AppModule {};`;
   public rangesliderExampleTypescript3 = `public mySlider = {start: 400, end: 500};`;
 
   public rangesliderExampleHTML3 = `<aui-range-slider
+	label="Min/max"
 	[(ngModel)]="mySlider"
 	min="300"
 	max="600"
@@ -33,5 +35,6 @@ export class AppModule {};`;
 </aui-range-slider>`;
 
   public isDisabled = false;
-  public disabledSlider = {start: 350, end: 450};
+  public disabledSlider = { start: 350, end: 450 };
+  public range = { start: 40 };
 }
