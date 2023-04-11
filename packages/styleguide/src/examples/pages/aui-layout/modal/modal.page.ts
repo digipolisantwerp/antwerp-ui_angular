@@ -127,6 +127,8 @@ private doSomething() {
         description: 'This action can be undone.',
         approve: 'Close demo modal',
         reject: 'Cancel',
+        closeButtonAriaLabel: 'Sluiten',
+        headerTag: 'h6',
       },
       {
         approve: () => this.doSomething(),

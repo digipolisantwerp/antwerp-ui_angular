@@ -1,15 +1,14 @@
 <div [attr.aria-describedby]="descId" [attr.aria-labelledby]="titleId" aria-modal="true" class="m-modal" role="dialog">
   <div class="m-modal__content">
-    <div class="m-modal__header u-margin-bottom-xs">
+    <div class="m-modal__header u-margin-bottom-xs" #titleContainer>
       <button
         (click)="close()"
         class="m-modal__close a-button a-button--text a-button--neutral has-icon"
         type="button"
-        aria-label="close"
+        [attr.aria-label]="modalData.closeButtonAriaLabel || closeButtonAriaLabel"
       >
         <aui-icon name="ai-close" [ariaLabel]="modalData.reject"></aui-icon>
       </button>
-      <h4 [id]="titleId" class="h6">{{ modalData.question }}</h4>
     </div>
     <div class="u-margin-bottom">
       <p [id]="descId">{{ modalData.description }}</p>
