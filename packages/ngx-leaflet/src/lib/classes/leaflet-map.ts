@@ -19,9 +19,7 @@ export class LeafletMap {
   private lineDrawer: any;
   private editingLayer: any;
 
-  constructor(public options: LeafletMapOptions,
-              public mapService: MapService) {
-  }
+  constructor(public options: LeafletMapOptions, public mapService: MapService) {}
 
   // LIFECYCLE
   init(element: any) {
@@ -41,7 +39,7 @@ export class LeafletMap {
   // LAYERS
   addTileLayer(layer: LeafletLayer) {
     if (this.mapService.isAvailable()) {
-      const tileLayer = new this.mapService.L.TileLayer(layer.url, layer.options);
+      const tileLayer = this.mapService.L.tileLayer(layer.url, layer.options);
       this.map.addLayer(tileLayer);
       return tileLayer;
     }
@@ -65,7 +63,7 @@ export class LeafletMap {
 
   fitFeatureLayers(featureLayers: any[]) {
     if (this.mapService.isAvailable()) {
-      const bounds = this.mapService.L.latLngBounds(([]));
+      const bounds = this.mapService.L.latLngBounds([]);
       let counter = 0;
       featureLayers.forEach((featureLayer) => {
         featureLayer.once('load', () => {
@@ -161,7 +159,7 @@ export class LeafletMap {
       this.map.off(this.mapService.L.Draw.Event.CREATED);
       this.map.off(this.mapService.L.Draw.Event.DRAWSTOP);
     }
-  }
+  };
 
   // DRAWING: POLYGON
   switchToPolygon() {
@@ -170,9 +168,11 @@ export class LeafletMap {
       this.mode = this.modes.DRAWING_POLYGON;
       if (!this.polygonDrawer) {
         this.polygonDrawer = new this.mapService.L.Draw.Polygon(this.map, {
-          shapeOptions: this.options.polygonColor ? {
-            color: this.options.polygonColor,
-          } : {},
+          shapeOptions: this.options.polygonColor
+            ? {
+                color: this.options.polygonColor,
+              }
+            : {},
         });
         this.polygonDrawer.enable();
         this.map.on(this.mapService.L.Draw.Event.CREATED, this.handleDrawPolygon);
@@ -185,7 +185,7 @@ export class LeafletMap {
     this.map.addLayer(e.layer);
     this.options.onAddPolygon(e.layer);
     this.switchToDragging();
-  }
+  };
 
   // DRAWING: LINES
   switchToLine() {
@@ -194,9 +194,11 @@ export class LeafletMap {
       this.mode = this.modes.DRAWING_LINE;
       if (!this.lineDrawer) {
         this.lineDrawer = new this.mapService.L.Draw.Polyline(this.map, {
-          shapeOptions: this.options.lineColor ? {
-            color: this.options.lineColor,
-          } : {},
+          shapeOptions: this.options.lineColor
+            ? {
+                color: this.options.lineColor,
+              }
+            : {},
         });
         this.lineDrawer.enable();
         this.map.on(this.mapService.L.Draw.Event.CREATED, this.handleDrawLine);
@@ -209,7 +211,7 @@ export class LeafletMap {
     this.map.addLayer(e.layer);
     this.options.onAddLine(e.layer);
     this.switchToDragging();
-  }
+  };
 
   // EDIT: LAYER
   startEditLayer(layer: any) {
@@ -234,7 +236,7 @@ export class LeafletMap {
       this.editingLayer.off('edit');
     }
     this.map.off('click', this.stopEditLayer);
-  }
+  };
 
   // MARKERS
   addMarker(position: any, options?: any) {
@@ -245,7 +247,7 @@ export class LeafletMap {
 
   addHtmlMarker(position: any, html: string) {
     if (this.mapService.isAvailable()) {
-      const customIcon = this.mapService.L.divIcon({html, className: 'aui-leaflet__html-icon'});
+      const customIcon = this.mapService.L.divIcon({ html, className: 'aui-leaflet__html-icon' });
       return this.mapService.L.marker(position, {
         icon: customIcon,
       }).addTo(this.map);
