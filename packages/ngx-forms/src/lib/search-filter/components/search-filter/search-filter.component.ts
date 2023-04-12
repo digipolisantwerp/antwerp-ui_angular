@@ -9,9 +9,7 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
 @Component({
   selector: 'aui-search-filter',
   templateUrl: './search-filter.component.html',
-  styleUrls: [
-    './search-filter.component.scss',
-  ],
+  styleUrls: ['./search-filter.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -20,7 +18,7 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
     },
   ],
 })
-export class SearchFilterComponent implements  OnChanges, ControlValueAccessor {
+export class SearchFilterComponent implements OnChanges, ControlValueAccessor {
   @Input() public id: string;
   @Input() public name: string;
   @Input() public flyoutSize = FlyoutSize.Small;
@@ -34,8 +32,8 @@ export class SearchFilterComponent implements  OnChanges, ControlValueAccessor {
   @Input() public remote: boolean;
   @Input() public placeholder = 'Zoeken';
   @Input() public inputDelay = 150;
-  @Input() public onSelect: () => void;
-  @Input() public onClear: () => void;
+  @Input() public onSelect: () => void = () => {};
+  @Input() public onClear: () => void = () => {};
   @Input() public size: 'large' | 'default' | 'small' | 'tiny' = 'default';
 
   @Output() public search: EventEmitter<string> = new EventEmitter<string>();
@@ -124,10 +122,10 @@ export class SearchFilterComponent implements  OnChanges, ControlValueAccessor {
   }
 
   public hasClose(): boolean {
-    return this.filteredChoices?.length && this.query?.length > 1 
+    return this.filteredChoices?.length && this.query?.length > 1;
   }
 
   public getSelectedLabels(): string {
-    return this.selectedItems.length ? this.selectedItems.map(el => el).join(', ') : null
+    return this.selectedItems.length ? this.selectedItems.map((el) => el).join(', ') : null;
   }
 }

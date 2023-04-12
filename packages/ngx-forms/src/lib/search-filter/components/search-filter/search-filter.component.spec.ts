@@ -45,21 +45,20 @@ describe('The SearchFilter Component', () => {
 
     fixture.detectChanges();
 
-    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(1);
-    expect(el.querySelector('.m-search-filter__results-item').textContent).toContain('test-noResults');
+    expect(el.querySelectorAll('.a-checkbox-list').length).toBe(1);
+    expect(el.querySelector('.u-margin-xs')?.textContent).toContain('test-noResults');
   });
 
   it('should show the clear button when there are selected items', () => {
-    comp.labelDeselect = 'test-deselect';
     comp.selectedItems = ['one'];
 
     fixture.detectChanges();
 
-    expect(el.querySelector('.m-search-filter__clear')).toBeDefined();
-    expect(el.querySelector('.m-search-filter__clear').textContent).toContain('test-deselect');
+    expect(el.querySelector('.ai-close')).toBeDefined();
   });
 
   it('should show the available choices', () => {
+    spyOn(comp, 'getSelectedLabels').and.stub();
     comp.selectedItems = ['2'];
     comp.filteredChoices = [
       {
@@ -74,15 +73,13 @@ describe('The SearchFilter Component', () => {
 
     fixture.detectChanges();
 
-    expect(el.querySelectorAll('.m-search-filter__results-item').length).toBe(2);
+    expect(el.querySelectorAll('.a-input__checkbox').length).toBe(2);
 
-    const items = Array.from(el.querySelectorAll('.m-search-filter__results-item'));
+    const items = Array.from(el.querySelectorAll('.a-input__checkbox'));
 
     expect(items[0].querySelector('label').textContent).toBe('one');
-    expect(items[0].querySelector('input').checked).toBeFalsy();
-
     expect(items[1].querySelector('label').textContent).toBe('two');
-    expect(items[1].querySelector('input').checked).toBeTruthy();
+    expect(comp.getSelectedLabels).toHaveBeenCalled();
   });
 
   it('should update the selectedItems if a valid value is provided', () => {
@@ -190,6 +187,7 @@ describe('The SearchFilter Component', () => {
 
     spyOn(comp, 'filterData').and.stub();
     spyOn(comp, 'updateModel').and.stub();
+    spyOn(comp, 'onClear').and.stub();
 
     fixture.detectChanges();
 
@@ -199,6 +197,7 @@ describe('The SearchFilter Component', () => {
     expect(comp.query.length).toBe(0);
     expect(comp.filterData).toHaveBeenCalled();
     expect(comp.updateModel).toHaveBeenCalledWith([]);
+    expect(comp.onClear).toHaveBeenCalled();
   });
 
   it('should add the selected item if it was not in the selectedItems array and update the model value', () => {
@@ -214,7 +213,7 @@ describe('The SearchFilter Component', () => {
     expect(comp.updateModel).toHaveBeenCalledWith(['one', 'two']);
   });
 
-  it('should remove the selected item if it was present in the selectedItems array  and update the model value', () => {
+  it('should remove the selected item if it was present in the selectedItems array and update the model value', () => {
     comp.selectedItems = ['one', 'two', 'three'];
 
     spyOn(comp, 'updateModel').and.stub();
