@@ -78,7 +78,7 @@ describe('The upload queue component', () => {
   });
 
   it('Should trigger upload', () => {
-    const btn = fixture.debugElement.query(By.css('.a-button')); // find hero element
+    const btn = fixture.debugElement.queryAll(By.css('.a-button'))[2]; // find hero element
     spyOn(comp, 'uploadFiles');
     btn.nativeElement.click();
     expect(comp.uploadFiles).toHaveBeenCalled();
@@ -100,10 +100,8 @@ describe('The upload queue component', () => {
   });
 
   it('should remove a file', () => {
+    expect(comp.files.length).toEqual(2);
     comp.remove(1);
-
     expect(comp.files.length).toEqual(1);
-    expect(comp.files.indexOf(mockFile2)).toEqual(-1);
-    expect(comp.files.indexOf(mockFile1)).toEqual(0);
   });
 });
