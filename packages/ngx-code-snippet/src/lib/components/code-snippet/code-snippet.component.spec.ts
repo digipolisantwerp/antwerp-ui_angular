@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 import { CodeSnippetComponent } from './code-snippet.component';
-
+// @ts-ignore
 import { marked } from 'marked';
 
 class MockHighlightJsService {

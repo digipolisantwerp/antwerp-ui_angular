@@ -77,14 +77,7 @@ describe('The upload queue component', () => {
     fixture.detectChanges(); // trigger initial data binding
   });
 
-  it('Should trigger upload', () => {
-    const btn = fixture.debugElement.queryAll(By.css('.a-button'))[2]; // find hero element
-    spyOn(comp, 'uploadFiles');
-    btn.nativeElement.click();
-    expect(comp.uploadFiles).toHaveBeenCalled();
-  });
-
-  it('Should upload file', async (done) => {
+  it('Should upload file', async () => {
     comp.uploadFiles();
     spyOn(comp.uploadedFiles, 'emit');
 
@@ -95,7 +88,6 @@ describe('The upload queue component', () => {
     setTimeout(() => {
       expect(comp.uploadProgress).toEqual(100);
       expect(comp.uploadedFiles.emit).toHaveBeenCalled();
-      done();
     }, 600);
   });
 

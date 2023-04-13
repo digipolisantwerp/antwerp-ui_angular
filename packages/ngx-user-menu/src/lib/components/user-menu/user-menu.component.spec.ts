@@ -7,21 +7,14 @@ import { first, tap } from 'rxjs/operators';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
 describe('User Menu Test', () => {
-
   let component: UserMenuComponent;
   let fixture: ComponentFixture<UserMenuComponent>;
   let mockUser: UserMenu.IUser;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        UserMenuComponent,
-      ],
-      imports: [
-        CommonModule,
-        FlyoutModule,
-        IconModule,
-      ],
+      declarations: [UserMenuComponent],
+      imports: [CommonModule, FlyoutModule, IconModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UserMenuComponent);
@@ -45,10 +38,7 @@ describe('User Menu Test', () => {
       const button: HTMLButtonElement = fixture.debugElement.nativeElement.querySelector('.a-button-login');
       expect(button).not.toBeNull();
       const spyOnLogin = sinon.stub();
-      component.login$.pipe(
-        first(),
-        tap(spyOnLogin)
-      ).subscribe();
+      component.login$.pipe(first(), tap(spyOnLogin)).subscribe();
 
       button.click();
       return fixture.whenStable().then(() => {
@@ -69,10 +59,7 @@ describe('User Menu Test', () => {
       fixture.detectChanges();
       const logoutButton = fixture.debugElement.nativeElement.querySelector('.a-button-logout');
       const spyOnLogout = sinon.stub();
-      component.logout$.pipe(
-        first(),
-        tap(spyOnLogout)
-      ).subscribe();
+      component.logout$.pipe(first(), tap(spyOnLogout)).subscribe();
       logoutButton.click();
 
       return fixture.whenStable().then(() => {

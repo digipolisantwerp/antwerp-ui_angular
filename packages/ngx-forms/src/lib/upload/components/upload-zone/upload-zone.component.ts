@@ -29,6 +29,7 @@ export class UploadZoneComponent implements AfterViewInit {
   @Input() public multiple = true;
   @Input() public label = '';
   @Input() public description = '';
+
   @Output() public uploadedFiles: EventEmitter<object[]> = new EventEmitter<object[]>();
   @Output() public queuedFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
   @Output() public invalidFiles: EventEmitter<InvalidFile[]> = new EventEmitter<InvalidFile[]>();
@@ -37,7 +38,7 @@ export class UploadZoneComponent implements AfterViewInit {
   public classNames: string;
   public uploadProgress = 0;
   public uploadingFiles: File[];
-  public uploadedFilesString: String; 
+  public uploadedFilesString: String;
 
   @HostListener('dragover', ['$event'])
   public onDragOver(event: any): void {
@@ -67,7 +68,7 @@ export class UploadZoneComponent implements AfterViewInit {
 
   public updateFiles() {
     const files: any[] = this.fileListToArray(this.fileInput.nativeElement.files);
-    this.uploadedFilesString = files.map(file => file.name).join(', ')
+    this.uploadedFilesString = files.map((file) => file.name).join(', ');
     this.handleFiles(files);
   }
 
@@ -134,7 +135,7 @@ export class UploadZoneComponent implements AfterViewInit {
   }
 
   public uploadedFilesToString(): string {
-    console.log('UPLOADS TO STRING')
-    return this.fileInput.nativeElement.files.map(file => file.name).join('')
+    console.log('UPLOADS TO STRING');
+    return this.fileInput.nativeElement.files.map((file) => file.name).join('');
   }
 }

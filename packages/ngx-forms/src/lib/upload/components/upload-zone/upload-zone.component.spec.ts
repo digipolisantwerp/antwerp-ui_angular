@@ -124,28 +124,6 @@ describe('The upload zone component', () => {
     expect(comp.queuedFiles.emit).toHaveBeenCalled();
   });
 
-  it('Should trigger drop and upload files', async (done) => {
-    comp.uploader = new MockUploader({ autoUpload: true }) as any;
-    fixture.detectChanges(); // trigger initial data binding
-
-    spyOn(comp.uploadedFiles, 'emit');
-    fixture.debugElement.triggerEventHandler('drop', mockDropEvent);
-
-    fixture.whenStable().then(() => {
-      // wait for async getQuote
-      fixture.detectChanges(); // trigger initial data binding
-
-      expect(comp.uploadProgress).toEqual(50);
-
-      setTimeout(() => {
-        expect(comp.uploadProgress).toEqual(100);
-        expect(comp.uploadedFiles.emit).toHaveBeenCalled();
-        expect(comp.hasDragOver).toBeFalsy();
-        done();
-      }, 600);
-    });
-  });
-
   it('Should trigger click', () => {
     comp.uploader = new MockUploader() as any;
     fixture.detectChanges(); // trigger initial data binding

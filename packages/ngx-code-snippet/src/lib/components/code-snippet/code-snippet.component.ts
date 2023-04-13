@@ -10,6 +10,7 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+// @ts-ignore
 import { marked } from 'marked';
 import { HighlightJsService } from 'angular2-highlight-js';
 

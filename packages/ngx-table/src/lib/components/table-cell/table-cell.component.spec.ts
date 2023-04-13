@@ -1,10 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  Component,
-  ComponentFactory,
-  ComponentFactoryResolver,
-  ViewContainerRef,
-} from '@angular/core';
+import { Component, ComponentFactory, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 import { TableCellComponent } from './table-cell.component';
 import { Cell } from '../../types/table.types';
 import { TableHelperService } from '../../services/table-helper.service';
@@ -58,14 +53,10 @@ describe('The Table Cell Component without component', () => {
   });
 
   it('should create a component using only the component constructor type', () => {
-    (viewContainer.createComponent as SinonStub)
-      .withArgs(componentFactory)
-      .returns({
-        instance,
-      });
-    (factory.resolveComponentFactory as SinonStub)
-      .withArgs(DummyTestComponent)
-      .returns(componentFactory);
+    (viewContainer.createComponent as SinonStub).withArgs(componentFactory).returns({
+      instance,
+    });
+    (factory.resolveComponentFactory as SinonStub).withArgs(DummyTestComponent).returns(componentFactory);
     component.viewContainerRef = viewContainer;
     component.value = 'some testing here';
     const ref = component.loadComponent(DummyTestComponent);
@@ -76,14 +67,10 @@ describe('The Table Cell Component without component', () => {
   });
 
   it('should create a component using contructor and metadata', () => {
-    (viewContainer.createComponent as SinonStub)
-      .withArgs(componentFactory)
-      .returns({
-        instance,
-      });
-    (factory.resolveComponentFactory as SinonStub)
-      .withArgs(DummyTestComponent)
-      .returns(componentFactory);
+    (viewContainer.createComponent as SinonStub).withArgs(componentFactory).returns({
+      instance,
+    });
+    (factory.resolveComponentFactory as SinonStub).withArgs(DummyTestComponent).returns(componentFactory);
     component.viewContainerRef = viewContainer;
     component.value = 'some testing here';
     const ref = component.loadComponent({
