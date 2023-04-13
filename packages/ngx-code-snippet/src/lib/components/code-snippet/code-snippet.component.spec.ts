@@ -1,10 +1,4 @@
-import {
-  waitForAsync,
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -13,7 +7,7 @@ import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 import { CodeSnippetComponent } from './code-snippet.component';
 
-const marked = require('marked');
+import { marked } from 'marked';
 
 class MockHighlightJsService {
   public highlight() {
@@ -32,9 +26,7 @@ describe('The Codesnippet Component', () => {
     TestBed.configureTestingModule({
       imports: [CommonModule, HighlightJsModule],
       declarations: [CodeSnippetComponent],
-      providers: [
-        { provide: HighlightJsService, useClass: MockHighlightJsService },
-      ],
+      providers: [{ provide: HighlightJsService, useClass: MockHighlightJsService }],
     }).compileComponents(); // compile template and css
   }));
 
@@ -54,6 +46,7 @@ describe('The Codesnippet Component', () => {
     expect(el).not.toBeUndefined();
   });
 
+  // fails
   it('marked should compile markdown to html', () => {
     const mdExample = '`some code`';
     const result = marked(mdExample);
@@ -66,6 +59,7 @@ describe('The Codesnippet Component', () => {
       comp.codeSnippet = '`some code`';
     });
 
+    // fails
     it('when processMarkdown is true, the codeSnippet should be processed by marked first', fakeAsync(() => {
       comp.ngOnChanges();
       tick();
