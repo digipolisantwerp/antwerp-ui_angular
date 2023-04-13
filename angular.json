@@ -104,19 +104,14 @@
               "packages/styleguide/src/assets",
               "packages/styleguide/src/404.html"
             ],
-            "styles": [
-              "packages/styleguide/src/styles.scss"
-            ],
+            "styles": ["packages/styleguide/src/styles.scss"],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/styleguide/**/*.ts",
-              "packages/styleguide/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/styleguide/**/*.ts", "packages/styleguide/**/*.html"]
           }
         },
         "e2e": {
@@ -157,10 +152,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-logo/**/*.ts",
-              "packages/ngx-logo/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-logo/**/*.ts", "packages/ngx-logo/**/*.html"]
           }
         }
       }
@@ -189,10 +181,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-layout/**/*.ts",
-              "packages/ngx-layout/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-layout/**/*.ts", "packages/ngx-layout/**/*.html"]
           }
         }
       }
@@ -221,10 +210,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-code-snippet/**/*.ts",
-              "packages/ngx-code-snippet/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-code-snippet/**/*.ts", "packages/ngx-code-snippet/**/*.html"]
           }
         }
       }
@@ -253,10 +239,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-avatar/**/*.ts",
-              "packages/ngx-avatar/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-avatar/**/*.ts", "packages/ngx-avatar/**/*.html"]
           }
         }
       }
@@ -285,10 +268,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-calendar/**/*.ts",
-              "packages/ngx-calendar/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-calendar/**/*.ts", "packages/ngx-calendar/**/*.html"]
           }
         }
       }
@@ -317,10 +297,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-context/**/*.ts",
-              "packages/ngx-context/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-context/**/*.ts", "packages/ngx-context/**/*.html"]
           }
         }
       }
@@ -349,10 +326,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-flyout/**/*.ts",
-              "packages/ngx-flyout/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-flyout/**/*.ts", "packages/ngx-flyout/**/*.html"]
           }
         }
       }
@@ -381,10 +355,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-pagination/**/*.ts",
-              "packages/ngx-pagination/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-pagination/**/*.ts", "packages/ngx-pagination/**/*.html"]
           }
         }
       }
@@ -413,10 +384,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-progress-bar/**/*.ts",
-              "packages/ngx-progress-bar/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-progress-bar/**/*.ts", "packages/ngx-progress-bar/**/*.html"]
           }
         }
       }
@@ -445,10 +413,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-table/**/*.ts",
-              "packages/ngx-table/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-table/**/*.ts", "packages/ngx-table/**/*.html"]
           }
         }
       }
@@ -477,10 +442,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-user-menu/**/*.ts",
-              "packages/ngx-user-menu/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-user-menu/**/*.ts", "packages/ngx-user-menu/**/*.html"]
           }
         }
       }
@@ -509,10 +471,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-selectable-list/**/*.ts",
-              "packages/ngx-selectable-list/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-selectable-list/**/*.ts", "packages/ngx-selectable-list/**/*.html"]
           }
         }
       }
@@ -541,10 +500,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-forms/**/*.ts",
-              "packages/ngx-forms/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-forms/**/*.ts", "packages/ngx-forms/**/*.html"]
           }
         }
       }
@@ -573,10 +529,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-utils/**/*.ts",
-              "packages/ngx-utils/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-utils/**/*.ts", "packages/ngx-utils/**/*.html"]
           }
         }
       }
@@ -605,10 +558,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-leaflet/**/*.ts",
-              "packages/ngx-leaflet/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-leaflet/**/*.ts", "packages/ngx-leaflet/**/*.html"]
           }
         }
       }
@@ -637,10 +587,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-notifications/**/*.ts",
-              "packages/ngx-notifications/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-notifications/**/*.ts", "packages/ngx-notifications/**/*.html"]
           }
         }
       }
@@ -669,19 +616,14 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "packages/ngx-icon/**/*.ts",
-              "packages/ngx-icon/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/ngx-icon/**/*.ts", "packages/ngx-icon/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ],
+    "schematicCollections": ["@angular-eslint/schematics"],
     "analytics": false
   }
 }
