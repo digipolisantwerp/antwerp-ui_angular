@@ -6,8 +6,6 @@
   },
   "allowedNonPeerDependencies": [
     "@acpaas-ui",
-    "@angular-store",
-    "redux",
     "lodash-es"
   ]
 }
