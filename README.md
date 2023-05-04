@@ -160,4 +160,4 @@ Copyright (c) 2016-present, Digipolis
 
 <!-- NPM Version Badge -->
 
-[ngx-components-status]: https://img.shields.io/npm/v/@acpaas-ui/ngx-components.svg.
+[ngx-components-status]: https://img.shields.io/npm/v/@acpaas-ui/ngx-components.svg
