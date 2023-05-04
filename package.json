@@ -98,5 +98,13 @@
     "typescript": "~4.9.4",
     "util": "^0.12.5",
     "webpack-bundle-analyzer": "^4.4.2"
+  },
+  "overrides": {
+    "ngx-toastr": {
+      "@angular/core": "^15.2.3"
+    },
+    "@angular-redux/store": {
+      "@angular/core": "^15.2.3"
+    }
   }
 }
