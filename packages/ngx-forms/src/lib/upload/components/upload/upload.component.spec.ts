@@ -40,6 +40,8 @@ export class UploadZoneComponent {
   @Input() ariaId;
   @Input() disabled = false;
   @Input() multiple;
+  @Input() label;
+  @Input() description;
 }
 
 @Component({
