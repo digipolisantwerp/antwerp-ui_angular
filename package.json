@@ -1,7 +1,7 @@
 {
   "name": "@acpaas-ui/ngx-components",
   "description": "Antwerp UI is a component interface library for building user interfaces and responsive web apps.",
-  "version": "7.0.0-beta.0",
+  "version": "5.4.1",
   "keywords": [
     "Angular",
     "Digipolis",
@@ -17,7 +17,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:all": "node ./scripts/build-all.js",
-    "build:prod": "ng build --configuration production --base-href \"https://digipolisantwerp.github.io/antwerp-ui_angular/\"",
+    "build:prod": "ng build styleguide --configuration production --base-href \"https://digipolisantwerp.github.io/antwerp-ui_angular/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

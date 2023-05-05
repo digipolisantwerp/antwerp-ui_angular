@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-context",
-  "version": "7.0.0-beta.0",
+  "version": "5.4.1",
   "publishConfig": {
     "access": "public"
   },
