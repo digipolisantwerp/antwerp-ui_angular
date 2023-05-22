@@ -3,8 +3,6 @@ import { By } from '@angular/platform-browser';
 import { Component, DebugElement, Directive, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MaskModule } from '../../../mask/mask.module';
-
 import { AutoCompleteComponent } from './auto-complete.component';
 import { SearchService } from '../../../shared/services/search.service';
 
@@ -41,7 +39,7 @@ describe('The Autocomplete Component', () => {
   // waitForAsync beforeEach
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [MaskModule, FormsModule],
+      imports: [FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [MockFlyoutDirective, MockSelectableListComponent, AutoCompleteComponent],
       providers: [{ provide: SearchService, useValue: searchMock }],

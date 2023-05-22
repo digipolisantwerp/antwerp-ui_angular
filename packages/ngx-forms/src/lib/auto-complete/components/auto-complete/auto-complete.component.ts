@@ -38,7 +38,6 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
   @Input() data: any[] = []; // The values to search in when remote search is disabled
   @Input() remote = false; // Disable or enamble remote search
   @Input() minCharacters = 0;
-  @Input() mask: string = null;
   @Input() clearInvalid = false;
   @Input() searchIncentiveText: string;
   @Input() loadingText: string;

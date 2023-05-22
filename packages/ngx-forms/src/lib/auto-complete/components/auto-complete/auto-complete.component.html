@@ -13,27 +13,6 @@
     (keyEscape)="onKeyEscape()"
     [(ngModel)]="query"
     (ngModelChange)="doSearch()"
-    *ngIf="!mask"
-    [disabled]="isDisabled ? true : null"
-    [id]="id"
-    [placeholder]="placeholder"
-    aria-autocomplete="list"
-    auiFlyoutAction
-    auiSelectableActions
-    [autocomplete]="autoComplete"
-    type="text"
-    class="a-input"
-  />
-  <input
-    (focus)="onFocus()"
-    (keyArrowDown)="onKeyArrowDown()"
-    (keyArrowUp)="onKeyArrowUp()"
-    (keyEnter)="onKeyEnter($event)"
-    (keyEscape)="onKeyEscape()"
-    [(ngModel)]="query"
-    (ngModelChange)="doSearch()"
-    *ngIf="mask"
-    [auiMask]="mask"
     [disabled]="isDisabled ? true : null"
     [id]="id"
     [placeholder]="placeholder"

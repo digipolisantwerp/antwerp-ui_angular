@@ -17,7 +17,6 @@ import { UserMenuModule } from '../../../ngx-user-menu/src/public-api';
 import { SelectableListModule } from '../../../ngx-selectable-list/src/public-api';
 import { AutoCompleteModule } from '../../../ngx-forms/src/lib/auto-complete/auto-complete.module';
 import { DatepickerModule } from '../../../ngx-forms/src/lib/datepicker/datepicker.module';
-import { MaskModule } from '../../../ngx-forms/src/lib/mask/mask.module';
 import { RangeSliderModule } from '../../../ngx-forms/src/lib/range-slider/public-api';
 import { SearchFilterModule } from '../../../ngx-forms/src/lib/search-filter/public-api';
 import { TimepickerModule } from '../../../ngx-forms/src/lib/timepicker/public-api';
@@ -54,7 +53,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
       ERRORS_INVALID_DATE: 'Ongeldige datum.',
       ERRORS_INVALID_RANGE: 'Deze datum kan niet gekozen worden.',
     }),
-    MaskModule,
     RangeSliderModule,
     SearchFilterModule,
     TimepickerModule,
@@ -87,7 +85,6 @@ import { NotificationsModule } from '../../../ngx-notifications/src/lib/ngx-noti
     SelectableListModule,
     AutoCompleteModule,
     DatepickerModule,
-    MaskModule,
     RangeSliderModule,
     SearchFilterModule,
     TimepickerModule,

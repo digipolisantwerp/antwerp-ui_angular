@@ -36,10 +36,9 @@ import {
 } from '@acpaas-ui/ngx-calendar';
 
 import {
-  DATEPICKER_DATE_MASK,
+  DATEPICKER_SEPARATOR_CHAR,
   DATEPICKER_DEFAULT_ERROR_LABELS,
   DATEPICKER_ERROR_LABELS,
-  DATEPICKER_SEPARATOR_CHAR,
 } from '../../datepicker.conf';
 import { DatepickerValidationErrors } from '../../types/datepicker.types';
 import { Interval, IntervalBuilder } from '@acpaas-ui/ngx-utils';
@@ -81,7 +80,6 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() blur = new EventEmitter<Event>();
 
-  public dateMask = { mask: DATEPICKER_DATE_MASK, showMaskOnHover: false };
   public formControl: UntypedFormControl;
   public selectedDate: Date;
   public isDisabled = false;
