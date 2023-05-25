@@ -7,7 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-## [7.0.0] - 2023-01-13 - Angular update
+### Fixed
+
+- Use imports instead of require in `ngx-leaflet`
+
+## [6.0.0-beta.0] - 2023-05-10
+
+### Changed
+
+- Update Core branding (6.2.2)
+- Update Angular version (15)
+
+## 2023-01-13 - Angular update
 
 - Ensure that repo is running with Node version 18.
 - Update from 8 to 9 https://update.angular.io/?v=8.2-9.0.
@@ -38,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Remove non-working tests of deprecated components
 
 ### Removed
+
 - Removed `ngx-agenda`
 - Removed `ngx-analytics`
 - Removed `ngx-layout/hero`
@@ -46,12 +58,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Removed `ngx-localstorage`
 - Removed `ngx-navigation-menu`
 
-
 ## [5.4.1] - 2023-01-27
 
 ### Fixed
-- `leaflet`: fixes type conflict with local declaration of 'LatLngExpression'
 
+- `leaflet`: fixes type conflict with local declaration of 'LatLngExpression'
 
 ## [5.4.0] - 2022-11-07
 
@@ -506,7 +517,6 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 ## [1.0.0] - 2018-07-02
 
 Initial release.
-
 
 [Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.4.1...HEAD
 [5.4.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.4.0...v5.4.1
