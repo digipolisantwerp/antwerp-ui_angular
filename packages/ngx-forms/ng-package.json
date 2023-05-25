@@ -4,5 +4,5 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": ["@acpaas-ui", "lodash-es", "ng2-ckeditor"]
+  "allowedNonPeerDependencies": ["@acpaas-ui", "lodash-es"]
 }

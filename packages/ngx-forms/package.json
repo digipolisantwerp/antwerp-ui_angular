@@ -12,8 +12,7 @@
     "@acpaas-ui/ngx-progress-bar": "^6.0.0-beta.0",
     "@acpaas-ui/ngx-selectable-list": "^6.0.0-beta.0",
     "@acpaas-ui/ngx-utils": "^6.0.0-beta.0",
-    "lodash-es": "~4.17.10",
-    "ng2-ckeditor": "~1.2.0"
+    "lodash-es": "~4.17.10"
   },
   "peerDependencies": {
     "@angular/common": ">=15.2.0",
