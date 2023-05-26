@@ -29,4 +29,10 @@ export class UserMenuComponent {
   logout$: EventEmitter<void> = new EventEmitter();
   @Output()
   login$: EventEmitter<void> = new EventEmitter();
+
+  flyoutClassBuilder(direction: UserMenu.direction, flyoutSize: Flyout.EFlyoutSize): string {
+    return `m-user-menu-flyout${direction === 'right' ? ' m-flyout--bottom-right' : ''}${
+      flyoutSize ? ` m-flyout--${flyoutSize[0].toLowerCase()}` : ''
+    }`;
+  }
 }

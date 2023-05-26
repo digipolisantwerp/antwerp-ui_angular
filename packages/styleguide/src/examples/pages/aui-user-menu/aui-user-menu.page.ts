@@ -46,8 +46,8 @@ public loginUser(){
 	alert('User is logged in!');
 }`;
 
-  public useComponentTagSnippet = `<aui-user-menu [user]="userObject" flyoutSize="Medium" [notificationsCount]="100"
-	(logout$)="logoutUser()" (login$)="loginUser()" [translations]="translations">
+  public useComponentTagSnippet = `<aui-user-menu [user]="userObject" flyoutSize="Small" [notificationsCount]="100"
+	(logout$)="logoutUser()" (login$)="loginUser()" [translations]="translations" direction="left">
 	<div class="u-margin-l u-text-center">
 		Your Content Here
 	</div>
