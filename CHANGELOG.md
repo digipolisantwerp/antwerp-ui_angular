@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## 6.0.0-beta.1 - 2023-05-26
+
 ### Fixed
 
 - Use imports instead of require in `ngx-leaflet`
 
-## [6.0.0-beta.0] - 2023-05-10
+
+## 6.0.0-beta.0 - 2023-05-10
 
 ### Changed
 
