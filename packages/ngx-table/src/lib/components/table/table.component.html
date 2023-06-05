@@ -15,7 +15,7 @@
   >
     <thead *ngIf="columns.length > 0">
       <tr>
-        <th *ngFor="let column of columns" [ngClass]="tableHelper.getClass(column)">
+        <th *ngFor="let column of columns" [ngClass]="tableHelper.getClass(column)" class="is-collapsed">
           <ng-container *ngIf="column.headerComponent">
             <aui-table-header
               [component]="column.headerComponent"
@@ -24,14 +24,14 @@
             ></aui-table-header>
           </ng-container>
           <ng-container *ngIf="!column.headerComponent">
-            <ng-container *ngIf="activeSorting">
+            <ng-conftainer *ngIf="activeSorting">
               <button
                 (click)="sort(column, 'asc')"
                 *ngIf="!column.disableSorting && tableHelper.getValue(column) !== activeSorting?.key"
-                class="a-button a-button--s a-button--transparent has-icon-right"
+                class="a-table__sort-button a-table__sort-button--unsorted"
                 type="button"
               >
-                {{ tableHelper.getLabel(column) }} <aui-icon name="ai-expand-vertical-1"></aui-icon>
+                {{ tableHelper.getLabel(column) }}
               </button>
               <button
                 (click)="sort(column, 'asc')"
@@ -40,10 +40,10 @@
                   tableHelper.getValue(column) === activeSorting?.key &&
                   activeSorting?.order === 'desc'
                 "
-                class="a-button a-button--s a-button--transparent has-icon-right"
+                class="a-table__sort-button a-table__sort-button--sorted-desc"
                 type="button"
               >
-                {{ tableHelper.getLabel(column) }} <aui-icon name="ai-keyboard-arrow-up"></aui-icon>
+                {{ tableHelper.getLabel(column) }}
               </button>
               <button
                 (click)="sort(column, 'desc')"
@@ -52,15 +52,15 @@
                   tableHelper.getValue(column) === activeSorting?.key &&
                   activeSorting?.order === 'asc'
                 "
-                class="a-button a-button--s a-button--transparent has-icon-right"
+                class="a-table__sort-button a-table__sort-button--sorted-asc"
                 type="button"
               >
-                {{ tableHelper.getLabel(column) }} <aui-icon name="ai-keyboard-arrow-down"></aui-icon>
+                {{ tableHelper.getLabel(column) }}
               </button>
               <ng-container *ngIf="column.disableSorting">
                 {{ tableHelper.getLabel(column) }}
               </ng-container>
-            </ng-container>
+            </ng-conftainer>
             <ng-container *ngIf="!activeSorting">
               {{ tableHelper.getLabel(column) }}
             </ng-container>
@@ -71,7 +71,14 @@
     <tbody>
       <tr *ngIf="loading">
         <td [colSpan]="columns.length">
-          <div class="table-loading">{{ loadDataMessage }} <span class="a-spinner"></span></div>
+          <div class="table-loading u-text-center">
+            <div class="a-spinner u-margin-top-xx u-margin-bottom-xx" role="alert">
+              <span class="a-spinner__circle"></span>
+            </div>
+            <div>
+              {{ loadDataMessage }}
+            </div>
+          </div>
         </td>
       </tr>
       <tr *ngIf="!loading && columns.length === 0">
