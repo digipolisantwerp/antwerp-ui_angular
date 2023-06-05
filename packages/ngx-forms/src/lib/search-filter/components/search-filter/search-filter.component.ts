@@ -42,6 +42,7 @@ export class SearchFilterComponent implements OnChanges, ControlValueAccessor {
   public filteredChoices: SearchFilterChoice[] = [];
   public loading = false;
   public isDisabled = false;
+  public closeDisabled = false;
 
   public filterDataFromSearch: () => {};
 
@@ -125,6 +126,15 @@ export class SearchFilterComponent implements OnChanges, ControlValueAccessor {
   }
 
   public getSelectedLabels(): string {
-    return this.selectedItems.length ? this.selectedItems.map((el) => el).join(', ') : null;
-  }
+    if (!this.selectedItems.length) {
+      this.closeDisabled = true;
+      return null
+    }
+
+    else {
+      this.closeDisabled = false;
+      return this.selectedItems.map((el) => el).join(', ')
+  }}
+  
+
 }

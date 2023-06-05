@@ -8,7 +8,7 @@
     }"
   >
     <label class="a-input__label" for="{{ id + '-search' }}">{{ label }}</label>
-    <placeholder class="a-input__description" id="{{ id + '-description' }}">{{ description }}</placeholder>
+    <small class="a-input__description" id="{{ id + '-description' }}">{{ description }}</small>
     <div class="m-search-filter__input">
       <input
         (input)="filterDataFromSearch()"
@@ -32,7 +32,7 @@
         aria-label="Zoekopdracht wissen"
         type="button"
         (click)="clear()"
-        [attr.disabled]="isDisabled ? '' : null"
+        [attr.disabled]="isDisabled || closeDisabled ? '' : null"
       >
         <aui-icon name="ai-close"></aui-icon>
       </button>
