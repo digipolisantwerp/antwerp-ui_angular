@@ -8,13 +8,12 @@
     }"
   >
     <label class="a-input__label" for="{{ id + '-search' }}">{{ label }}</label>
-    <small class="a-input__description" id="{{ id + '-description' }}">Input description</small>
+    <placeholder class="a-input__description" id="{{ id + '-description' }}">{{ description }}</placeholder>
     <div class="m-search-filter__input">
       <input
         (input)="filterDataFromSearch()"
         [(ngModel)]="query"
         [attr.aria-labelledby]="id + '-label'"
-        [attr.placeholder]="placeholder"
         [attr.disabled]="isDisabled ? '' : null"
         aria-autocomplete="list"
         id="{{ id + '-search' }}"

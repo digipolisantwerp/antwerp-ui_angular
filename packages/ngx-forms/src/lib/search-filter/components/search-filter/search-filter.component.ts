@@ -30,7 +30,6 @@ export class SearchFilterComponent implements OnChanges, ControlValueAccessor {
   @Input() public labelNoResults = 'Geen resultaten gevonden.';
   @Input() public choices: SearchFilterChoice[] = [];
   @Input() public remote: boolean;
-  @Input() public placeholder = 'Zoeken';
   @Input() public inputDelay = 150;
   @Input() public onSelect: () => void = () => {};
   @Input() public onClear: () => void = () => {};

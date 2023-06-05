@@ -55,7 +55,7 @@ export class AppModule {};`;
 	labelDeselect="Clear stuff"
 	labelResults=""
 	labelNoResults="Couldn't find stuff!"
-	placeholder="Look for stuff"
+	description="Look for stuff"
 	inputDelay="0"
 	[choices]="stuff"
 	[showAllByDefault]="true">
