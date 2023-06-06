@@ -2,10 +2,6 @@
 
 The package creates a custom input component allowing the user to select a date either by input or by picking one in the calendar flyout.
 
-## Dependencies
-
-- `@acpaas-ui/js-date-utils`
-
 ## Usage
 
 ```typescript
@@ -71,7 +67,7 @@ In the example below we use a reactive form.
 ```typescript
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { DateRange } from '@acpaas-ui/js-date-utils';
+import { DateRange } from '@acpaas-ui/ngx-utils';
 
 constructor(private fb: FormBuilder) { }
 

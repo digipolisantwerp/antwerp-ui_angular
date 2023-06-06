@@ -4,7 +4,5 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": [
-    "@acpaas-ui"
-  ]
+  "allowedNonPeerDependencies": ["@acpaas-ui", "date-fns-tz"]
 }

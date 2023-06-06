@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DateGenerator, DateHelper, DateRange, Month } from '@acpaas-ui/js-date-utils';
+import { DateGenerator, DateHelper, DateRange, Month } from '@acpaas-ui/ngx-utils';
 
 import { DateRangeMap } from '../types/calendar.types';
 
@@ -32,7 +32,7 @@ export class CalendarService {
       date.setFullYear(year);
     }
 
-    const generatedMonth = DateGenerator.generateMonth(date, {startOfWeek: 1, padding: true, generatePadding: true});
+    const generatedMonth = DateGenerator.generateMonth(date, { startOfWeek: 1, padding: true, generatePadding: true });
 
     this.months[month] = generatedMonth;
 
@@ -44,11 +44,11 @@ export class CalendarService {
   }
 
   getRangeForDate(date: Date, range: DateRange): number[] {
-    return DateGenerator.generateRange(date, range, {startOfWeek: 1});
+    return DateGenerator.generateRange(date, range, { startOfWeek: 1 });
   }
 
   getRangesForDate(date: Date, range: DateRange): DateRangeMap {
-    const rangeOptions = {startOfWeek: 1};
+    const rangeOptions = { startOfWeek: 1 };
     const before = DateHelper.updateMonth(date, date.getMonth() - 1);
     const after = DateHelper.updateMonth(date, date.getMonth() + 1);
 

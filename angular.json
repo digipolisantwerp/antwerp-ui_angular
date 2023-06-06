@@ -33,6 +33,14 @@
               "./node_modules/leaflet/dist/leaflet.css",
               "./node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
+            "allowedCommonJsDependencies": [
+              "date-fns/format/index.js",
+              "date-fns/_lib/cloneObject/index.js",
+              "date-fns/_lib/getTimezoneOffsetInMilliseconds/index.js",
+              "date-fns/_lib/toInteger/index.js",
+              "angular2-highlight-js",
+              "leaflet"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,

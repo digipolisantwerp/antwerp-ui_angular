@@ -9,7 +9,7 @@ import {
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { DateHelper } from '@acpaas-ui/js-date-utils';
+import { DateHelper } from '@acpaas-ui/ngx-utils';
 
 import { TimepickerInputSize } from '../../types/timepicker.types';
 

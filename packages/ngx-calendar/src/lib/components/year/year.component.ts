@@ -1,7 +1,16 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { chunk, get } from 'lodash-es';
 
-import { DateHelper } from '@acpaas-ui/js-date-utils';
+import { DateHelper } from '@acpaas-ui/ngx-utils';
 
 import { CALENDAR_DEFAULT_MONTH_LABELS, CALENDAR_MONTH_LABELS } from '../../calendar.conf';
 import { MonthLabelsConfig } from '../../types/calendar.types';
@@ -21,10 +30,7 @@ export class CalendarYearComponent implements OnChanges {
   public current = '';
   public months: Array<string[]> = [];
 
-  constructor(
-    @Inject(CALENDAR_MONTH_LABELS) public moduleMonthLabels = CALENDAR_DEFAULT_MONTH_LABELS
-  ) {
-  }
+  constructor(@Inject(CALENDAR_MONTH_LABELS) public moduleMonthLabels = CALENDAR_DEFAULT_MONTH_LABELS) {}
 
   ngOnChanges(changes: SimpleChanges) {
     const currentValue = get(changes, 'activeDate.currentValue');

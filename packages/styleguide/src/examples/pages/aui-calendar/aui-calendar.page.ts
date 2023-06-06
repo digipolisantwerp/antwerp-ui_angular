@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { DateRange } from '@acpaas-ui/js-date-utils';
-import { IntervalBuilder } from '@acpaas-ui/ngx-utils';
+import { DateRange, IntervalBuilder } from '@acpaas-ui/ngx-utils';
 import { addDays } from 'date-fns';
 
 @Component({
@@ -9,8 +8,7 @@ import { addDays } from 'date-fns';
 export class CalendarDemoPage {
   public clickedDate: Date = new Date();
   public range: DateRange = [1, 6];
-  public interval = IntervalBuilder
-    .dateInterval(addDays(new Date(), 1), addDays(new Date(), 3))
+  public interval = IntervalBuilder.dateInterval(addDays(new Date(), 1), addDays(new Date(), 3))
     .closedInterval()
     .build();
 
@@ -38,7 +36,7 @@ export class AppModule {};`;
 
 export class AppModule {};`;
 
-  public javascript3 = `import { DateRange } from '@acpaas-ui/js-date-utils';
+  public javascript3 = `import { DateRange } from '@acpaas-ui/ngx-utils';
 
 public clickedDate: Date = new Date();
 public range: DateRange = [1, 6];
