@@ -16,7 +16,12 @@
             [disabled]="!day.available"
             [ngClass]="{
               'is-faded': !day.date || day.padding,
-              'is-selected': !day.padding && day.date === selectedDay,
+              'is-selected':
+                !day.padding &&
+                selectedDate &&
+                day.date === selectedDay &&
+                selectedDay &&
+                selectedDate.getFullYear() === activeDate.getFullYear(),
               'is-current': !day.padding && day.date === current,
               'is-unavailable': !day.available
             }"
