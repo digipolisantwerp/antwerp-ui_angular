@@ -24,7 +24,7 @@
             ></aui-table-header>
           </ng-container>
           <ng-container *ngIf="!column.headerComponent">
-            <ng-conftainer *ngIf="activeSorting">
+            <ng-container *ngIf="activeSorting">
               <button
                 (click)="sort(column, 'asc')"
                 *ngIf="!column.disableSorting && tableHelper.getValue(column) !== activeSorting?.key"
@@ -60,7 +60,7 @@
               <ng-container *ngIf="column.disableSorting">
                 {{ tableHelper.getLabel(column) }}
               </ng-container>
-            </ng-conftainer>
+            </ng-container>
             <ng-container *ngIf="!activeSorting">
               {{ tableHelper.getLabel(column) }}
             </ng-container>
@@ -71,8 +71,8 @@
     <tbody>
       <tr *ngIf="loading">
         <td [colSpan]="columns.length">
-          <div class="table-loading u-text-center">
-            <div class="a-spinner u-margin-top-xx u-margin-bottom-xx" role="alert">
+          <div class="table-loading u-text-center u-margin-top-3xl u-margin-bottom-3xl">
+            <div class="a-spinner u-margin-bottom-xs" role="alert">
               <span class="a-spinner__circle"></span>
             </div>
             <div>
