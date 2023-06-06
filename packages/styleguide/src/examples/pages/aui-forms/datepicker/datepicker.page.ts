@@ -29,7 +29,7 @@ export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
 export class AppModule {};`;
   public datepickerExampleTypescript = `import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { DateRange } from '@acpaas-ui/js-date-utils';
+import { DateRange } from '@acpaas-ui/ngx-utils';
 import { addWeeks } from 'date-fns'; // date-fns is an external library and can be replaced by a library of your choice
 
 constructor(private fb: FormBuilder) { }

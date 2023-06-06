@@ -7,7 +7,7 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { DateRange } from '@acpaas-ui/js-date-utils';
+import { DateRange } from '@acpaas-ui/ngx-utils';
 import { CalendarModule } from '@acpaas-ui/ngx-calendar';
 import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
 import { IconModule } from '@acpaas-ui/ngx-icon';

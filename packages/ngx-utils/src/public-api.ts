@@ -31,3 +31,31 @@ export { IntervalBuilder } from './lib/interval/classes/interval.builder';
 export { GenericInterval } from './lib/interval/classes/generic.interval';
 export { DateInterval } from './lib/interval/classes/date.interval';
 export { Interval } from './lib/interval/types';
+
+/* 
+DATES 
+*/
+export { default as addLeadingZero } from './lib/date/helpers/addLeadingZero';
+export { default as closestDateForRange } from './lib/date/helpers/closestDateForRange';
+export { default as dateOutOfRange } from './lib/date/helpers/dateOutOfRange';
+export { default as datesAreEqual } from './lib/date/helpers/datesAreEqual';
+export { default as dateValuesAreEqual } from './lib/date/helpers/dateValuesAreEqual';
+export { default as formatDate } from './lib/date/helpers/formatDate';
+export { default as getFirstWeekdayOfMonth } from './lib/date/helpers/getFirstWeekdayOfMonth';
+export { default as getLastWeekdayOfMonth } from './lib/date/helpers/getLastWeekdayOfMonth';
+export { default as getMonthLength } from './lib/date/helpers/getMonthLength';
+export { default as getWeekday } from './lib/date/helpers/getWeekday';
+export { default as parseDate } from './lib/date/helpers/parseDate';
+export { default as updateDate } from './lib/date/helpers/updateDate';
+export { default as updateMonth } from './lib/date/helpers/updateMonth';
+
+export { default as generateMonth } from './lib/date/generators/month';
+export { default as generatePadding } from './lib/date/generators/padding';
+export { default as generateRange } from './lib/date/generators/range';
+export { default as generateWeek } from './lib/date/generators/week';
+
+export { DEFAULT_FORMATTING_OPTIONS } from './lib/date/formatting.const';
+export { default as DateHelper } from './lib/date/datehelper';
+export { default as DateGenerator } from './lib/date/generator';
+
+export { DateRange, Month, Day } from './lib/date/acpaas-ui-js-date-utils';

@@ -1,6 +1,6 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { DateRange } from '@acpaas-ui/js-date-utils';
+import { DateRange } from '@acpaas-ui/ngx-utils';
 
 import { CalendarModule } from '../../calendar.module';
 import { CalendarComponent } from './calendar.component';

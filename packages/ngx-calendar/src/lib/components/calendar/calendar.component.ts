@@ -11,7 +11,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 
-import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
+import { DateHelper, DateRange } from '@acpaas-ui/ngx-utils';
 
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,

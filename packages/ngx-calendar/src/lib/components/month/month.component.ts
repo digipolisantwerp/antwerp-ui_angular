@@ -10,7 +10,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { get } from 'lodash-es';
-import { DateHelper, DateRange, Day, Month } from '@acpaas-ui/js-date-utils';
+import { DateHelper, DateRange, Day, Month } from '@acpaas-ui/ngx-utils';
 import { CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS } from '../../calendar.conf';
 import { CalendarService } from '../../services/calendar.service';
 import { DateRangeMap, WeekdayLabelsConfig } from '../../types/calendar.types';
