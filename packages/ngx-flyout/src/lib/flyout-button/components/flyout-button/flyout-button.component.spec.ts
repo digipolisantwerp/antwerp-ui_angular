@@ -71,7 +71,7 @@ describe('The FlyoutButton Component', () => {
     comp.outline = true;
 
     fixture.detectChanges();
-    expect(el.getElementsByTagName('button')[0].getAttribute('class')).toContain('a-button-outline');
+    expect(el.getElementsByTagName('button')[0].getAttribute('class')).toContain('a-button--outline');
   });
 
   it('should apply the `has-icon` class when no label is present', () => {

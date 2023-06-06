@@ -25,7 +25,7 @@ import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-layout';
       </div>
       <div class="m-modal__footer">
         <button type="button" class="a-button" (click)="submitAndCloseModal()">Close Modal</button>
-        <button type="button" class="a-button a-button-outline" (click)="closeModal()">Cancel</button>
+        <button type="button" class="a-button a-button--outline" (click)="closeModal()">Cancel</button>
       </div>
     </div>
   </div>\`,

@@ -1,6 +1,11 @@
 <header aria-label="Main header" role="banner">
-  <a #skipContent (click)="goToMainContent($event)"
-     class="a-button-negative o-header__button o-header__button-skip" href="#main-content">Skip to main content</a>
+  <a
+    #skipContent
+    (click)="goToMainContent($event)"
+    class="a-button--text o-header__button o-header__button-skip"
+    href="#main-content"
+    >Skip to main content</a
+  >
   <guide-header></guide-header>
   <guide-hero title="Angular core components"></guide-hero>
 </header>
@@ -8,7 +13,12 @@
   <div class="u-main-menu">
     <ul class="a-list a-list--lined a-list--flushed">
       <li class="a-list__item" *ngFor="let package of packages">
-        <a class="a-list__content" *ngIf="!shouldDisplaySubMenu(package)" [routerLink]="[package.path]" routerLinkActive="is-active">
+        <a
+          class="a-list__content"
+          *ngIf="!shouldDisplaySubMenu(package)"
+          [routerLink]="[package.path]"
+          routerLinkActive="is-active"
+        >
           <span class="a-list__text">{{ package.data?.meta?.title }}</span>
         </a>
         <span class="a-list__content" *ngIf="shouldDisplaySubMenu(package)">
@@ -31,9 +41,19 @@
         <div role="alertdialog" aria-labelledby="alert-warning" class="m-alert m-alert--warning u-margin-bottom-l">
           <aui-icon className="m-alert__icon" name="ai-alert-circle"></aui-icon>
           <h4 id="alert-warning" class="h5 u-margin-bottom-xs">Deprecation notice</h4>
-          <p class="u-margin-bottom-xs">As of October 2022 we deprecated the use of Angular as a frontend solution. This means that new frontend solutions should always be built using React.js.</p>
-          <p class="u-margin-bottom-xs">Existing projects can still do a one-time upgrade to the latest version of Angular (and accompanying components), but should migrate, as described in the Digipolis Antwerpen Application Stack (DAAS).</p>
-          <p>Always check <a href="https://digitalehuisstijl.antwerpen.be" rel="external">https://digitalehuisstijl.antwerpen.be</a> for the latest news and guidelines concerning Antwerp's digital branding guidelines.</p>
+          <p class="u-margin-bottom-xs">
+            As of October 2022 we deprecated the use of Angular as a frontend solution. This means that new frontend
+            solutions should always be built using React.js.
+          </p>
+          <p class="u-margin-bottom-xs">
+            Existing projects can still do a one-time upgrade to the latest version of Angular (and accompanying
+            components), but should migrate, as described in the Digipolis Antwerpen Application Stack (DAAS).
+          </p>
+          <p>
+            Always check
+            <a href="https://digitalehuisstijl.antwerpen.be" rel="external">https://digitalehuisstijl.antwerpen.be</a>
+            for the latest news and guidelines concerning Antwerp's digital branding guidelines.
+          </p>
         </div>
       </div>
       <main #mainContent class="col-xs-12" id="main-content" tabindex="-1">

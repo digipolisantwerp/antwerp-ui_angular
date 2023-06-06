@@ -1,9 +1,7 @@
 <div
   (closed)="handleFlyoutChanged(false)"
   (opened)="handleFlyoutChanged(true)"
-  [ngClass]="[
-    align === 'right' ? 'm-flyout--bottom-right' : ''
-  ]"
+  [ngClass]="[align === 'right' ? 'm-flyout--bottom-right' : '']"
   [size]="flyoutSize"
   auiFlyout
 >
@@ -13,7 +11,7 @@
       buttonClassNames[buttonSize],
       icon && label ? 'has-icon-left' : '',
       icon && !label ? 'has-icon' : '',
-      outline ? 'a-button-outline' : 'a-button'
+      outline ? 'a-button--outline' : 'a-button'
     ]"
     auiFlyoutAction
     title="{{ title }}"
