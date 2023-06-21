@@ -5,8 +5,8 @@
     "access": "public"
   },
   "dependencies": {
-    "date-fns-tz": "^2.0.0",
-    "@acpaas-ui/ngx-icon": "^6.0.0"
+    "@acpaas-ui/ngx-icon": "^6.0.0",
+    "date-fns-tz": "^2.0.0"
   },
   "peerDependencies": {
     "@angular/common": ">=15.2.0",
