@@ -5,12 +5,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-calendar": "^6.0.0-beta.0",
-    "@acpaas-ui/ngx-flyout": "^6.0.0-beta.0",
-    "@acpaas-ui/ngx-icon": "^6.0.0-beta.0",
-    "@acpaas-ui/ngx-progress-bar": "^6.0.0-beta.0",
-    "@acpaas-ui/ngx-selectable-list": "^6.0.0-beta.0",
-    "@acpaas-ui/ngx-utils": "^6.0.0-beta.0",
+    "@acpaas-ui/ngx-calendar": "^6.0.0",
+    "@acpaas-ui/ngx-flyout": "^6.0.0",
+    "@acpaas-ui/ngx-icon": "^6.0.0",
+    "@acpaas-ui/ngx-progress-bar": "^6.0.0",
+    "@acpaas-ui/ngx-selectable-list": "^6.0.0",
+    "@acpaas-ui/ngx-utils": "^6.0.0",
     "lodash-es": "~4.17.10"
   },
   "peerDependencies": {

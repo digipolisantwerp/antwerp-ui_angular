@@ -6,7 +6,7 @@
     "@angular/core": "^15.2.0"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-icon": "^6.0.0-beta.0",
+    "@acpaas-ui/ngx-icon": "^6.0.0",
     "ngx-toastr": "^11.3.3"
   },
   "gitHead": "e626d267cd3a71ed35172a1a6d6b41e91c175d84"
