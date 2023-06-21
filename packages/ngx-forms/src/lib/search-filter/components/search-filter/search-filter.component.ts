@@ -9,26 +9,30 @@ import { SearchFilterChoice } from '../../types/search-filter.types';
 @Component({
   selector: 'aui-search-filter',
   templateUrl: './search-filter.component.html',
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => SearchFilterComponent), // tslint:disable-line:no-forward-ref
-    multi: true,
-  }],
+  styleUrls: ['./search-filter.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SearchFilterComponent), // eslint-disable-line @angular-eslint/no-forward-ref
+      multi: true,
+    },
+  ],
 })
-export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAccessor {
+export class SearchFilterComponent implements OnChanges, ControlValueAccessor {
   @Input() public id: string;
   @Input() public name: string;
   @Input() public flyoutSize = FlyoutSize.Small;
   @Input() public flyoutAlign;
-  @Input() public label = 'Filter';
+  @Input() public label: string;
+  @Input() public description: string;
   @Input() public labelDeselect = 'Alles deselecteren';
   @Input() public labelResults = 'Resultaten';
   @Input() public labelNoResults = 'Geen resultaten gevonden.';
   @Input() public choices: SearchFilterChoice[] = [];
   @Input() public remote: boolean;
-  @Input() public placeholder = 'Zoeken';
   @Input() public inputDelay = 150;
-  @Input() public showAllByDefault = false;
+  @Input() public onSelect: () => void = () => {};
+  @Input() public onClear: () => void = () => {};
   @Input() public size: 'large' | 'default' | 'small' | 'tiny' = 'default';
 
   @Output() public search: EventEmitter<string> = new EventEmitter<string>();
@@ -38,6 +42,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   public filteredChoices: SearchFilterChoice[] = [];
   public loading = false;
   public isDisabled = false;
+  public closeDisabled = false;
 
   public filterDataFromSearch: () => {};
 
@@ -45,8 +50,7 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     this.filterDataFromSearch = debounce(this.filterData.bind(this), this.inputDelay);
   }
 
-  public updateModel: (_) => any = () => {
-  }
+  public updateModel: (_) => any = () => {};
 
   public writeValue(value: string[]): void {
     this.selectedItems = Array.isArray(value) ? value : [];
@@ -56,17 +60,10 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     this.updateModel = onChange;
   }
 
-  public registerOnTouched(): void {
-  }
+  public registerOnTouched(): void {}
 
   public setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
-  }
-
-  public ngOnInit(): void {
-    if (this.showAllByDefault) {
-      this.filterData();
-    }
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -97,9 +94,9 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
   public clear(): void {
     this.selectedItems = [];
     this.query = '';
-
     this.filterData();
     this.updateModel(this.selectedItems);
+    this.onClear();
   }
 
   public toggleSelected(choice: string): void {
@@ -108,13 +105,11 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
     if (selected < 0) {
       this.selectedItems = this.selectedItems.concat(choice);
     } else {
-      this.selectedItems = [
-        ...this.selectedItems.slice(0, selected),
-        ...this.selectedItems.slice(selected + 1),
-      ];
+      this.selectedItems = [...this.selectedItems.slice(0, selected), ...this.selectedItems.slice(selected + 1)];
     }
 
     this.updateModel(this.selectedItems);
+    this.onSelect();
   }
 
   private filterChoices(): void {
@@ -125,4 +120,21 @@ export class SearchFilterComponent implements OnInit, OnChanges, ControlValueAcc
       );
     });
   }
+
+  public hasClose(): boolean {
+    return this.filteredChoices?.length && this.query?.length > 1;
+  }
+
+  public getSelectedLabels(): string {
+    if (!this.selectedItems.length) {
+      this.closeDisabled = true;
+      return null
+    }
+
+    else {
+      this.closeDisabled = false;
+      return this.selectedItems.map((el) => el).join(', ')
+  }}
+  
+
 }

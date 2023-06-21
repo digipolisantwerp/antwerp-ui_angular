@@ -1,16 +1,28 @@
 <div class="m-datepicker__nav">
-  <button (click)="updateActiveDate(-1)" [attr.aria-label]="ariaPreviousLabel" class="a-button has-icon" type="button">
-    <aui-icon name="ai-arrow-left-1"></aui-icon>
-  </button>
-  <button (click)="switchView()" class="m-datepicker__title a-button" type="button">
+  <button (click)="switchView()" class="m-datepicker__nav-title" type="button">
     {{ headerLabel | titlecase }}
+    <aui-icon name="ai-arrow-down-1" role="button" tabindex="0" />
   </button>
 
-  <button (click)="updateActiveDate(1)" [attr.aria-label]="ariaNextLabel" class="a-button has-icon" type="button">
-    <aui-icon name="ai-arrow-right-1"></aui-icon>
-  </button>
+  <div class="m-datepicker__nav-pagination">
+    <button
+      (click)="updateActiveDate(-1)"
+      [attr.aria-label]="ariaPreviousLabel"
+      class="a-button a-button--text a-button--primary has-icon"
+      type="button"
+    >
+      <aui-icon name="ai-arrow-left-1"></aui-icon>
+    </button>
+    <button
+      (click)="updateActiveDate(1)"
+      [attr.aria-label]="ariaNextLabel"
+      class="a-button a-button--text a-button--primary has-icon"
+      type="button"
+    >
+      <aui-icon name="ai-arrow-right-1"></aui-icon>
+    </button>
+  </div>
 </div>
-
 <aui-calendar-month
   (selectDate)="pickDate($event)"
   *ngIf="activeView === CALENDAR_VIEW_MONTH"

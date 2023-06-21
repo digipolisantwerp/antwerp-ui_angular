@@ -34,7 +34,7 @@ export class AppModule { }
 In your template:
 ```html
 <aui-user-menu [user]="userObject" flyoutSize="Medium" [notificationsCount]="100" (logout$)="logoutUser()" (login$)="loginUser()" [translations]="translations">
-    <div class="u-margin-lg u-text-center">
+    <div class="u-margin-l u-text-center">
         Your Content Here
     </div>
 </aui-user-menu>

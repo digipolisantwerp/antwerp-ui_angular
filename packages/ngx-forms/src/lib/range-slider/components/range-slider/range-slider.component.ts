@@ -6,13 +6,11 @@ import { RangeSliderRange } from '../../types/range-slider.types';
 @Component({
   selector: 'aui-range-slider',
   templateUrl: './range-slider.component.html',
-  styleUrls: [
-    './range-slider.component.scss',
-  ],
+  styleUrls: ['./range-slider.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => RangeSliderComponent), // tslint:disable-line
+      useExisting: forwardRef(() => RangeSliderComponent), // eslint-disable-line
       multi: true,
     },
   ],
@@ -23,10 +21,13 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   @Input() public max = 100;
   @Input() public minimalDistance = 1;
   @Input() public step = 0;
+  @Input() public label = '';
   @Input() public labelBefore = '';
   @Input() public labelAfter = '';
+  @Input() public ariaLabelMin = 'Minimum';
+  @Input() public ariaLabelMax = 'Maximum';
   public start = 0;
-  public end: (number | boolean) = false;
+  public end: number | boolean = false;
   public steps = [];
   public startPercentage;
   public endPercentage;
@@ -35,15 +36,13 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   public hasFocus = false;
   public click = false;
 
-  constructor(private elRef: ElementRef) {
-  }
+  constructor(private elRef: ElementRef) {}
 
   @HostBinding('class.is-disabled') get disabledClass() {
     return this.isDisabled;
   }
 
-  public propagateChange = (value: number | RangeSliderRange) => {
-  }
+  public propagateChange = (value: number | RangeSliderRange) => {};
 
   public ngOnInit() {
     if (this.step > 0) {
@@ -76,8 +75,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
     }
   }
 
-  public registerOnTouched() {
-  }
+  public registerOnTouched() {}
 
   public registerOnChange(fn) {
     this.propagateChange = fn;
@@ -122,7 +120,11 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
       down: 40,
     };
 
-    if (Object.keys(keyCodes).map(e => keyCodes[e]).indexOf(key) === -1) {
+    if (
+      Object.keys(keyCodes)
+        .map((e) => keyCodes[e])
+        .indexOf(key) === -1
+    ) {
       return;
     }
     let increment = this.minimalDistance;
@@ -132,13 +134,13 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
     }
 
     const processValue = (dir) => {
-      let newValue = (this.active === 'start' ? this.start : Number(this.end));
+      let newValue = this.active === 'start' ? this.start : Number(this.end);
       if (dir === 'up') {
         newValue += increment;
       } else {
         newValue -= increment;
       }
-      let newPercentage = (newValue - this.min) / (this.max - this.min) * 100;
+      let newPercentage = ((newValue - this.min) / (this.max - this.min)) * 100;
 
       if (newPercentage > 100) {
         newPercentage = 100;
@@ -169,7 +171,6 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
         $event.preventDefault();
         break;
     }
-
   }
 
   @HostListener('touchend', ['$event'])
@@ -202,7 +203,8 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
 
     event.preventDefault(); // Do not select text while sliding
 
-    const x = (event as MouseEvent).x !== undefined ? (event as MouseEvent).x : (event as TouchEvent).targetTouches[0].pageX;
+    const x =
+      (event as MouseEvent).x !== undefined ? (event as MouseEvent).x : (event as TouchEvent).targetTouches[0].pageX;
     const rect = this.elRef.nativeElement.getBoundingClientRect();
     const newPercentage = this.calcPercentage(x, rect.width, rect.left);
     this.updateHandle(newPercentage);
@@ -262,7 +264,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   }
 
   public startToPercentage() {
-    return Math.round((this.start - this.min) / (this.max - this.min) * 100);
+    return Math.round(((this.start - this.min) / (this.max - this.min)) * 100);
   }
 
   public percentageToStart() {
@@ -270,7 +272,7 @@ export class RangeSliderComponent implements OnInit, ControlValueAccessor {
   }
 
   public endToPercentage() {
-    return Math.round((Number(this.end) - this.min) / (this.max - this.min) * 100);
+    return Math.round(((Number(this.end) - this.min) / (this.max - this.min)) * 100);
   }
 
   public percentageToEnd() {

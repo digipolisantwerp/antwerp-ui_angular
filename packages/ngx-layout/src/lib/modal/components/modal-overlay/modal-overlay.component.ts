@@ -5,10 +5,10 @@ import { ModalAbstract } from '../../classes/modal.abstract';
 @Component({
   selector: 'aui-modal-overlay',
   template: `
-        <section class="m-overlay__inner">
-            <ng-content></ng-content>
-        </section>
-    `,
+    <section>
+      <ng-content></ng-content>
+    </section>
+  `,
 })
 export class ModalOverlayComponent {
   public mouseDownInsideOverlay: boolean;
@@ -16,10 +16,7 @@ export class ModalOverlayComponent {
   public title = 'Modal';
   private modal: ComponentRef<ModalAbstract>;
 
-  constructor(
-    private ref: ElementRef
-  ) {
-  }
+  constructor(private ref: ElementRef) {}
 
   @HostBinding('class')
   public get overlayClass() {

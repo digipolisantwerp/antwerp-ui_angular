@@ -15,8 +15,14 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ControlValueAccessor, FormBuilder, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { DateHelper, DateRange } from '@acpaas-ui/js-date-utils';
+import {
+  ControlValueAccessor,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
+import { DateHelper, DateRange } from '@acpaas-ui/ngx-utils';
 import { FlyoutDirective } from '@acpaas-ui/ngx-flyout';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
@@ -30,10 +36,9 @@ import {
 } from '@acpaas-ui/ngx-calendar';
 
 import {
-  DATEPICKER_DATE_MASK,
+  DATEPICKER_SEPARATOR_CHAR,
   DATEPICKER_DEFAULT_ERROR_LABELS,
   DATEPICKER_ERROR_LABELS,
-  DATEPICKER_SEPARATOR_CHAR
 } from '../../datepicker.conf';
 import { DatepickerValidationErrors } from '../../types/datepicker.types';
 import { Interval, IntervalBuilder } from '@acpaas-ui/ngx-utils';
@@ -41,25 +46,28 @@ import { Interval, IntervalBuilder } from '@acpaas-ui/ngx-utils';
 @Component({
   selector: 'aui-datepicker',
   templateUrl: './datepicker.component.html',
-  styleUrls: [
-    './datepicker.component.scss',
-  ],
+  styleUrls: ['./datepicker.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => DatepickerComponent), // tslint:disable-line:no-forward-ref
-    multi: true,
-  }, {
-    provide: NG_VALIDATORS,
-    useExisting: forwardRef(() => DatepickerComponent), // tslint:disable-line:no-forward-ref
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DatepickerComponent), // eslint-disable-line @angular-eslint/no-forward-ref
+      multi: true,
+    },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: forwardRef(() => DatepickerComponent), // eslint-disable-line @angular-eslint/no-forward-ref
+      multi: true,
+    },
+  ],
 })
 export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, ControlValueAccessor {
-  @ViewChild(FlyoutDirective, {static: true}) flyout: FlyoutDirective;
+  @ViewChild(FlyoutDirective, { static: true }) flyout: FlyoutDirective;
   @Input() id: string;
   @Input() name: string;
   @Input() placeholder = 'dd/mm/yyyy';
+  @Input() label: string;
+  @Input() description: string;
   @Input() range: DateRange;
   @Input()
   min: Date | null;
@@ -69,10 +77,10 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   @Input() weekdayLabels: WeekdayLabelsConfig;
   @Input() monthLabels: MonthLabelsConfig;
 
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() blur = new EventEmitter<Event>();
 
-  public dateMask = {mask: DATEPICKER_DATE_MASK, showMaskOnHover: false};
-  public formControl: FormControl;
+  public formControl: UntypedFormControl;
   public selectedDate: Date;
   public isDisabled = false;
   public interval: Interval.IInterval<Date>;
@@ -84,41 +92,36 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     @Inject(CALENDAR_WEEKDAY_LABELS) private moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
     @Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
     public calendarService: CalendarService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private ref: ChangeDetectorRef
-  ) {
-  }
+  ) {}
 
   public ngOnInit(): void {
     this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
     this.monthLabels = this.monthLabels || this.moduleMonthLabels;
     this.createInterval();
-    this.formControl = this.formBuilder.control({value: '', disabled: this.isDisabled});
-    this.formControl.valueChanges
-      .pipe(
-        takeUntil(this.componentDestroyed$)
-      )
-      .subscribe((value) => {
-        if (value) {
-          const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
-          const date = DateHelper.parseDate(format, 'yyyy-MM-dd');
-          if (date) {
-            this.selectedDate = date;
-            this.onChange(date.toISOString());
-          } else {
-            // Change value with original value (and not null or '') so we can add an error in the validate function
-            this.onChange(value);
-          }
+    this.formControl = this.formBuilder.control({ value: '', disabled: this.isDisabled });
+    this.formControl.valueChanges.pipe(takeUntil(this.componentDestroyed$)).subscribe((value) => {
+      if (value) {
+        const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
+        const date = DateHelper.parseDate(format, 'yyyy-MM-dd');
+        if (date) {
+          this.selectedDate = date;
+          this.onChange(date.toISOString());
         } else {
-          this.selectedDate = null;
-          this.onChange('');
+          // Change value with original value (and not null or '') so we can add an error in the validate function
+          this.onChange(value);
         }
-      });
+      } else {
+        this.selectedDate = null;
+        this.onChange('');
+      }
+    });
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes.min || changes.max) {
-       this.createInterval();
+      this.createInterval();
     }
   }
 
@@ -132,15 +135,21 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
       return;
     }
     // Create an interval if min/max is filled in
-    this.interval = IntervalBuilder.dateInterval(this.min ? new Date(this.min) : null, this.max ? new Date(this.max) : null)
+    this.interval = IntervalBuilder.dateInterval(
+      this.min ? new Date(this.min) : null,
+      this.max ? new Date(this.max) : null
+    )
       .not()
       .build();
   }
 
   public writeValue(value: string | Date): void {
-    this.selectedDate = typeof value === 'string'
-      ? this.isISODateFormat(value) ? new Date(value) : DateHelper.parseDate(value, 'dd/MM/yyyy')
-      : value;
+    this.selectedDate =
+      typeof value === 'string'
+        ? this.isISODateFormat(value)
+          ? new Date(value)
+          : DateHelper.parseDate(value, 'dd/MM/yyyy')
+        : value;
     const dateString = this.selectedDate ? this.formatDate(this.selectedDate) : '';
     this.formControl.setValue(dateString);
   }
@@ -182,7 +191,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     });
   }
 
-  public validate(ctrl: FormControl): DatepickerValidationErrors {
+  public validate(ctrl: UntypedFormControl): DatepickerValidationErrors {
     // no error on empty value (add required validator in app)
     if (ctrl.value === '' || ctrl.value === null) {
       return null;
@@ -204,9 +213,11 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     // throw error when out of range
     const range = this.calendarService.getRangeForDate(date, this.range);
 
-    return range.indexOf(date.getDate()) >= 0 ? {
-      range: this.errorLabels.ERRORS_INVALID_RANGE,
-    } : null;
+    return range.indexOf(date.getDate()) >= 0
+      ? {
+          range: this.errorLabels.ERRORS_INVALID_RANGE,
+        }
+      : null;
   }
 
   public handleBlur(e: Event): void {

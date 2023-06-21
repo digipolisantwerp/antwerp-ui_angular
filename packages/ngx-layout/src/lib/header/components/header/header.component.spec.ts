@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 
 import { HeaderComponent } from './header.component';
@@ -9,13 +9,12 @@ import { HeaderMenuItemDirective } from '../../directives/menu-item.directive';
 @Component({
   selector: 'aui-test',
   template: `<aui-header>
-		<div auiHeaderLogo>
-			<img src="https://angular.io/assets/images/logos/angular/angular.svg" />
-		</div>
-	</aui-header>`,
+    <div auiHeaderLogo>
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" />
+    </div>
+  </aui-header>`,
 })
-class LogoComponent {
-}
+class LogoComponent {}
 
 describe('The Header Component', () => {
   let comp: HeaderComponent;
@@ -26,19 +25,17 @@ describe('The Header Component', () => {
     return all ? elm.querySelectorAll(query) : elm.querySelector(query);
   }
 
-  // async beforeEach
-  beforeEach(async(() => {
-    TestBed
-      .configureTestingModule({
-        declarations: [
-          HeaderComponent,
-          HeaderLogoDirective,
-          HeaderContentDirective,
-          HeaderMenuItemDirective,
-          LogoComponent,
-        ],
-      })
-      .compileComponents();
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        HeaderComponent,
+        HeaderLogoDirective,
+        HeaderContentDirective,
+        HeaderMenuItemDirective,
+        LogoComponent,
+      ],
+    }).compileComponents();
   }));
 
   describe('Rendering the header component', () => {
@@ -52,7 +49,10 @@ describe('The Header Component', () => {
     });
 
     it('Should not show the content section if no content is provided', () => {
-      expect(fixture.nativeElement.querySelector('.o-header__content').children.length === 0).toBe(true);
+      expect(
+        fixture.nativeElement.querySelector('.o-header__content').children
+          .length === 0
+      ).toBe(true);
     });
   });
 });

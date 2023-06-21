@@ -1,4 +1,4 @@
-// tslint:disable-next-line:no-namespace
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export declare namespace Interval {
   export type IntervalType = 'closed' | 'open' | 'leftopen' | 'rightopen';
   export type IntervalBound = 'bounded' | 'unbounded';

@@ -1,26 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 
 import { CalendarYearComponent } from './year.component';
-import { CALENDAR_DEFAULT_MONTH_LABELS, CALENDAR_MONTH_LABELS } from '../../calendar.conf';
+import {
+  CALENDAR_DEFAULT_MONTH_LABELS,
+  CALENDAR_MONTH_LABELS,
+} from '../../calendar.conf';
 
 @Component({
   selector: 'aui-test',
   template: `
-		<aui-calendar-year
-			[selectedDate]="selectedDate"
-			[activeDate]="activeDate"
-			(selectDate)="selectDate($event)"
-		></aui-calendar-year>
-	`,
+    <aui-calendar-year
+      [selectedDate]="selectedDate"
+      [activeDate]="activeDate"
+      (selectDate)="selectDate($event)"
+    ></aui-calendar-year>
+  `,
 })
 class TestComponent {
   public selectedDate: Date;
   public activeDate: Date;
 
-  selectDate(date) {
-
-  }
+  selectDate(date) {}
 }
 
 describe('The Calendar Year Component', () => {
@@ -30,18 +31,17 @@ describe('The Calendar Year Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TestComponent,
-        CalendarYearComponent,
-      ],
+      declarations: [TestComponent, CalendarYearComponent],
       providers: [
-        {provide: CALENDAR_MONTH_LABELS, useValue: CALENDAR_DEFAULT_MONTH_LABELS},
+        {
+          provide: CALENDAR_MONTH_LABELS,
+          useValue: CALENDAR_DEFAULT_MONTH_LABELS,
+        },
       ],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   // synchronous beforeEach
@@ -57,12 +57,15 @@ describe('The Calendar Year Component', () => {
   });
 
   it('should set the months prop OnChanges', () => {
-    comp.ngOnChanges({monthLabels: true} as any);
+    comp.ngOnChanges({ monthLabels: true } as any);
 
     expect(comp.months).toEqual([
-      CALENDAR_DEFAULT_MONTH_LABELS.slice(0, 4),
-      CALENDAR_DEFAULT_MONTH_LABELS.slice(4, 8),
-      CALENDAR_DEFAULT_MONTH_LABELS.slice(8, 12),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(0, 2),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(2, 4),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(4, 6),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(6, 8),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(8, 10),
+      CALENDAR_DEFAULT_MONTH_LABELS.slice(10, 12),
     ]);
   });
 
@@ -72,7 +75,7 @@ describe('The Calendar Year Component', () => {
 
     fixture.detectChanges();
 
-    const expected = (new Date()).getMonth();
+    const expected = new Date().getMonth();
 
     expect(comp.current).toEqual(CALENDAR_DEFAULT_MONTH_LABELS[expected]);
   });
@@ -82,7 +85,7 @@ describe('The Calendar Year Component', () => {
 
     fixture.detectChanges();
 
-    const expected = (new Date()).getMonth();
+    const expected = new Date().getMonth();
 
     expect(comp.current).toEqual(CALENDAR_DEFAULT_MONTH_LABELS[expected]);
 
@@ -95,7 +98,7 @@ describe('The Calendar Year Component', () => {
     expect(comp.current).toEqual('');
   });
 
-  it('should update the current prop if the activeDates year hasn\'t changed', () => {
+  it('should update the current prop if the activeDates year hasnt changed', () => {
     // set the inital date
     const now = new Date();
     wrapper.activeDate = now;
@@ -142,7 +145,7 @@ describe('The Calendar Year Component', () => {
   it('should emit the selected date', () => {
     const now = new Date();
     wrapper.activeDate = now;
-    comp.ngOnChanges({monthLabels: true} as any);
+    comp.ngOnChanges({ monthLabels: true } as any);
     fixture.detectChanges();
 
     spyOn(wrapper, 'selectDate');

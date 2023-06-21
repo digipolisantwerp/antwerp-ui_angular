@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement, Directive, Input } from '@angular/core';
 import { IconModule } from '@acpaas-ui/ngx-icon';
@@ -17,13 +17,12 @@ class MockFlyoutDirective {
 @Component({
   selector: 'aui-test-component',
   template: `
-        <aui-flyout-button>
-            <div id="test-projection"></div>
-        </aui-flyout-button>
-    `,
+    <aui-flyout-button>
+      <div id="test-projection"></div>
+    </aui-flyout-button>
+  `,
 })
-class TestComponent {
-}
+class TestComponent {}
 
 describe('The FlyoutButton Component', () => {
   let testComp: TestComponent;
@@ -35,17 +34,12 @@ describe('The FlyoutButton Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [IconModule],
-      declarations: [
-        TestComponent,
-        MockFlyoutDirective,
-        FlyoutButtonComponent,
-      ],
-    })
-      .compileComponents();  // compile template and css
+      declarations: [TestComponent, MockFlyoutDirective, FlyoutButtonComponent],
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -70,14 +64,14 @@ describe('The FlyoutButton Component', () => {
     comp.buttonSize = FlyoutButtonSize.Small;
 
     fixture.detectChanges();
-    expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--small');
+    expect(el.querySelector('.a-button').getAttribute('class')).toContain('a-button--s');
   });
 
   it('should have an outline option', () => {
     comp.outline = true;
 
     fixture.detectChanges();
-    expect(el.getElementsByTagName('button')[0].getAttribute('class')).toContain('a-button-outline');
+    expect(el.getElementsByTagName('button')[0].getAttribute('class')).toContain('a-button--outline');
   });
 
   it('should apply the `has-icon` class when no label is present', () => {

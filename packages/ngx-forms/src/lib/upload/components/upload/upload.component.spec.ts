@@ -1,23 +1,33 @@
 import { Component, DebugElement, Input } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { UploadComponent } from './upload.component';
 import { InvalidFile } from '../../types/upload.types';
 
-const mockUploadFiles = [{
-  url: 'http://localhost/myfile.jpg',
-  name: 'myfile',
-}];
+const mockUploadFiles = [
+  {
+    url: 'http://localhost/myfile.jpg',
+    name: 'myfile',
+  },
+];
 
-const mockFile1 = new File(['file1'], 'filename1.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
-const mockFile2 = new File(['file2'], 'filename2.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
+const mockFile1 = new File(['file1'], 'filename1.txt', {
+  type: 'text/plain',
+  lastModified: new Date().getTime(),
+});
+const mockFile2 = new File(['file2'], 'filename2.txt', {
+  type: 'text/plain',
+  lastModified: new Date().getTime(),
+});
 const mockFileList = [mockFile1, mockFile2];
 
-const mockInvalidFiles: InvalidFile[] = [{
-  reasons: ['INVALID_FILE_TYPE'],
-  file: mockFile1,
-}];
+const mockInvalidFiles: InvalidFile[] = [
+  {
+    reasons: ['INVALID_FILE_TYPE'],
+    file: mockFile1,
+  },
+];
 
 @Component({
   selector: 'aui-upload-zone',
@@ -30,6 +40,8 @@ export class UploadZoneComponent {
   @Input() ariaId;
   @Input() disabled = false;
   @Input() multiple;
+  @Input() label;
+  @Input() description;
 }
 
 @Component({
@@ -57,8 +69,8 @@ describe('The Upload Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         UploadComponent,
@@ -66,8 +78,7 @@ describe('The Upload Component', () => {
         UploadQueueComponent,
         ValidationListComponent,
       ],
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -12,13 +12,12 @@ describe('The Avatar Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [IconModule],
       declarations: [AvatarComponent], // declare the test component
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -62,6 +61,6 @@ describe('The Avatar Component', () => {
     comp.size = sizes.L;
 
     fixture.detectChanges();
-    expect(el.getAttribute('class')).toContain('a-avatar--large');
+    expect(el.getAttribute('class')).toContain('a-avatar--l');
   });
 });

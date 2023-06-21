@@ -9,9 +9,7 @@
 </div>
 
 <div class="u-margin-bottom">
-  <div class="m-alert">
-    The TableActionComponent is used for actions in the table
-  </div>
+  <div class="m-alert">The TableActionComponent is used for actions in the table</div>
 </div>
 
 <div class="u-margin-bottom">
@@ -22,13 +20,16 @@
   <aui-code-snippet [codeSnippet]="exampleHTML"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-xx">
+<div class="u-margin-bottom-3xl">
   <aui-table
+    [open]="true"
+    [striped]="true"
     [columns]="columns"
     [loading]="loading"
     [rows]="rows"
     loadDataMessage="Loading..."
     noColumsMessage="There are no columns!"
-    noDataMessage="There is no data!">
+    noDataMessage="There is no data!"
+  >
   </aui-table>
 </div>

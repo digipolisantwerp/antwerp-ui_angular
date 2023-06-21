@@ -7,17 +7,8 @@ import { FlyoutModule } from '../flyout/flyout.module';
 import { FlyoutButtonComponent } from './components/flyout-button/flyout-button.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlyoutModule,
-    IconModule,
-  ],
-  declarations: [
-    FlyoutButtonComponent,
-  ],
-  exports: [
-    FlyoutButtonComponent,
-  ],
+  imports: [CommonModule, FlyoutModule, IconModule],
+  declarations: [FlyoutButtonComponent],
+  exports: [FlyoutButtonComponent],
 })
-export class FlyoutButtonModule {
-}
+export class FlyoutButtonModule {}

@@ -1,53 +1,51 @@
-<div (closed)="onFlyoutClosed()" [toggleClick]="false" aria-haspopup="listbox"
-     auiFlyout class="m-flyout--scrollable m-flyout--full o-auto-complete">
-  <input (focus)="onFocus()"
-         (keyArrowDown)="onKeyArrowDown()"
-         (keyArrowUp)="onKeyArrowUp()"
-         (keyEnter)="onKeyEnter($event)"
-         (keyEscape)="onKeyEscape()"
-         [(ngModel)]="query"
-         (ngModelChange)="doSearch()"
-         *ngIf="!mask"
-         [disabled]="isDisabled ? true : null"
-         [id]="id"
-         [placeholder]="placeholder"
-         aria-autocomplete="list"
-         auiFlyoutAction
-         auiSelectableActions
-         [autocomplete]="autoComplete"
-         type="text"
+<div
+  (closed)="onFlyoutClosed()"
+  [toggleClick]="false"
+  aria-haspopup="listbox"
+  auiFlyout
+  class="m-flyout m-flyout--scrollable m-flyout--full o-auto-complete"
+>
+  <input
+    (focus)="onFocus()"
+    (keyArrowDown)="onKeyArrowDown()"
+    (keyArrowUp)="onKeyArrowUp()"
+    (keyEnter)="onKeyEnter($event)"
+    (keyEscape)="onKeyEscape()"
+    [(ngModel)]="query"
+    (ngModelChange)="doSearch()"
+    [disabled]="isDisabled ? true : null"
+    [id]="id"
+    [placeholder]="placeholder"
+    aria-autocomplete="list"
+    auiFlyoutAction
+    auiSelectableActions
+    [autocomplete]="autoComplete"
+    type="text"
+    class="a-input"
   />
-  <input (focus)="onFocus()"
-         (keyArrowDown)="onKeyArrowDown()"
-         (keyArrowUp)="onKeyArrowUp()"
-         (keyEnter)="onKeyEnter($event)"
-         (keyEscape)="onKeyEscape()"
-         [(ngModel)]="query"
-         (ngModelChange)="doSearch()"
-         *ngIf="mask"
-         [auiMask]="mask"
-         [disabled]="isDisabled ? true : null"
-         [id]="id"
-         [placeholder]="placeholder"
-         aria-autocomplete="list"
-         auiFlyoutAction
-         auiSelectableActions
-         [autocomplete]="autoComplete"
-         type="text"
-  />
-
   <div *ngIf="!isDisabled" auiFlyoutZone>
-		<span *ngIf="focused && loadingText && searching" class="o-auto-complete__info u-text-light u-margin-xs">
-			<span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span>
-      {{ loadingText }}
-		</span>
-    <span *ngIf="focused && searchIncentiveText && !searching && !query && !results.length"
-          class="o-auto-complete__info u-text-light u-margin-xs">{{ searchIncentiveText }}</span>
-    <span *ngIf="focused && noResultsText && !searching && query && !results.length"
-          class="o-auto-complete__info u-text-light u-margin-xs">{{ noResultsText }}</span>
-
-    <aui-selectable-list (selected)="onSelect($event)" *ngIf="results.length > 0 && !(focused && loadingText && searching)" [index]="index" [itemTemplate]="template"
-                         [items]="results" [label]="label"
-                         [search]="query"></aui-selectable-list>
+    <span *ngIf="focused && loadingText && searching" class="a-spinner a-spinner--s u-margin-xs" role="alert">
+      <span class="a-spinner__circle"></span>
+      <span class="a-spinner__text">{{ loadingText }}</span>
+    </span>
+    <span
+      *ngIf="focused && searchIncentiveText && !searching && !query && !results.length"
+      class="o-auto-complete__info u-text-light u-margin-xs"
+      >{{ searchIncentiveText }}</span
+    >
+    <span
+      *ngIf="focused && noResultsText && !searching && query && !results.length"
+      class="o-auto-complete__info u-text-light u-margin-xs"
+      >{{ noResultsText }}</span
+    >
+    <aui-selectable-list
+      (selected)="onSelect($event)"
+      *ngIf="results.length > 0 && !(focused && loadingText && searching)"
+      [index]="index"
+      [itemTemplate]="template"
+      [items]="results"
+      [label]="label"
+      [search]="query"
+    ></aui-selectable-list>
   </div>
 </div>

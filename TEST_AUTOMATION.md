@@ -83,9 +83,6 @@ To help you locate a specific element of a component, we've made an overview of 
 | [Header](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/header) | `o-header` | header | header wrapper |
 | | `o-header__menu-items` | > div | header element wrapper |
 | | `o-header__menu-item` | > > div | header element |
-| [Hero](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/hero) | `o-hero` | div | hero wrapper |
-| | `o-hero__card` | div | hero text wrapper |
-| | `o-hero__cta` | div | call to action wrapper |
 | [Logo](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/logo) | `o-header__logo` | a | logo link |
 | [Map](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/map) | `o-leaflet` | div | map component wrapper |
 | | `o-leaflet__content` | > div | map pane |
@@ -102,8 +99,6 @@ To help you locate a specific element of a component, we've made an overview of 
 | | `m-pagination__next` | > li | element to next page |
 | [Pagination](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/pagination) (items per page) | `aui-items-per-page` | div | pagination wrapper |
 | | *no classname*  | > select | select |
-| [Pane](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/layout/pane) | `m-pane` | div | pane |
-| | `m-overlay` | div | overlay |
 | [Range slider](https://digipolisantwerp.github.io/antwerp-ui_angular/modules/forms/range-slider) | `m-range-slider__inner` | div | range slider selection wrapper |
 | | `m-range-slider__bar` | > div | range slider selection bar |
 | | `m-range-slider__handle` | > span | range slider selection button |

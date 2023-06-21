@@ -1,6 +1,16 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { get } from 'lodash-es';
-import { DateHelper, DateRange, Day, Month } from '@acpaas-ui/js-date-utils';
+import { DateHelper, DateRange, Day, Month } from '@acpaas-ui/ngx-utils';
 import { CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS } from '../../calendar.conf';
 import { CalendarService } from '../../services/calendar.service';
 import { DateRangeMap, WeekdayLabelsConfig } from '../../types/calendar.types';
@@ -27,22 +37,19 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   constructor(
     @Inject(CALENDAR_WEEKDAY_LABELS) private moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
     private calendarService: CalendarService
-  ) {
-  }
+  ) {}
 
   public ngOnInit() {
     this.weekdayLabels = this.weekdayLabels || this.moduleWeekdayLabels;
   }
 
   ngOnChanges(changes: SimpleChanges) {
-
     const selectedDateChanged = this.hasChanged(changes, 'selectedDate');
     const intervalChanged = !!changes.interval && changes.interval.currentValue !== changes.interval.previousValue;
     const activeDateChanged = this.hasChanged(changes, 'activeDate');
-    const monthChanged = activeDateChanged && !DateHelper.datesAreEqual([
-      changes.activeDate.currentValue,
-      changes.activeDate.previousValue,
-    ], 'M');
+    const monthChanged =
+      activeDateChanged &&
+      !DateHelper.datesAreEqual([changes.activeDate.currentValue, changes.activeDate.previousValue], 'M');
     const selectedDayChanged = this.selectedDate && this.activeDate.getMonth() === this.selectedDate.getMonth();
 
     this.current = this.getCurrentDate();
@@ -57,27 +64,30 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     }
 
     const range: DateRangeMap | null = this.calendarService.getRangesForDate(this.activeDate, this.range);
-    this.dates = newDates.map(week => week.map(day => {
-      const currentDate = new Date();
-      this.activeDate.setHours(currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds());
-      const date: Date = new Date(this.activeDate);
+    this.dates = newDates.map((week) =>
+      week.map((day) => {
+        const currentDate = new Date();
+        this.activeDate.setHours(currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds());
+        const date: Date = new Date(this.activeDate);
 
-      if (day.padding) {
-        if (day.date > 20) {
-          date.setMonth(this.activeDate.getMonth() - 1);
-        } else {
-          date.setMonth(this.activeDate.getMonth() + 1);
+        if (day.padding) {
+          if (day.date > 20) {
+            date.setMonth(this.activeDate.getMonth() - 1);
+          } else {
+            date.setMonth(this.activeDate.getMonth() + 1);
+          }
         }
-      }
 
-      date.setDate(day.date);
+        date.setDate(day.date);
 
-      const available: boolean = this.dayIsAvailableForRange(day, range) && (this.interval ? !this.interval.isInRange(date) : true);
-      return {
-        ...day,
-        available
-      };
-    }));
+        const available: boolean =
+          this.dayIsAvailableForRange(day, range) && (this.interval ? !this.interval.isInRange(date) : true);
+        return {
+          ...day,
+          available,
+        };
+      })
+    );
   }
 
   pickDate(event: MouseEvent, day: Day): void {
@@ -104,10 +114,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
 
   private getCurrentDate(): number {
     const current = new Date();
-    const monthHasChanged = !DateHelper.datesAreEqual(
-      [this.activeDate, current],
-      ['M', 'Y']
-    );
+    const monthHasChanged = !DateHelper.datesAreEqual([this.activeDate, current], ['M', 'Y']);
 
     return monthHasChanged ? -1 : current.getDate();
   }

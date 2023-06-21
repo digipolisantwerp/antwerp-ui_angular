@@ -1,5 +1,10 @@
 import { Inject, ModuleWithProviders, NgModule } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { CONTEXT_CONFIG, CONTEXT_CONFIG_DEFAULT } from './context.conf';
 import { ContextService } from './services/context.service';
@@ -8,13 +13,11 @@ import { ContextConfig } from './types/context.types';
 import { RouterHelper } from './utils/router.helper';
 
 @NgModule({
-  imports: [
-    RouterModule,
-  ],
+  imports: [RouterModule],
   providers: [
     ContextService,
     ContextWriterService,
-    {provide: CONTEXT_CONFIG, useValue: CONTEXT_CONFIG_DEFAULT},
+    { provide: CONTEXT_CONFIG, useValue: CONTEXT_CONFIG_DEFAULT },
   ],
 })
 export class ContextModule {
@@ -26,7 +29,7 @@ export class ContextModule {
     @Inject(CONTEXT_CONFIG) private contextConfig: ContextConfig
   ) {
     if (!contextConfig.routerContext && contextConfig.defaults) {
-      Object.keys(contextConfig.defaults).forEach(key => {
+      Object.keys(contextConfig.defaults).forEach((key) => {
         this.contextWriterService.setTag(key, contextConfig.defaults);
       });
       return;
@@ -34,7 +37,7 @@ export class ContextModule {
 
     this.router.events
       .pipe(
-        filter(event => (event instanceof NavigationEnd)),
+        filter((event) => event instanceof NavigationEnd),
         map(() => RouterHelper.findLastChild(this.activatedRoute))
       )
       .subscribe((route: any) => {
@@ -46,11 +49,11 @@ export class ContextModule {
       });
   }
 
-  static forRoot(metaConfig: ContextConfig): ModuleWithProviders {
+  static forRoot(metaConfig: ContextConfig): ModuleWithProviders<any> {
     return {
       ngModule: ContextModule,
       providers: [
-        {provide: CONTEXT_CONFIG, useValue: metaConfig},
+        { provide: CONTEXT_CONFIG, useValue: metaConfig },
         ContextService,
         ContextWriterService,
       ],

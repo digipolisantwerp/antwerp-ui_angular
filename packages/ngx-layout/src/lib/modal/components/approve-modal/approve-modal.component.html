@@ -1,17 +1,21 @@
 <div [attr.aria-describedby]="descId" [attr.aria-labelledby]="titleId" aria-modal="true" class="m-modal" role="dialog">
   <div class="m-modal__content">
-    <div class="m-modal__header u-margin-bottom-xs">
-      <button (click)="close()" class="m-modal__close a-button-transparent a-button--default has-icon" type="button">
+    <div class="m-modal__header u-margin-bottom-xs" #titleContainer>
+      <button
+        (click)="close()"
+        class="m-modal__close a-button a-button--text a-button--neutral has-icon"
+        type="button"
+        [attr.aria-label]="modalData.closeButtonAriaLabel || closeButtonAriaLabel"
+      >
         <aui-icon name="ai-close" [ariaLabel]="modalData.reject"></aui-icon>
       </button>
-      <h4 [id]="titleId">{{ modalData.question }}</h4>
     </div>
     <div class="u-margin-bottom">
       <p [id]="descId">{{ modalData.description }}</p>
     </div>
     <div class="m-modal__footer">
-      <button (click)="close()" class="a-button a-button" type="button">{{ modalData.reject }}</button>
-      <button (click)="submit()" class="a-button-outline" type="button">{{ modalData.approve }}</button>
+      <button (click)="close()" class="a-button" type="button">{{ modalData.reject }}</button>
+      <button (click)="submit()" class="a-button a-button--outlined" type="button">{{ modalData.approve }}</button>
     </div>
   </div>
 </div>

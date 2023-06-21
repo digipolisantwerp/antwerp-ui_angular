@@ -13,12 +13,7 @@ import { ValidationListComponent } from './components/validation-list/validation
 import { ValidationMessagesService } from './services/validation-messages.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ProgressBarModule,
-    FormsModule,
-    IconModule,
-  ],
+  imports: [CommonModule, ProgressBarModule, FormsModule, IconModule],
   declarations: [
     UploadComponent,
     UploadInputComponent,
@@ -26,27 +21,14 @@ import { ValidationMessagesService } from './services/validation-messages.servic
     UploadZoneComponent,
     ValidationListComponent,
   ],
-  exports: [
-    UploadComponent,
-    UploadInputComponent,
-    UploadQueueComponent,
-    UploadZoneComponent,
-    ValidationListComponent,
-  ],
-  providers: [
-    ValidationMessagesService,
-    {provide: UPLOAD_VALIDATION_MESSAGES, useValue: {}},
-  ],
+  exports: [UploadComponent, UploadInputComponent, UploadQueueComponent, UploadZoneComponent, ValidationListComponent],
+  providers: [ValidationMessagesService, { provide: UPLOAD_VALIDATION_MESSAGES, useValue: {} }],
 })
 export class UploadModule {
-  static forChild(
-    validationMessages: ValidationMessages = {}
-  ): ModuleWithProviders {
+  static forChild(validationMessages: ValidationMessages = {}): ModuleWithProviders<any> {
     return {
       ngModule: UploadModule,
-      providers: [
-        {provide: UPLOAD_VALIDATION_MESSAGES, useValue: validationMessages},
-      ],
+      providers: [{ provide: UPLOAD_VALIDATION_MESSAGES, useValue: validationMessages }],
     };
   }
 }

@@ -1,5 +1,5 @@
 import { Component, DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ModalOverlayComponent } from './modal-overlay.component';
 
@@ -8,25 +8,24 @@ const getByCSSQuery = (query, elm, all?) => {
 };
 
 const mousedown = (element) => {
-  element.dispatchEvent(new MouseEvent('mousedown', {bubbles: true}));
+  element.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
 };
 const mouseup = (element) => {
-  element.dispatchEvent(new MouseEvent('mouseup', {bubbles: true}));
+  element.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
 };
 
 @Component({
   selector: 'aui-test',
   template: `
-        <aui-modal-overlay>
-            <div class="m-modal">
-                <span id="insideModal"></span>
-            </div>
-            <span id="outsideModal"></span>
-        </aui-modal-overlay>
-    `,
+    <aui-modal-overlay>
+      <div class="m-modal">
+        <span id="insideModal"></span>
+      </div>
+      <span id="outsideModal"></span>
+    </aui-modal-overlay>
+  `,
 })
-class TestComponent {
-}
+class TestComponent {}
 
 const modalMock = {
   instance: {
@@ -41,15 +40,11 @@ describe('Modal - ModalOverlayComponent', () => {
   let overlay: ModalOverlayComponent;
   let outsideModalElement: DebugElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ModalOverlayComponent,
-        TestComponent,
-      ],
-    })
-      .compileComponents();
+      declarations: [ModalOverlayComponent, TestComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -74,7 +69,6 @@ describe('Modal - ModalOverlayComponent', () => {
   });
 
   it('should do nothing if the modal inside the overlay is clicked', () => {
-
     const insideModal = getByCSSQuery('#insideModal', de.nativeElement);
     const modal = getByCSSQuery('.m-modal', de.nativeElement);
 
@@ -119,5 +113,4 @@ describe('Modal - ModalOverlayComponent', () => {
 
     expect(modalMock.instance.closeModal).not.toHaveBeenCalled();
   });
-
 });

@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
-import { async, inject, TestBed } from '@angular/core/testing';
+import { waitForAsync, inject, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { combineReducers, createStore, Store } from 'redux';
@@ -13,14 +13,12 @@ import { contextReducer } from './store/context/context.reducer';
 @Component({
   template: '<router-outlet></router-outlet>',
 })
-class AppComponent {
-}
+class AppComponent {}
 
 @Component({
   template: '<h1>Home</h1><router-outlet></router-outlet>',
 })
-class HomeComponent {
-}
+class HomeComponent {}
 
 const routes = [
   {
@@ -34,16 +32,18 @@ const routes = [
         metatags: 'Angular2, meta, seo',
       },
     },
-    children: [{
-      path: 'child',
-      component: HomeComponent,
-      data: {
-        meta: {
-          page: 'child',
-          title: 'Child page',
+    children: [
+      {
+        path: 'child',
+        component: HomeComponent,
+        data: {
+          meta: {
+            page: 'child',
+            title: 'Child page',
+          },
         },
       },
-    }],
+    ],
   },
   {
     path: 'empty',
@@ -58,10 +58,7 @@ export const store: Store<any> = createStore(
 );
 
 @NgModule({
-  imports: [
-    NgReduxModule,
-    ContextModule,
-  ],
+  imports: [NgReduxModule, ContextModule],
 })
 class AppModule {
   constructor(ngRedux: NgRedux<any>) {
@@ -70,40 +67,36 @@ class AppModule {
 }
 
 describe('The Context Service', () => {
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      providers: [
-        ContextActionCreator,
-      ],
+      providers: [ContextActionCreator],
       imports: [
         ContextModule,
         RouterTestingModule.withRoutes(routes),
         AppModule,
       ],
-      declarations: [
-        AppComponent,
-        HomeComponent,
-      ],
+      declarations: [AppComponent, HomeComponent],
     }).compileComponents();
 
     const fixture = TestBed.createComponent(AppComponent);
   }));
 
-  it('should select tags from router config', async(inject(
-    [Router, ContextService],
-    (router: Router, contextService: ContextService) => {
-      router.navigate(['/home']).then(() => {
-        contextService.context$.subscribe((value) => {
-          expect(value.title).toBe('Home page');
+  it('should select tags from router config', waitForAsync(
+    inject(
+      [Router, ContextService],
+      (router: Router, contextService: ContextService) => {
+        router.navigate(['/home']).then(() => {
+          contextService.context$.subscribe((value) => {
+            expect(value.title).toBe('Home page');
+          });
         });
-      });
-    }
-  )));
+      }
+    )
+  ));
 
-  it(
-    'should provide defaults if no route data or metadata was found',
-    async(inject(
+  it('should provide defaults if no route data or metadata was found', waitForAsync(
+    inject(
       [Router, ContextService],
       (router: Router, contextService: ContextService) => {
         spyOn(contextService, 'updateContext').and.stub();
@@ -114,12 +107,11 @@ describe('The Context Service', () => {
           });
         });
       }
-    ))
-  );
+    )
+  ));
 
-  it(
-    'should update the parent titles if it is a child route',
-    async(inject(
+  it('should update the parent titles if it is a child route', waitForAsync(
+    inject(
       [Router, ContextService],
       (router: Router, contextService: ContextService) => {
         spyOn(contextService, 'updateContext').and.stub();
@@ -132,6 +124,6 @@ describe('The Context Service', () => {
           });
         });
       }
-    ))
-  );
+    )
+  ));
 });

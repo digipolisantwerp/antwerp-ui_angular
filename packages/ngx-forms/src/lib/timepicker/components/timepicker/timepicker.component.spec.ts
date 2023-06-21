@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
@@ -8,19 +8,13 @@ describe('The Timepicker Component', () => {
   let comp: TimepickerComponent;
   let fixture: ComponentFixture<TimepickerComponent>;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        ReactiveFormsModule,
-        IconModule,
-      ],
-      declarations: [
-        TimepickerComponent,
-      ],
+      imports: [ReactiveFormsModule, IconModule],
+      declarations: [TimepickerComponent],
       providers: [],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   // synchronous beforeEach
@@ -28,14 +22,99 @@ describe('The Timepicker Component', () => {
     fixture = TestBed.createComponent(TimepickerComponent);
     comp = fixture.componentInstance;
     comp.ngOnInit();
-    comp.registerOnChange((model) => {
-    });
+    comp.registerOnChange((model) => {});
   });
 
   describe('init', () => {
     it('should calc hours and minutes for fallback timepicker', () => {
-      expect(comp.hours).toEqual(['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']); // tslint:disable-line:max-line-length
-      expect(comp.minutes).toEqual(['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59']); // tslint:disable-line:max-line-length
+      expect(comp.hours).toEqual([
+        '00',
+        '01',
+        '02',
+        '03',
+        '04',
+        '05',
+        '06',
+        '07',
+        '08',
+        '09',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14',
+        '15',
+        '16',
+        '17',
+        '18',
+        '19',
+        '20',
+        '21',
+        '22',
+        '23',
+      ]); // eslint-disable-line max-len
+      expect(comp.minutes).toEqual([
+        '00',
+        '01',
+        '02',
+        '03',
+        '04',
+        '05',
+        '06',
+        '07',
+        '08',
+        '09',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14',
+        '15',
+        '16',
+        '17',
+        '18',
+        '19',
+        '20',
+        '21',
+        '22',
+        '23',
+        '24',
+        '25',
+        '26',
+        '27',
+        '28',
+        '29',
+        '30',
+        '31',
+        '32',
+        '33',
+        '34',
+        '35',
+        '36',
+        '37',
+        '38',
+        '39',
+        '40',
+        '41',
+        '42',
+        '43',
+        '44',
+        '45',
+        '46',
+        '47',
+        '48',
+        '49',
+        '50',
+        '51',
+        '52',
+        '53',
+        '54',
+        '55',
+        '56',
+        '57',
+        '58',
+        '59',
+      ]); // eslint-disable-line max-len
     });
   });
 
@@ -69,7 +148,7 @@ describe('The Timepicker Component', () => {
 
     it('should write value to fallback control', () => {
       comp.writeValue('20:30');
-      expect(comp.fallbackForm.value).toEqual({hours: '20', minutes: '30'});
+      expect(comp.fallbackForm.value).toEqual({ hours: '20', minutes: '30' });
     });
 
     it('should update model if value changes', () => {

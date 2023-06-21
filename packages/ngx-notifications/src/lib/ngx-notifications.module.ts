@@ -6,20 +6,17 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  entryComponents: [
-    NotificationComponent
-  ],
-  declarations: [
-    NotificationComponent,
-  ],
-  imports: [
-    CommonModule,
-    IconModule,
-    ToastrModule.forRoot({
-      toastComponent: NotificationComponent,
-      closeButton: true
-    })
-  ]
+    declarations: [
+        NotificationComponent,
+    ],
+    imports: [
+        CommonModule,
+        IconModule,
+        ToastrModule.forRoot({
+            toastComponent: NotificationComponent,
+            closeButton: true
+        })
+    ]
 })
 export class NotificationsModule {
 }

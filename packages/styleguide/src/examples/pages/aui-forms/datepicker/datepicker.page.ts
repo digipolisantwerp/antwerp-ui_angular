@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { addWeeks } from 'date-fns';
@@ -8,7 +8,7 @@ import { addWeeks } from 'date-fns';
   templateUrl: './datepicker.page.html',
 })
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
-  public dateForm: FormGroup;
+  public dateForm: UntypedFormGroup;
   public min = new Date();
   public max = addWeeks(new Date(), 2);
   public datepickerImportExample = `import { DatepickerModule } from '@acpaas-ui/ngx-forms';
@@ -29,7 +29,7 @@ export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
 export class AppModule {};`;
   public datepickerExampleTypescript = `import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { DateRange } from '@acpaas-ui/js-date-utils';
+import { DateRange } from '@acpaas-ui/ngx-utils';
 import { addWeeks } from 'date-fns'; // date-fns is an external library and can be replaced by a library of your choice
 
 constructor(private fb: FormBuilder) { }
@@ -49,6 +49,8 @@ this.dateForm = this.fb.group({
 			data-id="input-datepicker"
 			name="input-datepicker"
 			autocomplete="off"
+      label="Pick date"
+      description="description"
 			placeholder="dd/mm/jjjj"
 			formControlName="inputDate"
 			[min]="min"
@@ -62,8 +64,7 @@ this.dateForm = this.fb.group({
 </form>`;
   private destroyed$ = new Subject<boolean>();
 
-  constructor(private fb: FormBuilder) {
-  }
+  constructor(private fb: UntypedFormBuilder) {}
 
   public ngOnInit() {
     this.dateForm = this.fb.group({
@@ -71,10 +72,9 @@ this.dateForm = this.fb.group({
       isDisabled: false,
     });
 
-    this.dateForm.get('isDisabled').valueChanges
-      .pipe(
-        takeUntil(this.destroyed$),
-      )
+    this.dateForm
+      .get('isDisabled')
+      .valueChanges.pipe(takeUntil(this.destroyed$))
       .subscribe((isDisabled: boolean) => {
         if (isDisabled) {
           this.dateForm.get('inputDate').disable();

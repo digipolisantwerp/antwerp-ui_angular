@@ -16,10 +16,10 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 
 #### Component
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() hasLogo: Boolean;` | `false` | Whether there is a logo or not in the header. Also sets the `has-logo` class. |
-| `@Input() hasContent: Boolean;` | `false` | Whether there is content or not in the header. |
+| Name                            | Default value | Description                                                                   |
+| ------------------------------- | ------------- | ----------------------------------------------------------------------------- |
+| `@Input() hasLogo: Boolean;`    | `false`       | Whether there is a logo or not in the header. Also sets the `has-logo` class. |
+| `@Input() hasContent: Boolean;` | `false`       | Whether there is content or not in the header.                                |
 
 #### Available directives
 
@@ -47,15 +47,18 @@ export class AppModule {};
 
 ```html
 <aui-header>
-    <div auiHeaderLogo>
-        <aui-logo title="Antwerp logo." src="./assets/a-logo.svg" [link]="'/'"></aui-logo>
-    </div>
-    <div auiHeaderContent><!-- Optional --></div>
-    <div auiHeaderMenuItem>
-        <a href="http://github.com/digipolisantwerp/antwerp-ui_angular" class="a-button-negative o-header__button has-icon-left">
-            <aui-icon name="ai-developer-community-github-1"></aui-icon>GitHub
-        </a>
-    </div>
+  <div auiHeaderLogo>
+    <aui-logo title="Antwerp logo." src="./assets/a-logo.svg" [link]="'/'"></aui-logo>
+  </div>
+  <div auiHeaderContent><!-- Optional --></div>
+  <div auiHeaderMenuItem>
+    <a
+      href="http://github.com/digipolisantwerp/antwerp-ui_angular"
+      class="a-button--text o-header__button has-icon-left"
+    >
+      <aui-icon name="ai-developer-community-github-1"></aui-icon>GitHub
+    </a>
+  </div>
 </aui-header>
 ```
 

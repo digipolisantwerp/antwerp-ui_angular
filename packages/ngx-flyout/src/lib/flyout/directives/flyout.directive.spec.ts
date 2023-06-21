@@ -1,4 +1,4 @@
-import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -20,21 +20,21 @@ class MockFlyoutService {
 
 @Component({
   selector: 'aui-app',
-  template: `<div class="dummyElement"></div><div auiFlyout></div>`,
+  template: `<div class="dummyElement"></div>
+    <div auiFlyout></div>`,
 })
-class FlyoutComponent {
-}
+class FlyoutComponent {}
 
 @Component({
   selector: 'aui-app',
   template: `<div class="dummyElement"></div>
-               <div auiFlyout #auiFlyout="auiFlyout">
-                    <div auiFlyoutZone><div class="inZone"></div></div>
-                </div>`,
+    <div auiFlyout #auiFlyout="auiFlyout">
+      <div auiFlyoutZone><div class="inZone"></div></div>
+    </div>`,
 })
 class FlyoutWithZoneComponent {
   // Access directive
-  @ViewChild('auiFlyout', {static: true}) element;
+  @ViewChild('auiFlyout', { static: true }) element;
 }
 
 describe('Flyout directive with flyout zone', () => {
@@ -43,16 +43,10 @@ describe('Flyout directive with flyout zone', () => {
   let componentDebugElement: DebugElement;
   let flyout: FlyoutDirective;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutDirective,
-        FlyoutWithZoneComponent,
-        FlyoutZoneDirective,
-      ],
-      providers: [
-        {provide: FlyoutService, useClass: MockFlyoutService},
-      ],
+      declarations: [FlyoutDirective, FlyoutWithZoneComponent, FlyoutZoneDirective],
+      providers: [{ provide: FlyoutService, useClass: MockFlyoutService }],
     });
 
     TestBed.compileComponents();
@@ -80,15 +74,10 @@ describe('Flyout directive without flyout zone', () => {
   let componentDebugElement: DebugElement;
   let componentElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutDirective,
-        FlyoutComponent,
-      ],
-      providers: [
-        {provide: FlyoutService, useClass: MockFlyoutService},
-      ],
+      declarations: [FlyoutDirective, FlyoutComponent],
+      providers: [{ provide: FlyoutService, useClass: MockFlyoutService }],
     });
 
     TestBed.compileComponents();
@@ -111,7 +100,6 @@ describe('Flyout directive without flyout zone', () => {
 
     expect(componentElement.className).not.toContain('is-open');
     expect(flyout.isOpened).toBeFalsy();
-
   });
 
   it('should not be in closable zone', () => {

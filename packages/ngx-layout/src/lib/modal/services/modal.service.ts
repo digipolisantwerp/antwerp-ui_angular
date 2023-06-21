@@ -9,24 +9,23 @@ import { ModalOverlayComponent } from '../components/modal-overlay/modal-overlay
 export class ModalService {
   public activeModals: ModalRef[] = [];
 
-  constructor(
-    private injector: Injector,
-    private resolver: ComponentFactoryResolver,
-    private appRef: ApplicationRef
-  ) {
-  }
+  constructor(private injector: Injector, private resolver: ComponentFactoryResolver, private appRef: ApplicationRef) {}
 
-  public openModal(template: Type<ModalAbstract>, modalData?: any, actions?: ModalActions, options: ModalOptions = {}): any {
+  public openModal(
+    template: Type<ModalAbstract>,
+    modalData?: any,
+    actions?: ModalActions,
+    options: ModalOptions = {}
+  ): any {
     const modal = this.createRef(template);
     modal.instance.ref = modal;
     modal.instance.modalData = cloneDeep(modalData);
     modal.instance.modalActions = actions;
 
-    const overlay = this.createRef(ModalOverlayComponent, [
-      [modal.location.nativeElement],
-    ]);
+    const overlay = this.createRef(ModalOverlayComponent, [[modal.location.nativeElement]]);
     overlay.instance.modal = modal;
-    overlay.instance.title = (modal.instance.modalData && modal.instance.modalData.title) ? modal.instance.modalData.title : 'Modal';
+    overlay.instance.title =
+      modal.instance.modalData && modal.instance.modalData.title ? modal.instance.modalData.title : 'Modal';
     overlay.instance.theme = options.theme || 'dark';
 
     this.activeModals.push({

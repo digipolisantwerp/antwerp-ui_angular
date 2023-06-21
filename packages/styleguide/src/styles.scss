@@ -1,4 +1,4 @@
-@import '~@a-ui/core/dist/assets/styles/quarks';
+@import '@a-ui/core/dist/assets/styles/quarks';
 
 /* Need to be included in core branding */
 body {
@@ -13,14 +13,15 @@ app-root {
   max-width: 100%;
 }
 
+.u-main
 main {
   &:focus {
     outline: none;
   }
+}
 
-  &#main-content > ng-component {
-    width: 100%;
-  }
+#main-content > ng-component {
+  width: 100%;
 }
 
 .p-antwerp-ui {
@@ -29,37 +30,11 @@ main {
 }
 
 .a-pre.hljs {
-  border: 1px solid $grey-lighter;
-}
-
-.m-pane--left {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  left: 0;
-  position: fixed !important;
-  top: 0;
-}
-
-.m-overlay__pane {
-  position: fixed !important;
+  border: 1px solid $gray-100;
 }
 
 .m-button-group--inline {
   display: inline-flex;
-}
-
-.m-sidebar {
-  @include to($screen-xs-max) {
-    background-color: $background-color-light;
-    margin-bottom: $spacer;
-    max-height: 15.75rem;
-    overflow: auto;
-    padding-left: $spacer;
-    padding-right: $spacer;
-    width: auto;
-  }
 }
 
 .u-show-on-mobile {
@@ -89,23 +64,25 @@ pre {
 }
 
 .aui-footer {
-  background: $black;
+  background: $gray-600;
 
   .u-container {
-    padding-top: $spacer-lg;
-    padding-bottom: $spacer-md;
+    padding-bottom: $spacer;
+    padding-top: $spacer;
   }
 
-  &,
-  a,
-  a:hover,
-  a:active,
-  a:focus {
-    color: $white;
+  .a-list {
+    list-style: none;
+    padding-left: 0;
+
+    a {
+      --link-color: #{$white};
+      --link-hover-color: var(--theme1-050);
+    }
   }
 
-  h3.h5 {
-    color: $grey-lighter;
+  h3.h4 {
+    color: $gray-100;
   }
 }
 
@@ -123,11 +100,16 @@ pre {
 }
 
 .o-leaflet__map:focus {
-  box-shadow: 0 0 0 3px $input-border-focus;
+  box-shadow: 0 0 0 3px Highlight;
+  box-shadow: 0 0 0 3px -webkit-focus-ring-color;
 }
 
 .p-fix-position {
   .o-header__logo {
     position: static;
   }
+}
+
+.u-datepicker {
+  margin-bottom: 15rem;
 }

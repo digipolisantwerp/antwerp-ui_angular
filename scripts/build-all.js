@@ -25,7 +25,6 @@ const BUILD_AS_LAST = [
   'ngx-forms',
   'ngx-layout',
   'ngx-leaflet',
-  'ngx-navigation-menu' // Menu is dependent on layout, so build as last
 ];
 
 function buildAngularPackage(packageName) {
@@ -43,7 +42,9 @@ function buildAngularPackage(packageName) {
 }
 
 function getAllPackages() {
-  return fs.readdirSync(path.resolve(__dirname, '../packages/')).filter(dir => dir.startsWith('ngx-'));
+  return fs.readdirSync(path.resolve(__dirname, '../packages/'))
+    .filter(dir => dir.startsWith('ngx-'))
+    .filter(dir => fs.existsSync(`${path.resolve(__dirname, '../packages/')}/${dir}/ng-package.json`));
 }
 
 function getMainPackages() {

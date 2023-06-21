@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -22,18 +22,24 @@ class MockFlyoutService {
 @Component({
   selector: 'aui-app',
   template: `<button type="button" class="dummyButton">dummyButton</button>
-               <div auiFlyout>
-                    <button type="button" class="button" auiFlyoutAction [openOnFocus]="openOnFocus" #auiFlyoutAction="auiFlyoutAction">
-                    	Open me
-                    </button>
-                    <div auiFlyoutZone>
-                        <button type="button" class="dummyButtonInside">dummyButtonInside</button>
-                    </div>
-               </div>`,
+    <div auiFlyout>
+      <button
+        type="button"
+        class="button"
+        auiFlyoutAction
+        [openOnFocus]="openOnFocus"
+        #auiFlyoutAction="auiFlyoutAction"
+      >
+        Open me
+      </button>
+      <div auiFlyoutZone>
+        <button type="button" class="dummyButtonInside">dummyButtonInside</button>
+      </div>
+    </div>`,
 })
 class FlyoutComponent {
   // Access directive
-  @ViewChild('auiFlyoutAction', {static: true}) element;
+  @ViewChild('auiFlyoutAction', { static: true }) element;
   public openOnFocus = true;
 }
 
@@ -43,17 +49,10 @@ describe('Flyout action directive without flyout zone', () => {
   let componentDebugElement: DebugElement;
   let componentElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        FlyoutDirective,
-        FlyoutActionDirective,
-        FlyoutComponent,
-        FlyoutZoneDirective,
-      ],
-      providers: [
-        {provide: FlyoutService, useClass: MockFlyoutService},
-      ],
+      declarations: [FlyoutDirective, FlyoutActionDirective, FlyoutComponent, FlyoutZoneDirective],
+      providers: [{ provide: FlyoutService, useClass: MockFlyoutService }],
     });
 
     TestBed.compileComponents();
@@ -66,14 +65,18 @@ describe('Flyout action directive without flyout zone', () => {
 
   it('should open and close on mousedown', () => {
     spyOn(comp.element, 'open');
-    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation() {}});
+    componentDebugElement.triggerEventHandler('mousedown', {
+      stopImmediatePropagation() {},
+    });
     expect(comp.element.open).toHaveBeenCalled();
 
     comp.element.flyout.open();
     comp.element.flyout.toggleClick = true;
 
     spyOn(comp.element, 'close');
-    componentDebugElement.triggerEventHandler('mousedown', {stopImmediatePropagation() {}});
+    componentDebugElement.triggerEventHandler('mousedown', {
+      stopImmediatePropagation() {},
+    });
     expect(comp.element.close).toHaveBeenCalled();
 
     const response = comp.element.onFocus();

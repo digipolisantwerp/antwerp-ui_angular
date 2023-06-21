@@ -20,7 +20,7 @@ export class AppModule {};`;
 	</div>
 	<div auiHeaderContent><!-- Optional --></div>
 	<div auiHeaderMenuItem>
-    <a class="a-button-negative o-header__button has-icon-left" href="http://github.com/digipolisantwerp/antwerp-ui_angular">
+    <a class="a-button--text o-header__button has-icon-left" href="http://github.com/digipolisantwerp/antwerp-ui_angular">
       <aui-icon name="ai-developer-community-github-1"></aui-icon>GitHub
     </a>
   </div>

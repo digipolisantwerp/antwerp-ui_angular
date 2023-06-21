@@ -1,46 +1,46 @@
-<div class="m-range-slider__inner">
-  <div
-    [style.left]="endPercentage ? startPercentage + '%' : false"
-    [style.width]="endPercentage ? endPercentage - startPercentage + '%' : startPercentage + '%'"
-    class="m-range-slider__bar"
-  ></div>
-  <span
-    (blur)="toggleFocus(false, null, $event)"
-    (dragexit)="onMouseUp($event)"
-    (focus)="toggleFocus(true, 'start', $event)"
-    (mousedown)="onMouseDown('start')"
-    (touchstart)="onMouseDown('start')"
-    [style.left]="startPercentage + '%'"
-    class="m-range-slider__handle"
-    tabindex="0"
-  >
-		<div class="m-range-slider__tooltip a-tooltip a-tooltip--primary a-tooltip--top">
-			<p>{{ labelBefore }}{{ start }}{{ labelAfter }}</p>
-		</div>
-	</span>
+<div class="a-range-slider">
+  <div class="a-range-slider__labels">
+    <div class="a-range-slider__label">{{ label }}</div>
+  </div>
+  <div class="a-range-slider__inner">
+    <div class="a-range-slider__tickmarks">
+      <div *ngFor="let step of steps; let i = index" class="a-range-slider__tickmark"></div>
+    </div>
+    <div
+      [style.left]="endPercentage ? startPercentage + '%' : false"
+      [style.width]="endPercentage ? endPercentage - startPercentage + '%' : startPercentage + '%'"
+      class="a-range-slider__bar"
+    ></div>
+    <span
+      (blur)="toggleFocus(false, null, $event)"
+      (dragexit)="onMouseUp($event)"
+      (focus)="toggleFocus(true, 'start', $event)"
+      (mousedown)="onMouseDown('start')"
+      (touchstart)="onMouseDown('start')"
+      [style.left]="startPercentage + '%'"
+      class="a-range-slider__handle"
+      [attr.aria-label]="ariaLabelMin"
+      tabindex="0"
+    >
+    </span>
 
-  <span
-    (blur)="toggleFocus(false, null, $event)"
-    (dragexit)="onMouseUp($event)"
-    (focus)="toggleFocus(true, 'end', $event)"
-    (mousedown)="onMouseDown('end')"
-    (touchstart)="onMouseDown('end')"
-    *ngIf="end"
-    [style.left]="endPercentage + '%'"
-    class="m-range-slider__handle"
-    name="m-range-slider__handle__end"
-    tabindex="0"
-  >
-		<div class="m-range-slider__tooltip a-tooltip a-tooltip--primary a-tooltip--top">
-			<p>{{ labelBefore }}{{ end }}{{ labelAfter }}</p>
-		</div>
-	</span>
-</div>
-
-<div class="m-range-slider__steps">
-  <div *ngFor="let step of steps; let i = index" class="m-range-slider__step"></div>
-</div>
-
-<div class="m-range-slider__step-labels">
-  <div *ngFor="let step of steps; let i = index" class="m-range-slider__step">{{ step }}</div>
+    <span
+      (blur)="toggleFocus(false, null, $event)"
+      (dragexit)="onMouseUp($event)"
+      (focus)="toggleFocus(true, 'end', $event)"
+      (mousedown)="onMouseDown('end')"
+      (touchstart)="onMouseDown('end')"
+      *ngIf="end"
+      [style.left]="endPercentage + '%'"
+      class="a-range-slider__handle"
+      name="a-range-slider__handle__end"
+      [attr.aria-label]="ariaLabelMax"
+      tabindex="0"
+    >
+    </span>
+  </div>
+  <div class="a-range-slider__descriptions">
+    <div class="a-range-slider__description small">{{ labelBefore }}{{ min }}{{ labelAfter }}</div>
+    <div class="a-range-slider__description small">{{ labelBefore }}{{ max }}{{ labelAfter }}</div>
+  </div>
 </div>

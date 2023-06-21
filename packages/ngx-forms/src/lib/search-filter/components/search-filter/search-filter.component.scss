@@ -1,0 +1,23 @@
+.m-search-filter {
+  display: block;
+  &__input {
+    display: flex;
+    padding: 0;
+
+    input {
+      border-right: none;
+    }
+  }
+  &__button {
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+
+    .ai {
+      position: relative;
+      transform: none !important;
+      top: 0;
+    }
+  }
+}

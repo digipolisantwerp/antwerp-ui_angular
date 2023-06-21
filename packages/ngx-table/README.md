@@ -1,13 +1,14 @@
 # @acpaas-ui/ngx-table
 
-This module provides the components to build an *"Interactive Table"*
+This module provides the components to build an _"Interactive Table"_
 
 The module contains:
+
 - Table Component
-    - Table Cell Component
+  - Table Cell Component
 - Table Bar Component
-    - auiTableBarItem
-    - auiTableBarSearch
+  - auiTableBarItem
+  - auiTableBarSearch
 - Column Selector component
 - Table Class
 - Table Helper Service
@@ -26,19 +27,19 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 
 #### API
 
-| Name         | Default value | Description |
-| -----------  | ------ | -------------------------- |
-| `@Input() rows: any[];` | `[]` | This option has to be an array of objects. |
-| `@Input() columns: (TableColumn|string)[];` | `[]` | An array of TableColumns or an array of strings. Use this option to define and manage the columns of the table. |
-| `@Input() loading: boolean;` | `false` | Use this option to give the `aui-table` a loading state. To show the loading state set `loading = true`. |
-| `@Input() responsive: boolean;` | `true` | By default all tables are responsive. Set to `false` to disable this feature. |
-| `@Input() hasClickAction: boolean;` | `false` | By default a table row doesn't have a click action. Setting it to `true` enables this feature and emits the row's data via `rowClicked`. |
-| `@Input() activeSorting: OrderBy;` | - | This option has to be an array of objects. When you do not provide this property, column sorting buttons will be hidden. |
-| `@Input() noDataMessage: string;` | `'Loading data...'` | The message to show when the table holds no data. |
-| `@Input() loadDataMessage: string;` | `'No data available.'` | The message to show when the table is loading data. |
-| `@Input() noColumnsMessage: string;` | `'No columns available.'` | The message to show when the table has no visible. |
-| `@Output() orderBy: EventEmitter<any>;` | - | This event will be fired when the user changes the sorting of the columns. |
-| `@Output() rowClicked: EventEmitter<any>;` | - | this event will be fired when the row gets clicked. |
+| Name                                       | Default value             | Description                                                                                                                              |
+| ------------------------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `@Input() rows: any[];`                    | `[]`                      | This option has to be an array of objects.                                                                                               |
+| `@Input() columns: (TableColumn            | string)[];`               | `[]`                                                                                                                                     | An array of TableColumns or an array of strings. Use this option to define and manage the columns of the table. |
+| `@Input() loading: boolean;`               | `false`                   | Use this option to give the `aui-table` a loading state. To show the loading state set `loading = true`.                                 |
+| `@Input() responsive: boolean;`            | `true`                    | By default all tables are responsive. Set to `false` to disable this feature.                                                            |
+| `@Input() hasClickAction: boolean;`        | `false`                   | By default a table row doesn't have a click action. Setting it to `true` enables this feature and emits the row's data via `rowClicked`. |
+| `@Input() activeSorting: OrderBy;`         | -                         | This option has to be an array of objects. When you do not provide this property, column sorting buttons will be hidden.                 |
+| `@Input() noDataMessage: string;`          | `'Loading data...'`       | The message to show when the table holds no data.                                                                                        |
+| `@Input() loadDataMessage: string;`        | `'No data available.'`    | The message to show when the table is loading data.                                                                                      |
+| `@Input() noColumnsMessage: string;`       | `'No columns available.'` | The message to show when the table has no visible.                                                                                       |
+| `@Output() orderBy: EventEmitter<any>;`    | -                         | This event will be fired when the user changes the sorting of the columns.                                                               |
+| `@Output() rowClicked: EventEmitter<any>;` | -                         | this event will be fired when the row gets clicked.                                                                                      |
 
 #### Example
 
@@ -59,14 +60,14 @@ import { Component } from '@angular/core';
 import { Cell } from '@acpaas-ui/ngx-table';
 
 @Component({
-	template: `
-		<button type="button" class="a-button has-icon" title="View {{ data?.firstName }}'s profile">
-			<aui-icon name="ai-view-1"></aui-icon>
-		</button>
-	`,
+  template: `
+    <button type="button" class="a-button has-icon" title="View {{ data?.firstName }}'s profile">
+      <aui-icon name="ai-view-1"></aui-icon>
+    </button>
+  `,
 })
 export class TableActionComponent implements Cell {
-	public data: any;
+  public data: any;
 }
 ```
 
@@ -168,12 +169,13 @@ constructor(
 
 ```html
 <aui-table
-    noDataMessage="There is no data!"
-    loadDataMessage="Loading..."
-    noColumsMessage="There are no columns!"
-    [loading]="loading"
-    [columns]="columns"
-    [rows]="rows">
+  noDataMessage="There is no data!"
+  loadDataMessage="Loading..."
+  noColumsMessage="There are no columns!"
+  [loading]="loading"
+  [columns]="columns"
+  [rows]="rows"
+>
 </aui-table>
 ```
 

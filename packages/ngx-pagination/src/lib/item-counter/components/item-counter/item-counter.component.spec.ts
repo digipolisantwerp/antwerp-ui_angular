@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,22 +15,17 @@ describe('The ItemCounterComponent', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FormsModule,
-      ],
+      imports: [FormsModule],
       declarations: [
         ItemCounterComponent,
         InterpolateLabelPipe,
         PluralizeLabelPipe,
       ],
-      providers: [
-        {provide: ITEM_COUNTER_LABEL, useValue: {}},
-      ],
-    })
-      .compileComponents();  // compile template and css
+      providers: [{ provide: ITEM_COUNTER_LABEL, useValue: {} }],
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

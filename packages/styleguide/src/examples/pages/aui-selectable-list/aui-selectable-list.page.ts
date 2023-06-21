@@ -5,15 +5,8 @@ import { Component } from '@angular/core';
 })
 export class SelectableListDemoPageComponent {
   public index = 0;
-
-  public heroes = [
-    {name: 'Spiderman'},
-    {name: 'Wolverine'},
-    {name: 'Iron man'},
-  ];
-
+  public heroes = [{ name: 'Spiderman' }, { name: 'Wolverine' }, { name: 'Iron man' }];
   public activeHero = this.heroes[this.index];
-
   public javascript1 = `import { SelectableListModule } from '@acpaas-ui/ngx-selectable-list';
 
 @NgModule({
@@ -48,8 +41,7 @@ public onSelect(item) {
 <p><strong>Active hero</strong>: {{ activeHero.name }}</p>`;
 
   public onSelect(item) {
-    this.index = this.heroes.findIndex(hero => hero.name === item.name);
+    this.index = this.heroes.findIndex((hero) => hero.name === item.name);
     this.activeHero = item;
   }
-
 }

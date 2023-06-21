@@ -25,7 +25,7 @@ export class CalendarDecenniaComponent implements OnInit, OnChanges {
     const previousValue = get(changes, 'activeDate.previousValue');
     const currentYear = currentValue instanceof Date ? currentValue.getFullYear() : -1;
     const previousYear = previousValue instanceof Date ? previousValue.getFullYear() : -1;
-    const outOfRange = previousYear > currentYear || previousYear + 11 < currentYear;
+    const outOfRange = previousYear > currentYear || previousYear + 17 < currentYear;
 
     if (currentYear >= 0 && outOfRange) {
       this.updateYears();
@@ -47,10 +47,10 @@ export class CalendarDecenniaComponent implements OnInit, OnChanges {
     const years = [];
     const activeYear = this.activeDate.getFullYear();
 
-    for (let i = activeYear; i < activeYear + 12; i += 1) {
+    for (let i = activeYear; i < activeYear + 18; i += 1) {
       years.push(i);
     }
 
-    this.years = chunk(years, 4);
+    this.years = chunk(years, 3);
   }
 }

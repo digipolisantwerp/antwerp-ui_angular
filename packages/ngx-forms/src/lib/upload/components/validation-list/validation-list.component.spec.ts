@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { IconModule } from '@acpaas-ui/ngx-icon';
 
@@ -18,20 +18,18 @@ describe('The validation list Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        IconModule
-      ],
-      declarations: [
-        ValidationListComponent,
-      ],
+      imports: [IconModule],
+      declarations: [ValidationListComponent],
       providers: [
-        {provide: ValidationMessagesService, useClass: MockValidationMessagesService},
+        {
+          provide: ValidationMessagesService,
+          useClass: MockValidationMessagesService,
+        },
       ],
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -52,6 +50,8 @@ describe('The validation list Component', () => {
 
   it('should format reasons', () => {
     const reasons = ['INVALID_FILE_TYPE', 'INVALID_FILE_SIZE'];
-    expect(comp.formatReasons(reasons)).toEqual('INVALID_FILE_TYPE_test, INVALID_FILE_SIZE_test');
+    expect(comp.formatReasons(reasons)).toEqual(
+      'INVALID_FILE_TYPE_test, INVALID_FILE_SIZE_test'
+    );
   });
 });

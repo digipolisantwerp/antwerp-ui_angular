@@ -2,24 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "./dist",
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdModuleIds": {
-      "@acpaas-ui/ngx-flyout": "ngxFlyout",
-      "@acpaas-ui/ngx-icon": "ngxIcon",
-      "@acpaas-ui/ngx-selectable-list": "ngxSelectableList",
-      "@acpaas-ui/ngx-calendar": "ngxCalendar",
-      "@acpaas-ui/ngx-progress-bar": "ngxProgressBar",
-      "@acpaas-ui/ngx-utils": "ngxUtils",
-      "@acpaas-ui/js-date-utils": "jsDateUtils",
-      "inputmask": "Inputmask",
-      "lodash-es": "lodashEs",
-      "ng2-ckeditor": "ng2Ckeditor"
-    }
+    "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": [
-    "@acpaas-ui",
-    "inputmask",
-    "lodash-es",
-    "ng2-ckeditor"
-  ]
+  "allowedNonPeerDependencies": ["@acpaas-ui", "lodash-es"]
 }

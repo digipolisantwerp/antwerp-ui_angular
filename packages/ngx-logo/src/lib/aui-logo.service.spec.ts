@@ -6,7 +6,7 @@ describe('AuiLogoService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AuiLogoService = TestBed.get(AuiLogoService);
+    const service: AuiLogoService = TestBed.inject(AuiLogoService);
     expect(service).toBeTruthy();
   });
 });

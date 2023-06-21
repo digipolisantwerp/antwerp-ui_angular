@@ -1,9 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement, Directive, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { MaskModule } from '../../../mask/mask.module';
 
 import { AutoCompleteComponent } from './auto-complete.component';
 import { SearchService } from '../../../shared/services/search.service';
@@ -38,24 +36,14 @@ describe('The Autocomplete Component', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        MaskModule,
-        FormsModule,
-      ],
+      imports: [FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [
-        MockFlyoutDirective,
-        MockSelectableListComponent,
-        AutoCompleteComponent,
-      ],
-      providers: [
-        {provide: SearchService, useValue: searchMock},
-      ],
-    })
-      .compileComponents();  // compile template and css
+      declarations: [MockFlyoutDirective, MockSelectableListComponent, AutoCompleteComponent],
+      providers: [{ provide: SearchService, useValue: searchMock }],
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -64,11 +52,11 @@ describe('The Autocomplete Component', () => {
 
     comp = fixture.componentInstance; // BannerComponent test instance
     comp.data = [
-      {id: 1, name: 'batman'},
-      {id: 2, name: 'spiderman'},
-      {id: 3, name: 'wolverine'},
-      {id: 4, name: 'ironman'},
-      {id: 5, name: 'Wonder woman'},
+      { id: 1, name: 'batman' },
+      { id: 2, name: 'spiderman' },
+      { id: 3, name: 'wolverine' },
+      { id: 4, name: 'ironman' },
+      { id: 5, name: 'Wonder woman' },
     ];
     comp.minCharacters = 2;
     comp.query = '';
@@ -122,7 +110,7 @@ describe('The Autocomplete Component', () => {
       expect(comp.localSearch).toHaveBeenCalled();
     });
 
-    it('should do nothing if the results weren\'t updated', () => {
+    it('should do nothing if the results werent updated', () => {
       comp.searching = true;
 
       comp.ngOnChanges(null);
@@ -155,16 +143,16 @@ describe('The Autocomplete Component', () => {
     });
 
     it('should find the item by the provided key', () => {
-      comp.results = comp.data.map(d => ({...d}));
-      comp.propagateChange({id: 2, name: 'spiderman'});
+      comp.results = comp.data.map((d) => ({ ...d }));
+      comp.propagateChange({ id: 2, name: 'spiderman' });
       expect(comp.query).toBe('spiderman');
       expect(comp.updateModel).toHaveBeenCalledWith('spiderman');
     });
 
     it('should return the prop set in the value', () => {
-      comp.results = comp.data.map(d => ({...d}));
+      comp.results = comp.data.map((d) => ({ ...d }));
       comp.value = 'id';
-      comp.propagateChange({id: 2, name: 'spiderman'});
+      comp.propagateChange({ id: 2, name: 'spiderman' });
       expect(comp.query).toBe('spiderman');
       expect(comp.updateModel).toHaveBeenCalledWith(2);
     });
@@ -206,9 +194,9 @@ describe('The Autocomplete Component', () => {
     it('should propagate the change and close the flyout', () => {
       spyOn(comp, 'propagateChange');
       spyOn(comp, 'closeFlyout');
-      comp.onSelect({name: 'test'});
+      comp.onSelect({ name: 'test' });
 
-      expect(comp.propagateChange).toHaveBeenCalledWith({name: 'test'});
+      expect(comp.propagateChange).toHaveBeenCalledWith({ name: 'test' });
       expect(comp.closeFlyout).toHaveBeenCalled();
     });
   });
@@ -216,10 +204,10 @@ describe('The Autocomplete Component', () => {
   describe('onFlyoutClosed', () => {
     it('if there is only 1 result and it is focused, it should be selected', () => {
       comp.index = 0;
-      comp.results = [{name: 'test'}];
+      comp.results = [{ name: 'test' }];
       spyOn(comp, 'onSelect');
       comp.onFlyoutClosed();
-      expect(comp.onSelect).toHaveBeenCalledWith({name: 'test'});
+      expect(comp.onSelect).toHaveBeenCalledWith({ name: 'test' });
     });
 
     it('if there is no searchstring and the index is not set, it should clear the selected item', () => {
@@ -238,7 +226,7 @@ describe('The Autocomplete Component', () => {
       expect(comp.query).toBe('');
 
       comp.query = 'cantfindme';
-      comp.selectedItem = {id: 1, name: 'batman'};
+      comp.selectedItem = { id: 1, name: 'batman' };
       comp.onFlyoutClosed();
       expect(comp.query).toBe('batman');
     });
@@ -294,9 +282,11 @@ describe('The Autocomplete Component', () => {
     it('should propagate the relevant change if an index is set on KEYENTER', () => {
       comp.query = 'test';
       comp.index = 0;
-      comp.results = [{
-        name: 'bob',
-      }];
+      comp.results = [
+        {
+          name: 'bob',
+        },
+      ];
       comp.onKeyEnter(e);
 
       expect(comp.propagateChange).toHaveBeenCalledWith({
@@ -364,16 +354,18 @@ describe('The Autocomplete Component', () => {
   it('should write the value found in the matching item to the query if value prop was set', () => {
     comp.label = 'datalabel';
     comp.value = 'datakey';
-    comp.data = [{
-      datalabel: 'this is the test label',
-      datakey: 'test',
-    }];
+    comp.data = [
+      {
+        datalabel: 'this is the test label',
+        datakey: 'test',
+      },
+    ];
     comp.writeValue('test');
     expect(comp.query).toEqual('this is the test label');
   });
 
   it('should update the model value before change listerer is triggered', (done) => {
-    comp.search.subscribe(val => {
+    comp.search.subscribe((val) => {
       expect(val).toBe('test');
       done();
     });

@@ -4,7 +4,7 @@
   <p>The following examples only have a visual purpose since they don't have a backend to talk to.</p>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom-l">
   <aui-code-snippet [codeSnippet]="uploadImportExample"></aui-code-snippet>
 </div>
 
@@ -18,15 +18,16 @@
   <aui-code-snippet [codeSnippet]="uploadExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom-l">
   <label class="a-input__label" for="my-upload">Upload files</label>
-  <aui-upload (selectUploadedFiles)="onUpload($event)" [options]="dropzone1" data-id="my-upload" [accept]="accept">
-    <div class="m-upload__message">
-      Drag your files here or click to upload
-    </div>
-    <div class="m-upload__description">
-      Optional description message
-    </div>
+  <aui-upload
+    (selectUploadedFiles)="onUpload($event)"
+    [options]="dropzone1"
+    data-id="my-upload"
+    [accept]="accept"
+    label="Drag your files here or click upload"
+    description="Optional description message"
+  >
   </aui-upload>
 </div>
 
@@ -40,11 +41,9 @@
   <aui-code-snippet [codeSnippet]="uploadExampleHTML2"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom-l">
   <aui-upload (selectUploadedFiles)="onUpload($event)" [options]="dropzone2">
-    <div class="m-upload__button">
-      Select your files to upload
-    </div>
+    <div class="m-upload__button">Select your files to upload</div>
   </aui-upload>
 </div>
 
@@ -66,26 +65,31 @@
   <aui-code-snippet [codeSnippet]="uploadExampleHTML3"></aui-code-snippet>
 </div>
 
-<aui-upload-zone (invalidFiles)="onInvalidFiles($event)" (queuedFiles)="onQueuedFiles($event)" (uploadedFiles)="onUploadedFiles($event)" [uploader]="uploader"
-                 ariaId="my-other-upload" multiple=false [capture]="capture">
-  <div class="m-upload__message">
-    Drag your files here or click to upload
-  </div>
-  <div class="m-upload__description">
-    Maximum filesize: 10 MB,
-    File extension: jpg, jpeg, png
-  </div>
+<aui-upload-zone
+  (invalidFiles)="onInvalidFiles($event)"
+  (queuedFiles)="onQueuedFiles($event)"
+  (uploadedFiles)="onUploadedFiles($event)"
+  [uploader]="uploader"
+  ariaId="my-other-upload"
+  multiple="false"
+  [capture]="capture"
+  label="Drag your files here or click to upload"
+  description="Maximum filesize: 10 MB, File extension: jps, jpeg, png"
+>
 </aui-upload-zone>
 <aui-upload-queue [files]="queuedFiles" class="a-upload-queue__wrapper"></aui-upload-queue>
-<div *ngIf="showError" class="u-margin-bottom">
+<div *ngIf="showError" class="m-upload u-margin-bottom">
   <ul class="m-upload__files">
     <li class="is-error">
       <aui-icon name="ai-alert-triangle"></aui-icon>
       <span class="m-upload__filename">{{ fileName }}</span>
       <span class="m-upload__error">This file extension is not allowed.</span>
-      <button (click)="reloadErrors()" class="m-upload__delete a-button-transparent a-button--danger a-button--small has-icon"
-              type="button">
-				<aui-icon name="ai-close" ariaLabel="Remove"></aui-icon>
+      <button
+        (click)="reloadErrors()"
+        class="m-upload__delete a-button a-button--text a-button--danger a-button--s has-icon"
+        type="button"
+      >
+        <aui-icon name="ai-close" ariaLabel="Remove"></aui-icon>
       </button>
     </li>
   </ul>

@@ -2,13 +2,9 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "./dist",
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdModuleIds": {
-      "@acpaas-ui/ngx-icon": "ngxIcon",
-      "ngx-toastr": "ngxToastr"
-    }
+    "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "@acpaas-ui",
     "ngx-toastr"
   ]

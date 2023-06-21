@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { IconModule } from '@acpaas-ui/ngx-icon';
@@ -12,16 +12,13 @@ describe('PaginationComponent', () => {
   let el: HTMLElement;
 
   // async beforeEach
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         PaginationComponent, // declare the test component
       ],
-      imports: [
-        IconModule,
-      ],
-    })
-      .compileComponents();  // compile template and css
+      imports: [IconModule],
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -85,7 +82,9 @@ describe('PaginationComponent', () => {
       comp.ngOnChanges();
       fixture.detectChanges();
 
-      const nextAnchor = de.query(By.css('#pagination-' + comp.instanceId + '-next-page'));
+      const nextAnchor = de.query(
+        By.css('#pagination-' + comp.instanceId + '-next-page')
+      );
       const href = nextAnchor.nativeElement.getAttribute('href');
       expect(comp.totalPages).toEqual(5);
       expect(nextAnchor.nativeElement).not.toBeNull();
@@ -97,7 +96,11 @@ describe('PaginationComponent', () => {
       comp.ngOnChanges();
       fixture.detectChanges();
 
-      const nextAnchor = de.query(By.css('#pagination-' + comp.instanceId + '-next-page' && '.is-disabled'));
+      const nextAnchor = de.query(
+        By.css(
+          '#pagination-' + comp.instanceId + '-next-page' && '.is-disabled'
+        )
+      );
       expect(nextAnchor.nativeElement).not.toBeNull();
       expect(comp.totalPages).toEqual(5);
     });
@@ -118,7 +121,9 @@ describe('PaginationComponent', () => {
       comp.ngOnChanges();
       fixture.detectChanges();
 
-      const previousAnchor = de.query(By.css('#pagination-' + comp.instanceId + '-prev-page'));
+      const previousAnchor = de.query(
+        By.css('#pagination-' + comp.instanceId + '-prev-page')
+      );
       const href = previousAnchor.nativeElement.getAttribute('href');
       expect(comp.totalPages).toEqual(5);
       expect(previousAnchor.nativeElement).not.toBeNull();
@@ -130,14 +135,17 @@ describe('PaginationComponent', () => {
       comp.ngOnChanges();
       fixture.detectChanges();
 
-      const previousAnchor = de.query(By.css('#pagination-' + comp.instanceId + '-prev-page' && '.is-disabled'));
+      const previousAnchor = de.query(
+        By.css(
+          '#pagination-' + comp.instanceId + '-prev-page' && '.is-disabled'
+        )
+      );
       expect(previousAnchor.nativeElement).not.toBeNull();
       expect(comp.totalPages).toEqual(5);
     });
   });
 
   describe('number buttons', () => {
-
     it('should render buttons with less than 8 ngx-forms', () => {
       comp.itemsPerPage = 5;
       comp.totalValues = 21;
@@ -149,14 +157,30 @@ describe('PaginationComponent', () => {
       de = fixture.debugElement.query(By.css('.m-pagination'));
       el = de.nativeElement;
 
-      const nr0Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-0'));
-      const nr1Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-1'));
-      const nr2Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-2'));
-      const nr3Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-3'));
-      const nr4Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-4'));
-      const nr5Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-5'));
-      const nr6Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-6'));
-      const nr7Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-7'));
+      const nr0Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-0')
+      );
+      const nr1Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-1')
+      );
+      const nr2Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-2')
+      );
+      const nr3Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-3')
+      );
+      const nr4Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-4')
+      );
+      const nr5Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-5')
+      );
+      const nr6Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-6')
+      );
+      const nr7Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-7')
+      );
       expect(comp.totalPages).toEqual(5);
       expect(nr0Button.nativeElement.innerHTML).toEqual('1');
       expect(nr1Button.nativeElement.innerHTML).toEqual('2');
@@ -192,14 +216,30 @@ describe('PaginationComponent', () => {
       de = fixture.debugElement.query(By.css('.m-pagination'));
       el = de.nativeElement;
 
-      nr0Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-0'));
-      nr1Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-1'));
-      nr2Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-2'));
-      nr3Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-3'));
-      nr4Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-4'));
-      nr5Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-5'));
-      nr6Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-6'));
-      nr7Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-7'));
+      nr0Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-0')
+      );
+      nr1Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-1')
+      );
+      nr2Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-2')
+      );
+      nr3Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-3')
+      );
+      nr4Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-4')
+      );
+      nr5Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-5')
+      );
+      nr6Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-6')
+      );
+      nr7Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-7')
+      );
       expect(comp.totalPages).toEqual(51);
       expect(nr0Button.nativeElement.innerHTML).toEqual('1');
       expect(nr1Button.nativeElement.innerHTML).toEqual('2');
@@ -213,14 +253,30 @@ describe('PaginationComponent', () => {
       comp.ngOnChanges();
       fixture.detectChanges();
 
-      nr0Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-0'));
-      nr1Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-1'));
-      nr2Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-2'));
-      nr3Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-3'));
-      nr4Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-4'));
-      nr5Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-5'));
-      nr6Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-6'));
-      nr7Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-7'));
+      nr0Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-0')
+      );
+      nr1Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-1')
+      );
+      nr2Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-2')
+      );
+      nr3Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-3')
+      );
+      nr4Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-4')
+      );
+      nr5Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-5')
+      );
+      nr6Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-6')
+      );
+      nr7Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-7')
+      );
       expect(nr0Button.nativeElement.innerHTML).toEqual('1');
       expect(nr1Button.nativeElement.innerHTML).toEqual('...');
       expect(nr2Button.nativeElement.innerHTML).toEqual('9');
@@ -233,14 +289,30 @@ describe('PaginationComponent', () => {
       comp.ngOnChanges();
       fixture.detectChanges();
 
-      nr0Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-0'));
-      nr1Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-1'));
-      nr2Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-2'));
-      nr3Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-3'));
-      nr4Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-4'));
-      nr5Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-5'));
-      nr6Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-6'));
-      nr7Button = de.query(By.css('#pagination-' + comp.instanceId + '-button-7'));
+      nr0Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-0')
+      );
+      nr1Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-1')
+      );
+      nr2Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-2')
+      );
+      nr3Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-3')
+      );
+      nr4Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-4')
+      );
+      nr5Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-5')
+      );
+      nr6Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-6')
+      );
+      nr7Button = de.query(
+        By.css('#pagination-' + comp.instanceId + '-button-7')
+      );
       expect(nr0Button.nativeElement.innerHTML).toEqual('1');
       expect(nr1Button.nativeElement.innerHTML).toEqual('...');
       expect(nr2Button.nativeElement.innerHTML).toEqual('47');

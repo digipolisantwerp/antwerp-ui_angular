@@ -6,7 +6,6 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
   templateUrl: './autocomplete.page.html',
 })
 export class FormsAutocompleteDemoPageComponent implements OnInit, OnDestroy {
-
   public autocompleteImportExample = `import { AutoCompleteModule } from '@acpaas-ui/ngx-forms';
 
 @NgModule({
@@ -29,13 +28,12 @@ public setSelectedUser(hero): void {
 	// Do something
 }`;
 
-  public autocompleteExampleHTML1 = `<div class="a-input">
-	<label class="a-input__label" for="hero-names">Hero</label>
-	<div class="a-input__wrapper">
+  public autocompleteExampleHTML1 = `
 		<aui-auto-complete
 			data-id="hero-names"
 			placeholder="Choose your hero…"
-			label="name"
+      description="Description"
+			inputLabel="Hero"
 			value=""
 			minCharacters = "3"
 			clearInvalid="true"
@@ -43,8 +41,7 @@ public setSelectedUser(hero): void {
 			[data]="heroList"
 			(select)="setSelectedItem($event)">
 		</aui-auto-complete>
-	</div>
-</div>`;
+`;
 
   public autocompleteExampleJS2 = `public results = [];
 public heroList = [
@@ -80,15 +77,15 @@ public formatLabel(input: any) {
   return \`<aui-icon name="ai-single-neutral" className="u-text-light u-margin-right-xs"></aui-icon>\${inputStringHighlighted}\`;
 }`;
 
-  public autocompleteExampleHTML2 = `<div class="a-input">
-	<label class="a-input__label" for="hero">Hero</label>
-	<div class="a-input__wrapper">
+  public autocompleteExampleHTML2 = `
 		<aui-auto-complete
 			data-id="hero"
 			placeholder="Choose your hero…"
+      description="Description"
 			remote="true"
 			[results]="results"
-			label="name"
+			inputLabel="Hero"
+      label="name"
 			key="id"
 			loadingText = "Loading…"
 			noResultsText="No results found"
@@ -99,16 +96,15 @@ public formatLabel(input: any) {
 				<div class="has-icon-left" [innerHTML]="formatLabel(item)"></div>
 			</ng-template>
 		</aui-auto-complete>
-	</div>
-</div>`;
+`;
 
   public results = [];
   public heroList = [
-    {name: 'Batman'},
-    {name: 'Wonder Woman'},
-    {name: 'Wolverine'},
-    {name: 'Iron Man'},
-    {name: 'Deadpool'},
+    { name: 'Batman' },
+    { name: 'Wonder Woman' },
+    { name: 'Wolverine' },
+    { name: 'Iron Man' },
+    { name: 'Deadpool' },
   ];
   public disabledModel = 'Batman';
   public isDisabled = true;
@@ -119,15 +115,12 @@ public formatLabel(input: any) {
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
   public ngOnInit() {
-    this.debouncer.pipe(
-      takeUntil(this.componentDestroyed$),
-      debounceTime(1000)
-    ).subscribe((value) => {
+    this.debouncer.pipe(takeUntil(this.componentDestroyed$), debounceTime(1000)).subscribe((value) => {
       if (!value) {
         this.results = [];
       } else {
         this.results = this.heroList.filter((hero) => {
-          return hero.name.localeCompare(value, 'en', {sensitivity: 'base'});
+          return hero.name.localeCompare(value, 'en', { sensitivity: 'base' });
         });
       }
     });
@@ -145,11 +138,11 @@ public formatLabel(input: any) {
   }
 
   public setSelectedItem1(hero: any): void {
-    this.selectedItem1 = (!!hero && !!hero.name) ? hero.name : '-';
+    this.selectedItem1 = !!hero && !!hero.name ? hero.name : '-';
   }
 
   public setSelectedItem2(hero: any): void {
-    this.selectedItem2 = (!!hero && !!hero.name) ? hero.name : '-';
+    this.selectedItem2 = !!hero && !!hero.name ? hero.name : '-';
   }
 
   public formatLabel(input: any) {
@@ -161,7 +154,7 @@ public formatLabel(input: any) {
 
     // Highlight searchValue in result
     const regEx = new RegExp(this.searchValue, 'ig');
-    const inputStringHighlighted = (inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>'));
+    const inputStringHighlighted = inputString.replace(regEx, '<strong>' + this.searchValue + '</strong>');
     return `<aui-icon name="ai-single-neutral" className="u-text-light u-margin-right-xs"></aui-icon>${inputStringHighlighted}`;
   }
 }

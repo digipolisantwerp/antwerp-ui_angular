@@ -1,9 +1,10 @@
-@import '~@a-ui/core/dist/assets/styles/quarks';
+@import '@a-ui/core/dist/assets/styles/quarks';
 
 .o-hero {
   background-color: $brand-primary;
   height: auto;
-  padding: $spacer;
+  min-height: $spacer * 3;
+  padding-left: $spacer;
 
   div {
     padding-left: $spacer-md;
@@ -11,5 +12,5 @@
 }
 
 .u-margin-top-xxs {
-  margin-top: $spacer-xs / 3;
+  margin-top: calc(#{$spacer-xs} / 3);
 }

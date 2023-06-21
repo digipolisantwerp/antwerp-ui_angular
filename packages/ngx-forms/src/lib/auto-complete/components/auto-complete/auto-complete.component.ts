@@ -10,7 +10,7 @@ import {
   Output,
   SimpleChanges,
   TemplateRef,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { get, isEqual } from 'lodash-es';
@@ -19,14 +19,12 @@ import { SearchService } from '../../../shared/services/search.service';
 
 @Component({
   selector: 'aui-auto-complete',
-  styleUrls: [
-    './auto-complete.component.scss',
-  ],
+  styleUrls: ['./auto-complete.component.scss'],
   templateUrl: './auto-complete.component.html',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => AutoCompleteComponent), // tslint:disable-line
+      useExisting: forwardRef(() => AutoCompleteComponent), // eslint-disable-line
       multi: true,
     },
   ],
@@ -34,11 +32,12 @@ import { SearchService } from '../../../shared/services/search.service';
 export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input() id: string;
   @Input() placeholder: string;
+  @Input() description: string;
+  @Input() inputLabel: string;
   @Input() results: any[] = []; // The values for the selectable list
   @Input() data: any[] = []; // The values to search in when remote search is disabled
   @Input() remote = false; // Disable or enamble remote search
   @Input() minCharacters = 0;
-  @Input() mask: string = null;
   @Input() clearInvalid = false;
   @Input() searchIncentiveText: string;
   @Input() loadingText: string;
@@ -52,12 +51,13 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 
   // Eventemitter for searchvalue (parent object should update the results with this param)
   @Output() search: EventEmitter<string> = new EventEmitter();
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() select: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild(FlyoutDirective, {static: true}) flyout: FlyoutDirective;
-  @ViewChild(FlyoutZoneDirective, {static: true}) flyoutZone: FlyoutZoneDirective;
+  @ViewChild(FlyoutDirective, { static: true }) flyout: FlyoutDirective;
+  @ViewChild(FlyoutZoneDirective, { static: true }) flyoutZone: FlyoutZoneDirective;
 
-  @ContentChild(TemplateRef, {static: true}) public template: TemplateRef<any>;
+  @ContentChild(TemplateRef, { static: true }) public template: TemplateRef<any>;
 
   public query = '';
   public index = -1; // index for active element in selectable list, by default -1 (so it starts in the input field)
@@ -68,14 +68,9 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 
   private remoteValue = false;
 
-  constructor(
-    private ref: ElementRef,
-    private searchService: SearchService
-  ) {
-  }
+  constructor(private ref: ElementRef, private searchService: SearchService) {}
 
-  public updateModel = (_: any) => {
-  }
+  public updateModel = (_: any) => {};
 
   // CONTROL_VALUE_ACCESSOR interface
   public writeValue(value = '') {
@@ -83,7 +78,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
       const selected = this.data.find((item: any) => item[this.value] === value);
 
       if (selected) {
-        return this.query = selected[this.label];
+        return (this.query = selected[this.label]);
       }
 
       if (this.remote && !!value) {
@@ -100,15 +95,14 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
   }
 
   // CONTROL_VALUE_ACCESSOR interface
-  public registerOnTouched() {
-  }
+  public registerOnTouched() {}
 
   public setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
   }
 
   public ngOnInit(): void {
-    if ((Array.isArray(this.data) && this.data.length > 0) && !this.query && this.showAllByDefault) {
+    if (Array.isArray(this.data) && this.data.length > 0 && !this.query && this.showAllByDefault) {
       this.results = [...this.data];
     }
   }
@@ -183,7 +177,7 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
 
     // reset the query for an invalid query if clearInvalid is true
     if (this.clearInvalid && this.query && !this.results.length && this.index < 0) {
-      this.query = this.selectedItem ? this.label ? this.selectedItem[this.label] : this.selectedItem : '';
+      this.query = this.selectedItem ? (this.label ? this.selectedItem[this.label] : this.selectedItem) : '';
     }
   }
 
@@ -278,10 +272,10 @@ export class AutoCompleteComponent implements ControlValueAccessor, OnInit, OnCh
     }
 
     const liItems = this.flyoutZone.element.getElementsByTagName('li');
-    const liHeight = (liItems[1] ? liItems[1].offsetHeight : liItems[0].offsetHeight);
+    const liHeight = liItems[1] ? liItems[1].offsetHeight : liItems[0].offsetHeight;
     const zoneHeight = this.flyoutZone.element.offsetHeight;
-    const offset = (zoneHeight / liHeight) / 2;
+    const offset = zoneHeight / liHeight / 2;
 
-    this.flyoutZone.element.scrollTop = (this.index * liHeight) - (offset * liHeight);
+    this.flyoutZone.element.scrollTop = this.index * liHeight - offset * liHeight;
   }
 }

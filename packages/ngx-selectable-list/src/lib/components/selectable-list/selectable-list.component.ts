@@ -13,14 +13,14 @@ export class SelectableListComponent {
 
   @Output() public selected: EventEmitter<any> = new EventEmitter();
 
-  @ContentChild(TemplateRef, {static: true}) public template: TemplateRef<any>;
+  @ContentChild(TemplateRef, { static: true }) public template: TemplateRef<any>;
 
   public selectItem(item) {
     this.selected.emit(item);
   }
 
   public formatLabel(input: any) {
-    const inputString = (this.label ? input[this.label] : input);
+    const inputString = this.label ? input[this.label] : input;
 
     if (!this.search) {
       return inputString;

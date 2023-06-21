@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement, Input } from '@angular/core';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
@@ -23,14 +23,13 @@ describe('The Table Cell Component without component', () => {
   let deSpan: DebugElement;
   let elSpan: HTMLElement;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         TableHeaderComponent, // declare the test component
       ],
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -60,7 +59,7 @@ describe('The Table Header Component with component', () => {
   // let elComp: HTMLElement;
 
   // async beforeEach
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         DummyTestComponent,
@@ -72,8 +71,7 @@ describe('The Table Header Component with component', () => {
       set: {
         entryComponents: [DummyTestComponent],
       },
-    })
-      .compileComponents();  // compile template and css
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach

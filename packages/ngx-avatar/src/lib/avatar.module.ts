@@ -4,16 +4,8 @@ import { IconModule } from '@acpaas-ui/ngx-icon';
 import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    IconModule,
-  ],
-  declarations: [
-    AvatarComponent,
-  ],
-  exports: [
-    AvatarComponent,
-  ],
+  imports: [CommonModule, IconModule],
+  declarations: [AvatarComponent],
+  exports: [AvatarComponent],
 })
-export class AvatarModule {
-}
+export class AvatarModule {}

@@ -7,13 +7,16 @@ import * as DEFAULT_MESSAGES from '../table.messages';
   selector: 'aui-table',
   templateUrl: './table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-
 })
 export class TableComponent {
   @Input() rows: any[] = [];
   @Input() columns: (TableColumn | string)[] = [];
   @Input() loading = false;
+  @Input() striped = false;
+  @Input() open = false;
   @Input() responsive = true;
+  @Input() fixedColumnLeft = false;
+  @Input() fixedColumnRight = false;
   @Input() hasClickAction = false;
   @Input() activeSorting: OrderBy; // Just a property to use in the template, not functional
   @Input() noDataMessage = DEFAULT_MESSAGES.NO_DATA;
@@ -23,15 +26,12 @@ export class TableComponent {
   @Output() orderBy: EventEmitter<any> = new EventEmitter();
   @Output() rowClicked: EventEmitter<any> = new EventEmitter();
 
-  constructor(
-    public tableHelper: TableHelperService
-  ) {
-  }
+  constructor(public tableHelper: TableHelperService) {}
 
   public sort(key, order): void {
     const prop = this.tableHelper.getValue(key);
-    this.activeSorting = {key: prop, order};
-    this.orderBy.emit({key: prop, order});
+    this.activeSorting = { key: prop, order };
+    this.orderBy.emit({ key: prop, order });
   }
 
   public clickRow(rowData: any): void {

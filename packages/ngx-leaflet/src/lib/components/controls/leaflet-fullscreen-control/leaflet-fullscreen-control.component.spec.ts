@@ -14,24 +14,20 @@ describe('The leaflet full screen control component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletFullscreenControlComponent,
-        LeafletControlComponent,
-      ],
-      imports: [
-        IconModule
-      ],
-      providers: [
-        MapService,
-      ],
+      declarations: [LeafletFullscreenControlComponent, LeafletControlComponent],
+      imports: [IconModule],
+      providers: [MapService],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletFullscreenControlComponent);
     comp = fixture.componentInstance;
-    mapService = TestBed.get(MapService);
-    comp.map = new LeafletMap({
-      zoom: 13,
-      center: [51.215, 4.425],
-    }, mapService);
+    mapService = TestBed.inject(MapService);
+    comp.map = new LeafletMap(
+      {
+        zoom: 13,
+        center: [51.215, 4.425],
+      },
+      mapService
+    );
   });
 
   it('should switch to the full screen control', () => {

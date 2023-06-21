@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   templateUrl: './aui-progress-bar.page.html',
 })
 export class ProgressBarDemoPageComponent {
-
   public uploadProgress = 20;
   public maxValue = 100;
 
@@ -21,8 +20,7 @@ export class AppModule {};`;
   public codeExampleJS2 = `public uploadProgress = 20;
 public maxValue = 100;`;
 
-  public codeExampleHTML =
-    `<aui-progress-bar
+  public codeExampleHTML = `<aui-progress-bar
   [value]="uploadProgress"
   [max]="maxValue">
 </aui-progress-bar>`;

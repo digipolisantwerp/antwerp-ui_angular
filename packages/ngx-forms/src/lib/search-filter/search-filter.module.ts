@@ -6,18 +6,8 @@ import { IconModule } from '@acpaas-ui/ngx-icon';
 import { SearchFilterComponent } from './components/search-filter/search-filter.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlyoutModule,
-    FormsModule,
-    IconModule,
-  ],
-  declarations: [
-    SearchFilterComponent,
-  ],
-  exports: [
-    SearchFilterComponent,
-  ],
+  imports: [CommonModule, FlyoutModule, FormsModule, IconModule],
+  declarations: [SearchFilterComponent],
+  exports: [SearchFilterComponent],
 })
-export class SearchFilterModule {
-}
+export class SearchFilterModule {}

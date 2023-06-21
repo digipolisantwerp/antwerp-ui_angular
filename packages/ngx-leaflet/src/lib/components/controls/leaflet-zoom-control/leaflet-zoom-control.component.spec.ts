@@ -14,24 +14,20 @@ describe('The leaflet zoom control component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        LeafletZoomControlComponent,
-        LeafletControlComponent,
-      ],
-      imports: [
-        IconModule
-      ],
-      providers: [
-        MapService,
-      ],
+      declarations: [LeafletZoomControlComponent, LeafletControlComponent],
+      imports: [IconModule],
+      providers: [MapService],
     }).compileComponents();
     fixture = TestBed.createComponent(LeafletZoomControlComponent);
     comp = fixture.componentInstance;
-    mapService = TestBed.get(MapService);
-    comp.map = new LeafletMap({
-      zoom: 13,
-      center: [51.215, 4.425],
-    }, mapService);
+    mapService = TestBed.inject(MapService);
+    comp.map = new LeafletMap(
+      {
+        zoom: 13,
+        center: [51.215, 4.425],
+      },
+      mapService
+    );
   });
 
   it('should zoom in', () => {

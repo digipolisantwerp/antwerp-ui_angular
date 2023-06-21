@@ -24,7 +24,7 @@ export class TimePickerValidators {
         return null;
       }
 
-      return {minTime: {value: control.value}};
+      return { minTime: { value: control.value } };
     };
 
     return validator;
@@ -53,7 +53,7 @@ export class TimePickerValidators {
         return null;
       }
 
-      return {maxTime: {value: control.value}};
+      return { maxTime: { value: control.value } };
     };
 
     return validator;

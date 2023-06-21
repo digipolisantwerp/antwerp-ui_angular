@@ -21,6 +21,7 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 | `@Input() className: string;` | `''` | A custom classname to add to the avatar. |
 | `@Input() icon: string;` | - | CSS class for rendering a Streamline icon. |
 | `@Input() image: string;` | - | URL to image src, renders an image. |
+| `@Input() rounded: boolean;` |false | renders the avatar in a round container |
 | `@Input() letter: string;` | - | Renders a string (letter). |
 | `@Input() size: sizes;` | `sizes.R` | The size of the avatar. This can be `sizes.R`) (regular, default, `sizes.S` (small), `sizes.M` (medium) or `sizes.L` (large) |
 | `@Input() title: string;` | `''` | The title for the avatar. |

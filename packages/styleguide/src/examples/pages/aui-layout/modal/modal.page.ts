@@ -7,7 +7,6 @@ import { ApproveModalComponent } from '../../../../../../ngx-layout/src/lib/moda
   templateUrl: './modal.page.html',
 })
 export class LayoutModalDemoPageComponent {
-
   public modal1 = `import { Component, Input } from '@angular/core';
 import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-layout';
 
@@ -16,17 +15,17 @@ import { ModalAbstract, ModalService } from '@acpaas-ui/ngx-layout';
   template: \`<div class="m-modal" role="dialog" aria-modal="true" aria-labelledby="myModalTitle" aria-describedby="myModelDesc">
     <div class="m-modal__content">
       <div class="m-modal__header u-margin-bottom-xs">
-        <button type="button" class="m-modal__close a-button-transparent a-button--default has-icon" (click)="closeModal()">
+        <button type="button" class="m-modal__close a-button a-button--text a-button--neutral has-icon" (click)="closeModal()">
           <aui-icon name="ai-close" ariaLabel="Close"></aui-icon>
         </button>
-        <h4 id="myModalTitle">{{ modalData.title }}</h4>
+        <h4 id="myModalTitle" class="h6">{{ modalData.title }}</h4>
       </div>
       <div class="u-margin-bottom">
         <p id="myModalDesc">{{ modalData.text }}</p>
       </div>
       <div class="m-modal__footer">
         <button type="button" class="a-button" (click)="submitAndCloseModal()">Close Modal</button>
-        <button type="button" class="a-button-outline" (click)="closeModal()">Cancel</button>
+        <button type="button" class="a-button a-button--outline" (click)="closeModal()">Cancel</button>
       </div>
     </div>
   </div>\`,
@@ -74,9 +73,9 @@ private doSomething() {
   Open modal
 </button>`;
 
-public modal4 = `import { ApproveModalComponent } from '@acpaas-ui/ngx-layout';`;
+  public modal4 = `import { ApproveModalComponent } from '@acpaas-ui/ngx-layout';`;
 
-public modal5 = `public openApproveModal() {
+  public modal5 = `public openApproveModal() {
   this.modalService.openModal(ApproveModalComponent, {
     question: 'Are you sure you want to close this demo modal?',
     description: 'This action can be undone.',
@@ -100,15 +99,12 @@ public modal5 = `public openApproveModal() {
   }
 }`;
 
-public modal6 = `<button type="button" class="a-button"
+  public modal6 = `<button type="button" class="a-button"
   (click)="openApproveModal()">
   Open approve modal
 </button>`;
 
-  constructor(
-    private modalService: ModalService
-  ) {
-  }
+  constructor(private modalService: ModalService) {}
 
   public openModal() {
     this.modalService.openModal(
@@ -116,33 +112,40 @@ public modal6 = `<button type="button" class="a-button"
       {
         title: 'Modal demo',
         text: 'Are you sure you want to see a demo of this modal?',
-      }, {
+      },
+      {
         confirm: () => this.doSomething(),
       }
     );
   }
 
   public openApproveModal() {
-    this.modalService.openModal(ApproveModalComponent, {
-      question: 'Are you sure you want to close this demo modal?',
-      description: 'This action can be undone.',
-      approve: 'Close demo modal',
-      reject: 'Cancel'
-    }, {
-      approve: () => this.doSomething(),
-      reject: () => this.doSomethingElse()
-    });
+    this.modalService.openModal(
+      ApproveModalComponent,
+      {
+        question: 'Are you sure you want to close this demo modal?',
+        description: 'This action can be undone.',
+        approve: 'Close demo modal',
+        reject: 'Cancel',
+        closeButtonAriaLabel: 'Sluiten',
+        headerTag: 'h6',
+      },
+      {
+        approve: () => this.doSomething(),
+        reject: () => this.doSomethingElse(),
+      }
+    );
   }
 
   private doSomething() {
     return new Promise((resolve, reject) => {
-      return resolve();
+      return resolve(null);
     });
   }
 
   private doSomethingElse() {
     return new Promise((resolve, reject) => {
-      return resolve();
+      return resolve(null);
     });
   }
 }

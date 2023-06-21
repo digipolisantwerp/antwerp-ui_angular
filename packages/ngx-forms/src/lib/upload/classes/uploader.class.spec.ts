@@ -4,15 +4,14 @@ import { UploadOptions } from '../types/upload.types';
 import { Uploader } from './uploader.class';
 
 describe('Uploader', () => {
+  const uploadResponse = [
+    {
+      url: 'http://localhost/myfile',
+      name: 'myFile',
+    },
+  ];
 
-  const uploadResponse = [{
-    url: 'http://localhost/myfile',
-    name: 'myFile',
-  }];
-
-  beforeEach(() => {
-
-  });
+  beforeEach(() => {});
 
   it('should have default options', () => {
     const uploader = new Uploader();
@@ -38,12 +37,12 @@ describe('Uploader', () => {
       allowedFileTypes: ['jpg'],
     });
 
-    f = new File([''], 'filename.txt', {type: 'text/plain', lastModified: date.getTime()});
+    f = new File([''], 'filename.txt', { type: 'text/plain', lastModified: date.getTime() });
     result = uploader.validateFiles([f]);
     expect(result.validFiles.length).toEqual(0);
     expect(result.invalidFiles.length).toEqual(1);
 
-    f = new File([''], 'filename.jpg', {type: 'image/jpeg', lastModified: date.getTime()});
+    f = new File([''], 'filename.jpg', { type: 'image/jpeg', lastModified: date.getTime() });
     result = uploader.validateFiles([f]);
     expect(result.validFiles.length).toEqual(1);
     expect(result.invalidFiles.length).toEqual(0);
@@ -57,12 +56,12 @@ describe('Uploader', () => {
       allowedMimeTypes: ['image/jpeg'],
     });
 
-    f = new File([''], 'filename.txt', {type: 'text/plain', lastModified: date.getTime()});
+    f = new File([''], 'filename.txt', { type: 'text/plain', lastModified: date.getTime() });
     result = uploader.validateFiles([f]);
     expect(result.validFiles.length).toEqual(0);
     expect(result.invalidFiles.length).toEqual(1);
 
-    f = new File([''], 'filename.jpg', {type: 'image/jpeg', lastModified: date.getTime()});
+    f = new File([''], 'filename.jpg', { type: 'image/jpeg', lastModified: date.getTime() });
     result = uploader.validateFiles([f]);
     expect(result.validFiles.length).toEqual(1);
     expect(result.invalidFiles.length).toEqual(0);
@@ -76,12 +75,12 @@ describe('Uploader', () => {
       maxFileSize: 2,
     });
 
-    f = new File(['takesomespace'], 'filename.txt', {type: 'text/plain', lastModified: date.getTime()});
+    f = new File(['takesomespace'], 'filename.txt', { type: 'text/plain', lastModified: date.getTime() });
     result = uploader.validateFiles([f]);
     expect(result.validFiles.length).toEqual(0);
     expect(result.invalidFiles.length).toEqual(1);
 
-    f = new File(['a'], 'filename.jpg', {type: 'image/jpeg', lastModified: date.getTime()});
+    f = new File(['a'], 'filename.jpg', { type: 'image/jpeg', lastModified: date.getTime() });
     result = uploader.validateFiles([f]);
     expect(result.validFiles.length).toEqual(1);
     expect(result.invalidFiles.length).toEqual(0);
@@ -93,32 +92,9 @@ describe('Uploader', () => {
       maxFileSize: 2,
     });
 
-    const f = new File(['takesomespace'], 'filename.txt', {type: 'text/plain', lastModified: date.getTime()});
+    const f = new File(['takesomespace'], 'filename.txt', { type: 'text/plain', lastModified: date.getTime() });
     expect(() => {
       uploader.uploadFiles([f]);
     }).toThrow(Error('Define the upload url.'));
   });
-
-  // it('should upload a file', (done) => {
-  //     const date = new Date();
-  //     const uploader = new Uploader({
-  //         maxFileSize: 2,
-  //         url: 'http://localhost'
-  //     });
-
-  //     let f = new File(['takesomespace'], 'filename.txt', {type: 'text/plain', lastModified: date.getTime()});
-  //     uploader.uploadFiles([f]).subscribe(
-  //         (response) => {
-  //             console.log(response);
-  //             expect(data).toEqual(uploadResponse);
-  //             if (response.data) {
-  //                 this.uploadedFiles.emit(response.data);
-  //                 expect(data).toEqual(uploadResponse);
-  //             }
-  //         },
-  //         (err) => {
-  //             console.log(err);
-  //         }
-  //     );
-  // });
 });

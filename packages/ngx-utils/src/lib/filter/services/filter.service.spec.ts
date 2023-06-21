@@ -1,15 +1,13 @@
-import { async, inject, TestBed } from '@angular/core/testing';
+import { waitForAsync, inject, TestBed } from '@angular/core/testing';
 
 import { FilterService } from './filter.service';
 import { Filter } from '../classes/filter.class';
 
 describe('The Filter service', () => {
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      providers: [
-        FilterService,
-      ],
+      providers: [FilterService],
     });
   }));
 
@@ -24,19 +22,24 @@ describe('The Filter service', () => {
       }
 
       return d.filter((o) => {
-        return (o.firstname.toLowerCase()).indexOf((value as string).toLowerCase()) !== -1;
+        return (
+          o.firstname.toLowerCase().indexOf((value as string).toLowerCase()) !==
+          -1
+        );
       });
     };
 
     const data = [
-      {firstname: 'test1'},
-      {firstname: 'demo1'},
-      {firstname: 'test2'},
-      {firstname: 'demo2'},
-      {firstname: 'user1'},
-      {firstname: 'demo3'},
+      { firstname: 'test1' },
+      { firstname: 'demo1' },
+      { firstname: 'test2' },
+      { firstname: 'demo2' },
+      { firstname: 'user1' },
+      { firstname: 'demo3' },
     ];
 
-    expect(filterService.filterData(data, [searchFilter])).toEqual([{firstname: 'user1'}]);
+    expect(filterService.filterData(data, [searchFilter])).toEqual([
+      { firstname: 'user1' },
+    ]);
   }));
 });

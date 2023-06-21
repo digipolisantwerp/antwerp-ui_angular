@@ -1,6 +1,6 @@
 <h3 class="h4 u-margin-bottom">Autocomplete</h3>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom-l">
   <aui-code-snippet [codeSnippet]="autocompleteImportExample"></aui-code-snippet>
 </div>
 
@@ -14,7 +14,7 @@
   <aui-code-snippet [codeSnippet]="autocompleteExampleHTML1"></aui-code-snippet>
 </div>
 
-<div class="u-margin-bottom-lg">
+<div class="u-margin-bottom-l">
   <div class="a-input">
     <label class="a-input__label" for="hero-names">Hero</label>
     <div class="a-input__wrapper">
@@ -27,7 +27,8 @@
         minCharacters="3"
         placeholder="Choose your hero…"
         showAllByDefault="true"
-        value="">
+        value=""
+      >
       </aui-auto-complete>
     </div>
   </div>
@@ -59,7 +60,8 @@
         noResultsText="No results found"
         placeholder="Choose your hero…"
         remote="true"
-        searchIncentiveText="Type one or more keywords to start searching">
+        searchIncentiveText="Type one or more keywords to start searching"
+      >
         <ng-template let-item>
           <div [innerHTML]="formatLabel(item)" class="has-icon-left"></div>
         </ng-template>
@@ -71,7 +73,7 @@
 
 <h4 class="h5 u-margin-bottom">Disabled state</h4>
 
-<div class="u-margin-bottom-xx">
+<div class="u-margin-bottom-3xl">
   <div class="a-input u-margin-bottom">
     <label class="a-input__label" for="hero-disabled">Hero</label>
     <div class="a-input__wrapper">
@@ -88,7 +90,8 @@
         noResultsText="No results found"
         placeholder="Choose your hero..."
         remote="true"
-        searchIncentiveText="Type one or more keywords to start searching">
+        searchIncentiveText="Type one or more keywords to start searching"
+      >
         <ng-template let-item>
           <div [innerHTML]="formatLabel(item)" class="has-icon-left"></div>
         </ng-template>
@@ -97,7 +100,7 @@
   </div>
   <div class="a-input">
     <div class="a-input__checkbox">
-      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox"/>
+      <input [(ngModel)]="isDisabled" id="isDisabled" type="checkbox" />
       <label for="isDisabled">Toggle disabled state</label>
     </div>
   </div>

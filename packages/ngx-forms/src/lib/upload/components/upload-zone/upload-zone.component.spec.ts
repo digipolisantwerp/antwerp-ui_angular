@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, Input } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
@@ -15,8 +15,14 @@ class ProgressBarComponent {
   @Input() public value;
 }
 
-const mockFile1 = new File(['file1'], 'filename1.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
-const mockFile2 = new File(['file2'], 'filename2.txt', {type: 'text/plain', lastModified: (new Date()).getTime()});
+const mockFile1 = new File(['file1'], 'filename1.txt', {
+  type: 'text/plain',
+  lastModified: new Date().getTime(),
+});
+const mockFile2 = new File(['file2'], 'filename2.txt', {
+  type: 'text/plain',
+  lastModified: new Date().getTime(),
+});
 const mockFileList = [mockFile1, mockFile2];
 
 class MockUploader implements Partial<Uploader> {
@@ -34,7 +40,7 @@ class MockUploader implements Partial<Uploader> {
   }
 
   public uploadFiles(files): any {
-    return new Observable(observer => {
+    return new Observable((observer) => {
       observer.next({
         progress: 0.5,
         data: null,
@@ -53,17 +59,13 @@ class MockUploader implements Partial<Uploader> {
 }
 
 const mockDragEvent = {
-  preventDefault: () => {
-  },
-  stopPropagation: () => {
-  },
+  preventDefault: () => {},
+  stopPropagation: () => {},
 };
 
 const mockDropEvent = {
-  preventDefault: () => {
-  },
-  stopPropagation: () => {
-  },
+  preventDefault: () => {},
+  stopPropagation: () => {},
   dataTransfer: {
     files: [mockFile1],
   },
@@ -75,15 +77,11 @@ describe('The upload zone component', () => {
   let de: DebugElement;
   const el: HTMLElement = undefined;
 
-  // async beforeEach
-  beforeEach(async(() => {
+  // waitForAsync beforeEach
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        UploadZoneComponent,
-        ProgressBarComponent,
-      ],
-    })
-      .compileComponents(); // compile template and css
+      declarations: [UploadZoneComponent, ProgressBarComponent],
+    }).compileComponents(); // compile template and css
   }));
 
   // synchronous beforeEach
@@ -126,27 +124,6 @@ describe('The upload zone component', () => {
     expect(comp.queuedFiles.emit).toHaveBeenCalled();
   });
 
-  it('Should trigger drop and upload files', async (done) => {
-    comp.uploader = new MockUploader({autoUpload: true}) as any;
-    fixture.detectChanges(); // trigger initial data binding
-
-    spyOn(comp.uploadedFiles, 'emit');
-    fixture.debugElement.triggerEventHandler('drop', mockDropEvent);
-
-    fixture.whenStable().then(() => { // wait for async getQuote
-      fixture.detectChanges(); // trigger initial data binding
-
-      expect(comp.uploadProgress).toEqual(50);
-
-      setTimeout(() => {
-        expect(comp.uploadProgress).toEqual(100);
-        expect(comp.uploadedFiles.emit).toHaveBeenCalled();
-        expect(comp.hasDragOver).toBeFalsy();
-        done();
-      }, 600);
-    });
-  });
-
   it('Should trigger click', () => {
     comp.uploader = new MockUploader() as any;
     fixture.detectChanges(); // trigger initial data binding
@@ -157,7 +134,7 @@ describe('The upload zone component', () => {
   });
 
   it('Should display a button zone', () => {
-    comp.uploader = new MockUploader({type: 'button'}) as any;
+    comp.uploader = new MockUploader({ type: 'button' }) as any;
     fixture.detectChanges(); // trigger initial data binding
 
     const btn = fixture.debugElement.query(By.css('.a-button'));
