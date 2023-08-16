@@ -1,4 +1,4 @@
-import { Interval } from '../types';
+import { Interval } from '../types.d';
 import IInterval = Interval.IInterval;
 
 export abstract class IntervalModel<T> implements IInterval<T> {
@@ -6,8 +6,7 @@ export abstract class IntervalModel<T> implements IInterval<T> {
   type: Interval.IntervalType;
   meaning: Interval.IntervalMeaning = 'OR';
 
-  constructor(public readonly min: T, public readonly  max: T) {
-  }
+  constructor(public readonly min: T, public readonly max: T) {}
 
   abstract isInRange(value: T);
 }
