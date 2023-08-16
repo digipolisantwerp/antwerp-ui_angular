@@ -1,4 +1,4 @@
-import { Interval } from '../types.d';
+import { Interval } from '../types';
 import { GenericInterval } from './generic.interval';
 import { DateInterval } from './date.interval';
 import IInterval = Interval.IInterval;
