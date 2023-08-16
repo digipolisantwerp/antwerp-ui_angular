@@ -1,12 +1,10 @@
-import { Interval } from '../types';
+import { Interval } from '../types.d';
 import { GenericInterval } from './generic.interval';
 import { DateInterval } from './date.interval';
 import IInterval = Interval.IInterval;
 
 export class IntervalBuilder<T> {
-
-  constructor(private readonly  model: IInterval<T>) {
-  }
+  constructor(private readonly model: IInterval<T>) {}
 
   static dateInterval(min: Date, max: Date): IntervalBuilder<Date> {
     return new IntervalBuilder(new DateInterval(min, max));
