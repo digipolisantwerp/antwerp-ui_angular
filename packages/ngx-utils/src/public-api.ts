@@ -30,7 +30,7 @@ INTERVAL
 export { IntervalBuilder } from './lib/interval/classes/interval.builder';
 export { GenericInterval } from './lib/interval/classes/generic.interval';
 export { DateInterval } from './lib/interval/classes/date.interval';
-export { Interval } from './lib/interval/types';
+export { Interval } from './lib/interval/types/interval.types';
 
 /* 
 DATES 
