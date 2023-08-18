@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 
 - Update peerDependencies for `ngx-icon` and `ngx-notifications`
+- Added `date-fns` as a dependency of `ngx-utils`
 
 ## 6.0.0 - 2023-06-21
 
