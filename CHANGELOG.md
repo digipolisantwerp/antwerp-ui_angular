@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 
+- `ngx-utils`: Correctly build type declarations for date utils
 - Update peerDependencies for `ngx-icon` and `ngx-notifications`
 - Added `date-fns` as a dependency of `ngx-utils`
+- Add paddings to table headings
 
 ## 6.0.0 - 2023-06-21
 
