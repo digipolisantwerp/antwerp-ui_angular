@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+### Changed
+
+- Removed `date-fns-tz` as a dependency of `ngx-utils`
+
 ### Fixed
 
 - `ngx-utils`: Correctly build type declarations for date utils
