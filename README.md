@@ -21,7 +21,7 @@ This library is part of [Antwerp UI][antwerp-ui].
 
 ### Running the project locally
 
-- Use node version `18.x.x` (v. `18.12.1` at time of writing).
+- Use node version `18.x.x` (v. `18.12.1` at time of writing)
 
 ```shell
 npm i
