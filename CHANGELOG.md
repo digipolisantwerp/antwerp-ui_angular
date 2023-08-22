@@ -5,8 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## Unreleased
-
+## 6.0.3 - 2023-08-22
 
 ### Changed
 
@@ -18,6 +17,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Update peerDependencies for `ngx-icon` and `ngx-notifications`
 - Added `date-fns` as a dependency of `ngx-utils`
 - Add paddings to table headings
+
+## 6.0.2 - 2023-08-16
+
+### Fixed
+
+- Bump all repo's to the same version to have consistent versioning
+
+## 6.0.1 - 2023-08-16
+
+### Fixed
+
+- `ngx-utils` add type files into build
 
 ## 6.0.0 - 2023-06-21
 
