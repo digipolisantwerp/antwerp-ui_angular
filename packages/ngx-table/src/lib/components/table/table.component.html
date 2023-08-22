@@ -15,7 +15,7 @@
   >
     <thead *ngIf="columns.length > 0">
       <tr>
-        <th *ngFor="let column of columns" [ngClass]="tableHelper.getClass(column)" class="is-collapsed">
+        <th *ngFor="let column of columns" [ngClass]="tableHelper.getClass(column)">
           <ng-container *ngIf="column.headerComponent">
             <aui-table-header
               [component]="column.headerComponent"

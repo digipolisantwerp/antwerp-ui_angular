@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+
+### Changed
+
+- Removed `date-fns-tz` as a dependency of `ngx-utils`
+
+### Fixed
+
+- Update peerDependencies for `ngx-icon` and `ngx-notifications`
+- Added `date-fns` as a dependency of `ngx-utils`
+
 ## 6.0.0 - 2023-06-21
 
 ### Changed

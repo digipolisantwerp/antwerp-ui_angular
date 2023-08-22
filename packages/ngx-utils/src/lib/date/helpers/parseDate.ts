@@ -1,5 +1,4 @@
-import { parse } from 'date-fns';
-import { zonedTimeToUtc } from 'date-fns-tz';
+import { parse, parseJSON } from 'date-fns';
 
 export default (d, format = null) => {
   if (d === undefined || d === null || !!d === false || d instanceof Array) {
@@ -12,5 +11,5 @@ export default (d, format = null) => {
 
   const date = format ? parse(d, format, new Date()) : new Date(Date.parse(d));
 
-  return isNaN(date.getTime()) ? null : zonedTimeToUtc(date, 'UTC');
+  return isNaN(date.getTime()) ? null : parseJSON(date);
 };
