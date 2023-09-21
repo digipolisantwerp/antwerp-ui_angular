@@ -55,7 +55,7 @@
     "leaflet-draw": "^1.0.4",
     "lodash-es": "^4.17.21",
     "marked": "^4.3.0",
-    "ngx-toastr": "^11.3.3",
+    "ngx-toastr": "^17.0.2",
     "redux": "4.0.1",
     "rimraf": "^3.0.2",
     "rxjs": "~6.6.7",
@@ -97,9 +97,6 @@
     "webpack-bundle-analyzer": "^4.4.2"
   },
   "overrides": {
-    "ngx-toastr": {
-      "@angular/core": "^15.2.3"
-    },
     "@angular-redux/store": {
       "@angular/core": "^15.2.3"
     }

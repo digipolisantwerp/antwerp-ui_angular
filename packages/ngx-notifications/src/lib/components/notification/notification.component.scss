@@ -1,5 +1,5 @@
 @import '@a-ui/core/dist/assets/styles/_quarks';
-@import '~ngx-toastr/toastr.css';
+@import 'ngx-toastr/toastr';
 
 ::ng-deep .toast-container {
   display: flex;
