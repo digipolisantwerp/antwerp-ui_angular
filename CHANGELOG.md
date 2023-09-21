@@ -5,11 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## 6.0.4 - 2023-09-21
 
 ### Fixed
 
 - Update ngx-toastr package
+- Fix build errors when skipLibCheck = false
 
 ## 6.0.3 - 2023-08-22
 
