@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## UNRELEASED
+
+### Changed
+
+- Update core branding to `6.5.0`
+
+### Fixed
+
+- Add `a-button` class to buttons of the aui-column-selector component
+
 ## 6.0.4 - 2023-09-21
 
 ### Fixed
