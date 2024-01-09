@@ -72,7 +72,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/marked": "^4.0.8",
-    "@types/node": "~8.9.4",
+    "@types/node": "^20.10.7",
     "@types/sinon": "^7.5.2",
     "@typescript-eslint/parser": "^5.48.1",
     "chalk": "^3.0.0",
