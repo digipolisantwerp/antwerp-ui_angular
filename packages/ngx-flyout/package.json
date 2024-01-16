@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-flyout",
-  "version": "6.0.4",
+  "version": "6.0.5",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-icon": "^6.0.4"
+    "@acpaas-ui/ngx-icon": "^6.0.5"
   },
   "peerDependencies": {
     "@angular/common": ">=15.2.0",
