@@ -1,13 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { addWeeks } from 'date-fns';
+import { DatepickerComponent } from 'packages/ngx-forms/src/lib/datepicker/public-api';
 
 @Component({
   templateUrl: './datepicker.page.html',
 })
 export class FormsDatepickerDemoPageComponent implements OnInit, OnDestroy {
+  @ViewChild('datepicker', { static: true }) datepicker: DatepickerComponent;
   public dateForm: UntypedFormGroup;
   public min = new Date();
   public max = addWeeks(new Date(), 2);
@@ -65,6 +67,10 @@ this.dateForm = this.fb.group({
   private destroyed$ = new Subject<boolean>();
 
   constructor(private fb: UntypedFormBuilder) {}
+
+  public openFlyout() {
+    this.datepicker?.flyout?.open();
+  }
 
   public ngOnInit() {
     this.dateForm = this.fb.group({
