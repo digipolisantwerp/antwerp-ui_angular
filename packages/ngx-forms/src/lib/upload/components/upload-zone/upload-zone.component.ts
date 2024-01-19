@@ -15,6 +15,7 @@ import { Uploader } from '../../classes/uploader.class';
 
 @Component({
   selector: 'aui-upload-zone',
+  styleUrls: ['./upload-zone.component.scss'],
   templateUrl: './upload-zone.component.html',
 })
 export class UploadZoneComponent implements AfterViewInit {

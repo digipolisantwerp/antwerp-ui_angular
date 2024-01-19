@@ -2,3 +2,12 @@
 .aui-datepicker {
   display: block;
 }
+
+.m-flyout.is-open {
+  .m-datepicker {
+    opacity: 1;
+    transform: translateY(calc(var(--BORDER-WIDTH)*-1));
+    transition-delay: 0s;
+    visibility: visible;
+  }
+}
