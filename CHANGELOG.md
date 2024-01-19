@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `ngx-datepicker`: Fixed the datepicker flyout not appearing
 - `ngx-calendar`: Fixed a tabindex issue
+- `styleguide`: Fixed footer links
 
 ### Changed
 - `ngx-forms/datepicker`: Changed the datepicker icon to match the React version of the datepicker
