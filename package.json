@@ -14,7 +14,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 5200",
+    "start": "ng serve",
     "build": "ng build",
     "build:all": "node ./scripts/build-all.js",
     "build:prod": "ng build styleguide --configuration production --base-href \"https://digipolisantwerp.github.io/antwerp-ui_angular/\"",
