@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [6.0.7] - 2024-01-24
+
+### Fixed
+
+- Fixed flyout button outlined class
+
 ## [6.0.6] - 2024-01-19
 
 ### Fixed
