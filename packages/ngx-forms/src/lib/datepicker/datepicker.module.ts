@@ -37,7 +37,7 @@ export class DatepickerModule {
     weekdayLabels: string[],
     monthLabels: string[],
     errorLabels: DatepickerErrorLabels
-  ): ModuleWithProviders<any> {
+  ): ModuleWithProviders<DatepickerModule> {
     return {
       ngModule: DatepickerModule,
       providers: [
