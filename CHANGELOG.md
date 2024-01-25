@@ -5,11 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [6.0.7] - 2024-01-24
+## [6.0.7] - 2024-01-25
 
 ### Fixed
 
-- Fixed flyout button outlined class
+- `ngx-flyout`: Fixed flyout button outline class
+- `ngx-datepicker`: Fixed 'Value could not be determined statically' error
+- `core`: Fixed lerna always publishing all packages
+
 
 ## [6.0.6] - 2024-01-19
 
@@ -599,7 +602,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.6...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.7...HEAD
+[6.0.7]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.6...v6.0.7
 [6.0.6]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.5...v6.0.6
 [6.0.5]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.4...v6.0.5
 [6.0.4]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.3...v6.0.4

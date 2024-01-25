@@ -23,7 +23,7 @@
     "e2e": "ng e2e",
     "analyze": "ng build --configuration production --stats-json && webpack-bundle-analyzer dist/styleguide/stats-es2015.json",
     "prepare": "npm run build:all",
-    "publish:all": "lerna publish --force-publish --contents dist"
+    "publish:all": "lerna publish --contents dist"
   },
   "private": true,
   "publishConfig": {
