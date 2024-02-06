@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+
+- Fix month overflow in active date for Calendar/Datepicker components.
+
 ## [7.0.0] - 2023-01-13 - Angular update
 
 - Ensure that repo is running with Node version 18.
