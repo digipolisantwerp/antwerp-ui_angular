@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.3] - 2024-01-04
+### Fixed
+- Added detectChanges on the flyout open method & possibility to open from datepicker
+
 ## [4.0.2] - 2018-04-18
 ### Fixed
 - Do not overwrite classList on host

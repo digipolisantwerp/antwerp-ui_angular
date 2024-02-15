@@ -1,16 +1,16 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "6.0.4",
+  "version": "6.0.7",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-calendar": "^6.0.4",
-    "@acpaas-ui/ngx-flyout": "^6.0.4",
-    "@acpaas-ui/ngx-icon": "^6.0.4",
-    "@acpaas-ui/ngx-progress-bar": "^6.0.4",
-    "@acpaas-ui/ngx-selectable-list": "^6.0.4",
-    "@acpaas-ui/ngx-utils": "^6.0.4",
+    "@acpaas-ui/ngx-calendar": "^6.0.6",
+    "@acpaas-ui/ngx-flyout": "^6.0.7",
+    "@acpaas-ui/ngx-icon": "^6.0.6",
+    "@acpaas-ui/ngx-progress-bar": "^6.0.6",
+    "@acpaas-ui/ngx-selectable-list": "^6.0.6",
+    "@acpaas-ui/ngx-utils": "^6.0.6",
     "lodash-es": "~4.17.10"
   },
   "peerDependencies": {

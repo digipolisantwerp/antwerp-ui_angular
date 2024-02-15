@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.7] - 2024-01-24
+
+### Fixed
+
+- Fixed flyout button outlined class
+
 ## [5.0.1] - 2018-04-27
 ### Changed
 - Fixed flyout content always rendered

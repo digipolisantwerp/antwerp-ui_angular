@@ -97,6 +97,7 @@ export class FlyoutDirective implements OnDestroy {
     this.state$.next(FlyoutState.OPEN);
 
     this.document.addEventListener('keyup', this.handleKeyUp);
+    this.cdr.detectChanges();
   }
 
   public close(): void {

@@ -23,7 +23,7 @@
     "e2e": "ng e2e",
     "analyze": "ng build --configuration production --stats-json && webpack-bundle-analyzer dist/styleguide/stats-es2015.json",
     "prepare": "npm run build:all",
-    "publish:all": "lerna publish --force-publish --contents dist"
+    "publish:all": "lerna publish --contents dist"
   },
   "private": true,
   "publishConfig": {
@@ -63,7 +63,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@a-ui/core": "^6.2.2",
+    "@a-ui/core": "^6.5.0",
     "@a-ui/flexboxgrid": "^3.0.0",
     "@angular-devkit/build-angular": "^15.2.4",
     "@angular/cli": "^15.2.0",
@@ -72,7 +72,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/marked": "^4.0.8",
-    "@types/node": "~8.9.4",
+    "@types/node": "^20.10.7",
     "@types/sinon": "^7.5.2",
     "@typescript-eslint/parser": "^5.48.1",
     "chalk": "^3.0.0",

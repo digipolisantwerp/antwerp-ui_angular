@@ -5,7 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## UNRELEASED
+## [6.0.7] - 2024-01-25
+
+### Fixed
+
+- `ngx-flyout`: Fixed flyout button outline class
+- `ngx-datepicker`: Fixed 'Value could not be determined statically' error
+- `core`: Fixed lerna always publishing all packages
+
+
+## [6.0.6] - 2024-01-19
+
+### Fixed
+
+- `ngx-datepicker`: Fixed the datepicker flyout not appearing
+- `ngx-calendar`: Fixed a tabindex issue
+- `styleguide`: Fixed footer links
+
+### Changed
+- `ngx-forms/datepicker`: Changed the datepicker icon to match the React version of the datepicker
+- `ngx-forms/upload`: Fixed an issue with the upload dropzone when used with the upload button
+- `core`: Upgraded the core branding to the latest version
+
+
+## [6.0.5] - 2024-01-24
 
 ### Changed
 
@@ -15,14 +38,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Add `a-button` class to buttons of the aui-column-selector component
 
-## 6.0.4 - 2023-09-21
+### Added
+
+- Added detectChanges on the flyout open method & possibility to open from datepicker
+
+
+## [6.0.4] - 2023-09-21
 
 ### Fixed
 
 - Update ngx-toastr package
 - Fix build errors when skipLibCheck = false
 
-## 6.0.3 - 2023-08-22
+
+## [6.0.3] - 2023-08-22
 
 ### Changed
 
@@ -35,19 +64,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Added `date-fns` as a dependency of `ngx-utils`
 - Add paddings to table headings
 
-## 6.0.2 - 2023-08-16
+
+## [6.0.2] - 2023-08-16
 
 ### Fixed
 
 - Bump all repo's to the same version to have consistent versioning
 
-## 6.0.1 - 2023-08-16
+
+## [6.0.1] - 2023-08-16
 
 ### Fixed
 
 - `ngx-utils` add type files into build
 
-## 6.0.0 - 2023-06-21
+
+## [6.0.0] - 2023-06-21
 
 ### Changed
 
@@ -570,7 +602,14 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.7...HEAD
+[6.0.7]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.6...v6.0.7
+[6.0.6]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.5...v6.0.6
+[6.0.5]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.4...v6.0.5
+[6.0.4]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.3...v6.0.4
+[6.0.3]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.2...v6.0.3
+[6.0.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.1...v6.0.2
+[6.0.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.0...v6.0.1
 [6.0.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.4.1...v6.0.0
 [5.4.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.4.0...v5.4.1
 [5.4.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v5.3.0...v5.4.0

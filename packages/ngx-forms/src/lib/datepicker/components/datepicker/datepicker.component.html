@@ -14,16 +14,22 @@
       placeholder="{{ placeholder }}"
       type="text"
     />
-    <aui-icon *ngIf="isDisabled" name="ai-calendar-3" role="button" tabindex="0"/>
+    <ng-container *ngIf="isDisabled">
+      <aui-icon
+        name="ai-calendar"
+        role="button"
+        tabindex="0"
+      />
+    </ng-container>
     <ng-container *ngIf="!isDisabled">
       <aui-icon
         auiFlyoutAction
         [openOnFocus]="false"
-        name="ai-calendar-3"
+        name="ai-calendar"
         className="is-clickable"
         role="button"
         tabindex="0"
-      ></aui-icon>
+      />
     </ng-container>
 
     <ng-container *ngIf="!isDisabled">

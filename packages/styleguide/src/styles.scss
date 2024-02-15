@@ -76,8 +76,12 @@ pre {
     padding-left: 0;
 
     a {
-      --link-color: #{$white};
-      --link-hover-color: var(--theme1-050);
+      --LINK-COLOR: #{$white};
+      --LINK-HOVER-COLOR: #{$white};
+
+      .ai .ai {
+        padding-left: 0;
+      }
     }
   }
 
