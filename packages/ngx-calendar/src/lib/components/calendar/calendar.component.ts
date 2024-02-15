@@ -92,7 +92,9 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   updateActiveDate(factor: number = 0): void {
-    const activeDate = this.activeDate ? new Date(this.activeDate) : new Date();
+    const activeDate = this.activeDate
+      ? new Date(this.activeDate.getFullYear(), this.activeDate.getMonth(), 1)
+      : new Date();
 
     switch (this.activeView) {
       case CALENDAR_VIEW_MONTH:
