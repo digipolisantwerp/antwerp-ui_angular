@@ -11,7 +11,7 @@ export const baseMapWorldGray: LeafletLayer = {
 
 export const baseMapAntwerp: LeafletLayer = {
   name: 'Base antwerp',
-  url: 'https://basemap.antwerpen.be/tile/{z}/{y}/{x}',
+  url: 'https://geodata.antwerpen.be/arcgissql/rest/services/P_Publiek/Luchtfoto_actueel_wgs84/MapServer/tile/{z}/{y}/{x}',
   options: {
     minZoom: 13,
     maxNativeZoom: 19,
