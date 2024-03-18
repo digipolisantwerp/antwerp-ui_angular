@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Changed
+
+- `ngx-leaflet`: Changed the `baseMapAntwerp` link to a newer version.
+
 ### Fixed
 
 - Fix month overflow in active date for Calendar/Datepicker components.
