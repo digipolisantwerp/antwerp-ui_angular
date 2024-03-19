@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+
+## [6.0.9] - 2024-03-19
+
 ### Changed
 
 - `ngx-leaflet`: Changed the `baseMapAntwerp` link to a newer version.
+
+## [6.0.8] - 2024-02-15
 
 ### Fixed
 
@@ -606,7 +611,9 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.7...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.9...HEAD
+[6.0.9]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.8...v6.0.9
+[6.0.8]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.7...v6.0.8
 [6.0.7]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.6...v6.0.7
 [6.0.6]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.5...v6.0.6
 [6.0.5]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.4...v6.0.5
