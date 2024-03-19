@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-avatar",
-  "version": "6.0.6",
+  "version": "6.0.9",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-icon": "^6.0.6"
+    "@acpaas-ui/ngx-icon": "^6.0.9"
   },
   "peerDependencies": {
     "@angular/common": ">=15.2.0",
