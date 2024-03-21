@@ -1,6 +1,6 @@
 <div aria-haspopup="grid" auiFlyout class="aui-datepicker a-input has-icon-right">
-  <label class="a-input__label" for="{{ id }}">{{ label }}</label>
-  <small class="a-input__description"> {{ description }}</small>
+  <label class="a-input__label" for="{{ id }}" *ngIf="label">{{ label }}</label>
+  <small class="a-input__description" *ngIf="description"> {{ description }}</small>
   <div class="a-input__wrapper">
     <input
       (blur)="handleBlur($event)"
@@ -17,8 +17,6 @@
     <ng-container *ngIf="isDisabled">
       <aui-icon
         name="ai-calendar"
-        role="button"
-        tabindex="0"
       />
     </ng-container>
     <ng-container *ngIf="!isDisabled">
