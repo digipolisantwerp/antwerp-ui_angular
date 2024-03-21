@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `ngx-leaflet`: Reverted the `baseMapAntwerp` link to a newer version.
 - `ngx-forms`: Added a forgotten ARIA label for the datepicker.
+- `ngx-forms`: Made label and description of datepicker and timepicker conditional
 
 ## [6.0.9] - 2024-03-19
 
