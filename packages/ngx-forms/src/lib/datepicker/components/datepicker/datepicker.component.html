@@ -1,6 +1,6 @@
 <div aria-haspopup="grid" auiFlyout class="aui-datepicker a-input has-icon-right">
-  <label class="a-input__label" for="id">{{ label }}</label>
-  <small class="a-input__description" id="id"> {{ description }}</small>
+  <label class="a-input__label" for="{{ id }}">{{ label }}</label>
+  <small class="a-input__description"> {{ description }}</small>
   <div class="a-input__wrapper">
     <input
       (blur)="handleBlur($event)"
@@ -28,6 +28,7 @@
         name="ai-calendar"
         className="is-clickable"
         role="button"
+        [attr.aria-label]="ariaOpenDatepickerLabel"
         tabindex="0"
       />
     </ng-container>

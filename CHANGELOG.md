@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [6.0.10] - 2024-03-21
+
+### Fixed
+
+- `ngx-leaflet`: Reverted the `baseMapAntwerp` link to a newer version.
+- `ngx-forms`: Added a forgotten ARIA label for the datepicker.
+
 ## [6.0.9] - 2024-03-19
 
 ### Changed
@@ -611,7 +618,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.9...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.10...HEAD
+[6.0.10]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.9...v6.0.10
 [6.0.9]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.8...v6.0.9
 [6.0.8]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.7...v6.0.8
 [6.0.7]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.6...v6.0.7
