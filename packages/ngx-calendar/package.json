@@ -1,12 +1,12 @@
 {
   "name": "@acpaas-ui/ngx-calendar",
-  "version": "6.0.6",
+  "version": "6.0.10",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-icon": "^6.0.6",
-    "@acpaas-ui/ngx-utils": "^6.0.6",
+    "@acpaas-ui/ngx-icon": "^6.0.10",
+    "@acpaas-ui/ngx-utils": "^6.0.10",
     "lodash-es": "~4.17.10"
   },
   "peerDependencies": {
