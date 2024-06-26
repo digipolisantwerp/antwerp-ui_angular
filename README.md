@@ -44,7 +44,7 @@ npm i @acpaas-ui/ngx-forms
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-@import url('https://cdn.antwerpen.be/core_branding_scss/6.5.0/main.min.css');
+@import url('https://cdn.antwerpen.be/core_branding_scss/6.6.1/main.min.css');
 ```
 
 You can also modify `index.html` to reference the [favicons for the city of Antwerp][branding-favicons].
@@ -54,7 +54,7 @@ Then start using the components in your pages. Look at the component documentati
 You can also add a branding-compatible [flexbox grid layout system][flexboxgrid]:
 
 ```scss
-@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/2.0.0/flexboxgrid.min.css');
+@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/3.0.0/flexboxgrid.min.css');
 ```
 
 Note that you are free to use your own grid, as long as it meets our branding guidelines.

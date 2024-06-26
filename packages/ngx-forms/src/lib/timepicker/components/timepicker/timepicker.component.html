@@ -1,7 +1,7 @@
 <div class="m-timepicker">
   <div *ngIf="!shouldUseFallback" [class]="'a-input--' + size" [ngClass]="{ 'has-error': hasError }" class="a-input">
-    <label class="a-input__label" for="id">{{ label }}</label>
-    <small class="a-input__description" id="id" [ngClass]="{ 'is-error': hasError }">
+    <label class="a-input__label" for="id" *ngIf="label">{{ label }}</label>
+    <small class="a-input__description" id="id" [ngClass]="{ 'is-error': hasError }" *ngIf="description">
       <aui-icon *ngIf="hasError" name="ai-alert-triangle"></aui-icon>
       {{ description }}</small
     >

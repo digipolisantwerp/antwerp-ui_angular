@@ -68,7 +68,7 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
       week.map((day) => {
         const currentDate = new Date();
         this.activeDate.setHours(currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds());
-        const date: Date = new Date(this.activeDate);
+        const date: Date = new Date(this.activeDate.getFullYear(), this.activeDate.getMonth(), day.date);
 
         if (day.padding) {
           if (day.date > 20) {

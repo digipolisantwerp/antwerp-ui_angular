@@ -76,6 +76,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   @Input() autocomplete: 'off';
   @Input() weekdayLabels: WeekdayLabelsConfig;
   @Input() monthLabels: MonthLabelsConfig;
+  @Input() ariaOpenDatepickerLabel = 'Open kalender';
 
   // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() blur = new EventEmitter<Event>();
