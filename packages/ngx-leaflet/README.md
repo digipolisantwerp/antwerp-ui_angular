@@ -84,6 +84,7 @@ public ngOnInit(): void {
 - `map`: The native leaflet map instance
 - `addTileLayer(layer: LeafletLayer)`: adds a tile layer to the map. (see leaflet docs)
 - `addFeatureLayer(config: any)`: adds a feature layer to the map. (see esri leaflet docs)
+- `addVectorLayer(config: LeafletLayer)`: adds a feature layer to the map. (see [Leaflet.VectorGrid](https://github.com/Leaflet/Leaflet.VectorGrid) docs)
 - `addGeoJSON(geoJson: any, config: any)`: add geoJSON to the map. (see leaflet docs)
 - `fitFeatureLayers(featureLayers)`: Fit the map bounds to the given feature layers.
 - `removeLayer(layer)`: removes a layer

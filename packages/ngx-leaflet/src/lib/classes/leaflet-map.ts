@@ -45,6 +45,14 @@ export class LeafletMap {
     }
   }
 
+  addVectorLayer(layer: LeafletLayer) {
+    if (this.mapService.isAvailable()) {
+      const tileLayer = this.mapService.L.vectorGrid.protobuf(layer.url, layer.options);
+      this.map.addLayer(tileLayer);
+      return tileLayer;
+    }
+  }
+
   addFeatureLayer(config: any) {
     if (this.mapService.isAvailable()) {
       const featureLayer = new this.mapService.esri.featureLayer(config);
