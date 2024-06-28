@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+import { HighLightService } from './code-snippet.service';
 
 import { CodeSnippetComponent } from './code-snippet.component';
 // @ts-ignore
@@ -24,9 +24,9 @@ describe('The Codesnippet Component', () => {
   // async beforeEach
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CommonModule, HighlightJsModule],
+      imports: [CommonModule],
       declarations: [CodeSnippetComponent],
-      providers: [{ provide: HighlightJsService, useClass: MockHighlightJsService }],
+      providers: [{ provide: HighLightService, useClass: MockHighlightJsService }],
     }).compileComponents(); // compile template and css
   }));
 

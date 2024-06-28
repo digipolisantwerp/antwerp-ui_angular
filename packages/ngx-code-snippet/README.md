@@ -6,7 +6,6 @@ This module contains a component for displaying a code snippet formatted by high
 This package is build depending on:
 
 - [hightlight.js](https://highlightjs.org)
-- and the [corresponding angular2 npm package](https://www.npmjs.com/package/angular2-highlight-js).
 - the [Marker npm package](https://www.npmjs.com/package/marked)
 
 Be aware that you need to install the highlight.js package yourself. We have tested and used version 9.10.0 in our example.

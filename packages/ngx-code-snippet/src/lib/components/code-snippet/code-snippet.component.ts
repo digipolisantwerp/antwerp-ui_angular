@@ -12,7 +12,7 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 // @ts-ignore
 import { marked } from 'marked';
-import { HighlightJsService } from 'angular2-highlight-js';
+import { HighlightService } from './code-snippet.service';
 
 @Component({
   selector: 'aui-code-snippet',
@@ -29,7 +29,7 @@ export class CodeSnippetComponent implements OnChanges, AfterViewInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId,
     private el: ElementRef,
-    private highlightJsService: HighlightJsService
+    private highlightJsService: HighlightService
   ) {}
 
   public ngOnChanges() {
