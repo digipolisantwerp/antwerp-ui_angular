@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+
+- `ngx-leaflet`: Fixed `addVectorLayer` method so that the styling is also used of the layer vector layers, while maintaining performance.
+
 ### Added
 
 - `ngx-leaflet`: Added `addVectorLayer` method so that leaflet can accept vector layers.
