@@ -8,7 +8,7 @@
     "@acpaas-ui",
     "leaflet",
     "esri-leaflet",
-    "leaflet-draw",
-    "leaflet.vectorgrid"
+    "esri-leaflet-vector",
+    "leaflet-draw"
   ]
 }
