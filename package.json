@@ -53,6 +53,7 @@
     "highlight.js": "^10.7.2",
     "leaflet": "^1.7.1",
     "leaflet-draw": "^1.0.4",
+    "esri-leaflet-vector": "^4.2.3",
     "lodash-es": "^4.17.21",
     "marked": "^4.3.0",
     "ngx-toastr": "^16.0.0",

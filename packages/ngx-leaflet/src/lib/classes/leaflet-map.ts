@@ -2,6 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { MapService } from '../services/map.service';
 
 import { LeafletLayer, LeafletMapOptions } from '../types/leaflet.types';
+import { vectorTileLayer } from "esri-leaflet-vector";
 
 export class LeafletMap {
   public map;
@@ -47,7 +48,7 @@ export class LeafletMap {
 
   addVectorLayer(layer: LeafletLayer) {
     if (this.mapService.isAvailable()) {
-      const tileLayer = this.mapService.L.vectorGrid.protobuf(layer.url, layer.options);
+      const tileLayer = vectorTileLayer(layer.url, layer.options)
       this.map.addLayer(tileLayer);
       return tileLayer;
     }
