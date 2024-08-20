@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconModule } from '@acpaas-ui/ngx-icon';
@@ -31,7 +31,7 @@ export class ItemCounterModule {
   static forChild(
     itemCounterLabel: Label,
     itemsPerPageLabel: Label
-  ) {
+  ): ModuleWithProviders<ItemCounterModule> {
     return {
       ngModule: ItemCounterModule,
       providers: [

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [6.1.2] - 2024-08-20
+
+### Fixed
+
+- `ngx-pagination`: Add strongly typed return type for forChild() in ItemCounterModule, which is necessary in Angular 18.
+
+### Changed
+- `ngx-calendar`: Changed ModuleWithProviders<any> to specific module in forChild()
+- `ngx-forms`: Changed ModuleWithProviders<any> to specific module in forChild()
+- `ngx-pagination`: Changed ModuleWithProviders<any> to specific module in forChild()
+- `ngx-table`: Changed ModuleWithProviders<any> to specific module in forChild()
+
 ## [6.1.1] - 2024-07-02
 
 ### Fixed

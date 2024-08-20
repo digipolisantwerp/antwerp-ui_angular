@@ -19,7 +19,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 export class PaginationModule {
   static forChild(
     paginationLabels: PaginationLabels
-  ): ModuleWithProviders<any> {
+  ): ModuleWithProviders<PaginationModule> {
     return {
       ngModule: PaginationModule,
       providers: [{ provide: PAGINATION_LABELS, useValue: paginationLabels }],
