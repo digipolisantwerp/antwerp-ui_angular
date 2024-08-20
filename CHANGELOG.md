@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [6.1.1] - 2024-07-02
+
+### Fixed
+
+- `ngx-leaflet`: Fixed `addVectorLayer` method so that the styling is also used of the layer vector layers, while maintaining performance.
+
+## [6.1.0] - 2024-06-27
+
+### Added
+
+- `ngx-leaflet`: Added `addVectorLayer` method so that leaflet can accept vector layers.
 
 ## [6.0.10] - 2024-03-21
 
@@ -14,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - `ngx-leaflet`: Reverted the `baseMapAntwerp` link to a newer version.
 - `ngx-forms`: Added a forgotten ARIA label for the datepicker.
-- `ngx-forms`: Made label and description of datepicker and timepicker conditional
+- `ngx-forms`: Made label and description of datepicker and timepicker conditional.
 
 ## [6.0.9] - 2024-03-19
 
@@ -619,7 +630,9 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.10...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.1...HEAD
+[6.1.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.0...v6.1.1
+[6.1.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.10...v6.1.0
 [6.0.10]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.9...v6.0.10
 [6.0.9]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.8...v6.0.9
 [6.0.8]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.7...v6.0.8

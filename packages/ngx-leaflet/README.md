@@ -84,6 +84,7 @@ public ngOnInit(): void {
 - `map`: The native leaflet map instance
 - `addTileLayer(layer: LeafletLayer)`: adds a tile layer to the map. (see leaflet docs)
 - `addFeatureLayer(config: any)`: adds a feature layer to the map. (see esri leaflet docs)
+- `addVectorLayer(config: LeafletLayer)`: adds a vector layer to the map. When passing the URL of the VectorTileServer, you don't need to suffix it with {z}/{y}/{x}.pbf, the following URL would work: https://tiles.arcgis.com/tiles/1KSVSmnHT2Lw9ea6/arcgis/rest/services/basemap_antwerpen_met_labels_20220218/VectorTileServer (Also the style that is provided under ../../VectorTileServer/resources/styles will be used by default.) See [esri-leaflet-vector](https://github.com/Esri/esri-leaflet-vector) for more information.
 - `addGeoJSON(geoJson: any, config: any)`: add geoJSON to the map. (see leaflet docs)
 - `fitFeatureLayers(featureLayers)`: Fit the map bounds to the given feature layers.
 - `removeLayer(layer)`: removes a layer
