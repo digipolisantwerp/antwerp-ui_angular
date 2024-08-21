@@ -41,7 +41,7 @@ export class CalendarModule {
   static forChild(
     weekdayLabels: WeekdayLabelsConfig,
     monthLabels: MonthLabelsConfig
-  ): ModuleWithProviders<any> {
+  ): ModuleWithProviders<CalendarModule> {
     return {
       ngModule: CalendarModule,
       providers: [
