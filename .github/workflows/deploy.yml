@@ -9,18 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Use Node 18.x
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - name: Use Node 20.x
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: 20
       - name: Install dependencies & build component library
         run: npm ci
       - name: Build documentation
         run: npm run build:prod
       - name: Archive build
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
@@ -30,13 +30,13 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Download build
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: dist
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
