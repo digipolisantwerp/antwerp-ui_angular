@@ -229,16 +229,17 @@ constructor(
 	`;
 
   public exampleHTML = `<aui-table
-  [open]="true"
-  [striped]="true"
-  [columns]="columns"
-  [loading]="loading"
-  [rows]="rows"
-  loadDataMessage="Loading..."
-  noColumsMessage="There are no columns!"
-  noDataMessage="There is no data!"
->
-</aui-table>
+    [open]="true"
+    [striped]="true"
+    [hasClickAction]="true"
+    [columns]="columns"
+    [loading]="loading"
+    [rows]="rows"
+    loadDataMessage="Loading..."
+    noColumsMessage="There are no columns!"
+    noDataMessage="There is no data!"
+  >
+  </aui-table>
 	`;
 
   public loading = false;

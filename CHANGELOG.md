@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [6.1.3] - 2024-09-09
+
+### Fixed
+
+- `ngx-table`: No css on hover because it had the wrong css class. Didn't follow new a-ui classes
+
 ## [6.1.2] - 2024-08-20
 
 ### Fixed

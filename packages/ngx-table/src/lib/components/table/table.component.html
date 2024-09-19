@@ -91,7 +91,7 @@
         <tr
           (click)="clickRow(row)"
           *ngFor="let row of rows; let rowIndex = index"
-          [ngClass]="{ 'a-table--clickable': hasClickAction }"
+          [ngClass]="{ 'is-clickable': hasClickAction }"
         >
           <td *ngFor="let column of columns" [ngClass]="tableHelper.getClass(column)">
             <aui-table-cell
