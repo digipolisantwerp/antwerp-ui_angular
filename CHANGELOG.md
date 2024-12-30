@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [6.1.4] - 2024-12-30
+
+### Fixed
+
+- `ngx-layout`: Add css class "m-overlay\_\_inner" to section in ModalOverlayComponent.
+
 ## [6.1.3] - 2024-09-09
 
 ### Fixed
@@ -20,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `ngx-pagination`: Add strongly typed return type for forChild() in ItemCounterModule, which is necessary in Angular 18.
 
 ### Changed
+
 - `ngx-calendar`: Changed ModuleWithProviders<any> to specific module in forChild()
 - `ngx-forms`: Changed ModuleWithProviders<any> to specific module in forChild()
 - `ngx-pagination`: Changed ModuleWithProviders<any> to specific module in forChild()

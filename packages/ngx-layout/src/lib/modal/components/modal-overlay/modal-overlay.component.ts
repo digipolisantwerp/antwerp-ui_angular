@@ -5,7 +5,7 @@ import { ModalAbstract } from '../../classes/modal.abstract';
 @Component({
   selector: 'aui-modal-overlay',
   template: `
-    <section>
+    <section class="m-overlay__inner">
       <ng-content></ng-content>
     </section>
   `,
