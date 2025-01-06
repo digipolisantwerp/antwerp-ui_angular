@@ -7,11 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-## [6.1.4] - 2024-12-30
+## [6.1.4] - 2025-01-06
 
 ### Fixed
 
-- `ngx-layout`: Add css class "m-overlay\_\_inner" to section in ModalOverlayComponent.
+- `ngx-layout`: Add css class `m-overlay__inner` to section in ModalOverlayComponent.
 
 ## [6.1.3] - 2024-09-09
 
@@ -655,7 +655,10 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.1...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.4...HEAD
+[6.1.4]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.3...v6.1.4
+[6.1.3]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.2...v6.1.3
+[6.1.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.1...v6.1.2
 [6.1.1]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.0...v6.1.1
 [6.1.0]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.10...v6.1.0
 [6.0.10]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.0.9...v6.0.10
