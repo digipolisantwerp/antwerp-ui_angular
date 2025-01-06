@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-layout",
-  "version": "6.1.2",
+  "version": "6.1.4",
   "publishConfig": {
     "access": "public"
   },
