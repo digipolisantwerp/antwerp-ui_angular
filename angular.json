@@ -39,6 +39,7 @@
               "date-fns/_lib/getTimezoneOffsetInMilliseconds/index.js",
               "date-fns/_lib/toInteger/index.js",
               "angular2-highlight-js",
+              "esri-leaflet-vector",
               "leaflet"
             ],
             "scripts": [],
