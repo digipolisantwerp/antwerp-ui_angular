@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class LogoComponent {
   @Input() title = 'Ga naar homepage.';
-  @Input() src = 'https://cdn.antwerpen.be/core_branding_scss/6.6.6/assets/images/a-logo.svg';
+  @Input() src = 'https://cdn.antwerpen.be/core_branding_scss/7.0.0-beta.6/assets/images/a-logo.svg';
   @Input() link?: string;
   @Input() onClick?: (event: MouseEvent) => void;
 

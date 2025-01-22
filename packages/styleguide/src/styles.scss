@@ -1,4 +1,8 @@
-@import '@a-ui/core/dist/assets/styles/quarks';
+@use '@a-ui/core/src/styles/quarks' as *;
+
+/* Remove when core branding v7 is released */
+$neutral-100: #f3f3f3;
+$neutral-600: #141414;
 
 /* Need to be included in core branding */
 body {
@@ -30,7 +34,7 @@ main {
 }
 
 .a-pre.hljs {
-  border: 1px solid $gray-100;
+  border: 1px solid $neutral-100;
 }
 
 .m-button-group--inline {
@@ -64,11 +68,11 @@ pre {
 }
 
 .aui-footer {
-  background: $gray-600;
+  background: $neutral-600;
 
   .u-container {
-    padding-bottom: $spacer;
-    padding-top: $spacer;
+    padding-bottom: var(--SPACER);
+    padding-top: var(--SPACER);
   }
 
   .a-list {
@@ -76,8 +80,8 @@ pre {
     padding-left: 0;
 
     a {
-      --LINK-COLOR: #{$white};
-      --LINK-HOVER-COLOR: #{$white};
+      --LINK-COLOR: var(--TEXT-COLOR-INVERTED);
+      --LINK-HOVER-COLOR: var(--TEXT-COLOR-INVERTED);
 
       .ai .ai {
         padding-left: 0;
@@ -86,12 +90,12 @@ pre {
   }
 
   h3.h4 {
-    color: $gray-100;
+    color: $neutral-100;
   }
 }
 
 .m-nav-tabs__layout {
-  box-shadow: 0 -1px 0 $border-color inset;
+  box-shadow: 0 -1px 0 var(--BORDER-COLOR) inset;
 }
 
 .aui-code-snippet {

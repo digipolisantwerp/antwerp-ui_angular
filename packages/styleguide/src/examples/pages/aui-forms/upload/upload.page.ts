@@ -57,7 +57,7 @@ public dropzone1: UploadOptions = {
   [options]="dropzone1"
   data-id="my-upload"
   [accept]="accept"
-  label="Drag your files here or click upload"
+  label="Drag your files here or tap to upload"
   description="Optional description message"
 >
 </aui-upload>`;
@@ -176,7 +176,7 @@ public uploadFiles(): void {
   ariaId="my-other-upload"
   multiple="false"
   [capture]="capture"
-  label="Drag your files here or click to upload"
+  label="Drag your files here or tap to upload"
   description="Maximum filesize: 10 MB, File extension: jps, jpeg, png"
 >
 </aui-upload-zone>

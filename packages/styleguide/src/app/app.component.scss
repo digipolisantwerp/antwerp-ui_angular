@@ -1,4 +1,5 @@
-@import "../styles.scss";
+@use '@a-ui/core/src/styles/quarks' as *;
+@use '../styles.scss';
 
 .u-main,
 main {
@@ -12,13 +13,13 @@ main {
 
 .u-main-menu {
   @include to($screen-xs-max) {
-    border-bottom: 1px solid $border-color;
+    border-bottom: var(--BORDER-WIDTH) solid var(--BORDER-COLOR);
     height: 50vh;
     overflow: auto;
   }
 
   @include at($screen-sm) {
-    border-right: 1px solid $border-color;
+    border-right: var(--BORDER-WIDTH) solid var(--BORDER-COLOR);
     flex: 0 1 320px
   }
 }

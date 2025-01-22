@@ -1,18 +1,18 @@
-@import '@a-ui/core/dist/assets/styles/quarks/_quarks.variables';
+@use '@a-ui/core/src/styles/quarks' as *;
 @import 'ngx-toastr/toastr';
 
 ::ng-deep .toast-container {
   display: flex;
   flex-direction: column-reverse;
-  max-width: 18.5rem; /* min-width for WCAG (320px) - (2 * $spacer-xs) */
+  max-width: 17rem; /* min-width for WCAG (320px) - grid gutters (2 * 24px) */
   position: fixed;
-  right: $spacer-xs;
-  top: $spacer-lg;
-  z-index: layer('statusbar');
+  right: var(--SPACER-XS);
+  top: var(--SPACER-XL);
+  z-index: var(--Z-STATUSBAR);
 }
 
 :host {
-  margin-top: $spacer-xs;
+  margin-top: var(--SPACER-XS);
 
   &.toast-success {
     .m-alert {

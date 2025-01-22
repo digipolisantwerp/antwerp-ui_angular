@@ -44,7 +44,7 @@ npm i @acpaas-ui/ngx-forms
 Edit styles.scss to import the branding look & feel.
 
 ```scss
-@import url('https://cdn.antwerpen.be/core_branding_scss/6.6.6/main.min.css');
+@import url('https://cdn.antwerpen.be/core_branding_scss/7.0.0-beta.6/main.min.css');
 ```
 
 You can also modify `index.html` to reference the [favicons for the city of Antwerp][branding-favicons].

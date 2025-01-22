@@ -1,16 +1,17 @@
-@import '@a-ui/core/dist/assets/styles/quarks';
+@use '@a-ui/core/src/styles/quarks' as *;
 
 .o-hero {
-  background-color: $brand-primary;
+  background-color: var(--BRAND-1);
+  color: var(--BRAND-1-CONTRAST);
   height: auto;
-  min-height: $spacer * 3;
-  padding-left: $spacer;
+  min-height: calc(var(--SPACER) * 3);
+  padding-left: var(--SPACER);
 
   div {
-    padding-left: $spacer-md;
+    padding-left: var(--SPACER-L);
   }
 }
 
 .u-margin-top-xxs {
-  margin-top: calc(#{$spacer-xs} / 3);
+  margin-top: var(--SPACER-3XS);
 }
