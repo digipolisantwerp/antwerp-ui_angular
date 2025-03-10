@@ -28,9 +28,9 @@ Visit our [documentation site](https://antwerp-ui.digipolis.be/) for full how-to
 #### API
 
 | Name                                       | Default value             | Description                                                                                                                              |
-| ------------------------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `@Input() rows: any[];`                    | `[]`                      | This option has to be an array of objects.                                                                                               |
-| `@Input() columns: (TableColumn            | string)[];`               | `[]`                                                                                                                                     | An array of TableColumns or an array of strings. Use this option to define and manage the columns of the table. |
+| `@Input() columns: (TableColumn string)[];`| `[]`                      | An array of TableColumns or an array of strings. Use this option to define and manage the columns of the table.                          |
 | `@Input() loading: boolean;`               | `false`                   | Use this option to give the `aui-table` a loading state. To show the loading state set `loading = true`.                                 |
 | `@Input() responsive: boolean;`            | `true`                    | By default all tables are responsive. Set to `false` to disable this feature.                                                            |
 | `@Input() hasClickAction: boolean;`        | `false`                   | By default a table row doesn't have a click action. Setting it to `true` enables this feature and emits the row's data via `rowClicked`. |
