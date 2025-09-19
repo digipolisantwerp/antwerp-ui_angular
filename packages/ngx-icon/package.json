@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-icon",
-  "version": "6.1.2",
+  "version": "6.1.5",
   "publishConfig": {
     "access": "public"
   },

@@ -1,12 +1,12 @@
 {
   "name": "@acpaas-ui/ngx-pagination",
-  "version": "6.1.2",
+  "version": "6.1.5",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-icon": "^6.1.2",
-    "@acpaas-ui/ngx-utils": "^6.1.2"
+    "@acpaas-ui/ngx-icon": "^6.1.5",
+    "@acpaas-ui/ngx-utils": "^6.1.5"
   },
   "peerDependencies": {
     "@angular/common": ">=15.2.0",

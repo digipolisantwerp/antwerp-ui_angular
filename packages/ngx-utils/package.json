@@ -1,11 +1,11 @@
 {
   "name": "@acpaas-ui/ngx-utils",
-  "version": "6.1.2",
+  "version": "6.1.5",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@acpaas-ui/ngx-icon": "^6.1.2",
+    "@acpaas-ui/ngx-icon": "^6.1.5",
     "date-fns": "^2.30.0"
   },
   "peerDependencies": {
