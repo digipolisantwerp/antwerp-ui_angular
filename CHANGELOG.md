@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [6.1.5] - 2025-09-19
+
+### Fixed
+
+- `ngx-icon`: Fixed a possible double icon when working with our cookie consent.
+
 ## [6.1.4] - 2025-01-06
 
 ### Fixed
@@ -655,7 +661,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.4...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.5...HEAD
+[6.1.5]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.4...v6.1.5
 [6.1.4]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.3...v6.1.4
 [6.1.3]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.2...v6.1.3
 [6.1.2]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.1...v6.1.2

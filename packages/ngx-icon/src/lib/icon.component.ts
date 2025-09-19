@@ -23,7 +23,7 @@ export class IconComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (!document.getElementById('aiSvg')) {
+    if (!document.getElementById('ai-svg')) {
       this.fetchAntwerpIcons();
     }
   }
@@ -34,11 +34,11 @@ export class IconComponent implements OnInit {
       const response = await fetch(xlinkHref);
       const svgText = await response.text();
       const svgWrapper = this.renderer.createElement('svg');
-      this.renderer.setAttribute(svgWrapper, 'id', 'aiSvg');
+      this.renderer.setAttribute(svgWrapper, 'id', 'ai-svg');
       const svgIcons = new DOMParser().parseFromString(svgText, 'text/html').querySelector('body > svg');
       this.renderer.appendChild(svgWrapper, svgIcons);
 
-      if (!document.getElementById('aiSvg')) {
+      if (!document.getElementById('ai-svg')) {
         this.renderer.appendChild(document.body, svgWrapper);
       }
     } catch (err) {
