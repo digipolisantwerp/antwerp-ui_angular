@@ -46,6 +46,7 @@ export { default as getLastWeekdayOfMonth } from './lib/date/helpers/getLastWeek
 export { default as getMonthLength } from './lib/date/helpers/getMonthLength';
 export { default as getWeekday } from './lib/date/helpers/getWeekday';
 export { default as parseDate } from './lib/date/helpers/parseDate';
+export { default as toUtcMidnightInBrussels } from './lib/date/helpers/toUtcMidnightInBrussels';
 export { default as updateDate } from './lib/date/helpers/updateDate';
 export { default as updateMonth } from './lib/date/helpers/updateMonth';
 

@@ -94,7 +94,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     @Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
     public calendarService: CalendarService,
     private formBuilder: UntypedFormBuilder,
-    private ref: ChangeDetectorRef
+    private ref: ChangeDetectorRef,
   ) {}
 
   public ngOnInit(): void {
@@ -108,7 +108,10 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
         const date = DateHelper.parseDate(format, 'yyyy-MM-dd');
         if (date) {
           this.selectedDate = date;
-          this.onChange(date.toISOString());
+          const year = date.getFullYear();
+          const month = date.getMonth();
+          const day = date.getDate();
+          this.onChange(DateHelper.toUtcMidnightInBrussels(year, month, day));
         } else {
           // Change value with original value (and not null or '') so we can add an error in the validate function
           this.onChange(value);
@@ -138,7 +141,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     // Create an interval if min/max is filled in
     this.interval = IntervalBuilder.dateInterval(
       this.min ? new Date(this.min) : null,
-      this.max ? new Date(this.max) : null
+      this.max ? new Date(this.max) : null,
     )
       .not()
       .build();
