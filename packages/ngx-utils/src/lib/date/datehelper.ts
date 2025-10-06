@@ -9,6 +9,7 @@ import getLastWeekdayOfMonth from './helpers/getLastWeekdayOfMonth';
 import getMonthLength from './helpers/getMonthLength';
 import getWeekday from './helpers/getWeekday';
 import parseDate from './helpers/parseDate';
+import toUtcMidnightInBrussels from './helpers/toUtcMidnightInBrussels';
 import updateDate from './helpers/updateDate';
 import updateMonth from './helpers/updateMonth';
 
@@ -24,6 +25,7 @@ class DateHelper {
   static getMonthLength: any;
   static getWeekday: any;
   static parseDate: any;
+  static toUtcMidnightInBrussels: any;
   static updateDate: any;
   static updateMonth: any;
 }
@@ -39,6 +41,7 @@ DateHelper.getLastWeekdayOfMonth = getLastWeekdayOfMonth;
 DateHelper.getMonthLength = getMonthLength;
 DateHelper.getWeekday = getWeekday;
 DateHelper.parseDate = parseDate;
+DateHelper.toUtcMidnightInBrussels = toUtcMidnightInBrussels;
 DateHelper.updateDate = updateDate;
 DateHelper.updateMonth = updateMonth;
 

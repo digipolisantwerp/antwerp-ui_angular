@@ -1,6 +1,6 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { DateRange } from '@acpaas-ui/ngx-utils';
+import { DateRange, DateHelper } from '@acpaas-ui/ngx-utils';
 
 import { CalendarModule } from '../../calendar.module';
 import { CalendarComponent } from './calendar.component';
@@ -216,11 +216,15 @@ describe('The Calendar Component', () => {
 
     it('emits the picked date and the completion status', () => {
       const date = new Date();
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const day = date.getDate();
+      const expectedDate = new Date(DateHelper.toUtcMidnightInBrussels(year, month, day));
 
       calendar.pickDate(date);
 
       expect(calendar.selectDate.emit).toHaveBeenCalledWith({
-        date,
+        date: expectedDate,
         complete: true,
       });
       expect(calendar.switchView).not.toHaveBeenCalled();

@@ -61,7 +61,7 @@ export class CalendarComponent implements OnInit, OnChanges {
   constructor(
     @Inject(CALENDAR_MONTH_LABELS) public moduleMonthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
     @Inject(CALENDAR_WEEKDAY_LABELS) public moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
-    private calendarService: CalendarService
+    private calendarService: CalendarService,
   ) {}
 
   public ngOnInit() {
@@ -153,10 +153,22 @@ export class CalendarComponent implements OnInit, OnChanges {
   pickDate(date: Date): void {
     const complete = this.activeView === CALENDAR_VIEW_MONTH;
 
-    this.selectDate.emit({
-      date,
-      complete,
-    });
+    if (complete) {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const day = date.getDate();
+      const timezoneAwareDate = new Date(DateHelper.toUtcMidnightInBrussels(year, month, day));
+
+      this.selectDate.emit({
+        date: timezoneAwareDate,
+        complete,
+      });
+    } else {
+      this.selectDate.emit({
+        date,
+        complete,
+      });
+    }
 
     if (!complete) {
       this.activeDate = date;
