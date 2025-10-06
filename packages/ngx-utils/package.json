@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui/ngx-utils",
-  "version": "6.1.5",
+  "version": "6.1.6",
   "publishConfig": {
     "access": "public"
   },
