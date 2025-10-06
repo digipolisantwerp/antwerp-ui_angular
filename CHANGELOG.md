@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [6.1.6] - 2025-10-06
+
+### Fixed
+
+- `ngx-calendar`: Introduced timezones to the calendar, so the correct date is always returned no matter which timezone you are in.
+
 ## [6.1.5] - 2025-09-19
 
 ### Fixed
@@ -661,7 +667,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.5...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.6...HEAD
+[6.1.6]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.5...v6.1.6
 [6.1.5]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.4...v6.1.5
 [6.1.4]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.3...v6.1.4
 [6.1.3]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.2...v6.1.3
