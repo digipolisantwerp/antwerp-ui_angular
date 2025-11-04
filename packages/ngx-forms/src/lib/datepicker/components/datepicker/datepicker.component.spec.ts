@@ -7,7 +7,7 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { DateRange } from '@acpaas-ui/ngx-utils';
+import { DateRange, DateHelper } from '@acpaas-ui/ngx-utils';
 import { CalendarModule } from '@acpaas-ui/ngx-calendar';
 import { FlyoutModule } from '@acpaas-ui/ngx-flyout';
 import { IconModule } from '@acpaas-ui/ngx-icon';
@@ -187,11 +187,13 @@ describe('The Datepicker Component', () => {
       });
 
       it('should return the invalid range error if the date was valid and in the set range', () => {
-        const range = [new Date().getDate()];
+        const testDateISO = new Date('2018-01-15T12:00:00Z').toISOString();
+        const parsedDate = DateHelper.parseDate(testDateISO);
+        const range = [parsedDate.getDate()];
         spyOn(picker.calendarService, 'getRangeForDate').and.callFake(() => range);
         picker.range = range;
 
-        const ctrl = new UntypedFormControl(new Date().toISOString());
+        const ctrl = new UntypedFormControl(testDateISO);
 
         expect(picker.validate(ctrl)).toEqual({
           range: DATEPICKER_DEFAULT_ERROR_LABELS.ERRORS_INVALID_RANGE,
