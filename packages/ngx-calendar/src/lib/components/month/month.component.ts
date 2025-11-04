@@ -10,11 +10,14 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { get } from 'lodash-es';
+import { TZDate } from '@date-fns/tz';
 import { DateHelper, DateRange, Day, Month } from '@acpaas-ui/ngx-utils';
 import { CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS } from '../../calendar.conf';
 import { CalendarService } from '../../services/calendar.service';
 import { DateRangeMap, WeekdayLabelsConfig } from '../../types/calendar.types';
 import { Interval } from '@acpaas-ui/ngx-utils';
+
+const BRUSSELS_TIMEZONE = 'Europe/Brussels';
 
 @Component({
   selector: 'aui-calendar-month',
@@ -33,6 +36,8 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
   public dates: Month = [];
   public selectedDay = -1;
   public current: number;
+  public selectedYear = -1;
+  public activeYear = -1;
 
   constructor(
     @Inject(CALENDAR_WEEKDAY_LABELS) private moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
@@ -50,10 +55,27 @@ export class CalendarMonthComponent implements OnInit, OnChanges {
     const monthChanged =
       activeDateChanged &&
       !DateHelper.datesAreEqual([changes.activeDate.currentValue, changes.activeDate.previousValue], 'M');
-    const selectedDayChanged = this.selectedDate && this.activeDate.getMonth() === this.selectedDate.getMonth();
+
+    let selectedDayChanged = false;
+    if (this.activeDate) {
+      const activeDateBrussels = new TZDate(this.activeDate, BRUSSELS_TIMEZONE);
+      this.activeYear = activeDateBrussels.getFullYear();
+
+      if (this.selectedDate) {
+        const selectedDateBrussels = new TZDate(this.selectedDate, BRUSSELS_TIMEZONE);
+        selectedDayChanged = selectedDateBrussels.getMonth() === activeDateBrussels.getMonth();
+        this.selectedYear = selectedDateBrussels.getFullYear();
+      } else {
+        this.selectedYear = -1;
+      }
+    } else {
+      this.activeYear = -1;
+      this.selectedYear = -1;
+    }
 
     this.current = this.getCurrentDate();
-    this.selectedDay = selectedDayChanged ? this.selectedDate.getDate() : -1;
+    this.selectedDay =
+      selectedDayChanged && this.selectedDate ? new TZDate(this.selectedDate, BRUSSELS_TIMEZONE).getDate() : -1;
 
     let newDates = [];
 

@@ -17,11 +17,7 @@
             [ngClass]="{
               'is-faded': !day.date || day.padding,
               'is-selected':
-                !day.padding &&
-                selectedDate &&
-                day.date === selectedDay &&
-                selectedDay &&
-                selectedDate.getFullYear() === activeDate.getFullYear(),
+                !day.padding && selectedDate && day.date === selectedDay && selectedDay && selectedYear === activeYear,
               'is-current': !day.padding && day.date === current,
               'is-unavailable': !day.available
             }"

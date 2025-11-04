@@ -1,5 +1,6 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
+import { TZDate } from '@date-fns/tz';
 
 import { CalendarMonthComponent } from './month.component';
 import { CALENDAR_DEFAULT_WEEKDAY_LABELS, CALENDAR_WEEKDAY_LABELS } from '../../calendar.conf';
@@ -88,7 +89,8 @@ describe('The Calendar Month Component', () => {
 
   it('should set the current date', () => {
     const now = new Date();
-    expect(comp.current).toEqual(now.getDate());
+    const brusselsDate = new TZDate(now, 'Europe/Brussels');
+    expect(comp.current).toEqual(brusselsDate.getDate());
   });
 
   it('should set the current date to -1 if the activeDate is in another month', () => {
@@ -101,11 +103,13 @@ describe('The Calendar Month Component', () => {
   });
 
   it('should set the selectedDay', () => {
-    const now = new Date();
+    const now = new Date('2017-10-15T12:00:00Z');
     wrapper.selectedDate = now;
+    wrapper.activeDate = new Date('2017-10-01T12:00:00Z');
     fixture.detectChanges();
 
-    expect(comp.selectedDay).toEqual(now.getDate());
+    const brusselsDate = new TZDate(now, 'Europe/Brussels');
+    expect(comp.selectedDay).toEqual(brusselsDate.getDate());
   });
 
   it('should set the selectedDay to -1 if the selectedDate is not set', () => {

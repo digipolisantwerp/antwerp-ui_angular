@@ -12,6 +12,7 @@ import {
 } from '@angular/core';
 
 import { DateHelper, DateRange } from '@acpaas-ui/ngx-utils';
+import { TZDate } from '@date-fns/tz';
 
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
@@ -61,7 +62,7 @@ export class CalendarComponent implements OnInit, OnChanges {
   constructor(
     @Inject(CALENDAR_MONTH_LABELS) public moduleMonthLabels = CALENDAR_DEFAULT_MONTH_LABELS,
     @Inject(CALENDAR_WEEKDAY_LABELS) public moduleWeekdayLabels = CALENDAR_DEFAULT_WEEKDAY_LABELS,
-    private calendarService: CalendarService,
+    private calendarService: CalendarService
   ) {}
 
   public ngOnInit() {
@@ -154,9 +155,10 @@ export class CalendarComponent implements OnInit, OnChanges {
     const complete = this.activeView === CALENDAR_VIEW_MONTH;
 
     if (complete) {
-      const year = date.getFullYear();
-      const month = date.getMonth();
-      const day = date.getDate();
+      const brusselsDate = new TZDate(date, 'Europe/Brussels');
+      const year = brusselsDate.getFullYear();
+      const month = brusselsDate.getMonth();
+      const day = brusselsDate.getDate();
       const timezoneAwareDate = new Date(DateHelper.toUtcMidnightInBrussels(year, month, day));
 
       this.selectDate.emit({

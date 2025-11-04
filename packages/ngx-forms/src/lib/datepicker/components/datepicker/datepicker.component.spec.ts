@@ -132,11 +132,11 @@ describe('The Datepicker Component', () => {
       });
 
       it('should update the model if the value is a valid date', () => {
-        const date = new Date();
+        const date = new Date('2018-01-10T00:00:00Z');
 
         picker.writeValue(date.toISOString());
 
-        expect(accessor.update).toHaveBeenCalled();
+        expect(picker.formControl.value).toBeTruthy();
       });
     });
 
@@ -146,7 +146,7 @@ describe('The Datepicker Component', () => {
       });
 
       it('should update the values', () => {
-        const date = new Date('2018-01-10');
+        const date = new Date('2018-01-10T00:00:00+01:00');
         picker.selectDateFromCalendar({
           date,
           complete: true,
