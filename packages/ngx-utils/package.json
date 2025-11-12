@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "@acpaas-ui/ngx-icon": "^6.1.5",
-    "date-fns": "^2.30.0"
+    "date-fns": "^4.1.0",
+    "@date-fns/tz": "^1.0.0"
   },
   "peerDependencies": {
     "@angular/common": ">=15.2.0",

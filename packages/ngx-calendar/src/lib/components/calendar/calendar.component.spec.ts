@@ -1,5 +1,6 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { TZDate } from '@date-fns/tz';
 import { DateRange, DateHelper } from '@acpaas-ui/ngx-utils';
 
 import { CalendarModule } from '../../calendar.module';
@@ -215,10 +216,11 @@ describe('The Calendar Component', () => {
     });
 
     it('emits the picked date and the completion status', () => {
-      const date = new Date();
-      const year = date.getFullYear();
-      const month = date.getMonth();
-      const day = date.getDate();
+      const date = new Date('2017-10-03T12:00:00Z');
+      const brusselsDate = new TZDate(date, 'Europe/Brussels');
+      const year = brusselsDate.getFullYear();
+      const month = brusselsDate.getMonth();
+      const day = brusselsDate.getDate();
       const expectedDate = new Date(DateHelper.toUtcMidnightInBrussels(year, month, day));
 
       calendar.pickDate(date);

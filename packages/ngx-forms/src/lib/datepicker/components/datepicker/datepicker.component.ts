@@ -23,6 +23,7 @@ import {
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 import { DateHelper, DateRange } from '@acpaas-ui/ngx-utils';
+import { TZDate } from '@date-fns/tz';
 import { FlyoutDirective } from '@acpaas-ui/ngx-flyout';
 import {
   CALENDAR_DEFAULT_MONTH_LABELS,
@@ -94,7 +95,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     @Inject(DATEPICKER_ERROR_LABELS) private errorLabels = DATEPICKER_DEFAULT_ERROR_LABELS,
     public calendarService: CalendarService,
     private formBuilder: UntypedFormBuilder,
-    private ref: ChangeDetectorRef,
+    private ref: ChangeDetectorRef
   ) {}
 
   public ngOnInit(): void {
@@ -108,12 +109,12 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
         const date = DateHelper.parseDate(format, 'yyyy-MM-dd');
         if (date) {
           this.selectedDate = date;
-          const year = date.getFullYear();
-          const month = date.getMonth();
-          const day = date.getDate();
+          const brusselsDate = new TZDate(date, 'Europe/Brussels');
+          const year = brusselsDate.getFullYear();
+          const month = brusselsDate.getMonth();
+          const day = brusselsDate.getDate();
           this.onChange(DateHelper.toUtcMidnightInBrussels(year, month, day));
         } else {
-          // Change value with original value (and not null or '') so we can add an error in the validate function
           this.onChange(value);
         }
       } else {
@@ -141,19 +142,25 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     // Create an interval if min/max is filled in
     this.interval = IntervalBuilder.dateInterval(
       this.min ? new Date(this.min) : null,
-      this.max ? new Date(this.max) : null,
+      this.max ? new Date(this.max) : null
     )
       .not()
       .build();
   }
 
   public writeValue(value: string | Date): void {
-    this.selectedDate =
-      typeof value === 'string'
-        ? this.isISODateFormat(value)
-          ? new Date(value)
-          : DateHelper.parseDate(value, 'dd/MM/yyyy')
-        : value;
+    if (typeof value === 'string') {
+      if (this.isISODateFormat(value)) {
+        this.selectedDate = DateHelper.parseDate(value);
+      } else {
+        this.selectedDate = DateHelper.parseDate(value, 'dd/MM/yyyy');
+      }
+    } else if (value instanceof Date) {
+      this.selectedDate = value;
+    } else {
+      this.selectedDate = null;
+    }
+
     const dateString = this.selectedDate ? this.formatDate(this.selectedDate) : '';
     this.formControl.setValue(dateString);
   }
