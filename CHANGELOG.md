@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [6.1.7] - 2025-11-12
+
 ### Fixed
 
-- `ngx-forms`: Implemented a fix for the datepicker component, so the correct date is always returned no matter which timezone you are in.
+- `ngx-calendar`: Implemented a fix for the datepicker component, so the correct date is always returned no matter which timezone you are in. Make sure to test this update thoroughly as this bugfix may introduce an unwanted breaking change in your code.
 
 ## [6.1.6] - 2025-10-06
 
