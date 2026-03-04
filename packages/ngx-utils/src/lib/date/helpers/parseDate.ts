@@ -32,6 +32,12 @@ export default (d, format = null) => {
     }
   }
 
+  // If the format contains a year with less than 4 digits,
+  // we should not parse it as a date, because it can lead to unexpected results.
+  if (format && /(^|[^y])y{1,3}([^y]|$)/.test(format) && !/y{4,}/.test(format)) {
+    return d;
+  }
+
   const date = format ? parse(d, format, new Date()) : new Date(Date.parse(d));
 
   if (isNaN(date.getTime())) {

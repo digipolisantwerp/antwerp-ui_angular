@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Fixed
+
+- `ngx-calendar`: Fixed an issue where a date of the format dd/mm/yy was parsed in an unexpected way
+
 ## [6.1.7] - 2025-11-12
 
 ### Fixed
