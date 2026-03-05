@@ -39,7 +39,7 @@ export declare class DateHelper {
   static updateMonth(date: Date, month: number): Date;
   static formatDate(date: Date, format: string, options?: FormattingOptions): string;
   static addLeadingZero(value: number | string, addLeadingZero?: boolean): string;
-  static parseDate(date: any, format?: string, strict?: boolean): null | Date;
+  static parseDate(date: any, format?: string, strict?: boolean): null | Date | string;
   static dateOutOfRange(date: Date, range: number[]): boolean;
   static closestDateForRange(date: Date, range: number[]): null | Date;
 }
