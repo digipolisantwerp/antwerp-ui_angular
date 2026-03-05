@@ -45,9 +45,9 @@ describe('parseDate', () => {
       expect(isValidDate(result)).toBe(true);
 
       const date = result as Date;
-      expect(date.getUTCFullYear()).toBe(2024);
-      expect(date.getUTCMonth()).toBe(11);
-      expect(date.getUTCDate()).toBe(12);
+      expect(date.getFullYear()).toBe(2024);
+      expect(date.getMonth()).toBe(11);
+      expect(date.getDate()).toBe(12);
     });
   });
 
@@ -91,7 +91,7 @@ describe('parseDate', () => {
       expect(isValidDate(result)).toBe(true);
 
       const date = result as Date;
-      expect(date.getUTCFullYear()).toBe(2024);
+      expect(date.getFullYear()).toBe(2024);
     });
 
     it('returns null for completely invalid string', () => {
