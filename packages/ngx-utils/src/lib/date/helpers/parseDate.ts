@@ -34,7 +34,7 @@ export default (d, format = null) => {
 
   // If the format contains a year with less than 4 digits,
   // we should not parse it as a date, because it can lead to unexpected results.
-  if (format && /(^|[^y])y{1,3}([^y]|$)/.test(format) && !/y{4,}/.test(format)) {
+  if (format && /(^|[^a-z])y{1,3}([^a-z]|$)/.test(format) && !/y{4,}/.test(format)) {
     return d;
   }
 
