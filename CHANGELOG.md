@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
-## [6.1.8] - 2026-03-05
+## [6.1.9] - 2026-03-05
 
 ### Fixed
 
 - `ngx-calendar`: Fixed an issue where a date of the format dd/mm/yy was parsed in an unexpected way
+
+## [6.1.8] - 2026-03-05 [BORKED]
 
 ## [6.1.7] - 2025-11-12
 
@@ -679,7 +681,8 @@ For migration guidelines, see our [migration guide](./guidelines/MIGRATING.md).
 
 Initial release.
 
-[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.8...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.9...HEAD
+[6.1.9]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.8...v6.1.9
 [6.1.8]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.7...v6.1.8
 [6.1.7]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.6...v6.1.7
 [6.1.6]: https://github.com/digipolisantwerp/antwerp-ui_angular/compare/v6.1.5...v6.1.6
