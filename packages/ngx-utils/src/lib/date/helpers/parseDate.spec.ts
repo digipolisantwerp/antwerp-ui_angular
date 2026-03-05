@@ -3,6 +3,13 @@ import parseDate from './parseDate';
 const isValidDate = (value: unknown): value is Date =>
   value instanceof Date && !isNaN(value.getTime());
 
+
+const expectLocalDate = (date: Date, y: number, m: number, d: number) => {
+  expect(date.getFullYear()).toBe(y);
+  expect(date.getMonth()).toBe(m); // JS months: 0-11
+  expect(date.getDate()).toBe(d);
+}
+
 describe('parseDate', () => {
   describe('invalid inputs', () => {
     it('returns null for undefined', () => {
@@ -28,7 +35,6 @@ describe('parseDate', () => {
       const result = parseDate(date);
 
       expect(result).toEqual(date);
-      expect(isValidDate(result)).toBe(true);
     });
 
     it('returns null for invalid Date instance', () => {
@@ -45,9 +51,12 @@ describe('parseDate', () => {
       expect(isValidDate(result)).toBe(true);
 
       const date = result as Date;
-      expect(date.getFullYear()).toBe(2024);
-      expect(date.getMonth()).toBe(11);
-      expect(date.getDate()).toBe(12);
+      expectLocalDate(date, 2024, 11, 12);
+    });
+
+    it('returns null for invalid ISO string', () => {
+      const iso = 'not-a-date';
+      expect(parseDate(iso)).toBeNull();
     });
   });
 
@@ -58,22 +67,20 @@ describe('parseDate', () => {
       expect(isValidDate(result)).toBe(true);
 
       const date = result as Date;
-      expect(date.getUTCFullYear()).toBe(2024);
-      expect(date.getUTCMonth()).toBe(11);
-      expect(date.getUTCDate()).toBe(11);
+      expectLocalDate(date, 2024, 11, 12);
     });
 
-    it('returns original string when using short year token (yy)', () => {
+    it('returns original string when using yy', () => {
       const result = parseDate('12/12/24', 'dd/MM/yy');
       expect(result).toBe('12/12/24');
     });
 
-    it('returns original string when using short year token (y)', () => {
+    it('returns original string when using y', () => {
       const result = parseDate('12/12/4', 'dd/MM/y');
       expect(result).toBe('12/12/4');
     });
 
-    it('returns original string when using short year token (yyy)', () => {
+    it('returns original string when using yyy', () => {
       const result = parseDate('12/12/024', 'dd/MM/yyy');
       expect(result).toBe('12/12/024');
     });
@@ -85,7 +92,7 @@ describe('parseDate', () => {
   });
 
   describe('non-formatted string input', () => {
-    it('parses valid Date.parse compatible string', () => {
+    it('parses Date.parse compatible string', () => {
       const result = parseDate('December 12, 2024');
 
       expect(isValidDate(result)).toBe(true);
