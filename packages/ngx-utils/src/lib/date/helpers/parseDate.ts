@@ -25,15 +25,16 @@ export default (d, format = null) => {
       const day = brusselsDate.getDate();
 
       const dateInBrussels = new TZDate(year, month, day, 0, 0, 0, BRUSSELS_TIMEZONE);
-
       return new Date(dateInBrussels.getTime());
     } catch (e) {
       return null;
     }
   }
 
-  // If the format contains a year with less than 4 digits,
-  // we should not parse it as a date, because it can lead to unexpected results.
+  if (typeof d === 'string' && /^(\d{1,2})\/(\d{1,2})\/(\d{1,3})$/.test(d)) {
+    return d;
+  }
+
   if (format && /(^|[^a-z])y{1,3}([^a-z]|$)/.test(format) && !/y{4,}/.test(format)) {
     return d;
   }
