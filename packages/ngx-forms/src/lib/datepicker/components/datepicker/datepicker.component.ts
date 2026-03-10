@@ -105,15 +105,16 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
     this.formControl = this.formBuilder.control({ value: '', disabled: this.isDisabled });
     this.formControl.valueChanges.pipe(takeUntil(this.componentDestroyed$)).subscribe((value) => {
       if (value) {
-        const format = value.split(DATEPICKER_SEPARATOR_CHAR).reverse().join('-');
-        const date = DateHelper.parseDate(format, 'yyyy-MM-dd');
-        if (date) {
+        const date = DateHelper.parseDate(value, 'dd/MM/yyyy');
+        if (date instanceof Date) {
           this.selectedDate = date;
           const brusselsDate = new TZDate(date, 'Europe/Brussels');
           const year = brusselsDate.getFullYear();
           const month = brusselsDate.getMonth();
           const day = brusselsDate.getDate();
           this.onChange(DateHelper.toUtcMidnightInBrussels(year, month, day));
+        } else if (typeof date === 'string') {
+          this.onChange(value);
         } else {
           this.onChange(value);
         }
@@ -151,9 +152,10 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy, Contro
   public writeValue(value: string | Date): void {
     if (typeof value === 'string') {
       if (this.isISODateFormat(value)) {
-        this.selectedDate = DateHelper.parseDate(value);
+        this.selectedDate = DateHelper.parseDate(value) as Date;
       } else {
-        this.selectedDate = DateHelper.parseDate(value, 'dd/MM/yyyy');
+        const parsed = DateHelper.parseDate(value, 'dd/MM/yyyy');
+        this.selectedDate = parsed instanceof Date ? parsed : null;
       }
     } else if (value instanceof Date) {
       this.selectedDate = value;
