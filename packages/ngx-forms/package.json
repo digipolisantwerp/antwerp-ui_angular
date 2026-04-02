@@ -11,7 +11,7 @@
     "@acpaas-ui/ngx-progress-bar": "^6.0.6",
     "@acpaas-ui/ngx-selectable-list": "^6.0.6",
     "@acpaas-ui/ngx-utils": "^6.1.11",
-    "lodash-es": "~4.17.10"
+    "lodash-es": "~4.18.1"
   },
   "peerDependencies": {
     "@angular/common": ">=15.2.0",
